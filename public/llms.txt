@@ -119,7 +119,7 @@
 - [Real-Time Events](https://www.azion.com/en/documentation/observe/real-time-events/): Real-Time Events is an Observe product that allows you to display logs from your Azion products and services in real time.
 - [Real-Time Metrics](https://www.azion.com/en/documentation/observe/real-time-metrics/): Real-Time Metrics provides you with real-time access to metrics and helps you optimize the use of Azion products and how your content is delivered.
 - [SIEM Azion](https://www.azion.com/en/documentation/observe/siem/): Analyze data from dashboards with raw and aggregated data.
-- Full section index: https://www.azion.com/en/documentation/observe/llms.txt (49 pages)
+- Full section index: https://www.azion.com/en/documentation/observe/llms.txt (51 pages)
 
 ## Dev Tools
 
@@ -127,12 +127,13 @@
 - [Get started with Azion API](https://www.azion.com/en/documentation/devtools/api/): Learn more about official endpoints, methods, and API use cases of the Azion RESTful API.
 - [Azion CLI](https://www.azion.com/en/documentation/devtools/cli/): Explore Azion CLI for edge computing manage and deploy applications, integrate with Azion APIs, and optimize with Go SDK.
 - [Console Kit](https://www.azion.com/en/documentation/devtools/console-kit/): Developed with Vue/Vite, PrimeVue, and Tailwind, Azion Console Kit is a front-end development kit used for crafting a customized Azion Console interface.
+- [For AI Agents](https://www.azion.com/en/documentation/devtools/for-ai-agents/): Entry point for AI agents and their developers building on Azion: canonical facts, current product names, API base URL, auth format, and machine-readable resources such as llms.txt and the Azion MCP server.
 - [Form Builder](https://www.azion.com/en/documentation/devtools/form-builder/): Build visual, schema-driven forms to configure Azion Functions arguments in Applications and Firewalls.
 - [GraphQL API](https://www.azion.com/en/documentation/devtools/graphql/): Request the data you want and receive nothing more, nothing less. The Azion GraphQL API lets you query metrics, events, and accounting data with precise, flexible requests, retrieving exactly the fields you need in a single call instead of over-fetching or under-fetching information.
 - [Azion Libraries overview](https://www.azion.com/en/documentation/devtools/lib/): Learn about Azion Libraries, a suite of tools for interacting with Azion services, products, and utilities.
 - [Model Context Protocol (MCP)](https://www.azion.com/en/documentation/devtools/mcp/): Connect AI code assistants to Azion Platform through the Model Context Protocol, enabling intelligent assistance for deployment, configuration, and management tasks.
 - [Azion Terraform Provider](https://www.azion.com/en/documentation/devtools/terraform/): Azion Terraform Provider v2.0 is an open source project that enables infrastructure as code management for Azion API v4. Manage workloads, connectors, applications, and more through Terraform configurations.
-- Full section index: https://www.azion.com/en/documentation/devtools/llms.txt (100 pages)
+- Full section index: https://www.azion.com/en/documentation/devtools/llms.txt (101 pages)
 
 ## Marketplace
 

@@ -1,0 +1,70 @@
+---
+title: Data Stream concepts
+description: >-
+  Understand how Data Stream works: log batching, NDJSON and JSON payload
+  formats, endpoint availability monitoring, error treatment for HTTP 503 and
+  504 responses, and the sampling model.
+meta_tags: 'data, stream, edge computing, observe, observability, logs, events, concepts, ndjson, sampling, error treatment'
+namespace: documentation_observe_data_stream_concepts
+permalink: /documentation/observe/data-stream/concepts/
+---
+
+This page explains the ideas behind [Data Stream](/en/documentation/observe/data-stream/): how logs are grouped and delivered, how payload formats differ, how endpoint availability is decided, and how sampling works. For exact field definitions and variable tables, see the [Data Stream reference](/en/documentation/observe/data-stream/reference/).
+
+---
+
+## How Data Stream groups and delivers logs
+
+Data Stream collects, groups, and transmits raw logs to your chosen destination. To keep an enhanced performance, it uses ASCII encoding to avoid parser issues and problems in data interpretation.
+
+Logs aren't sent one by one: they're grouped in blocks and sent when the block reaches *2,000 records*, *every 60 seconds*, or when the packet size reaches the value determined in the *payload Max Size field*, whichever occurs first. For example, if a package reaches 2,000 records in 13 seconds, it'll be sent. The AWS Kinesis Data Firehose endpoint uses smaller blocks of up to *500 records*, or *every 60 seconds*, whichever occurs first.
+
+Once you activate a stream, there's a propagation time until the logs become available for consultation in tools or products such as **Real-Time Events**.
+
+---
+
+## NDJSON and JSON formats
+
+By default, Data Stream recommends a NDJSON format with the use of `\n` as a log line separator and `$dataset` as a payload format, which uses the information from the **Data Set** code box, describing the variables chosen as a template.
+
+A NDJSON format isn't wrapped with typical JSON arrays `[]`, and each data is presented in a different line, without a comma separating them. It can be useful for structured data with processing of one record at a time. A JSON format, on the other hand, is well known and has tabular data, using arrays `[]` and being separated by commas. With it, the payload can be treated as a single record.
+
+The choice between the two formats is controlled by the **Log Line Separator** and **Payload Format** fields of the Standard HTTP/HTTPS POST endpoint. See the [Payload reference](/en/documentation/observe/data-stream/reference/#payload) for the field definitions and example outputs of each combination.
+
+---
+
+## Endpoint availability
+
+**Data Stream** servers work in two steps: they monitor the endpoints once a minute (1x/min) and state whether the endpoint is *available* or *unavailable*. The cost of sending messages with an error is very high, so prior monitoring is required.
+
+Data Stream attempts to send messages to endpoints that are *available*. If the endpoint is *unavailable*, messages aren't sent, as the information is discarded. During the next minute, Data Stream sends the data again if the endpoint is considered *available*.
+
+The endpoint must be approved by all Azion servers to be considered as *available*. If one of the servers indicates that the endpoint is *unavailable*, messages aren't sent.
+
+---
+
+## Error treatment
+
+### HTTP 504 Status Behavior
+
+Occurs when the endpoint responds to the test successfully, but doesn't receive messages within the timeout: *20 seconds* for HTTP POST type endpoints.
+
+### HTTP 503 Status Behavior
+
+Occurs when the endpoint is declared *unavailable* by endpoint monitoring. Therefore, Data Stream doesn't attempt to send the messages.
+
+Since the system is distributed, it isn't possible to know the specific server that sends messages to each endpoint.
+
+---
+
+## Sampling
+
+Sampling lets you receive only a percentage of the data from your stream, collected randomly, instead of every event. In addition to filtering by sampling, it can also reduce costs of data collection and analysis.
+
+Sampling applies when a stream is associated with **All Domains**: the percentage set in the **Sampling (%)** field returns the total data related to all your domains. When the Sampling option is enabled, you're allowed to add only *one* stream in your account. Once this stream is disabled, the option to add streams is enabled again on Azion Console.
+
+:::note
+Currently, the *Sampling* option isn't available for all Azion Console accounts. If you'd like to use it on your account, [contact the sales team](https://www.azion.com/en/contact-sales/).
+:::
+
+<br /><br />

@@ -1,0 +1,73 @@
+---
+title: Conceitos do Data Stream
+description: >-
+  Entenda como o Data Stream funciona: agrupamento de logs, formatos de payload
+  NDJSON e JSON, monitoramento de disponibilidade de endpoint, tratamento de
+  erros para respostas HTTP 503 e 504 e o modelo de sampling.
+meta_tags: >-
+  data, streaming, edge computing, stream, observe, observability,
+  observabilidade, logs, events, eventos, conceitos, ndjson, sampling,
+  tratamento de erros
+namespace: documentation_observe_data_stream_concepts
+permalink: /documentacao/observe/data-stream/concepts/
+---
+
+Esta página explica as ideias por trás do [Data Stream](/pt-br/documentacao/observe/data-stream/): como os logs são agrupados e entregues, como os formatos de payload diferem, como a disponibilidade do endpoint é decidida e como o sampling funciona. Para definições exatas de campos e tabelas de variáveis, veja a [Referência do Data Stream](/pt-br/documentacao/observe/data-stream/reference/).
+
+---
+
+## Como o Data Stream agrupa e entrega logs
+
+O Data Stream coleta, agrupa e transmite logs brutos para o destino escolhido. Para manter uma performance avançada, usa a codificação ASCII para evitar problemas de parser e problemas na interpretação dos dados.
+
+Os logs não são enviados um a um: eles são agrupados em blocos e enviados quando o bloco atinge *2.000 registros*, a cada *60 segundos*, ou quando o tamanho do pacote atinge o valor determinado no *campo Max Size do payload*, o que ocorrer primeiro. Por exemplo, se um bloco atinge 2.000 registros em 13 segundos, ele é enviado. O endpoint AWS Kinesis Data Firehose usa blocos menores, de até *500 registros*, ou a cada *60 segundos*, o que ocorrer primeiro.
+
+Ao ativar um stream, ocorre um tempo de propagação até que os logs fiquem disponíveis para consulta em ferramentas ou produtos como o **Real-Time Events**.
+
+---
+
+## Formatos NDJSON e JSON
+
+Por padrão, o Data Stream recomenda o formato NDJSON com o uso de `\n` como um log line separator e `$dataset` como payload format, que usa as informações fornecidas no campo de código **Data Set**, descrevendo as variáveis escolhidas como template.
+
+O formato NDJSON não usa os arrays típicos de JSON `[]`, e cada dado é apresentado em uma linha diferente, sem vírgula separando-as. Ele pode ser útil para dados estruturados com processamentos de um registro por vez. Já o formato JSON é o mais conhecido e possui tabulação de dados, usando arrays `[]` e sendo separado por vírgulas. Com ele, o payload pode ser tratado como um registro individual.
+
+A escolha entre os dois formatos é controlada pelos campos **Log Line Separator** e **Payload Format** do endpoint Standard HTTP/HTTPS POST. Veja a [referência de Payload](/pt-br/documentacao/observe/data-stream/reference/#payload) para as definições dos campos e exemplos de saída de cada combinação.
+
+---
+
+## Disponibilidade do endpoint
+
+Os servidores do **Data Stream** funcionam em duas etapas: monitoram os endpoints uma vez por minuto (1x/min) e declaram o endpoint como *available*, disponível, ou *unavailable*, indisponível. O custo de enviar mensagens com erro é muito alto, por isso o monitoramento prévio é necessário.
+
+O Data Stream tenta enviar mensagens para endpoints que estão *available*. Se o endpoint estiver *unavailable*, as mensagens não são enviadas, pois as informações são descartadas. No minuto seguinte, o Data Stream faz o envio dos dados novamente se o endpoint ficar *available*.
+
+Para ser considerado como *available*, o endpoint deve ser aprovado por todos os servidores da Azion. Se um dos servidores indicar que o endpoint está *unavailable*, as mensagens não são enviadas.
+
+---
+
+## Tratamento de erros
+
+### Comportamento do status HTTP 504
+
+Ocorre quando o endpoint responde ao teste com sucesso, mas não recebe as mensagens dentro do tempo de timeout: *20 segundos* para endpoints do tipo HTTP POST.
+
+### Comportamento do status HTTP 503
+
+Ocorre quando o endpoint é declarado como *unavailable*, indisponível, pela monitoração do endpoint. Portanto, o Data Stream não tenta enviar as mensagens.
+
+Como o sistema é distribuído, não é possível saber qual o servidor específico que envia as mensagens para cada endpoint.
+
+---
+
+## Sampling
+
+O sampling permite que você receba apenas uma porcentagem dos dados do seu stream, coletada de forma aleatória, em vez de todos os eventos. Além de filtrar por amostra, a opção também reduz custos de coleta e análise de dados.
+
+O sampling se aplica quando um stream está associado a **All Domains**: a porcentagem definida no campo **Sampling (%)** retornará dados relacionados a todos os seus domínios. Quando a opção de Sampling está habilitada, você só pode adicionar *um* stream em sua conta. Após esse stream ser desabilitado, a opção de adicionar streams é habilitada novamente no Azion Console.
+
+:::note
+No momento, a opção *Sampling* não está disponível para todas as contas do Azion Console. Se você deseja usá-la em sua conta, [contate o time de vendas](https://www.azion.com/pt-br/contato/).
+:::
+
+<br /><br />

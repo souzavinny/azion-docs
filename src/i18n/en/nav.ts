@@ -2064,7 +2064,7 @@ export default [
 				key: "observe/data-stream",
 				items: [
 					{
-						text: "Data Stream first steps",
+						text: "Data Stream quickstart",
 						slug: "/documentation/observe/data-stream/quickstart/",
 						key: "observe/data-stream/quickstart",
 					},
@@ -2218,6 +2218,16 @@ export default [
 								key: "observe/data-stream/guides/use-data-stream",
 							},
 						],
+					},
+					{
+						text: "Data Stream reference",
+						slug: "/documentation/observe/data-stream/reference/",
+						key: "observe/data-stream/reference",
+					},
+					{
+						text: "Data Stream concepts",
+						slug: "/documentation/observe/data-stream/concepts/",
+						key: "observe/data-stream/concepts",
 					},
 				],
 			},
@@ -2505,6 +2515,11 @@ export default [
 				text: "Console Kit",
 				slug: "/documentation/devtools/console-kit/",
 				key: "devtools/console-kit",
+			},
+			{
+				text: "For AI Agents",
+				slug: "/documentation/devtools/for-ai-agents/",
+				key: "devtools/for-ai-agents",
 			},
 			{
 				text: "Form Builder",

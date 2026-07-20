@@ -4,6 +4,7 @@
 
 - [Explore Azion Observe products](https://www.azion.com/en/documentation/observe/): Azion Observe products assist you in monitoring and accessing information related to your data.
 - [Data Stream](https://www.azion.com/en/documentation/observe/data-stream/): Data Stream is an Observe product that allows you to feed your SIEM, big data, and stream processing platforms with access to your content and applications data in real time, adding even more intelligence to your business.
+- [Data Stream concepts](https://www.azion.com/en/documentation/observe/data-stream/concepts/): Understand how Data Stream works: log batching, NDJSON and JSON payload formats, endpoint availability monitoring, error treatment for HTTP 503 and 504 responses, and the sampling model.
 - [How to add filters on Real-Time Events](https://www.azion.com/en/documentation/observe/data-stream/guides/add-filters-events/): Filter your analysis with the specific variables and type of data you want to receive.
 - [How to add filters on Real-Time Metrics](https://www.azion.com/en/documentation/observe/data-stream/guides/add-filters-metrics/): Filter your analysis with the specific variables and type of data you want to access.
 - [Analyze logs](https://www.azion.com/en/documentation/observe/data-stream/guides/analyze-logs/): Use Real-Time Events to analyze detailed raw logs.
@@ -33,7 +34,8 @@
 - [Stream data](https://www.azion.com/en/documentation/observe/data-stream/guides/stream-data/): Stream your Azion logs to stream processing, SIEM, and big data platforms.
 - [How to understand Real-Time Events logs](https://www.azion.com/en/documentation/observe/data-stream/guides/understand-logs/): Find the best option of how to choose variables to analyze your logs.
 - [How to configure Data Stream main settings](https://www.azion.com/en/documentation/observe/data-stream/guides/use-data-stream/): Find out how to configure the main settings of a stream.
-- [Data Stream first steps](https://www.azion.com/en/documentation/observe/data-stream/quickstart/): See the first steps for Data Stream.
+- [Data Stream quickstart](https://www.azion.com/en/documentation/observe/data-stream/quickstart/): Create your first stream and start feeding your analysis platform with Azion event logs, using Azion Console or the Azion API.
+- [Data Stream reference](https://www.azion.com/en/documentation/observe/data-stream/reference/): Complete reference for Data Stream: data sources and their variables, templates, domains, endpoint connector fields, payload settings, and log delivery numbers.
 - [Edge Pulse](https://www.azion.com/en/documentation/observe/edge-pulse/): Discover how to get detailed insights into your customers' experience and improve your content delivery with Edge Pulse.
 - [Edge Pulse first steps](https://www.azion.com/en/documentation/observe/edge-pulse/quickstart/): See the first steps for Edge Pulse.
 - [Observe Overview](https://www.azion.com/en/documentation/observe/overview/): Observe your application's data and improve your decision-making process.

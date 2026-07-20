@@ -56,7 +56,7 @@ Check the [Data Stream Properties](https://api.azion.com/#04257075-3691-4b5f-b22
 curl --request GET \
   --url https://api.azion.com/v4/data_stream/streams \
   --header 'Accept: application/json' \
-  --header 'Authorization: [TOKEN VALUE]'
+  --header 'Authorization: Token [TOKEN VALUE]'
 ```
 
 2. You'll receive a response with all your existing streams. Copy the value of the `<id>` that you want to configure.
@@ -66,7 +66,7 @@ curl --request GET \
 curl --request PATCH \
   --url https://api.azion.com/v4/data_stream/streams/id \
   --header 'Accept: application/json' \
-  --header 'Authorization: [TOKEN VALUE]' \
+  --header 'Authorization: Token [TOKEN VALUE]' \
   --header 'Content-Type: application/json' \
 --data '{
 	"name": "My Elasticsearch connector",

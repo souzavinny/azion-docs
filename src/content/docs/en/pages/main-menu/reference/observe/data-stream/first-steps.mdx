@@ -1,21 +1,23 @@
 ---
-title: Data Stream first steps
-description: See the first steps for Data Stream.
-meta_tags: 'data, stream, edge computing, observe, observability, logs, events'
+title: Data Stream quickstart
+description: >-
+  Create your first stream and start feeding your analysis platform with Azion
+  event logs, using Azion Console or the Azion API.
+meta_tags: 'data, stream, edge computing, observe, observability, logs, events, quickstart, first steps'
 namespace: documentation_products_data_streaming_first_steps
 permalink: /documentation/observe/data-stream/quickstart/
 ---
 
-Before beginning to use **Data Stream**, make sure you have a [Azion Console](https://console.azion.com) account. You can find more information on creating one on the [documentation page](/en/documentation/account/reference/creating-account/).
+This quickstart shows how to create your first stream and confirm it's sending event logs to your endpoint. You can follow the **Console path** or the **API path**.
 
-As Data Stream is a billed product, you must also make sure you have it activated in your account. [Contact the Sales team](https://www.azion.com/en/contact-sales/) for more details.
+---
 
-To access Data Stream:
+## Prerequisites
 
-1. [On Azion Console](https://console.azion.com), on the upper-left corner, select the **Products menu**.
-2. On the **Observe** section, select **Data Stream**.
-
-To find out how to configure a new stream, see the [How to use Data Stream](/en/documentation/observe/data-stream/guides/use-data-stream/) guide.
+- An [Azion Console](https://console.azion.com) account. You can find more information on creating one on the [documentation page](/en/documentation/account/reference/creating-account/).
+- Data Stream activated in your account. As Data Stream is a billed product, [contact the sales team](https://www.azion.com/en/contact-sales/) for more details.
+- An endpoint to receive the data: a stream processing platform or analysis tool of your choice. See the [available endpoints](/en/documentation/observe/data-stream/reference/#endpoints).
+- For the API path: a [personal token](/en/documentation/account/guides/personal-tokens/).
 
 If you're using Data Stream [with Teams](/en/documentation/account/reference/teams-permissions/), your stream configurations are available for the users on the account according to their permissions.
 
@@ -23,4 +25,101 @@ If you're using Data Stream [with Teams](/en/documentation/account/reference/tea
 Check more information about [Data Stream pricing](/en/documentation/platform/pricing/).
 :::
 
+---
 
+## Console path
+
+1. [Access Azion Console](https://console.azion.com). On the upper-left corner, select the **Products menu**.
+2. On the **Observe** section, select **Data Stream**.
+3. Click the **+ Stream** button.
+4. Give your stream a unique and easy-to-remember name.
+5. On the **Source** dropdown menu, select the one you want to use: **Activity History**, **Applications**, **Functions**, or **WAF Events**.
+    - For **Functions** and **WAF Events**, you must be subscribed to the products.
+6. On the **Template** dropdown menu, select the one you want to use. Templates define the variables sent in your logs; see the [Templates reference](/en/documentation/observe/data-stream/reference/#templates).
+7. On **Workloads** > **Options**, select between **All Current and Future Domains** or **Filter Domains**.
+8. Under **Destination**, select a **Connector** on the dropdown menu and fill in the fields presented for it. Find the fields for each connector on the [Endpoints reference](/en/documentation/observe/data-stream/reference/#endpoints).
+9. Make sure the **Active** switch is on.
+10. Click the **Save** button.
+
+For a detailed walkthrough of each setting, see [How to configure Data Stream main settings](/en/documentation/observe/data-stream/guides/use-data-stream/).
+
+### You know it worked when
+
+- On the **Data Stream** page, on the right side of the stream's row, the status label shows **Active**.
+- Your logs appear at the configured endpoint. Once you activate a stream, there's a propagation time until the logs become available.
+- You can check your logs successfully being sent through [Real-Time Events](/en/documentation/observe/real-time-events/): select **Data Source** > **Data Stream** and choose the filter options as you wish.
+
+---
+
+## API path
+
+1. Run the following `POST` request in your terminal, replacing `[TOKEN]` with your [personal token](/en/documentation/account/guides/personal-tokens/), to create a stream. This example uses an Apache Kafka connector; see other connector options in the [Data Stream Endpoints](https://api.azion.com/#04257075-3691-4b5f-b22b-22a5b6653f3f) table:
+
+```bash
+curl --request POST \
+  --url https://api.azion.com/v4/data_stream/streams \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Token [TOKEN]' \
+  --header 'Content-Type: application/json' \
+--data '{
+    "name": "Kafka Connector",
+    "template_id": 2,
+    "workloads": [1656613172],
+    "data_source": "http",
+    "endpoint": {
+        "endpoint_type": "kafka",
+        "kafka_topic": "mykafka.dts.topic",
+        "bootstrap_servers": "infra.my.net:9094,infra.my.net:9094"
+    },
+    "all_domains": true
+}'
+```
+
+2. You'll receive a response similar to this, confirming the stream was created and is active:
+
+```json
+{
+  "results": {
+    "id": 1594,
+    "name": "Kafka Connector",
+    "template_id": 2,
+    "data_source": "http",
+    "active": true,
+    "endpoint": {
+      "endpoint_type": "kafka",
+      "use_tls": false,
+      "kafka_topic": "mykafka.dts.topic",
+      "bootstrap_servers": "infra.my.net:9094,infra.my.net:9094"
+    },
+    "all_domains": true
+  },
+  "schema_version": 3
+}
+```
+
+3. Wait a few minutes for the changes to propagate. You can list your streams at any time with a `GET` request:
+
+```bash
+curl --request GET \
+  --url https://api.azion.com/v4/data_stream/streams \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Token [TOKEN]'
+```
+
+Check the [Data Stream Properties](https://api.azion.com/#04257075-3691-4b5f-b22b-22a5b6653f3f) table to see all available properties and their accepted values.
+
+### You know it worked when
+
+- The `POST` response and the `GET` list show your stream with `"active": true`.
+- Your logs appear at the configured endpoint. Once you activate a stream, there's a propagation time until the logs become available.
+- You can check your logs successfully being sent through [Real-Time Events](/en/documentation/observe/real-time-events/): select **Data Source** > **Data Stream** and choose the filter options as you wish.
+
+---
+
+## Next steps
+
+- [How to configure Data Stream main settings](/en/documentation/observe/data-stream/guides/use-data-stream/)
+- [Data Stream reference](/en/documentation/observe/data-stream/reference/)
+- [Data Stream concepts](/en/documentation/observe/data-stream/concepts/)
+
+<br /><br />
