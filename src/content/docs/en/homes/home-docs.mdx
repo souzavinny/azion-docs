@@ -2,15 +2,17 @@
 meta_tag_robots_no_index: false
 title: 'Documentation Home'
 description: >-
-  Azion is the full-stack edge computing platform that simplifies how you build, secure, and scale modern applications.
+  Explore the Azion Web Platform documentation: everything you need to build, secure, deliver, and observe modern applications, from first deploy to production scale.
 meta_tags: 'documentation, azion'
 namespace: documentation_home
 permalink: /documentation/
 ---
 
-import LinkButton from 'azion-webkit/linkbutton';
 import HeroHome from 'azion-webkit/herohome';
 import Container from 'azion-webkit/container';
+import CardBaseClickable from 'azion-webkit/cardbaseclickable';
+import CardTitle from 'azion-webkit/cardtitle';
+import CardDescription from 'azion-webkit/carddescription';
 
 <div class="[&_.flex.flex-col]:!gap-4 [&_.flex.flex-col]:md:!gap-8 [&_.flex.flex-col]:2xl:!gap-16">
   <HeroHome
@@ -18,245 +20,349 @@ import Container from 'azion-webkit/container';
     description="We make every application fast and reliable. Deploy your projects instantly on the most reliable global network, leverage enterprise-grade security, and scale from zero to peak without cold starts."
     logos={[]}
     buttons={[
-      { label: "Create an account", link: "https://console.azion.com/signup/", outlined: false },
-      { label: "Platform overview", link: "/en/documentation/products/azion-platform-overview/", severity: "secondary" }
+      { label: "First deploy in 5 minutes", link: "/en/documentation/get-started/first-deploy/", outlined: false },
+      { label: "Create an account", link: "https://console.azion.com/signup/", severity: "secondary" },
+      { label: "Platform overview", link: "/en/documentation/platform/overview/", severity: "secondary" }
     ]}
   />
 </div>
 
-## Start Here: Kick Off Your Project with Ready-to-Use Templates
+## Start here, by profile
+
+<div class="grid md:grid-cols-2 gap-3 my-8">
+  <div id="persona-avaliador">
+    <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/get-started/first-deploy/" title="I'm evaluating Azion">
+      <Fragment slot="content">
+        <i class='pi pi-bolt text-2xl'></i>
+        <CardTitle titleTag="h3" class="m-0">I'm evaluating Azion</CardTitle>
+        <CardDescription>See what you can build in 10 minutes: deploy a real application and verify it's live, no sales call required.</CardDescription>
+      </Fragment>
+    </CardBaseClickable>
+  </div>
+  <div id="persona-implementador">
+    <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/guides/" title="I need to implement something specific">
+      <Fragment slot="content">
+        <i class='pi pi-code text-2xl'></i>
+        <CardTitle titleTag="h3" class="m-0">I need to implement something specific</CardTitle>
+        <CardDescription>Find the feature by the term you already use—signed URLs, reports, live streaming—and follow a step-by-step guide to production.</CardDescription>
+      </Fragment>
+    </CardBaseClickable>
+  </div>
+  <div id="persona-operador">
+    <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/devtools/cli/" title="I run Azion in production">
+      <Fragment slot="content">
+        <i class='pi pi-server text-2xl'></i>
+        <CardTitle titleTag="h3" class="m-0">I run Azion in production</CardTitle>
+        <CardDescription>Administer as code with the CLI, API, and Terraform, and keep billing and account management under control.</CardDescription>
+      </Fragment>
+    </CardBaseClickable>
+  </div>
+  <div id="persona-decisor">
+    <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/platform/pricing/" title="I'm comparing vendors">
+      <Fragment slot="content">
+        <i class='pi pi-chart-line text-2xl'></i>
+        <CardTitle titleTag="h3" class="m-0">I'm comparing vendors</CardTitle>
+        <CardDescription>See what's included, per-plan limits, and pricing—inside the documentation—plus reference architectures for your target scenario.</CardDescription>
+      </Fragment>
+    </CardBaseClickable>
+  </div>
+</div>
+
+Also useful: [billing and account management](/en/documentation/account/) · [reference architectures](/en/documentation/architectures/)
+
+## One-click deploy with ready-to-use templates
 
 The fastest way to start using the Azion Web Platform. Deploy instantly from dozens of templates, including e-commerce, blogs, APIs, full-stack SSR, and more; leverage integrations by connecting to Sanity, Cosmic, ButterCMS, Turso, or bringing your own RESTful CMS or database. CI/CD is auto-configured so you can focus on your code, not the pipeline.
 
-Here are a few of our most popular templates to get you started. For more information, you can visit our documentation page on [using templates](/en/documentation/products/use-a-template-via-azion-console/).
+Here are a few of our most popular templates to get you started. For more information, you can visit our documentation page on [using templates](/en/documentation/get-started/first-deploy/template/).
 
-### <i class='ai ai-astro'></i> Astro Boilerplate
-
-Astro is a modern web framework designed for building fast, content-focused websites such as blogs, marketing pages, and e-commerce stores, minimizing client-side JavaScript by default for edge-ready performance.
-
-To view the complete list of availiable Astro templates, [click here](/en/documentation/products/devtools/azion-edge-runtime/frameworks-compatibility/astro/#available-templates).
-
-<LinkButton link="/en/documentation/products/templates/astro-boilerplate/" label="Get Started" severity="secondary" />
-
-### <i class='ai ai-gatsby'></i> Gatsby Blog Starter Kit
-
-Create high-performance, SEO-friendly websites with Gatsby, a React-based static site generator that pulls content from any data source for quick and efficient delivery at the edge.
-
-To view the complete list of availiable Gatsby templates, [click here](/en/documentation/products/devtools/azion-edge-runtime/frameworks-compatibility/gatsby/#available-templates).
-
-<LinkButton link="/en/documentation/products/templates/gatsby-blog/" label="Get Started" severity="secondary" />
-
-### <i class='ai ai-react'></i> React Boilerplate
-
-Build interactive user interfaces using reusable components with React, one of the most popular JavaScript libraries for dynamic web applications—ideal for quick iteration and UI-centric development at the edge.
-
-To view the complete list of availiable React templates, [click here](/en/documentation/products/devtools/azion-edge-runtime/frameworks-compatibility/react/#available-templates).
-
-<LinkButton link="/en/documentation/products/templates/react-boilerplate/" label="Get Started" severity="secondary" />
-
-
-### <i class='ai ai-nextjs'></i> Next.js Static Boilerplate
-
-Leverage Next.js for server-side rendering, static site generation, and powerful routing built on React, enabling the creation of fast, scalable web apps optimized for edge deployment.
-
-To view the complete list of availiable Next.js templates, [click here](/en/documentation/products/devtools/azion-edge-runtime/frameworks-compatibility/nextjs/#available-templates).
-
-<LinkButton link="/en/documentation/products/templates/nextjs-static-boilerplate/" label="Get Started" severity="secondary" />
-
-### <i class='ai ai-vue'></i> Vue.js Boilerplate
-
-Develop responsive and maintainable web interfaces with Vue.js, a progressive JavaScript framework known for its simplicity, flexibility, and ease of integration—perfect for modern, scalable apps at the edge.
-
-<LinkButton
-    label="Deploy"
-    link="https://console.azion.com/create/vue/vue-boilerplate"
-    icon="ai ai-azion"
-    icon-pos="left"
-  />
-
-### <i class='ai ai-angular'></i> Angular Boilerplate
-
-Create enterprise-grade, feature-rich web applications with Angular, a comprehensive framework that uses TypeScript for robust structure, advanced tooling, and efficient deployment to edge infrastructure.
-
-To view the complete list of availiable Angular templates, [click here](/en/documentation/products/devtools/azion-edge-runtime/frameworks-compatibility/angular/#available-templates).
-
-<LinkButton link="/en/documentation/products/templates/angular-boilerplate/" label="Get Started" severity="secondary" />
-### More frameworks 
-
-We are continously expanding our framework support. Click below to see the full list.
-
-<LinkButton link="/en/documentation/products/devtools/azion-edge-runtime/frameworks-compatibility/" label="View details" severity="secondary" />
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/marketplace/templates/astro-boilerplate/" title="Astro Boilerplate">
+    <Fragment slot="content">
+      <i class='ai ai-astro text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Astro Boilerplate</CardTitle>
+      <CardDescription>Fast, content-focused websites such as blogs, marketing pages, and e-commerce stores, with minimal client-side JavaScript.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/marketplace/templates/gatsby-blog/" title="Gatsby Blog Starter Kit">
+    <Fragment slot="content">
+      <i class='ai ai-gatsby text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Gatsby Blog Starter Kit</CardTitle>
+      <CardDescription>High-performance, SEO-friendly websites with a React-based static site generator that pulls content from any data source.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/marketplace/templates/react-boilerplate/" title="React Boilerplate">
+    <Fragment slot="content">
+      <i class='ai ai-react text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">React Boilerplate</CardTitle>
+      <CardDescription>Interactive user interfaces with reusable components—ideal for quick iteration and UI-centric development at the edge.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/marketplace/templates/nextjs-static-boilerplate/" title="Next.js Static Boilerplate">
+    <Fragment slot="content">
+      <i class='ai ai-nextjs text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Next.js Static Boilerplate</CardTitle>
+      <CardDescription>Server-side rendering, static site generation, and powerful routing built on React, optimized for edge deployment.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="https://console.azion.com/create/vue/vue-boilerplate" title="Vue.js Boilerplate">
+    <Fragment slot="content">
+      <i class='ai ai-vue text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Vue.js Boilerplate</CardTitle>
+      <CardDescription>Responsive, maintainable web interfaces with a progressive JavaScript framework known for simplicity and flexibility.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/marketplace/templates/angular-boilerplate/" title="Angular Boilerplate">
+    <Fragment slot="content">
+      <i class='ai ai-angular text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Angular Boilerplate</CardTitle>
+      <CardDescription>Enterprise-grade web applications with TypeScript, robust structure, and advanced tooling for edge infrastructure.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/functions/runtime-apis/frameworks-compatibility/" title="More frameworks">
+    <Fragment slot="content">
+      <i class='pi pi-th-large text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">More frameworks</CardTitle>
+      <CardDescription>We're continuously expanding our framework support. See the full list of supported frameworks and their templates.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+</div>
 
 ## Need to deploy an existing project?
 
-### Importing from GitHub
+Bring what you already have: connect a GitHub repository or link a local project from your terminal.
 
-You can use the Azion Console to quickly deploy a GitHub project compatible with our availiable frameworks.
+<div class="grid md:grid-cols-2 gap-3 my-8">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/get-started/first-deploy/#import-a-project-from-github" title="Import from GitHub">
+    <Fragment slot="content">
+      <i class='pi pi-github text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Import from GitHub</CardTitle>
+      <CardDescription>Connect your GitHub account, pick a repository, and deploy it from the Console in a few clicks.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/get-started/first-deploy/#deploy-with-azion-cli" title="Deploy with the Azion CLI">
+    <Fragment slot="content">
+      <i class='pi pi-wrench text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Deploy with the Azion CLI</CardTitle>
+      <CardDescription>Run azion link in your project folder and be live in less than five minutes, straight from the terminal.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+</div>
 
-1. In [Console](https://console.azion.com) click the **\+ Create** button.
-2. Select Import from Github.
-3. Connect your GitHub Account.
-4. Select your repository.
-5. Choose an application name and Framework Preset.
-6. Input the install command (typically `npm install`).
+Whichever door you choose, the [first deploy tutorial](/en/documentation/get-started/first-deploy/) walks through all three paths and ends with a verification step, so you know it worked.
 
-### Local project deploy with Azion CLI
+## Journeys: from zero to production
 
-You can use the Azion CLI to deploy a project compatible with our [availiable frameworks](/en/documentation/products/devtools/azion-edge-runtime/frameworks-compatibility/).
+<div class="grid md:grid-cols-2 gap-3 my-8">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/get-started/" title="Put an application live">
+    <Fragment slot="content">
+      <i class='pi pi-code text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Put an application live</CardTitle>
+      <CardDescription>From your first deploy to a working application on a real URL.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/secure/" title="Protect your application">
+    <Fragment slot="content">
+      <i class='ai ai-edge-firewall text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Protect your application</CardTitle>
+      <CardDescription>Add WAF, DDoS protection, and traffic rules in front of what you deployed.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/observe/" title="Observe your application">
+    <Fragment slot="content">
+      <i class='pi pi-chart-line text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Observe your application</CardTitle>
+      <CardDescription>Follow metrics, events, and data streams from your traffic in real time.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+</div>
 
-:::tip
-Visit our [CLI guide](/en/documentation/products/azion-cli/overview/#installing-azion-cli) for detailed installation instructions.
-:::
+## Explore by area
 
-1. Inside your existing project folder, use the command below to link your project to an application:
-
-```shell
-azion link
-```
-
-2. You'll be prompted to choose a preset, which will be used to setup your project configurations.
-
-3. The CLI will guide you through the rest of the process. In less than five minutes, your application can be up and running on the Azion Web Platform.
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/platform/overview/" title="Azion platform overview">
+    <Fragment slot="content">
+      <i class='ai ai-azion text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Azion platform overview</CardTitle>
+      <CardDescription>Get to know the Azion Web Platform and how to use it.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/" title="Build">
+    <Fragment slot="content">
+      <i class='ai ai-build-pillar text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Build</CardTitle>
+      <CardDescription>Create with powerful tools and frameworks.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/store/" title="Store">
+    <Fragment slot="content">
+      <i class='ai ai-store-pillar text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Store</CardTitle>
+      <CardDescription>Manage and process data at the edge.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/secure/" title="Secure">
+    <Fragment slot="content">
+      <i class='ai ai-secure-pillar text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Secure</CardTitle>
+      <CardDescription>Fully protect your applications.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/deploy/" title="Deploy">
+    <Fragment slot="content">
+      <i class='ai ai-deploy-pillar text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Deploy</CardTitle>
+      <CardDescription>Manage edge resources efficiently.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/observe/" title="Observe">
+    <Fragment slot="content">
+      <i class='ai ai-observe-pillar text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Observe</CardTitle>
+      <CardDescription>Monitor and gain analytics in real-time.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/devtools/" title="Dev Tools">
+    <Fragment slot="content">
+      <i class='pi pi-server text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Dev Tools</CardTitle>
+      <CardDescription>Build, automate, and integrate with Azion's developer tools.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+</div>
 
 ## Get to know our Developer tools
 
-### Azion Console
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/account/guides/how-to-access-azion-console/" title="Azion Console">
+    <Fragment slot="content">
+      <i class='ai ai-azion text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Azion Console</CardTitle>
+      <CardDescription>Azion's configuration interface: create Applications, configure Functions, manage Firewall rules, set up Cache, and monitor metrics and events.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="https://api.azion.com/" title="Azion API">
+    <Fragment slot="content">
+      <i class='pi pi-code text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Azion API</CardTitle>
+      <CardDescription>A RESTful API based on HTTPS requests that lets you fully interact with Azion products.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/devtools/cli/" title="Azion CLI">
+    <Fragment slot="content">
+      <i class='pi pi-wrench text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Azion CLI</CardTitle>
+      <CardDescription>Our open source command-line interface: initialize, build, and deploy applications, run a local dev server, and link existing projects.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/devtools/lib/" title="Azion Lib & SDKs">
+    <Fragment slot="content">
+      <i class='ai ai-edge-libraries text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Azion Lib & SDKs</CardTitle>
+      <CardDescription>JavaScript/TypeScript tools for the Azion Runtime and REST APIs; for Go projects, the Azion SDK for Go covers the same operations.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/devtools/console-kit/" title="Console Kit">
+    <Fragment slot="content">
+      <i class='pi pi-th-large text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Console Kit</CardTitle>
+      <CardDescription>A front-end kit to build your own Azion Console interfaces with Vue/Vite, Tailwind, and PrimeVue, with multi-tenancy support.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/devtools/graphql/" title="GraphQL API">
+    <Fragment slot="content">
+      <i class='pi pi-chart-line text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">GraphQL API</CardTitle>
+      <CardDescription>A single endpoint for precise data retrieval: real-time metrics, events, billing, and accounting data without overfetching.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/devtools/terraform/" title="Terraform">
+    <Fragment slot="content">
+      <i class='pi pi-server text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Terraform</CardTitle>
+      <CardDescription>Manage your Azion-hosted infrastructure as reusable, versioned code with the official Azion Terraform Provider.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+</div>
 
-
-Console is Azion's configuration interface where you can access all the available products and their settings. It enables you to complete all tasks in Azion's platform, such as creating Applications, configuring Functions, managing Firewall rules, setting up Cache, and monitoring real-time metrics and events.
-
-
-<LinkButton link="/en/documentation/products/guides/how-to-access-azion-console/" label="View details" severity="secondary" />
-
-### Azion API
-
-The Azion API is a RESTful API based on HTTPS requests that allows users to fully interact with Azion products through API requests.
-
-<LinkButton link="https://api.azion.com/?_gl=1*kkolsv*_gcl_au*OTAxOTIzMjQ2LjE3NDc3NDYzNTkuMTk3ODMzMTk3LjE3NDg0NTUzNTYuMTc0ODQ1NjI4OQ.." label="View details" severity="secondary" />
-
-### Azion CLI
-
-Azion CLI is our [open source](https://github.com/aziontech/azion) command-line interface that allows you to interact with the Azion Web Platform via terminal. With it, you can initialize, build, and deploy applications, create Jamstack apps, manage your projects, run a local development server, and link existing projects to Azion applications.
-
-<LinkButton link="/en/documentation/products/azion-cli/overview/" label="View details" severity="secondary" />
-
-### Azion Lib
-
-Azion Lib are JavaScript/TypeScript tools designed to work inside the [Azion Runtime](https://www.azion.com/en/documentation/runtime/overview/), leveraging internal features for enhanced performance. They also function outside the runtime, accessing Azion services such as Purge, Object Storage, and Image Processor via REST APIs. The libraries support debug mode and environment variable configuration.
-
-<LinkButton link="/en/documentation/products/azion-lib/overview/" label="View details" severity="secondary" />
-
-### Console Kit
-
-Azion Console Kit is a front-end kit for building your own Azion Console interfaces using Vue/Vite, Tailwind, and PrimeVue. It connects to the Azion API, supports multi-tenancy, and lets you customize themes and UI for your business needs. The kit features a clean, organized structure for maintainable code.
-
-<LinkButton link="/en/documentation/devtools/console-kit/" label="View details" severity="secondary" />
-
-### GraphQL API
-
-GraphQL is a powerful API language that allows precise data retrieval, avoiding overfetching and enhancing performance. Unlike traditional REST APIs, it uses a single endpoint and delivers tailored JSON responses. At Azion, GraphQL is ideal for accessing real-time metrics, events, billing, and accounting data, enabling efficient monitoring and analysis.
-
-<LinkButton link="/en/documentation/devtools/graphql-api/" label="View details" severity="secondary" />
-
-### SDK
-
-The Azion SDK for Go simplifies developing applications that integrate with Azion's platform. It enables efficient management of Applications, interaction with Object Storage, advanced queries with SQL Database, task automation, and building serverless solutions, streamlining workflows and enhancing productivity for edge computing projects.
-
-<LinkButton link="/en/documentation/devtools/sdk/go/" label="View details" severity="secondary" />
-
-### Terraform
-
-Terraform is an infrastructure as code tool that enables efficient infrastructure management through reusable, versioned, and shareable code. The Azion Terraform Provider, available in the Terraform Registry, leverages the Azion SDK for Go to interact with Azion APIs, allowing you to manage your Azion-hosted infrastructure locally as code, ensuring a consistent and streamlined workflow.
-
-<LinkButton link="/en/documentation/products/terraform-provider/" label="View details" severity="secondary" />
-
+Related: [Azion Runtime](/en/documentation/build/functions/runtime-apis/overview/) · [Azion SDK for Go](/en/documentation/devtools/lib/) · [open source CLI on GitHub](https://github.com/aziontech/azion)
 
 ## Find the solution that fits you better
 
-### <i class='pi pi-code'></i> Application Development
-
-Build scalable, low-latency apps with edge computing and serverless functions.
-
-<LinkButton link="/en/documentation/architectures/by-solution/application-development/" label="View details" severity="secondary" />
-
-### <i class='pi pi-server'></i> Application and Infrastructure Automation
-
-Automate operations to optimize application performance and simplify infrastructure management.
-
-<LinkButton link="/en/documentation/architectures/by-solution/application-and-infrastructure-automation/" label="View details" severity="secondary" />
-
-### <i class='ai ai-edge-firewall'></i> Application and Network Security
-
-Protect applications and networks from threats with edge-native security and observability tools.
-
-<LinkButton link="/en/documentation/architectures/by-solution/application-and-network-security/" label="View details" severity="secondary" />
-
-### <i class='pi pi-bolt'></i> Artificial Intelligence (AI)
-
-Deploy AI at the edge for real-time insights, fast responses, and personalized experiences.
-
-<LinkButton link="/en/documentation/architectures/by-solution/artificial-intelligence/" label="View details" severity="secondary" />
-
-### <i class='pi pi-chart-line'></i> Service Performance and Reliability
-
-Enhance application performance, reduce latency, and ensure reliable service delivery at the edge.
-
-<LinkButton link="/en/documentation/architectures/by-solution/service-performance-and-reliability/" label="View details" severity="secondary" />
-
-### Find more
-
-View all architectures for use cases.
-
-<LinkButton link="/en/documentation/architectures/" label="View details" severity="secondary" />
-
-## Choose your journey
-
-### <i class='ai ai-azion'></i> Azion platform overview
-
-Get to know the Azion Web Platform and how to use it.
-
-<LinkButton link="/en/documentation/products/azion-platform-overview/" label="View details" severity="secondary" />
-
-### <i class='ai ai-build-pillar'></i> Build
-
-Create with powerful tools and frameworks.
-
-<LinkButton link="/en/documentation/products/guides/build/overview/" label="View details" severity="secondary" />
-
-### <i class='ai ai-store-pillar'></i> Store
-
-Manage and proccess data at the edge.
-
-<LinkButton link="/en/documentation/products/store/overview/" label="View details" severity="secondary" />
-
-### <i class='ai ai-secure-pillar'></i> Secure
-
-Fully protect your applications.
-
-<LinkButton link="/en/documentation/products/secure/overview/" label="View details" severity="secondary" />
-
-### <i class='ai ai-deploy-pillar'></i> Deploy
-
-Manage edge resources efficiently.
-
-<LinkButton link="/en/documentation/products/deploy/overview/" label="View details" severity="secondary" />
-
-### <i class='ai ai-observe-pillar'></i> Observe
-
-Monitor and gain analytics in real-time.
-
-<LinkButton link="/en/documentation/products/observe/overview/" label="View details" severity="secondary" />
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/architectures/by-solution/application-development/" title="Application Development">
+    <Fragment slot="content">
+      <i class='pi pi-code text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Application Development</CardTitle>
+      <CardDescription>Build scalable, low-latency apps with edge computing and serverless functions.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/architectures/by-solution/application-and-infrastructure-automation/" title="Application and Infrastructure Automation">
+    <Fragment slot="content">
+      <i class='pi pi-server text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Application and Infrastructure Automation</CardTitle>
+      <CardDescription>Automate operations to optimize application performance and simplify infrastructure management.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/architectures/by-solution/application-and-network-security/" title="Application and Network Security">
+    <Fragment slot="content">
+      <i class='ai ai-edge-firewall text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Application and Network Security</CardTitle>
+      <CardDescription>Protect applications and networks from threats with edge-native security and observability tools.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/architectures/by-solution/artificial-intelligence/" title="Artificial Intelligence (AI)">
+    <Fragment slot="content">
+      <i class='pi pi-bolt text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Artificial Intelligence (AI)</CardTitle>
+      <CardDescription>Deploy AI at the edge for real-time insights, fast responses, and personalized experiences.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/architectures/by-solution/service-performance-and-reliability/" title="Service Performance and Reliability">
+    <Fragment slot="content">
+      <i class='pi pi-chart-line text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Service Performance and Reliability</CardTitle>
+      <CardDescription>Enhance application performance, reduce latency, and ensure reliable service delivery at the edge.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/architectures/" title="Find more">
+    <Fragment slot="content">
+      <i class='pi pi-compass text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Find more</CardTitle>
+      <CardDescription>View all architectures for use cases.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+</div>
 
 ## What's new?
 
-### <i class='pi pi-megaphone'></i> Release notes
+<div class="grid md:grid-cols-2 gap-3 my-8">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/changelog/" title="Release notes">
+    <Fragment slot="content">
+      <i class='pi pi-megaphone text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Release notes</CardTitle>
+      <CardDescription>Stay updated on the latest changes and releases in Azion products and services.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="https://discord.com/invite/Yp9N7RMVZy" title="Join the Community">
+    <Fragment slot="content">
+      <i class='pi pi-discord text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Join the Community</CardTitle>
+      <CardDescription>Share your experiences with the Azion community on Discord.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+</div>
 
-Stay updated on the latest changes and releases in Azion products and services.
+## For AI agents
 
-<LinkButton link="/en/documentation/products/release-notes/" label="View details" severity="secondary" />
+Consuming these docs with an AI assistant or coding agent? Azion maintains an official MCP server with tools to search the documentation, code samples, and CLI commands directly from your agent.
 
-### <i class='pi pi-discord'></i> Join the Community
-
-Share your experiences with the Azion community on Discord.
-
-<LinkButton link="https://discord.com/invite/Yp9N7RMVZy" label="Join" severity="secondary" />
+<div class="grid md:grid-cols-2 gap-3 my-8">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/devtools/mcp/" title="Azion MCP Server">
+    <Fragment slot="content">
+      <i class='pi pi-microchip text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Azion MCP Server</CardTitle>
+      <CardDescription>Search the docs, code samples, and CLI commands from your AI agent via the official MCP server.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+</div>

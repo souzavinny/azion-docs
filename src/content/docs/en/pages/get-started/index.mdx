@@ -1,0 +1,110 @@
+---
+title: Get started with Azion
+description: >-
+  Start here: deploy your first application on Azion in minutes using a
+  template, a GitHub repository, or the Azion CLI, and find the right path
+  for your goal.
+meta_tags: >-
+  Azion, get started, first deploy, quickstart, template, GitHub, CLI,
+  onboarding, edge computing
+namespace: documentation_get_started
+permalink: /documentation/get-started/
+---
+
+import LinkButton from 'azion-webkit/linkbutton';
+import CardBaseClickable from 'azion-webkit/cardbaseclickable';
+import CardTitle from 'azion-webkit/cardtitle';
+import CardDescription from 'azion-webkit/carddescription';
+
+**Azion Web Platform** lets you build, secure, and observe applications running on a global network. The fastest way to understand what that means is to put something live: the first deploy takes about 5 minutes and doesn't require a credit card.
+
+## Deploy your first application
+
+Three doors, same destination — an application answering on its own Azion domain. Pick the one that matches how you work:
+
+<div class="grid md:grid-cols-2 gap-3 my-8">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/get-started/first-deploy/#deploy-a-template-via-console" title="Deploy a template via Console">
+    <Fragment slot="content">
+      <i class='pi pi-th-large text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Deploy a template via Console</CardTitle>
+      <CardDescription>One-click start from ready-made projects: e-commerce, blogs, APIs, full-stack SSR.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/get-started/first-deploy/#import-a-project-from-github" title="Import a project from GitHub">
+    <Fragment slot="content">
+      <i class='pi pi-github text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Import a project from GitHub</CardTitle>
+      <CardDescription>Connect your repository and deploy an existing project.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/get-started/first-deploy/#deploy-with-azion-cli" title="Deploy with Azion CLI">
+    <Fragment slot="content">
+      <i class='pi pi-wrench text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Deploy with Azion CLI</CardTitle>
+      <CardDescription>Link a local project from your terminal with azion link.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+</div>
+
+<LinkButton link="/en/documentation/get-started/first-deploy/" label="First deploy in 5 minutes" />
+
+## Find your path
+
+<div class="grid md:grid-cols-2 gap-3 my-8">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/get-started/first-deploy/" title="I'm evaluating Azion">
+    <Fragment slot="content">
+      <i class='pi pi-bolt text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">I'm evaluating Azion</CardTitle>
+      <CardDescription>See what you can build and how much effort the first success takes.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/guides/" title="I need to implement something specific">
+    <Fragment slot="content">
+      <i class='pi pi-code text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">I need to implement something specific</CardTitle>
+      <CardDescription>Browse how-to guides by product and by capability.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/devtools/cli/" title="I operate Azion in production">
+    <Fragment slot="content">
+      <i class='pi pi-server text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">I operate Azion in production</CardTitle>
+      <CardDescription>Administrate as code with the CLI and manage your account, teams, and billing.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/platform/pricing/" title="I'm comparing vendors">
+    <Fragment slot="content">
+      <i class='pi pi-chart-line text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">I'm comparing vendors</CardTitle>
+      <CardDescription>Check what's included in each plan and how real-world architectures look on Azion.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+</div>
+
+Also useful: [Accounts and billing](/en/documentation/account/) · [Architectures](/en/documentation/architectures/)
+
+## After the first deploy
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/get-started/production-checklist/" title="Go live with Azion">
+    <Fragment slot="content">
+      <i class='ai ai-azion text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Go live with Azion</CardTitle>
+      <CardDescription>Point a custom domain to your application.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/secure/" title="Secure your application">
+    <Fragment slot="content">
+      <i class='ai ai-secure-pillar text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Secure your application</CardTitle>
+      <CardDescription>Protect it with Firewall and WAF.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/observe/" title="Observe your application">
+    <Fragment slot="content">
+      <i class='ai ai-observe-pillar text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Observe your application</CardTitle>
+      <CardDescription>Monitor metrics and events in real time.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+</div>

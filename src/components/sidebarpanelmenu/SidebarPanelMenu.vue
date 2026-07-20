@@ -24,7 +24,8 @@
 					class="flex hover:surface-hover py-2 px-4 border-none cursor-pointer rounded h-9"
 					:style="{ paddingLeft: `${(item.level * 16) + 16}px !important` }"
 				>
-					<p v-if="item.text" class="text-sm">
+					<p v-if="item.text" class="text-sm flex items-center">
+						<i v-if="item.icon" :class="item.icon" class="mr-2 text-sm"></i>
 						{{ item.text }}
 					</p>
 					<!-- use this class to when opened pi-angle-down -->
@@ -41,8 +42,11 @@
 					class="text-sm h-9 flex justify-between items-center hover:surface-hover py-2 px-4 border-none cursor-pointer rounded"
 					:style="{ paddingLeft: `${(item.level * 16) + 16}px !important` }"
 					@click="handleItemClick(item, $event)"
-				>	
-					{{ item.text }}
+				>
+					<span class="flex items-center">
+						<i v-if="item.icon" :class="item.icon" class="mr-2 text-sm"></i>
+						{{ item.text }}
+					</span>
 					<i
 						v-if="(isURL(item.slug) ? true : false)"
 						class="text-base pi pi-external-link text-primary mr-1">
@@ -63,7 +67,10 @@
 					:style="{ paddingLeft: `${(item.level * 16) + 16}px !important` }"
 					@click="trackSidebarClick(item, modelSlug(item.slug, item.isFallback, lang))"
 				>
-					{{ item.text }}
+					<span class="flex items-center">
+						<i v-if="item.icon" :class="item.icon" class="mr-2 text-sm"></i>
+						{{ item.text }}
+					</span>
 					<i
 						v-if="(isURL(item.slug) ? true : false)"
 						class="text-base pi pi-external-link text-primary mr-1">

@@ -128,3 +128,13 @@ Once your PR is merged successfully, you can review your contribution on the [Az
 Congratulations, your PR has been merged! :tada: The issue you created can now be updated and closed once the merge has been made.
 
 > Don't forget to [keep your forked repository up-to-date with the Azion docs repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) if you wish to make more contributions in the future.
+
+## :compass: Migration rules (Q3 2026 restructure)
+
+The documentation is being restructured into a new information architecture. Until the migration is complete, every PR must follow these rules (full spec: [`migration/README.md`](../migration/README.md)):
+
+- **One subject, one home.** A new page must not create a second home for a subject that already has a canonical page. Check `migration/de-para.csv` for the canonical destination before creating content.
+- **Every permalink change ships redirects.** If a PR changes a page's `permalink`, the same PR must add the corresponding `{ "from", "moved" }` entries to `cicd/massive-redirect/en.json` and/or `pt-br.json`. No page may die as a 404.
+- **New pages use identical EN/PT-BR slugs.** The permalink differs only in the language root (`/documentation/` vs `/documentacao/`); the rest of the path is the same in both languages.
+- **Declare the Diátaxis type.** New or substantially edited pages state their content type (tutorial, how-to/guide, reference, or concept/explanation) and stick to one type per page.
+- **EN and PT-BR parity in the same PR.** Content changes land in both languages together.

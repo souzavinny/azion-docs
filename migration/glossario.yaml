@@ -1,0 +1,119 @@
+# Cânone de nomenclatura da documentação Azion (glossario.yaml v1)
+#
+# Regra geradora (IA §3.1): o nome canônico é o último de-para oficial publicado
+# nas release notes (E7) e no changelog histórico (E8). A doc nunca inventa nem
+# antecipa nome; quando o produto renomear, este glossário propaga.
+#
+# Produtos que MANTÊM o prefixo Edge (Edge DNS, Edge Pulse, Edge Node, Edge
+# Services) o fazem porque esse É o nome vigente deles — a onda de renomeação de
+# set/2025 (10 produtos) não os incluiu. Não é inconsistência da doc.
+#
+# Quatro camadas de aplicação, todas automatizáveis (destino: D1):
+#   1. Rótulo de menu e texto corrido usam só o canônico (lint de CI bloqueia
+#      termo legado fora de contexto histórico marcado).
+#   2. Slug de URL canônico, com 301 gerado deste glossário para os aliases.
+#   3. Pasta de fonte renomeada na fase de migração do cluster.
+#   4. Busca interna ganha os aliases como sinônimos.
+#
+# Evidências: E7 = release notes; E8 = changelog 2016-2021; E10 = ToS vigente.
+# Datas em "until" = quando o alias deixou de ser o nome oficial.
+
+products:
+  - canonical: Applications
+    slug: applications
+    aliases:
+      - { name: Edge Application, until: 2025-09 }
+    source: E7
+  - canonical: Functions
+    slug: functions
+    aliases:
+      - { name: Edge Functions, until: 2025-09 }
+    source: E7
+  - canonical: Cache
+    slug: cache
+    aliases:
+      - { name: Edge Cache, until: 2025-09 }
+      - { name: Edge Caching, until: 2024-03 }
+    source: E7
+  - canonical: Firewall
+    slug: firewall
+    aliases:
+      - { name: Edge Firewall, until: 2025-09 }
+    source: E7
+  - canonical: Network Shield
+    slug: network-shield
+    aliases:
+      - { name: Network Layer Protection, until: 2025-09 }
+    source: E7
+  - canonical: SQL Database
+    slug: sql-database
+    aliases:
+      - { name: Edge SQL, until: 2025-09 }
+      - { name: Schema, until: 2026, context: tipo de recurso na API }
+    source: E7
+  - canonical: Object Storage
+    slug: object-storage
+    aliases:
+      - { name: Edge Storage, until: 2025-09 }
+    source: E7
+  - canonical: KV Store
+    slug: kv-store
+    aliases:
+      - { name: Edge KV, until: 2025-09 }
+    source: E7
+  - canonical: Orchestrator
+    slug: orchestrator
+    aliases:
+      - { name: Edge Orchestrator, until: 2025-09 }
+    source: E7
+  - canonical: Certificate Manager
+    slug: certificate-manager
+    aliases:
+      - { name: Digital Certificates, until: 2025-09 }
+    source: E7
+  - canonical: Data Stream
+    slug: data-stream
+    aliases:
+      - { name: Data Streaming, until: 2024-03 }
+    source: E7
+  - canonical: Edge DNS
+    slug: edge-dns
+    aliases:
+      - { name: Intelligent DNS, until: 2024-03 }
+    source: E7
+  - canonical: Tiered Cache
+    slug: tiered-cache
+    aliases:
+      - { name: L2 Caching, until: 2024-03 }
+    source: E7
+  - canonical: Application Accelerator
+    slug: application-accelerator
+    aliases:
+      - { name: Application Acceleration, until: 2024-03 }
+    source: E7
+  - canonical: Real-Time Metrics
+    slug: real-time-metrics
+    aliases:
+      - { name: Real-Time Analytics, until: 2020-05 }
+    source: E8
+
+interfaces:
+  - canonical: Azion Console
+    slug: console
+    aliases:
+      - { name: Real-Time Manager, until: 2024-03 }
+      - { name: RTM, until: 2024-03 }
+    source: [E7, E10]
+
+concepts:
+  # Modelo v4 substitui o modelo v3; par entrada/saída da aplicação (P4).
+  - canonical: Connectors
+    slug: connectors
+    aliases:
+      - { name: Origins, until: v4, context: conceito do modelo v3 }
+    source: [E3, E7]
+  - canonical: Workloads
+    slug: workloads
+    aliases:
+      - { name: Domains, until: v4, context: conceito do modelo v3 }
+    source: [E3, E7]

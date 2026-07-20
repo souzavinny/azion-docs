@@ -1,0 +1,155 @@
+---
+title: 'Primeiro deploy em 5 minutos'
+description: >-
+  Faça o deploy da sua primeira aplicação na Azion usando um template, um
+  repositório do GitHub ou a Azion CLI, e verifique que ela está no ar com
+  uma resposta HTTP 200 no seu domínio Azion.
+meta_tags: >-
+  Azion, primeiro deploy, tutorial, quickstart, template, importar do
+  GitHub, Azion CLI, azion link, aplicação, verificação
+namespace: documentation_get_started_first_deploy
+permalink: /documentacao/get-started/first-deploy/
+---
+
+import CardBaseClickable from 'azion-webkit/cardbaseclickable';
+import CardTitle from 'azion-webkit/cardtitle';
+import CardDescription from 'azion-webkit/carddescription';
+
+Neste tutorial você vai fazer o deploy de uma aplicação na Azion e confirmar que ela está no ar no seu próprio domínio Azion. Do início até uma URL funcionando, espere cerca de **5 minutos**.
+
+Há três caminhos completos. **Escolha um** — todos terminam no mesmo lugar: sua aplicação respondendo `HTTP 200`.
+
+| Caminho | Melhor quando |
+|---|---|
+| [Faça deploy de um template via Console](#faça-deploy-de-um-template-via-console) | Você está começando do zero e quer um projeto pronto |
+| [Importe um projeto do GitHub](#importe-um-projeto-do-github) | Seu projeto já vive em um repositório do GitHub |
+| [Faça deploy com a Azion CLI](#faça-deploy-com-a-azion-cli) | Seu projeto está na sua máquina e você prefere o terminal |
+
+**Pré-requisitos, todos os caminhos:** uma conta Azion — [crie gratuitamente](https://console.azion.com/signup/), sem cartão de crédito. Pré-requisitos específicos estão listados em cada seção.
+
+---
+
+## Faça deploy de um template via Console
+
+Nenhuma ferramenta local necessária.
+
+1. [Acesse o Azion Console](https://console.azion.com).
+2. Clique no botão **+ Create** na página inicial.
+3. No modal, selecione a opção **Templates**.
+4. Navegue e escolha o template com que deseja começar.
+5. Na página de configuração, forneça as informações para configurar a sua aplicação.
+6. Clique no botão **Deploy**, no canto inferior direito, para iniciar o processo de deployment.
+
+Durante o deployment, você pode acompanhar o processo por uma janela com os logs. Ao concluir, a página mostra informações da aplicação, incluindo nome, logs de deploy e o **domínio Azion**.
+
+:::note
+Alguns templates são integrados a serviços de terceiros ou ao GitHub — nesses casos, será necessário conectar contas ou fornecer tokens antes do deploy. Confira o [guia de templates](/pt-br/documentacao/get-started/first-deploy/template/) para mais detalhes.
+:::
+
+### Você sabe que funcionou quando
+
+Copie o domínio Azion mostrado na página de confirmação e verifique pelo terminal:
+
+```bash
+curl -I https://<seu-dominio-azion>
+```
+
+A primeira linha da resposta é `HTTP/2 200`. Abrindo a mesma URL no navegador, você vê a aplicação rodando.
+
+:::note
+Pode levar alguns minutos para a URL propagar para as edge locations da Azion. Se aparecer um erro logo após o deploy, aguarde um momento e tente de novo.
+:::
+
+---
+
+## Importe um projeto do GitHub
+
+**Pré-requisitos:** uma conta no GitHub e um repositório usando um dos [frameworks compatíveis](/pt-br/documentacao/build/functions/runtime-apis/compatibility/).
+
+1. No [Azion Console](https://console.azion.com), clique no botão **+ Create**.
+2. Selecione *Import from Github*.
+3. Conecte sua conta do GitHub.
+4. Selecione seu repositório.
+5. Escolha um nome para a aplicação e um **Framework Preset**.
+6. Insira o comando de instalação (normalmente `npm install`).
+7. Confirme para iniciar o deployment e acompanhe os logs até o **domínio Azion** ser exibido.
+
+### Você sabe que funcionou quando
+
+```bash
+curl -I https://<seu-dominio-azion>
+```
+
+A primeira linha da resposta é `HTTP/2 200`, e o navegador mostra a sua aplicação no domínio Azion.
+
+---
+
+## Faça deploy com a Azion CLI
+
+**Pré-requisitos:** um projeto local usando um dos [frameworks compatíveis](/pt-br/documentacao/build/functions/runtime-apis/compatibility/), com as dependências instaladas.
+
+1. Instale a CLI:
+
+```bash
+curl -fsSL https://cli.azion.app/install.sh | bash
+```
+
+2. Autentique-se:
+
+```bash
+azion login
+```
+
+3. Na pasta raiz do projeto, vincule o projeto à Azion:
+
+```bash
+azion link
+```
+
+A CLI guia você pelo processo: confirme o vínculo, aceite ou altere o nome sugerido para a aplicação e escolha um **preset** compatível com o seu framework. Quando perguntar `Do you want to deploy your project?`, responda **yes** — ou faça o deploy depois com:
+
+```bash
+azion deploy
+```
+
+Ao final do deploy, a CLI imprime o **domínio Azion** da sua aplicação.
+
+:::tip
+Começando do zero em vez de um projeto existente? Rode `azion init` para criar um projeto novo a partir de um template de framework e faça o deploy da mesma forma. Veja a [visão geral da CLI](/pt-br/documentacao/devtools/cli/) e a [referência do comando link](/pt-br/documentacao/devtools/cli/reference/link-comando/) para mais detalhes.
+:::
+
+### Você sabe que funcionou quando
+
+```bash
+curl -I https://<seu-dominio-azion>
+```
+
+A primeira linha da resposta é `HTTP/2 200`.
+
+---
+
+## Próximos passos
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/get-started/ative-em-producao/" title="Ative em produção">
+    <Fragment slot="content">
+      <i class='ai ai-azion text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Ative em produção</CardTitle>
+      <CardDescription>Adicione um domínio próprio e aponte o tráfego para a aplicação que você acabou de publicar.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/secure/" title="Proteja a sua aplicação">
+    <Fragment slot="content">
+      <i class='ai ai-secure-pillar text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Proteja a sua aplicação</CardTitle>
+      <CardDescription>Ative a proteção do Firewall e do WAF.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/observe/" title="Observe a sua aplicação">
+    <Fragment slot="content">
+      <i class='ai ai-observe-pillar text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Observe a sua aplicação</CardTitle>
+      <CardDescription>Acompanhe métricas e eventos em tempo real.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+</div>

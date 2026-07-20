@@ -17,6 +17,7 @@ export type NavDict = Array<
 		anchor?: boolean;
 		type?: string;
 		slug?: string;
+		icon?: string;
 		key: string;
 		isFallback?: boolean;
 		items?: NavDict;
