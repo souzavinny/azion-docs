@@ -35,9 +35,13 @@ export default [
 		anchor: true,
 		type: 'learn',
 		icon: "pi pi-bolt",
-		slug: "/documentation/get-started/",
 		key: "sec/get-started",
 		items: [
+			{
+				text: "Overview",
+				slug: "/documentation/get-started/",
+				key: "get-started/overview",
+			},
 			{
 				text: "First deploy",
 				slug: "/documentation/get-started/first-deploy/",
@@ -76,7 +80,7 @@ export default [
 				key: "get-started/frameworks",
 				items: [
 					{
-						text: "Develop with Azion Overview",
+						text: "Overview",
 						slug: "/documentation/get-started/frameworks/overview/",
 						key: "get-started/frameworks/overview",
 					},
@@ -283,7 +287,7 @@ export default [
 		key: "sec/platform",
 		items: [
 			{
-				text: "Azion Web Platform Overview",
+				text: "Overview",
 				slug: "/documentation/platform/overview/",
 				key: "platform/overview",
 			},
@@ -331,7 +335,6 @@ export default [
 		anchor: true,
 		type: 'learn',
 		icon: "ai ai-build-pillar",
-		slug: "/documentation/build/",
 		key: "sec/build",
 		items: [
 			{
@@ -813,7 +816,7 @@ export default [
 						key: "build/functions/runtime-apis",
 						items: [
 							{
-								text: "Azion Runtime",
+								text: "Overview",
 								slug: "/documentation/build/functions/runtime-apis/overview/",
 								key: "build/functions/runtime-apis/overview",
 							},
@@ -1322,11 +1325,10 @@ export default [
 		anchor: true,
 		type: 'learn',
 		icon: "ai ai-store-pillar",
-		slug: "/documentation/store/",
 		key: "sec/store",
 		items: [
 			{
-				text: "Store Overview",
+				text: "Overview",
 				slug: "/documentation/store/overview/",
 				key: "store/overview",
 			},
@@ -1548,11 +1550,10 @@ export default [
 		anchor: true,
 		type: 'learn',
 		icon: "ai ai-secure-pillar",
-		slug: "/documentation/secure/",
 		key: "sec/secure",
 		items: [
 			{
-				text: "Secure Overview",
+				text: "Overview",
 				slug: "/documentation/secure/overview/",
 				key: "secure/overview",
 			},
@@ -1966,11 +1967,10 @@ export default [
 		anchor: true,
 		type: 'learn',
 		icon: "ai ai-deploy-pillar",
-		slug: "/documentation/deploy/",
 		key: "sec/deploy",
 		items: [
 			{
-				text: "Deploy Overview",
+				text: "Overview",
 				slug: "/documentation/deploy/overview/",
 				key: "deploy/overview",
 			},
@@ -2091,11 +2091,10 @@ export default [
 		anchor: true,
 		type: 'learn',
 		icon: "ai ai-observe-pillar",
-		slug: "/documentation/observe/",
 		key: "sec/observe",
 		items: [
 			{
-				text: "Observe Overview",
+				text: "Overview",
 				slug: "/documentation/observe/overview/",
 				key: "observe/overview",
 			},
@@ -2378,9 +2377,13 @@ export default [
 		anchor: true,
 		type: 'learn',
 		icon: "pi pi-wrench",
-		slug: "/documentation/devtools/",
 		key: "sec/devtools",
 		items: [
+			{
+				text: "Overview",
+				slug: "/documentation/devtools/",
+				key: "devtools/overview",
+			},
 			{
 				text: "Guides",
 				key: "devtools/guides",
@@ -2658,7 +2661,7 @@ export default [
 						key: "devtools/graphql/reference",
 						items: [
 							{
-								text: "GraphQL API Overview",
+								text: "Overview",
 								slug: "/documentation/devtools/graphql/reference/overview/",
 								key: "devtools/graphql/reference/overview",
 							},
@@ -3674,9 +3677,13 @@ export default [
 		anchor: true,
 		type: 'learn',
 		icon: "pi pi-user",
-		slug: "/documentation/account/",
 		key: "sec/account",
 		items: [
+			{
+				text: "Overview",
+				slug: "/documentation/account/",
+				key: "account/overview",
+			},
 			{
 				text: "Guides",
 				key: "account/guides",
@@ -3877,9 +3884,13 @@ export default [
 		anchor: true,
 		type: 'learn',
 		icon: "pi pi-compass",
-		slug: "/documentation/architectures/",
 		key: "sec/architectures",
 		items: [
+			{
+				text: "Overview",
+				slug: "/documentation/architectures/",
+				key: "architectures/overview",
+			},
 			{
 				text: "API Gateways",
 				key: "architectures/api-gateways",
@@ -4089,8 +4100,14 @@ export default [
 		anchor: true,
 		type: 'learn',
 		icon: "pi pi-book",
-		slug: "/documentation/guides/",
 		key: "sec/guides",
+		items: [
+			{
+				text: "Overview",
+				slug: "/documentation/guides/",
+				key: "guides/overview",
+			},
+		],
 	},
 	{
 		text: "Services",
@@ -4176,9 +4193,13 @@ export default [
 		anchor: true,
 		type: 'learn',
 		icon: "pi pi-megaphone",
-		slug: "/documentation/changelog/",
 		key: "sec/changelog",
 		items: [
+			{
+				text: "Overview",
+				slug: "/documentation/changelog/",
+				key: "changelog/overview",
+			},
 			{
 				text: "Changelog previous years",
 				slug: "/documentation/changelog/archive/",
@@ -4192,9 +4213,13 @@ export default [
 		anchor: true,
 		type: 'learn',
 		icon: "pi pi-file",
-		slug: "/documentation/agreements/",
 		key: "sec/agreements",
 		items: [
+			{
+				text: "Overview",
+				slug: "/documentation/agreements/",
+				key: "agreements/overview",
+			},
 			{
 				text: "Acceptable Use Policy",
 				slug: "/documentation/agreements/acceptable-use-policy/",

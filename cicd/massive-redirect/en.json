@@ -801,7 +801,7 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/deliver/",
-    "moved": "https://www.azion.com/en/documentation/deploy/"
+    "moved": "https://www.azion.com/en/documentation/deploy/overview/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/edge-firewall/web-application-firewall/custom-allowed-rules/",
@@ -1753,19 +1753,19 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/build/",
-    "moved": "https://www.azion.com/en/documentation/build/"
+    "moved": "https://www.azion.com/en/documentation/build/overview/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/secure/",
-    "moved": "https://www.azion.com/en/documentation/secure/"
+    "moved": "https://www.azion.com/en/documentation/secure/overview/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/observe/",
-    "moved": "https://www.azion.com/en/documentation/observe/"
+    "moved": "https://www.azion.com/en/documentation/observe/overview/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/deploy/",
-    "moved": "https://www.azion.com/en/documentation/deploy/"
+    "moved": "https://www.azion.com/en/documentation/deploy/overview/"
   },
   {
     "from": "https://www.azion.com/en/documentation/architectures/compliance/governance-risk-compliance/",
@@ -4426,5 +4426,25 @@
   {
     "from": "https://www.azion.com/en/documentation/products/guides/point-domain-to-azion/",
     "moved": "https://www.azion.com/en/documentation/build/workloads/guides/point-domain-to-azion/"
+  },
+  {
+    "from": "https://www.azion.com/en/documentation/build/",
+    "moved": "https://www.azion.com/en/documentation/build/overview/"
+  },
+  {
+    "from": "https://www.azion.com/en/documentation/deploy/",
+    "moved": "https://www.azion.com/en/documentation/deploy/overview/"
+  },
+  {
+    "from": "https://www.azion.com/en/documentation/observe/",
+    "moved": "https://www.azion.com/en/documentation/observe/overview/"
+  },
+  {
+    "from": "https://www.azion.com/en/documentation/secure/",
+    "moved": "https://www.azion.com/en/documentation/secure/overview/"
+  },
+  {
+    "from": "https://www.azion.com/en/documentation/store/",
+    "moved": "https://www.azion.com/en/documentation/store/overview/"
   }
 ]

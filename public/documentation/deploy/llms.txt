@@ -2,7 +2,6 @@
 
 > All pages of the deploy section. Root index: https://www.azion.com/en/llms.txt
 
-- [Explore Azion Deploy products](https://www.azion.com/en/documentation/deploy/): Run your applications anywhere: on Azion’s highly distributed network, on multi-cloud, or on-premises.
 - [Orchestrator](https://www.azion.com/en/documentation/deploy/orchestrator/): Azion Orchestrator is an end-to-end encrypted orchestration service with cloud management and zero-touch provisioning, created for large-scale Edge networks. Manage and control resources on the edge in real time and orchestrate your services quickly and easily to meet your needs.
 - [Automate infrastructure with Azion API](https://www.azion.com/en/documentation/deploy/orchestrator/guides/api/): Explore Azion's API for seamless automation of edge services and nodes, designed to boost developer experience and resource management.
 - [How to authorize an edge node](https://www.azion.com/en/documentation/deploy/orchestrator/guides/authorize-an-edge-node/): Learn how to authorize and deploy Edge Nodes using Azion Console and API for optimal Edge Services integration and Orchestrator.
@@ -22,4 +21,4 @@
 - [Automate the deployment with zero-touch provisioning](https://www.azion.com/en/documentation/deploy/orchestrator/guides/zero-touch-provisioning/): Explore Azion Orchestrator for automated deployment and zero-touch provisioning across on-premises, multi-cloud, and IoT platforms.
 - [Azion Edge Node](https://www.azion.com/en/documentation/deploy/orchestrator/reference/edge-node/): Azion Edge Node enables you to create your own edge infrastructure, allowing you to install services and resources in real time.
 - [Azion Edge Services](https://www.azion.com/en/documentation/deploy/orchestrator/reference/edge-services/): Azion Edge Services is a module for the Orchestrator product that allows orchestrated services to be managed within your own edge infrastructure.
-- [Deploy Overview](https://www.azion.com/en/documentation/deploy/overview/): Azion Deploy products are designed to enhance the efficiency of managing edge resources in real time.
+- [Deploy](https://www.azion.com/en/documentation/deploy/overview/): Run your applications anywhere and manage edge resources in real time with Azion Deploy products.

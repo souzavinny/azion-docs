@@ -1,6 +1,6 @@
 ---
-title: Store Overview
-description: Explore Azion SQL Database and Storage for scalable data management.
+title: Azion Store
+description: Store, query, and manage data close to your users and applications with Azion Store products.
 meta_tags: 'SQL Database, Object Storage, Azion, distributed database, data management, SQL queries, database resilience, scalable database, data processing, S3-compatible storage'
 namespace: docs_edge_sql_journey
 permalink: /documentation/store/overview/
@@ -8,24 +8,63 @@ menu_namespace: storeMenu
 ---
 
 import LinkButton from 'azion-webkit/linkbutton'
+import CardBaseClickable from 'azion-webkit/cardbaseclickable';
+import CardTitle from 'azion-webkit/cardtitle';
+import CardDescription from 'azion-webkit/carddescription';
 
-Welcome to the Azion Store Products journey. This documentation introduces [SQL Database](/en/documentation/store/sql-database/) and [Object Storage](/en/documentation/store/object-storage/), powerful tools for efficient data management and processing.
+Azion Store products let you store, query, and manage data close to your users and applications. This documentation introduces [SQL Database](/en/documentation/store/sql-database/) and [Object Storage](/en/documentation/store/object-storage/), powerful tools for efficient data management and processing.
 
-## Object Storage
+### Products
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/store/object-storage/" title="Object Storage">
+    <Fragment slot="content">
+      <CardTitle titleTag="h3" class="m-0">Object Storage</CardTitle>
+      <CardDescription>Store and access files with scalable, S3-compatible object storage.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/store/sql-database/" title="SQL Database">
+    <Fragment slot="content">
+      <CardTitle titleTag="h3" class="m-0">SQL Database</CardTitle>
+      <CardDescription>Run SQL queries on an edge-native relational database.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/store/kv-store/" title="KV Store">
+    <Fragment slot="content">
+      <CardTitle titleTag="h3" class="m-0">KV Store</CardTitle>
+      <CardDescription>Manage key-value data for your applications and functions.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+</div>
+
+### Resources
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/guides/" title="Guides">
+    <Fragment slot="content">
+      <CardTitle titleTag="h3" class="m-0">Guides</CardTitle>
+      <CardDescription>Find practical documentation on how to use products.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+</div>
+
+## How it works
+
+### Object Storage
 
 Azion Object Storage is an object storage model that organizes data into "buckets" for efficient organization. It supports the S3-compatible API, classifies data operations into classes, and incorporates data replication in its architecture. Key features include S3-compatible API, public buckets, integration with Functions, globally distributed, Integration with Azion's network, and granular permissions.
 
-### Object Storage Use Cases & Applications
+#### Object Storage Use Cases & Applications
 
 Object Storage is ideal for backup and recovery, content management, rich media, static-site hosting, storage of unstructured data, and Jamstack websites.
 
 <LinkButton link="/en/documentation/store/object-storage/" label="Go to Object Storage Reference" severity="secondary" target="_blank" />
 
-## SQL Database
+### SQL Database
 
 Azion SQL Database is a cutting-edge SQL solution tailored for edge computing, providing ultra-low latency querying to enhance serverless applications. It's fully ACID-compliant and uses SQLite's dialect, offering developers a familiar environment. Its architecture implements Main/Replicas for data resilience, ensuring fault tolerance through replication across the Azion Global Infrastructure.
 
-### SQL Database use cases and applications
+#### SQL Database use cases and applications
 
 SQL Database is suitable for real-time telemetry data storage, access log analysis, efficient access data management, and supporting applications requiring quick data retrieval.
 

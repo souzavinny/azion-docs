@@ -72,26 +72,23 @@
 
 ## Build
 
-- [Explore Azion Build products](https://www.azion.com/en/documentation/build/): Build and run your application with Cache, Application Accelerator, and Functions right on Azion's global Edge Computing network.
 - [AI Inference](https://www.azion.com/en/documentation/build/ai-inference/): Azion AI Inference empowers you to build and deploy intelligent applications that process data close to where it is generated.
 - [Applications](https://www.azion.com/en/documentation/build/applications/): Applications is a product that lets you build applications on Azion Global Network, reducing latency and throughput between origin servers and users.
 - [Connectors](https://www.azion.com/en/documentation/build/connectors/): Connectors allows you to connect your origin to an Application. An origin represents the server from which Azion retrieves your content, such as an object storage service or a cloud server.
-- [Overview](https://www.azion.com/en/documentation/build/overview/): Build applications closer to end-users, ensuring low-latency processing at the edge.
+- [Build](https://www.azion.com/en/documentation/build/overview/): Build and run applications on Azion's Edge Computing network, ensuring low-latency processing closer to end users.
 - [Workloads](https://www.azion.com/en/documentation/build/workloads/): Workloads is an Azion Console tool that centralizes communication protocol settings, such as certificates, domains, ports and protocols.
-- Full section index: https://www.azion.com/en/documentation/build/llms.txt (171 pages)
+- Full section index: https://www.azion.com/en/documentation/build/llms.txt (170 pages)
 
 ## Store
 
-- [Explore Azion Store products](https://www.azion.com/en/documentation/store/): Azion Store products let you store, query, and manage data close to your users and applications.
 - [KV Store](https://www.azion.com/en/documentation/store/kv-store/): KV Store is a distributed key-value storage service that runs across Azion's network, providing low-latency data persistence and retrieval.
 - [Object Storage](https://www.azion.com/en/documentation/store/object-storage/): Azion Object Storage is a scalable and secure storage service designed to integrate object storage with the Azion Web Platform using the S3 standard.
-- [Store Overview](https://www.azion.com/en/documentation/store/overview/): Explore Azion SQL Database and Storage for scalable data management.
+- [Azion Store](https://www.azion.com/en/documentation/store/overview/): Store, query, and manage data close to your users and applications with Azion Store products.
 - [SQL Database](https://www.azion.com/en/documentation/store/sql-database/): Explore SQL Database, a distributed database solution by Azion. It allows you to manage databases, run queries, and ensure data resilience effortlessly.
-- Full section index: https://www.azion.com/en/documentation/store/llms.txt (38 pages)
+- Full section index: https://www.azion.com/en/documentation/store/llms.txt (37 pages)
 
 ## Secure
 
-- [Explore Azion Secure products](https://www.azion.com/en/documentation/secure/): Azion's Secure products guarantee the security, availability, and authenticity of your application's data.
 - [Azion Bot Manager](https://www.azion.com/en/documentation/secure/bot-manager/): Protect your applications against automated attacks such as bad bot signatures or scripted bots.
 - [Certificate Manager](https://www.azion.com/en/documentation/secure/certificate-manager/): Certificate Manager is the Secure product where you register and manage the TLS certificates that enable HTTPS traffic for your domains at Azion.
 - [Custom Pages](https://www.azion.com/en/documentation/secure/custom-pages/): Custom Pages is a functionality that allows you to customize error pages for users based on the status code received from the edge connectors.
@@ -99,27 +96,25 @@
 - [Edge DNS](https://www.azion.com/en/documentation/secure/edge-dns/): Edge DNS is an authoritative DNS service that hosts your domains, zones, and records on Azion's distributed infrastructure, with DDoS protection and real-time record distribution.
 - [Firewall](https://www.azion.com/en/documentation/secure/firewall/): Azion Firewall is a security product that protects from the network layer to the application layer.
 - [Network Shield](https://www.azion.com/en/documentation/secure/network-shield/): Explore Azion's Network Shield for robust firewall security. Safeguard your infrastructure with granular control and advanced filtering.
-- [Secure Overview](https://www.azion.com/en/documentation/secure/overview/): Secure your applications and domains with edge computing protection.
+- [Secure](https://www.azion.com/en/documentation/secure/overview/): Protect your domains, applications, and infrastructure at the edge, guaranteeing the security, availability, and authenticity of your data.
 - [Web Application Firewall](https://www.azion.com/en/documentation/secure/waf/): Protect your applications against threats like SQL Injections, Remote File Inclusion (RFI), Cross-Site Scripting (XSS), and others with Azion Web Application Firewall.
-- Full section index: https://www.azion.com/en/documentation/secure/llms.txt (66 pages)
+- Full section index: https://www.azion.com/en/documentation/secure/llms.txt (65 pages)
 
 ## Deploy
 
-- [Explore Azion Deploy products](https://www.azion.com/en/documentation/deploy/): Run your applications anywhere: on Azion’s highly distributed network, on multi-cloud, or on-premises.
 - [Orchestrator](https://www.azion.com/en/documentation/deploy/orchestrator/): Azion Orchestrator is an end-to-end encrypted orchestration service with cloud management and zero-touch provisioning, created for large-scale Edge networks. Manage and control resources on the edge in real time and orchestrate your services quickly and easily to meet your needs.
-- [Deploy Overview](https://www.azion.com/en/documentation/deploy/overview/): Azion Deploy products are designed to enhance the efficiency of managing edge resources in real time.
-- Full section index: https://www.azion.com/en/documentation/deploy/llms.txt (21 pages)
+- [Deploy](https://www.azion.com/en/documentation/deploy/overview/): Run your applications anywhere and manage edge resources in real time with Azion Deploy products.
+- Full section index: https://www.azion.com/en/documentation/deploy/llms.txt (20 pages)
 
 ## Observe
 
-- [Explore Azion Observe products](https://www.azion.com/en/documentation/observe/): Azion Observe products assist you in monitoring and accessing information related to your data.
 - [Data Stream](https://www.azion.com/en/documentation/observe/data-stream/): Data Stream is an Observe product that allows you to feed your SIEM, big data, and stream processing platforms with access to your content and applications data in real time, adding even more intelligence to your business.
 - [Edge Pulse](https://www.azion.com/en/documentation/observe/edge-pulse/): Discover how to get detailed insights into your customers' experience and improve your content delivery with Edge Pulse.
-- [Observe Overview](https://www.azion.com/en/documentation/observe/overview/): Observe your application's data and improve your decision-making process.
+- [Observe](https://www.azion.com/en/documentation/observe/overview/): Monitor and access information related to your data with Azion Observe products to improve your decision-making process.
 - [Real-Time Events](https://www.azion.com/en/documentation/observe/real-time-events/): Real-Time Events is an Observe product that allows you to display logs from your Azion products and services in real time.
 - [Real-Time Metrics](https://www.azion.com/en/documentation/observe/real-time-metrics/): Real-Time Metrics provides you with real-time access to metrics and helps you optimize the use of Azion products and how your content is delivered.
 - [SIEM Azion](https://www.azion.com/en/documentation/observe/siem/): Analyze data from dashboards with raw and aggregated data.
-- Full section index: https://www.azion.com/en/documentation/observe/llms.txt (51 pages)
+- Full section index: https://www.azion.com/en/documentation/observe/llms.txt (50 pages)
 
 ## Dev Tools
 

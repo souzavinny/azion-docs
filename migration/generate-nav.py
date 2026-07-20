@@ -102,15 +102,18 @@ def emit(node_trie, path_segs, depth):
         key = "/".join(path_segs + [seg])
         page = sub.get("__page__")
         children = {k: v for k, v in sub.items() if k != "__page__"}
+        # A section's /overview/ leaf is labeled "Overview" in the sidebar even though its
+        # page title is the section name (e.g. "Secure") — the page H1 stays descriptive.
+        force_group = seg in GROUP_LABELS and (not sub.get("__page__") or seg == "overview")
         if page:
             title, ns = pages["en"][page]
-            text = title if not children else label_for(seg, 0)
+            text = label_for(seg, 0) if (children or force_group) else title
             entry = {"text": text, "key": key, "slug": page}
         else:
             entry = {"text": label_for(seg, 0), "key": key}
         if page and ns and ns in ns_pt:
             pt_perm, pt_title = ns_pt[ns]
-            pt_entries.append({"text": (pt_title if not children else label_for(seg, 1)), "slug": pt_perm, "key": key})
+            pt_entries.append({"text": (label_for(seg, 1) if (children or force_group) else pt_title), "slug": pt_perm, "key": key})
         elif not page:
             pt_entries.append({"text": label_for(seg, 1), "key": key})
         if children:
@@ -149,17 +152,21 @@ for text_en, text_pt, slug_en, slug_pt, key in (
 for seg, en_label, pt_label, icon in SECTIONS:
     root = f"/documentation/{seg}/"
     trie = build_trie(root)
+    # Section headers are expand-only: clicking a section toggles its dropdown and never
+    # navigates (no slug). The section landing is surfaced as the first "Overview" child.
     entry = {"text": en_label, "header": True, "anchor": True, "type": "learn", "icon": icon, "key": f"sec/{seg}"}
-    if root in pages["en"]:
-        entry["slug"] = root
-        _, ns = pages["en"][root]
-        if ns and ns in ns_pt:
-            pt_entries.append({"text": pt_label, "slug": ns_pt[ns][0], "key": f"sec/{seg}"})
-        else:
-            pt_entries.append({"text": pt_label, "key": f"sec/{seg}"})
-    else:
-        pt_entries.append({"text": pt_label, "key": f"sec/{seg}"})
+    pt_entries.append({"text": pt_label, "key": f"sec/{seg}"})
     kids = emit(trie, [seg], 1)
+    # If the section root hub page exists and no /{seg}/overview/ leaf is already present,
+    # surface the hub as the first "Overview" child so it stays reachable from the sidebar.
+    # (Pillar sections keep their own /overview/ child, which ORDER_HINT already sorts first.)
+    if root in pages["en"] and not any(k.get("key") == f"{seg}/overview" for k in kids):
+        _, ns = pages["en"][root]
+        kids.insert(0, {"text": "Overview", "slug": root, "key": f"{seg}/overview"})
+        if ns and ns in ns_pt:
+            pt_entries.append({"text": "Visão geral", "slug": ns_pt[ns][0], "key": f"{seg}/overview"})
+        else:
+            pt_entries.append({"text": "Visão geral", "key": f"{seg}/overview"})
     if kids:
         entry["items"] = kids
     top.append(entry)

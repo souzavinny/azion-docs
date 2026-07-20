@@ -2,7 +2,6 @@
 
 > All pages of the secure section. Root index: https://www.azion.com/en/llms.txt
 
-- [Explore Azion Secure products](https://www.azion.com/en/documentation/secure/): Azion's Secure products guarantee the security, availability, and authenticity of your application's data.
 - [Azion Bot Manager](https://www.azion.com/en/documentation/secure/bot-manager/): Protect your applications against automated attacks such as bad bot signatures or scripted bots.
 - [Azion Bot Manager reference](https://www.azion.com/en/documentation/secure/bot-manager/reference/): Complete reference for Bot Manager: features, bot classification, report log fields, JSON Args setup options, engine versions, and additional resources.
 - [Azion Bot Manager Lite](https://www.azion.com/en/documentation/secure/bot-manager/reference/lite/): Protect your applications against automated attacks such as bad bot signatures or scripted bots with a simplified version of the Bot Manager.
@@ -57,7 +56,7 @@
 - [Rules Engine for Firewall](https://www.azion.com/en/documentation/secure/firewall/reference/rules-engine/): Implement security logic, based on criteria and behaviors, with Rules Engine for Firewall.
 - [Network Shield](https://www.azion.com/en/documentation/secure/network-shield/): Explore Azion's Network Shield for robust firewall security. Safeguard your infrastructure with granular control and advanced filtering.
 - [Create IP, ASN & Geo Blocklists](https://www.azion.com/en/documentation/secure/network-shield/guides/blocklists-ip-addresses-edge/): Manage lists of IPs, ASNs, and geolocations from accessing your applications at the edge with Network Lists.
-- [Secure Overview](https://www.azion.com/en/documentation/secure/overview/): Secure your applications and domains with edge computing protection.
+- [Secure](https://www.azion.com/en/documentation/secure/overview/): Protect your domains, applications, and infrastructure at the edge, guaranteeing the security, availability, and authenticity of your data.
 - [Web Application Firewall](https://www.azion.com/en/documentation/secure/waf/): Protect your applications against threats like SQL Injections, Remote File Inclusion (RFI), Cross-Site Scripting (XSS), and others with Azion Web Application Firewall.
 - [WAF concepts](https://www.azion.com/en/documentation/secure/waf/concepts/): Understand how Azion Web Application Firewall works: the score-based detection model, sensitivity levels, Learning and Blocking modes, execution through Rules Engine, and how WAF parses POST requests.
 - [How to configure a WAF Custom Allowed Rule](https://www.azion.com/en/documentation/secure/waf/guides/configure-waf-allowed-rules/): Configuring a WAF Custom Allowed Rule allows you to instantiate specific rules for the needs of your application.

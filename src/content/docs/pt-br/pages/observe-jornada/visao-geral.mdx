@@ -1,8 +1,8 @@
 ---
-title: Visão geral Observe
+title: Observe
 description: >-
-  Observe os dados de sua aplicação e aprimore seu processo de tomada de
-  decisão.
+  Monitore e acesse informações relacionadas aos seus dados com os produtos de
+  Observe da Azion para aprimorar seu processo de tomada de decisão.
 meta_tags: >-
   azion, edge, observe, observability, logs, metrics, graphql, stream,
   navigation
@@ -12,10 +12,61 @@ menu_namespace: observeMenu
 ---
 
 import LinkButton from 'azion-webkit/linkbutton'
+import CardBaseClickable from 'azion-webkit/cardbaseclickable';
+import CardTitle from 'azion-webkit/cardtitle';
+import CardDescription from 'azion-webkit/carddescription';
 
 Os produtos de Observe da Azion auxiliam você no monitoramento e acesso a informações relacionadas aos seus dados. Você pode analisá-los na Azion Web Platform ou conectar seus dados a plataformas de terceiros, melhorando sua compreensão do seu conteúdo, como seus usuários estão acessando elas, obtendo insights sobre desempenho e segurança e tomando decisões mais informadas.
 
-## Real-Time Metrics
+### Produtos
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/observe/data-stream/" title="Data Stream">
+    <Fragment slot="content">
+      <CardTitle titleTag="h3" class="m-0">Data Stream</CardTitle>
+      <CardDescription>Disponibilize seus conteúdos e dados de aplicações em tempo real.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/observe/real-time-metrics/" title="Real-Time Metrics">
+    <Fragment slot="content">
+      <CardTitle titleTag="h3" class="m-0">Real-Time Metrics</CardTitle>
+      <CardDescription>Acesse métricas em tempo real e otimize seu monitoramento.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/observe/real-time-events/" title="Real-Time Events">
+    <Fragment slot="content">
+      <CardTitle titleTag="h3" class="m-0">Real-Time Events</CardTitle>
+      <CardDescription>Exiba logs em tempo real e realize pesquisas complexas.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/observe/edge-pulse/" title="Edge Pulse">
+    <Fragment slot="content">
+      <CardTitle titleTag="h3" class="m-0">Edge Pulse</CardTitle>
+      <CardDescription>Conheça a experiência de seus clientes para entregar conteúdos.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+</div>
+
+### Recursos
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/guides/" title="Guias">
+    <Fragment slot="content">
+      <CardTitle titleTag="h3" class="m-0">Guias</CardTitle>
+      <CardDescription>Encontre documentações práticas sobre como utilizar os produtos e API.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/devtools/graphql/" title="GraphQL API">
+    <Fragment slot="content">
+      <CardTitle titleTag="h3" class="m-0">GraphQL API</CardTitle>
+      <CardDescription>Solicite os dados que deseja e receba exatamente o que foi solicitado.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+</div>
+
+## Como funciona
+
+### Real-Time Metrics
 
 Monitore aplicações em tempo real visualizando gráficos e filtrando suas consultas.
 
@@ -25,7 +76,7 @@ Você também pode usar a [API GraphQL](/pt-br/documentacao/devtools/graphql/ref
 
 <LinkButton link="/pt-br/documentacao/observe/data-stream/guides/monitorar-aplicacoes/" label="ir para monitorar aplicações" severity="secondary" target="_blank" />
 
-## Real-Time Events
+### Real-Time Events
 
 Analise logs em tempo real por meio de listas detalhadas de variáveis para entender e diagnosticar comportamentos.
 
@@ -35,7 +86,7 @@ Você também pode usar a [API GraphQL](/pt-br/documentacao/devtools/graphql/ref
 
 <LinkButton link="/pt-br/documentacao/observe/data-stream/guides/analisar-logs/" label="ir para analisar logs" severity="secondary" target="_blank" />
 
-## Data Stream
+### Data Stream
 
 Transmita seus dados em tempo real para plataformas de terceiros para ajudar a entender e analisar o desempenho e comportamento de sua application e identificar ameaças de segurança.
 
@@ -43,10 +94,8 @@ Transmita seus dados em tempo real para plataformas de terceiros para ajudar a e
 
 <LinkButton link="/pt-br/documentacao/observe/data-stream/guides/transmitir-dados/" label="ir para transmitir dados" severity="secondary" target="_blank" />
 
-## Edge Pulse
+### Edge Pulse
 
 Colete dados de navegação adicionando tags nas páginas do seu navegador para entender como seu conteúdo está sendo acessado e melhorar a experiência do usuário.
 
-<LinkButton link="/pt-br/documentacao/observe/data-stream/guides/analisar-dados-navegacao/" label="ir coletar dados de navegação" severity="secondary" target="_blank" />
----
-
+<LinkButton link="/pt-br/documentacao/observe/data-stream/guides/analisar-dados-navegacao/" label="ir coletar dados de navegação" severity="secondary" target="_blank" /><br />

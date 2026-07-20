@@ -2,7 +2,6 @@
 
 > All pages of the build section. Root index: https://www.azion.com/en/llms.txt
 
-- [Explore Azion Build products](https://www.azion.com/en/documentation/build/): Build and run your application with Cache, Application Accelerator, and Functions right on Azion's global Edge Computing network.
 - [AI Inference](https://www.azion.com/en/documentation/build/ai-inference/): Azion AI Inference empowers you to build and deploy intelligent applications that process data close to where it is generated.
 - [Azion AI Inference Models](https://www.azion.com/en/documentation/build/ai-inference/reference/models/): AI Inference offers a diverse range of edge-optimized models for various AI domains, ensuring efficient deployment and performance.
 - [BAAI/bge-reranker-v2-m3](https://www.azion.com/en/documentation/build/ai-inference/reference/models/baai-bge-reranker-v2-m3/): BAAI/bge-reranker-v2-m3 is a lightweight reranker model with strong multilingual capabilities.
@@ -166,7 +165,7 @@
 - [SQL Database API](https://www.azion.com/en/documentation/build/functions/runtime-apis/sql-database/): The SQL Database API provides an interface for interacting with a database from Functions running on the Azion Web Platform.
 - [Object Storage API](https://www.azion.com/en/documentation/build/functions/runtime-apis/storage/): The Functions Storage API is an interface that allows access to the Azion Object Storage. Through this interface, it's possible to read and write data in the storage and its buckets.
 - [WebSocket API](https://www.azion.com/en/documentation/build/functions/runtime-apis/websocket/): WebSocket Proxy allows your Application to act as a full WebSocket server or client and proxy bidirectional traffic to backend services.
-- [Overview](https://www.azion.com/en/documentation/build/overview/): Build applications closer to end-users, ensuring low-latency processing at the edge.
+- [Build](https://www.azion.com/en/documentation/build/overview/): Build and run applications on Azion's Edge Computing network, ensuring low-latency processing closer to end users.
 - [Workloads](https://www.azion.com/en/documentation/build/workloads/): Workloads is an Azion Console tool that centralizes communication protocol settings, such as certificates, domains, ports and protocols.
 - [How to configure a domain](https://www.azion.com/en/documentation/build/workloads/guides/configure-a-domain/): Use Azion Domains to enable browser access to your app, allowing user traffic and metrics tracking.
 - [How to create a digital certificate](https://www.azion.com/en/documentation/build/workloads/guides/create-a-digital-certificate/): Digital certificates are essential for online security, providing authentication and encryption for your data.

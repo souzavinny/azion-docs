@@ -1,8 +1,8 @@
 ---
-title: Visão geral Deploy
+title: Deploy
 description: >-
-  Os produtos de Deploy da Azion são estruturados para melhorar a eficiência no
-  gerenciamento de recursos no edge em tempo real.
+  Execute suas aplicações em qualquer lugar e gerencie recursos no edge em tempo
+  real com os produtos de Deploy da Azion.
 meta_tags: 'deploy, orchestrator'
 namespace: docs_deploy_overview
 menu_namespace: deployMenu
@@ -11,12 +11,37 @@ permalink: /documentacao/deploy/overview/
 ---
 
 import LinkButton from 'azion-webkit/linkbutton'
+import CardBaseClickable from 'azion-webkit/cardbaseclickable';
+import CardTitle from 'azion-webkit/cardtitle';
+import CardDescription from 'azion-webkit/carddescription';
 
-Os produtos de **Deploy** da Azion são projetados para aumentar a eficiência no gerenciamento de recursos no edge em tempo real.
+Os produtos de **Deploy** da Azion permitem executar suas aplicações em qualquer lugar: na rede altamente distribuída da Azion, em multi-cloud ou on-premises. Eles são projetados para aumentar a eficiência no gerenciamento de recursos no edge em tempo real.
 
----
+### Produtos
 
-## Orchestrator
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/deploy/orchestrator/" title="Orchestrator">
+    <Fragment slot="content">
+      <CardTitle titleTag="h3" class="m-0">Orchestrator</CardTitle>
+      <CardDescription>Aproxime suas aplicações dos seus usuários e dispositivos distribuindo-as na edge da Azion ou em seu próprio edge.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+</div>
+
+### Recursos
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/guides/" title="Guias">
+    <Fragment slot="content">
+      <CardTitle titleTag="h3" class="m-0">Guias</CardTitle>
+      <CardDescription>Encontre documentações práticas sobre como utilizar os produtos.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+</div>
+
+## Como funciona
+
+### Orchestrator
 
 O [Orchestrator](/pt-br/documentacao/deploy/orchestrator/) é um sistema versátil para inovação em edge computing, permitindo a implantação, gerenciamento e automação eficientes de cargas de trabalho em edge networks, dispositivos remotos, locais e plataformas multi-cloud. Projetado para orquestrar suas aplicações e [edge services](/pt-br/documentacao/deploy/orchestrator/reference/edge-services/) nos [edge nodes](/pt-br/documentacao/deploy/orchestrator/reference/edge-node/), integra-se aos produtos e recursos da Azion, bem como aplicações, serviços ou recursos proprietários ou de terceiros.
 

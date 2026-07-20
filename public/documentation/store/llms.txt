@@ -2,7 +2,6 @@
 
 > All pages of the store section. Root index: https://www.azion.com/en/llms.txt
 
-- [Explore Azion Store products](https://www.azion.com/en/documentation/store/): Azion Store products let you store, query, and manage data close to your users and applications.
 - [KV Store](https://www.azion.com/en/documentation/store/kv-store/): KV Store is a distributed key-value storage service that runs across Azion's network, providing low-latency data persistence and retrieval.
 - [How to manage KV Store with Functions](https://www.azion.com/en/documentation/store/kv-store/guides/manage-with-functions/): Learn how to store, retrieve, and delete data using KV Store within your functions.
 - [How to use KV Store with Redis-compatible SDK](https://www.azion.com/en/documentation/store/kv-store/guides/redis-compatibility/): Learn how to use the Azion KV SDK with a Redis-like interface for seamless integration with your applications.
@@ -22,7 +21,7 @@
 - [How to upload an object to an Object Storage bucket](https://www.azion.com/en/documentation/store/object-storage/guides/upload-object/): Discover how to upload files to an Object Storage bucket with this guide.
 - [Use an Object Storage Bucket as Origin](https://www.azion.com/en/documentation/store/object-storage/guides/use-bucket-as-origin/): Learn how to use a bucket as the origin of a static applications using Object Storage and make the bucket content public.
 - [Use S3-compatible tools with Object Storage](https://www.azion.com/en/documentation/store/object-storage/guides/use-s3-compatible-tools-with-object-storage/): Learn how to integrate Azion Object Storage with S3-compatible tools, SDKs, and CLIs to manage buckets and objects with low latency and zero DTO cost.
-- [Store Overview](https://www.azion.com/en/documentation/store/overview/): Explore Azion SQL Database and Storage for scalable data management.
+- [Azion Store](https://www.azion.com/en/documentation/store/overview/): Store, query, and manage data close to your users and applications with Azion Store products.
 - [SQL Database](https://www.azion.com/en/documentation/store/sql-database/): Explore SQL Database, a distributed database solution by Azion. It allows you to manage databases, run queries, and ensure data resilience effortlessly.
 - [How to create an SQL Database database](https://www.azion.com/en/documentation/store/sql-database/guides/create-database/): Learn how to create an SQL Database database.
 - [How to create a table in SQL Database](https://www.azion.com/en/documentation/store/sql-database/guides/create-table/): Discover step-by-step instructions to create a table in an SQL Database database for efficient data management.

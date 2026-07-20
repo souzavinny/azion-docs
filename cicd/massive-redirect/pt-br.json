@@ -145,7 +145,7 @@
   },
   {
     "from": "https://www.azion.com/pt-br/documentacao/produtos/deliver/",
-    "moved": "https://www.azion.com/pt-br/documentacao/deploy/"
+    "moved": "https://www.azion.com/pt-br/documentacao/deploy/overview/"
   },
   {
     "from": "https://www.azion.com/pt-br/documentacao/produtos/guias/nextjs-na-plataforma-azion/",
@@ -1745,19 +1745,19 @@
   },
   {
     "from": "https://www.azion.com/pt-br/documentacao/produtos/build/",
-    "moved": "https://www.azion.com/pt-br/documentacao/build/"
+    "moved": "https://www.azion.com/pt-br/documentacao/build/overview/"
   },
   {
     "from": "https://www.azion.com/pt-br/documentacao/produtos/secure/",
-    "moved": "https://www.azion.com/pt-br/documentacao/secure/"
+    "moved": "https://www.azion.com/pt-br/documentacao/secure/overview/"
   },
   {
     "from": "https://www.azion.com/pt-br/documentacao/produtos/observe/",
-    "moved": "https://www.azion.com/pt-br/documentacao/observe/"
+    "moved": "https://www.azion.com/pt-br/documentacao/observe/overview/"
   },
   {
     "from": "https://www.azion.com/pt-br/documentacao/produtos/deploy/",
-    "moved": "https://www.azion.com/pt-br/documentacao/deploy/"
+    "moved": "https://www.azion.com/pt-br/documentacao/deploy/overview/"
   },
   {
     "from": "https://www.azion.com/pt-br/documentacao/produtos/devtools/",
@@ -4674,5 +4674,25 @@
   {
     "from": "https://www.azion.com/pt-br/documentacao/produtos/guias/migrar-ns-para-a-azion/",
     "moved": "https://www.azion.com/pt-br/documentacao/build/workloads/guides/migrar-ns-para-a-azion/"
+  },
+  {
+    "from": "https://www.azion.com/pt-br/documentacao/build/",
+    "moved": "https://www.azion.com/pt-br/documentacao/build/overview/"
+  },
+  {
+    "from": "https://www.azion.com/pt-br/documentacao/deploy/",
+    "moved": "https://www.azion.com/pt-br/documentacao/deploy/overview/"
+  },
+  {
+    "from": "https://www.azion.com/pt-br/documentacao/observe/",
+    "moved": "https://www.azion.com/pt-br/documentacao/observe/overview/"
+  },
+  {
+    "from": "https://www.azion.com/pt-br/documentacao/secure/",
+    "moved": "https://www.azion.com/pt-br/documentacao/secure/overview/"
+  },
+  {
+    "from": "https://www.azion.com/pt-br/documentacao/store/",
+    "moved": "https://www.azion.com/pt-br/documentacao/store/overview/"
   }
 ]

@@ -1,24 +1,75 @@
 ---
-title: Secure Overview
-description: Secure your applications and domains with edge computing protection.
+title: Secure
+description: >-
+  Protect your domains, applications, and infrastructure at the edge, guaranteeing the security, availability, and authenticity of your data.
 meta_tags: 'secure, overview, firewall'
 namespace: docs_secure_overview
 permalink: /documentation/secure/overview/
 ---
 
 import LinkButton from 'azion-webkit/linkbutton'
+import CardBaseClickable from 'azion-webkit/cardbaseclickable';
+import CardTitle from 'azion-webkit/cardtitle';
+import CardDescription from 'azion-webkit/carddescription';
 
-:::note
-Looking for the Secure section landing page? Go to the [Secure hub](/en/documentation/secure/) for all products, guides, and references.
-:::
+Azion Secure products assist you in protecting your domains, applications, and infrastructure, guaranteeing the security, availability, and authenticity of your application's data.
 
-Azion Secure products assist you in protecting your domains, applications, and infrastructure.
+*Secure* is an area that works along with the [building process](/en/documentation/build/overview/) and integrates itself with observability. When you're building applications, security must be a part of the process from the beginning: they walk hand in hand with one another. Once the building and securing process is configured, you must also constantly [observe](/en/documentation/observe/overview/) your applications and implemented security rules to guarantee they're working as expected and that you can make fast decisions and changes to configurations to continue securing them.
 
-*Secure* is an area that works along with the [building process](/en/documentation/build/overview/) and integrates itself with observability. When you're building applications, security must be a part of the process from the beginning: they walk hand in hand with one another. Once the building and securing process is configured, you must also constantly [observe](/en/documentation/observe/) your applications and implemented security rules to guarantee they're working as expected and that you can make fast decisions and changes to configurations to continue securing them.
+### Products
 
----
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/secure/firewall/" title="Firewall">
+    <Fragment slot="content">
+      <CardTitle titleTag="h3" class="m-0">Firewall</CardTitle>
+      <CardDescription>Protect your application from the network to the application layer.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/secure/edge-dns/" title="Edge DNS">
+    <Fragment slot="content">
+      <CardTitle titleTag="h3" class="m-0">Edge DNS</CardTitle>
+      <CardDescription>Host domains for your application with an integrated traffic routing solution.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+</div>
 
-## Firewall
+### Modules
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/secure/ddos-protection/" title="DDoS Protection">
+    <Fragment slot="content">
+      <CardTitle titleTag="h3" class="m-0">DDoS Protection</CardTitle>
+      <CardDescription>Mitigate the largest and most complex network and transport-layer DDoS attacks.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/secure/network-shield/" title="Network Shield">
+    <Fragment slot="content">
+      <CardTitle titleTag="h3" class="m-0">Network Shield</CardTitle>
+      <CardDescription>Get protection from a programmable security perimeter for inbound and outbound traffic at the edge.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/secure/waf/" title="Web Application Firewall">
+    <Fragment slot="content">
+      <CardTitle titleTag="h3" class="m-0">Web Application Firewall</CardTitle>
+      <CardDescription>Secure your web application from OWASP Top 10 threats to sophisticated zero-day attacks.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+</div>
+
+### Resources
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/guides/" title="Guides">
+    <Fragment slot="content">
+      <CardTitle titleTag="h3" class="m-0">Guides</CardTitle>
+      <CardDescription>Find practical documentation on how to use products.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+</div>
+
+## How it works
+
+### Firewall
 
 **Firewall** is a programmable security product that allows you to secure your applications, your domains, and your user's domains.
 
@@ -38,9 +89,7 @@ Furthermore, your configurations need to be set as rules on [Rules Engine](/en/d
 
 <LinkButton link="/en/documentation/secure/firewall/guides/work-with-rules-engine/" severity="secondary" label="go to Rules Engine for Firewall guide" />
 
----
-
-## Edge DNS
+### Edge DNS
 
 **Edge DNS** allows you to host your domains on Azion's distributed infrastructure, providing high performance, availability, and security.
 
@@ -49,6 +98,3 @@ Furthermore, your configurations need to be set as rules on [Rules Engine](/en/d
 <LinkButton link="/en/documentation/secure/firewall/guides/edge-dns-configure-main-settings/" severity="secondary" label="go to Edge DNS main settings guide" />
 
 By adding and configuring [records](/en/documentation/secure/firewall/guides/add-records/), your domain's information is stored securely at Azion's infrastructure and allows you to configure other products to properly handle requests, such as applications and Firewalls.
-
----
-

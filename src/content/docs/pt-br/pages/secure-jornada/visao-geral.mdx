@@ -1,24 +1,75 @@
 ---
-title: Visão geral Secure
-description: Proteja suas aplicações e domínios com as capacidades de edge computing.
+title: Secure
+description: >-
+  Proteja seus domínios, aplicações e infraestrutura no edge, garantindo a segurança, disponibilidade e autenticidade dos dados da sua aplicação.
 meta_tags: 'secure, overview, firewall'
 namespace: docs_secure_overview
 permalink: /documentacao/secure/overview/
 ---
 
 import LinkButton from 'azion-webkit/linkbutton'
+import CardBaseClickable from 'azion-webkit/cardbaseclickable';
+import CardTitle from 'azion-webkit/cardtitle';
+import CardDescription from 'azion-webkit/carddescription';
 
-:::note
-Procurando a página inicial da seção Secure? Acesse o [hub Secure](/pt-br/documentacao/secure/) para todos os produtos, guias e referências.
-:::
+Os produtos de Secure da Azion ajudam a proteger seus domínios, suas aplicações e sua infraestrutura, garantindo a segurança, disponibilidade e autenticidade dos dados da sua aplicação.
 
-Os produtos de Secure da Azion ajudam a proteger seus domínios, suas aplicações e sua infraestrutura.
+**Secure** é uma área que trabalha em conjunto com o [processo de criação](/pt-br/documentacao/build/overview/) e se integra à observabilidade. Ao construir aplicações, a segurança deve ser parte do processo desde o início: elas caminham lado a lado. Uma vez configurado o processo de criação e segurança, você também deve constantemente [observar](/pt-br/documentacao/observe/overview/) suas aplicações e regras de segurança implementadas para garantir que estejam funcionando conforme o esperado e para que você possa tomar decisões rápidas e fazer alterações nas configurações para continuar protegendo-as.
 
-**Secure** é uma área que trabalha em conjunto com o [processo de criação](/pt-br/documentacao/build/overview/) e se integra à observabilidade. Ao construir aplicações, a segurança deve ser parte do processo desde o início: elas caminham lado a lado. Uma vez configurado o processo de criação e segurança, você também deve constantemente [observar](/pt-br/documentacao/observe/) suas aplicações e regras de segurança implementadas para garantir que estejam funcionando conforme o esperado e para que você possa tomar decisões rápidas e fazer alterações nas configurações para continuar protegendo-as.
+### Produtos
 
----
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/secure/firewall/" title="Firewall">
+    <Fragment slot="content">
+      <CardTitle titleTag="h3" class="m-0">Firewall</CardTitle>
+      <CardDescription>Proteja-se sua aplicação a partir da rede até a camada da aplicação.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/secure/edge-dns/" title="Edge DNS">
+    <Fragment slot="content">
+      <CardTitle titleTag="h3" class="m-0">Edge DNS</CardTitle>
+      <CardDescription>Hospede domínios com uma solução integrada de roteamento de tráfego.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+</div>
 
-## Firewall
+### Módulos
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/secure/ddos-protection/" title="DDoS Protection">
+    <Fragment slot="content">
+      <CardTitle titleTag="h3" class="m-0">DDoS Protection</CardTitle>
+      <CardDescription>Mitigue os maiores e mais complexos ataques DDoS nas camadas de rede e de transporte.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/secure/network-shield/" title="Network Shield">
+    <Fragment slot="content">
+      <CardTitle titleTag="h3" class="m-0">Network Shield</CardTitle>
+      <CardDescription>Use um perímetro de segurança programável no edge da rede para tráfego de entrada e saída.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/secure/waf/" title="Web Application Firewall">
+    <Fragment slot="content">
+      <CardTitle titleTag="h3" class="m-0">Web Application Firewall</CardTitle>
+      <CardDescription>Proteja sua aplicação web das ameaças OWASP Top 10 aos sofisticados ataques zero-day.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+</div>
+
+### Recursos
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/guides/" title="Guias">
+    <Fragment slot="content">
+      <CardTitle titleTag="h3" class="m-0">Guias</CardTitle>
+      <CardDescription>Encontre documentações práticas sobre como utilizar os produtos.</CardDescription>
+    </Fragment>
+  </CardBaseClickable>
+</div>
+
+## Como funciona
+
+### Firewall
 
 **Firewall** é um produto de segurança programável que permite que você proteja suas aplicações, seus domínios e os acessos de seus usuários.
 
@@ -38,9 +89,7 @@ Além disso, suas configurações precisam ser definidas como regras no [Rules E
 
 <LinkButton link="/pt-br/documentacao/secure/firewall/guides/trabalhar-com-rules-engine/" severity="secondary" label="saiba mais sobre Rules Engine para o Firewall" />
 
----
-
-## Edge DNS
+### Edge DNS
 
 **Edge DNS** permite hospedar seus domínios na infraestrutura distribuída da Azion, proporcionando alto desempenho, disponibilidade e segurança.
 
@@ -49,6 +98,3 @@ Além disso, suas configurações precisam ser definidas como regras no [Rules E
 <LinkButton link="/pt-br/documentacao/secure/firewall/guides/edge-dns-definir-main-settings/" severity="secondary" label="consulte o guia de configurações principais do Edge DNS" />
 
 Ao adicionar e configurar [registros](/pt-br/documentacao/secure/firewall/guides/adicionar-registros/), as informações do seu domínio são armazenadas com segurança na infraestrutura da Azion e permitem que você configure outros produtos para lidar adequadamente com solicitações, como applications e firewalls.
-
----
-
