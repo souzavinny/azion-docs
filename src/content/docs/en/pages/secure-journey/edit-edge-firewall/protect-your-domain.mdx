@@ -1,7 +1,7 @@
 ---
 title: Protect your domain
 description: >-
-  Learn how to configure an firewall to protect your domain.
+  Learn how to configure a firewall to protect your domain.
 meta_tags: 'secure, firewall, configuration, settings, domains'
 namespace: docs_guides_secure_protect_your_domain
 permalink: /documentation/secure/firewall/guides/firewall-protect-your-domain/
@@ -14,24 +14,21 @@ import Apiv4Rollout from '~/includes/snippets/apiv4Rollout/en/snippet.mdx'
 
 <Apiv4Rollout />
 
-Once you create an firewall with Azion, you can modify a few configurations. 
+Once you create a firewall with Azion, you can modify a few configurations.
 
-In this guide, you'll learn how to select an firewall to protect a particular domain.
+In this guide, you'll learn how to select a firewall to protect a particular domain.
 
 On the Console, you must now configure your domain so your firewall protects it.
 
-There are separate instructions for API v3 using [legacy Domains](/en/documentation/build/applications/reference/domains/) settings and API v4 using the new [Workloads](/en/documentation/build/workloads/) product.
+The steps depend on how your account is set up: accounts using the new [Workloads](/en/documentation/build/workloads/) product configure the firewall in the workload's settings, while accounts still using the legacy [Domains](/en/documentation/build/applications/reference/domains/) settings configure it in the domain's settings. Choose the tab that matches your account.
 
 :::tip
 If you're not sure which steps apply to your account, see [the Verify Your Account Migration guide](/en/documentation/account/guides/verify-account-migration/) to determine if your account has already been migrated.
-
-:::tip
-In this guide, there are separate instructions for API v3 and API v4. If you're not sure which steps apply to your account, see [the Verify Your Account Migration guide](/en/documentation/account/guides/verify-account-migration/) to determine if your account has already been migrated.
 :::
 
 <Tabs client:visible>
-    <Fragment slot="tab.consoleworkloads">Console - Connectors</Fragment>
-    <Fragment slot="tab.consoledomais">Console - Origins</Fragment>
+    <Fragment slot="tab.consoleworkloads">Console - Workloads</Fragment>
+    <Fragment slot="tab.consoledomains">Console - Domains</Fragment>
 
 
 <Fragment slot="panel.consoleworkloads">

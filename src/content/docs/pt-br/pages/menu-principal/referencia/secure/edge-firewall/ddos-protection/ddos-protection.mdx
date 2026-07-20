@@ -18,6 +18,17 @@ A mitigação de ataques de DDoS é realizada pela Azion e não impacta na perfo
 
 ---
 
+## Implementação
+
+| Tipo | Recurso |
+| ---- | ------- |
+| Referência | [DDoS Mitigation](/pt-br/documentacao/secure/ddos-protection/reference/ddos-mitigation/) |
+| Módulo relacionado | [Web Application Firewall](/pt-br/documentacao/secure/waf/) |
+| Produto relacionado | [Firewall](/pt-br/documentacao/secure/firewall/) |
+| Serviço | [Security Response Team (SRT)](/pt-br/documentacao/services/security-response-team/) |
+
+---
+
 ## Vantagens e características do DDoS Protection
 
 ### Mitigação always-on
@@ -74,3 +85,16 @@ Estes são os **limites default**:
 | Escopo | Limite |
 | ------ | ------ |
 | Tráfego de largura de banda | Ilimitado |
+
+---
+
+## Fatos legíveis por máquina
+
+```text
+product: DDoS Protection
+api_base: https://api.azion.com/v4
+auth_header: Authorization: Token [TOKEN]
+type: add-on de Firewall, habilitado automaticamente em todas as contas
+coverage: camadas 3, 4, 6 e 7 do modelo OSI
+bandwidth: unmetered (a mitigação não é cobrada)
+```

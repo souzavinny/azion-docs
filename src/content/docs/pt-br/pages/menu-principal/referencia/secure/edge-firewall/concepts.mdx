@@ -1,0 +1,83 @@
+---
+title: Conceitos do Firewall
+description: >-
+  Entenda como o Firewall funciona: como os módulos desbloqueiam criteria e
+  behaviors, como o Rules Engine processa regras sequencialmente, onde as
+  functions são executadas e como as network lists são avaliadas no edge.
+meta_tags: 'firewall, edge computing, segurança, conceitos, módulos, rules engine, ordem de execução'
+namespace: documentation_secure_firewall_concepts
+permalink: /documentacao/secure/firewall/concepts/
+---
+
+import RulesExecution from '~/includes/snippets/RulesEngineExecution/pt/snippet.mdx'
+
+Esta página explica as ideias por trás do [Firewall](/pt-br/documentacao/secure/firewall/): do que uma configuração de firewall é composta, como os módulos desbloqueiam criteria e behaviors, a ordem em que regras e behaviors são executados, onde as functions rodam e como as network lists são avaliadas. Para definições campo a campo, consulte a [referência do Rules Engine para Firewall](/pt-br/documentacao/secure/firewall/reference/rules-engine/).
+
+---
+
+## Um firewall é um conjunto de regras aplicado a domínios
+
+Ao usar a Azion como sua plataforma de desenvolvimento web, você pode criar configurações de segurança no Firewall para proteger suas aplicações. Essas configurações de firewall representam um conjunto de regras que será aplicado aos domínios das suas aplicações.
+
+Um firewall consiste em um nome de identificação, todos os domínios das suas aplicações onde o Firewall deve ser aplicado, os módulos aplicados e as regras de segurança configuradas na aba **Rules Engine**. Você precisa ativar pelo menos um módulo para que seu firewall funcione.
+
+:::tip
+Você pode compartilhar o mesmo firewall entre todas as aplicações que adotam a mesma política de segurança.
+:::
+
+---
+
+## Como os módulos desbloqueiam Criteria e Behaviors
+
+Cada regra é composta de *Criteria* (condicionais) e *Behaviors* (comandos). Se as *Criteria* (condições) forem atendidas, os *Behaviors* (comandos) serão executados. Por exemplo, você pode configurar regras para bloquear requisições provenientes de IPs que estão em uma *lista de bloqueio* ou até mesmo criar regras para excluir IPs que estejam na lista de regras permitidas. Neste exemplo, "block" é o Behavior, enquanto o IP da requisição, que está na *lista de bloqueio* e não está presente nas *regras permitidas*, é a condição (Criteria).
+
+A disponibilidade de Criteria e Behaviors no Firewall depende dos módulos habilitados na configuração principal do firewall. Veja a lista de Criteria e Behaviors disponíveis para cada módulo do Firewall:
+
+| Module                   | Criteria                                                                                                                                                                                                 | Behavior                                                                                      |
+|--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| Built-in (always on)     | `Hostname`<br />`Request URI`<br />`Scheme`<br />`Client Certificate Validation`<br />`Ssl Verification Status`                                                    | `Deny (403 Forbidden)`<br />`Drop (Close Without Response)`<br />`Set Rate Limit`              |
+| Functions           | -                                                                                                                                                                                                       | `Run Function`                                                                                |
+| Network Shield | `Network`                                                                                                                                                                                               | -                                                                                           |
+| Web Application Firewall | `Header Accept`<br />`Header Accept-Encoding`<br />`Header Accept-Language`<br />`Header Cookie`<br />`Header Origin`<br />`Header Referer`<br />`Header User Agent`<br />`Request Args`<br />`Request Method` | `Set WAF Rule Set`                                                                            |
+
+:::note
+O módulo DDoS Protection é ativado por padrão e não precisa de nenhuma configuração adicional. Ele detecta ataques usando algoritmos avançados que são executados na rede distribuída da Azion, que está conectada a diversos centros de mitigação de forma a garantir a mitigação durante ataques de larga escala, tanto a nível de rede quanto a nível de aplicação.
+:::
+
+### Como o WAF decide bloquear uma requisição
+
+O **Web Application Firewall (WAF)** opera na sétima camada, a camada da aplicação, e é baseado em um sistema de *pontuação* (scoring). Cada requisição HTTP ou HTTPS é comparada com um conjunto rigoroso e detalhado de padrões de aplicação e recebe uma pontuação, que é associada a uma determinada família de ameaças. De acordo com a pontuação que a requisição recebe, ela pode ser liberada ou bloqueada. Isso acontece diretamente nos edge nodes da Azion, antes que a ameaça chegue à sua origem ou cause qualquer dano. É possível personalizar a sensibilidade desejada e ter um bloqueio diferenciado para cada família de ameaças.
+
+---
+
+## Ordem de execução no Rules Engine
+
+Depois de ativar os módulos desejados, você configura suas regras de segurança na aba **Rules Engine**. As regras que você configurar são executadas sequencialmente até que a requisição seja bloqueada ou restringida, ou até que todas as suas regras sejam processadas, momento em que a requisição é liberada. Uma requisição só chega à sua aplicação caso nenhuma regra do seu Firewall a bloqueie ou a rejeite, garantindo que requisições mal-intencionadas não cheguem à sua aplicação.
+
+<RulesExecution />
+
+---
+
+## Fases de execução: onde as functions rodam
+
+As functions em JavaScript no Firewall são executadas na *fase de request*, seguindo este processo:
+
+- As regras configuradas no **Rules Engine** do Firewall para a execução da função são acionadas.
+- O Azion Runtime processa a função, retornando um resultado.
+- O Rules Engine do Firewall prossegue com o processamento, baseado no resultado recebido, a partir do ponto em que o behavior foi acionado.
+
+Todas as functions usadas no Firewall devem ter um *resultado final*, como `event.continue()`, `event.deny()` e `event.drop()`.
+
+Ao instanciar uma function, você não altera seu código-fonte: você informa os argumentos que serão passados para o contexto de execução da função. Os argumentos definidos na instância da função sobrescrevem os argumentos padrão definidos na própria função, o que permite reutilizar a mesma função com configurações diferentes dependendo do contexto. Consulte [Functions Instances para Firewall](/pt-br/documentacao/secure/firewall/reference/functions-instances/) para mais detalhes e exemplos.
+
+---
+
+## Como as network lists são avaliadas
+
+O módulo **Network Shield** utiliza uma série de listas mantidas pelo próprio usuário ou pela Azion, que podem ser atualizadas manualmente ou através da [API da Azion](https://api.azion.com). Quando uma requisição chega a um edge node da Azion, ela é avaliada e, caso atenda aos critérios definidos na regra desse node, as listas configuradas são consultadas, filtrando, assim, os infratores conhecidos antes mesmo de a requisição chegar à infraestrutura do cliente.
+
+Ao ativar o módulo dentro de um firewall, o *criteria* `Network` e os *behaviors* `Deny`, `Drop` e `Set Rate Limit` ficam disponíveis nas configurações do **Rules Engine** do firewall selecionado. Sempre que uma network list é associada a uma regra, ela é comparada com o endereço IP do cliente que está realizando a requisição HTTP, levando em consideração os operadores de comparação configurados na regra do **Rules Engine**.
+
+Consulte a [referência de Network Lists](/pt-br/documentacao/secure/firewall/reference/network-shield/network-lists/) para os tipos de listas e as listas gerenciadas pela Azion.
+
+<br /><br />

@@ -1,0 +1,145 @@
+---
+title: Firewall quickstart
+description: >-
+  Create your first firewall, protect a domain, and add a rule that blocks
+  unwanted requests, using Azion Console or the Azion API.
+meta_tags: 'firewall, edge computing, security, quickstart, first steps'
+namespace: documentation_secure_firewall_quickstart
+permalink: /documentation/secure/firewall/quickstart/
+---
+
+This quickstart shows how to create your first firewall, associate it with a domain, and add a rule that blocks requests—then confirm the rule is working. You can follow the **Console path** or the **API path**.
+
+---
+
+## Prerequisites
+
+- An [Azion Console](https://console.azion.com) account. You can find more information on creating one on the [documentation page](/en/documentation/account/reference/creating-account/).
+- An application already deployed on Azion, with a [workload](/en/documentation/build/workloads/) or a [domain](/en/documentation/build/applications/reference/domains/) associated with it.
+- For the API path: a [personal token](/en/documentation/account/guides/personal-tokens/).
+
+---
+
+## Console path
+
+### Create the firewall
+
+1. Access [Azion Console](https://console.azion.com) > select **Firewall**.
+2. Click the **+ Firewall** button.
+3. Give your firewall a unique and easy-to-remember name.
+4. In the **Main Settings** tab, enable the **Web Application Firewall** module. This example uses the `Header Referer` criteria, which requires it.
+5. Make sure the **Active** switch is on.
+6. Click the **Save** button.
+
+:::note
+The **DDoS Protection** module is activated by default and doesn't need any additional configuration. See the [Firewall concepts](/en/documentation/secure/firewall/concepts/) page for which criteria and behaviors each module unlocks.
+:::
+
+### Protect your domain
+
+The steps depend on how your account is set up: accounts using the [Workloads](/en/documentation/build/workloads/) product configure the firewall in the workload's settings, while accounts still using the legacy [Domains](/en/documentation/build/applications/reference/domains/) settings configure it in the domain's settings.
+
+1. On the **Products menu**, select **Workloads** (or **Domains**, in legacy accounts).
+2. Click on the workload or domain you want to protect with your firewall.
+3. In the **Deployment Settings** (or **Settings**) section, click the `Firewall` selector and choose the firewall you created.
+4. Click the **Save** button.
+
+:::tip
+If you're not sure which steps apply to your account, see the [Verify Your Account Migration guide](/en/documentation/account/guides/verify-account-migration/). For the full walkthrough, see [Protect your domain](/en/documentation/secure/firewall/guides/firewall-protect-your-domain/).
+:::
+
+### Add a blocking rule
+
+This rule blocks requests whose `Referer` header matches a site you don't want redirecting traffic to your application:
+
+1. Back on the **Firewall** page, select your firewall and click the **Rules Engine** tab.
+2. Click the **+ Rule** button.
+3. Give your rule a name and, optionally, a description.
+4. In the **Criteria** section, select the `Header Referer` variable, the *matches* comparison operator and, as the argument, the address you want to block. Example: `http://www.malicioussite.com`.
+5. In the **Behaviors** section, select **Deny (403 Forbidden)**.
+6. Click the **Save** button.
+
+Wait a few minutes for the changes to propagate.
+
+### You know it worked when
+
+- A request to your application that matches the blocked `Referer` returns the status code `HTTP 403`:
+
+```bash
+curl -I https://yourdomain.com/ -H 'Referer: http://www.malicioussite.com'
+```
+
+- The same request without the blocked `Referer` header isn't denied by this rule.
+- If you enabled the **Debug Rules** switch in the firewall's main settings, you can [check if the rules you've created have been successfully executed](/en/documentation/build/applications/guides/debug-rules/) through the GraphQL API, Data Stream, or Real-Time Events.
+
+---
+
+## API path
+
+The Azion API lets you configure an existing firewall. This example adds a rule using the built-in `SSL Verification Status` criteria, which doesn't require any module.
+
+1. Run the following `GET` request in your terminal, replacing `[TOKEN]` with your [personal token](/en/documentation/account/guides/personal-tokens/), to retrieve your firewall's `id`:
+
+```bash
+curl --request GET \
+  --url https://api.azion.com/v4/edge_firewall/firewalls \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Token [TOKEN]'
+```
+
+2. Run the following `POST` request to create a rule, replacing `<edge_firewall_id>` with the `id` you copied. The rule returns a custom `401` response when the request doesn't send a client certificate:
+
+```bash
+curl --request POST \
+  --url https://api.azion.com/v4/edge_firewall/firewalls/<edge_firewall_id>/request_rules \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Token [TOKEN]' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "name": "SSL Verification",
+    "active": true,
+    "criteria": [
+      [
+        {
+          "conditional": "if",
+          "variable": "${ssl_verification_status}",
+          "operator": "is_equal",
+          "argument": "MISSING_CLIENT_CERTIFICATE"
+        }
+      ]
+    ],
+    "behaviors": [
+      {
+        "type": "set_custom_response",
+        "attributes": {
+          "status_code": 401,
+          "content_type": "application/json",
+          "content_body": "{}"
+        }
+      }
+    ]
+  }'
+```
+
+3. You'll receive a response confirming the rule was created, including its `id` and `"is_active": true`.
+4. Wait a few minutes for the changes to propagate.
+
+### You know it worked when
+
+- The `POST` response returns the rule with an `id` and `"is_active": true`.
+- Requests to the protected domain that don't send a client certificate receive the custom response with status code `401`.
+
+:::tip
+See [Create Firewall rules with Rules Engine](/en/documentation/secure/firewall/guides/work-with-rules-engine/) for the details of this request and the [Azion API documentation](https://api.azion.com/) for all available criteria and behavior objects.
+:::
+
+---
+
+## Next steps
+
+- [How to configure Firewall main settings](/en/documentation/secure/firewall/guides/firewall-configure-main-settings/)
+- [Create Firewall rules with Rules Engine](/en/documentation/secure/firewall/guides/work-with-rules-engine/)
+- [Rules Engine for Firewall reference](/en/documentation/secure/firewall/reference/rules-engine/)
+- [Firewall concepts](/en/documentation/secure/firewall/concepts/)
+
+<br /><br />

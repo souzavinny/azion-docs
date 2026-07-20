@@ -1,0 +1,99 @@
+---
+title: Edge DNS concepts
+description: >-
+  Understand how Edge DNS resolves queries: authoritative hosting, Simple and
+  Weighted record policies, wildcard matching priority, TTL and propagation,
+  and DNSSEC authentication.
+meta_tags: 'Edge DNS, DNS, concepts, authoritative DNS, weighted policy, wildcard, TTL, propagation, DNSSEC'
+namespace: documentation_secure_edge_dns_concepts
+permalink: /documentation/secure/edge-dns/concepts/
+---
+
+This page explains the ideas behind [Edge DNS](/en/documentation/secure/edge-dns/): what the Domain Name System does, how Edge DNS acts as the authority for your zones, how record policies and wildcards decide which answer is returned, and how changes propagate. For record types, field definitions, and value restrictions, see the [Edge DNS records reference](/en/documentation/secure/edge-dns/#edge-dns-records).
+
+---
+
+## The Domain Name System (DNS)
+
+As the name implies, it's a domain name resolution system. It translates your site's domain name into an Internet Protocol (IP) address so a connection can be established with the destination that will provide the requested content.
+
+It's the DNS that allows you to type in a domain name instead of a string of numbers. In other words, DNS translates the string of numbers (IP) of the domain you want to access into words that form the URL you know.
+
+---
+
+## Authoritative hosting and delegation
+
+Edge DNS works as an authoritative DNS server that hosts zones, records, and configurations. When you create a zone and its records, this set of information is synchronized with the **Edge DNS** service: your settings are saved and distributed to the Azion network practically in real time.
+
+However, Edge DNS only becomes the authority over your zones after you point it at your DNS registry — for example: `registro.br`, `GoDaddy`, `AWS` — using the [nameservers listed for your zone](/en/documentation/secure/edge-dns/#dns-provider-configuration). Before that delegation, you can still verify how Edge DNS answers by querying one of the Azion nameservers directly, as shown in the [test zone guide](/en/documentation/secure/firewall/guides/test-zone/). It's important to verify that all your records are properly registered and tested at Edge DNS before making this appointment; otherwise, you risk having your service unavailable.
+
+---
+
+## Record policies: Simple and Weighted
+
+While you are adding or modifying a record on **Edge DNS**, you will find the *"Policy"* field, enabled for A, AAAA, CNAME, ANAME, and MX type records. It lets you choose between two policies that specify how **Edge DNS** should deal with requests answered by that record.
+
+### Simple Policy
+
+By selecting *simple policy*, **Edge DNS** uses the standard DNS records behavior, routing all the traffic to the specified addresses in the *"Value"* field.
+
+### Weighted Policy
+
+By selecting *weighted policy*, **Edge DNS** allows you to create multiple records with the same *Name* and *Type*, enabling you to specify a Weight that defines how much traffic should be routed to each record. This configuration allows you to load balance your applications or even gradually test new configurations.
+
+Given a set of Weighted Records, with same *Name* and *Type*, the chances of a specific record to be chosen by **Edge DNS** is defined by the following formula:
+
+`Weight of the record / Sum of all Weights`
+
+Setting a weight of `0` makes Edge DNS stop using that record. See the practical setup in [How to perform a load balance between DNS records](/en/documentation/secure/firewall/guides/load-balance-dns/).
+
+---
+
+## How wildcard records are resolved
+
+A wildcard record is a record that responds to DNS requests by domains that you haven't defined yet. You can create them for any type, inserting an asterisk (*) in the record name. For example, imagine that you have the following configuration for a zone whose domain is *example.com*:
+
+| Name       | Type | Value                                               |
+|------------|------|-----------------------------------------------------|
+| www        | A    | 192.168.0.1<br /><br /> 192.168.0.2<br /><br /> 192.168.0.3 |
+| *          | A    | 1.1.1.1                                             |
+| *.wildcard | A    | 2.2.2.2                                             |
+
+This means that:
+
+- If the query is made by `www.example.com`, the response will consist of 3 IP addresses: 192.168.0.1, 192.168.0.2, and 192.168.0. N.B. It isn't a wildcard, but it's given priority for the response because it correctly meets the record that is queried.
+- If the query is made by `ghost.example.com`, the response will be according to the wildcard it found. The response will be: 1.1.1.1.
+- If the query is made by `another.wildcard.example.com`, the response will be according to the wildcard it found this time. The response will be: 2.2.2.2.
+- If the query is made by `wrong.record.example.com`, the response will have no value, because there's nothing that corresponds to this structure.
+
+Only the left-most asterisk followed by a dot will be considered a wildcard. All other asterisks, if any, will be considered as valid characters.
+
+:::note
+Asterisks located further to the left that aren't followed by a dot won't be considered wildcards.
+:::
+
+It isn't allowed to use wildcard characters in SRV type records because it requires a standard format in its name.
+
+---
+
+## TTL and propagation
+
+Time-to-live (TTL) is the time a response can be cached for on a resolver server. When you create or modify DNS records on Edge DNS, changes are distributed across Azion's global network within seconds. However, full propagation to all DNS resolvers worldwide depends on your record's TTL configuration and the caching behavior of intermediate resolvers.
+
+Typical propagation characteristics:
+
+- **Azion network**: changes propagate within seconds to all Azion data centers.
+- **Global resolvers**: may take up to the configured TTL value (default: 3600 seconds).
+- **Negative caching**: failed lookups may be cached according to the SOA minimum TTL.
+
+---
+
+## DNSSEC
+
+The **Domain Name System Security Extensions (DNSSEC)** is a feature of the *Domain Name System (DNS)* that authenticates responses to domain name lookups. It doesn't provide privacy protections for those lookups but prevents attackers from manipulating or poisoning the responses to DNS requests.
+
+:::note
+DNSSEC doesn't encrypt data. It only guarantees the authenticity of the IP addresses returned after the URL domain conversion process.
+:::
+
+For the full explanation of the chain of trust, the DNSSEC resource records, and Azion's compatibility, see the [DNSSEC Compatibility reference](/en/documentation/secure/edge-dns/reference/dnssec-compatibility/). To enable it on a zone, see [How to activate DNSSEC](/en/documentation/secure/firewall/guides/activate-dnssec/).

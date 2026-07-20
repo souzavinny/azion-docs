@@ -8,132 +8,50 @@ namespace: documentation_products_edge_firewall
 permalink: /documentation/secure/firewall/
 ---
 
-import LinkButton from 'azion-webkit/linkbutton'
+**Firewall** protects workloads running on Azion's globally distributed infrastructure by inspecting and filtering traffic close to the requester—before it reaches the application. You use it to block unwanted requests, mitigate DoS and DDoS attacks, protect against OWASP Top 10 threats, filter traffic by IP/CIDR, ASN, or geolocation, apply rate limits, and run custom security logic at the edge.
 
-**Firewall** is a resource in the Azion platform that protects workloads running on its globally distributed infrastructure by inspecting and filtering traffic close to the requester—before it reaches the application.
-Its composable architecture allows you to combine powerful modules—**DDoS Protection**, **Web Application Firewall**, **Network Shield**, **Bot Manager**, and **Functions**—to address specific aspects of traffic inspection and threat mitigation.
+Its composable architecture lets you combine modules—**DDoS Protection**, **Web Application Firewall**, **Network Shield**, **Bot Manager**, and **Functions**—to address specific aspects of traffic inspection and threat mitigation:
 
-These capabilities can be used to build a comprehensive security policy that matches your workload’s requirements, while leveraging the platform’s global reach and low-latency performance.
+- [DDoS Protection](/en/documentation/secure/ddos-protection/): mitigates Distributed Denial of Service attacks at the network and application levels. Activated by default, with no additional configuration.
+- [Web Application Firewall](/en/documentation/secure/waf/): protects applications against threats such as SQL Injection, Remote File Inclusion (RFI), Cross-Site Scripting (XSS), and other OWASP Top 10 threats.
+- [Network Shield](/en/documentation/secure/network-shield/): creates filters by IP/CIDR, ASN, or countries (geolocation) through Network Lists.
+- [Bot Manager](/en/documentation/secure/bot-manager/): implements bot mitigation techniques, including blocklists, fingerprints, tampering protection, brute force prevention, advanced rate limiting, and human challenge.
+- [Functions](/en/documentation/secure/firewall/reference/functions/): runs serverless security functions—Azion curated or your own code—for extended functionalities such as IP reputation, JWT, and credential stuffing protection.
 
-Advantages of using Firewall:
+A firewall configuration consists of an identification name, the domains it protects, the activated modules, and the security rules configured in the **Rules Engine** tab. Each rule combines *Criteria* (conditionals) and *Behaviors* (commands), and the modules you activate define which criteria and behaviors are available. Rules run sequentially until the request is blocked or restricted, or until all rules are processed—the request only reaches your application if no rule blocks or rejects it. You can share the same firewall among all applications that adopt the same security policy.
 
-- Low-latency access, requests and responses.
-- Prevention of cybercriminals from reaching your origin/server by processing and blocking unwanted requests on the Azion Global Infrastructure.
-- Highly programmable, modular, and extendible.
-- Creation of allowed rules, blocklists, and greylists based on IP/CIDR address, ASN, or user location.
-- Protection of applications from the Tor network and other malicious traffic sources, including botnets, malware, proxies, and others.
-- Access rate limitation to applications using complex criteria and multiple buckets.
-- Mitigation of Denial of Service (DoS and DDoS) attacks.
-- Protection against OWASP Top 10 threats and others.
-- Implementation of bot mitigation techniques, including blocklists, fingerprints, tampering protection, brute force prevention, advanced rate limiting, human challenge, and others.
-- Integration of Azion curated functions or third-party software in Firewall for extended functionalities, such as IP reputation, fingerprint, JSON Web Tokens (JWT), credential stuffing, account takeover, price scraping, contact scraping, and others.
+You can manage your firewalls through [Azion Console](https://console.azion.com) or the [Azion API](https://api.azion.com).
 
-For more details on the product's accounting, see the [pricing](/en/documentation/platform/pricing/) page.
+---
 
 ## Implementation
 
-| Scope | Source |
-| ----- | ------ |
-| Main settings | [How to configure main settings](/en/documentation/secure/firewall/guides/firewall-configure-main-settings/) |
-| Update Firewall | [How to update your Firewall](/en/documentation/secure/firewall/guides/how-to-update-your-firewall/) |
-| Get to know Network Lists | [Network Lists](/en/documentation/secure/firewall/reference/network-shield/network-lists/) |
-| Get to know WAF Rule Sets | [WAF Rule Sets](/en/documentation/secure/waf/reference/rules-set/) |
-| Get to know WAF Custom Allowed Rules | [WAF Custom Allowed Rules](/en/documentation/secure/waf/reference/custom-allowed-rules/) |
-| Get to know Functions | [Functions Instances for Firewall](/en/documentation/secure/firewall/reference/functions-instances/) |
-| Get to know Rules Engine | [Rules Engine for Firewall](/en/documentation/secure/firewall/reference/rules-engine/) |
-| Get to know Certificate Manager | [Certificate Manager for Secure](/en/documentation/secure/certificate-manager/) |
-| DNSSEC Compatibility | [DNSSEC Compatibility](/en/documentation/secure/edge-dns/reference/dnssec-compatibility/) |
-| Create network lists | [How to create IP blocklists with Network Shield](/en/documentation/secure/network-shield/guides/blocklists-ip-addresses-edge/) |
-| WAF Mode | [How to check your WAF mode](/en/documentation/secure/waf/guides/how-to-check-your-waf-mode/) |
+| Type | Resource |
+| ---- | -------- |
+| Quickstart | [Create a firewall and block a request (Console and API)](/en/documentation/secure/firewall/quickstart/) |
+| Guide | [How to configure Firewall main settings](/en/documentation/secure/firewall/guides/firewall-configure-main-settings/) |
+| Guide | [Protect your domain](/en/documentation/secure/firewall/guides/firewall-protect-your-domain/) |
+| Guide | [Create Firewall rules with Rules Engine](/en/documentation/secure/firewall/guides/work-with-rules-engine/) |
+| Guide | [How to instantiate functions in your firewall](/en/documentation/secure/firewall/guides/instantiate-functions/) |
+| Guide | [How to create a WAF rule set](/en/documentation/secure/firewall/guides/create-waf-rule-set/) |
+| Guide | [How to block Tor exit node IP addresses](/en/documentation/secure/firewall/guides/block-tor-networks/) |
+| Reference | [Rules Engine for Firewall](/en/documentation/secure/firewall/reference/rules-engine/) |
+| Reference | [Functions for Firewall](/en/documentation/secure/firewall/reference/functions/) |
+| Reference | [Functions Instances for Firewall](/en/documentation/secure/firewall/reference/functions-instances/) |
+| Reference | [Network Lists](/en/documentation/secure/firewall/reference/network-shield/network-lists/) |
+| Concepts | [How Firewall works: modules, rules processing, and execution phases](/en/documentation/secure/firewall/concepts/) |
 
-## How Azion Firewall works
-
-By using Azion as your web development platform, you can create security settings on Firewall to protect your applications. Those firewall settings represent a set of rules that will be applied to the domains of your applications.
+:::note
+You can clone an existing firewall through the Azion API. The cloned firewall has identical settings as the original one, including main settings, functions instances, and rules from Rules Engine—but the domains associated with the original firewall aren't copied. Retrieve the [ID of the firewall](https://api.azion.com/#090fa5b0-3d68-4521-9a90-f4d93773f6d9) you want to clone and run a [POST request to clone it](https://api.azion.com/#7e92d69a-c98c-4578-b920-38a13e1a3bd2), providing a new name.
+:::
 
 :::tip
-You can share the same firewall among all applications that adopt the same security policy.
+Visit the [Guides page](/en/documentation/guides/#secure) and the [Secure section](/en/documentation/secure/overview/) to explore more options for protecting your applications.
 :::
-
-An firewall consists in an identification name, all your application domains where Firewall should be applied, what are the applied modules, and what are the security rules configured in the **Rules Engine** tab.
-
-<LinkButton link="/en/documentation/secure/firewall/guides/firewall-configure-main-settings/" label="go to configure main settings guide" severity="secondary" />
-
-:::note
-You need to activate at least one for the firewall to work.
-:::
-
-### Rules Engine for Firewall
-
-After activating the modules you want, you must configure your security rules in the **Rules Engine** tab. The rules you configure will run sequentially until the request is blocked or restricted or until all your rules are processed, at which point the request is released. The request's data stream only passes onto your application if none of your Firewall rules block or reject the request, ensuring that malicious requests don't reach your application.
-
-Each rule is made of *Criteria* (conditionals) and *Behaviors* (commands). The *Behaviors* setup will run if the conditions are met. For example, you can set up rules to block requests that come from IPs that are in a *blocklist* or even make up rules to exclude IPs that are in the allowed rules list. In this example, “block” is the Behavior, while the IP of the request is in the *blocklist* and not present in the *allowed rules* is the condition (Criteria).
-
-<LinkButton link="/en/documentation/secure/firewall/reference/rules-engine/" label="go to Rules Engine reference" severity="secondary" />
-
-<LinkButton link="/en/documentation/secure/firewall/guides/work-with-rules-engine/" label="go to work with rules engine guide" severity="secondary" />
-
-The Criteria and Behaviors available in Firewall depend on the modules you have enabled in the firewall main configuration. Here's the list of Criteria and Behaviors available to each Firewall module:
-
-List of Criteria and Behaviors available to each Firewall module:
-
-| Module                   | Criteria                                                                                                                                                                                                 | Behavior                                                                                      |
-|--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| Built-in (always on)     | `Hostname`<br />`Request URI`<br />`Scheme`<br />`Client Certificate Validation`<br />`Ssl Verification Status`                                                    | `Deny (403 Forbidden)`<br />`Drop (Close Without Response)`<br />`Set Rate Limit`              |
-| Functions           | -                                                                                                                                                                                                       | `Run Function`                                                                                |
-| Network Shield | `Network`                                                                                                                                                                                               | -                                                                                           |
-| Web Application Firewall | `Header Accept`<br />`Header Accept-Encoding`<br />`Header Accept-Language`<br />`Header Cookie`<br />`Header Origin`<br />`Header Referer`<br />`Header User Agent`<br />`Request Args`<br />`Request Method` | `Set WAF Rule Set`                                                                            |
-
-:::note
-The DDoS Protection module is activated by default and doesn't need any additional configuration.
-:::
-
-## About Firewall modules
-
-### DDoS Protection
-
-The **DDoS Protection** module protects your content and applications against *Distributed Denial of Service (DDoS)* attacks, as it detects attacks using advanced algorithms that run on Azion's distributed network. This distributed network is connected to several mitigation centers to guarantee mitigation during large-scale attacks, both at the network and application levels.
-
-<LinkButton link="/en/documentation/secure/ddos-protection/" label="go to DDoS Protection reference" severity="secondary" />
-
-### Functions
-
-**Functions** are components of Azion Web Platform**, which enable serverless functions to be added to your applications or firewall configurations, relieving your infrastructure, performing functions closer to the end-user, ensuring the necessary agility and scalability to meet your business objectives. You can also choose a ready-to-use function, or even write your own.
-
-<LinkButton link="/en/documentation/secure/firewall/reference/functions/" label="go to Functions for Firewall reference" severity="secondary" />
-
-<LinkButton link="/en/documentation/secure/firewall/guides/instantiate-functions/" label="go to instantiate functions guide" severity="secondary" />
-
-### Network Shield
-
-This module allows the creation of filters by IP/CIDR, ASN addresses, or by countries (geolocation) through the configuration of Network Lists and the definition of business rules that will validate blocking or release *Criteria*, according to your need, specified on your Firewall configuration.
-
-<LinkButton link="/en/documentation/secure/network-shield/" label="go to Network Shield reference" severity="secondary" />
-
-### Web Application Firewall
-
-Azion **Web Application Firewall (WAF)** protects your applications against threats such as SQL Injections, Remote File Inclusion (RFI), Cross-Site Scripting (XSS), and many others. The WAF analyses HTTP and HTTPS requests, detects and blocks threats before they can reach your infrastructure and affect your application performance.
-
-It works at layer 7 at the application level and is based on *scoring*. Each request is compared with a very rigorous and detailed set of application patterns and is given a score, which is associated with a certain threat family. According to the score that this request has, it can be released or blocked. This happens directly in Azion's edge nodes before the threat reaches your origin or causes any damage. It's possible to customize the desired sensitivity, and have a differentiated blocking for each threat family.
-
-<LinkButton link="/en/documentation/secure/waf/" label="go to Web Application Firewall reference" severity="secondary" />
-
-<LinkButton link="/en/documentation/secure/firewall/guides/create-waf-rule-set/" label="go to create waf rule set guide" severity="secondary" />
 
 ---
 
-## Clone for an firewall
-
-You can clone an existing firewall through **Azion API**.
-
-The new cloned firewall will have identical settings as the original one, including main settings, functions instances, and rules from Rules Engine. However, the domains associated with the original firewall won't be copied to the cloned one.
-
-You need to retrieve the [ID of the firewall](https://api.azion.com/#090fa5b0-3d68-4521-9a90-f4d93773f6d9) you want to clone and then run a POST request to clone it, providing a new name.
-
-<LinkButton link="https://api.azion.com/#7e92d69a-c98c-4578-b920-38a13e1a3bd2" label="clone an firewall" severity="secondary" />
-
----
-
-## Limits
+## Limits and plans
 
 :::tip
 **Increase limits** <br></br>
@@ -149,3 +67,19 @@ These are the **default limits**:
 | IP/CIDR in a network list | 20,000 lines |
 | Web Application Firewall | 128 kB |
 | Domains per firewall | 200 |
+
+For more details on the product's accounting, see the [pricing](/en/documentation/platform/pricing/) page.
+
+---
+
+## Machine-readable facts
+
+```text
+product: Firewall
+former_name: Edge Firewall
+api_base: https://api.azion.com/v4
+api_resource: /edge_firewall/firewalls
+auth_header: Authorization: Token [TOKEN]
+modules: DDoS Protection (activated by default), Web Application Firewall, Network Shield, Bot Manager, Functions
+rules_processing: sequential; stops when a rule blocks or restricts the request, or when all rules are processed
+```

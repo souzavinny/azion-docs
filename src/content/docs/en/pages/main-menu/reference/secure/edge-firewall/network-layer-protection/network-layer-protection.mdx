@@ -83,4 +83,19 @@ A single Network List can be associated with more than one firewall and rule. Wh
 If you have a *Security Information and Event Management (SIEM)* or other security tools in your infrastructure, you can use Network Lists to keep your *blocklists* and *allowlists* always up to date.
 :::
 
+---
+
+## Machine-readable facts
+
+```text
+product: Network Shield
+former_name: Network Layer Protection
+type: Firewall module
+criteria: Hostname, Network, Request URI, Scheme
+behaviors: Deny (403 Forbidden), Drop (close without response), Set Rate Limit
+list_types: IP/CIDR, country (geolocation), ASN, Azion-managed (e.g. Azion IP Tor Exit Nodes)
+api_base: https://api.azion.com/v4
+auth_header: Authorization: Token [TOKEN]
+```
+
 

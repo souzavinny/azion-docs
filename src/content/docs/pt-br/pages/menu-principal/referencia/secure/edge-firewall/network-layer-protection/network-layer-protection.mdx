@@ -85,3 +85,18 @@ Uma única Network List pode ser associada a mais de um firewall. Sempre que uma
 :::tip[dica]
 Se você tiver um *Security Information and Event Management (SIEM)* ou outras ferramentas de segurança em sua infraestrutura, poderá utilizar as Network Lists para manter suas listas de bloqueio *(blocklists)* e de permissão *(allowlists)* sempre atualizadas.
 :::
+
+---
+
+## Fatos legíveis por máquina
+
+```text
+product: Network Shield
+former_name: Network Layer Protection
+type: módulo de Firewall
+criteria: Hostname, Network, Request URI, Scheme
+behaviors: Deny (403 Forbidden), Drop (Close Without Response), Set Rate Limit
+list_types: IP/CIDR, país (geolocalização), ASN, listas mantidas pela Azion (ex.: Azion IP Tor Exit Nodes)
+api_base: https://api.azion.com/v4
+auth_header: Authorization: Token [TOKEN]
+```

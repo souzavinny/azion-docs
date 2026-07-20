@@ -170,6 +170,52 @@ Veja, abaixo, a lista de todas as regras internas disponíveis:
 
 ---
 
+## Campos das Allowed Rules
+
+As Allowed Rules são compostas pelos seguintes campos:
+
+| Campo | Descrição |
+| ----- | --------- |
+| `Rule ID` | ID numérico exclusivo da regra WAF. Consulte a [lista de regras internas](#regras-internas-do-waf). |
+| `Rule Description` | Descrição automática do que a regra é/faz |
+| `Reason` | Campo de descrição textual alternativa |
+| `URI` | *Uniform Resource Identifier (URI)* é o caminho (*path*) após o domínio na URL |
+| `Path` | Delimita o escopo de atuação da regra. Se especificado, restringe a aplicação da `Match Zone` somente ao `path` definido |
+| `Match Zone` | Partes ou campos da requisição que serão comparados com o `match pattern`. Saiba mais sobre cada opção na [tabela de Match Zones](#opcoes-de-match-zone) abaixo |
+| `Active` | Switch de ativação da Allowed Rule |
+
+### Opções de Match Zone
+
+O menu suspenso da **Match Zone** abre as opções disponíveis para preencher este campo. Cada opção tem um comportamento específico, conforme explicado na tabela abaixo.
+
+:::note
+As opções que começam com **Specific** requerem que você informe um valor no campo **Name** para especificar qual elemento deseja comparar.
+:::
+
+| Campo | Descrição | Exemplo de uso |
+| ----- | ---------- | -------------- |
+| `Any HTTP Header Value` | `Match pattern` será comparado com o valor de qualquer cabeçalho HTTP da requisição |  Compara com valores como `Mozilla/5.0`, `application/json`, etc. |
+| `Any HTTP Header Name` | `Match pattern` será comparado com o nome de qualquer cabeçalho HTTP da requisição |  Compara com nomes como `User-Agent`, `Content-Type`, `Authorization`, etc. |
+| `Specific HTTP Header Value` | `Match pattern` será comparado com o valor de um cabeçalho HTTP específico da requisição | Name: `User-Agent` — compara apenas o valor do header User-Agent |
+| `Specific HTTP Header Name` | `Match pattern` será comparado com o nome de um cabeçalho HTTP específico da requisição | Name: `X-Custom-Header` — verifica se existe um header com esse nome |
+| `Any Query String Value` | `Match pattern` será comparado com o valor de qualquer parâmetro da query string |  Em `?id=123&user=admin`, compara com `123` e `admin` |
+| `Any Query String Name` | `Match pattern` será comparado com o nome de qualquer parâmetro da query string |  Em `?id=123&user=admin`, compara com `id` e `user` |
+| `Specific Query String Value` | `Match pattern` será comparado com o valor de um parâmetro específico da query string | Name: `session_id` — compara apenas o valor do parâmetro `session_id` |
+| `Specific Query String Name` | `Match pattern` será comparado com o nome de um parâmetro específico da query string | Name: `token` — verifica se existe um parâmetro chamado `token` |
+| `Body Form Field Value` | `Match pattern` será comparado com o valor de qualquer campo do formulário no body da requisição |  Compara valores de campos como `username`, `password`, etc. |
+| `Body Form Field Name` | `Match pattern` será comparado com o nome de qualquer campo do formulário no body da requisição |  Compara nomes de campos do formulário |
+| `Specific Body Form Field Value` | `Match pattern` será comparado com o valor de um campo específico do formulário no body da requisição | Name: `password` — compara apenas o valor do campo `password` |
+| `Specific Body Form Field Name` | `Match pattern` será comparado com o nome de um campo específico do formulário no body da requisição | Name: `api_key` — verifica se existe um campo com esse nome |
+| `Any URL` | `Match pattern` será comparado com qualquer parte da URL da requisição |  Compara com a URL completa ou partes dela |
+| `Raw Body` | `Match pattern` será comparado ao body não interpretado (*unparsed body*) de uma requisição |  Útil para analisar payloads JSON ou XML brutos |
+| `File Extension` | `Match pattern` será comparado com a extensão do arquivo na requisição |  Compara extensões como `.php`, `.exe`, `.sh` |
+
+:::note
+Os campos `Last Editor` e `Last Modified` estão disponíveis apenas pela [API](https://api.azion.com).
+:::
+
+---
+
 ## Gerenciando Exceções via API
 
 Você pode gerenciar as Exceções do WAF programaticamente usando a API da Azion. Isso permite automatizar a criação, atualização e remoção de exceções, integrar a calibração do WAF em pipelines de CI/CD e construir ferramentas personalizadas para gerenciar sua postura de segurança.
@@ -313,7 +359,7 @@ curl --request DELETE \
 | `id` | integer | Identificador único da exceção (somente leitura) |
 | `rule_id` | integer | O ID da regra interna do WAF para criar uma exceção. Veja a [tabela de regras internas do WAF](#regras-internas-do-waf) para os IDs disponíveis |
 | `reason` | string | Uma descrição explicando por que esta exceção foi criada |
-| `match_zone` | string | A parte da requisição para correspondência. Veja as [opções de Match Zone](/pt-br/documentacao/secure/waf/#match-zone-dropdown-options) |
+| `match_zone` | string | A parte da requisição para correspondência. Veja as [opções de Match Zone](#opcoes-de-match-zone) |
 | `match_pattern` | string | O padrão para correspondência na zona especificada |
 | `path` | string | O caminho da URL onde a exceção se aplica |
 | `active` | boolean | Se a exceção está ativa (`true`) ou inativa (`false`) |

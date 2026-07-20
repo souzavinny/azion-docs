@@ -1,0 +1,83 @@
+---
+title: Firewall concepts
+description: >-
+  Understand how Firewall works: how modules unlock criteria and behaviors,
+  how Rules Engine processes rules sequentially, where functions run, and how
+  network lists are evaluated at the edge.
+meta_tags: 'firewall, edge computing, security, concepts, modules, rules engine, execution order'
+namespace: documentation_secure_firewall_concepts
+permalink: /documentation/secure/firewall/concepts/
+---
+
+import RulesExecution from '~/includes/snippets/RulesEngineExecution/en/snippet.mdx'
+
+This page explains the ideas behind [Firewall](/en/documentation/secure/firewall/): what a firewall configuration is made of, how modules unlock criteria and behaviors, the order in which rules and behaviors are executed, where functions run, and how network lists are evaluated. For field-by-field definitions, see the [Rules Engine for Firewall reference](/en/documentation/secure/firewall/reference/rules-engine/).
+
+---
+
+## A firewall is a set of rules applied to domains
+
+By using Azion as your web development platform, you can create security settings on Firewall to protect your applications. Those firewall settings represent a set of rules that will be applied to the domains of your applications.
+
+A firewall consists of an identification name, all your application domains where Firewall should be applied, the applied modules, and the security rules configured in the **Rules Engine** tab. You need to activate at least one module for the firewall to work.
+
+:::tip
+You can share the same firewall among all applications that adopt the same security policy.
+:::
+
+---
+
+## How modules unlock Criteria and Behaviors
+
+Each rule is made of *Criteria* (conditionals) and *Behaviors* (commands). The *Behaviors* setup will run if the conditions are met. For example, you can set up rules to block requests that come from IPs that are in a *blocklist* or even make up rules to exclude IPs that are in the allowed rules list. In this example, "block" is the Behavior, while the IP of the request is in the *blocklist* and not present in the *allowed rules* is the condition (Criteria).
+
+The Criteria and Behaviors available in Firewall depend on the modules you have enabled in the firewall main configuration. Here's the list of Criteria and Behaviors available to each Firewall module:
+
+| Module                   | Criteria                                                                                                                                                                                                 | Behavior                                                                                      |
+|--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| Built-in (always on)     | `Hostname`<br />`Request URI`<br />`Scheme`<br />`Client Certificate Validation`<br />`Ssl Verification Status`                                                    | `Deny (403 Forbidden)`<br />`Drop (Close Without Response)`<br />`Set Rate Limit`              |
+| Functions           | -                                                                                                                                                                                                       | `Run Function`                                                                                |
+| Network Shield | `Network`                                                                                                                                                                                               | -                                                                                           |
+| Web Application Firewall | `Header Accept`<br />`Header Accept-Encoding`<br />`Header Accept-Language`<br />`Header Cookie`<br />`Header Origin`<br />`Header Referer`<br />`Header User Agent`<br />`Request Args`<br />`Request Method` | `Set WAF Rule Set`                                                                            |
+
+:::note
+The DDoS Protection module is activated by default and doesn't need any additional configuration. It detects attacks using advanced algorithms that run on Azion's distributed network, which is connected to several mitigation centers to guarantee mitigation during large-scale attacks, both at the network and application levels.
+:::
+
+### How WAF decides to block a request
+
+The **Web Application Firewall (WAF)** works at layer 7, at the application level, and is based on *scoring*. Each HTTP or HTTPS request is compared with a very rigorous and detailed set of application patterns and is given a score, which is associated with a certain threat family. According to the score that this request has, it can be released or blocked. This happens directly in Azion's edge nodes before the threat reaches your origin or causes any damage. It's possible to customize the desired sensitivity and have a differentiated blocking for each threat family.
+
+---
+
+## Execution order in Rules Engine
+
+After activating the modules you want, you configure your security rules in the **Rules Engine** tab. The rules you configure run sequentially until the request is blocked or restricted, or until all your rules are processed, at which point the request is released. The request's data stream only passes onto your application if none of your Firewall rules block or reject the request, ensuring that malicious requests don't reach your application.
+
+<RulesExecution />
+
+---
+
+## Execution phases: where functions run
+
+The functions in JavaScript on the Firewall run in the *request phase*, following this process:
+
+- The rules configured on the Firewall **Rules Engine** for the function to run are triggered.
+- Azion Runtime processes the function, returning an outcome.
+- Firewall Rules Engine resumes the processing, based on the outcome, from the point the behavior was triggered.
+
+All functions used on Firewall must have a *finishing outcome*, such as `event.continue()`, `event.deny()`, and `event.drop()`.
+
+When instantiating a function, you don't change its source code: you inform the arguments that will be passed to the context of the function's execution. Arguments set on the function instance override the default arguments defined on the function itself, which allows you to reuse the same function with different configurations depending on the context. See [Functions Instances for Firewall](/en/documentation/secure/firewall/reference/functions-instances/) for the override rules and examples.
+
+---
+
+## How network lists are evaluated
+
+The **Network Shield** module uses a series of lists maintained by the user themselves or by Azion, which can be updated manually or via the [Azion API](https://api.azion.com). When a request reaches an Azion Edge Node, it's assessed and, if it meets the criteria set in the rule for that node, the configured lists are queried, thereby filtering out known offenders even before the request reaches the client's infrastructure.
+
+When activating the module within a firewall, the `Network` *criteria* and the `Deny`, `Drop`, and `Set Rate Limit` *behaviors* become available in the **Rules Engine** settings of the selected firewall. Whenever a network list is associated with a rule, it's compared with the IP address of the client performing the HTTP request, taking into account the comparison operators configured in the **Rules Engine** rule.
+
+See the [Network Lists reference](/en/documentation/secure/firewall/reference/network-shield/network-lists/) for the list types and Azion-managed lists.
+
+<br /><br />

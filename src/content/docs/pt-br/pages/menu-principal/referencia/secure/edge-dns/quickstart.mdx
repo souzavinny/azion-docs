@@ -1,0 +1,182 @@
+---
+title: Quickstart do Edge DNS
+description: >-
+  Crie sua primeira zona e registro no Edge DNS e confirme que os nameservers
+  da Azion respondem às suas consultas DNS, usando o Azion Console ou a Azion
+  API.
+meta_tags: 'Edge DNS, DNS, quickstart, primeiros passos, zona, registros, secure'
+namespace: documentation_secure_edge_dns_quickstart
+permalink: /documentacao/secure/edge-dns/quickstart/
+---
+
+Este quickstart mostra como criar sua primeira zona no [Edge DNS](/pt-br/documentacao/secure/edge-dns/), adicionar um registro a ela e confirmar que os nameservers da Azion estão respondendo às consultas do seu domínio. Você pode seguir o **caminho pelo Console** ou o **caminho pela API**.
+
+---
+
+## Pré-requisitos
+
+- Uma conta no [Azion Console](https://console.azion.com). Você encontra mais informações sobre como criar uma na [página de documentação](/pt-br/documentacao/account/reference/criar-uma-conta/).
+- Um domínio próprio, registrado em um provedor de DNS como `registro.br`, `GoDaddy` ou `AWS`.
+- Para o caminho pela API: um [personal token](/pt-br/documentacao/account/guides/personal-tokens/).
+
+:::caution[atenção]
+Se o **Edge DNS** estiver ativado, zonas hospedadas e consultas podem gerar custos relacionados ao uso. Consulte a [página de preços](/pt-br/documentacao/platform/pricing/) para mais informações.
+:::
+
+---
+
+## Caminho pelo Console
+
+### Crie uma zona
+
+1. Acesse o [Azion Console](/pt-br/documentacao/account/guides/como-acessar-o-azion-console/) > **Edge DNS**.
+2. Clique no botão **+ Zone**.
+3. Dê um nome único e fácil de lembrar a sua zona.
+4. Em **Domain Name**, adicione o nome do domínio que deseja hospedar no Edge DNS. Por exemplo: `meudominio.com`.
+5. Clique no botão **Save**.
+
+### Adicione um registro
+
+1. Na lista, escolha a zona que você acabou de criar.
+2. Selecione a aba **Records**.
+3. Clique no botão **+ Record**.
+4. Em **Name**, forneça o nome do novo registro como um subdomínio. Por exemplo: `www`.
+5. Em **Record Type**, selecione `A`.
+6. Em **Value**, adicione o endereço IPv4 com o qual seu registro deve responder. Exemplo: `192.168.0.1`.
+7. Em **TTL (seconds)**, escolha o tempo, em segundos, que uma resposta pode ser armazenada no servidor de resolução. Exemplo: `3600`.
+8. Em **Policy**, selecione **Simple**.
+9. Clique no botão **Save**.
+
+Para um passo a passo detalhado de cada campo e tipo de registro, veja [Como adicionar registros](/pt-br/documentacao/secure/firewall/guides/adicionar-registros/) e as [recomendações de registros](/pt-br/documentacao/secure/edge-dns/#recomendacoes-para-configurar-os-tipos-de-dns-record).
+
+### Você sabe que funcionou quando
+
+Você pode testar sua zona antes de apontar seu provedor de registro para a Azion, consultando diretamente um dos nameservers da Azion:
+
+```bash
+dig +short www.meudominio.com @ns1.aziondns.net
+```
+
+- A resposta mostra o valor que você configurou no registro. Para um registro `A`, é o endereço IPv4. Exemplo:
+
+```bash
+dig +short www.meudominio.com @ns1.aziondns.net
+192.168.0.1
+```
+
+- Você também pode usar os comandos `host` ou `nslookup` com o mesmo nameserver. Veja [Como testar o processamento de uma zona de Edge DNS](/pt-br/documentacao/secure/firewall/guides/testar-zona/) para as saídas esperadas de cada ferramenta.
+
+---
+
+## Caminho pela API
+
+1. Execute a seguinte requisição `POST` no seu terminal, substituindo `[TOKEN VALUE]` pelo seu [personal token](/pt-br/documentacao/account/guides/personal-tokens/), para criar uma nova zona:
+
+```bash
+curl --request POST \
+  --url https://api.azion.com/v4/edge_dns/zones \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Token [TOKEN VALUE]' \
+  --header 'Content-Type: application/json' \
+  --data '{
+  "name": "New Zone",
+  "domain": "yourdomain.com",
+  "active": true
+}'
+```
+
+2. Você receberá uma resposta semelhante a esta, listando o `id` da zona e os nameservers da Azion que responderão por ela:
+
+```json
+{
+  "results": [
+    {
+      "nx_ttl": 3600,
+      "domain": "yourdomain.com",
+      "retry": 7200,
+      "name": "New zone",
+      "nameservers": [
+        "ns1.aziondns.net",
+        "ns2.aziondns.com",
+        "ns3.aziondns.org"
+      ],
+      "soa_ttl": 3600,
+      "active": true,
+      "refresh": 43200,
+      "expiry": 1209600,
+      "id": 1234
+    }
+  ],
+  "schema_version": 3
+}
+```
+
+3. Copie o valor do `id`. Você também pode recuperá-lo a qualquer momento com uma requisição `GET`:
+
+```bash
+curl --request GET \
+  --url https://api.azion.com/v4/edge_dns/zones \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Token [TOKEN VALUE]'
+```
+
+4. Execute a seguinte requisição `POST`, substituindo `[TOKEN VALUE]` pelo seu personal token e `<zone_id>` pelo valor que você copiou, para adicionar um registro à zona:
+
+```bash
+curl --request POST \
+  --url https://api.azion.com/v4/dns/zones/<zone_id>/records \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Token [TOKEN VALUE]' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "type": "CNAME",
+    "name": "www",
+    "rdata": ["www.mydomain.com"],
+    "ttl": 20,
+    "description": "description"
+  }'
+```
+
+Aguarde alguns minutos para que as alterações se propaguem e seus registros serão criados na hosted zone que você escolheu.
+
+:::tip
+Consulte a [documentação da API da Azion](https://api.azion.com/) para saber mais sobre o que a API da Azion pode oferecer.
+:::
+
+### Você sabe que funcionou quando
+
+- A resposta do `POST` da zona lista seu domínio com um `id` e os `nameservers` da Azion.
+- Consultar diretamente um dos nameservers da Azion retorna o valor que você configurou em `rdata`:
+
+```bash
+dig +short www.yourdomain.com @ns1.aziondns.net
+```
+
+---
+
+## Entre em produção: aponte seu provedor de registro para a Azion
+
+Sua zona responde às consultas nos nameservers da Azion, mas os resolvedores na internet só a alcançam depois que você delega seu domínio. No seu provedor de DNS, substitua os servidores DNS autoritativos do domínio pelos nameservers da Azion.
+
+:::caution[atenção]
+Ao hospedar seu domínio no Edge DNS da Azion, você deve alterar os servidores DNS autoritativos do seu domínio para usar os nameservers da Azion:
+
+- ns1.aziondns.net
+- ns2.aziondns.com
+- ns3.aziondns.org
+:::
+
+:::note[nota]
+É importante verificar se todos os seus registros estão devidamente cadastrados e testados no **Edge DNS** antes de efetuar esse apontamento. Caso contrário, você correrá o risco de ter indisponibilidade do seu serviço.
+:::
+
+Veja [Como migrar nameservers para a Azion](/pt-br/documentacao/build/workloads/guides/migrar-ns-para-a-azion/) para o passo a passo completo de delegação.
+
+---
+
+## Próximos passos
+
+- [Como adicionar registros](/pt-br/documentacao/secure/firewall/guides/adicionar-registros/)
+- [Como testar o processamento de uma zona de Edge DNS](/pt-br/documentacao/secure/firewall/guides/testar-zona/)
+- [Conceitos do Edge DNS](/pt-br/documentacao/secure/edge-dns/concepts/)
+- [Compatibilidade com DNSSEC](/pt-br/documentacao/secure/edge-dns/reference/compatibilidade-dnssec/)

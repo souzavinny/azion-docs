@@ -1,58 +1,55 @@
 ---
 title: Edge DNS
 description: >-
-  Hospede domínios, zonas DNS e registros com as soluções de roteamento da Azion
-  e Edge DNS.
-meta_tags: 'Edge DNS, DNS, roteamento'
+  Edge DNS é um serviço de DNS autoritativo que hospeda seus domínios, zonas e
+  registros na infraestrutura distribuída da Azion, com proteção contra DDoS e
+  distribuição de registros em tempo real.
+meta_tags: 'Edge DNS, DNS, roteamento, zonas, registros, DNS autoritativo'
 namespace: documentation_products_intelligent_dns
 permalink: /documentacao/secure/edge-dns/
 ---
 
 import LinkButton from 'azion-webkit/linkbutton'
 
-O Azion **Edge DNS** é um serviço para hospedagem de domínios que compõe a solução de roteamento de tráfego da Azion. Com ele, seus domínios ficarão hospedados na infraestrutura da Azion, utilizando as mesmas soluções de performance e segurança construídas para os demais produtos Azion, combinando técnicas para otimização das requisições com proteção contra ataques **Distributed Denial of Service (DDoS)**. Edge DNS é uma solução de DNS autoritativo e permite que clientes gerenciem seus domínios, zonas e registros através de uma interface amigável e intuitiva.
+O **Edge DNS** hospeda seus domínios na infraestrutura distribuída da Azion para que eles utilizem as mesmas soluções de performance e segurança construídas para os demais produtos Azion, combinando técnicas para otimização das requisições com proteção contra ataques **Distributed Denial of Service (DDoS)**.
+
+Ele funciona como uma solução de DNS autoritativo que permite gerenciar seus domínios, zonas e registros através de uma interface amigável e intuitiva. Foi projetado para quem deseja alta performance e alta disponibilidade para sua hospedagem e seu domínio.
+
+O fluxo é: você cria uma zona com o domínio que deseja hospedar, adiciona os registros que definem como o **Edge DNS** deve responder às consultas e aponta os servidores DNS autoritativos do seu domínio, no seu provedor de registro, para os nameservers da Azion. Suas configurações são salvas e distribuídas para a rede da Azion praticamente em tempo real. Você pode gerenciar suas zonas e registros por meio do [Azion Console](https://console.azion.com) ou da [Azion API](https://api.azion.com/).
 
 ---
 
 ## Implementação
 
-| Escopo | Fonte |
-| ------ | ----- |
-| Main settings | [Como definir as main settings de uma zona](/pt-br/documentacao/secure/firewall/guides/edge-dns-definir-main-settings/) |
-| Comando dig | [Como procurar servidores DNS com o comando dig](/pt-br/documentacao/secure/edge-dns/guides/executar-o-comando-dig/) |
-| Comando traceroute | [Como diagnosticar problemas de desempenho e entrega com o comando traceroute](/pt-br/documentacao/secure/edge-dns/guides/executar-o-comando-traceroute/) |
+| Tipo | Recurso |
+| ---- | ------- |
+| Quickstart | [Crie sua primeira zona e registro (Console e API)](/pt-br/documentacao/secure/edge-dns/quickstart/) |
+| Guia | [Como definir as main settings de uma zona](/pt-br/documentacao/secure/firewall/guides/edge-dns-definir-main-settings/) |
+| Guia | [Como adicionar registros](/pt-br/documentacao/secure/firewall/guides/adicionar-registros/) |
+| Guia | [Como migrar nameservers para a Azion](/pt-br/documentacao/build/workloads/guides/migrar-ns-para-a-azion/) |
+| Guia | [Como testar o processamento de uma zona de Edge DNS](/pt-br/documentacao/secure/firewall/guides/testar-zona/) |
+| Guia | [Como realizar um balanceamento de carga entre registros DNS](/pt-br/documentacao/secure/firewall/guides/balanceamento-de-carga-dns/) |
+| Guia | [Como ativar o DNSSEC](/pt-br/documentacao/secure/firewall/guides/ativar-dnssec/) |
+| Referência | [Compatibilidade com DNSSEC](/pt-br/documentacao/secure/edge-dns/reference/compatibilidade-dnssec/) |
+| Conceitos | [Como o Edge DNS funciona: resolução, políticas, wildcards e propagação](/pt-br/documentacao/secure/edge-dns/concepts/) |
 
----
-
-## Domain Name System (DNS)
-
-**Domain Name System (DNS)** é um sistema de resolução de nomes de domínios. Ele consegue resolver o nome em um endereço IP para que possa ser estabelecida uma conexão com o destino que fornecerá o conteúdo do site solicitado.
-
-Em outras palavras, o DNS resolve o endereço de IP do domínio que você deseja acessar em palavras para formar a URL que você conhece.
-
-É o DNS que permite que você digite o nome de um domínio ao invés da sequência de números do endereço de IP. 
-
-Após configurar sua zona, você pode testar se ela está processando suas informações.
-
-<LinkButton link="/pt-br/documentacao/secure/firewall/guides/testar-zona/" label="consulte o guia sobre testar zonas" severity="secondary" /> 
+:::tip
+Visite a [página de Guias](/pt-br/documentacao/guides/#seguranca) e a [seção Secure](/pt-br/documentacao/secure/overview/) para explorar mais opções de proteção para seus domínios.
+:::
 
 ---
 
 ## Registros do Edge DNS
 
-<LinkButton link="/pt-br/documentacao/secure/firewall/guides/adicionar-registros/" label="consulte o guia sobre adicionar registros" severity="secondary" />
+Os registros definem as respostas DNS da sua zona hospedada. Estes são os campos que você configura em cada registro.
 
 ### Zone Name
 
-Nome do registro. Identificador para o registro recém criado.
-
-Essa descrição é o domínio que se deseja criar. Como, por exemplo, `manager` em [console.azion.com](https://console.azion.com).
+Identificador para o registro recém criado. Essa descrição é o domínio que se deseja criar. Como, por exemplo, `manager` em [console.azion.com](https://console.azion.com).
 
 ### Type
 
-Tipo do registro. É o tipo de registro que está sendo adicionado, como, por exemplo, um registro do tipo A, AAAA, MX ou CNAME, dentre outros.
-
-Você pode criar entradas do tipo ANAME, possibilitando a hospedagem e uso de *naked domains* com outros produtos Azion.
+É o tipo de registro que está sendo adicionado, como, por exemplo, um registro do tipo A, AAAA, MX ou CNAME, dentre outros. Você pode criar entradas do tipo ANAME, possibilitando a hospedagem e uso de *naked domains* com outros produtos Azion.
 
 #### Tipos de DNS Record suportados
 
@@ -78,48 +75,22 @@ Para prover a criação de registros, o **Edge DNS** suporta os seguintes tipos 
 
 ### TTL (seconds)
 
-Este é o momento em que uma resposta pode ser armazenada em cache em um resolver server. Time-to-live (TTL) é um valor em um pacote de protocolo de internet (IP) que informa a um roteador de rede se o pacote está na rede há muito tempo e deve ser descartado.
+É o tempo que uma resposta pode ser armazenada em cache em um resolver server. Time-to-live (TTL) é um valor em um pacote de protocolo de internet (IP) que informa a um roteador de rede se o pacote está na rede há muito tempo e deve ser descartado.
 
 ### Policy
 
-Ele permite que você especifique qual política o Edge DNS deve considerar ao resolver solicitações respondidas por esta entrada de registro.
+Permite que você especifique qual política o Edge DNS deve considerar ao resolver solicitações respondidas por esta entrada de registro. Esse campo é ativado exatamente quando você está configurando registros do tipo A, AAAA, CNAME, ANAME ou MX.
 
-Você pode selecionar a **Simple Policy**, para usar a funcionalidade DNS padrão, ou a **Weighted Policy**, para especificar a quantidade de tráfego a ser enviada para cada Record.
+Você pode selecionar a *Simple Policy* (para usar a funcionalidade DNS padrão) ou a *Weighted Policy* (para especificar a quantidade de tráfego a ser enviada para cada Record).
 
-Ao escolher a **Weighted** Policy, haverá mais dois campos a serem preenchidos, que são:
-
-**Weight:** você pode escolher um número entre 0 e 255 para especificar o peso para cada registro. Quando você escolhe 0, o **Edge DNS** deixa de usar este registro.
-
-**Description:** usados para diferenciar registros com o mesmo Nome e Tipo.
-
-A partir desse momento, essas informações serão sincronizadas com o serviço de atendimento do Edge DNS. Suas configurações são salvas e distribuídas para a rede da Azion praticamente em tempo real.
-
-Pronto! Seu domínio já está configurado e preparado para ser atendido pelo Edge DNS da Azion. Para verificar se tudo deu certo, execute alguns dos testes descritos na seção: [Testar minha zona](#testar-minha-zona).
-
-## Record Policies
-
-Enquanto você está adicionando ou modificando um registro no Edge DNS, você pode encontrar o campo **"Policy"**. Esse campo é ativado exatamente quando você está configurando registros do tipo A, AAAA, CNAME, ANAME ou MX. Ele permite que você escolha entre duas políticas para especificar como o Edge DNS deve lidar com as solicitações que respondem por este registro.
-
-### Simple Policy
-
-Ao selecionar uma política simples (Simple Policy), o Edge DNS usa o comportamento padrão dos registros DNS, roteando todo o tráfego para os endereços especificados no campo **Value**.
-
-### Weighted Policy
-
-Ao selecionar a política ponderada (Weighted Policy), o Edge DNS permite criar vários registros com o mesmo `Name` e `Type`, permitindo especificar um `Weight`, que define quanto tráfego deve ser roteado para cada registro. Esta configuração permite que você realize balanceamento de carga de suas aplicações ou mesmo teste gradualmente novas configurações.
-
-Ao selecionar a Weighted Policy, diferentes opções de campos são exibidas:
+Ao escolher a *Weighted Policy*, haverá mais dois campos a serem preenchidos, que são:
 
 | Campo                    | Descrição                                                                                                                                                                     |
 |--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Weight<br />*obrigatório   | Você precisa especificar um valor de peso (Weight), entre 0 e 255. Valores mais altos aumentam as chances de um registro específico ser usado. Definir 0 desativa o registro. |
 | Description<br />*opcional | Você pode adicionar uma descrição de até 45 caracteres para distinguir entre registros com o mesmo Name e Type. Exemplo: Florida Load Balancer                                |
 
-Dado um conjunto de Registros Ponderados (Weighted Records) com o mesmo *Name* e *Type*, as chances de um registro específico ser escolhido pelo Edge DNS é definido pela seguinte fórmula:
-
-`Peso do registro / Soma de todos os pesos`
-
-<LinkButton link="/pt-br/documentacao/secure/firewall/guides/balanceamento-de-carga-dns/" label="consulte o guia balancear carga entre registros DNS" severity="secondary" />
+Veja como cada política resolve as consultas na página de [conceitos do Edge DNS](/pt-br/documentacao/secure/edge-dns/concepts/#politicas-de-registro-simple-e-weighted).
 
 ---
 
@@ -152,76 +123,25 @@ O formato do valor aceito varia de acordo com o tipo de registro escolhido.
 - Criar uma entrada A-type apontando para seu webserver. Assim, ele fará o redirecionamento para a Azion. Essa opção pode impactar o ranking Google.
 - Criar uma entrada ANAME no seu DNS e apontá-la para a Azion. Se você utiliza um serviço de DNS fora da Azion ou um domínio que aponta para outra plataforma, essa opção pode não ser compatível.
 
-<LinkButton link="/pt-br/documentacao/secure/firewall/guides/acessar-root-domain/" label="consulte o guia sobre acessar endereços de IP por root domain" severity="secondary" /> 
-
----
-
-## Wildcards
-
-Um registro curinga é um registro que responde a solicitações de DNS para domínios que você ainda não definiu. Você pode criá-los para qualquer tipo, inserindo um asterisco (*) no nome do registro. Por exemplo, imagine que você tenha a seguinte configuração para uma zona cujo domínio é *example.com*:
-
-| Name       | Type | Value                                               |
-|------------|----- |-----------------------------------------------------|
-| www        | A    | 192.168.0.1<br /><br /> 192.168.0.2<br /><br /> 192.168.0.3 |
-| *          | A    | 1.1.1.1                                             |
-| *.wildcard | A    | 2.2.2.2                                             |
-
-Isso significa que:
-
-- Se a consulta for realizada por `www.example.com`, a resposta será composta por 3 endereços IP: 192.168.0.1, 192.168.0.2 e 192.168.0. Ele **não é** um wildcard, mas tem prioridade na resposta porque encontrou corretamente o registro consultado.
-- Se a consulta for realizada por `ghost.example.com`, a resposta será efetuada de acordo com o wildcard encontrado. Ou seja, responderá: 1.1.1.1.
-- Se a consulta for realizada por `another.wildcard.example.com`, a resposta será efetuada de acordo com o wildcard encontrado para essa construção, ou seja, responderá: 2.2.2.2.
-- Se a consulta for realizada por `wrong.record.example.com`, a resposta não terá nenhum valor, pois não existe nenhuma correspondência a essa estrutura consultada.
-
-Somente será considerado um _wildcard_, o asterisco mais à esquerda seguido, obrigatoriamente, por um ponto. Todos os demais asteriscos, se existirem, serão considerados como caracteres válidos.
-
-:::note[nota]
-Asteriscos localizados mais à esquerda que não estiverem sendo seguidos por um ponto não serão considerados wildcards.
-:::
-
-Não é permitido a utilização de caracteres wildcard em registros do tipo SRV, pois ele segue uma norma de formatação em seu nome.
+<LinkButton link="/pt-br/documentacao/secure/firewall/guides/acessar-root-domain/" label="consulte o guia sobre acessar endereços de IP por root domain" severity="secondary" />
 
 ---
 
 ## Configurar o Edge DNS para responder pelos seus domínios
 
-Para que o **Edge DNS** passe a responder como autoridade sobre suas zonas, você deve efetuar o apontamento para os nameservers da Azion em seu provedor de DNS, como Registro.br, GoDaddy ou AWS.
+Para que o **Edge DNS** passe a responder como autoridade sobre suas zonas, você deve efetuar o apontamento para os nameservers da Azion em seu provedor de DNS. Por exemplo: `registro.br`, `GoDaddy`, `AWS`.
 
 Para efetuar o apontamento no seu DNS de registro, utilize um dos *nameservers* listados na aba *Main Settings* de suas zonas cadastradas na Azion.
 
 :::note[nota]
-É importante verificar se todos os seus registros estão devidamente cadastrados e testados no Edge DNS antes de efetuar esse apontamento. Caso contrário, você correrá o risco de ter indisponibilidade do seu serviço.
+É importante verificar se todos os seus registros estão devidamente cadastrados e testados no **Edge DNS** antes de efetuar esse apontamento. Caso contrário, você correrá o risco de ter indisponibilidade do seu serviço.
 :::
 
 ---
 
-## Domain Name System Security Extensions (DNSSEC)
+## Monitoramento e troubleshooting
 
-O **Domain Name System Security Extensions (DNSSEC)** é um recurso do Domain Name System (DNS) que autentica respostas a pesquisas de nome de domínio. Ele não fornece proteções de privacidade para essas pesquisas, mas impede que invasores manipulem ou envenenem as respostas às solicitações de DNS.
-
-<LinkButton link="/pt-br/documentacao/secure/edge-dns/reference/compatibilidade-dnssec/" label="saiba mais sobre compatibilidade DNSSEC" severity="secondary" />
-
----
-
-## Monitoramento e Troubleshooting
-
-### Verificar status do serviço
-
-Antes de solucionar problemas de DNS, verifique a saúde atual da plataforma Azion na [Página de Status da Azion](https://status.azion.com). Esta página fornece informações em tempo real sobre a disponibilidade do serviço e quaisquer incidentes em andamento que afetem o Edge DNS ou outros serviços da Azion.
-
-### Tempo de propagação DNS
-
-Quando você cria ou modifica registros DNS no Edge DNS, as alterações são distribuídas pela rede global da Azion em segundos. No entanto, a propagação completa para todos os resolvedores DNS worldwide depende da configuração do TTL (Time-to-Live) do seu registro e do comportamento de cache dos resolvedores intermediários.
-
-Características típicas de propagação:
-
-- **Rede Azion**: Alterações propagam em segundos para todos os data centers da Azion
-- **Resolvedores globais**: Podem levar até o valor do TTL configurado (padrão: 3600 segundos)
-- **Cache negativo**: Pesquisas com falha podem ser armazenadas em cache de acordo com o TTL mínimo do SOA
-
-### Verificar configuração DNS
-
-Para confirmar se sua zona DNS está processando requisições corretamente, utilize as seguintes ferramentas de diagnóstico:
+Antes de solucionar problemas de DNS, verifique a saúde atual da plataforma Azion na [Página de Status da Azion](https://status.azion.com). Para confirmar se sua zona DNS está processando requisições corretamente, utilize as seguintes ferramentas de diagnóstico:
 
 | Ferramenta | Finalidade | Guia |
 |------------|------------|------|
@@ -230,41 +150,53 @@ Para confirmar se sua zona DNS está processando requisições corretamente, uti
 | **NSLOOKUP** | Consultar registros DNS para domínios e IPs | [Guia de teste de zona](/pt-br/documentacao/secure/firewall/guides/testar-zona/) |
 | **Traceroute** | Diagnosticar caminho de rede e problemas de latência | [Como usar o Traceroute](/pt-br/documentacao/secure/edge-dns/guides/executar-o-comando-traceroute/) |
 
-### Monitorar consultas DNS
-
 Acompanhe padrões de consultas DNS e identifique possíveis problemas usando os produtos Observe da Azion:
 
-- **[Real-Time Metrics](/pt-br/documentacao/observe/real-time-metrics/#edge-dns)**: Visualize gráficos agregados mostrando volumes de consulta, códigos de resposta e distribuição geográfica ao longo do tempo.
-- **[GraphQL API](/pt-br/documentacao/devtools/graphql/)**: Consulte dados brutos e agregados de DNS para análise personalizada e integração com ferramentas de monitoramento.
+- **[Real-Time Metrics](/pt-br/documentacao/observe/real-time-metrics/#edge-dns)**: visualize gráficos agregados mostrando volumes de consulta, códigos de resposta e distribuição geográfica ao longo do tempo.
+- **[GraphQL API](/pt-br/documentacao/devtools/graphql/reference/recursos/#conjuntos-de-dados)**: consulte dados brutos e agregados de DNS para análise personalizada e integração com ferramentas de monitoramento.
 
 <LinkButton link="/pt-br/documentacao/secure/firewall/guides/edge-dns-monitorar-metricas/" label="consulte o guia de métricas do Edge DNS" severity="secondary" />
 
-### Reportar problemas
-
-Se você enfrentar comportamento inesperado com replicação do Edge DNS ou respostas de consultas:
-
-1. **Colete informações de diagnóstico**:
-   - Saída do comando DIG ou HOST mostrando a resposta inesperada
-   - Timestamp do problema observado (formato UTC preferido)
-   - Nomes de domínio afetados e tipos de registro
-   - Nameserver utilizado na consulta (ex: `ns1.aziondns.net`)
-   - Localização geográfica onde o problema foi observado
-
-2. **Verifique a página de status** para quaisquer incidentes em andamento em [status.azion.com](https://status.azion.com)
-
-3. **Entre em contato com o Suporte Azion** através do [Suporte Azion](/pt-br/documentacao/services/support/) com as informações coletadas
+Se você enfrentar comportamento inesperado com a replicação do Edge DNS ou com as respostas de consultas, entre em contato com o [Suporte da Azion](/pt-br/documentacao/services/support/) com: a saída do comando DIG ou HOST mostrando a resposta inesperada, o timestamp do problema observado (formato UTC preferido), os nomes de domínio afetados e tipos de registro, o nameserver utilizado na consulta (por exemplo: `ns1.aziondns.net`) e a localização geográfica onde o problema foi observado.
 
 ---
 
-## Redirecionamento em massa para migração de domínios
+## Redirecionamento em massa para migração de domínios
 
 **Massive Redirect** é uma integração serverless da Azion para o processamento de muitos redirecionamentos simultâneos. Ele pode ser empregado onde houver necessidade de alterar um número significativo de endereços como, por exemplo, nas migrações de domínios.
 
 Para configurar o redirecionamento em massa para a migração de domínios, acesse a documentação [Redirecionamento em massa para migração de domínios](/pt-br/documentacao/marketplace/integrations/massive-redirect-integration/).
 
+---
 
+## Limites e planos
 
+Estes são os **limites quantificados** documentados para os registros do Edge DNS:
 
+| Escopo | Limite |
+| ------ | ------ |
+| Valores de registros A, AAAA e MX | Máximo de 10 endereços IP (um por linha) |
+| Registros NS | Máximo de 10 endereços (um por linha) |
+| Registros SRV | Máximo de 10 respostas por registro (uma por linha) |
+| Registros ANAME e CNAME | Apenas um domínio para cada registro |
+| Valores de registros TXT | Limite total de 1.000 caracteres |
+| TTL | Valor máximo: `2147483647` segundos |
+| Weight (Weighted Policy) | Valores de `0` a `255`; `0` desativa o registro |
+| Description (Weighted Policy) | Até 45 caracteres |
+
+O Edge DNS é cobrado com base em duas métricas: **Zones** e **Queries**. Se o Edge DNS estiver ativado, zonas hospedadas e consultas podem gerar custos relacionados ao uso: consulte a [página de preços](/pt-br/documentacao/platform/pricing/) para mais informações.
 
 ---
 
+## Machine-readable facts
+
+```text
+product: Edge DNS
+former_name: Intelligent DNS (renamed on March 12, 2024)
+api_base: https://api.azion.com/v4
+api_resource: /edge_dns/zones
+auth_header: Authorization: Token [TOKEN]
+nameservers: ns1.aziondns.net, ns2.aziondns.com, ns3.aziondns.org
+supported_record_types: A, AAAA, ANAME, CAA, CNAME, DS, MX, NS, PTR, SRV, TXT
+billing_metrics: Zones and Queries
+```

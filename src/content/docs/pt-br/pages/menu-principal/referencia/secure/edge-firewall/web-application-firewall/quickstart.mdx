@@ -1,0 +1,162 @@
+---
+title: Quickstart do WAF
+description: >-
+  Crie seu primeiro WAF Rule Set, aplique-o a um firewall com uma regra do
+  Rules Engine e confirme que o WAF está analisando e bloqueando ameaças,
+  usando o Azion Console ou a API da Azion.
+meta_tags: 'web application firewall, waf, security, secure, edge computing, quickstart, primeiros passos'
+namespace: documentation_secure_waf_quickstart
+permalink: /documentacao/secure/waf/quickstart/
+---
+
+Este quickstart mostra como criar seu primeiro **WAF Rule Set**, aplicá-lo a um firewall com uma regra do **Rules Engine** e confirmar que o WAF está analisando e bloqueando ameaças. Você pode seguir o **caminho do Console** ou o **caminho da API**.
+
+O exemplo cria um conjunto de regras para bloquear ameaças da família **SQL Injection**, para prevenir ataques que tentam uma consulta `select`.
+
+---
+
+## Pré-requisitos
+
+- Uma conta no [Azion Console](https://console.azion.com). Você encontra mais informações sobre como criar uma na [página da documentação](/pt-br/documentacao/account/reference/criar-uma-conta/).
+- Um [firewall](/pt-br/documentacao/secure/firewall/guides/firewall-definir-main-settings/) associado aos domínios das suas aplicações, com o módulo **Web Application Firewall** ativado.
+- Para o caminho da API: um [personal token](/pt-br/documentacao/account/guides/personal-tokens/).
+
+---
+
+## Caminho do Console
+
+1. Acesse o [Azion Console](/pt-br/documentacao/account/guides/como-acessar-o-azion-console/) > **WAF Rules**.
+2. Clique no botão **+ WAF Rule**.
+3. No campo **Name**, dê um nome único e fácil de lembrar para o seu conjunto de regras WAF. Neste caso, `Conjunto de regras SQL Injection`.
+4. Na seção **Threat Type Configuration**, procure pela opção **SQL Injection**.
+5. Escolha a opção **Sensitivity** **High** para esta ameaça, para que o WAF não permita requisições consideradas como uma ameaça de SQL Injection.
+6. Certifique-se de que o switch **Active** esteja habilitado.
+7. Clique no botão **Save**.
+
+Agora, você precisa aplicar o conjunto de regras que criou no **Rules Engine**. Para fazer isso:
+
+1. Ainda no Azion Console, vá para **Firewall**.
+2. Selecione o firewall no qual você deseja aplicar a nova regra.
+3. Selecione a aba **Rules Engine**.
+4. Clique no botão **+ Rule**.
+5. Dê um nome para sua regra e, opcionalmente, uma descrição.
+6. Na seção **Criteria**, selecione a variável `Request Args`.
+7. Como operador de comparação, selecione `matches`.
+8. Como argumento, adicione `content-type=select`.
+9. Na seção **Behaviors**, selecione **Set WAF Rule Set**.
+10. Como argumentos:
+    - No primeiro menu suspenso, selecione o conjunto de regras que deseja usar. Neste caso, `Conjunto de regras SQL Injection`.
+    - No segundo menu suspenso, selecione o modo que você deseja que o firewall opere: **Learning** ou **Blocking**. Neste caso, **Blocking**.
+11. Clique no botão **Save**.
+
+:::tip
+Você pode usar o modo **Learning** para evitar o bloqueio de requisições legítimas e mau funcionamento de sua aplicação. Nesta etapa, o WAF analisa as ameaças sem realmente bloqueá-las. Veja [Como verificar o modo do seu WAF](/pt-br/documentacao/secure/waf/guides/como-verificar-modo-do-seu-waf/).
+:::
+
+### Você sabe que funcionou quando
+
+- Na aba **Rules Engine** do firewall, a regra associada ao WAF Rule Set mostra a lógica `Then: [Set WAF Rule Set] [<name-of-waf-rule-set>] [Blocking]`.
+- Requisições identificadas como ameaças são bloqueadas e nem chegam à sua origem. As requisições bloqueadas são respondidas aos usuários com HTTP Status `400` ou com a resposta configurada pelo WAF.
+- No [Real-Time Events](/pt-br/documentacao/observe/real-time-events/) > **HTTP Requests**, as queries a seguir retornam as requisições bloqueadas pelo WAF, substituindo `domain.com` pelo domínio da sua aplicação:
+
+```text
+host='domain.com' AND waf_attack_action='$BLOCK'
+```
+
+```text
+host='domain.com' AND status='400' AND upstream_status='0'
+```
+
+Ao selecionar um resultado, você acessa os dados da requisição, incluindo o campo `waf_score`: quanto maior o valor, mais indicativos de ameaças foram encontrados na requisição. Veja [Como encontrar o score de requisições bloqueadas pelo WAF](/pt-br/documentacao/secure/waf/guides/como-encontrar-score-de-requisicoes-bloqueadas-pelo-waf/).
+
+---
+
+## Caminho da API
+
+1. Execute a seguinte requisição `POST` no seu terminal, substituindo `[TOKEN VALUE]` pelo seu [personal token](/pt-br/documentacao/account/guides/personal-tokens/), para criar um WAF Rule Set:
+
+```bash
+curl --request POST \
+  --url https://api.azion.com/v4/edge_firewall/wafs \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Token [TOKEN VALUE]' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "active": true,
+    "name": "My WAF",
+    "product_version": "1.0",
+    "engine_settings": {
+      "engine_version": "2021-Q3",
+      "type": "score",
+      "attributes": {
+        "rulesets": [1],
+        "thresholds": [
+          { "threat": "cross_site_scripting", "sensitivity": "medium" },
+          { "threat": "directory_traversal",  "sensitivity": "medium" },
+          { "threat": "evading_tricks",       "sensitivity": "medium" },
+          { "threat": "file_upload",          "sensitivity": "medium" },
+          { "threat": "identified_attack",    "sensitivity": "medium" },
+          { "threat": "remote_file_inclusion","sensitivity": "medium" },
+          { "threat": "sql_injection",        "sensitivity": "medium" },
+          { "threat": "unwanted_access",      "sensitivity": "medium" }
+        ]
+      }
+    }
+  }'
+```
+
+2. Copie o valor de `id` da resposta.
+3. Execute a seguinte requisição `POST` para criar uma regra, substituindo `[TOKEN VALUE]` pelo seu [personal token](/pt-br/documentacao/account/guides/personal-tokens/), a variável `<edge_firewall_id>` pelo valor do [ID do firewall](https://api.azion.com/#015cb4a3-8fa2-4625-9792-2cc271e184eb) e `<waf_rule_set_id>` pelo id que você copiou:
+
+```bash
+curl --request POST \
+  --url https://api.azion.com/v4/edge_firewall/firewalls/<edge_firewall_id>/request_rules \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Token [TOKEN VALUE]' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "name": "SQL Injection rule",
+    "active": true,
+    "criteria": [
+      [
+        {
+          "conditional": "if",
+          "variable": "${request_args}",
+          "operator": "matches",
+          "argument": "content-type=select"
+        }
+      ]
+    ],
+    "behaviors": [
+      {
+        "type": "set_waf",
+        "attributes": {
+          "waf_id": <waf_rule_set_id>
+        }
+      }
+    ]
+  }'
+```
+
+4. Aguarde alguns minutos para que as alterações se propaguem.
+
+:::note
+O comportamento `set_waf` neste payload referencia o WAF Rule Set apenas por meio do atributo `waf_id`. O modo do WAF (**Learning** ou **Blocking**) é atualmente configurado via Azion Console, como mostrado no **Caminho do Console** deste quickstart — o payload de API acima não inclui um campo de modo.
+:::
+
+### Você sabe que funcionou quando
+
+- A resposta do primeiro `POST` retorna o WAF Rule Set que você criou, incluindo seu `id`.
+- No [Azion Console](https://console.azion.com) > **Firewall** > seu firewall > aba **Rules Engine**, a nova regra aparece com o behavior **Set WAF Rule Set**.
+- No [Real-Time Events](/pt-br/documentacao/observe/real-time-events/) > **HTTP Requests**, as queries mostradas no [Caminho do Console](#voce-sabe-que-funcionou-quando) retornam as requisições bloqueadas pelo WAF.
+
+---
+
+## Próximos passos
+
+- [Como fazer o tuning do WAF](/pt-br/documentacao/secure/firewall/guides/tune-waf/)
+- [Como configurar uma WAF Custom Allowed Rule](/pt-br/documentacao/secure/waf/guides/configurar-waf-allowed-rules/)
+- [Referência de WAF Rule Sets](/pt-br/documentacao/secure/waf/reference/rule-sets/)
+- [Conceitos do WAF](/pt-br/documentacao/secure/waf/concepts/)
+
+<br /><br />

@@ -1,0 +1,109 @@
+---
+title: Conceitos do WAF
+description: >-
+  Entenda como o Azion Web Application Firewall funciona: o modelo de detecção
+  baseado em score, os níveis de sensibilidade, os modos Learning e Blocking, a
+  execução através do Rules Engine e como o WAF interpreta requisições POST.
+meta_tags: 'web application firewall, waf, security, secure, edge computing, conceitos, score, learning, blocking, sensibilidade'
+namespace: documentation_secure_waf_concepts
+permalink: /documentacao/secure/waf/concepts/
+---
+
+Esta página explica as ideias por trás do [Web Application Firewall (WAF)](/pt-br/documentacao/secure/waf/): como o modelo de detecção baseado em score decide o que bloquear, o que os modos Learning e Blocking fazem, como um WAF Rule Set é executado através do Rules Engine e como o WAF interpreta as requisições. Para as tabelas exatas de tipos de ameaças e níveis de sensibilidade, veja a [referência de WAF Rule Sets](/pt-br/documentacao/secure/waf/reference/rule-sets/).
+
+---
+
+## Onde o WAF é executado
+
+O WAF é um módulo do [Firewall](/pt-br/documentacao/secure/firewall/). Ele opera na sétima camada do modelo OSI, a camada de aplicação, onde ocorre o relacionamento entre as aplicações web, seus respectivos serviços de rede e dados de usuários. Funciona como uma barreira para filtrar e monitorar o tráfego entre sua aplicação e as requisições da internet: as ameaças são detectadas e bloqueadas nos edge nodes da Azion, antes que atinjam sua origem ou causem qualquer tipo de dano.
+
+---
+
+## O modelo de detecção baseado em score
+
+O WAF se baseia em uma metodologia de *pontuação* (score) por requisição. Cada requisição HTTP/HTTPS é comparada a um conjunto rigoroso e detalhado de padrões de aplicações e recebe um *score* associado a uma determinada família de ameaças. Se houver mais de um caso para o mesmo tipo de ameaça, o score aumenta.
+
+Uma requisição é bloqueada pelo WAF caso obtenha um score maior ou igual ao limite do nível de sensibilidade configurado, e você pode definir um nível de sensibilidade para cada [família de ameaças](/pt-br/documentacao/secure/waf/reference/rule-sets/#tipos-de-ameacas). Cada nível de sensibilidade tolera um número definido de indícios de ameaças, e o score do WAF representa essa quantidade de indícios: quanto mais flexível é o nível de sensibilidade, maior é o score do WAF que ele aceita; já as sensibilidades mais rígidas aceitam apenas requisições que somaram poucos indícios de ameaças. Veja a referência de [Níveis de sensibilidade](/pt-br/documentacao/secure/waf/reference/rule-sets/#niveis-de-sensibilidade) para o limite de score de cada nível.
+
+Você pode inspecionar o score das requisições bloqueadas através do campo `waf_score` no [Real-Time Events](/pt-br/documentacao/observe/real-time-events/). Quanto maior o valor, mais indicativos de ameaças foram encontrados na requisição; se o resultado for `-`, nenhum indicativo de ameaça foi encontrado. Por esse motivo, quanto mais rígido for o nível de sensibilidade definido no seu WAF, maior será a quantidade de requisições bloqueadas com `waf_score` baixo. Veja [Como encontrar o score de requisições bloqueadas pelo WAF](/pt-br/documentacao/secure/waf/guides/como-encontrar-score-de-requisicoes-bloqueadas-pelo-waf/).
+
+---
+
+## Modos Learning e Blocking
+
+O WAF pode operar em dois modos diferentes:
+
+- **Learning**: o WAF analisa as ameaças sem realmente bloqueá-las. O modo de aprendizagem (ou *estágio de calibração*) ajuda a melhorar o funcionamento do WAF e reduz falsos positivos. Nessa etapa, o WAF identifica os comportamentos legítimos da sua aplicação, colocando-os em uma *allowlist*, para que você evite o bloqueio de requisições legítimas e o mau funcionamento da sua aplicação.
+- **Blocking**: todas as requisições consideradas ameaças são bloqueadas e nem chegam ao servidor (origem), fornecendo proteção em tempo real contra todas as famílias de ameaças suportadas.
+
+Você define o modo em uma regra no [Rules Engine](/pt-br/documentacao/secure/firewall/reference/rules-engine/) com o behavior **Set WAF Rule Set** ou via [API da Azion](https://api.azion.com/#ae9cdca8-3949-4b25-b1e6-2e071cd193fc). Veja [Como verificar o modo do seu WAF](/pt-br/documentacao/secure/waf/guides/como-verificar-modo-do-seu-waf/).
+
+:::note
+Requisições que se enquadram na regra 13 (formato de `POST` inválido) serão bloqueadas em alguns casos, mesmo que o WAF esteja operando em modo *learning*.
+:::
+
+---
+
+## Execução através do Rules Engine
+
+Um WAF Rule Set não atua sobre o tráfego por si só. Após configurar as main settings de um WAF Rule Set com a tabela **Threat Type Configuration**, você deve criar uma regra no [Rules Engine para Firewall](/pt-br/documentacao/secure/firewall/reference/rules-engine/) para executar os critérios e comportamentos, usando o behavior **Set WAF Rule Set**. Essa configuração garante que suas definições do WAF sejam implementadas juntamente com outras lógicas de segurança do Firewall.
+
+Behaviors e regras são executados na ordem em que estão organizados. Você também pode combinar múltiplos WAF Rule Sets no mesmo firewall definindo critérios diferentes para cada regra — por exemplo, aplicando um conjunto de regras padrão à maioria das requisições e um conjunto secundário, com uma Custom Allowed Rule, apenas às requisições que carregam um cookie específico. Veja [Configure regras de WAF para um cookie específico](/pt-br/documentacao/secure/waf/guides/waf-rules-para-cookie-especifico/).
+
+---
+
+## Como o WAF interpreta requisições POST
+
+Ao analisar requisições `POST`, o WAF interpreta o corpo da requisição apenas quando o cabeçalho `Content-Type` utiliza um dos tipos a seguir:
+
+- `application/x-www-form-urlencoded`
+- `multipart/form-data`
+- `application/json`
+- `application/vnd.api+json`
+- `application/csp-report`
+
+Quando o `Content-Type` não é um dos suportados, o corpo da requisição pode ser considerado não analisável pelo WAF, o que impacta a forma como algumas regras de validação de protocolo são aplicadas, incluindo regras relacionadas à validação de formato de `POST`.
+
+### Regra 13: validação de formato de POST
+
+A **regra 13** do WAF está relacionada à validação de formato de requisições `POST`, garantindo que o corpo da requisição esteja em conformidade com os formatos de mensagem definidos pelos padrões HTTP. Ela considera, entre outros fatores:
+
+- O método utilizado (`POST`).
+- O `Content-Type` configurado.
+- A forma como o corpo é serializado (por exemplo, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/json`).
+
+Para entender os formatos esperados e a semântica de requisições `POST`, consulte:
+
+- [RFC 7231 – Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content](https://datatracker.ietf.org/doc/html/rfc7231)
+- [RFC 2388 – Returning Values from Forms: multipart/form-data](https://datatracker.ietf.org/doc/html/rfc2388)
+
+:::note
+**Limite de Tamanho do Payload da Requisição**  
+Payloads maiores que 160 KB não serão analisadas pelo WAF e acionarão a regra 2 do WAF.
+:::
+
+---
+
+## Rule IDs
+
+Cada regra do WAF possui um identificador numérico único, chamado `Rule ID`.
+
+- **Visualização**: os `Rule IDs` aparecem nas telas de **WAF Tuning** e **Allowed Rules**.
+- **Uso**: você pode usar o `Rule ID` para identificar, filtrar e permitir/bloquear comportamentos específicos da aplicação.
+- **Lista completa**: consulte a descrição das regras internas e seus `Rule IDs` na [referência de Exceções do WAF](/pt-br/documentacao/secure/waf/reference/custom-allowed-rules/#regras-internas-do-waf).
+
+---
+
+## O ciclo de calibração: Tuning e Exceções
+
+**WAF Tuning** é uma ferramenta analítica que permite identificar os bloqueios acionados pelas regras do WAF com base em registros de tráfego, permitindo detectar possíveis ataques e definir quais casos podem ser permitidos, caso representem um comportamento esperado ou aceito. Todas as correspondências são exibidas agrupadas pelo **rule ID**, juntamente com informações como **total de hits**, **número de URIs**, **IPs únicos** e mais, para que você ajuste a precisão do WAF para evitar falsos positivos ou permitir tráfego legítimo.
+
+Com base nessa análise, você pode criar *Allowed Rules* (referenciadas como **Exceções** na API): configurações que permitem explicitamente que certos padrões de requisição não sejam bloqueados, sobrepondo as regras de segurança padrão do WAF que identificariam essas requisições como potencialmente maliciosas. Elas devem ser usadas com cautela e apenas em situações específicas, como falsos positivos impactando tráfego legítimo, requisições de parceiros ou sistemas confiáveis que utilizam padrões não convencionais, ou durante testes e validações de novas funcionalidades em ambientes controlados.
+
+:::caution[Atenção]
+O ideal é que essas regras sejam temporárias e revisadas regularmente para garantir que não comprometam a segurança da aplicação.
+:::
+
+Veja [Como fazer o tuning do WAF](/pt-br/documentacao/secure/firewall/guides/tune-waf/) e a [referência de Exceções do WAF](/pt-br/documentacao/secure/waf/reference/custom-allowed-rules/).
+
+<br /><br />

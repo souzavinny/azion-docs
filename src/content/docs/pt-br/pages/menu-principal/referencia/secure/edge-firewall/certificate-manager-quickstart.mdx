@@ -1,0 +1,151 @@
+---
+title: Quickstart do Certificate Manager
+description: >-
+  Registre seu primeiro certificado TLS, associe-o a um domínio e confirme que
+  sua aplicação está servindo tráfego HTTPS, usando o Azion Console ou a Azion
+  API.
+meta_tags: >-
+  certificado digital, certificate manager, tls, https, quickstart, primeiros
+  passos
+namespace: documentation_secure_certificate_manager_quickstart
+permalink: /documentacao/secure/certificate-manager/quickstart/
+---
+
+Este quickstart mostra como registrar no **Certificate Manager** um certificado TLS que você já possui, associá-lo a um domínio e confirmar que sua aplicação está servindo tráfego HTTPS com ele. Você pode seguir o **caminho pelo Console** ou o **caminho pela API**.
+
+Se você não possui um certificado, pode [solicitar um certificado Let's Encrypt](/pt-br/documentacao/build/applications/guides/como-gerar-um-certificado-lets-encrypt/) gerenciado automaticamente pela Azion ou [gerar um Certificate Signing Request (CSR)](/pt-br/documentacao/secure/firewall/guides/certificado-digital/) pela Azion e submetê-lo a uma autoridade de certificação.
+
+---
+
+## Pré-requisitos
+
+- Uma conta no [Azion Console](https://console.azion.com). Você encontra mais informações sobre como criar uma na [página de documentação](/pt-br/documentacao/account/reference/criar-uma-conta/).
+- Um certificado TLS (X.509) e sua chave privada, em formato [ASCII PEM](https://www.ssl.com/guide/pem-der-crt-and-cer-x-509-encodings-and-conversions/). A chave privada não pode estar protegida por *passphrase*.
+- Um [domínio configurado com a Azion](/pt-br/documentacao/build/workloads/guides/configurar-dominio/) cujos hostnames correspondam ao certificado.
+- Para o caminho pela API: um [personal token](/pt-br/documentacao/account/guides/personal-tokens/).
+
+:::note
+Este quickstart usa as configurações do [Workloads](/pt-br/documentacao/build/workloads/) e a Azion API v4. Há instruções separadas para contas que usam as configurações do [Domains](/pt-br/documentacao/build/applications/reference/domains/) legado no guia [Como criar um certificado digital](/pt-br/documentacao/build/workloads/guides/criar-certificado-digital/). Se você não tem certeza de quais passos se aplicam à sua conta, consulte o guia [Verifique a migração da sua conta](/pt-br/documentacao/account/guides/verificar-migracao-conta/).
+:::
+
+---
+
+## Caminho pelo Console
+
+### Registre o certificado
+
+1. Acesse o [Azion Console](/pt-br/documentacao/account/guides/como-acessar-o-azion-console/) > **Certificate Manager**.
+2. Clique no botão **+ Digital Certificate**.
+3. Nomeie seu certificado.
+4. Selecione a opção **Import a server certificate**.
+5. No campo **Certificate**, cole o certificado.
+6. No campo **Private Key**, cole a chave privada.
+7. Clique no botão **Save**.
+
+### Associe o certificado a um domínio
+
+1. No canto superior esquerdo da página, abra o **Products menu**, representado por três linhas horizontais > **Workloads**.
+2. Selecione o Workload desejado.
+3. Em **Certificate Manager**, selecione o certificado que você criou nas etapas anteriores.
+4. Certifique-se de que o domínio listado nos campos **Subdomain** e **Domain** seja o mesmo do certificado emitido para o seu domínio.
+5. Clique no botão **Save**.
+6. Aguarde alguns minutos para que as alterações se propaguem.
+
+### Você sabe que funcionou quando
+
+- Na página **Certificate Manager**, seu certificado está listado com o status **Active**: certificado em uso, vinculado a um Workload e protegendo o tráfego HTTPS.
+- Você pode acessar sua aplicação HTTPS e verificar as configurações de segurança usando seu navegador.
+- O seguinte comando OpenSSL, substituindo `seudominio.com` por um dos CNAMEs do domínio, retorna o seu certificado:
+
+```bash
+openssl s_client -showcerts -connect seudominio.com:443
+```
+
+---
+
+## Caminho pela API
+
+1. Substitua qualquer quebra de linha no certificado por `\n`, incluindo para os marcadores de início e fim, para transformar o certificado em uma string. Faça o mesmo com a chave privada.
+2. Execute a seguinte requisição `POST` no seu terminal, substituindo `[TOKEN]` pelo seu [personal token](/pt-br/documentacao/account/guides/personal-tokens/) e adicionando seu certificado e chave privada aos campos:
+
+```bash
+curl --request POST \
+  --url https://api.azion.com/v4/digital_certificates/certificates \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Token [TOKEN]' \
+  --header 'Content-Type: application/json' \
+  --data '{
+  "name": "CERT seudominio.com",
+  "certificate": "-----BEGIN CERTIFICATE-----\n<seu_certificado>\n-----END CERTIFICATE-----",
+  "private_key": "-----BEGIN RSA PRIVATE KEY-----\n<sua_chave_privada>\n-----END RSA PRIVATE KEY-----",
+  "type": "edge_certificate",
+  "active": true
+}'
+```
+
+3. Você receberá uma resposta semelhante a esta, confirmando que o certificado foi registrado:
+
+```json
+{
+    "results": {
+        "id": <digital_certificate_id>,
+        "name": "CERT seudominio.com",
+        "issuer": "",
+        "subject_name": [],
+        "validity": "2028-03-24 20:09:00-03:00",
+        "status": "Active",
+        "certificate_type": "edge_certificate",
+        "managed": false
+    }
+}
+```
+
+4. Execute a seguinte requisição `GET` para obter o id do seu Workload:
+
+```bash
+curl --request GET \
+  --url https://api.azion.com/v4/workspace/workloads \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Token [TOKEN]'
+```
+
+5. Localize o domínio que você deseja associar ao certificado e copie o valor `workload_id` recebido na resposta. Em seguida, execute uma requisição `PATCH`, adicionando o `workload_id` como caminho, para atualizar o campo de certificado com o id que você recebeu no processo de criação:
+
+```bash
+curl --request PATCH \
+  --url https://api.azion.com/v4/workspace/workloads/{workload_id} \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Token [TOKEN]' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "tls": {
+      "certificate": <digital_certificate_id>
+    },
+    "domains": [
+      "seudominio.com"
+    ]
+  }'
+```
+
+6. Você deve receber uma resposta com os dados atualizados. Aguarde alguns minutos para que as alterações se propaguem.
+
+### Você sabe que funcionou quando
+
+- A resposta do `POST` mostra seu certificado com `"status": "Active"`.
+- Você pode acessar sua aplicação HTTPS e verificar as configurações de segurança usando seu navegador.
+- O seguinte comando OpenSSL, substituindo `seudominio.com` por um dos CNAMEs do domínio, retorna o seu certificado:
+
+```bash
+openssl s_client -showcerts -connect seudominio.com:443
+```
+
+---
+
+## Próximos passos
+
+- [Como criar um certificado digital](/pt-br/documentacao/build/workloads/guides/criar-certificado-digital/): o guia completo, incluindo o upload de Trusted CA para mTLS e os caminhos legados de Domains e API v3
+- [Conceitos do Certificate Manager](/pt-br/documentacao/secure/certificate-manager/concepts/)
+- [Como gerar um certificado Let's Encrypt](/pt-br/documentacao/build/applications/guides/como-gerar-um-certificado-lets-encrypt/)
+- [Suporte para mTLS](/pt-br/documentacao/secure/certificate-manager/reference/mtls/)
+
+<br /><br />

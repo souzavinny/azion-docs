@@ -54,7 +54,7 @@ Now, you need to apply the rule set you've created in **Rules Engine**. To do so
 curl --request POST \
   --url https://api.azion.com/v4/edge_firewall/wafs \
   --header 'Accept: application/json' \
-  --header 'Authorization: Token [TOKEN]' \
+  --header 'Authorization: Token [TOKEN VALUE]' \
   --header 'Content-Type: application/json' \
   --data '{
     "active": true,
@@ -88,7 +88,7 @@ curl --request POST \
 curl --request POST \
   --url https://api.azion.com/v4/edge_firewall/firewalls/<edge_firewall_id>/request_rules \
   --header 'Accept: application/json' \
-  --header 'Authorization: Token [TOKEN]' \
+  --header 'Authorization: Token [TOKEN VALUE]' \
   --header 'Content-Type: application/json' \
   --data '{
     "name": "SQL Injection rule",
@@ -114,6 +114,9 @@ curl --request POST \
   }'
 `} />
 
+:::note
+The `set_waf` behavior in this payload references the WAF rule set through the `waf_id` attribute only. The WAF mode (**Learning** or **Blocking**) is currently configured via Azion Console, as shown in the **Console** tab of this guide — the API payload above doesn't carry a mode field. See the [WAF reference](/en/documentation/secure/waf/) for current capabilities.
+:::
 
 | Key | Description |
 | --- | --- |

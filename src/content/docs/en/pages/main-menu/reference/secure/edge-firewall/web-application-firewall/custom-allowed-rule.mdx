@@ -165,6 +165,55 @@ See the list of all available internal rules below:
 | 1311    | Possible XSS attack: close square bracket `]` found in `Body`, `Path`, `Query String` or `Cookies`.                                        |
 | 1312    | Possible XSS attack: tilde character `~` found in `Body`, `Path`, `Query String`, or `Cookies`.                                            |
 | 1314    | Possible XSS attack: `` ` `` (*backtick*) found in `Body`, `Path`, `Query String`, or `Cookies`.                                    |
+| 1400    | Possible trick to evade protection: UTF7/8 encoding `&#` found in `Body`, `Path`, `Query String` or `Cookies`.                             |
+| 1401    | Possible trick to evade protection: M$ encoding `%U` found in `Body`, `Path`, `Query String` or `Cookies`.                                 |
+| 1500    | Possible File Upload attempt: `asp/php` or `.ph`, `.asp`, `.ht` found in filename in a multipart POST containing a file.                   |
+
+---
+
+## Allowed Rules fields
+
+The Allowed Rules are composed of the fields:
+
+| Field | Description |
+| ----- | ----------- |
+| `Rule ID` | Unique numeric ID of a WAF Rule. See the [list of internal rules](#waf-internal-rules). |
+| `Rule Description` | Automatic textual description of what the rule is/does |
+| `Reason` | Alternative manual textual description |
+| `URI` | *Uniform Resource Identifier (URI)* is the path that goes after the domain in the URL |
+| `Path` | When specified, restricts the application of the `Match Zone` only to the defined path. The path delimits the scope of action of the rule | 
+| `Match Zone` | Parts or fields of the requisition that'll be compared with the `match pattern`. Read more about each option in the [Match Zones table](#match-zone-dropdown-options) below | 
+| `Active` | Allowed Rule active status switch |
+
+### Match Zone dropdown options
+
+The **Match Zone** dropdown opens the options available to complete this field. Each option has a specific behavior, as explained in the table below.
+
+:::note
+Options starting with **Specific** require you to provide a value in the **Name** field to specify which element you want to compare.
+:::
+
+| Field | Description | Usage Example |
+| ----- | ---------- | ------------- |
+| `Any HTTP Header Value` | `Match pattern` will be compared with the value of any HTTP header in the request | Compares with values like `Mozilla/5.0`, `application/json`, etc. |
+| `Any HTTP Header Name` | `Match pattern` will be compared with the name of any HTTP header in the request | Compares with names like `User-Agent`, `Content-Type`, `Authorization`, etc. |
+| `Specific HTTP Header Value` | `Match pattern` will be compared with the value of a specific HTTP header in the request | Name: `User-Agent` — compares only the User-Agent header value |
+| `Specific HTTP Header Name` | `Match pattern` will be compared with the name of a specific HTTP header in the request | Name: `X-Custom-Header` — checks if a header with this name exists |
+| `Any Query String Value` | `Match pattern` will be compared with the value of any query string parameter | In `?id=123&user=admin`, compares with `123` and `admin` |
+| `Any Query String Name` | `Match pattern` will be compared with the name of any query string parameter | In `?id=123&user=admin`, compares with `id` and `user` |
+| `Specific Query String Value` | `Match pattern` will be compared with the value of a specific query string parameter | Name: `session_id` — compares only the `session_id` parameter value |
+| `Specific Query String Name` | `Match pattern` will be compared with the name of a specific query string parameter | Name: `token` — checks if a parameter named `token` exists |
+| `Body Form Field Value` | `Match pattern` will be compared with the value of any form field in the request body | Compares values of fields like `username`, `password`, etc. |
+| `Body Form Field Name` | `Match pattern` will be compared with the name of any form field in the request body | Compares form field names |
+| `Specific Body Form Field Value` | `Match pattern` will be compared with the value of a specific form field in the request body | Name: `password` — compares only the `password` field value |
+| `Specific Body Form Field Name` | `Match pattern` will be compared with the name of a specific form field in the request body | Name: `api_key` — checks if a field with this name exists |
+| `Any URL` | `Match pattern` will be compared with any part of the request URL | Compares with the full URL or parts of it |
+| `Raw Body` | `Match pattern` will be compared to the uninterpreted body of a request, also called the *unparsed body* | Useful for analyzing raw JSON or XML payloads |
+| `File Extension` | `Match pattern` will be compared with the file extension in the request | Compares extensions like `.php`, `.exe`, `.sh` |
+
+:::note
+The `Last Editor` and `Last Modified` fields are only available through the [API](https://api.azion.com).
+:::
 
 ---
 
@@ -311,7 +360,7 @@ curl --request DELETE \
 | `id` | integer | Unique identifier of the exception (read-only) |
 | `rule_id` | integer | The WAF internal rule ID to create an exception for. See the [WAF internal rules table](#waf-internal-rules) for available IDs |
 | `reason` | string | A description explaining why this exception was created |
-| `match_zone` | string | The part of the request to match against. See [Match Zone options](/en/documentation/secure/waf/#match-zone-dropdown-options) |
+| `match_zone` | string | The part of the request to match against. See [Match Zone options](#match-zone-dropdown-options) |
 | `match_pattern` | string | The pattern to match in the specified zone |
 | `path` | string | The URL path where the exception applies |
 | `active` | boolean | Whether the exception is active (`true`) or inactive (`false`) |
@@ -319,7 +368,4 @@ curl --request DELETE \
 :::tip
 Use the API to automate WAF calibration workflows. For example, you can create a script that analyzes WAF Tuning data and automatically creates exceptions for verified false positives, or integrate exception management into your CI/CD pipeline to deploy security configurations alongside your application.
 :::
-| 1400    | Possible trick to evade protection: UTF7/8 encoding `&#` found in `Body`, `Path`, `Query String` or `Cookies`.                             |
-| 1401    | Possible trick to evade protection: M$ encoding `%U` found in `Body`, `Path`, `Query String` or `Cookies`.                                 |
-| 1500    | Possible File Upload attempt: `asp/php` or `.ph`, `.asp`, `.ht` found in filename in a multipart POST containing a file.                   |
 

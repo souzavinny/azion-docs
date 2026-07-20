@@ -1,0 +1,181 @@
+---
+title: Edge DNS quickstart
+description: >-
+  Create your first zone and record on Edge DNS and confirm that Azion's
+  nameservers answer your DNS queries, using Azion Console or the Azion API.
+meta_tags: 'Edge DNS, DNS, quickstart, first steps, zone, records, secure'
+namespace: documentation_secure_edge_dns_quickstart
+permalink: /documentation/secure/edge-dns/quickstart/
+---
+
+This quickstart shows how to create your first [Edge DNS](/en/documentation/secure/edge-dns/) zone, add a record to it, and confirm that Azion's nameservers are answering queries for your domain. You can follow the **Console path** or the **API path**.
+
+---
+
+## Prerequisites
+
+- An [Azion Console](https://console.azion.com) account. You can find more information on creating one on the [documentation page](/en/documentation/account/reference/creating-account/).
+- A domain you own, registered with a DNS provider such as `registro.br`, `GoDaddy`, or `AWS`.
+- For the API path: a [personal token](/en/documentation/account/guides/personal-tokens/).
+
+:::caution[warning]
+If **Edge DNS** is activated, hosted zones and queries could generate usage-related costs. Check the [pricing page](/en/documentation/platform/pricing/) for more information.
+:::
+
+---
+
+## Console path
+
+### Create a zone
+
+1. Access [Azion Console](/en/documentation/account/guides/how-to-access-azion-console/) > **Edge DNS**.
+2. Click the **+ Zone** button.
+3. Give your zone a unique and easy-to-remember name.
+4. In **Domain Name**, add the name of the domain you want to host in Edge DNS. For example: `mydomain.com`.
+5. Click the **Save** button.
+
+### Add a record
+
+1. From the list, choose the zone you just created.
+2. Select the **Records** tab.
+3. Click the **+ Record** button.
+4. In **Name**, provide the new record's name as a subdomain. For example: `www`.
+5. In **Record Type**, select `A`.
+6. In **Value**, add the IPv4 address your record should answer with. Example: `192.168.0.1`.
+7. In **TTL (seconds)**, choose the time, in seconds, that a response can be cached on a resolver server. Example: `3600`.
+8. In **Policy**, select **Simple**.
+9. Click the **Save** button.
+
+For a detailed walkthrough of each field and record type, see [How to add records](/en/documentation/secure/firewall/guides/add-records/) and the [record recommendations](/en/documentation/secure/edge-dns/#recommendations-to-configure-dns-record-types).
+
+### You know it worked when
+
+You can test your zone before pointing your registrar to Azion by querying one of Azion's nameservers directly:
+
+```bash
+dig +short www.mydomain.com @ns1.aziondns.net
+```
+
+- The response shows the value you configured in the record. For an `A` record, that's the IPv4 address. Example:
+
+```bash
+dig +short www.mydomain.com @ns1.aziondns.net
+192.168.0.1
+```
+
+- You can also use the `host` or `nslookup` commands with the same nameserver. See [How to test an Edge DNS zone processing](/en/documentation/secure/firewall/guides/test-zone/) for the expected outputs of each tool.
+
+---
+
+## API path
+
+1. Run the following `POST` request in your terminal, replacing `[TOKEN]` with your [personal token](/en/documentation/account/guides/personal-tokens/), to create a new zone:
+
+```bash
+curl --request POST \
+  --url https://api.azion.com/v4/edge_dns/zones \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Token [TOKEN]' \
+  --header 'Content-Type: application/json' \
+  --data '{
+  "name": "New Zone",
+  "domain": "yourdomain.com",
+  "active": true
+}'
+```
+
+2. You'll receive a response similar to this, listing the zone's `id` and the Azion nameservers that will answer for it:
+
+```json
+{
+  "results": [
+    {
+      "nx_ttl": 3600,
+      "domain": "yourdomain.com",
+      "retry": 7200,
+      "name": "New zone",
+      "nameservers": [
+        "ns1.aziondns.net",
+        "ns2.aziondns.com",
+        "ns3.aziondns.org"
+      ],
+      "soa_ttl": 3600,
+      "active": true,
+      "refresh": 43200,
+      "expiry": 1209600,
+      "id": 1234
+    }
+  ],
+  "schema_version": 3
+}
+```
+
+3. Copy the `id` value. You can also retrieve it at any time with a `GET` request:
+
+```bash
+curl --request GET \
+  --url https://api.azion.com/v4/edge_dns/zones \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Token [TOKEN]'
+```
+
+4. Run the following `POST` request, replacing `[TOKEN]` with your personal token and `<zone_id>` with the value you copied, to add a record to the zone:
+
+```bash
+curl --request POST \
+  --url https://api.azion.com/v4/dns/zones/<zone_id>/records \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Token [TOKEN]' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "type": "CNAME",
+    "name": "www",
+    "rdata": ["www.mydomain.com"],
+    "ttl": 20,
+    "description": "description"
+  }'
+```
+
+Wait a few minutes for the changes to propagate and your records will be created in the hosted zone you chose.
+
+:::tip
+Check the [Azion API documentation](https://api.azion.com/) to know more about what the Azion API can offer.
+:::
+
+### You know it worked when
+
+- The `POST` response for the zone lists your domain with an `id` and the Azion `nameservers`.
+- Querying one of Azion's nameservers directly returns the value you configured in `rdata`:
+
+```bash
+dig +short www.yourdomain.com @ns1.aziondns.net
+```
+
+---
+
+## Go live: point your registrar to Azion
+
+Your zone answers queries on Azion's nameservers, but resolvers on the internet only reach it after you delegate your domain. At your DNS provider, replace the domain's authoritative DNS servers with Azion's nameservers.
+
+:::caution[warning]
+Once you host your domain on Azion Edge DNS, you must change your domain's authoritative DNS servers to use Azion's nameservers:
+
+- ns1.aziondns.net
+- ns2.aziondns.com
+- ns3.aziondns.org
+:::
+
+:::note
+It's important to verify that all your records are properly registered and tested at **Edge DNS** before making this appointment. Otherwise, you risk having your service unavailable.
+:::
+
+See [How to migrate nameservers to Azion](/en/documentation/build/workloads/guides/migrate-ns-to-azion/) for the full delegation walkthrough.
+
+---
+
+## Next steps
+
+- [How to add records](/en/documentation/secure/firewall/guides/add-records/)
+- [How to test an Edge DNS zone processing](/en/documentation/secure/firewall/guides/test-zone/)
+- [Edge DNS concepts](/en/documentation/secure/edge-dns/concepts/)
+- [DNSSEC Compatibility](/en/documentation/secure/edge-dns/reference/dnssec-compatibility/)

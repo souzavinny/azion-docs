@@ -101,11 +101,12 @@ curl --request PATCH \
 | Key | Description |
 | --- | --- |
 | `name` | Name of the firewall |
-| `is_active` | Boolean value that enables (`true`) or disables (`false`) the firewall |
-| `edge_functions_enabled` | Boolean value that enables (`true`) or disables (`false`) the [Functions](/en/documentation/secure/firewall/reference/functions/) module |
-| `network_protection_enabled` | Boolean value that enables (`true`) or disables (`false`) the [Network Shield](/en/documentation/secure/network-shield/) module |
-| `waf_enabled` | Boolean value that enables (`true`) or disables (`false`) the [Web Application Firewall (WAF)](/en/documentation/secure/waf/) module |
-| `debug_rules` | Boolean value that enables (`true`) or disables (`false`) the [Debug Rules](/en/documentation/build/applications/guides/debug-rules/) feature |
+| `active` | Boolean value that enables (`true`) or disables (`false`) the firewall |
+| `modules` | Object that groups the activation settings of the firewall modules |
+| `modules.edge_functions.enabled` | Boolean value that enables (`true`) or disables (`false`) the [Functions](/en/documentation/secure/firewall/reference/functions/) module |
+| `modules.network_protection.enabled` | Boolean value that enables (`true`) or disables (`false`) the [Network Shield](/en/documentation/secure/network-shield/) module |
+| `modules.waf.enabled` | Boolean value that enables (`true`) or disables (`false`) the [Web Application Firewall (WAF)](/en/documentation/secure/waf/) module |
+| `debug` | Boolean value that enables (`true`) or disables (`false`) the [Debug Rules](/en/documentation/build/applications/guides/debug-rules/) feature |
 
 Wait a few minutes for the changes to propagate and your firewall will be updated.
 

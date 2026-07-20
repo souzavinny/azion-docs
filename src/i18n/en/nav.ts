@@ -1563,6 +1563,7 @@ export default [
 				items: [
 					{
 						text: "Reference",
+						slug: "/documentation/secure/bot-manager/reference/",
 						key: "secure/bot-manager/reference",
 						items: [
 							{
@@ -1579,6 +1580,11 @@ export default [
 				slug: "/documentation/secure/certificate-manager/",
 				key: "secure/certificate-manager",
 				items: [
+					{
+						text: "Certificate Manager quickstart",
+						slug: "/documentation/secure/certificate-manager/quickstart/",
+						key: "secure/certificate-manager/quickstart",
+					},
 					{
 						text: "Guides",
 						key: "secure/certificate-manager/guides",
@@ -1605,6 +1611,11 @@ export default [
 								key: "secure/certificate-manager/reference/mtls",
 							},
 						],
+					},
+					{
+						text: "Certificate Manager concepts",
+						slug: "/documentation/secure/certificate-manager/concepts/",
+						key: "secure/certificate-manager/concepts",
 					},
 				],
 			},
@@ -1637,6 +1648,11 @@ export default [
 				key: "secure/edge-dns",
 				items: [
 					{
+						text: "Edge DNS quickstart",
+						slug: "/documentation/secure/edge-dns/quickstart/",
+						key: "secure/edge-dns/quickstart",
+					},
+					{
 						text: "Guides",
 						key: "secure/edge-dns/guides",
 						items: [
@@ -1663,6 +1679,11 @@ export default [
 							},
 						],
 					},
+					{
+						text: "Edge DNS concepts",
+						slug: "/documentation/secure/edge-dns/concepts/",
+						key: "secure/edge-dns/concepts",
+					},
 				],
 			},
 			{
@@ -1670,6 +1691,11 @@ export default [
 				slug: "/documentation/secure/firewall/",
 				key: "secure/firewall",
 				items: [
+					{
+						text: "Firewall quickstart",
+						slug: "/documentation/secure/firewall/quickstart/",
+						key: "secure/firewall/quickstart",
+					},
 					{
 						text: "Guides",
 						key: "secure/firewall/guides",
@@ -1843,6 +1869,11 @@ export default [
 							},
 						],
 					},
+					{
+						text: "Firewall concepts",
+						slug: "/documentation/secure/firewall/concepts/",
+						key: "secure/firewall/concepts",
+					},
 				],
 			},
 			{
@@ -1868,6 +1899,11 @@ export default [
 				slug: "/documentation/secure/waf/",
 				key: "secure/waf",
 				items: [
+					{
+						text: "WAF quickstart",
+						slug: "/documentation/secure/waf/quickstart/",
+						key: "secure/waf/quickstart",
+					},
 					{
 						text: "Guides",
 						key: "secure/waf/guides",
@@ -1914,6 +1950,11 @@ export default [
 								key: "secure/waf/reference/rules-set",
 							},
 						],
+					},
+					{
+						text: "WAF concepts",
+						slug: "/documentation/secure/waf/concepts/",
+						key: "secure/waf/concepts",
 					},
 				],
 			},

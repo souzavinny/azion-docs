@@ -93,15 +93,15 @@
 
 - [Explore Azion Secure products](https://www.azion.com/en/documentation/secure/): Azion's Secure products guarantee the security, availability, and authenticity of your application's data.
 - [Azion Bot Manager](https://www.azion.com/en/documentation/secure/bot-manager/): Protect your applications against automated attacks such as bad bot signatures or scripted bots.
-- [Certificate Manager for Secure](https://www.azion.com/en/documentation/secure/certificate-manager/): You can link a TLS certificate to your HTTPS applications by using Azion Certificate Manager.
+- [Certificate Manager](https://www.azion.com/en/documentation/secure/certificate-manager/): Certificate Manager is the Secure product where you register and manage the TLS certificates that enable HTTPS traffic for your domains at Azion.
 - [Custom Pages](https://www.azion.com/en/documentation/secure/custom-pages/): Custom Pages is a functionality that allows you to customize error pages for users based on the status code received from the edge connectors.
 - [DDoS Protection](https://www.azion.com/en/documentation/secure/ddos-protection/): Azion DDoS Protection defends your content and applications against Distributed Denial of Service (DDoS) attacks.
-- [Edge DNS](https://www.azion.com/en/documentation/secure/edge-dns/): Host domains, DNS zones, and records with Azion routing solutions and Edge DNS.
+- [Edge DNS](https://www.azion.com/en/documentation/secure/edge-dns/): Edge DNS is an authoritative DNS service that hosts your domains, zones, and records on Azion's distributed infrastructure, with DDoS protection and real-time record distribution.
 - [Firewall](https://www.azion.com/en/documentation/secure/firewall/): Azion Firewall is a security product that protects from the network layer to the application layer.
 - [Network Shield](https://www.azion.com/en/documentation/secure/network-shield/): Explore Azion's Network Shield for robust firewall security. Safeguard your infrastructure with granular control and advanced filtering.
 - [Secure Overview](https://www.azion.com/en/documentation/secure/overview/): Secure your applications and domains with edge computing protection.
 - [Web Application Firewall](https://www.azion.com/en/documentation/secure/waf/): Protect your applications against threats like SQL Injections, Remote File Inclusion (RFI), Cross-Site Scripting (XSS), and others with Azion Web Application Firewall.
-- Full section index: https://www.azion.com/en/documentation/secure/llms.txt (57 pages)
+- Full section index: https://www.azion.com/en/documentation/secure/llms.txt (66 pages)
 
 ## Deploy
 

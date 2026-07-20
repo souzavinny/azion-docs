@@ -1,0 +1,151 @@
+---
+title: Certificate Manager quickstart
+description: >-
+  Register your first TLS certificate, associate it with a domain, and confirm
+  your application is serving HTTPS traffic, using Azion Console or the Azion
+  API.
+meta_tags: >-
+  digital certificate, certificate manager, tls, https, quickstart, first
+  steps
+namespace: documentation_secure_certificate_manager_quickstart
+permalink: /documentation/secure/certificate-manager/quickstart/
+---
+
+This quickstart shows how to register a TLS certificate you already own in **Certificate Manager**, associate it with a domain, and confirm your application is serving HTTPS traffic with it. You can follow the **Console path** or the **API path**.
+
+If you don't own a certificate, you can [request a Let's Encrypt certificate](/en/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate/) managed automatically by Azion, or [generate a Certificate Signing Request (CSR)](/en/documentation/secure/firewall/guides/certificate-manager/) through Azion and submit it to a certificate authority.
+
+---
+
+## Prerequisites
+
+- An [Azion Console](https://console.azion.com) account. You can find more information on creating one on the [documentation page](/en/documentation/account/reference/creating-account/).
+- A TLS certificate (X.509) and its private key, encoded in [ASCII PEM](https://www.ssl.com/guide/pem-der-crt-and-cer-x-509-encodings-and-conversions/) format. The private key can't be protected by passphrase.
+- A [domain configured with Azion](/en/documentation/build/workloads/guides/configure-a-domain/) whose hostnames match the certificate.
+- For the API path: a [personal token](/en/documentation/account/guides/personal-tokens/).
+
+:::note
+This quickstart uses the [Workloads](/en/documentation/build/workloads/) settings and the Azion API v4. There are separate instructions for accounts using the legacy [Domains](/en/documentation/build/applications/reference/domains/) settings in the [How to create a digital certificate](/en/documentation/build/workloads/guides/create-a-digital-certificate/) guide. If you're not sure which steps apply to your account, see the [Verify Your Account Migration guide](/en/documentation/account/guides/verify-account-migration/).
+:::
+
+---
+
+## Console path
+
+### Register the certificate
+
+1. Access [Azion Console](/en/documentation/account/guides/how-to-access-azion-console/) > **Certificate Manager**.
+2. Click the **+ Digital Certificate** button.
+3. Name your certificate.
+4. Select the **Import a server certificate** option.
+5. In the field **Certificate**, paste the certificate.
+6. In the **Private Key** field, paste the private key.
+7. Click the **Save** button.
+
+### Associate the certificate with a domain
+
+1. On the upper-left corner of the page, open the **Products menu**, represented by three horizontal lines > **Workloads**.
+2. Select the desired Workload.
+3. In **Certificate Manager**, select the certificate you created in the previous steps.
+4. Make sure the domain listed in the **Subdomain** and **Domain** fields are the same as the issued certificate for your domain.
+5. Click the **Save** button.
+6. Wait a couple of minutes for the changes to propagate.
+
+### You know it worked when
+
+- On the **Certificate Manager** page, your certificate is listed with the **Active** status: certificate in use, linked to a Workload, and protecting HTTPS traffic.
+- You can access your HTTPS application and check the security settings using your browser.
+- The following OpenSSL command, replacing `yourdomain.com` with one of the CNAMEs of the domain, returns your certificate:
+
+```bash
+openssl s_client -showcerts -connect yourdomain.com:443
+```
+
+---
+
+## API path
+
+1. Replace any line breaks in the certificate with `\n`, including for the begin and end markers, to turn the certificate into a string. Do the same to the private key.
+2. Run the following `POST` request in your terminal, replacing `[TOKEN]` with your [personal token](/en/documentation/account/guides/personal-tokens/) and adding your certificate and private key to the fields:
+
+```bash
+curl --request POST \
+  --url https://api.azion.com/v4/digital_certificates/certificates \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Token [TOKEN]' \
+  --header 'Content-Type: application/json' \
+  --data '{
+  "name": "CERT yourdomain.com",
+  "certificate": "-----BEGIN CERTIFICATE-----\n<your_certificate>\n-----END CERTIFICATE-----",
+  "private_key": "-----BEGIN RSA PRIVATE KEY-----\n<your_private_key>\n-----END RSA PRIVATE KEY-----",
+  "type": "edge_certificate",
+  "active": true
+}'
+```
+
+3. You'll receive a response similar to this, confirming the certificate was registered:
+
+```json
+{
+    "results": {
+        "id": <digital_certificate_id>,
+        "name": "CERT yourdomain.com",
+        "issuer": "",
+        "subject_name": [],
+        "validity": "2028-03-24 20:09:00-03:00",
+        "status": "Active",
+        "certificate_type": "edge_certificate",
+        "managed": false
+    }
+}
+```
+
+4. Run the following `GET` request to retrieve your Workload's id:
+
+```bash
+curl --request GET \
+  --url https://api.azion.com/v4/workspace/workloads \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Token [TOKEN]'
+```
+
+5. Locate the domain you wish to associate to the certificate and copy the `workload_id` value received in the response. Then run a `PATCH` request, adding the `workload_id` as a path, to update the certificate field with the id you received in the creation process:
+
+```bash
+curl --request PATCH \
+  --url https://api.azion.com/v4/workspace/workloads/{workload_id} \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Token [TOKEN]' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "tls": {
+      "certificate": <digital_certificate_id>
+    },
+    "domains": [
+      "yourdomain.com"
+    ]
+  }'
+```
+
+6. You should receive a response with the updated data. Wait a couple of minutes for the changes to propagate.
+
+### You know it worked when
+
+- The `POST` response shows your certificate with `"status": "Active"`.
+- You can access your HTTPS application and check the security settings using your browser.
+- The following OpenSSL command, replacing `yourdomain.com` with one of the CNAMEs of the domain, returns your certificate:
+
+```bash
+openssl s_client -showcerts -connect yourdomain.com:443
+```
+
+---
+
+## Next steps
+
+- [How to create a digital certificate](/en/documentation/build/workloads/guides/create-a-digital-certificate/): the full guide, including the Trusted CA upload for mTLS and the legacy Domains and API v3 paths
+- [Certificate Manager concepts](/en/documentation/secure/certificate-manager/concepts/)
+- [How to generate a Let's Encrypt certificate](/en/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate/)
+- [Support for mTLS](/en/documentation/secure/certificate-manager/reference/mtls/)
+
+<br /><br />

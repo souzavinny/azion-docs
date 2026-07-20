@@ -102,11 +102,12 @@ curl --request PATCH \
 | Chave | Descrição |
 | --- | --- |
 | `name` | Nome do firewall |
-| `is_active` | Valor booleano que ativa (`true`) ou desativa (`false`) o firewall |
-| `edge_functions_enabled` | Valor booleano que ativa (`true`) ou desativa (`false`) o módulo [Functions](/pt-br/documentacao/secure/firewall/reference/functions/) |
-| `network_protection_enabled` | Valor booleano que ativa (`true`) ou desativa (`false`) o módulo [Network Shield](/pt-br/documentacao/secure/network-shield/) |
-| `waf_enabled` | Valor booleano que ativa (`true`) ou desativa (`false`) o módulo [Web Application Firewall (WAF)](/pt-br/documentacao/secure/waf/) |
-| `debug_rules` | Valor booleano que ativa (`true`) ou desativa (`false`) o recurso [Debug Rules](/pt-br/documentacao/build/applications/guides/debug-regras/) |
+| `active` | Valor booleano que ativa (`true`) ou desativa (`false`) o firewall |
+| `modules` | Objeto que agrupa as configurações de ativação dos módulos do firewall |
+| `modules.edge_functions.enabled` | Valor booleano que ativa (`true`) ou desativa (`false`) o módulo [Functions](/pt-br/documentacao/secure/firewall/reference/functions/) |
+| `modules.network_protection.enabled` | Valor booleano que ativa (`true`) ou desativa (`false`) o módulo [Network Shield](/pt-br/documentacao/secure/network-shield/) |
+| `modules.waf.enabled` | Valor booleano que ativa (`true`) ou desativa (`false`) o módulo [Web Application Firewall (WAF)](/pt-br/documentacao/secure/waf/) |
+| `debug` | Valor booleano que ativa (`true`) ou desativa (`false`) o recurso [Debug Rules](/pt-br/documentacao/build/applications/guides/debug-regras/) |
 
 Aguarde alguns minutos para que as alterações se propaguem e seu firewall será atualizado.
 

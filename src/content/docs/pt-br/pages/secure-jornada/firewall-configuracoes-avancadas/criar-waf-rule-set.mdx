@@ -54,7 +54,7 @@ Agora, você precisa aplicar o conjunto de regras que criou no **Rules Engine**.
 curl --request POST \
   --url https://api.azion.com/v4/edge_firewall/wafs \
   --header 'Accept: application/json' \
-  --header 'Authorization: Token [TOKEN]' \
+  --header 'Authorization: Token [TOKEN VALUE]' \
   --header 'Content-Type: application/json' \
   --data '{
     "active": true,
@@ -81,13 +81,13 @@ curl --request POST \
 `} />
 
 2. Copie o valor de `id`.
-3. Execute a seguinte requisição `POST` para criar uma regra, substituindo `[TOKEN VALUE]` pelo seu [personal token](/pt-br/documentacao/account/guides/personal-tokens/), a variável `<edge_firewall_id>>` com o [ID do firewall](https://api.azion.com/#015cb4a3-8fa2-4625-9792-2cc271e184eb) e `<id_conjunto_regras_waf>` com o ID que você copiou:
+3. Execute a seguinte requisição `POST` para criar uma regra, substituindo `[TOKEN VALUE]` pelo seu [personal token](/pt-br/documentacao/account/guides/personal-tokens/), a variável `<edge_firewall_id>` com o [ID do firewall](https://api.azion.com/#015cb4a3-8fa2-4625-9792-2cc271e184eb) e `<waf_rule_set_id>` com o ID que você copiou:
 
 <Code lang="bash" code={`
 curl --request POST \
   --url https://api.azion.com/v4/edge_firewall/firewalls/<edge_firewall_id>/request_rules \
   --header 'Accept: application/json' \
-  --header 'Authorization: Token [TOKEN]' \
+  --header 'Authorization: Token [TOKEN VALUE]' \
   --header 'Content-Type: application/json' \
   --data '{
     "name": "SQL Injection rule",
@@ -106,24 +106,28 @@ curl --request POST \
       {
         "type": "set_waf",
         "attributes": {
-          "waf_id": <waf_id>
+          "waf_id": <waf_rule_set_id>
         }
       }
     ]
   }'
 `} />
 
+:::note
+O comportamento `set_waf` neste payload referencia o conjunto de regras WAF apenas por meio do atributo `waf_id`. O modo do WAF (**Learning** ou **Blocking**) é atualmente configurado via Azion Console, como mostrado na aba **Console** deste guia — o payload de API acima não inclui um campo de modo. Consulte a [referência do WAF](/pt-br/documentacao/secure/waf/) para as capacidades atuais.
+:::
+
 | Chave | Descrição |
 | --- | --- |
 | `name` | Nome da regra |
-| `comportamentos` | Array que armazena objetos que definem comportamentos |
-| `criterios` | Array que armazena objetos que definem critérios |
+| `behaviors` | Array que armazena objetos que definem comportamentos |
+| `criteria` | Array que armazena objetos que definem critérios |
 
 Consulte a [documentação da API da Azion](https://api.azion.com/#ae9cdca8-3949-4b25-b1e6-2e071cd193fc) para saber mais sobre critérios e objetos de comportamento.
 
 Aguarde alguns minutos para que as alterações se propaguem.
 
-:::dica
+:::tip
 Confira a [documentação da API da Azion](https://api.azion.com/) para saber mais sobre todos os recursos disponíveis via API.
 :::
 </Fragment>

@@ -1,0 +1,188 @@
+---
+title: Certificate Manager concepts
+description: >-
+  Understand the TLS certificate options at Azion — Azion SAN, edge
+  certificates, Let's Encrypt, and Trusted CA — and how issuance, renewal,
+  revocation, and validation work in Certificate Manager.
+meta_tags: >-
+  digital certificate, certificate manager, tls, https, lets encrypt, csr,
+  crl, concepts
+namespace: documentation_secure_certificate_manager_concepts
+permalink: /documentation/secure/certificate-manager/concepts/
+---
+
+This page explains the ideas behind [Certificate Manager](/en/documentation/secure/certificate-manager/): the certificate options available at Azion, the encryption and validation types, how Let's Encrypt issuance and renewal work, and the roles of Certificate Signing Requests (CSR) and Certificate Revocation Lists (CRL).
+
+---
+
+## Azion SAN certificate
+
+When using Azion **Application**, Azion's TLS certificate for HTTPS traffic is available at no additional cost. When you create a domain for an application in [Azion Console](https://console.azion.com), your application is assigned an address in the `azionedge.net` zone.
+
+If you wish, you may use the assigned domain to deliver your static content over HTTPS, avoiding the costs of issuing TLS certificates for approval environments or URLs whose domain can be shared with other Azion customers. This way, your domain will be registered as a Subject Alternative Name (SAN) under Azion's TLS certificate.
+
+---
+
+## Edge certificate
+
+If you want to use a custom domain, you can add your own TLS certificate (X.509) and private key encoded in [ASCII PEM](https://www.ssl.com/guide/pem-der-crt-and-cer-x-509-encodings-and-conversions/) format to [Azion Console](https://console.azion.com) at no additional cost. The private key can't be protected by passphrase.
+
+When a certificate is added, a chain validation will occur and Azion will complete the registration with the full certificate chain. If necessary, it's possible to inform the full chain while adding the certificate.
+
+When you bring your certificate to Azion, domains that use the certificate use the Server Name Indication (SNI) extension of the TLS protocol. Check the [browser list with SNI support](https://caniuse.com/#feat=sni).
+
+### Validation types
+
+There are three types of validations that you can choose:
+
+| Domain Validation (DV) | Organization Validation (OV) | Extended Validation (EV) |
+| --- | --- | --- |
+| Validates your right to use the domain and it's the simplest of the three options. This is the option recommended by Azion for most companies. | Validates your right to use the domain and some further validations about the requesting organization. | It's an extended validation, which requires additional documentation to prove the physical, legal, and operational existence of the requesting organization and the most complex of the three options. |
+
+Azion currently works with two types of certificates: *RSA* and *ECC/ECDSA*. Each certificate has its characteristics and its security level, and Azion allows you to choose the option that best fits your scenario.
+
+### RSA encryption
+
+Rivest-Shamir-Adleman (RSA) is one of the earliest public key cryptography systems and it is widely used for the secure transmission of data. In this encryption system, the encryption key is public and is different from the decryption key that is secret (private). Any message encrypted using a public key can only be decrypted using the respective private key.
+
+RSA is a relatively slow algorithm and is therefore less used to directly encrypt user data. Most often, RSA passes shared encrypted keys to symmetric key encryption, which in turn can perform mass encryption-decryption operations at a much faster rate.
+
+### ECC/ECDSA encryption
+
+Elliptical Curve Cryptography (ECC), specifically *Elliptic Curve Digital Signature Algorithm (ECDSA)* for digital certificate encryption, is an approach to public key cryptography based on the algebraic structure of elliptical curves. Public key cryptography is based on creating mathematical puzzles that are difficult to solve, therefore it becomes much more secure than other types of certificates such as RSA.
+
+Smaller keys are less computationally intensive to generate signatures because they involve smaller mathematical numbers. ECC is faster in generating signatures and has better performance than RSA.
+
+### Trusted CA certificate
+
+A Trusted CA is an entity that is authorized to issue digital certificates that can be used for the [Mutual Transport Layer Security (mTLS)](/en/documentation/secure/certificate-manager/reference/mtls/) security protocol. You may upload Trusted CA certificates and intermediate certificates.
+
+:::note
+Free certificates, generated internally by Azion (Azion SAN), don't support mTLS. See the [Support for mTLS reference](/en/documentation/secure/certificate-manager/reference/mtls/) for how mTLS works at Azion.
+:::
+
+---
+
+## Let's Encrypt certificates
+
+[Let's Encrypt](https://letsencrypt.org/)™ is a nonprofit global CA that allows people and organizations to obtain, renew, and manage TLS certificates for free. When [creating a Domain](/en/documentation/build/applications/reference/domains/) with Azion, you may choose to obtain a TLS certificate signed by Let's Encrypt. You can request Let's Encrypt certificates for domains hosted in [Edge DNS](/en/documentation/secure/edge-dns/) or in a third-party DNS provider.
+
+Once you [create a domain with Azion](/en/documentation/build/workloads/guides/configure-a-domain/), you can choose the option **Let's Encrypt** to automatically generate a Let's Encrypt certificate. An entry for this certificate will be listed in the **Certificate Manager** page in [Azion Console](https://console.azion.com). After the certificate undergoes DNS validation, issuance, and storage, it'll become active.
+
+Active Let's Encrypt certificates *will be renewed automatically before the expiration date* of 90 days, provided that you don't bind a custom certificate to the domain or delete the associated domain. Certificates that were unbound from a domain can be rebound if they remain valid.
+
+### DNS-01 and HTTP-01 challenges
+
+Azion provides support for both DNS-01 and HTTP-01 challenges as alternative methods for Let's Encrypt certificate validation. While DNS-01 involves modifying DNS settings with a TXT record to confirm domain control, HTTP-01 offers a streamlined solution by simply placing a file in the server's document root. This approach is particularly beneficial for environments where direct server access is available, allowing smooth integration across multiple domains and hostnames without DNS configuration changes.
+
+:::tip
+See [how to add a TXT record for a Let's Encrypt certificate](/en/documentation/secure/firewall/guides/lets-encrypt-record/) and [how to generate a Let's Encrypt certificate for your domain](/en/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate/).
+:::
+
+### CNAME configuration
+
+When you create a domain with Azion **Domains** and select the **Let's Encrypt certificate** option, you can list the CNAMEs that'll be bound to the certificate. CNAMEs listed after a top-level domain are registered as *Subject Alternative Names* (SAN).
+
+When you modify the CNAME list on the domain settings, Azion will create a new certificate based on the modified set of CNAMEs, and the old entry won't be renewed by the certificate manager.
+
+If any of the CNAMEs hosted in external providers fail the [DNS-01 challenge](/en/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate/#option-2-preparing-dns-entry-with-an-external-dns-provider), the certificate won't be generated and will remain with the *Pending* status.
+
+### Wildcard usage
+
+You can use wildcard CNAMEs (`*.domain.com`) or mix wildcard and non-wildcard CNAMEs in the same domain. However, when using the wildcard notation, you don't have to specify subdomains that are already covered by the wildcard. For instance, if you decide that the certificate should be applied to `*.domain.com`, you don't need to include `blog.domain.com` in the CNAME list.
+
+The hostname resolution follows Azion's standard rules: specific domains have precedence over wildcard ones. For example, a Let's Encrypt certificate for a Domain `blog.domain.com` will take precedence over another certificate for the Domain `*.domain.com`.
+
+For an in-depth discussion of wildcard certificates, including security risks and best practices, see [Let's Encrypt Wildcard Certificates on Azion Platform](/en/documentation/secure/certificate-manager/guides/wildcard-lets-encrypt/).
+
+### Certificate issuing and renewal policy
+
+The renewal of Let's Encrypt certificates starts 30 days before expiration. The Let's Encrypt certificate issuing system from Azion is designed to help ensure the security of your domains in an automated way.
+
+The first attempt to issue a Let's Encrypt certificate takes place up to 5 minutes after you save the certificate settings in the platform. This ensures that the process starts soon after you indicate that the certificate will be managed by Azion.
+
+If the initial certificate issue attempt fails, the Azion system uses a retry policy to increase the chance of success while respecting Let's Encrypt's limits. The policy is divided into phases:
+
+- **Rapid recovery phase (first 5 attempts)**: The system makes attempts at increasing intervals of 5, 10, 15, 20, and 30 minutes. This phase resolves most failures caused by DNS propagation or temporary service unavailability.
+- **Stabilization phase (days 1 and 2)**: For more persistent issues, the system makes up to 10 attempts per day, with 30-minute intervals, totaling up to 20 attempts in the first two days. This ensures persistence without exceeding request limits.
+- **Monitoring phase (days 3 to 7)**: If the issue lasts for more than 48 hours, the system reduces the frequency to one attempt every 3 hours. This gives you time to investigate and manually resolve the cause of the failure.
+- **Maintenance phase (after 7 days)**: In exceptional situations that require prolonged intervention, the system makes one attempt per day. This approach conserves resources, while still providing an opportunity for automatic recovery.
+
+### How to identify issuing errors
+
+If certificate issuing fails, the platform provides detailed information to help you resolve the issue. You can find these details either in the Azion Console or by using the API.
+
+In the Console: access [Azion Console](/en/documentation/account/guides/how-to-access-azion-console/) > **Certificate Manager** and hover over the status icon for the certificate with an error to view the error message.
+
+Via API, you can use the following `GET` request:
+
+```bash
+curl --request GET \
+  --url https://api.azion.com/v4/digital_certificates/certificates \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Token [PERSONAL TOKEN]'
+```
+
+The `status_detail` field in the API response contains a clear message about why issuing failed. For example, if there's a problem with the DNS-01 challenge, you might see a message such as: `"status_detail": "An error has occurred while issuing the requested certificate. Please verify the following domains CNAME: *.example.com.br"`.
+
+:::tip
+For more information about the API parameters, see the [Certificates API reference](https://api.azion.com/v4#/operations/GetDigitalCertificatesCertificates).
+:::
+
+### IdenTrust cross-sign expiration
+
+:::note
+Let's Encrypt certificates cross-signed by IdenTrust expired on September 30th, 2024. Devices and applications using the [Let's Encrypt certificate that used IdenTrust are now invalid](https://letsencrypt.org/2023/07/10/cross-sign-expiration.html). This could impact the functionality of devices and applications utilizing these certificates, mainly users of older Android devices (pre-7.1). It'll be necessary to take the following actions:
+
+- **For users of Let's Encrypt Certificates with IdenTrust**: you must migrate to the new Let's Encrypt signing technology or an [Azion edge certificate](/en/documentation/build/applications/reference/domains/mtls/#edge-certificate).
+- **For users of other types of Let's Encrypt**: no immediate action is necessary, considering other certificates remain unaffected with this update, since the problem is caused by outdated certificate chains on the device.
+- **For user with applications using Let's Encrypt on Azion**: no action needed. Certificates are automatically updated, although an affected device must have its CAs updated as well.
+:::
+
+---
+
+## Certificate Signing Request (CSR)
+
+A Certificate Signing Request (CSR) is one of the first steps towards getting your own TLS certificate. You may submit a CSR to a CA to receive your certificate.
+
+You'll need to inform:
+
+- **CNAME**: the main domain for the certificate. Must be in FQDN format; for example: `yourdomain.com`.
+- **Country/region**: the country or region of your organization. Must be in [ISO 3166](https://www.iso.org/iso-3166-country-codes.html) format.
+- **State/province**: the state or province of your organization.
+- **City/locality**: the city or locality of your organization.
+- **Organization**: the name of your organization.
+- **Organizational unit**: the person, department, or unit responsible for the certificate.
+- **Email**: the email of the unit responsible for the certificate.
+- **Private Key Type**: the type of private key desired.
+- **Subject Alternate Names (SAN)**: a list of other CNAMEs to be registered as alternate names.
+
+For the full walkthrough, see [Acquire & Register a Digital Certificate](/en/documentation/secure/firewall/guides/certificate-manager/).
+
+---
+
+## Certificate Revocation List (CRL)
+
+A **Certificate Revocation List (CRL)** is a list of digital certificates revoked before their expiration date. It works as a block list that you can add to your account to state those certificates can't be trusted. The issuing certificate authority (CA) signs this list to guarantee its security.
+
+The CRL works when associated with an [mTLS CA Certificate](/en/documentation/secure/certificate-manager/reference/mtls/). Therefore, you must have mTLS enabled in the domain you want to associate it with.
+
+The CRL is automatically validated before the creation is successful in the Azion Web Platform. The management, including creation, of a CRL is available via [Azion API](https://api.azion.com/#b2df23ee-7a28-4900-9ad5-ffd135b4c6cf).
+
+If you want to add multiple CRLs, you must make one POST request for each CRL.
+
+Also note that the `raw_crl` field in the POST request is a string. In a request in JSON format, JSON strings require an escape (`\n`) to break lines. Make sure you add an escape to represent each line in your JSON.
+
+You can [associate one or more CRLs with a domain](https://api.azion.com/#a258eabc-b419-47e6-be68-45c2ce0150dd) via API.
+
+:::note
+You can't delete a CRL that's associated with a domain. You must first remove the CRL from the domain to delete it.
+:::
+
+---
+
+## Trademarks
+
+[Let's Encrypt](https://letsencrypt.org/) is a trademark of [Internet Security Research Group](https://www.abetterinternet.org/). All rights reserved.
+
+<br /><br />

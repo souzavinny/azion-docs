@@ -1,0 +1,145 @@
+---
+title: Quickstart do Firewall
+description: >-
+  Crie seu primeiro firewall, proteja um domínio e adicione uma regra que
+  bloqueia requisições indesejadas, usando o Azion Console ou a API da Azion.
+meta_tags: 'firewall, edge computing, segurança, quickstart, primeiros passos'
+namespace: documentation_secure_firewall_quickstart
+permalink: /documentacao/secure/firewall/quickstart/
+---
+
+Este quickstart mostra como criar seu primeiro firewall, associá-lo a um domínio e adicionar uma regra que bloqueia requisições—e, em seguida, confirmar que a regra está funcionando. Você pode seguir o **caminho do Console** ou o **caminho da API**.
+
+---
+
+## Pré-requisitos
+
+- Uma conta no [Azion Console](https://console.azion.com). Você encontra mais informações sobre como criar uma na [página da documentação](/pt-br/documentacao/account/reference/criar-uma-conta/).
+- Uma aplicação já implantada na Azion, com um [workload](/pt-br/documentacao/build/workloads/) ou um [domínio](/pt-br/documentacao/build/applications/reference/domains/) associado a ela.
+- Para o caminho da API: um [personal token](/pt-br/documentacao/account/guides/personal-tokens/).
+
+---
+
+## Caminho do Console
+
+### Crie o firewall
+
+1. Acesse o [Azion Console](https://console.azion.com) > selecione **Firewall**.
+2. Clique no botão **+ Firewall**.
+3. Dê ao seu firewall um nome único e fácil de lembrar.
+4. Na aba **Main Settings**, habilite o módulo **Web Application Firewall**. Este exemplo usa o criteria `Header Referer`, que exige esse módulo.
+5. Certifique-se de que o switch **Active** está ligado.
+6. Clique no botão **Save**.
+
+:::note
+O módulo **DDoS Protection** é ativado por padrão e não precisa de nenhuma configuração adicional. Consulte a página de [conceitos do Firewall](/pt-br/documentacao/secure/firewall/concepts/) para saber quais criteria e behaviors cada módulo desbloqueia.
+:::
+
+### Proteja seu domínio
+
+Os passos dependem da configuração da sua conta: contas que usam o produto [Workloads](/pt-br/documentacao/build/workloads/) configuram o firewall nas configurações do workload, enquanto contas que ainda usam as configurações legadas de [Domains](/pt-br/documentacao/build/applications/reference/domains/) o configuram nas configurações do domínio.
+
+1. No **Products menu**, selecione **Workloads** (ou **Domains**, em contas legadas).
+2. Clique no workload ou domínio que você deseja proteger com seu firewall.
+3. Na seção **Deployment Settings** (ou **Settings**), clique no seletor `Firewall` e escolha o firewall que você criou.
+4. Clique no botão **Save**.
+
+:::tip
+Se você não tem certeza de quais passos se aplicam à sua conta, consulte o [guia Verificar Migração da Conta](/pt-br/documentacao/account/guides/verificar-migracao-conta/). Para o passo a passo completo, consulte [Proteja seu domínio](/pt-br/documentacao/secure/firewall/guides/proteja-seu-dominio/).
+:::
+
+### Adicione uma regra de bloqueio
+
+Esta regra bloqueia requisições cujo header `Referer` corresponde a um site do qual você não quer que o tráfego seja redirecionado para sua aplicação:
+
+1. De volta à página **Firewall**, selecione seu firewall e clique na aba **Rules Engine**.
+2. Clique no botão **+ Rule**.
+3. Dê um nome à sua regra e, opcionalmente, uma descrição.
+4. Na seção **Criteria**, selecione a variável `Header Referer`, o operador de comparação *matches* e, como argumento, o endereço que você quer bloquear. Exemplo: `http://www.malicioussite.com`.
+5. Na seção **Behaviors**, selecione **Deny (403 Forbidden)**.
+6. Clique no botão **Save**.
+
+Aguarde alguns minutos para que as alterações se propaguem.
+
+### Você sabe que funcionou quando
+
+- Uma requisição à sua aplicação que corresponde ao `Referer` bloqueado retorna o status code `HTTP 403`:
+
+```bash
+curl -I https://yourdomain.com/ -H 'Referer: http://www.malicioussite.com'
+```
+
+- A mesma requisição sem o header `Referer` bloqueado não é negada por esta regra.
+- Se você ativou o switch **Debug Rules** nas main settings do firewall, você pode [verificar se as regras que você criou foram executadas com sucesso](/pt-br/documentacao/build/applications/guides/debug-regras/) através da GraphQL API, do Data Stream ou do Real-Time Events.
+
+---
+
+## Caminho da API
+
+A API da Azion permite configurar um firewall existente. Este exemplo adiciona uma regra usando o criteria built-in `SSL Verification Status`, que não exige nenhum módulo.
+
+1. Execute a seguinte requisição `GET` no seu terminal, substituindo `[TOKEN]` pelo seu [personal token](/pt-br/documentacao/account/guides/personal-tokens/), para recuperar o `id` do seu firewall:
+
+```bash
+curl --request GET \
+  --url https://api.azion.com/v4/edge_firewall/firewalls \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Token [TOKEN]'
+```
+
+2. Execute a seguinte requisição `POST` para criar uma regra, substituindo `<edge_firewall_id>` pelo `id` que você copiou. A regra retorna uma resposta personalizada `401` quando a requisição não envia um certificado de cliente:
+
+```bash
+curl --request POST \
+  --url https://api.azion.com/v4/edge_firewall/firewalls/<edge_firewall_id>/request_rules \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Token [TOKEN]' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "name": "SSL Verification",
+    "active": true,
+    "criteria": [
+      [
+        {
+          "conditional": "if",
+          "variable": "${ssl_verification_status}",
+          "operator": "is_equal",
+          "argument": "MISSING_CLIENT_CERTIFICATE"
+        }
+      ]
+    ],
+    "behaviors": [
+      {
+        "type": "set_custom_response",
+        "attributes": {
+          "status_code": 401,
+          "content_type": "application/json",
+          "content_body": "{}"
+        }
+      }
+    ]
+  }'
+```
+
+3. Você receberá uma resposta confirmando que a regra foi criada, incluindo seu `id` e `"is_active": true`.
+4. Aguarde alguns minutos para que as alterações se propaguem.
+
+### Você sabe que funcionou quando
+
+- A resposta do `POST` retorna a regra com um `id` e `"is_active": true`.
+- Requisições ao domínio protegido que não enviam um certificado de cliente recebem a resposta personalizada com status code `401`.
+
+:::tip
+Consulte [Crie regras no Rules Engine para o Firewall](/pt-br/documentacao/secure/firewall/guides/trabalhar-com-rules-engine/) para os detalhes desta requisição e a [documentação da API da Azion](https://api.azion.com/) para todos os objetos de criteria e behaviors disponíveis.
+:::
+
+---
+
+## Próximos passos
+
+- [Como definir as main settings de um firewall](/pt-br/documentacao/secure/firewall/guides/firewall-definir-main-settings/)
+- [Crie regras no Rules Engine para o Firewall](/pt-br/documentacao/secure/firewall/guides/trabalhar-com-rules-engine/)
+- [Referência do Rules Engine para Firewall](/pt-br/documentacao/secure/firewall/reference/rules-engine/)
+- [Conceitos do Firewall](/pt-br/documentacao/secure/firewall/concepts/)
+
+<br /><br />
