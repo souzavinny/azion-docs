@@ -3,7 +3,7 @@ title: Como consultar dados de uso do Tiered Cache
 description: Este guia explica como consultar dados do dataset de Consumption e verificar o uso relacionado ao Tiered Cache usando o GraphiQL Playground.
 meta_tags: graphql, API, consulta, Tiered Cache, dados transferidos, observe, dados de uso, consumo
 namespace: docs_guides_query_tiered_cache_data_graphql
-permalink: /documentacao/produtos/guias/consultar-dados-de-uso-tiered-cache-com-graphql/
+permalink: /documentacao/devtools/graphql/guides/consultar-dados-de-uso-tiered-cache-com-graphql/
 menu_namespace: graphqlMenu
 ---
 
@@ -11,7 +11,7 @@ O dataset **workloadConsumptionMetrics** permite que você obtenha dados agregad
 
 As informações podem ser acessadas através da API GraphQL, permitindo que você transfira esses dados para uma plataforma de terceiros e possibilite análises e revisões adicionais. Além disso, os dados estão disponíveis por até *24 meses*.
 
-Este guia explica como consultar o total de dados transferidos pelo Tiered Cache usando o [GraphiQL Playground](/pt-br/documentacao/produtos/devtools/playground-graphql/).
+Este guia explica como consultar o total de dados transferidos pelo Tiered Cache usando o [GraphiQL Playground](/pt-br/documentacao/devtools/graphql/reference/playground/).
 
 --- 
 
@@ -62,7 +62,7 @@ Onde:
 | `metricName` | Nome da métrica calculada para análise. Neste caso, `data_transferred_total` e `requests`. |
 
 :::note
-Este exemplo recupera dados para o número total de requisições processadas e dados transferidos pelo Tiered Cache. Os resultados são agrupados por `clientId` e `workloadId`. Para saber mais sobre os campos disponíveis, consulte a documentação [Campos da API GraphQL de Consumption](/pt-br/documentacao/devtools/graphql-api/recursos/campos-gql-consumption/).
+Este exemplo recupera dados para o número total de requisições processadas e dados transferidos pelo Tiered Cache. Os resultados são agrupados por `clientId` e `workloadId`. Para saber mais sobre os campos disponíveis, consulte a documentação [Campos da API GraphQL de Consumption](/pt-br/documentacao/devtools/graphql/reference/campos-gql-consumption/).
 :::
 
 3. Você receberá uma resposta JSON similar a esta:
@@ -122,5 +122,5 @@ Onde:
 | `total` | Para `data_transferred_total`, número total de dados transferidos pelo Tiered Cache. Este campo é o resultado de uma soma, em bytes. Exemplo: `268675`. <br/> Para `requests`: número total de requisições processadas. Este campo é o resultado de uma soma. Exemplo: `1112`. |
 
 :::tip
-Para saber mais sobre os campos disponíveis, consulte a documentação [Campos da API GraphQL de Consumption](/pt-br/documentacao/devtools/graphql-api/recursos/campos-gql-consumption/).
+Para saber mais sobre os campos disponíveis, consulte a documentação [Campos da API GraphQL de Consumption](/pt-br/documentacao/devtools/graphql/reference/campos-gql-consumption/).
 :::

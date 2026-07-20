@@ -3,7 +3,7 @@ title: Como implantar um serviço
 description: >-
   Descubra como gerenciar e implantar serviços com Orchestrator na Azion,
   incluindo criação de edge nodes e serviços via Azion API e Console.
-permalink: /documentacao/produtos/deploy/implantar-servico/
+permalink: /documentacao/deploy/orchestrator/guides/implantar-servico/
 meta_tags: >-
   Orchestrator, Azion, gerenciar edge nodes, implantação de serviços,
   recursos de edge, Azion API, Azion Console, Orchestrator Agent, criar
@@ -20,13 +20,13 @@ import LinkButton from 'azion-webkit/linkbutton'
 A Azion oferece duas maneiras de gerenciar edge nodes, edge services e recursos:
 
 - Via [Azion API](https://api.azion.com/#9a7daab9-63f7-43a9-9959-2bd91088fca8)
-- Via [Azion Console](/pt-br/documentacao/produtos/guias/como-acessar-o-azion-console/)
+- Via [Azion Console](/pt-br/documentacao/account/guides/como-acessar-o-azion-console/)
 
 :::note 
-A criação de um edge node acontece diretamente nos dispositivos quando o [Orchestrator Agent](/pt-br/documentacao/produtos/guias/deploy/instalar-orchestrator-agent/) é instalado neles.
+A criação de um edge node acontece diretamente nos dispositivos quando o [Orchestrator Agent](/pt-br/documentacao/deploy/orchestrator/guides/instalar-orchestrator-agent/) é instalado neles.
 :::
 
-<LinkButton link="/pt-br/documentacao/produtos/deploy/orchestrator/" label="saiba mais sobre Orchestrator" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/deploy/orchestrator/" label="saiba mais sobre Orchestrator" severity="secondary" />
 
 ---
 
@@ -34,7 +34,7 @@ A criação de um edge node acontece diretamente nos dispositivos quando o [Orch
 
 Para criar um edge service, você precisa dar a ele um nome fácil de lembrar.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/deploy/criar-edge-service/" label="consulte o guia para criar um edge service" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/deploy/orchestrator/guides/criar-edge-service/" label="consulte o guia para criar um edge service" severity="secondary" />
 
 ---
 
@@ -48,7 +48,7 @@ Para criar um recurso, você precisa:
 - Escolher o `content-type` do recurso. Exemplo: `text` e `shell-script`.
 - Inserir o conteúdo do recurso.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/deploy/provisionar-arquivos/" label="consulte o guia para criar um edge service resource" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/deploy/orchestrator/guides/provisionar-arquivos/" label="consulte o guia para criar um edge service resource" severity="secondary" />
 
 ---
 
@@ -62,7 +62,7 @@ Para fazer isso:
 - Escreva uma descrição.
 - Defina o tempo de expiração do token.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/personal-tokens/" label="consulte o guia de criação de personal tokens" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/account/guides/personal-tokens/" label="consulte o guia de criação de personal tokens" severity="secondary" />
 
 ---
 
@@ -70,7 +70,7 @@ Para fazer isso:
 
 Com o personal token criado, baixe e instale o Agente do Orchestrator.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/deploy/instalar-orchestrator-agent/" label="consulte o guia de instalação do Orchestrator Agent" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/deploy/orchestrator/guides/instalar-orchestrator-agent/" label="consulte o guia de instalação do Orchestrator Agent" severity="secondary" />
 
 ---
 
@@ -78,9 +78,9 @@ Com o personal token criado, baixe e instale o Agente do Orchestrator.
 
 Com o Agente do Orchestrator instalado no dispositivo, autorize o edge node.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/deploy/autorizar-edge-node/" label="consulte o guia para autorizar um edge node" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/deploy/orchestrator/guides/autorizar-edge-node/" label="consulte o guia para autorizar um edge node" severity="secondary" />
 <br/>
-<LinkButton link="/pt-br/documentacao/produtos/deploy/orchestrator/edge-node/" label="saiba mais sobre edge nodes" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/deploy/orchestrator/reference/edge-node/" label="saiba mais sobre edge nodes" severity="secondary" />
 
 ---
 
@@ -88,7 +88,7 @@ Com o Agente do Orchestrator instalado no dispositivo, autorize o edge node.
 
 Agora, com o edge node criado e autorizado, você deve vinculá-lo a um edge service a ser implantado no edge node.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/deploy/vincular-servico/" label="consulte o guia para vincular um edge service a um edge node" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/deploy/orchestrator/guides/vincular-servico/" label="consulte o guia para vincular um edge service a um edge node" severity="secondary" />
 
 Uma vez que essa relação estiver estabelecida, quando uma atualização for acionada nos edge services, ela será implantada em todos os nodes relacionados a este serviço em particular.
 

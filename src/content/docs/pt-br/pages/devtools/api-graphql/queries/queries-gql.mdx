@@ -3,7 +3,7 @@ title: Queries API GraphQL
 description: >-
   Explore como utilizar a API GraphQL para consultas eficientes em tempo real,
   incluindo dados brutos e agregados, e descubra os operadores disponíveis.
-permalink: /documentacao/devtools/graphql-api/queries/
+permalink: /documentacao/devtools/graphql/reference/queries/
 meta_tags: >-
   GraphQL, API, queries, dados brutos, dados agregados, tempo real, consultas,
   API GraphQL do Real-Time Events, API GraphQL do Real-Time Metrics, operadores
@@ -23,10 +23,10 @@ Você pode usar queries para dois tipos de dados:
 - **Brutos** (raw), usando a API GraphQL do Real-Time Events.
 - **Agregados** (aggregated), usando a API GraphQL do Real-Time Metrics.
 
-Para cada tipo de dados, você consultará com diferentes [conjuntos de dados da GraphQL](/pt-br/documentacao/devtools/graphql-api/recursos/#conjuntos-de-dados).
+Para cada tipo de dados, você consultará com diferentes [conjuntos de dados da GraphQL](/pt-br/documentacao/devtools/graphql/reference/recursos/#conjuntos-de-dados).
 
 :::tip[dica]
-Confira os [limites da API GraphQL](/pt-br/documentacao/devtools/graphql-api/limites/) para garantir que sua query é válida.
+Confira os [limites da API GraphQL](/pt-br/documentacao/devtools/graphql/reference/limites/) para garantir que sua query é válida.
 :::
 
 ### Dados brutos
@@ -125,7 +125,7 @@ query HttpQuery {
 :::tip[dica]
 Você também pode utilizar o recurso **Top X query** com a API GraphQL do Real-Time Events. Ela tem a finalidade de visualizar o uso de recursos e ferramentas e ter uma visão detalhada sobre determinadas condições que são mais ou menos usadas. Por exemplo, você pode consultar os “Top 10 Hosts” ou os “Top 10 Status Codes”.
 
-Veja mais sobre [Como selecionar Top X queries com a GraphQL API](/pt-br/documentacao/produtos/guias/graphql-query-top-x/).
+Veja mais sobre [Como selecionar Top X queries com a GraphQL API](/pt-br/documentacao/devtools/graphql/guides/graphql-query-top-x/).
 :::
 
 ### Dados agregados
@@ -220,7 +220,7 @@ Existem também algumas opções que você deve informar através do campo **agg
 | Avg | Calcula a média aritmética de um conjunto de valores contidos em um campo especificado em uma consulta. |
 | Rate | Utilizado com o conjunto de dados imagesProcessed. Obtém a taxa de imagens processadas por segundo ao utilizar o Image Processor. |
 
-Veja mais informações e exemplos no guia [Como realizar consultas agregando dados com a API GraphQL](/pt-br/documentacao/produtos/guias/graphql-dados-agregados/).
+Veja mais informações e exemplos no guia [Como realizar consultas agregando dados com a API GraphQL](/pt-br/documentacao/devtools/graphql/guides/graphql-dados-agregados/).
 
 Você pode realizar uma consulta com *cada uma* das opções disponíveis: **count**, **sum**, **max**, **min**, **avg** e **rate**, contanto que cada opção seja utilizada apenas *uma vez* e cada operador faça a agregação de apenas *um campo do conjunto* de dados por vez. Veja o exemplo a seguir:
 
@@ -475,7 +475,7 @@ Veja exemplos de alguns campos com operadores:
 | Like | hostLike: "%mysite.com%" | Busca todos os dados de hosts com o padrão `mysite.com`, *considerando maiúsculas e minúsculas* |
 | Ilike | hostIlike: "%mysite.com%" | Busca todos os dados de hosts com o padrão `mysite.com`, *sem considerar maiúsculas e minúsculas* |
 
-Dependendo do [tipo de campo de um conjunto de dados](/pt-br/documentacao/devtools/graphql-api/recursos/#conjuntos-de-dados) que você está consultando, você poderá usar operadores diferentes:
+Dependendo do [tipo de campo de um conjunto de dados](/pt-br/documentacao/devtools/graphql/reference/recursos/#conjuntos-de-dados) que você está consultando, você poderá usar operadores diferentes:
 
 | Tipo de campo | Possíveis operadores |
 | ------------- | -------------------- |

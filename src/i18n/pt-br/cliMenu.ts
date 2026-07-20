@@ -9,7 +9,7 @@
  */
  export default [
 	{ text: 'Documentação', header: true, onlyMobile: true, anchor: true, slug: '/documentacao/', key: 'documentation' },
-	{ text: 'Guias',header: true, onlyMobile: true, anchor: true, slug: '/documentacao/produtos/guias/', key: 'guides' },
+	{ text: 'Guias',header: true, onlyMobile: true, anchor: true, slug: '/documentacao/guides/', key: 'guides' },
 	{ text: 'Dev Tools',header: true, onlyMobile: true, anchor: true, slug: '/documentacao/produtos/dev-tools/', key: 'devTools' },
 
 	/// START HERE :::: DO NOT REMOVE the strings above, it's a work around for header on mobile /// 

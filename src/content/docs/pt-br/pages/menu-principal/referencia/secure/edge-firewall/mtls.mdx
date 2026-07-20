@@ -5,7 +5,7 @@ meta_tags: >-
   mutual transport layer security, mtls, tls handshake, open banking,
   certificados, certificados digitais
 namespace: documentation_mtls
-permalink: /documentacao/produtos/secure/firewall/mtls/
+permalink: /documentacao/secure/certificate-manager/reference/mtls/
 ---
 
 import LinkButton from 'azion-webkit/linkbutton'
@@ -30,7 +30,7 @@ As opções de protocolo estão disponíveis na página de configuração da sua
 O mTLS só estará disponível caso o serviço esteja ativado. Para ativar, entre em contato com nossa [Equipe de Vendas](https://www.azion.com/pt-br/contato/).
 :::
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/secure/mtls/" label="consulte o guia associar um certificado mTLS a um domínio" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/secure/firewall/guides/mtls/" label="consulte o guia associar um certificado mTLS a um domínio" severity="secondary" /> 
 
 ## Certificado Digital com suporte para mTLS (Trusted CA)
 
@@ -54,20 +54,20 @@ A configuração padrão do **mTLS** bloqueia os acessos cuja identidade do usu�
 
 Se sua aplicação precisa de necessidades de acesso especiais, é necessário configurar uma verificação permissiva (*Permissive mTLS*). A verificação permissiva pode ser configurada na página *Domains*.
 
-No modo **Permissive**, você pode usar a variável [**Client Certificate Validation**](/pt-br/documentacao/produtos/secure/firewall/rules-engine/) no **Rules Engine for Firewall** para restringir o acesso com base na identidade do certificado do cliente. Essa variável avalia se o certificado do cliente apresentado na requisição é válido em relação à Trusted CA configurada. Um padrão comum é negar requisições em que `Client Certificate Validation` não seja igual a `true`, retornando uma resposta `403 Forbidden`.
+No modo **Permissive**, você pode usar a variável [**Client Certificate Validation**](/pt-br/documentacao/secure/firewall/reference/rules-engine/) no **Rules Engine for Firewall** para restringir o acesso com base na identidade do certificado do cliente. Essa variável avalia se o certificado do cliente apresentado na requisição é válido em relação à Trusted CA configurada. Um padrão comum é negar requisições em que `Client Certificate Validation` não seja igual a `true`, retornando uma resposta `403 Forbidden`.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/mtls/#adicione-regras-especificas-para-uso-do-permissive-mtls" label="consulte o guia de configuração de regras para Permissive mTLS" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/secure/certificate-manager/guides/mtls/#adicione-regras-especificas-para-uso-do-permissive-mtls" label="consulte o guia de configuração de regras para Permissive mTLS" severity="secondary" />
 
 Você também pode alterar e especificar as *header variables* do seu **mTLS** para atender aos requisitos do Open Banking. Isso pode ser feito na página de configuração do **Application**, dentro do **Azion Console**.
 
-> A lista de variáveis aceitas está disponível na página [Rules Engine para Application](/pt-br/documentacao/produtos/build/applications/rules-engine/).
+> A lista de variáveis aceitas está disponível na página [Rules Engine para Application](/pt-br/documentacao/build/applications/reference/rules-engine/).
 
 
 ## Limites
 
 :::tip
 **Aumente limites** <br></br>
-Você pode solicitar o aumento dos limites com base no seu plano. Contate o [time de suporte técnico](/pt-br/documentacao/servicos/suporte/) para fazer a solicitação.
+Você pode solicitar o aumento dos limites com base no seu plano. Contate o [time de suporte técnico](/pt-br/documentacao/services/support/) para fazer a solicitação.
 :::
 
 ### Certificados
@@ -80,7 +80,7 @@ Estes são os **limites default** para cada Plano de Serviço:
 
 :::tip
 **Aumente limites** <br></br>
-Você pode solicitar o aumento dos limites com base no seu plano. Contate o [time de suporte técnico](/pt-br/documentacao/servicos/suporte/) para fazer a solicitação.
+Você pode solicitar o aumento dos limites com base no seu plano. Contate o [time de suporte técnico](/pt-br/documentacao/services/support/) para fazer a solicitação.
 :::
 
 

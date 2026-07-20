@@ -6,7 +6,7 @@ description: >-
   Application Accelerator.
 meta_tags: 'applications, rules engine'
 namespace: documentation_products_edge_applications_rules_engine
-permalink: /documentacao/produtos/build/applications/rules-engine/
+permalink: /documentacao/build/applications/reference/rules-engine/
 ---
 import LinkButton from 'azion-webkit/linkbutton';
 import Tag from 'primevue/tag';
@@ -27,17 +27,17 @@ As regras são concebidas para seguir uma lógica condicional *se-então*. Cada 
 Para desencadear os comportamentos desejados para sua aplicação, você pode utilizar variáveis, operadores de comparação e operadores lógicos. Se as condições forem cumpridas, os comportamentos de cada regra são executados em sequência até que todas as regras sejam processadas.
 
 :::caution
-Antes de criar uma regra, você deve ativar o módulo [Application Accelerator](/pt-br/documentacao/produtos/build/applications/application-accelerator/), que expande a usabilidade do **Rules Engine**, pois habilita funcionalidades de computação serverless à **Applications**. Caso o módulo não seja ativado, somente algumas variáveis e comportamentos estarão disponíveis para o Rules Engine.
+Antes de criar uma regra, você deve ativar o módulo [Application Accelerator](/pt-br/documentacao/build/applications/reference/application-accelerator/), que expande a usabilidade do **Rules Engine**, pois habilita funcionalidades de computação serverless à **Applications**. Caso o módulo não seja ativado, somente algumas variáveis e comportamentos estarão disponíveis para o Rules Engine.
 :::
 
 ## Implementação
 
 | Escopo | Recurso |
 | --- | --- |
-| Primeiros passos de Applications | [Primeiros passos](/pt-br/documentacao/produtos/build/applications/primeiros-passos/) |
-| Criar uma regra | [Como criar regras de Request e Response usando o Rules Engine para Applications](/pt-br/documentacao/produtos/guias/rules-engine/) |
-| Criar uma configuração de cache | [Como configurar políticas de cache para Applications](/pt-br/documentacao/produtos/guias/cache-settings/) |
-| Mitigar HTTPoxy usando rules | [Como mitigar a vulnerabilidade HTTPoxy](/pt-br/documentacao/produtos/guias/como-mitigar-vulnerabilidade-httpoxy/) |
+| Primeiros passos de Applications | [Primeiros passos](/pt-br/documentacao/build/applications/quickstart/) |
+| Criar uma regra | [Como criar regras de Request e Response usando o Rules Engine para Applications](/pt-br/documentacao/build/applications/guides/rules-engine/) |
+| Criar uma configuração de cache | [Como configurar políticas de cache para Applications](/pt-br/documentacao/build/applications/guides/cache-settings/) |
+| Mitigar HTTPoxy usando rules | [Como mitigar a vulnerabilidade HTTPoxy](/pt-br/documentacao/build/applications/guides/como-mitigar-vulnerabilidade-httpoxy/) |
 
 ---
 
@@ -96,7 +96,7 @@ Confira a lista completa de variáveis disponíveis e sua fase de processamento:
 | `${arg_name}` | Valor do nome do parâmetro na string de consulta da URL | `${arg_search}` assume `test` para `/path?search=test` | Request <br />Response |
 | `${args}` | Todos os nomes de parâmetros e valores enviados na string de consulta da URL | `${args}` assume `search=test` para `/path?search=test` | Request <br />Response |
 | `${cookie_name}` | Valor do cookie name | `${cookie_icl_current_language}` assume `pt-br` para `icl_current_language = pt-br` | Request <br/>Response |
-| `${device_group}` | Nome do device group. Você pode criar [device groups](/pt-br/documentacao/produtos/build/applications/device-groups/) na aba **Device Groups** de sua aplicação no Azion Console | `Mobile` | Request <br />Response |
+| `${device_group}` | Nome do device group. Você pode criar [device groups](/pt-br/documentacao/build/applications/reference/device-groups/) na aba **Device Groups** de sua aplicação no Azion Console | `Mobile` | Request <br />Response |
 | `${domain}` | Similar à variável `${host}`. Armazena o host name ou o cabeçalho Host da requisição, removendo o último subdomínio após o domínio de segundo nível | `${domain}` assume `blog.dominio.com` para `az.blog.dominio.com` | Request <br />Response |
 | `${geoip_city}` | Nome da cidade por extenso, utilizando a base de geolocalização `geoip_city` | `Sao Paulo` | Request <br />Response |
 | `${geoip_city_continent_code}` | Código de continente com 2 letras, utilizando a base de geolocalização `geoip_city` | `EU` para Europa | Request <br />Response |
@@ -151,7 +151,7 @@ Utilize essas variáveis no **Rules Engine** da sua application para configurar 
 A maioria dos serviços mTLS depende do recebimento do certificado do usuário. Usando o [Azion Console](https://console.azion.com), você pode enviar a variável `${ssl_client_escaped_cert}` no cabeçalho `X-Forward-Client-Cert` (XFCC) na requisição para a origem e, em seguida, configurar sua application para usar esse header com os dados do certificado.
 :::
 
-<LinkButton link="/pt-br/documentacao/produtos/build/applications/domains/mtls/" label="Saiba mais sobre suporte para mTLS" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/build/applications/reference/domains/mtls/" label="Saiba mais sobre suporte para mTLS" severity="secondary" />
 
 ### Variáveis como argumentos
 
@@ -221,7 +221,7 @@ Em cada fase de processamento, comportamentos distintos estão disponíveis.
 
 ### Add Cookie 
 <Tag severity="info" client:only="vue">Request Phase</Tag> <Tag severity="info" client:only="vue">Response Phase</Tag>
-[<Tag severity="info" client:only="vue">Requer Application Accelerator</Tag>](/pt-br/documentacao/produtos/build/applications/application-accelerator/)
+[<Tag severity="info" client:only="vue">Requer Application Accelerator</Tag>](/pt-br/documentacao/build/applications/reference/application-accelerator/)
 
 Adiciona um cookie no cabeçalho `Set-Cookie` da requisição ou da resposta. O valor do cookie deve ser informado como argumento no formato `cookie-name=cookie-value`.
 
@@ -278,14 +278,14 @@ Os seguintes cabeçalhos não podem ser sobrescritos nem filtrados:
 
 ### Bypass Cache
 <Tag severity="info" client:only="vue">Request Phase</Tag>
-[<Tag severity="info" client:only="vue">Requer Application Accelerator</Tag>](/pt-br/documentacao/produtos/build/applications/application-accelerator/)
+[<Tag severity="info" client:only="vue">Requer Application Accelerator</Tag>](/pt-br/documentacao/build/applications/reference/application-accelerator/)
 
 Define que a Azion não deverá armazenar em cache a resposta de sua origem. A execução desta regra não tem impacto sobre o cache no browser dos usuários, o qual deve ser definido utilizando o behavior [Set Cache Policy](#set-cache-policy). 
 
 Através do **Bypass Cache**, você configura o serviço da Azion para repassar todas as requisições a um *path* diretamente para sua origem. Contudo, você contará com importantes otimizações de protocolo para acelerar sua aplicação e conexão *keep-alive* entre os edge nodes da Azion e sua origem sempre que possível.
 
 :::tip
-Consulte o guia [Como configurar a políticas de cache para Applications](/pt-br/documentacao/produtos/guias/cache-settings/#bypass-cache) para mais informações sobre o uso de Bypass Cache.
+Consulte o guia [Como configurar a políticas de cache para Applications](/pt-br/documentacao/build/applications/guides/cache-settings/#bypass-cache) para mais informações sobre o uso de Bypass Cache.
 :::
 
 ### Diferença entre Bypass Cache e TTL 0
@@ -302,7 +302,7 @@ Você pode definir o TTL como zero se o conteúdo dinâmico, que varia em um det
 
 ### Capture Match Groups
 <Tag severity="info" client:only="vue">Request Phase</Tag> <Tag severity="info" client:only="vue">Response Phase</Tag>
-[<Tag severity="info" client:only="vue">Requer Application Accelerator</Tag>](/pt-br/documentacao/produtos/build/applications/application-accelerator/)
+[<Tag severity="info" client:only="vue">Requer Application Accelerator</Tag>](/pt-br/documentacao/build/applications/reference/application-accelerator/)
 
 Comportamento de apoio para manipulação de strings. Armazena em uma variável temporária o resultado da captura de grupos de correspondência definidos por uma regex aplicada a um dos campos da requisição HTTP disponibilizados. Essa variável temporária pode ser posteriormente referenciada no behavior *Rewrite Request* para montar a string de reescrita.
 
@@ -343,15 +343,15 @@ Entrega um *403 Forbidden* para o usuário. Por se tratar de uma regra finalizad
 ### Enable Gzip
 <Tag severity="info" client:only="vue">Request Phase</Tag> <Tag severity="info" client:only="vue">Response Phase</Tag>
 
-Ativa a compressão de dados em gzip, caso suportada pelo browser do usuário. Consulte o guia de [Como habilitar compressão gzip](/pt-br/documentacao/produtos/guias/gzip-compression/) para mais informações.
+Ativa a compressão de dados em gzip, caso suportada pelo browser do usuário. Consulte o guia de [Como habilitar compressão gzip](/pt-br/documentacao/build/applications/guides/gzip-compression/) para mais informações.
 
 ### Enable Large File Optimization
 <Tag severity="info" client:only="vue">Request Phase</Tag>
-[<Tag severity="info" client:only="vue">Requer Cache</Tag>](/pt-br/documentacao/produtos/build/applications/cache/)
+[<Tag severity="info" client:only="vue">Requer Cache</Tag>](/pt-br/documentacao/build/applications/reference/cache/)
 
 Ativa segmentação de objetos grandes em fragmentos, caso sua origem tenha suporte a requisições HTTP byte-range. Utilize este behavior se você entrega objetos com mais de 1MB através da Azion para que a entrega do conteúdo para seus usuários seja iniciada da edge, mesmo antes de ter recebido todo o objeto de sua origem.
 
-Ao ativar esta funcionalidade, a Azion irá requisitar os objetos para sua origem via range requests e os mesmos serão cacheados na Azion com [Advanced Cache Key](/pt-br/documentacao/produtos/build/applications/cache-settings/#advanced-cache-key).
+Ao ativar esta funcionalidade, a Azion irá requisitar os objetos para sua origem via range requests e os mesmos serão cacheados na Azion com [Advanced Cache Key](/pt-br/documentacao/build/applications/reference/cache-settings/#advanced-cache-key).
 
 Caso sua origem não tenha suporte a range requests, a Azion só poderá iniciar a entrega de seu conteúdo para seus usuários após sua origem finalizar o envio completo do objeto. 
 
@@ -363,11 +363,11 @@ Este behavior é incluído automaticamente pela Azion toda vez que você selecio
 
 A política de cache da Azion para transmissões live em HLS é de 5 segundos de cache para playlists (`.m3u8`) e 60 segundos de cache para chunks (`.ts`).
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/implementar-cache-hls/" label="consulte o guia para implementar cache HLS" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/build/applications/guides/implementar-cache-hls/" label="consulte o guia para implementar cache HLS" severity="secondary" />
 
 ### Filter Cookie 
 <Tag severity="info" client:only="vue">Request Phase</Tag> <Tag severity="info" client:only="vue">Response Phase</Tag>
-[<Tag severity="info" client:only="vue">Requer Application Accelerator</Tag>](/pt-br/documentacao/produtos/build/applications/application-accelerator/)
+[<Tag severity="info" client:only="vue">Requer Application Accelerator</Tag>](/pt-br/documentacao/build/applications/reference/application-accelerator/)
 
 Remove um cookie do cabeçalho da requisição que será enviada para a origem ou da requisição que será enviada para o usuário. Como argumento, você pode informar o nome do cookie que deseja remover no formato `cookie-name`.
 
@@ -385,11 +385,11 @@ Finaliza a fase de requisição. Qualquer comportamento ou regra abaixo desse co
 
 ### Forward Cookies 
 <Tag severity="info" client:only="vue">Request Phase</Tag>
-[<Tag severity="info" client:only="vue">Requer Application Accelerator</Tag>](/pt-br/documentacao/produtos/build/applications/application-accelerator/)
+[<Tag severity="info" client:only="vue">Requer Application Accelerator</Tag>](/pt-br/documentacao/build/applications/reference/application-accelerator/)
 
 Ao utilizar o comportamento Forward Cookies, você está determinando que a Azion encaminhe aos seus usuários o cabeçalho `Set-Cookie` recebido da origem, mesmo quando for identificado conteúdo em cache (HIT).
 
-Para evitar que um usuário receba o cabeçalho `Set-Cookie` da sessão de outro usuário, consulte o [guia sobre políticas de cache](/pt-br/documentacao/produtos/guias/cache-settings/#criando-uma-regra-para-enviar-cookies-da-origem-ao-usuario).
+Para evitar que um usuário receba o cabeçalho `Set-Cookie` da sessão de outro usuário, consulte o [guia sobre políticas de cache](/pt-br/documentacao/build/applications/guides/cache-settings/#criando-uma-regra-para-enviar-cookies-da-origem-ao-usuario).
 
 #### JavaScript Cookies
 
@@ -410,13 +410,13 @@ Retorna um código `204` quando se faz um request à aplicação ao invés do c�
 
 ### Optimize Images 
 <Tag severity="info" client:only="vue">Request Phase</Tag>
-[<Tag severity="info" client:only="vue">Requer Image Processor</Tag>](/pt-br/documentacao/produtos/build/applications/image-processor/)
+[<Tag severity="info" client:only="vue">Requer Image Processor</Tag>](/pt-br/documentacao/build/applications/reference/image-processor/)
 
 Ativa a otimização de imagens.
 
 ### Redirect HTTP to HTTPS
 <Tag severity="info" client:only="vue">Request Phase</Tag>
-[<Tag severity="info" client:only="vue">Requer aplicação HTTPS</Tag>](/pt-br/documentacao/produtos/build/applications/main-settings/)
+[<Tag severity="info" client:only="vue">Requer aplicação HTTPS</Tag>](/pt-br/documentacao/build/applications/reference/main-settings/)
 
 Redireciona a requisição HTTP para a respectiva URL em HTTPS. Caso a requisição já seja HTTPS, não executa nenhum comportamento.
 
@@ -435,7 +435,7 @@ Na Response Phase, os behaviors Redirect To serão executados apenas quando a or
 
 ### Rewrite Request 
 <Tag severity="info" client:only="vue">Request Phase</Tag>
-[<Tag severity="info" client:only="vue">Requer Application Accelerator</Tag>](/pt-br/documentacao/produtos/build/applications/application-accelerator/)
+[<Tag severity="info" client:only="vue">Requer Application Accelerator</Tag>](/pt-br/documentacao/build/applications/reference/application-accelerator/)
 
 Modifica o path do recurso que será requisitado para a origem. Você pode reescrever o path do recurso utilizando:
 
@@ -454,24 +454,24 @@ Por exemplo, se você deseja que a requisição de um usuário para o recurso `/
 
 ### Run Function 
 <Tag severity="info" client:only="vue">Request Phase</Tag> <Tag severity="info" client:only="vue">Response Phase</Tag>
-[<Tag severity="info" client:only="vue">Requer Application Accelerator</Tag>](/pt-br/documentacao/produtos/build/applications/application-accelerator/)
-[<Tag severity="info" client:only="vue">Requer Functions</Tag>](/pt-br/documentacao/produtos/build/applications/functions/)
+[<Tag severity="info" client:only="vue">Requer Application Accelerator</Tag>](/pt-br/documentacao/build/applications/reference/application-accelerator/)
+[<Tag severity="info" client:only="vue">Requer Functions</Tag>](/pt-br/documentacao/build/applications/reference/functions/)
 
-Executa uma função criada no **Functions** e instanciada pela aba **Functions** da application. Consulte o guia de [Como executar funções serverless](/pt-br/documentacao/produtos/guias/funcoes-serverless/) para mais informações.
+Executa uma função criada no **Functions** e instanciada pela aba **Functions** da application. Consulte o guia de [Como executar funções serverless](/pt-br/documentacao/build/functions/guides/funcoes-serverless/) para mais informações.
 
 ### Set Cache Policy
 <Tag severity="info" client:only="vue">Request Phase</Tag>
 
-Atribui a política de cache que deve ser utilizada para a requisição. As políticas de cache devem ser previamente configuradas na [Cache Settings](/pt-br/documentacao/produtos/build/applications/cache-settings/).
+Atribui a política de cache que deve ser utilizada para a requisição. As políticas de cache devem ser previamente configuradas na [Cache Settings](/pt-br/documentacao/build/applications/reference/cache-settings/).
 
-Na política de cache você configura o tempo que o objeto deve ser armazenado em cache e as regras para variação dos objetos em cache com a [Advanced Cache Key](/pt-br/documentacao/produtos/build/applications/cache-settings/#advanced-cache-key).
+Na política de cache você configura o tempo que o objeto deve ser armazenado em cache e as regras para variação dos objetos em cache com a [Advanced Cache Key](/pt-br/documentacao/build/applications/reference/cache-settings/#advanced-cache-key).
 
 ### Set Origin
 <Tag severity="info" client:only="vue">Request Phase</Tag>
 
 Atribui a origem que deve ser consultada pelo edge node para a requisição.
 
-As origens devem ser previamente configuradas usando [Origins](/pt-br/documentacao/produtos/build/applications/origins/).
+As origens devem ser previamente configuradas usando [Origins](/pt-br/documentacao/build/applications/reference/origins/).
 
 ---
 
@@ -482,7 +482,7 @@ As origens devem ser previamente configuradas usando [Origins](/pt-br/documentac
 ---
 ## Debug de regras 
 
-Você pode executar o fazer o [debug de regras criadas com Rules Engine](/pt-br/documentacao/produtos/guias/debug-regras/) usando **GraphQL API**, **Data Stream** ou **Real-Time Events**.
+Você pode executar o fazer o [debug de regras criadas com Rules Engine](/pt-br/documentacao/build/applications/guides/debug-regras/) usando **GraphQL API**, **Data Stream** ou **Real-Time Events**.
 
 ---
 
@@ -490,7 +490,7 @@ Você pode executar o fazer o [debug de regras criadas com Rules Engine](/pt-br/
 
 :::tip
 **Aumente limites** <br></br>
-Você pode solicitar o aumento dos limites com base no seu plano. Contate o [time de suporte técnico](/pt-br/documentacao/servicos/suporte/) para fazer a solicitação.
+Você pode solicitar o aumento dos limites com base no seu plano. Contate o [time de suporte técnico](/pt-br/documentacao/services/support/) para fazer a solicitação.
 :::
 
 Estes são os **limites default**:

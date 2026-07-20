@@ -7,11 +7,11 @@ export default headerMenuDict({
 	},
 	{
 		title: "Guias",
-		href: "/pt-br/documentacao/produtos/guias/"
+		href: "/pt-br/documentacao/guides/"
 	},
 	{
 		title: "Dev Tools",
-		href: "/pt-br/documentacao/produtos/devtools/",
+		href: "/pt-br/documentacao/devtools/",
 		// dropdown: [
 		//     {
 		//         title: "CLI",

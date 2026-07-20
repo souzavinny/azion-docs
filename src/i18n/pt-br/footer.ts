@@ -22,7 +22,7 @@ const listData = [
       },
       {
         "title": "Política de privacidade",
-        "link": "/pt-br/documentacao/contratos/politica-de-privacidade/"
+        "link": "/pt-br/documentacao/agreements/politica-de-privacidade/"
       }
     ]
   },

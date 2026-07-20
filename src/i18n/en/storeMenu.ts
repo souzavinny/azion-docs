@@ -23,7 +23,7 @@ export default [
 		onlyMobile: true,
 		anchor: true,
 		type: 'learn',
-		slug: '/documentation/products/guides/',
+		slug: '/documentation/guides/',
 		key: 'guides',
 	},
 	{
@@ -41,7 +41,7 @@ export default [
 		text: 'Overview',
 		header: true,
 		anchor: true,
-		slug: '/documentation/products/store/overview/',
+		slug: '/documentation/store/overview/',
 		key: 'storeOverview',
 		hasLabel: 'menu.store',
 	},
@@ -58,7 +58,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentation/products/store/storage/create-bucket/',
+				slug: '/documentation/store/object-storage/guides/create-bucket/',
 				key: 'createBucket',
 			},
 			{
@@ -66,7 +66,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentation/products/store/storage/list-buckets/',
+				slug: '/documentation/store/object-storage/guides/list-buckets/',
 				key: 'listBucket',
 			},
 			{
@@ -74,7 +74,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentation/products/store/storage/update-buckets/',
+				slug: '/documentation/store/object-storage/guides/update-buckets/',
 				key: 'updateBucket',
 			},
 			{
@@ -82,7 +82,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentation/products/store/storage/delete-buckets/',
+				slug: '/documentation/store/object-storage/guides/delete-buckets/',
 				key: 'deleteBucket',
 			},
 			{
@@ -90,7 +90,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentation/products/store/storage/upload-object/',
+				slug: '/documentation/store/object-storage/guides/upload-object/',
 				key: 'postObject',
 			},
 			{
@@ -98,7 +98,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentation/products/store/storage/update-object/',
+				slug: '/documentation/store/object-storage/guides/update-object/',
 				key: 'putObject',
 			},
 			{
@@ -106,7 +106,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentation/products/store/storage/list-objects/',
+				slug: '/documentation/store/object-storage/guides/list-objects/',
 				key: 'listObjects',
 			},
 			{
@@ -114,7 +114,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentation/products/store/storage/delete-object/',
+				slug: '/documentation/store/object-storage/guides/delete-object/',
 				key: 'deleteObject',
 			},
 			{
@@ -122,7 +122,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentation/products/store/storage/use-bucket-as-origin/',
+				slug: '/documentation/store/object-storage/guides/use-bucket-as-origin/',
 				key: 'useBucketAsOrigin',
 			},
 		],
@@ -157,7 +157,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentation/products/store/sql/create-database/',
+				slug: '/documentation/store/sql-database/guides/create-database/',
 				key: 'createDatabase',
 			},
 			{
@@ -165,7 +165,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentation/products/store/sql/list-databases/',
+				slug: '/documentation/store/sql-database/guides/list-databases/',
 				key: 'listDatabases',
 			},
 			{
@@ -173,7 +173,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentation/products/store/sql/retrieve-db-info/',
+				slug: '/documentation/store/sql-database/guides/retrieve-db-info/',
 				key: 'retrieveDatabaseInfo',
 			},
 			{
@@ -181,7 +181,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentation/products/store/sql/delete-database/',
+				slug: '/documentation/store/sql-database/guides/delete-database/',
 				key: 'deleteDatabase',
 			},
 		],
@@ -198,7 +198,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentation/products/store/sql/create-table/',
+				slug: '/documentation/store/sql-database/guides/create-table/',
 				key: 'createTable',
 			},
 			{
@@ -206,7 +206,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentation/products/store/sql/insert-into-table/',
+				slug: '/documentation/store/sql-database/guides/insert-into-table/',
 				key: 'insertIntoTable',
 			},
 			{
@@ -222,7 +222,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentation/products/store/sql/delete-record/',
+				slug: '/documentation/store/sql-database/guides/delete-record/',
 				key: 'deleteRecord',
 			},
 		],
@@ -237,7 +237,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentation/products/store/sql/install-edge-sql-shell/',
+				slug: '/documentation/store/sql-database/guides/install-edge-sql-shell/',
 				key: 'installEdgeSQLShell',
 			},
 			{

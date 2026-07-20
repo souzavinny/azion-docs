@@ -3,7 +3,7 @@ title: How to delete an Object Storage bucket
 description: >-
   Learn how to delete the buckets in your account using the Azion API and Azion
   CLI.
-permalink: /documentation/products/store/storage/delete-buckets/
+permalink: /documentation/store/object-storage/guides/delete-buckets/
 meta_tags: >-
   Object Storage, Storage, Cloud, S3, Bucket, File Storage, Object Storage, API,
   Azion CLI, Delete Buckets
@@ -38,8 +38,8 @@ Note: You cannot delete a bucket that is not empty. Additionally, objects delete
 
 ### Requirements 
 
-- [Azion CLI installed](/en/documentation/products/azion-cli/overview/#installing-azion-cli). 
-- [A personal token configured](/en/documentation/devtools/cli/globals/#token).
+- [Azion CLI installed](/en/documentation/devtools/cli/#installing-azion-cli). 
+- [A personal token configured](/en/documentation/devtools/cli/reference/globals/#token).
 
 To delete a bucket: 
 
@@ -51,7 +51,7 @@ azion delete edge-storage bucket --name yourbucketname
 
 <Fragment slot="panel.api">
  
-Run the following `DELETE` request in your terminal, replacing `[TOKEN VALUE]` with your [personal token](/en/documentation/products/guides/personal-tokens/) and `bucket_name` with the name of the bucket you want to delete:
+Run the following `DELETE` request in your terminal, replacing `[TOKEN VALUE]` with your [personal token](/en/documentation/account/guides/personal-tokens/) and `bucket_name` with the name of the bucket you want to delete:
 
 ```bash
 curl --location --request DELETE 'https://api.azion.com/v4/storage/buckets/bucket_name' \

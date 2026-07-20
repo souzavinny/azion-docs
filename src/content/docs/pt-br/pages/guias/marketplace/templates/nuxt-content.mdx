@@ -3,7 +3,7 @@ title: Como implantar o template Nuxt Content
 description: Este template contém as configurações para criar um blog ou site de documentação com Nuxt Content.
 meta_tags: templates, guides, Azion Marketplace, web
 namespace: docs_guides_nuxt_content
-permalink: /documentacao/produtos/guias/nuxt-content/
+permalink: /documentacao/marketplace/integrations/nuxt-content/
 ---
 
 import Tag from 'primevue/tag';
@@ -14,7 +14,7 @@ Preview
 
 O template **Nuxt Content** contém as configurações para criar um blog ou site de documentação baseado no [Nuxt Content](https://content.nuxt.com/).
 
-A implantação deste template cria um repositório do GitHub contendo seu projeto, além de uma application e um domínio para facilitar seu acesso e gerenciamento através da Azion Web Platform. Ele também cria uma origem no [Object Storage](/pt-br/documentacao/produtos/store/object-storage/) para entregar o conteúdo a partir do edge.
+A implantação deste template cria um repositório do GitHub contendo seu projeto, além de uma application e um domínio para facilitar seu acesso e gerenciamento através da Azion Web Platform. Ele também cria uma origem no [Object Storage](/pt-br/documentacao/store/object-storage/) para entregar o conteúdo a partir do edge.
 
 Este template usa a versão `3.6.1` do Nuxt.
 
@@ -29,7 +29,7 @@ Este é um template da comunidade. Foi criado por desenvolvedores de terceiros o
 
 - Uma [conta GitHub](https://github.com/signup) para se conectar com a Azion e criar seu novo repositório.
     - Cada push será implantado automaticamente nesse repositório para manter seu projeto atualizado.
-- O template usa [Functions](/pt-br/documentacao/produtos/build/applications/functions/), [Application Accelerator](/pt-br/documentacao/produtos/build/applications/application-accelerator/), e [Cache](/pt-br/documentacao/produtos/build/applications/cache/). Isso pode gerar custos relacionados ao uso. Consulte a [página de preços](/pt-br/documentacao/produtos/precos/) para mais informações.
+- O template usa [Functions](/pt-br/documentacao/build/applications/reference/functions/), [Application Accelerator](/pt-br/documentacao/build/applications/reference/application-accelerator/), e [Cache](/pt-br/documentacao/build/applications/reference/cache/). Isso pode gerar custos relacionados ao uso. Consulte a [página de preços](/pt-br/documentacao/platform/pricing/) para mais informações.
 
 ---
 
@@ -53,7 +53,7 @@ No formulário de configuração, você deve fornecer as informações para conf
 Os campos identificados com um asterisco são obrigatórios.
 
 1. Conecte a Azion com sua conta do GitHub.
-    - Uma janela pop-up será aberta para confirmar a instalação do [Azion GitHub App](/pt-br/documentacao/produtos/guias/azion-github-app/), uma ferramenta que conecta sua conta do GitHub com a plataforma da Azion.
+    - Uma janela pop-up será aberta para confirmar a instalação do [Azion GitHub App](/pt-br/documentacao/get-started/first-deploy/github/azion-github-app/), uma ferramenta que conecta sua conta do GitHub com a plataforma da Azion.
     - Defina suas permissões e acesso ao repositório como desejado.
 2. Selecione o **Git Scope** com o qual trabalhar.
 3. Defina um nome para sua application.
@@ -84,7 +84,7 @@ Para gerenciar e editar as configurações da sua application, siga esses passos
 Depois de selecionar a application que você trabalhará, você será direcionado para uma página contendo todas as configurações que você pode ajustar.
 
 :::tip
-Leia a documentação sobre [gerenciamento de application](/pt-br/documentacao/produtos/build/applications/primeiros-passos/) para mais detalhes.
+Leia a documentação sobre [gerenciamento de application](/pt-br/documentacao/build/applications/quickstart/) para mais detalhes.
 :::
 
 ### Adicione um domínio personalizado
@@ -93,4 +93,4 @@ A application criada durante a implantação tem um Azion Workload Domain atribu
 
 import LinkButton from 'azion-webkit/linkbutton';
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/configurar-dominio/" label="Ir para o guia de configuração de domínio" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/build/workloads/guides/configurar-dominio/" label="Ir para o guia de configuração de domínio" severity="secondary" /> 

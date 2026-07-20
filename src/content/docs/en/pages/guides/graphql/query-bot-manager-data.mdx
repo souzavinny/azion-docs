@@ -3,7 +3,7 @@ title: How to query Bot Manager data with GraphQL API
 description: This guide will explain how to query data from the botManagerMetrics dataset using the GraphiQL playground.
 meta_tags: graphql, api, query, bot management, Azion Bot Manager
 namespace: docs_guides_query_bot_manager_data_graphql
-permalink: /documentation/products/guides/query-bot-manager-data-with-graphql/
+permalink: /documentation/devtools/graphql/guides/query-bot-manager-data-with-graphql/
 menu_namespace: graphqlMenu
 ---
 
@@ -14,7 +14,7 @@ This information can be accessed through the GraphQL API. Additionally, this dat
 This guide will explain how to query Bot Manager data using the GraphiQL playground.
 
 :::note
-To retrieve this data, you must be subscribed to Azion Bot Manager and use the [GraphQL API](/en/documentation/devtools/graphql-api/overview/). Contact the [Sales team](https://www.azion.com/en/contact-sales/) for more details on the subscription.
+To retrieve this data, you must be subscribed to Azion Bot Manager and use the [GraphQL API](/en/documentation/devtools/graphql/reference/overview/). Contact the [Sales team](https://www.azion.com/en/contact-sales/) for more details on the subscription.
 :::
 
 ---
@@ -64,7 +64,7 @@ Where:
 | `limit` | Specifies the maximum number of results to return. System maximum: `10000` |
 
 :::note
-This example retrieves data for `action`, `botCategory`, `botMode`, `classified`, and the total (`sum`) of requests identified as bots during the specified time range, grouped by the selected fields. To know more about the available fields, check the [Real-Time Metrics GraphQL API Fields documentation](/en/documentation/devtools/graphql-api/features/gql-real-time-metrics-fields/).
+This example retrieves data for `action`, `botCategory`, `botMode`, `classified`, and the total (`sum`) of requests identified as bots during the specified time range, grouped by the selected fields. To know more about the available fields, check the [Real-Time Metrics GraphQL API Fields documentation](/en/documentation/devtools/graphql/reference/gql-real-time-metrics-fields/).
 :::
 
 3. You'll receive a JSON response similar to this: 
@@ -152,5 +152,5 @@ Where:
 | `sum` | Total number of requests for each specific combination of attributes. Each object in the response groups the requests based on these attributes |
 
 :::tip
-To know more about the available fields, check the [Real-Time Metrics GraphQL API Fields documentation](/en/documentation/devtools/graphql-api/features/gql-real-time-metrics-fields/).
+To know more about the available fields, check the [Real-Time Metrics GraphQL API Fields documentation](/en/documentation/devtools/graphql/reference/gql-real-time-metrics-fields/).
 :::

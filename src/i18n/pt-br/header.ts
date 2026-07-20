@@ -7,12 +7,12 @@ const menuData = {
     },
 		{
       label: 'Guias',
-      href: '/pt-br/documentacao/produtos/guias/',
+      href: '/pt-br/documentacao/guides/',
       items: []
     },
 		{
       label: 'DevTools',
-      href: '/pt-br/documentacao/produtos/devtools/',
+      href: '/pt-br/documentacao/devtools/',
       items: []
     }
   ]
@@ -62,7 +62,7 @@ const menuSecondaryMobile = [
       {
         label: 'Política de privacidade',
         // icon: 'pi pi-exclamation-triangle'
-        url: '/pt-br/documentacao/contratos/politica-de-privacidade/'
+        url: '/pt-br/documentacao/agreements/politica-de-privacidade/'
       }
     ]
   }

@@ -5,7 +5,7 @@ description: >-
   manage databases, run queries, and ensure data resilience effortlessly.
 meta_tags: 'sql database, sql, database, distributed, queries'
 namespace: docs_edge_sql
-permalink: /documentation/products/store/sql-database/
+permalink: /documentation/store/sql-database/
 ---
 
 import Tag from 'primevue/tag'
@@ -29,11 +29,11 @@ There are two ways to build a database through SQL Database: using the SQL Datab
 
 | Scope | Resource |
 | ----- | -------- |
-| Manage databases with REST API | [How to create an SQL Database database](/en/documentation/products/guides/manage-sql-database/) |
-| Create queries with REST API | [How to create and query data on SQL Database](/en/documentation/products/guides/create-tables-sql-database/) |
-| Retrieve data from a database | [How to retrieve data from a database with SQL Database and Functions](/en/documentation/products/guides/edge-sql/retrieve-data-with-functions/) |
-| Get to know SQL Database Vector Search | [SQL Database Vector Search reference](/en/documentation/products/store/sql-database/vector-search/) |
-| Import data to SQL Database | [How to import data guide ](/en/documentation/products/guides/import-data-sql-database/) |
+| Manage databases with REST API | [How to create an SQL Database database](/en/documentation/store/sql-database/guides/manage-sql-database/) |
+| Create queries with REST API | [How to create and query data on SQL Database](/en/documentation/store/sql-database/guides/create-tables-sql-database/) |
+| Retrieve data from a database | [How to retrieve data from a database with SQL Database and Functions](/en/documentation/store/sql-database/guides/retrieve-data-with-functions/) |
+| Get to know SQL Database Vector Search | [SQL Database Vector Search reference](/en/documentation/store/sql-database/reference/vector-search/) |
+| Import data to SQL Database | [How to import data guide ](/en/documentation/store/sql-database/guides/import-data-sql-database/) |
 
 ---
 
@@ -65,7 +65,7 @@ With a distributed architecture running across Azion's edge nodes, SQL Database 
 
 A database is a set of structured tables that allow to write and read data in SQL language. Organized in columns and rows, users are able to add data logically, with columns representing specific information in the vertical axis, while rows represent individual entry data, related to a column, in the horizontal axis.
 
-[Creating a database](/en/documentation/products/guides/manage-sql-database/) is the first step to use SQL Database and add data:
+[Creating a database](/en/documentation/store/sql-database/guides/manage-sql-database/) is the first step to use SQL Database and add data:
 
 ```bash
 curl --location 'https://api.azion.com/v4/edge_sql/databases' \
@@ -110,9 +110,9 @@ curl --location 'https://api.azion.com/v4/edge_sql/databases/{id_database}/query
 
 ## Vector Search 
 
-[Vector Search](/en/documentation/products/store/sql-database/vector-search/) is an **Azion SQL Database** feature that enables customers to implement semantic search engines. While traditional search models aim to find exact matches, such as keyword matches, vector search models use specialized algorithms to identify similar items based on their mathematical representations, or vector embeddings.
+[Vector Search](/en/documentation/store/sql-database/reference/vector-search/) is an **Azion SQL Database** feature that enables customers to implement semantic search engines. While traditional search models aim to find exact matches, such as keyword matches, vector search models use specialized algorithms to identify similar items based on their mathematical representations, or vector embeddings.
 
-This feature natively integrates with [AI Inference](/en/documentation/products/ai/ai-inference/) to power RAG implementations without additional infrastructure, combining SQL and vector capabilities in a single database. The system supports **LangChain Vector Store** integration for document storage and **LangChain Retriever** for advanced hybrid search combining vector and full-text search capabilities.
+This feature natively integrates with [AI Inference](/en/documentation/build/ai-inference/) to power RAG implementations without additional infrastructure, combining SQL and vector capabilities in a single database. The system supports **LangChain Vector Store** integration for document storage and **LangChain Retriever** for advanced hybrid search combining vector and full-text search capabilities.
 
 ---
 
@@ -122,8 +122,8 @@ You can interact with SQL Database directly from your terminal using [the edgesq
 
 Check the documentation below for details on how to install and use EdgeSQL Shell.
 
-<LinkButton link="/en/documentation/products/store/sql/install-edge-sql-shell/" label="Go to SQL Database Shell installation guide" severity="secondary" /> 
-<LinkButton link="/en/documentation/products/store/sql/sql-database-shell-commands/" label="Go to SQL Database Shell commands reference" severity="secondary" />
+<LinkButton link="/en/documentation/store/sql-database/guides/install-edge-sql-shell/" label="Go to SQL Database Shell installation guide" severity="secondary" /> 
+<LinkButton link="/en/documentation/store/sql-database/guides/sql-database-shell-commands/" label="Go to SQL Database Shell commands reference" severity="secondary" />
 
 
 
@@ -181,6 +181,6 @@ These are the **default limits** for each Support service:
 | Maximum database size | 200 MB | 500 MB | 2 GB | 2 GB |
 | Maximum storage per account | 5 GB | 50 GB | 300 GB | 300 GB |
 
-To view the databases associated with your acount visit this [guide](/en/documentation/products/store/sql/list-databases/).
+To view the databases associated with your acount visit this [guide](/en/documentation/store/sql-database/guides/list-databases/).
 
 ---

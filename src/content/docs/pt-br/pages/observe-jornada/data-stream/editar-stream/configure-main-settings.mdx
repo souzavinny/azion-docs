@@ -3,7 +3,7 @@ title: Como configurar as main settings do Data Stream
 description: Saiba como ajustar as configurações principais de uma transmissão de dados.
 meta_tags: 'Data Stream, how to, use, stream, event, logs, observe, observability'
 namespace: documentation_using_dts
-permalink: /documentacao/produtos/guias/como-usar-data-stream/
+permalink: /documentacao/observe/data-stream/guides/como-usar-data-stream/
 menu_namespace: observeMenu
 ---
 
@@ -11,9 +11,9 @@ import Tabs from '~/components/tabs/Tabs'
 import JourneyAPI from '~/includes/snippets/JourneyAPI/pt/snippet.mdx'
 
 
-Ao acessar o Data Stream por meio do [Azion Console](https://console.azion.com/data-stream) ou da [Azion API](https://api.azion.com/#04257075-3691-4b5f-b22b-22a5b6653f3f), você pode realizar diversas ações para gerenciar seus fluxos de dados, incluindo [criar um novo data stream](/pt-br/documentacao/produtos/guias/como-usar-data-stream/), conectar seus data streams a [endpoints](/pt-br/documentacao/produtos/guias/#observe), [editar as configurações](/pt-br/documentacao/produtos/guias/como-usar-data-stream/), [visualizar informações detalhadas](/pt-br/documentacao/produtos/observe/troubleshoot/data-stream-monitorar-metricas/) sobre cada stream e [excluir ou parar data streams](/pt-br/documentacao/produtos/guias/observe/deletar-data-stream/) que não são mais necessários.
+Ao acessar o Data Stream por meio do [Azion Console](https://console.azion.com/data-stream) ou da [Azion API](https://api.azion.com/#04257075-3691-4b5f-b22b-22a5b6653f3f), você pode realizar diversas ações para gerenciar seus fluxos de dados, incluindo [criar um novo data stream](/pt-br/documentacao/observe/data-stream/guides/como-usar-data-stream/), conectar seus data streams a [endpoints](/pt-br/documentacao/guides/#observe), [editar as configurações](/pt-br/documentacao/observe/data-stream/guides/como-usar-data-stream/), [visualizar informações detalhadas](/pt-br/documentacao/observe/data-stream/guides/data-stream-monitorar-metricas/) sobre cada stream e [excluir ou parar data streams](/pt-br/documentacao/observe/data-stream/guides/deletar-data-stream/) que não são mais necessários.
 
-Para obter informações mais detalhadas sobre o produto e cada configuração, consulte a [documentação de referência](/pt-br/documentacao/produtos/observe/data-stream/).
+Para obter informações mais detalhadas sobre o produto e cada configuração, consulte a [documentação de referência](/pt-br/documentacao/observe/data-stream/).
 
 :::note
 Todos os campos `key` serão mascarados e um ícone que permite revelar o conteúdo do campo será exibido apenas para usuários com a permissão `Edit Data Stream`. Usuários sem a permissão `Edit Data Stream` podem apenas visualizar as configurações do stream existente, mas não podem editar ou criar novos.
@@ -27,17 +27,17 @@ Todos os campos `key` serão mascarados e um ícone que permite revelar o conte�
 
 Nesta seção, você modificará as configurações principais de sua transmissão: nome, fonte de dados, modelo, domínios e destino via [Azion Console](https://console.azion.com).
 
-1. [Acesse o Azion Console](/pt-br/documentacao/produtos/guias/como-acessar-o-azion-console/) > **Data Stream**.
+1. [Acesse o Azion Console](/pt-br/documentacao/account/guides/como-acessar-o-azion-console/) > **Data Stream**.
 2. Na lista, selecione o stream que deseja editar ou clique no botão **+ Stream**.
 3. Dê ao stream um nome único e fácil de lembrar.
 4. No menu suspenso **Source**, selecione o que deseja usar: **Activity History**, **Applications**, **Functions** ou **WAF Events**.
-    - Para usar Functions e WAF Events, você deve [ter os produtos ativados](/pt-br/documentacao/produtos/observe/data-stream/#selecionar-data-source).
+    - Para usar Functions e WAF Events, você deve [ter os produtos ativados](/pt-br/documentacao/observe/data-stream/#selecionar-data-source).
 5. No campo **Template**, selecione o que desejar usar.
-    - Caso escolha usar um template personalizado, na caixa de código **Data Set**, adicione as variáveis que você deseja usar nas análises de seus logs. Veja mais sobre [Criar um template personalizado no Data Stream](/pt-br/documentacao/produtos/guias/data-stream-template-personalizado/).
+    - Caso escolha usar um template personalizado, na caixa de código **Data Set**, adicione as variáveis que você deseja usar nas análises de seus logs. Veja mais sobre [Criar um template personalizado no Data Stream](/pt-br/documentacao/observe/data-stream/guides/data-stream-template-personalizado/).
 6. Em **Workloads** > **Options**, selecione **All Current and Future Domains** ou **Filter Domains**.
-    - Saiba mais sobre cada opção em [Como associar domínios no Data Stream](/pt-br/documentacao/produtos/guias/data-stream-associar-dominios/).
+    - Saiba mais sobre cada opção em [Como associar domínios no Data Stream](/pt-br/documentacao/observe/data-stream/guides/data-stream-associar-dominios/).
 7. Na seção **Destination**, selecione um **Connector** na lista suspensa: **Standard HTTP/HTTPS POST**, **Apache Kafka**, **Simples Storage Service (S3)**, **Google BigQuery**, **Elasticsearch**, **Splunk**, **AWS Kinesis Data Firehose**, **Datadog**, **IBM QRadar**, **Azure Monitor** ou **Azure Blob Storage**.
-    - Os campos para preenchimento são diferentes dependendo do tipo de endpoint que você escolher. Descubra mais informações sobre cada campo na página de [configuração de endpoint](/pt-br/documentacao/produtos/observe/data-stream/#endpoints).
+    - Os campos para preenchimento são diferentes dependendo do tipo de endpoint que você escolher. Descubra mais informações sobre cada campo na página de [configuração de endpoint](/pt-br/documentacao/observe/data-stream/#endpoints).
 8. Clique no botão **Save**.
 
 </Fragment>
@@ -48,7 +48,7 @@ Nesta seção, você estará modificando um stream existente com um conector Ela
 
 Consulte a tabela de [Data Stream Properties](https://api.azion.com/#ed05fed1-9e69-4f6f-b086-81095b8cd738) para ver todas as propriedades disponíveis e seus valores aceitos.
 
-1. Execute a seguinte requisição `GET` em seu terminal, substituindo `[TOKEN VALUE]` pelo seu [personal token](/pt-br/documentacao/produtos/guias/personal-tokens/) para recuperar seu `<data_streaming_id>`:
+1. Execute a seguinte requisição `GET` em seu terminal, substituindo `[TOKEN VALUE]` pelo seu [personal token](/pt-br/documentacao/account/guides/personal-tokens/) para recuperar seu `<data_streaming_id>`:
 
 ```bash
 curl --request GET \

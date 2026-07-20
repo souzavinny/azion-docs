@@ -7,7 +7,7 @@ export default headerMenuDict({
 	},
 	{
 		title: "Guides",
-		href: "/en/documentation/products/guides/"
+		href: "/en/documentation/guides/"
 	},
 	{
 		title: "DevTools",

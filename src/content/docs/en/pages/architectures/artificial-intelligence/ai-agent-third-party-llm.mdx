@@ -29,17 +29,17 @@ This architecture describes an AI agent at the edge that consumes Third Party LL
 
 ### Components
 
-- **[Applications](https://www.azion.com/en/documentation/products/build/applications/)**: an application on Azion that hosts the AI agent.
-- **[Functions](https://www.azion.com/en/documentation/products/build/applications/functions/)**: a serverless function that contains the AI agent logic.
-- **[Object Storage](https://www.azion.com/en/documentation/products/store/object-storage/)**: Azion's object storage service to store the data that the agent uses to answer questions.
-- **[SQL Database](https://www.azion.com/en/documentation/products/store/sql-database/)**: Azion's database to store chat state and documents.
+- **[Applications](https://www.azion.com/en/documentation/build/applications/)**: an application on Azion that hosts the AI agent.
+- **[Functions](https://www.azion.com/en/documentation/build/applications/reference/functions/)**: a serverless function that contains the AI agent logic.
+- **[Object Storage](https://www.azion.com/en/documentation/store/object-storage/)**: Azion's object storage service to store the data that the agent uses to answer questions.
+- **[SQL Database](https://www.azion.com/en/documentation/store/sql-database/)**: Azion's database to store chat state and documents.
 - **Third Party LLM**: LLM service (e.g., OpenAI or Anthropic).
 
 ---
 
 ## Implementation
 
-Use the [LangGraph AI Agent Boilerplate](/en/documentation/products/guides/langgraph-ai-agent-boilerplate/) to quickly set up a LangGraph backend and SQL base that ensures reliable persistence of state and documents.
+Use the [LangGraph AI Agent Boilerplate](/en/documentation/marketplace/integrations/langgraph-ai-agent-boilerplate/) to quickly set up a LangGraph backend and SQL base that ensures reliable persistence of state and documents.
 
 You can obtain and configure your template through the Azion Console. To easily deploy it at the edge, click the button below.
 
@@ -92,17 +92,17 @@ CLERK_SECRET_KEY=
 - Then, run the `yarn upload-docs` command to upload the files to Object Storage.
 
 :::note
-This template uses [Application Accelerator](/en/documentation/products/build/applications/application-accelerator/), [Functions](/en/documentation/products/build/applications/functions/), and [SQL Database](/en/documentation/products/store/sql-database/), and may generate usage-related costs. Check the [pricing page](https://www.azion.com/en/pricing/) for more information.
+This template uses [Application Accelerator](/en/documentation/build/applications/reference/application-accelerator/), [Functions](/en/documentation/build/applications/reference/functions/), and [SQL Database](/en/documentation/store/sql-database/), and may generate usage-related costs. Check the [pricing page](https://www.azion.com/en/pricing/) for more information.
 :::
 ---
 
 ## Reference Guide
 
-- [Reference Guide - How to integrate an AI agent with Third Party LLM](/en/documentation/products/guides/langgraph-ai-agent-boilerplate/)
+- [Reference Guide - How to integrate an AI agent with Third Party LLM](/en/documentation/marketplace/integrations/langgraph-ai-agent-boilerplate/)
 
 ## Related Documentation
 
-- [Object Storage](/en/documentation/products/store/object-storage/)
-- [SQL Database](/en/documentation/products/store/sql-database/)
-- [Azion GitHub App](/en/documentation/products/guides/azion-github-app/)
-- [Vector Search with SQL Database](/en/documentation/products/guides/sql-database-vector-search/)
+- [Object Storage](/en/documentation/store/object-storage/)
+- [SQL Database](/en/documentation/store/sql-database/)
+- [Azion GitHub App](/en/documentation/get-started/first-deploy/github/azion-github-app/)
+- [Vector Search with SQL Database](/en/documentation/store/sql-database/guides/sql-database-vector-search/)

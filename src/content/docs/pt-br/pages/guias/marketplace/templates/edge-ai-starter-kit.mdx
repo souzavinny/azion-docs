@@ -3,7 +3,7 @@ title: Como implementar o template AI Inference Starter Kit
 description: O template AI Inference Starter Kit permite criar uma application com APIs compatíveis com OpenAI, funcionando diretamente na rede distribuída da Azion. 
 meta_tags: templates, guias, Azion Marketplace, AI, Function, Applications
 namespace: docs_guides_edge_ai_starter_kit
-permalink: /documentacao/produtos/guias/ai-inference-starter-kit/
+permalink: /documentacao/marketplace/integrations/ai-inference-starter-kit/
 ---
 
 import Tag from 'primevue/tag';
@@ -20,7 +20,7 @@ A implementação deste template cria uma application com uma function e um dom�
 
 ## Requisitos
 
-- O template usa [Application Accelerator](/pt-br/documentacao/produtos/build/applications/application-accelerator/), [Functions](/pt-br/documentacao/produtos/build/applications/functions/) e [AI Inference](/pt-br/documentacao/produtos/ai/ai-inference/). Isso pode gerar custos relacionados ao uso. Consulte a [página de preços](/pt-br/documentacao/produtos/precos/) para mais informações.
+- O template usa [Application Accelerator](/pt-br/documentacao/build/applications/reference/application-accelerator/), [Functions](/pt-br/documentacao/build/applications/reference/functions/) e [AI Inference](/pt-br/documentacao/build/ai-inference/). Isso pode gerar custos relacionados ao uso. Consulte a [página de preços](/pt-br/documentacao/platform/pricing/) para mais informações.
 
 
 ## Implante o template
@@ -78,12 +78,12 @@ const modelResponse = await Azion.AI.run("Qwen/Qwen3-30B-A3B-Instruct-2507-FP8",
 return modelResponse
 ```
 
-Este exemplo usa o [modelo Qwen3](/pt-br/documentacao/produtos/ai/ai-inference/modelos/qwen3-30ba3b/). Você pode alterar o modelo e os parâmetros da requisição de acordo com suas preferências. 
-Verifique a [referência de modelos de AI](/pt-br/documentacao/produtos/ai/ai-inference/modelos/) para obter mais informações sobre os modelos disponíveis e como usá-los em sua aplicação.
+Este exemplo usa o [modelo Qwen3](/pt-br/documentacao/build/ai-inference/reference/modelos/qwen3-30ba3b/). Você pode alterar o modelo e os parâmetros da requisição de acordo com suas preferências. 
+Verifique a [referência de modelos de AI](/pt-br/documentacao/build/ai-inference/reference/modelos/) para obter mais informações sobre os modelos disponíveis e como usá-los em sua aplicação.
 
 
 :::tip
-Leia a documentação sobre [gerenciamento de functions](/pt-br/documentacao/produtos/build/applications/functions/) para mais detalhes.
+Leia a documentação sobre [gerenciamento de functions](/pt-br/documentacao/build/applications/reference/functions/) para mais detalhes.
 :::
 
 ### Gerencie a application
@@ -99,7 +99,7 @@ Para gerenciar e editar as configurações da sua application, siga esses passos
 Depois de selecionar a application que você trabalhará, você será direcionado para uma página contendo todas as configurações que você pode ajustar.
 
 :::tip
-Leia a documentação sobre [gerenciamento de application](/pt-br/documentacao/produtos/build/applications/primeiros-passos/) para mais detalhes.
+Leia a documentação sobre [gerenciamento de application](/pt-br/documentacao/build/applications/quickstart/) para mais detalhes.
 :::
 
 ### Adicione um domínio personalizado
@@ -108,4 +108,4 @@ A application criada durante a implementação tem um Azion Workload Domain atri
 
 import LinkButton from 'azion-webkit/linkbutton';
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/configurar-dominio/" label="Ir para o guia de configuração de domínio" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/build/workloads/guides/configurar-dominio/" label="Ir para o guia de configuração de domínio" severity="secondary" />

@@ -3,7 +3,7 @@ title: Como listar buckets do Object Storage
 description: >-
   Aprenda como listar todos os buckets da sua conta usando a API da Azion e
   Azion CLI.
-permalink: /documentacao/produtos/store/storage/listar-buckets/
+permalink: /documentacao/store/object-storage/guides/listar-buckets/
 meta_tags: >-
   Object Storage, Storage, Cloud, S3, Bucket, File Storage, Object Storage, API,
   Azion CLI, List Buckets
@@ -25,8 +25,8 @@ Este guia mostra como listar todos os buckets da sua conta usando a API da Azion
 
 ## Requisitos
 
-- [Azion CLI instalada](/pt-br/documentacao/produtos/azion-cli/visao-geral/#instalar-a-azion-cli). 
-- [Um personal token configurado](/pt-br/documentacao/devtools/cli/globals/#token).
+- [Azion CLI instalada](/pt-br/documentacao/devtools/cli/#instalar-a-azion-cli). 
+- [Um personal token configurado](/pt-br/documentacao/devtools/cli/reference/globals/#token).
 
 Para listar os buckets relacionados à sua conta:
 
@@ -37,7 +37,7 @@ azion list edge-storage bucket
 </Fragment>
 
 <Fragment slot="panel.api">
-1. Execute a seguinte solicitação `GET` no seu terminal, substituindo `[TOKEN VALUE]` pelo seu [personal token](/pt-br/documentacao/produtos/guias/personal-tokens/) para recuperar a lista de buckets na sua conta:
+1. Execute a seguinte solicitação `GET` no seu terminal, substituindo `[TOKEN VALUE]` pelo seu [personal token](/pt-br/documentacao/account/guides/personal-tokens/) para recuperar a lista de buckets na sua conta:
 
 ```bash 
 curl --location 'https://api.azion.com/v4/storage/buckets' \

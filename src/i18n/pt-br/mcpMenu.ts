@@ -9,15 +9,15 @@
  */
 export default [
 	{ text: 'Documentação', header: true, onlyMobile: true, anchor: true, slug: '/documentacao/', key: 'documentation' },
-	{ text: 'Guias',header: true, onlyMobile: true, anchor: true, slug: '/documentacao/produtos/guias/', key: 'guides' },
+	{ text: 'Guias',header: true, onlyMobile: true, anchor: true, slug: '/documentacao/guides/', key: 'guides' },
 	{ text: 'Dev Tools',header: true, onlyMobile: true, anchor: true, slug: '/documentacao/produtos/dev-tools/', key: 'devTools' },
 
 	/// START HERE :::: DO NOT REMOVE the strings above, it's a work around for header on mobile /// 
 
 	{ text: 'Visão geral', header: true, anchor: true, type: 'learn', key: 'overview', slug: '/documentacao/devtools/mcp/' },
-	{ text: 'Como funciona', header: true, anchor: true, type: 'learn', key: 'howItWorks', slug: '/documentacao/devtools/mcp/como-funciona/' },
-	{ text: 'Configuração', header: true, anchor: true, type: 'learn', key: 'configuration', slug: '/documentacao/devtools/mcp/configuracao/' },
-	{ text: 'Exemplos', header: true, anchor: true, type: 'learn', key: 'examples', slug: '/documentacao/devtools/mcp/exemplos/' },
-	{ text: 'Desenvolvimento local', header: true, anchor: true, type: 'learn', key: 'localDevelopment', slug: '/documentacao/devtools/mcp/desenvolvimento-local/' },
-	{ text: 'Solução de problemas', header: true, anchor: true, type: 'learn', key: 'troubleshooting', slug: '/documentacao/devtools/mcp/solucao-de-problemas/' },
+	{ text: 'Como funciona', header: true, anchor: true, type: 'learn', key: 'howItWorks', slug: '/documentacao/devtools/mcp/reference/como-funciona/' },
+	{ text: 'Configuração', header: true, anchor: true, type: 'learn', key: 'configuration', slug: '/documentacao/devtools/mcp/reference/configuracao/' },
+	{ text: 'Exemplos', header: true, anchor: true, type: 'learn', key: 'examples', slug: '/documentacao/devtools/mcp/reference/exemplos/' },
+	{ text: 'Desenvolvimento local', header: true, anchor: true, type: 'learn', key: 'localDevelopment', slug: '/documentacao/devtools/mcp/reference/desenvolvimento-local/' },
+	{ text: 'Solução de problemas', header: true, anchor: true, type: 'learn', key: 'troubleshooting', slug: '/documentacao/devtools/mcp/reference/solucao-de-problemas/' },
 ] as const;

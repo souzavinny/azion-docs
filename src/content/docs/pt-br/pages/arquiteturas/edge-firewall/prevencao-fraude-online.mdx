@@ -2,8 +2,7 @@
 title: "Reforce a prevenção de fraudes online"
 description: >-
   Use estratégias de prevenção de fraude online para empresas digitais, incluindo medidas de segurança, tecnologias e melhores práticas para proteção contra ameaças cibernéticas.
-permalink: >-
-  /documentacao/arquiteturas/edge-firewall/prevencao-fraudes-online/
+permalink: /documentacao/architectures/firewall/prevencao-fraudes-online/
 meta_tags: >-
   Prevenção contra fraudes, Segurança Zero Trust, Inteligência contra ameaças, Account Takeover, credential stuffing, phishing, Fraude de identidade sintética, segurança cibernética, Bot management, Firewall, segurança online, comércio eletrônico, fintech
 namespace: docs_arch_online_fraud_prevention
@@ -26,7 +25,7 @@ Essa abordagem executa a detecção de fraude diretamente no edge, antes de atin
 ### Fluxo de dados na prevenção de fraudes online
 
 1. Uma requisição chega à **Azion Web Platform**. 
-- A plataforma possui seus próprios mecanismos de segurança, incluindo monitoramento e detecção de ameaças em tempo real, criptografia, controles de acesso, protocolos e firewalls distribuídos. Ela também adere aos requisitos de conformidade (PCI, SOC, LGPD/GPDR) e possui uma equipe ([Security Response Team, SRT](/pt-br/documentacao/servicos/security-response-team/)) que a monitora constantemente.  
+- A plataforma possui seus próprios mecanismos de segurança, incluindo monitoramento e detecção de ameaças em tempo real, criptografia, controles de acesso, protocolos e firewalls distribuídos. Ela também adere aos requisitos de conformidade (PCI, SOC, LGPD/GPDR) e possui uma equipe ([Security Response Team, SRT](/pt-br/documentacao/services/security-response-team/)) que a monitora constantemente.  
 2. A plataforma envia a requisição para o edge node mais saudável.
 3. Após chegar ao node, a requisição é analisada pelo **Firewall**:
 - O **DDoS Protection** verifica se há possíveis ataques DDoS ou DoS, bloqueando ou permitindo a requisição. O produto é ativado automaticamente em todas as contas.
@@ -55,18 +54,18 @@ Essa abordagem executa a detecção de fraude diretamente no edge, antes de atin
 ### Componentes
 
 - [Global Infrastructure](https://www.azion.com/pt-br/produtos/nossa-rede/): uma arquitetura altamente distribuída que inclui edge nodes estrategicamente localizados.
-- [Applications](/pt-br/documentacao/produtos/build/applications/): permite criar aplicações que executam na Azion Global Infrastructure.
-  - [Application Accelerator](/pt-br/documentacao/produtos/build/applications/application-accelerator/): usado para personalizar regras de otimização de cache, chaves de cache e cookies com base em padrões estabelecidos.
-  - [Cache](/pt-br/documentacao/produtos/build/applications/cache/): add-on global para armazenar conteúdo em cache no edge da rede.
-  - [Functions for Applications](/pt-br/documentacao/produtos/build/applications/functions/): permite criar aplicações serverless baseadas em eventos, no edge da rede, mais próximas dos usuários.
-  - [Rules Engine for Applications](/pt-br/documentacao/produtos/build/applications/rules-engine/):  permite configurar cenários onde políticas específicas são aplicadas, proporcionando controle granular sobre a entrega.  
-- [Firewall](/pt-br/documentacao/produtos/secure/firewall/): fornece configurações principais para configurar sua instância, permitindo associá-la a domínios e ativar módulos para proteger usuários, aplicações e redes.
-  - [DDoS Protection](/pt-br/documentacao/produtos/secure/firewall/ddos-protection/): detecta e mitiga ataques DDoS e DoS.
-  - [Web Application Firewall (WAF)](/pt-br/documentacao/produtos/secure/firewall/web-application-firewall/): permite configurar proteção contra ataques e vulnerabilidades.
-  - [Bot Manager](/pt-br/documentacao/produtos/secure/firewall/bot-manager/): solução abrangente da Azion para gerenciamento de bots.
-  - [Functions no Firewall](/pt-br/documentacao/produtos/secure/firewall/functions/): crie aplicações serverless baseadas em eventos no edge da rede, incluindo funções com seu próprio código-fonte de segurança.
-  - [Rules Engine para Firewall](/pt-br/documentacao/produtos/secure/firewall/rules-engine/): permite configurar cenários onde políticas específicas são aplicadas, proporcionando controle granular sobre a entrega.
-- Integrações do [Marketplace da Azion](/pt-br/documentacao/produtos/marketplace/) e integrações personalizadas:
+- [Applications](/pt-br/documentacao/build/applications/): permite criar aplicações que executam na Azion Global Infrastructure.
+  - [Application Accelerator](/pt-br/documentacao/build/applications/reference/application-accelerator/): usado para personalizar regras de otimização de cache, chaves de cache e cookies com base em padrões estabelecidos.
+  - [Cache](/pt-br/documentacao/build/applications/reference/cache/): add-on global para armazenar conteúdo em cache no edge da rede.
+  - [Functions for Applications](/pt-br/documentacao/build/applications/reference/functions/): permite criar aplicações serverless baseadas em eventos, no edge da rede, mais próximas dos usuários.
+  - [Rules Engine for Applications](/pt-br/documentacao/build/applications/reference/rules-engine/):  permite configurar cenários onde políticas específicas são aplicadas, proporcionando controle granular sobre a entrega.  
+- [Firewall](/pt-br/documentacao/secure/firewall/): fornece configurações principais para configurar sua instância, permitindo associá-la a domínios e ativar módulos para proteger usuários, aplicações e redes.
+  - [DDoS Protection](/pt-br/documentacao/secure/ddos-protection/): detecta e mitiga ataques DDoS e DoS.
+  - [Web Application Firewall (WAF)](/pt-br/documentacao/secure/waf/): permite configurar proteção contra ataques e vulnerabilidades.
+  - [Bot Manager](/pt-br/documentacao/secure/bot-manager/): solução abrangente da Azion para gerenciamento de bots.
+  - [Functions no Firewall](/pt-br/documentacao/secure/firewall/reference/functions/): crie aplicações serverless baseadas em eventos no edge da rede, incluindo funções com seu próprio código-fonte de segurança.
+  - [Rules Engine para Firewall](/pt-br/documentacao/secure/firewall/reference/rules-engine/): permite configurar cenários onde políticas específicas são aplicadas, proporcionando controle granular sobre a entrega.
+- Integrações do [Marketplace da Azion](/pt-br/documentacao/marketplace/reference/marketplace/) e integrações personalizadas:
    - Proteção contra bot.
     - [DataDome Bot Protection](https://console.azion.com/marketplace/solution/datadome/bot-protection/)
     - [Radware Bot Manager](https://console.azion.com/marketplace/solution/radware/bot-manager/)
@@ -79,46 +78,46 @@ Essa abordagem executa a detecção de fraude diretamente no edge, antes de atin
   - [Face Detection](https://console.azion.com/marketplace/solution/saffe/face-detection/): verificação biométrica facial pela Saffe.
   - [Id Matching](https://console.azion.com/marketplace/solution/saffe/id-matching/): verificação de identidade pela Saffe.
   - [Liveness Detection](https://console.azion.com/marketplace/solution/saffe/liveness-detection/): proteção contra spoofing pela Saffe.
-- [Observe suite](/pt-br/documentacao/produtos/observe/visao-geral/): monitore e rastreie o tráfego por meio de [Real-Time Metrics](/pt-br/documentacao/produtos/observe/real-time-metrics/), [Real-Time Events](/pt-br/documentacao/produtos/observe/real-time-events/) e [Data Stream](/pt-br/documentacao/produtos/observe/data-stream/).
+- [Observe suite](/pt-br/documentacao/observe/overview/): monitore e rastreie o tráfego por meio de [Real-Time Metrics](/pt-br/documentacao/observe/real-time-metrics/), [Real-Time Events](/pt-br/documentacao/observe/real-time-events/) e [Data Stream](/pt-br/documentacao/observe/data-stream/).
 
 ---
 
 ## Implementação
 
-1. [Crie uma aplicação](/pt-br/documentacao/produtos/guias/build/criar-uma-aplicacao/) e faça o deploy no edge.
+1. [Crie uma aplicação](/pt-br/documentacao/build/applications/guides/criar-uma-aplicacao/) e faça o deploy no edge.
 2. Configure suas integrações personalizadas com a plataforma da Azion.
-  - Por exemplo, IdP para gerenciamento de usuários via protocolo [SAML](/pt-br/documentacao/produtos/guias/sso-google-saml/) ou [SCIM](/pt-br/documentacao/produtos/guias/microsoft-entra-provisionamento-automatizado-de-usuarios/).
-3. [Configure a aplicação](/pt-br/documentacao/produtos/guias/build/definir-configuracoes-principais/), definindo origens, cache e outras configurações essenciais.
-  - [Configure um domínio personalizado](/pt-br/documentacao/produtos/build/applications/domains/) para sua aplicação.
-  - [Defina os critérios e comportamentos](/pt-br/documentacao/produtos/build/applications/rules-engine/) das regras do Rules Engine. Por exemplo:
+  - Por exemplo, IdP para gerenciamento de usuários via protocolo [SAML](/pt-br/documentacao/account/guides/sso-google-saml/) ou [SCIM](/pt-br/documentacao/account/guides/microsoft-entra-provisionamento-automatizado-de-usuarios/).
+3. [Configure a aplicação](/pt-br/documentacao/build/applications/guides/definir-configuracoes-principais/), definindo origens, cache e outras configurações essenciais.
+  - [Configure um domínio personalizado](/pt-br/documentacao/build/applications/reference/domains/) para sua aplicação.
+  - [Defina os critérios e comportamentos](/pt-br/documentacao/build/applications/reference/rules-engine/) das regras do Rules Engine. Por exemplo:
     - Inspecionar cabeçalhos HTTP.
     - Adicionar ou filtrar cookies.
     - Validar parâmetros de input.
     - Bloquear payloads maliciosos.
     - Redirecionamentos.
     - Reescrever a requisição.
-4. [Crie e configure um firewall](/pt-br/documentacao/produtos/guias/secure/firewall-definir-main-settings/).
-  - [Defina os critérios e comportamentos](/pt-br/documentacao/produtos/guias/secure/instanciar-functions/) das regras do Rules Engine. Por exemplo:
+4. [Crie e configure um firewall](/pt-br/documentacao/secure/firewall/guides/firewall-definir-main-settings/).
+  - [Defina os critérios e comportamentos](/pt-br/documentacao/secure/firewall/guides/instanciar-functions/) das regras do Rules Engine. Por exemplo:
     - Negar (Deny) ou descartar (Drop) requisições.
     - Bloquear IPs maliciosos.
     - Filtrar requisições HTTP específicas.
     - Aplicar limites de taxa (rate limits).
     - Executar functions com lógica personalizada.
-  - [Instancie functions](/pt-br/documentacao/produtos/guias/secure/instanciar-functions/) e [integrações](/pt-br/documentacao/produtos/marketplace/integracoes/#edge-firewall-functions).
-5. [Ative o Bot Manager](/pt-br/documentacao/produtos/secure/firewall/bot-manager/).
+  - [Instancie functions](/pt-br/documentacao/secure/firewall/guides/instanciar-functions/) e [integrações](/pt-br/documentacao/marketplace/reference/integracoes/#edge-firewall-functions).
+5. [Ative o Bot Manager](/pt-br/documentacao/secure/bot-manager/).
   - Entre em contato com a [equipe de Vendas](https://www.azion.com/pt-br/contato/) para mais detalhes sobre a assinatura do Bot Manager.
-6. [Monitore sua aplicação](/pt-br/documentacao/produtos/observe/monitorar-aplicacoes/) e refine as regras.
+6. [Monitore sua aplicação](/pt-br/documentacao/observe/data-stream/guides/monitorar-aplicacoes/) e refine as regras.
 
 ---
 
 ## Documentação relacionada
 
-- [Reforce a segurança cibernética com a solução avançada de WAAP da Azion](/pt-br/documentacao/arquiteturas/edge-firewall/web-application-and-api-protection-waap/)
-- [Proteja suas aplicações com uma solução de gerenciamento de bots](/pt-br/documentacao/arquiteturas/gerenciamento-de-bots/proteja-edge-applications-com-bot-management/)
-- [Proteja sua aplicação](/pt-br/documentacao/produtos/secure/proteja-aplicacao/)
-- [Proteja sua infraestrutura](/pt-br/documentacao/produtos/secure/proteja-infraestrutura/)
-- [Proteja seu DNS](/pt-br/documentacao/produtos/secure/proteja-dns/)
-- [Implemente um perímetro de segurança em torno do seu API Gateway](/pt-br/documentacao/arquiteturas/api-gateways/implementar-seguranca-api-gateways/)
-- [Acelere a modernização da segurança com edge computing](/pt-br/documentacao/arquiteturas/modernizacao-da-seguranca/modernizacao-da-seguranca-com-edge-computing/)
-- [Simplifique sua jornada e proteja seu negócio com automação de segurança](/pt-br/documentacao/arquiteturas/automacao-da-seguranca/automacao-da-seguranca-com-edge-computing/)
-- [Fortaleça a Governança, Risco e Conformidade (GRC) em sua organização](/pt-br/documentacao/arquiteturas/compliance/governanca-risco-conformidade/)
+- [Reforce a segurança cibernética com a solução avançada de WAAP da Azion](/pt-br/documentacao/architectures/firewall/web-application-and-api-protection-waap/)
+- [Proteja suas aplicações com uma solução de gerenciamento de bots](/pt-br/documentacao/architectures/gerenciamento-de-bots/proteja-edge-applications-com-bot-management/)
+- [Proteja sua aplicação](/pt-br/documentacao/secure/firewall/guides/proteja-aplicacao/)
+- [Proteja sua infraestrutura](/pt-br/documentacao/secure/firewall/guides/proteja-infraestrutura/)
+- [Proteja seu DNS](/pt-br/documentacao/secure/firewall/guides/proteja-dns/)
+- [Implemente um perímetro de segurança em torno do seu API Gateway](/pt-br/documentacao/architectures/api-gateways/implementar-seguranca-api-gateways/)
+- [Acelere a modernização da segurança com edge computing](/pt-br/documentacao/architectures/modernizacao-da-seguranca/modernizacao-da-seguranca-com-edge-computing/)
+- [Simplifique sua jornada e proteja seu negócio com automação de segurança](/pt-br/documentacao/architectures/automacao-da-seguranca/automacao-da-seguranca-com-edge-computing/)
+- [Fortaleça a Governança, Risco e Conformidade (GRC) em sua organização](/pt-br/documentacao/platform/compliance/governanca-risco-conformidade/)

@@ -5,7 +5,7 @@ description: >-
   novas applications.
 meta_tags: 'Azion, application, templates, marketplace'
 namespace: docs_marketplace_templates
-permalink: /documentacao/produtos/marketplace/templates/
+permalink: /documentacao/marketplace/reference/templates/
 ---
 import LinkButton from 'azion-webkit/linkbutton';
 import Tag from 'primevue/tag';
@@ -24,10 +24,10 @@ Ao usar templates, você também obtém desenvolvimento acelerado, mais consist�
 
 | Escopo | Descrição |
 |---|---|
-| [Marketplace da Azion](/pt-br/documentacao/produtos/marketplace/) | Conheça o catálogo digital da Azion. |
-| [Como usar um template via Azion Console](/pt-br/documentacao/produtos/usar-um-template-via-azion-console/) | Veja o passo a passo de como usar e implantar os templates da Azion. |
-| [Guias dos templates da Azion](/pt-br/documentacao/produtos/guias/#azion-templates) | Encontre o guia dedicado para cada template. |
-| [Marketplace Sellers Guide](/pt-br/documentacao/produtos/marketplace/marketplace-seller-guide/) | Confira a informação para os ISVs que desejam ter seus produtos integrados e distribuídos no Marketplace da Azion. |
+| [Marketplace da Azion](/pt-br/documentacao/marketplace/reference/marketplace/) | Conheça o catálogo digital da Azion. |
+| [Como usar um template via Azion Console](/pt-br/documentacao/get-started/first-deploy/template/) | Veja o passo a passo de como usar e implantar os templates da Azion. |
+| [Guias dos templates da Azion](/pt-br/documentacao/guides/#azion-templates) | Encontre o guia dedicado para cada template. |
+| [Marketplace Sellers Guide](/pt-br/documentacao/marketplace/reference/marketplace-seller-guide/) | Confira a informação para os ISVs que desejam ter seus produtos integrados e distribuídos no Marketplace da Azion. |
 
 ---
 
@@ -38,7 +38,7 @@ Os templates estão disponíveis através do [Azion Console](https://console.azi
 A execução desses templates envolve:
 
 - **Criação de application**: uma application é configurada na plataforma da Azion, permitindo o gerenciamento de todas as suas configurações.
-- **Configuração de domínio**: um novo domínio é configurado para fornecer acesso a sua aplicação. Você também pode [adicionar um domínio personalizado](/pt-br/documentacao/produtos/guias/configurar-dominio/) a esta application.
+- **Configuração de domínio**: um novo domínio é configurado para fornecer acesso a sua aplicação. Você também pode [adicionar um domínio personalizado](/pt-br/documentacao/build/workloads/guides/configurar-dominio/) a esta application.
 - **Configuração de setup**: definido de acordo com o caso de uso, para garantir desempenho e segurança ideais.
 - **Criação de function**: alguns casos incluem a criação de uma function, fornecendo os argumentos com a lógica personalizada e as dependências necessárias.
 - **Criação de repositório do GitHub**: este repositório contém todos os arquivos relacionados ao template, incluindo a function, uma Action para habilitar o fluxo de trabalho de implantação contínua e o histórico de implantação.
@@ -46,7 +46,7 @@ A execução desses templates envolve:
 Depois que o template for implantado, você também terá controle total sobre a personalização de todas as configurações a qualquer momento.
 
 :::caution[Atenção]
-Para garantir o desempenho ideal de certos templates, alguns produtos da Azion devem ser ativados em sua conta e você deve ativá-los separadamente via Azion Console. Se esses produtos forem ativados, a execução deste template poderá gerar custos relacionados ao uso. Consulte os [guias de cada template](/pt-br/documentacao/produtos/guias/#azion-templates) e a [página de preços](/pt-br/documentacao/produtos/precos/) para obter mais informações.
+Para garantir o desempenho ideal de certos templates, alguns produtos da Azion devem ser ativados em sua conta e você deve ativá-los separadamente via Azion Console. Se esses produtos forem ativados, a execução deste template poderá gerar custos relacionados ao uso. Consulte os [guias de cada template](/pt-br/documentacao/guides/#azion-templates) e a [página de preços](/pt-br/documentacao/platform/pricing/) para obter mais informações.
 :::
 
 ---
@@ -58,7 +58,7 @@ Para garantir o desempenho ideal de certos templates, alguns produtos da Azion d
 Depois de selecionar um template que atenda às suas necessidades, você consegue implantar rapidamente o template no edge em poucos cliques através do Azion Console. Com isso, você não precisa começar do zero e pode ter um projeto em execução em poucos minutos.
 
 :::note
-Alguns templates baseados em frameworks podem ser iniciados via Azion CLI. Para obter mais informações, acesse a [documentação da CLI](/pt-br/documentacao/produtos/azion-cli/criar-application/).
+Alguns templates baseados em frameworks podem ser iniciados via Azion CLI. Para obter mais informações, acesse a [documentação da CLI](/pt-br/documentacao/devtools/cli/reference/criar-application/).
 :::
 
 ### Automação
@@ -79,7 +79,7 @@ Você pode atualizar e personalizar as configurações do sua aplicação via Az
 
 Alguns templates funcionam com ferramentas de terceiros para fornecer uma solução mais abrangente e moderna. O uso desse tipo de templates exigirá a conformidade com certos requisitos, como a criação de uma conta ou a configuração inicial. Em alguns casos, essa integração pode gerar custo por uso.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/#azion-templates" label="consulte os guias dos templates" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/guides/#azion-templates" label="consulte os guias dos templates" severity="secondary" />
 
 
 
@@ -95,7 +95,7 @@ Os templates da Azion oferecem soluções para diferentes cenários e casos de u
 
 O **Angular Boilerplate** da Azion fornece uma solução de automação para construir uma Single-Page Application (SPA) baseada em Angular e executá-la diretamente no edge da rede.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/angular-boilerplate/" label="consulte o guia do Angular Boilerplate" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/angular-boilerplate/" label="consulte o guia do Angular Boilerplate" severity="secondary" />
 
 <LinkButton
     label="Implantar"
@@ -108,7 +108,7 @@ O **Angular Boilerplate** da Azion fornece uma solução de automação para con
 
 Este template contém as configurações para criar uma nova página de blog com base no framework Astro. Após a implantação, você pode interagir com as postagens e a interface padrão que já existem neste template e personalizá-las.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/astro-blog-starter-kit/" label="consulte o guia do Astro Blog Starter Kit" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/astro-blog-starter-kit/" label="consulte o guia do Astro Blog Starter Kit" severity="secondary" />
 
  <LinkButton
     label="Implantar"
@@ -121,7 +121,7 @@ Este template contém as configurações para criar uma nova página de blog com
 
 O **Astro Boilerplate** permite que você crie um projeto básico com Astro, uma framework para construir sites content-driven como blogs, e-commerce, e marketing.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/astro-boilerplate/" label="Consulte o guia do Astro Boilerplate" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/astro-boilerplate/" label="Consulte o guia do Astro Boilerplate" severity="secondary" />
 
  <LinkButton
     label="Implantar"
@@ -134,13 +134,13 @@ O **Astro Boilerplate** permite que você crie um projeto básico com Astro, uma
 
 A coleção Astro E-commerce Templates apresenta uma série de templates para implantar uma aplicação de e-commerce baseada em Astro. Você pode escolher e implantar o template que melhor se adequa às suas necessidades e preferências.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/astro-ecommerce-collection/" label="consulte o guia dos Astro E-commerce Templates" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/astro-ecommerce-collection/" label="consulte o guia dos Astro E-commerce Templates" severity="secondary" /> 
 
 #### Azion Starter Kit 
 
 **Azion Starter Kit** é ideal para dar os primeiros passos na Azion Web Platform. Com este template, você pode acelerar a criação de um stack de edge básico para explorar a plataforma e seus recursos.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/azion-starter-kit/" label="consulte o guia do Azion Starter Kit" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/azion-starter-kit/" label="consulte o guia do Azion Starter Kit" severity="secondary" /> 
 
  <LinkButton
     label="Implantar"
@@ -153,7 +153,7 @@ A coleção Astro E-commerce Templates apresenta uma série de templates para im
 
 Este template permite construir uma aplicação de e-commerce baseada no framework React.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/book-store-react/" label="Consulte o guia do Book Store React" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/book-store-react/" label="Consulte o guia do Book Store React" severity="secondary" /> 
 
  <LinkButton
     label="Implantar"
@@ -166,14 +166,14 @@ Este template permite construir uma aplicação de e-commerce baseada no framewo
 
 A coleção **ButterCMS Templates** apresenta uma série de templates para implantar aplicações web baseadas em ButterCMS. Você pode escolher e implantar o template que melhor se adapta às suas necessidades e preferências.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/butter-templates-collection/" label="Consulte o guia dos ButterCMS Templates" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/butter-templates-collection/" label="Consulte o guia dos ButterCMS Templates" severity="secondary" /> 
 
 
 #### Clean Astro + Sanity application
 
 Este template permite criar um site Astro básico integrado com Sanity.io para gerenciar o conteúdo.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/clean-astro-sanity/" label="Consulte o guia do Clean Astro + Sanity application" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/clean-astro-sanity/" label="Consulte o guia do Clean Astro + Sanity application" severity="secondary" /> 
 
  <LinkButton
     label="Implantar"
@@ -186,7 +186,7 @@ Este template permite criar um site Astro básico integrado com Sanity.io para g
 
 Este template permite criar um site dinâmico usando os componentes React e Blocks do Cosmic.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/cosmic-agency-website/" label="Consulte o guia do CosmicJS + Agency Website" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/cosmic-agency-website/" label="Consulte o guia do CosmicJS + Agency Website" severity="secondary" /> 
 
  <LinkButton
     label="Implantar"
@@ -199,7 +199,7 @@ Este template permite criar um site dinâmico usando os componentes React e Bloc
 
 Este template permite criar e gerenciar um blog facilmente.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/cosmic-simple-astro-blog/" label="Consulte o guia do Cosmic + Simple Astro Blog" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/cosmic-simple-astro-blog/" label="Consulte o guia do Cosmic + Simple Astro Blog" severity="secondary" /> 
 
  <LinkButton
     label="Implantar"
@@ -212,7 +212,7 @@ Este template permite criar e gerenciar um blog facilmente.
 
 Este template permite criar e gerenciar um blog com facilidade, utilizando os recursos do Next.js para obter desempenho e experiência do usuário ideais.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/cosmic-simple-next-blog/" label="Consulte o guia do Cosmic + Simple Next.js Blog" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/cosmic-simple-next-blog/" label="Consulte o guia do Cosmic + Simple Next.js Blog" severity="secondary" /> 
 
  <LinkButton
     label="Implantar"
@@ -225,7 +225,7 @@ Este template permite criar e gerenciar um blog com facilidade, utilizando os re
 
 Este template permite implantar um currículo online usando o projeto DevsCard.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/devscard/" label="consulte o guia do template DevsCard" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/devscard/" label="consulte o guia do template DevsCard" severity="secondary" /> 
 
 <LinkButton
     label="Implantar"
@@ -238,7 +238,7 @@ Este template permite implantar um currículo online usando o projeto DevsCard.
 
 O **Docusaurus JavaScript Boilerplate** é um exemplo inicial para implantar um projeto estático básico baseado no framework Docusaurus e escrito em JavaScript.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/docusaurus-javascript-boilerplate/" label="consulte o guia do Docusaurus JavaScript Boilerplate" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/docusaurus-javascript-boilerplate/" label="consulte o guia do Docusaurus JavaScript Boilerplate" severity="secondary" /> 
 
 <LinkButton
     label="Implantar"
@@ -251,7 +251,7 @@ O **Docusaurus JavaScript Boilerplate** é um exemplo inicial para implantar um 
 
 O **Docusaurus TypeScript Boilerplate** é um exemplo inicial para implantar um projeto estático básico baseado no framework Docusaurus e escrito em TypeScript.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/docusaurus-typescript-boilerplate/" label="consulte o guia do Docusaurus TypeScript Boilerplate" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/docusaurus-typescript-boilerplate/" label="consulte o guia do Docusaurus TypeScript Boilerplate" severity="secondary" /> 
 
  <LinkButton
     label="Implantar"
@@ -262,7 +262,7 @@ O **Docusaurus TypeScript Boilerplate** é um exemplo inicial para implantar um 
 
 O template **Function Starter Kit** ajuda a criar uma application com Inteligência Artificial (AI), executando APIs compatíveis com OpenAI diretamente na rede distribuída da Azion.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/functions-starter-kit/" label="Consulte o guia do Function Starter Kit" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/functions-starter-kit/" label="Consulte o guia do Function Starter Kit" severity="secondary" />
 
  <LinkButton
     label="Implementar"
@@ -275,7 +275,7 @@ O template **Function Starter Kit** ajuda a criar uma application com Inteligên
 
 O **Function Starter Kit** ajuda a criar uma aplicação baseada em functions sem dependências de origem.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/functions-starter-kit/" label="Consulte o guia do Function Starter Kit" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/functions-starter-kit/" label="Consulte o guia do Function Starter Kit" severity="secondary" />
 
  <LinkButton
     label="Implantar"
@@ -288,7 +288,7 @@ O **Function Starter Kit** ajuda a criar uma aplicação baseada em functions se
 
 O **EdgeSQL Starter Kit** ajuda a criar um projeto básico de CRUD baseado em JavaScript e usá-lo para interagir com um banco de dados SQL Database.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/edgesql-starter-kit/" label="Consulte o guia do EdgeSQL Starter Kit" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/edgesql-starter-kit/" label="Consulte o guia do EdgeSQL Starter Kit" severity="secondary" />
 
  <LinkButton
     label="Implantar"
@@ -301,13 +301,13 @@ O **EdgeSQL Starter Kit** ajuda a criar um projeto básico de CRUD baseado em Ja
 
 A coleção Eleventy E-commerce Templates apresenta uma série de templates para implantar uma aplicação de e-commerce baseada no Eleventy (11ty). Você pode escolher e implantar o template que melhor se adapta às suas necessidades e preferências.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/eleventy-ecommerce-collection/" label="consulte o guia dos Eleventy E-commerce Templates" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/eleventy-ecommerce-collection/" label="consulte o guia dos Eleventy E-commerce Templates" severity="secondary" /> 
 
 #### Gatsby Blog Starter Kit
 
 Cria uma nova página de blog baseada no framework Gatsby. Após a implantação, você pode interagir com as postagens e interface padrão que já existem neste template e personalizá-las.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/gatsby-blog-starter-kit/" label="consulte o guia do Gatsby Blog Starter Kit" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/gatsby-blog-starter-kit/" label="consulte o guia do Gatsby Blog Starter Kit" severity="secondary" />
 
 <LinkButton
     label="Implantar"
@@ -320,7 +320,7 @@ Cria uma nova página de blog baseada no framework Gatsby. Após a implantação
 
 Cria uma Single-Page Application (SPA) baseada no framework Gatsby para ser executada diretamente no edge da rede.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/gatsby-boilerplate/" label="consulte o guia do Gatsby Boilerplate" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/gatsby-boilerplate/" label="consulte o guia do Gatsby Boilerplate" severity="secondary" />
 
 <LinkButton
     label="Implantar"
@@ -334,7 +334,7 @@ Cria uma Single-Page Application (SPA) baseada no framework Gatsby para ser exec
 
 Este template permite construir uma aplicação de e-commerce baseada no framework Gatsby.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/gatsby-ecommerce-theme/" label="consulte o guia do Gatsby E-commerce Theme" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/gatsby-ecommerce-theme/" label="consulte o guia do Gatsby E-commerce Theme" severity="secondary" /> 
 
  <LinkButton
     label="Implantar"
@@ -347,7 +347,7 @@ Este template permite construir uma aplicação de e-commerce baseada no framewo
 
 O **Hexo Boilerplate** permite que você crie e execute uma Single-Page Application (SPA) baseada em Hexo diretamente no edge, automatizando várias etapas, desde o gerenciamento do repositório até a implantação.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/hexo-boilerplate/" label="consulte o guia do Hexo Boilerplate" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/hexo-boilerplate/" label="consulte o guia do Hexo Boilerplate" severity="secondary" />
 
 <LinkButton
     label="Implantar"
@@ -360,7 +360,7 @@ O **Hexo Boilerplate** permite que você crie e execute uma Single-Page Applicat
 
 O template **HTMX Boilerplate** facilita a implantação e teste de um exemplo mínimo da biblioteca HTMX na Azion Web Platform.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/htmx-boilerplate/" label="consulte o guia do HTMX Boilerplate" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/htmx-boilerplate/" label="consulte o guia do HTMX Boilerplate" severity="secondary" /> 
 
 <LinkButton
     label="Implantar"
@@ -373,7 +373,7 @@ O template **HTMX Boilerplate** facilita a implantação e teste de um exemplo m
 
 Com o **Hugo Boilerplate**, você pode iniciar um projeto usando o framework Hugo e implantá-lo no edge em poucos passos. O template cria um repositório no GitHub contendo seu projeto, bem como uma application e um domínio para facilitar seu acesso e gerenciamento através da Azion Web Platform.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/hugo-boilerplate/" label="Consulte o guia do Hugo Boilerplate" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/hugo-boilerplate/" label="Consulte o guia do Hugo Boilerplate" severity="secondary" /> 
 
 <LinkButton
     label="Implantar"
@@ -386,7 +386,7 @@ Com o **Hugo Boilerplate**, você pode iniciar um projeto usando o framework Hug
 
 A coleção Hugo E-commerce Templates apresenta uma série de templates para implantar uma aplicação de e-commerce baseada no Hugo. Você pode escolher e implantar o template que melhor se adapta às suas necessidades e preferências.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/hugo-ecommerce-collection/" label="consulte o guia dos Hugo E-commerce Templates" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/hugo-ecommerce-collection/" label="consulte o guia dos Hugo E-commerce Templates" severity="secondary" /> 
 
 #### Jekyll Boilerplate
 
@@ -394,7 +394,7 @@ Este template implanta um repositório com um projeto baseado no Jekyll, um fram
 
 Além disso, o template cria uma application e um domínio para facilitar seu acesso e gerenciamento através da Azion Web Platform.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/jekyll-boilerplate/" label="consulte o guia do Jekyll Boilerplate" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/jekyll-boilerplate/" label="consulte o guia do Jekyll Boilerplate" severity="secondary" /> 
 
 <LinkButton
     label="Implantar"
@@ -407,13 +407,13 @@ Além disso, o template cria uma application e um domínio para facilitar seu ac
 
 A coleção Jekyll E-commerce Templates apresenta uma série de templates para implantar uma aplicação de e-commerce baseada em Jekyll. Você pode escolher e implantar o template que melhor se adequa às suas necessidades e preferências.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/jekyll-ecommerce-collection/" label="Consulte o guia dos Templates de E-commerce Jekyll" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/jekyll-ecommerce-collection/" label="Consulte o guia dos Templates de E-commerce Jekyll" severity="secondary" /> 
 
 #### LangGraph AI Agent Boilerplate
 
 O **LangGraph AI Agent Boilerplate** contém a configuração para criar um agente de inteligência artificial com LangGraph.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/langgraph-ai-agent-boilerplate/" label="Consulte o guia do LangGraph AI Agent Boilerplate" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/langgraph-ai-agent-boilerplate/" label="Consulte o guia do LangGraph AI Agent Boilerplate" severity="secondary" />
 
 <LinkButton
     label="Implantar"
@@ -426,7 +426,7 @@ O **LangGraph AI Agent Boilerplate** contém a configuração para criar um agen
 
 Crie uma aplicação conectada a um banco de dados Neon via Drizzle ORM.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/neon-database-with-drizzle/" label="Consulte o guia do Neon Database with Drizzle" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/neon-database-with-drizzle/" label="Consulte o guia do Neon Database with Drizzle" severity="secondary" /> 
 
 <LinkButton
     label="Implantar"
@@ -439,13 +439,13 @@ Crie uma aplicação conectada a um banco de dados Neon via Drizzle ORM.
 
 A coleção Next.js E-commerce Templates apresenta uma série de templates para implantar uma aplicação de e-commerce baseada em Next.js. Você pode escolher e implantar o template que melhor se adequa às suas necessidades e preferências.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/next-js-ecommerce-collection/" label="Consulte o guia dos Next.js E-commerce Templates" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/next-js-ecommerce-collection/" label="Consulte o guia dos Next.js E-commerce Templates" severity="secondary" /> 
 
 #### Next.js Static Boilerplate
 
 O **Next.js Static Boilerplate** da Azion permite a criação e implantação de uma Single-Page Application (SPA) baseada em Next.js direitamente no edge da rede. Com a execução desse boilerplate, várias etapas são automatizadas, desde o gerenciamento do repositório até a implantação.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/nextjs-static-boilerplate/" label="consulte o guia do Next.js Static Boilerplate" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/nextjs-static-boilerplate/" label="consulte o guia do Next.js Static Boilerplate" severity="secondary" />
 
 <LinkButton
     label="Implantar"
@@ -458,7 +458,7 @@ O **Next.js Static Boilerplate** da Azion permite a criação e implantação de
 
 O template **Nuxt 3 Static Boilerplate** contém as configurações para rapidamente construir uma aplicação estática baseada em Nuxt 3.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/nuxt-static-boilerplate/" label="Consulte o guia do Nuxt 3 Static Boilerplate" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/nuxt-static-boilerplate/" label="Consulte o guia do Nuxt 3 Static Boilerplate" severity="secondary" /> 
 
 <LinkButton
     label="Implantar"
@@ -471,7 +471,7 @@ O template **Nuxt 3 Static Boilerplate** contém as configurações para rapidam
 
 O template **Nuxt Content** contém as configurações para criar um blog ou site de documentação com Nuxt Content.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/nuxt-content/" label="Consulte o guia do Nuxt Content" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/nuxt-content/" label="Consulte o guia do Nuxt Content" severity="secondary" />
 
 <LinkButton
     label="Implantar"
@@ -484,7 +484,7 @@ O template **Nuxt Content** contém as configurações para criar um blog ou sit
 
 O template **Nuxt Notes** contém as configurações para criar uma aplicação básica de anotações com Nuxt.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/nuxt-notes/" label="Consulte o guia do Nuxt Notes" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/nuxt-notes/" label="Consulte o guia do Nuxt Notes" severity="secondary" />
 
 <LinkButton
     label="Implantar"
@@ -497,7 +497,7 @@ O template **Nuxt Notes** contém as configurações para criar uma aplicação 
 
 O **Preact JavaScript Boilerplate** da Azion ajuda você a construir um projeto usando Preact com JavaScript diretamente no edge. **Preact** é uma biblioteca JavaScript com a mesma API que o React, mas otimizada para velocidade e tamanho reduzido do bundle.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/preact-javascript-boilerplate/" label="Consulte o guia do Preact JavaScript Boilerplate" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/preact-javascript-boilerplate/" label="Consulte o guia do Preact JavaScript Boilerplate" severity="secondary" />
 
 <LinkButton
     label="Implantar"
@@ -510,7 +510,7 @@ O **Preact JavaScript Boilerplate** da Azion ajuda você a construir um projeto 
 
 O **Preact TypeScript Boilerplate** da Azion ajuda você a construir um projeto usando Preact com TypeScript diretamente no edge. **Preact** é uma biblioteca JavaScript com a mesma API que o React, mas otimizada para velocidade e tamanho reduzido do bundle.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/preact-typescript-boilerplate/" label="Consulte o guia do Preact TypeScript Boilerplate" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/preact-typescript-boilerplate/" label="Consulte o guia do Preact TypeScript Boilerplate" severity="secondary" />
 
 <LinkButton
     label="Implantar"
@@ -524,7 +524,7 @@ O **Preact TypeScript Boilerplate** da Azion ajuda você a construir um projeto 
 
 O **React Boilerplate** da Azion ajuda você a construir uma Single-Page Application (SPA) baseada em React diretamente no edge, executando esse boilerplate. Várias etapas são automatizadas, desde o gerenciamento de repositórios até a implantação.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/react-boilerplate/" label="consulte o guia do React Boilerplate" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/react-boilerplate/" label="consulte o guia do React Boilerplate" severity="secondary" />
 
 <LinkButton
     label="Implantar"
@@ -537,7 +537,7 @@ O **React Boilerplate** da Azion ajuda você a construir uma Single-Page Applica
 
 O **Stencil Boilerplate** fornece uma solução para configurar rapidamente uma aplicação web estática usando Stencil.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/stencil-boilerplate/" label="Consulte o guia do Stencil Boilerplate" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/stencil-boilerplate/" label="Consulte o guia do Stencil Boilerplate" severity="secondary" />
 
 <LinkButton
     label="Implantar"
@@ -550,7 +550,7 @@ O **Stencil Boilerplate** fornece uma solução para configurar rapidamente uma 
 
 Crie uma aplicação conectada a um banco de dados TiDB via Drizzle ORM.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/tidb-with-drizzle/" label="Ir para o guia do TiDB with Drizzle" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/tidb-with-drizzle/" label="Ir para o guia do TiDB with Drizzle" severity="secondary" />
 
 <LinkButton
     label="Implantar"
@@ -563,7 +563,7 @@ Crie uma aplicação conectada a um banco de dados TiDB via Drizzle ORM.
 
 Este template  permite implantar facilmente um projeto estático baseado no VitePress e escrito em JavaScript.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/vitepress-javascript-boilerplate/" label="consulte o guia do VitePress JavaScript Boilerplate" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/vitepress-javascript-boilerplate/" label="consulte o guia do VitePress JavaScript Boilerplate" severity="secondary" />
 
 <LinkButton
     label="Implantar"
@@ -576,7 +576,7 @@ Este template  permite implantar facilmente um projeto estático baseado no Vite
 
 Este template permite implantar facilmente um projeto estático baseado no VitePress e escrito em TypeScript.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/vitepress-typescript-boilerplate/" label="consulte o guia do VitePress TyeScript Boilerplate" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/vitepress-typescript-boilerplate/" label="consulte o guia do VitePress TyeScript Boilerplate" severity="secondary" />
 
 <LinkButton
     label="Implantar"
@@ -589,7 +589,7 @@ Este template permite implantar facilmente um projeto estático baseado no ViteP
 
 O **Vue Boilerplate** da Azion fornece uma solução de automação para criar uma Single-Page Application (SPA) do Vue diretamente no edge da rede, encapsulando e automatizando várias etapas, desde o gerenciamento do repositório até a implantação.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/vue-boilerplate/" label="consulte o guia do Vue Boilerplate" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/vue-boilerplate/" label="consulte o guia do Vue Boilerplate" severity="secondary" />
 
 <LinkButton
     label="Implantar"
@@ -602,7 +602,7 @@ O **Vue Boilerplate** da Azion fornece uma solução de automação para criar u
 
 O Vuepress Boilerplate fornece uma solução para configurar rapidamente uma aplicação web estática usando o VuePress.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/vuepress-boilerplate/" label="Consulte o guia do Vuepress Boilerplate" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/vuepress-boilerplate/" label="Consulte o guia do Vuepress Boilerplate" severity="secondary" />
 
 <LinkButton
     label="Implantar"
@@ -615,7 +615,7 @@ O Vuepress Boilerplate fornece uma solução para configurar rapidamente uma apl
 
 O **Vue3/Vite Boilerplate** acelera a implantação de uma aplicação baseada nesses frameworks diretamente no edge.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/vue-vite-boilerplate/" label="consulte o guia do Vue3/Vite Boilerplate" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/vue-vite-boilerplate/" label="consulte o guia do Vue3/Vite Boilerplate" severity="secondary" />
 
  <LinkButton
     label="Implantar"
@@ -628,13 +628,13 @@ O **Vue3/Vite Boilerplate** acelera a implantação de uma aplicação baseada n
 
 A coleção **VuePress Templates** apresenta uma série de templates para implantar aplicações web baseadas em VuePress. Você pode escolher e implantar o template que melhor se adapta às suas necessidades e preferências.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/vuepress-templates-collection/" label="consulte o guia dos VuePress Templates" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/vuepress-templates-collection/" label="consulte o guia dos VuePress Templates" severity="secondary" /> 
 
 #### Webpage to PDF Resume
 
 Este template permite implantar facilmente um currículo online baseado no projeto Webpage to PDF Resume.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/webpage-to-pdf-resume/" label="consulte o guia do Webpage to PDF Resume" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/webpage-to-pdf-resume/" label="consulte o guia do Webpage to PDF Resume" severity="secondary" /> 
 
 <LinkButton
     label="Implantar"
@@ -649,7 +649,7 @@ Este template permite implantar facilmente um currículo online baseado no proje
 
 O template **Dynamic and Static File Optimization** contém políticas e configurações padrão de cache para melhorar a entrega e desempenho de conteúdo estático e dinâmico, bem como imagens, com base na extensão do arquivo. Além disso, ele também permite o processamento e otimização de imagens. Dessa forma, você pode entregar seu conteúdo usando a Azion como CDN.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/dynamic-static-file-optimization-template/" label="consulte o guia do template Dynamic and Static File Optimization" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/dynamic-static-file-optimization-template/" label="consulte o guia do template Dynamic and Static File Optimization" severity="secondary" /> 
 
 <LinkButton
     label="Implantar"
@@ -662,7 +662,7 @@ O template **Dynamic and Static File Optimization** contém políticas e configu
 
 **Applications Proxy** inclui configurações que adicionam uma camada de engine rules para ignorar todas as configurações de cache para uma rota específica de URL. Essas configurações utilizam uma regra padrão baseada em critérios e comportamentos aplicados por meio do Rules Engine para Applications.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/edge-application-proxy-template/" label="consulte o guia do template Applications Proxy" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/edge-application-proxy-template/" label="consulte o guia do template Applications Proxy" severity="secondary" /> 
 
 <LinkButton
     label="Implantar"
@@ -675,7 +675,7 @@ O template **Dynamic and Static File Optimization** contém políticas e configu
 
 **Image Optimization** inclui configurações para aprimorar o carregamento de imagens e o armazenamento em cache com base na extensão do arquivo. Essas configurações utilizam regras avançadas de chave de cache aplicadas por meio do Rules Engine para Applications.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/image-optimization-template/" label="consulte o guia do template Image Optimization" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/image-optimization-template/" label="consulte o guia do template Image Optimization" severity="secondary" /> 
 
 <LinkButton
     label="Implantar"
@@ -688,7 +688,7 @@ O template **Dynamic and Static File Optimization** contém políticas e configu
 
 O **Static Cache** inclui configurações que otimizam a entrega e o desempenho de conteúdo estático, como JavaScript, CSS e outros arquivos estáticos. Essas configurações utilizam regras de advanced cache key aplicadas por meio do Rules Engine para Applications.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/static-cache-template/" label="consulte o guia do template Static Cache" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/static-cache-template/" label="consulte o guia do template Static Cache" severity="secondary" /> 
 
  <LinkButton
     label="Implantar"
@@ -701,7 +701,7 @@ O **Static Cache** inclui configurações que otimizam a entrega e o desempenho 
 
 O template **Static Cache + Videoteca Player** inclui configurações que otimizam a entrega e o desempenho de conteúdo estático. Ele também implementa a integração do **Videoteca Player** da Azion para facilitar a hospedagem do seu player Videoteca do Videofront.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/static-cache-videoteca-template/" label="consulte o guia do template Static Cache + Videoteca Player" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/static-cache-videoteca-template/" label="consulte o guia do template Static Cache + Videoteca Player" severity="secondary" /> 
 
 <LinkButton
     label="Implantar"
@@ -714,7 +714,7 @@ O template **Static Cache + Videoteca Player** inclui configurações que otimiz
 
 O template **Upstash Rate Limiting** ajuda você a implementar rate limiting em um ambiente serverless, sem a necessidade de uma extensa configuração manual. Este template inclui configurações para limitar as requisições e definir janelas de limite e funciona em conjunto com o Azion Functions.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/upstash-rate-limiting/" label="consulte o guia do Upstash Rate Limiting" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/upstash-rate-limiting/" label="consulte o guia do Upstash Rate Limiting" severity="secondary" />
 
 <LinkButton
     label="Implantar"
@@ -727,7 +727,7 @@ O template **Upstash Rate Limiting** ajuda você a implementar rate limiting em 
 
 O **WordPress EdgeAccelerator** ajuda você a migrar seu site WordPress para ser executado no edge da rede. Ele cria uma nova aplicação e um domínio da Azion e também define algumas configurações-chave para implementar o projeto com sucesso.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/wordpress-edgeaccelerator/" label="consulte o guia do WordPress EdgeAccelerator" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/wordpress-edgeaccelerator/" label="consulte o guia do WordPress EdgeAccelerator" severity="secondary" />
 
 <LinkButton
     label="Implantar"
@@ -742,7 +742,7 @@ O **WordPress EdgeAccelerator** ajuda você a migrar seu site WordPress para ser
 
 O template **Bot Manager Lite and TOR Block Starter Kit** permite implantar um pacote de segurança básico para proteger seus domínios contra bots mal-intencionados e requisições de Tor Exit Nodes.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/bot-manager-lite-and-tor-block-starter-kit/" label="consulte o guia do Bot Manager Lite and TOR Block Starter Kit" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/bot-manager-lite-and-tor-block-starter-kit/" label="consulte o guia do Bot Manager Lite and TOR Block Starter Kit" severity="secondary" />
 
  <LinkButton
     label="Implantar"
@@ -755,7 +755,7 @@ O template **Bot Manager Lite and TOR Block Starter Kit** permite implantar um p
 
 O template **Bot Manager Lite Integration Kit** fornece uma maneira fácil de integrar a função do Bot Manager Lite em um firewall existente na Azion.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/bot-manager-lite-integration-kit/" label="consulte o guia do Bot Manager Lite Integration Kit" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/bot-manager-lite-integration-kit/" label="consulte o guia do Bot Manager Lite Integration Kit" severity="secondary" />
 
 <LinkButton
     label="Implantar"
@@ -768,7 +768,7 @@ O template **Bot Manager Lite Integration Kit** fornece uma maneira fácil de in
 
 O template **Bot Manager Lite Starter Kit** cria um novo stack edge para permitir que os clientes vejam o Bot Manager Lite em ação.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/bot-manager-lite-starter-kit/" label="consulte o guia do Bot Manager Lite Starter Kit" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/bot-manager-lite-starter-kit/" label="consulte o guia do Bot Manager Lite Starter Kit" severity="secondary" />
 
 <LinkButton
     label="Implantar"
@@ -783,7 +783,7 @@ O template **Bot Manager Lite Starter Kit** cria um novo stack edge para permiti
 
 O **MongoDB Atlas Boilerplate** permite implantar uma aplicação integrada ao MongoDB Atlas no edge. Além disso, devido à integração com a Atlas Data API, você pode criar, recuperar, atualizar e excluir itens em suas coleções por meio de requisições HTTPS padrão.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/mongodb-atlas/" label="consulte o guia do MongoDB Atlas Boilerplate" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/mongodb-atlas/" label="consulte o guia do MongoDB Atlas Boilerplate" severity="secondary" /> 
 
 <LinkButton
     label="Implantar"
@@ -796,7 +796,7 @@ O **MongoDB Atlas Boilerplate** permite implantar uma aplicação integrada ao M
 
 O template **QStash EdgeFunction Scheduler** configura e gerencia uma function personalizada, que recebe uma programação configurada pelo usuário e a envia através do QStash.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/qstash-function-scheduler/" label="consulte o guia do QStash EdgeFunction Scheduler" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/qstash-function-scheduler/" label="consulte o guia do QStash EdgeFunction Scheduler" severity="secondary" />
 
 <LinkButton
     label="Implantar"
@@ -808,7 +808,7 @@ O template **QStash EdgeFunction Scheduler** configura e gerencia uma function p
 #### Qwik Boilerplate
 
 O **Qwik Boilerplate** da Azion ajuda você a criar um projeto utilizando a framework Qwik e implantá-lo no edge.
-<LinkButton link="/pt-br/documentacao/produtos/guias/qwik-boilerplate/" label="Consulte o guia do Qwik Boilerplate" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/qwik-boilerplate/" label="Consulte o guia do Qwik Boilerplate" severity="secondary" /> 
 
 <LinkButton
     label="Implantar"
@@ -821,7 +821,7 @@ O **Qwik Boilerplate** da Azion ajuda você a criar um projeto utilizando a fram
 
 O template do **Qwik Minimal** da Azion ajuda você a criar um projeto básico utilizando a framework Qwik e implantá-lo no edge.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/qwik-minimal/" label="Consulte o guia do Qwik Minimal" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/qwik-minimal/" label="Consulte o guia do Qwik Minimal" severity="secondary" /> 
 
 <LinkButton
     label="Implantar"
@@ -834,7 +834,7 @@ O template do **Qwik Minimal** da Azion ajuda você a criar um projeto básico u
 
 Crie uma aplicação conectada a um banco de dados Turso via Drizzle ORM.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/turso-with-drizzle/" label="Consulte o guia do Turso with Drizzle" severity="secondary" /> 
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/turso-with-drizzle/" label="Consulte o guia do Turso with Drizzle" severity="secondary" /> 
 
 <LinkButton
     label="Implantar"
@@ -847,7 +847,7 @@ Crie uma aplicação conectada a um banco de dados Turso via Drizzle ORM.
 
 O template **Upstash GeoLocation EdgeDeploy** é uma automação projetada para implantar um banco de dados diretamente no edge, permitindo a configuração de mensagens personalizadas que serão entregues de acordo com a localização geográfica do usuário.
 
-<LinkButton link="/pt-br/documentacao/produtos/guias/upstash-geolocation-edgedeploy/" label="consulte o guia do Upstash GeoLocation EdgeDeploy" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/marketplace/integrations/upstash-geolocation-edgedeploy/" label="consulte o guia do Upstash GeoLocation EdgeDeploy" severity="secondary" />
 
  <LinkButton
     label="Implantar"

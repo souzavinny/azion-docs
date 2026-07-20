@@ -5,7 +5,7 @@ description: >-
   eventos de seus produtos e serviços Azion em tempo real.
 meta_tags: 'edge computing, events, data, logs, raw data'
 namespace: documentation_products_real_time_events
-permalink: /documentacao/produtos/observe/real-time-events/
+permalink: /documentacao/observe/real-time-events/
 ---
 
 import Tag from 'primevue/tag'
@@ -15,7 +15,7 @@ import LinkButton from 'azion-webkit/linkbutton'
 Preview
 </Tag>
 
-**Real-Time Events** é um produto de [Observe](/pt-br/documentacao/produtos/observe/) que fornece dados brutos, *logs*, de outros produtos da Azion em tempo real.
+**Real-Time Events** é um produto de [Observe](/pt-br/documentacao/observe/) que fornece dados brutos, *logs*, de outros produtos da Azion em tempo real.
 
 Um conjunto de variáveis pré-organizadas estão disponíveis para fazer consultas manuais utilizando diferentes fontes de dados, permitindo que você obtenha informações extensas e detalhadas sobre comportamentos, ocorrências e desempenho de suas aplicações por meio de logs.
 
@@ -35,7 +35,7 @@ Você pode usar o Real-Time Events para:
 
 | Tarefa | Guia |
 | ---- | ----- |
-| Primeiros passos | [Primeiros passos do Real-Time Events](/pt-br/documentacao/produtos/observe/real-time-events/primeiros-passos/) |
+| Primeiros passos | [Primeiros passos do Real-Time Events](/pt-br/documentacao/observe/real-time-events/quickstart/) |
 
 ---
 
@@ -65,14 +65,14 @@ A seleção de um data source nas abas é obrigatória. Você pode escolher entr
 Cada data source tem um conjunto específico de variáveis disponíveis, representando as informações específicas que você pode receber em sua consulta. Veja os pré-requisitos e as variáveis de cada data source e suas descrições a seguir.
 
 :::note
-Existem duas maneiras de acessar os logs do Real-Time Events: através da interface do [Azion Console](https://console.azion.com) e através da API. Esta documentação fornece as variáveis exibidas na interface. Você pode usar a **API GraphQL do Real⁠-⁠Time Events** e [verificar os campos disponíveis](/pt-br/documentacao/devtools/graphql-api/recursos/campos-gql-real-time-events/).
+Existem duas maneiras de acessar os logs do Real-Time Events: através da interface do [Azion Console](https://console.azion.com) e através da API. Esta documentação fornece as variáveis exibidas na interface. Você pode usar a **API GraphQL do Real⁠-⁠Time Events** e [verificar os campos disponíveis](/pt-br/documentacao/devtools/graphql/reference/campos-gql-real-time-events/).
 :::
 
 ### HTTP Requests
 
 Requer: <Tag severity="info" client:only="vue">Applications</Tag> <Tag severity="info" client:only="vue">Firewall</Tag> <Tag severity="info" client:only="vue">Web Application Firewall</Tag>
 
-Exibe os registros de eventos de requisições feitas para suas [applications](/pt-br/documentacao/produtos/build/applications/) e instâncias de [Edge Fireall](/pt-br/documentacao/produtos/secure/firewall/).
+Exibe os registros de eventos de requisições feitas para suas [applications](/pt-br/documentacao/build/applications/) e instâncias de [Edge Fireall](/pt-br/documentacao/secure/firewall/).
 
 | Variável | Descrição |
 | -------- | --------- |
@@ -98,7 +98,7 @@ Exibe os registros de eventos de requisições feitas para suas [applications](/
 | SSL Protocol | Protocolo de uma conexão TLS estabelecida. Exemplo: `TLS v1.2` |
 | Stack Trace | Informa os nomes das Rules Engine da application ou do firewall executadas pela requisição. Exemplo: `{\\\"edge_firewall\\\":[\\\"Global - Definir WAF\\\"]}` |
 | Status | Código de status HTTP da requisição. Exemplo: `200` |
-| Upstream Addr | Endereço IP e porta do cliente. Também pode armazenar múltiplos servidores ou grupos de servidores. Exemplo: `192.168.1.1:80`. Quando a resposta é `127.0.0.1:1666`, o upstream é o [Azion Cells Runtime](/pt-br/documentacao/runtime/visao-geral/). |
+| Upstream Addr | Endereço IP e porta do cliente. Também pode armazenar múltiplos servidores ou grupos de servidores. Exemplo: `192.168.1.1:80`. Quando a resposta é `127.0.0.1:1666`, o upstream é o [Azion Cells Runtime](/pt-br/documentacao/build/functions/runtime-apis/overview/). |
 | Upstream Bytes Received | Número de bytes recebidos pelo edge da origem, se o conteúdo não estiver em cache. Exemplo: `8304` |
 | Upstream Bytes Sent | Número de bytes enviados para a origem. Exemplo: `2733` |
 | Upstream Cache Status | Status do cache local do edge. Pode ser: `MISS`, `BYPASS`, `EXPIRED`, `STALE`, `UPDATING`, `REVALIDATED`, `HIT` ou `-` |
@@ -112,7 +112,7 @@ Exibe os registros de eventos de requisições feitas para suas [applications](/
 | WAF Total Blocked | Número total de requisições bloqueadas. Exemplo: `2` |
 | WAF Total Processed | Número total de requisições processadas. Exemplo: `5` |
 
-A variável `Stack Trace` pode ser utilizada se você tiver a funcionalidade **Debug Rules** ativada em sua aplicação. Saiba mais em [Como depurar regras criadas com o Rules Engine](/pt-br/documentacao/produtos/guias/debug-regras/).
+A variável `Stack Trace` pode ser utilizada se você tiver a funcionalidade **Debug Rules** ativada em sua aplicação. Saiba mais em [Como depurar regras criadas com o Rules Engine](/pt-br/documentacao/build/applications/guides/debug-regras/).
 
 :::note
 O comportamento `Set WAF [Seu WAF]` do Firewall realiza um processamento especial, permitindo que outras regras sejam processadas simultaneamente. Como resultado, os logs podem mostrar outras regras no campo `traceback`, mesmo que o Rule Set do WAF esteja configurado para bloquear e retornar a requisição. No entanto, as regras do WAF operam corretamente, bloqueando requisições que atendem aos critérios especificados. Esse comportamento é padrão para a plataforma.
@@ -124,7 +124,7 @@ O comportamento `Set WAF [Seu WAF]` do Firewall realiza um processamento especia
 
 Requer: <Tag severity="info" client:only="vue">Functions</Tag>
 
-Exibe os registros de eventos de requisições feitas às suas [functions](/pt-br/documentacao/produtos/build/applications/functions/).
+Exibe os registros de eventos de requisições feitas às suas [functions](/pt-br/documentacao/build/applications/reference/functions/).
 
 | Variável | Descrição |
 | -------- | --------- |
@@ -138,14 +138,14 @@ Exibe os registros de eventos de requisições feitas às suas [functions](/pt-b
 | Virtual Host ID | Identificador disponível no Azion Console. Definido no arquivo de configuração do virtual host. Exemplo: `2410001a` |
 
 :::note
-Veja a documentação de [Debugging](/pt-br/documentacao/devtools/debugging/) para mais opções de visualização dos logs de functions.
+Veja a documentação de [Debugging](/pt-br/documentacao/build/functions/runtime-apis/debugging/) para mais opções de visualização dos logs de functions.
 :::
 
 ---
 
 ### Functions Console
 
-Exibe os registros de eventos de applications usando o [Azion Runtime](/pt-br/documentacao/runtime/visao-geral/) retornados pelo Cells Console.
+Exibe os registros de eventos de applications usando o [Azion Runtime](/pt-br/documentacao/build/functions/runtime-apis/overview/) retornados pelo Cells Console.
 
 | Variável | Descrição |
 | -------- | --------- |
@@ -163,7 +163,7 @@ Exibe os registros de eventos de applications usando o [Azion Runtime](/pt-br/do
 
 Requer: <Tag severity="info" client:only="vue">Image Processor</Tag>
 
-Exibe os registros de eventos de requisições feitas às applications que utilizam o [Image Processor](/pt-br/documentacao/produtos/build/applications/image-processor/).
+Exibe os registros de eventos de requisições feitas às applications que utilizam o [Image Processor](/pt-br/documentacao/build/applications/reference/image-processor/).
 
 | Variável | Descrição |
 | -------- | --------- |
@@ -196,7 +196,7 @@ Exibe os registros de eventos de requisições feitas às applications que utili
 
 Requer: <Tag severity="info" client:only="vue">Tiered Cache</Tag>
 
-Exibe os registros de eventos de requisições feitas às applications que utilizam o [Tiered Cache](/pt-br/documentacao/produtos/build/applications/cache/tiered-cache/).
+Exibe os registros de eventos de requisições feitas às applications que utilizam o [Tiered Cache](/pt-br/documentacao/build/applications/reference/cache/tiered-cache/).
 
 | Variável | Descrição |
 | -------- | --------- |
@@ -220,7 +220,7 @@ Exibe os registros de eventos de requisições feitas às applications que utili
 | Solution | Identificação da application. Exemplo: `1321` |
 | Status | Código de status HTTP da requisição. Exemplo: `200` |
 | TCP Info RTT | Tempo de ida e volta (RTT), em microsegundos, medido pelo edge para o usuário. Disponível em sistemas que suportam a opção de socket TCP_INFO. Exemplo: `72052 |
-| Upstream Addr | Endereço IP e porta do cliente. Também pode armazenar múltiplos servidores ou grupos de servidores. Exemplo: `192.168.1.1:80`. Quando a resposta é `127.0.0.1:1666`, o upstream é o [Azion Cells Runtime](/pt-br/documentacao/runtime/visao-geral/) |
+| Upstream Addr | Endereço IP e porta do cliente. Também pode armazenar múltiplos servidores ou grupos de servidores. Exemplo: `192.168.1.1:80`. Quando a resposta é `127.0.0.1:1666`, o upstream é o [Azion Cells Runtime](/pt-br/documentacao/build/functions/runtime-apis/overview/) |
 | Upstream Bytes Received | Número de bytes recebidos pelo edge da origem, se o conteúdo não estiver em cache. Exemplo: `8304` |
 | Upstream Cache Status | Status do cache local do edge. Pode ser: `MISS`, `BYPASS`, `EXPIRED`, `STALE`, `UPDATING`, `REVALIDATED`, `HIT` ou `-` |
 | Upstream Connect Time | Tempo que leva para o edge estabelecer uma conexão com a origem, em segundos. No caso de TLS, inclui o tempo gasto no handshake. Exemplo: `0.123`. **Retorna `0` para KeepAlive e `-` para cache** |
@@ -234,12 +234,12 @@ Exibe os registros de eventos de requisições feitas às applications que utili
 
 Requer: <Tag severity="info" client:only="vue">Edge DNS</Tag>
 
-Exibe os registros de eventos de consultas feitas para o [Edge DNS](/pt-br/documentacao/produtos/secure/edge-dns/).
+Exibe os registros de eventos de consultas feitas para o [Edge DNS](/pt-br/documentacao/secure/edge-dns/).
 
 | Variável | Descrição |
 | -------- | --------- |
 | Level | Nível do gerador do log: `ERROR`, `WARN`, `INFO`, `DEBUG` ou `TRACE` |
-| Q Type | Definição do [tipo de registro](/pt-br/documentacao/produtos/secure/edge-dns/#tipos-de-entradas-suportadas-e-as-respectivas-recomendacoes-do-edge-dns) que será utilizado. Exemplo: `PTR`, `A`, `AAAA`, `HTTPS`, `NS`, `SRV` |
+| Q Type | Definição do [tipo de registro](/pt-br/documentacao/secure/edge-dns/#tipos-de-entradas-suportadas-e-as-respectivas-recomendacoes-do-edge-dns) que será utilizado. Exemplo: `PTR`, `A`, `AAAA`, `HTTPS`, `NS`, `SRV` |
 | Resolution Type | Tipos de método usados para resolver hosts. Exemplo: `standard` |
 | Source | Servidor que gerou a linha do log. Exemplo: `edg-fln-ggn001p` |
 | Status Code | Código de status HTTP da requisição. Exemplo: `200` |
@@ -252,7 +252,7 @@ Exibe os registros de eventos de consultas feitas para o [Edge DNS](/pt-br/docum
 
 Requer: <Tag severity="info" client:only="vue">Data Stream</Tag>
 
-Exibe os registros de eventos dos dados enviados para endpoints utilizando o [Data Stream](/pt-br/documentacao/produtos/observe/data-stream/).
+Exibe os registros de eventos dos dados enviados para endpoints utilizando o [Data Stream](/pt-br/documentacao/observe/data-stream/).
 
 | Variável | Descrição |
 | -------- | --------- |
@@ -269,7 +269,7 @@ Exibe os registros de eventos dos dados enviados para endpoints utilizando o [Da
 
 ### Activity History
 
-Exibe os registros de eventos das atividades realizadas em uma conta no Azion Console registradas pelo [Activity History](/pt-br/documentacao/produtos/gestao-de-contas/activity-history/). Use a [API GraphQL do Real-Time Events](/pt-br/documentacao/devtools/graphql-api/visao-geral/) para consultar até *2 anos* de logs.
+Exibe os registros de eventos das atividades realizadas em uma conta no Azion Console registradas pelo [Activity History](/pt-br/documentacao/account/reference/activity-history/). Use a [API GraphQL do Real-Time Events](/pt-br/documentacao/devtools/graphql/reference/overview/) para consultar até *2 anos* de logs.
 
 | Variável | Descrição |
 | -------- | --------- |
@@ -326,7 +326,7 @@ Cada linha representa um log diferente, o que equivale a uma ação diferente re
 
 :::tip
 **Aumente limites** <br></br>
-Você pode solicitar o aumento dos limites com base no seu plano. Contate o [time de suporte técnico](/pt-br/documentacao/servicos/suporte/) para fazer a solicitação.
+Você pode solicitar o aumento dos limites com base no seu plano. Contate o [time de suporte técnico](/pt-br/documentacao/services/support/) para fazer a solicitação.
 :::
 
 Estes são os **limites default**:

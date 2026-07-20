@@ -15,9 +15,9 @@ export default [
 	/// START HERE :::: DO NOT REMOVE the strings above, it's a work around for header on mobile /// 
 
 	{ text: 'Overview', header: true, anchor: true, type: 'learn', key: 'overview', slug: '/documentation/devtools/mcp/' },
-	{ text: 'How it works', header: true, anchor: true, type: 'learn', key: 'howItWorks', slug: '/documentation/devtools/mcp/how-it-works/' },
-	{ text: 'Configuration', header: true, anchor: true, type: 'learn', key: 'configuration', slug: '/documentation/devtools/mcp/configuration/' },
-	{ text: 'Examples', header: true, anchor: true, type: 'learn', key: 'examples', slug: '/documentation/devtools/mcp/examples/' },
-	{ text: 'Local Development', header: true, anchor: true, type: 'learn', key: 'localDevelopment', slug: '/documentation/devtools/mcp/local-development/' },
-	{ text: 'Troubleshooting', header: true, anchor: true, type: 'learn', key: 'troubleshooting', slug: '/documentation/devtools/mcp/troubleshooting/' },
+	{ text: 'How it works', header: true, anchor: true, type: 'learn', key: 'howItWorks', slug: '/documentation/devtools/mcp/reference/how-it-works/' },
+	{ text: 'Configuration', header: true, anchor: true, type: 'learn', key: 'configuration', slug: '/documentation/devtools/mcp/reference/configuration/' },
+	{ text: 'Examples', header: true, anchor: true, type: 'learn', key: 'examples', slug: '/documentation/devtools/mcp/reference/examples/' },
+	{ text: 'Local Development', header: true, anchor: true, type: 'learn', key: 'localDevelopment', slug: '/documentation/devtools/mcp/reference/local-development/' },
+	{ text: 'Troubleshooting', header: true, anchor: true, type: 'learn', key: 'troubleshooting', slug: '/documentation/devtools/mcp/reference/troubleshooting/' },
 ] as const;

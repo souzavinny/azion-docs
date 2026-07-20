@@ -7,7 +7,7 @@ const menuData = {
     },
 		{
       label: 'Guides',
-      href: '/en/documentation/products/guides/',
+      href: '/en/documentation/guides/',
       items: []
     },
 		{

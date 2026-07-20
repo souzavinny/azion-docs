@@ -5,7 +5,7 @@ description: >-
   personalizadas ao seu usuário baseada em códigos de erro HTTP.
 meta_tags: 'personalizar, página, resposta de erro'
 namespace: documentation_how_to_configurations_customizing_error_response_page
-permalink: /documentacao/produtos/guias/personalizar-pagina-resposta-erro/
+permalink: /documentacao/build/applications/guides/personalizar-pagina-resposta-erro/
 ---
 
 import LinkButton from 'azion-webkit/linkbutton';
@@ -16,10 +16,10 @@ import Apiv4Rollout from '~/includes/snippets/apiv4Rollout/pt/snippet.mdx'
 
 Descubra como configurar sua application da Azion para mostrar páginas de erro personalizadas para seu usuário baseadas em códigos de status de erro HTTP. Para este guia, você já deve ter uma Applications, um Connectors e um Workload configurados.
 
-Existem instruções separadas para API v3 usando configurações de [Error Responses legados](/pt-br/documentacao/produtos/build/applications/error-responses/) e API v4 usando o novo produto [Custom Pages](/pt-br/documentacao/produtos/secure/custom-pages/).
+Existem instruções separadas para API v3 usando configurações de [Error Responses legados](/pt-br/documentacao/build/applications/reference/error-responses/) e API v4 usando o novo produto [Custom Pages](/pt-br/documentacao/secure/custom-pages/).
 
 :::tip
-Se você não tem certeza de quais etapas se aplicam à sua conta, consulte [o guia Verificar Migração da Conta](/pt-br/documentacao/produtos/guias/verificar-migracao-conta/) para determinar se sua conta já foi migrada.
+Se você não tem certeza de quais etapas se aplicam à sua conta, consulte [o guia Verificar Migração da Conta](/pt-br/documentacao/account/guides/verificar-migracao-conta/) para determinar se sua conta já foi migrada.
 :::
 
 <Tabs client:visible>
@@ -31,7 +31,7 @@ Se você não tem certeza de quais etapas se aplicam à sua conta, consulte [o g
 
 Para criar uma Custom Page, siga os passos:
 
-1. Acesse o [Azion Console](/pt-br/documentacao/produtos/guias/como-acessar-o-azion-console/) > **Custom Pages**.
+1. Acesse o [Azion Console](/pt-br/documentacao/account/guides/como-acessar-o-azion-console/) > **Custom Pages**.
 2. Clique no botão **+ Custom Page**.
 3. Para personalizar códigos de erro específicos, clique no botão **+ Custom Page Code**.
 4. Selecione o **Page Code**, que representa o código recebido do Connectors ao buscar seu conteúdo.
@@ -43,7 +43,7 @@ Para criar uma Custom Page, siga os passos:
 
 Agora para vincular suas Error Pages ao seu Workload, siga os passos:
 
-1. Acesse o [Azion Console](/pt-br/documentacao/produtos/guias/como-acessar-o-azion-console/) > **Workloads**.
+1. Acesse o [Azion Console](/pt-br/documentacao/account/guides/como-acessar-o-azion-console/) > **Workloads**.
 2. Na seção Deployment Settings, selecione a Custom Page que você criou.
 3. Clique no botão **Save**.
 
@@ -55,7 +55,7 @@ Pronto. Sua application agora exibirá uma página de erro com a nova configura�
 
 Para personalizar a página de resposta de erro, siga os passos:
 
-1. Acesse o [Azion Console](/pt-br/documentacao/produtos/guias/como-acessar-o-azion-console/) > **Applications**.
+1. Acesse o [Azion Console](/pt-br/documentacao/account/guides/como-acessar-o-azion-console/) > **Applications**.
 2. Selecione a aplicação vinculada ao domínio que necessita da nova página de erro.
 3. Selecione a aba **Error Responses**.
 4. O primeiro campo **Status Code** está desabilitado, mas em **Default Response TTL** você pode definir o *time-to-live* (TTL), em segundos, para o cache de todas as páginas de erro.

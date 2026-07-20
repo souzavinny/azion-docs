@@ -3,7 +3,7 @@ title: Azion Runtime and Node.js API compatibility
 description: >-
   Explore the compatibility and integration of Node.js APIs and polyfills with
   the Azion Runtime, enhancing JavaScript execution in edge environments.
-permalink: /documentation/products/azion-edge-runtime/compatibility/node/
+permalink: /documentation/build/functions/runtime-apis/compatibility/node/
 meta_tags: >-
   Azion Edge, Node.js compatibility, JavaScript runtime, Node APIs, polyfills,
   Node.js polyfills, runtime APIs, Edge Runtime, edge computing
@@ -58,7 +58,7 @@ The Azion Runtime provides native support for the File System (FS) module, allow
 
 ## Supported Node APIs with polyfills
 
-A polyfill is a code snippet, often used in JavaScript, that brings new features to environments lacking these capabilities. Polyfills are used during build time at Azion and can be configured through the [azion.config.js](/en/documentation/devtools/cli/configs/azion-config-js/) file.
+A polyfill is a code snippet, often used in JavaScript, that brings new features to environments lacking these capabilities. Polyfills are used during build time at Azion and can be configured through the [azion.config.js](/en/documentation/devtools/cli/reference/azion-config-js/) file.
 
 The following Node APIs are supported through polyfills, along with their respective supported methods. 
 
@@ -80,58 +80,58 @@ The following Node APIs are supported through polyfills, along with their respec
 | _tls_wrap             | 🟡 Partially supported     |
 | [assert](#)          | 🟡 Partially supported     |
 | assert/strict         | 🟡 Partially supported     |
-| [async_hooks](/en/documentation/products/azion-edge-runtime/compatibility/node/async-hooks/)     | 🟢 Supported     |
-| [buffer](/en/documentation/products/azion-edge-runtime/compatibility/node/buffer/)          | 🟡 Partially supported     |
+| [async_hooks](/en/documentation/build/functions/runtime-apis/compatibility/node/async-hooks/)     | 🟢 Supported     |
+| [buffer](/en/documentation/build/functions/runtime-apis/compatibility/node/buffer/)          | 🟡 Partially supported     |
 | child_process    | 🟡 Partially supported     |
 | cluster          | 🟢 Supported     |
 | console          | 🟢 Supported     |
 | constants        | 🟢 Supported     |
-| [crypto](/en/documentation/products/azion-edge-runtime/compatibility/node/crypto/)          | 🟡 Partially supported     |
+| [crypto](/en/documentation/build/functions/runtime-apis/compatibility/node/crypto/)          | 🟡 Partially supported     |
 | dgram           | 🟢 Supported     |
 | diagnostics_channel | 🟢 Supported     |
 | dns             | 🟢 Supported     |
 | dns/promises    | 🟢 Supported     |
 | domain          | 🟢 Supported     |
-| [events](/en/documentation/products/azion-edge-runtime/compatibility/node/events/)          | 🟢 Supported     |
-| [fs](/en/documentation/products/azion-edge-runtime/compatibility/node/fs/)              | 🟡 Partially supported     |
+| [events](/en/documentation/build/functions/runtime-apis/compatibility/node/events/)          | 🟢 Supported     |
+| [fs](/en/documentation/build/functions/runtime-apis/compatibility/node/fs/)              | 🟡 Partially supported     |
 | fs/promises     | 🟡 Partially supported     |
-| [http](/en/documentation/products/azion-edge-runtime/compatibility/node/http/)            | 🟡 Partially supported     |
+| [http](/en/documentation/build/functions/runtime-apis/compatibility/node/http/)            | 🟡 Partially supported     |
 | http2           | 🟡 Partially supported     |
 | https           | 🟡 Partially supported     |
 | inspector       | 🟢 Supported     |
 | inspector/promises    | 🟡 Partially supported     |
-| [module](/en/documentation/products/azion-edge-runtime/compatibility/node/module/)          | 🟡 Partially supported     |
+| [module](/en/documentation/build/functions/runtime-apis/compatibility/node/module/)          | 🟡 Partially supported     |
 | net             | 🟡 Partially supported     |
-| [os](/en/documentation/products/azion-edge-runtime/compatibility/node/os/)              | 🟢 Supported     |
-| [path](/en/documentation/products/azion-edge-runtime/compatibility/node/path/)            | 🟢 Supported     |
+| [os](/en/documentation/build/functions/runtime-apis/compatibility/node/os/)              | 🟢 Supported     |
+| [path](/en/documentation/build/functions/runtime-apis/compatibility/node/path/)            | 🟢 Supported     |
 | path/posix            | 🟡 Partially supported     |
 | path/win32           | 🟡 Partially supported     |
 | perf_hooks     | 🟢 Supported     |
-| [process](/en/documentation/products/azion-edge-runtime/compatibility/node/process/)         | 🟡 Partially supported     |
+| [process](/en/documentation/build/functions/runtime-apis/compatibility/node/process/)         | 🟡 Partially supported     |
 | punycode             | 🟡 Partially supported     |
 | querystring          | 🟡 Partially supported     |
 | readline        | 🟢 Supported     |
 | readline/promises | 🟢 Supported     |
 | repl                  | 🟡 Partially supported     |
-| [stream](/en/documentation/products/azion-edge-runtime/compatibility/node/stream/)          | 🟡 Partially supported     |
+| [stream](/en/documentation/build/functions/runtime-apis/compatibility/node/stream/)          | 🟡 Partially supported     |
 | stream/consumers      | 🟡 Partially supported     |
 | stream/promises       | 🟡 Partially supported     |
 | stream/web           | 🟢 Supported     |
-| [string_decoder](/en/documentation/products/azion-edge-runtime/compatibility/node/string-decoder/)  | 🟢 Supported     |
+| [string_decoder](/en/documentation/build/functions/runtime-apis/compatibility/node/string-decoder/)  | 🟢 Supported     |
 | sys                   | 🟡 Partially supported     |
-| [timers](/en/documentation/products/azion-edge-runtime/compatibility/node/timers/)          | 🟡 Partially supported     |
+| [timers](/en/documentation/build/functions/runtime-apis/compatibility/node/timers/)          | 🟡 Partially supported     |
 | timers/promises | 🟢 Supported     |
 | tls             | 🟡 Partially supported     |
 | trace_events    | 🟢 Supported     |
 | tty             | 🟢 Supported     |
-| [url](/en/documentation/products/azion-edge-runtime/compatibility/node/url/)             | 🟢 Supported     |
-| [util](/en/documentation/products/azion-edge-runtime/compatibility/node/utils/)            | 🟡 Partially supported     |
+| [url](/en/documentation/build/functions/runtime-apis/compatibility/node/url/)             | 🟢 Supported     |
+| [util](/en/documentation/build/functions/runtime-apis/compatibility/node/utils/)            | 🟡 Partially supported     |
 | util/types           | 🟡 Partially supported     |
 | v8              | 🟢 Supported     |
-| [vm](/en/documentation/products/azion-edge-runtime/compatibility/node/vm/)              | 🟢 Supported     |
+| [vm](/en/documentation/build/functions/runtime-apis/compatibility/node/vm/)              | 🟢 Supported     |
 | wasi            | 🟢 Supported     |
 | worker_threads  | 🟡 Partially supported     |
-| [zlib](/en/documentation/products/azion-edge-runtime/compatibility/node/zlib/)            | 🟢 Supported     |
+| [zlib](/en/documentation/build/functions/runtime-apis/compatibility/node/zlib/)            | 🟢 Supported     |
 
 
 :::note 
@@ -139,5 +139,5 @@ You can check the list of APIs resolved through polyfills in [Azion Bundler's re
 :::
 
 For additional compatibility information:
-<LinkButton link="/en/documentation/runtime-apis/javascript/" label="Go To Supported Web APIs" severity="secondary" target="_blank" />
-<LinkButton link="/en/documentation/products/devtools/azion-edge-runtime/frameworks-compatibility/" label="Go To Supported Web Frameworks" severity="secondary" target="_blank" />
+<LinkButton link="/en/documentation/build/functions/runtime-apis/javascript/" label="Go To Supported Web APIs" severity="secondary" target="_blank" />
+<LinkButton link="/en/documentation/build/functions/runtime-apis/frameworks-compatibility/" label="Go To Supported Web Frameworks" severity="secondary" target="_blank" />

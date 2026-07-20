@@ -5,7 +5,7 @@ description: >-
   JavaScript and deploy it to run at the edge of the network.
 meta_tags: 'edge, security, javascript'
 namespace: documentation_secure_automate_functions
-permalink: /documentation/products/secure/automate/functions/
+permalink: /documentation/secure/firewall/guides/functions/
 ---
 
 import LinkButton from 'azion-webkit/linkbutton'
@@ -28,20 +28,20 @@ Through Functions, you can write your own security source code in **JavaScript**
 
 The Azion Functions for the firewall run in the request phase, and respect the following process: 
 
-1. The rules configured on the [Firewall Rules Engine](/en/documentation/products/secure/firewall/rules-engine/) for the function to run are triggered.
+1. The rules configured on the [Firewall Rules Engine](/en/documentation/secure/firewall/reference/rules-engine/) for the function to run are triggered.
 2. Azion Runtime processes the function, returning an outcome.
 3. Firewall Rules Engine resumes the processing, based on the outcome, from the point the behavior was triggered.
 
-<LinkButton link="/en/documentation/products/secure/firewall/functions/" label="go to Functions for Firewall reference" severity="secondary" target="_blank" />
+<LinkButton link="/en/documentation/secure/firewall/reference/functions/" label="go to Functions for Firewall reference" severity="secondary" target="_blank" />
 
 ---
 
 ## Secure with APIs
 
-[Azion Runtime](/en/documentation/runtime/overview/) supports a list of APIs that allow manipulation of [metadata](/en/documentation/products/secure/automate/functions/#metadata) and the use of [network lists](/en/documentation/products/secure/automate/functions/##network-list) to help the logic implementation.
+[Azion Runtime](/en/documentation/build/functions/runtime-apis/overview/) supports a list of APIs that allow manipulation of [metadata](/en/documentation/secure/firewall/guides/functions/#metadata) and the use of [network lists](/en/documentation/secure/firewall/guides/functions/##network-list) to help the logic implementation.
 
-<LinkButton link="/en/documentation/runtime-apis/javascript/" label="go to supported Web APIs" severity="secondary" target="_blank" />
-<LinkButton link="/en/documentation/products/azion-edge-runtime/compatibility/node/" label="go to Node.js compatibility" severity="secondary" target="_blank" />
+<LinkButton link="/en/documentation/build/functions/runtime-apis/javascript/" label="go to supported Web APIs" severity="secondary" target="_blank" />
+<LinkButton link="/en/documentation/build/functions/runtime-apis/compatibility/node/" label="go to Node.js compatibility" severity="secondary" target="_blank" />
 
 ### Metadata
 
@@ -50,7 +50,7 @@ The Metadata API enables access to a set of metadata that can be manipulated to:
 - Filter and manage access to your application
 - Apply specific logic in different scenarios based on GeoIP
 
-<LinkButton link="/en/documentation/products/applications/functions/runtime/api-reference/metadata/" label="go to Metadata API reference" severity="secondary" target="_blank" />
+<LinkButton link="/en/documentation/build/functions/runtime-apis/functions/runtime/api-reference/metadata/" label="go to Metadata API reference" severity="secondary" target="_blank" />
 
 ### Network list
 
@@ -62,8 +62,8 @@ The IPs listed inside network lists can be used to handle:
 - Blocklists
 - Greylists
 
-<LinkButton link="/en/documentation/products/applications/functions/runtime/api-reference/metadata/" label="go to Network List API reference" severity="secondary" target="_blank" />
-<LinkButton link="/en/documentation/products/secure/edge-firewall/network-layer-protection/network-lists/" label="go to Network Lists reference" severity="secondary" target="_blank" /><br />
+<LinkButton link="/en/documentation/build/functions/runtime-apis/functions/runtime/api-reference/metadata/" label="go to Network List API reference" severity="secondary" target="_blank" />
+<LinkButton link="/en/documentation/secure/firewall/reference/network-shield/network-lists/" label="go to Network Lists reference" severity="secondary" target="_blank" /><br />
 
 ---
 

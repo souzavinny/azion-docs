@@ -21,7 +21,7 @@ export default [
 		header: true,
 		onlyMobile: true,
 		anchor: true,
-		slug: '/documentacao/produtos/guias/',
+		slug: '/documentacao/guides/',
 		key: 'guides',
 	},
 	{
@@ -38,7 +38,7 @@ export default [
 		text: 'Visão geral',
 		header: true,
 		anchor: true,
-		slug: '/documentacao/produtos/store/visao-geral/',
+		slug: '/documentacao/store/overview/',
 		key: 'storeOverview',
 		hasLabel: 'menu.store',
 	},
@@ -55,7 +55,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentacao/produtos/store/storage/criar-bucket/',
+				slug: '/documentacao/store/object-storage/guides/criar-bucket/',
 				key: 'createBucket',
 			},
 			{
@@ -63,7 +63,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentacao/produtos/store/storage/listar-buckets/',
+				slug: '/documentacao/store/object-storage/guides/listar-buckets/',
 				key: 'listBucket',
 			},
 			{
@@ -71,7 +71,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentacao/produtos/store/storage/atualizar-buckets/',
+				slug: '/documentacao/store/object-storage/guides/atualizar-buckets/',
 				key: 'updateBucket',
 			},
 			{
@@ -79,7 +79,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentacao/produtos/store/storage/deletar-buckets/',
+				slug: '/documentacao/store/object-storage/guides/deletar-buckets/',
 				key: 'deleteBucket',
 			},
 			{
@@ -87,7 +87,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentacao/produtos/store/storage/upload-de-objeto/',
+				slug: '/documentacao/store/object-storage/guides/upload-de-objeto/',
 				key: 'postObject',
 			},
 			{
@@ -95,7 +95,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentacao/produtos/store/storage/atualizar-objeto/',
+				slug: '/documentacao/store/object-storage/guides/atualizar-objeto/',
 				key: 'putObject',
 			},
 			{
@@ -103,7 +103,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentacao/produtos/store/storage/listar-objetos/',
+				slug: '/documentacao/store/object-storage/guides/listar-objetos/',
 				key: 'listObjects',
 			},
 			{
@@ -111,7 +111,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentacao/products/store/storage/deletar-objeto/',
+				slug: '/documentacao/store/object-storage/guides/deletar-objeto/',
 				key: 'deleteObject',
 			},
 			{
@@ -119,7 +119,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentacao/produtos/store/storage/bucket-como-connector/',
+				slug: '/documentacao/store/object-storage/guides/bucket-como-connector/',
 				key: 'useBucketAsOrigin',
 			},
 		],
@@ -154,7 +154,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentacao/produtos/store/sql/criar-banco-de-dados/',
+				slug: '/documentacao/store/sql-database/guides/criar-banco-de-dados/',
 				key: 'createDatabase',
 			},
 			{
@@ -162,7 +162,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentacao/produtos/store/sql/listar-bancos-de-dados/',
+				slug: '/documentacao/store/sql-database/guides/listar-bancos-de-dados/',
 				key: 'listDatabases',
 			},
 			{
@@ -170,7 +170,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentacao/produtos/store/sql/recuperar-informacoes-do-banco/',
+				slug: '/documentacao/store/sql-database/guides/recuperar-informacoes-do-banco/',
 				key: 'retrieveDatabaseInfo',
 			},
 			{
@@ -178,7 +178,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentacao/produtos/store/sql/deletar-database/',
+				slug: '/documentacao/store/sql-database/guides/deletar-database/',
 				key: 'deleteDatabase',
 			},
 		],
@@ -195,7 +195,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentacao/produtos/store/sql/criar-tabela/',
+				slug: '/documentacao/store/sql-database/guides/criar-tabela/',
 				key: 'createTable',
 			},
 			{
@@ -203,7 +203,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentacao/produtos/store/sql/inserir-dados-em-tabela/',
+				slug: '/documentacao/store/sql-database/guides/inserir-dados-em-tabela/',
 				key: 'insertIntoTable',
 			},
 			{
@@ -219,7 +219,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentacao/produtos/store/sql/deletar-registro/',
+				slug: '/documentacao/store/sql-database/guides/deletar-registro/',
 				key: 'deleteRecord',
 			},
 		],
@@ -234,7 +234,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentacao/produtos/store/sql/install-edge-sql-shell/',
+				slug: '/documentacao/store/sql-database/guides/install-edge-sql-shell/',
 				key: 'installEdgeSQLShell',
 			},
 			{
@@ -242,7 +242,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentacao/produtos/store/sql/edge-sql-shell-commands/',
+				slug: '/documentacao/store/sql-database/guides/edge-sql-shell-commands/',
 				key: 'edgeSQLShellCommands',
 			}
 		]
@@ -251,6 +251,6 @@ export default [
 		text: 'Implemente o Vector Search',
 		type: 'learn',
 		key: 'edgeSQL/vector-search',
-		slug: '/documentacao/produtos/guias/edge-sql-vector-search/',
+		slug: '/documentacao/store/sql-database/guides/edge-sql-vector-search/',
 	}
 ] as const;

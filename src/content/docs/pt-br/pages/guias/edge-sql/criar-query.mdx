@@ -5,7 +5,7 @@ description: >-
   SQL usando a API REST da Azion.
 meta_tags: 'sql database, sql, query, crud, dados, banco de dados'
 namespace: docs_sql_query
-permalink: /documentacao/produtos/guias/criar-tabelas-edge-sql/
+permalink: /documentacao/store/sql-database/guides/criar-tabelas-edge-sql/
 ---
 
 import LinkButton from 'azion-webkit/linkbutton'
@@ -14,15 +14,15 @@ import Tag from 'primevue/tag'
 
 
 
-Depois de criar seu [banco de dados SQL Database](/pt-br/documentacao/produtos/guias/gerenciar-bancos-dados-edge-sql/), você pode começar a criar tabelas e inserir dados nelas.
+Depois de criar seu [banco de dados SQL Database](/pt-br/documentacao/store/sql-database/guides/gerenciar-bancos-dados-edge-sql/), você pode começar a criar tabelas e inserir dados nelas.
 
-<LinkButton link="/pt-br/documentacao/produtos/store/sql-database/" label="saiba mais sobre o SQL Database" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/store/sql-database/" label="saiba mais sobre o SQL Database" severity="secondary" />
 
 ---
 
 ## Crie uma tabela
 
-Execute a seguinte requisição `POST` no seu terminal, substituindo `[TOKEN VALUE]` pelo seu [personal token](/pt-br/documentacao/produtos/guias/personal-tokens/) e `{id_database}` pelo ID do banco de dados no qual você deseja criar uma tabela:
+Execute a seguinte requisição `POST` no seu terminal, substituindo `[TOKEN VALUE]` pelo seu [personal token](/pt-br/documentacao/account/guides/personal-tokens/) e `{id_database}` pelo ID do banco de dados no qual você deseja criar uma tabela:
 
 ```bash
 curl --location 'https://api.azion.com/v4/edge_sql/databases/{id_database}/query' \
@@ -55,7 +55,7 @@ Você deve receber a seguinte resposta:
 
 ## Adicione dados a uma tabela
 
-Execute a seguinte requisição `POST` no seu terminal, substituindo `[TOKEN VALUE]` pelo seu [personal token](/pt-br/documentacao/produtos/guias/personal-tokens/) e `{id_database}` pelo ID da tabela na qual você deseja inserir dados:
+Execute a seguinte requisição `POST` no seu terminal, substituindo `[TOKEN VALUE]` pelo seu [personal token](/pt-br/documentacao/account/guides/personal-tokens/) e `{id_database}` pelo ID da tabela na qual você deseja inserir dados:
 
 ```bash
 curl --location 'https://api.azion.com/v4/edge_sql/databases/{id_database}/query' \
@@ -102,7 +102,7 @@ Você deve receber a seguinte resposta:
 
 ## Liste dados em uma tabela
 
-Execute a seguinte requisição `POST` no seu terminal, substituindo `[TOKEN VALUE]` pelo seu [personal token](/pt-br/documentacao/produtos/guias/personal-tokens/) e `{id_database}` pelo ID da tabela que você deseja recuperar:
+Execute a seguinte requisição `POST` no seu terminal, substituindo `[TOKEN VALUE]` pelo seu [personal token](/pt-br/documentacao/account/guides/personal-tokens/) e `{id_database}` pelo ID da tabela que você deseja recuperar:
 
 ```bash
 curl --location 'https://api.azion.com/v4/edge_sql/databases/{id_database}/query' \

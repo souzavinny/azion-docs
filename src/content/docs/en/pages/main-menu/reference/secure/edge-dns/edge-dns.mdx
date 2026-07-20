@@ -5,7 +5,7 @@ description: >-
   DNS.
 meta_tags: 'Edge DNS, DNS, routring'
 namespace: documentation_products_intelligent_dns
-permalink: /documentation/products/secure/edge-dns/
+permalink: /documentation/secure/edge-dns/
 ---
 
 import LinkButton from 'azion-webkit/linkbutton'
@@ -20,9 +20,9 @@ Edge DNS works as an authoritative DNS solution that allows the customers to man
 
 | Scope | Source |
 |-------|--------|
-| Main settings | [How to configure Edge DNS main settings](/en/documentation/products/guides/secure/edge-dns-configure-main-settings/) |
-| Dig command | [How to look up DNS servers with the dig command](/en/documentation/products/guides/run-the-dig-command/) |
-| Traceroute command | [How to diagnose performance and delivery issues with the traceroute command](/en/documentation/products/guides/run-the-traceroute-command/) |
+| Main settings | [How to configure Edge DNS main settings](/en/documentation/secure/firewall/guides/edge-dns-configure-main-settings/) |
+| Dig command | [How to look up DNS servers with the dig command](/en/documentation/secure/edge-dns/guides/run-the-dig-command/) |
+| Traceroute command | [How to diagnose performance and delivery issues with the traceroute command](/en/documentation/secure/edge-dns/guides/run-the-traceroute-command/) |
 
 ---
 
@@ -34,13 +34,13 @@ It's the DNS that allows you to type in a domain name instead of a string of num
 
 After configuring Edge DNS, you can test if your zone is processing your information.
 
-<LinkButton link="/en/documentation/products/secure/troubleshoot/test-zone/" label="go to test zone guide" severity="secondary" /> 
+<LinkButton link="/en/documentation/secure/firewall/guides/test-zone/" label="go to test zone guide" severity="secondary" /> 
 
 ---
 
 ## Edge DNS Records
 
-<LinkButton link="/en/documentation/products/guides/secure/add-records/" label="go add records guide" severity="secondary" />
+<LinkButton link="/en/documentation/secure/firewall/guides/add-records/" label="go add records guide" severity="secondary" />
 
 ### Zone Name
 
@@ -116,7 +116,7 @@ Given a set of Weighted Records, with same *Name* and *Type*, the chances of a s
 
 `Weight of the record / Sum of all Weights`
 
-<LinkButton link="/en/documentation/products/guides/secure/load-balance-dns/" label="go load balance DNS records guide" severity="secondary" />
+<LinkButton link="/en/documentation/secure/firewall/guides/load-balance-dns/" label="go load balance DNS records guide" severity="secondary" />
 
 ---
 
@@ -149,7 +149,7 @@ You can set up a domain, such as `www.domain.com`, to be used as a naked domain,
 - Create an A-type entry pointing to your webserver. Then, it'll be redirected to Azion. This option may impact your Google ranking.
 - Create an ANAME entry in your DNS and point it to Azion. If you're using a DNS service outside Azion or a domain pointing to another platform, this option may not be supported.
 
-<LinkButton link="/en/documentation/products/guides/secure/access-root-domain/" label="go to access addresses through a root domain guide" severity="secondary" /> 
+<LinkButton link="/en/documentation/secure/firewall/guides/access-root-domain/" label="go to access addresses through a root domain guide" severity="secondary" /> 
 
 ---
 
@@ -196,7 +196,7 @@ It's important to verify that all your records are properly registered and teste
 
 The **Domain Name System Security Extensions (DNSSEC)** is a feature of the *Domain Name System (DNS)* that authenticates responses to domain name lookups. It doesn't provide privacy protections for those lookups but prevents attackers from manipulating or poisoning the responses to DNS requests.
 
-<LinkButton link="/en/documentation/products/secure/edge-dns/dnssec-compatibility/" label="go to DNSSEC compatibility reference" severity="secondary" /> 
+<LinkButton link="/en/documentation/secure/edge-dns/reference/dnssec-compatibility/" label="go to DNSSEC compatibility reference" severity="secondary" /> 
  
 
 ---
@@ -223,19 +223,19 @@ To confirm your DNS zone is processing requests correctly, use the following dia
 
 | Tool | Purpose | Guide |
 |------|---------|-------|
-| **DIG** | Query DNS servers directly, verify record responses | [How to use the DIG command](/en/documentation/products/guides/run-the-dig-command/) |
-| **HOST** | Convert domain names to IP addresses and vice versa | [Test zone guide](/en/documentation/products/secure/troubleshoot/test-zone/) |
-| **NSLOOKUP** | Query DNS records for domains and IPs | [Test zone guide](/en/documentation/products/secure/troubleshoot/test-zone/) |
-| **Traceroute** | Diagnose network path and latency issues | [How to use Traceroute](/en/documentation/products/guides/run-the-traceroute-command/) |
+| **DIG** | Query DNS servers directly, verify record responses | [How to use the DIG command](/en/documentation/secure/edge-dns/guides/run-the-dig-command/) |
+| **HOST** | Convert domain names to IP addresses and vice versa | [Test zone guide](/en/documentation/secure/firewall/guides/test-zone/) |
+| **NSLOOKUP** | Query DNS records for domains and IPs | [Test zone guide](/en/documentation/secure/firewall/guides/test-zone/) |
+| **Traceroute** | Diagnose network path and latency issues | [How to use Traceroute](/en/documentation/secure/edge-dns/guides/run-the-traceroute-command/) |
 
 ### Monitor DNS Queries
 
 Track DNS query patterns and identify potential issues using Azion's Observe products:
 
-- **[Real-Time Metrics](/en/documentation/products/observe/real-time-metrics/#edge-dns)**: View aggregated charts showing query volumes, response codes, and geographic distribution over time.
-- **[GraphQL API](/en/documentation/devtools/graphql-api/features/#datasets)**: Query raw and aggregated DNS data for custom analysis and integration with monitoring tools.
+- **[Real-Time Metrics](/en/documentation/observe/real-time-metrics/#edge-dns)**: View aggregated charts showing query volumes, response codes, and geographic distribution over time.
+- **[GraphQL API](/en/documentation/devtools/graphql/reference/features/#datasets)**: Query raw and aggregated DNS data for custom analysis and integration with monitoring tools.
 
-<LinkButton link="/en/documentation/products/secure/troubleshoot/edge-dns-understand-metrics/" label="view Edge DNS metrics guide" severity="secondary" />
+<LinkButton link="/en/documentation/secure/firewall/guides/edge-dns-understand-metrics/" label="view Edge DNS metrics guide" severity="secondary" />
 
 ### Report Issues
 
@@ -258,7 +258,7 @@ If you experience unexpected behavior with Edge DNS replication or query respons
 
 **Massive Redirect** is Azion's serverless integration for processing many simultaneous redirects. It can be used where there is a need to change a significant number of addresses, for example, in domain migrations.
 
-To configure massive redirection for domain migration, access the [Massive Redirect](/en/documentation/products/guides/massive-redirect-integration/) documentation. 
+To configure massive redirection for domain migration, access the [Massive Redirect](/en/documentation/marketplace/integrations/massive-redirect-integration/) documentation. 
 
 
 

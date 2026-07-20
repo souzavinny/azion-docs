@@ -21,7 +21,7 @@ export default [
 		header: true,
 		onlyMobile: true,
 		anchor: true,
-		slug: '/documentacao/produtos/guias/',
+		slug: '/documentacao/guides/',
 		key: 'guides',
 	},
 	{
@@ -38,7 +38,7 @@ export default [
 		text: 'Visão geral',
 		header: true,
 		anchor: true,
-		slug: '/documentacao/produtos/deploy/visao-geral/',
+		slug: '/documentacao/deploy/overview/',
 		key: 'deployOverview',
 		hasLabel: 'menu.deploy',
 	},
@@ -46,7 +46,7 @@ export default [
 		text: 'Implante um edge service',
 		header: true,
 		anchor: true,
-		slug: '/documentacao/produtos/deploy/implantar-servico/',
+		slug: '/documentacao/deploy/orchestrator/guides/implantar-servico/',
 		key: 'deployService',
 	},
 	{
@@ -60,7 +60,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentacao/produtos/guias/deploy/instalar-orchestrator-agent/',
+				slug: '/documentacao/deploy/orchestrator/guides/instalar-orchestrator-agent/',
 				key: 'installAgent',
 			},
 			{
@@ -68,7 +68,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentacao/produtos/guias/deploy/autorizar-edge-node/',
+				slug: '/documentacao/deploy/orchestrator/guides/autorizar-edge-node/',
 				key: 'authNode',
 			},
 			{
@@ -76,7 +76,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentacao/produtos/guias/deploy/verificar-logs/',
+				slug: '/documentacao/deploy/orchestrator/guides/verificar-logs/',
 				key: 'watchLogs',
 			},
 			{
@@ -84,7 +84,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentacao/produtos/guias/deploy/criar-edge-service/',
+				slug: '/documentacao/deploy/orchestrator/guides/criar-edge-service/',
 				key: 'createService',
 			},
 			{
@@ -92,7 +92,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentacao/produtos/guias/deploy/vincular-servico/',
+				slug: '/documentacao/deploy/orchestrator/guides/vincular-servico/',
 				key: 'bindService',
 			},
 			{
@@ -100,7 +100,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentacao/produtos/guias/deploy/provisionar-arquivos/',
+				slug: '/documentacao/deploy/orchestrator/guides/provisionar-arquivos/',
 				key: 'provisionFiles',
 			},
 			{
@@ -108,7 +108,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentacao/produtos/guias/deploy/trabalhar-com-variaveis/',
+				slug: '/documentacao/deploy/orchestrator/guides/trabalhar-com-variaveis/',
 				key: 'workVariables',
 			},
 			{
@@ -116,7 +116,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentacao/produtos/guias/deploy/desvincular-servico/',
+				slug: '/documentacao/deploy/orchestrator/guides/desvincular-servico/',
 				key: 'unbindService',
 			},
 		],
@@ -132,7 +132,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentacao/produtos/deploy/avancado/explore-uso/',
+				slug: '/documentacao/deploy/orchestrator/guides/explore-uso/',
 				key: 'exploreUsage',
 			},
 			{
@@ -140,7 +140,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentacao/produtos/guias/deploy/avancado/rodar-scripts/',
+				slug: '/documentacao/deploy/orchestrator/guides/rodar-scripts/',
 				key: 'runScripts',
 			},
 			{
@@ -148,7 +148,7 @@ export default [
 				header: true,
 				anchor: true,
 				type: 'learn',
-				slug: '/documentacao/produtos/guias/deploy/avancado/desinstalar-agent/',
+				slug: '/documentacao/deploy/orchestrator/guides/desinstalar-agent/',
 				key: 'uninstallNode',
 			},
 		],
@@ -158,7 +158,7 @@ export default [
 		header: true,
 		anchor: true,
 		type: 'learn',
-		slug: '/documentacao/produtos/deploy/automatizar/api/',
+		slug: '/documentacao/deploy/orchestrator/guides/api/',
 		key: 'deployAutomateAPI',
 		hasLabel: 'menu.secureAutomate',
 	},
@@ -167,7 +167,7 @@ export default [
 		header: true,
 		anchor: true,
 		type: 'learn',
-		slug: '/documentacao/produtos/deploy/automatizar/zero-touch-provisioning/',
+		slug: '/documentacao/deploy/orchestrator/guides/zero-touch-provisioning/',
 		key: 'zeroTouchProvisioning',
 	},
 ] as const;

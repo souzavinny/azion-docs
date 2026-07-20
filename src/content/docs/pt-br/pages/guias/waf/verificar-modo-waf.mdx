@@ -4,7 +4,7 @@ description: Aprenda a verificar e alterar o modo de operação das configuraç�
 meta_tags: 'firewall, web application firewall, learning, blocking, operation modes'
 namespace: documentation_how_to_configurations_check_WAF_mode
 menu_namespace: secureMenu
-permalink: /documentacao/produtos/guias/como-verificar-modo-do-seu-waf/
+permalink: /documentacao/secure/waf/guides/como-verificar-modo-do-seu-waf/
 ---
 
 O **Web Application Firewall (WAF)** da Azion pode operar em dois modos diferentes, modo de aprendizagem (*learning*) e modo de bloqueio (*blocking*). No modo de aprendizagem, o WAF analisará as ameaças, sem bloqueá-las. No modo de bloqueio, todas as requisições consideradas ameaças são bloqueadas e nem chegam ao servidor (origem).
@@ -12,7 +12,7 @@ O **Web Application Firewall (WAF)** da Azion pode operar em dois modos diferent
 Rodar o WAF em modo de aprendizagem (ou *estágio de calibração*) ajuda a melhorar o seu funcionamento e reduz falsos positivos. O modo de bloqueio fornecerá proteção, em tempo real, contra todas as famílias de ameaças suportadas.
 
 :::tip
-Veja a lista de todas [as famílias de ameaças](/pt-br/documentacao/produtos/secure/firewall/web-application-firewall/) das quais o WAF protege.
+Veja a lista de todas [as famílias de ameaças](/pt-br/documentacao/secure/waf/) das quais o WAF protege.
 :::
 
 Este guia irá lhe orientar a criar, conferir e editar o modo de operação de um WAF Rule Set.
@@ -25,10 +25,10 @@ Este guia irá lhe orientar a criar, conferir e editar o modo de operação de u
 
 O modo de operação do WAF é definido na aba **Rules Engine** de um **Firewall**. Por isso, lembre-se de ter:
 
-- Um [firewall](/pt-br/documentacao/produtos/guias/secure/firewall-definir-main-settings/), com os domínios de suas applications associados.
-- Esse firewall deve ter pelo menos um [WAF Rule Set](/pt-br/documentacao/produtos/secure/firewall/web-application-firewall/rule-sets/) configurado.
+- Um [firewall](/pt-br/documentacao/secure/firewall/guides/firewall-definir-main-settings/), com os domínios de suas applications associados.
+- Esse firewall deve ter pelo menos um [WAF Rule Set](/pt-br/documentacao/secure/waf/reference/rule-sets/) configurado.
 
-Se você não tiver um WAF Rule Set configurado, leia [este guia]](/pt-br/documentacao/produtos/guias/secure/criar-waf-rule-set/) para mais detalhes.
+Se você não tiver um WAF Rule Set configurado, leia [este guia]](/pt-br/documentacao/secure/firewall/guides/criar-waf-rule-set/) para mais detalhes.
 
 ---
 
@@ -36,7 +36,7 @@ Se você não tiver um WAF Rule Set configurado, leia [este guia]](/pt-br/docume
 
 Para conferir ou editar o modo de operação de um WAF, siga os passos:
 
-1. Acesse o [Azion Console](/pt-br/documentacao/produtos/guias/como-acessar-o-azion-console/) > **Firewall**, na seção **Secure**.
+1. Acesse o [Azion Console](/pt-br/documentacao/account/guides/como-acessar-o-azion-console/) > **Firewall**, na seção **Secure**.
 2. Na lista, localize e selecione o firewall que esteja rodando o WAF Rule Set que irá checar seu modo de operação.
 3. Na aba **Main Settings**, certifique-se de:
    - Ter todos os domínios de suas applications selecionados na lista de domínios.

@@ -5,7 +5,7 @@ description: >-
   Valide novo software com requisições reais de usuários antes de implantar em produção.
 meta_tags: 'functions, firewall, teste, origem, espelhamento de tráfego'
 namespace: docs_guides_test_origin_functions
-permalink: /documentacao/produtos/guias/test-origin-with-functions/
+permalink: /documentacao/build/functions/guides/test-origin-with-functions/
 ---
 
 import LinkButton from 'azion-webkit/linkbutton'
@@ -30,9 +30,9 @@ Benefícios principais:
 Antes de começar, certifique-se de ter:
 
 - Uma [application](/pt-br/documentacao/produtos/guias/build/criar-uma-aplicacao) com tráfego de produção
-- Um [domínio](/pt-br/documentacao/produtos/guias/configurar-dominio/) associado à sua aplicação
+- Um [domínio](/pt-br/documentacao/build/workloads/guides/configurar-dominio/) associado à sua aplicação
 - Uma origem de teste (seu novo software) acessível via HTTPS
-- Um [Firewall](/pt-br/documentacao/produtos/secure/firewall/) associado ao seu domínio
+- Um [Firewall](/pt-br/documentacao/secure/firewall/) associado ao seu domínio
 
 ---
 
@@ -40,7 +40,7 @@ Antes de começar, certifique-se de ter:
 
 ### Passo 1: Criar uma nova função
 
-1. Acesse o [Azion Console](/pt-br/documentacao/produtos/guias/conhecendo-o-azion-console/) > **Functions**.
+1. Acesse o [Azion Console](/pt-br/documentacao/account/guides/getting-to-know-azion-console/) > **Functions**.
 2. Clique em **+ Function**.
 3. Nomeie sua função (ex: `Traffic Mirroring`).
 4. Na aba **Code**, adicione o seguinte código:
@@ -83,10 +83,10 @@ O método `event.continue()` é chamado imediatamente após `event.waitUntil(fet
 ### Passo 2: Configurar a função no Firewall
 
 :::note
-Os passos a seguir descrevem a configuração no Azion Console. Para informações detalhadas sobre essas interfaces, consulte a [referência de Functions](/pt-br/documentacao/produtos/build/applications/functions/) e a [documentação do Firewall](/pt-br/documentacao/produtos/secure/firewall/).
+Os passos a seguir descrevem a configuração no Azion Console. Para informações detalhadas sobre essas interfaces, consulte a [referência de Functions](/pt-br/documentacao/build/applications/reference/functions/) e a [documentação do Firewall](/pt-br/documentacao/secure/firewall/).
 :::
 
-1. Acesse o [Azion Console](/pt-br/documentacao/produtos/guias/conhecendo-o-azion-console/) > **Firewall**.
+1. Acesse o [Azion Console](/pt-br/documentacao/account/guides/getting-to-know-azion-console/) > **Firewall**.
 2. Selecione o firewall associado ao seu domínio.
 3. Habilite o módulo **Functions** se ainda não estiver habilitado.
 4. Vá para a aba **Functions Instances**.
@@ -114,7 +114,7 @@ Aguarde alguns minutos para a propagação. Sua função agora espelha o tráfeg
 ## Adicionando monitoramento com Real-Time Events
 
 :::note
-Os recursos descritos nesta seção—`event.console.log()`, `event.console.warn()`, e integração com Real-Time Events—são capacidades da plataforma Azion documentadas separadamente. Para mais informações, consulte [Real-Time Events](/pt-br/documentacao/produtos/observe/real-time-events/).
+Os recursos descritos nesta seção—`event.console.log()`, `event.console.warn()`, e integração com Real-Time Events—são capacidades da plataforma Azion documentadas separadamente. Para mais informações, consulte [Real-Time Events](/pt-br/documentacao/observe/real-time-events/).
 :::
 
 Para entender como sua origem de teste responde, adicione logging que aparece no Real-Time Events.
@@ -197,12 +197,12 @@ Adicionar `await` ao fetch muda fundamentalmente o comportamento da função:
 - **Antes (Passo 1)**: A função era "transparente"—`event.continue()` era chamado imediatamente, e o fetch acontecia assincronamente. Zero latência adicionada para os usuários.
 - **Agora (Passo 4)**: A função se torna "bloqueante"—ela aguarda a resposta da origem de teste antes de chamar `event.continue()`. As requisições dos usuários são atrasadas pelo tempo de resposta da origem de teste.
 
-Esta abordagem **abandona o princípio central** do espelhamento de tráfego descrito neste guia. Use-a apenas durante fases curtas de diagnóstico, nunca como padrão operacional. Para monitoramento estendido sem impacto ao usuário, considere usar [Data Stream](/pt-br/documentacao/produtos/observe/data-stream/).
+Esta abordagem **abandona o princípio central** do espelhamento de tráfego descrito neste guia. Use-a apenas durante fases curtas de diagnóstico, nunca como padrão operacional. Para monitoramento estendido sem impacto ao usuário, considere usar [Data Stream](/pt-br/documentacao/observe/data-stream/).
 :::
 
 ### Passo 5: Visualizar logs no Real-Time Events
 
-1. Acesse o [Azion Console](/pt-br/documentacao/produtos/guias/conhecendo-o-azion-console/) > **Real-Time Events**.
+1. Acesse o [Azion Console](/pt-br/documentacao/account/guides/getting-to-know-azion-console/) > **Real-Time Events**.
 2. Selecione **Functions** nas opções de filtro.
 3. Filtre pelo nome da sua função ou firewall.
 4. Observe os logs aparecendo conforme as requisições são processadas.
@@ -313,6 +313,6 @@ Quando sua origem de teste tratar o tráfego de produção com sucesso, com lat�
 
 ## Recursos relacionados
 
-- [Referência de Functions](/pt-br/documentacao/produtos/build/applications/functions/)
-- [Rules Engine para Firewall](/pt-br/documentacao/produtos/secure/firewall/rules-engine/)
-- [Real-Time Events](/pt-br/documentacao/produtos/observe/real-time-events/)
+- [Referência de Functions](/pt-br/documentacao/build/applications/reference/functions/)
+- [Rules Engine para Firewall](/pt-br/documentacao/secure/firewall/reference/rules-engine/)
+- [Real-Time Events](/pt-br/documentacao/observe/real-time-events/)

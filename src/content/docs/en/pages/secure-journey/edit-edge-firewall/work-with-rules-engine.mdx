@@ -5,19 +5,19 @@ description: >-
   scenarios without changing your existing code.
 meta_tags: 'secure, rules engine, firewall, criteria, behavior'
 namespace: docs_secure_work_rules_engine
-permalink: /documentation/products/guides/secure/work-with-rules-engine/
+permalink: /documentation/secure/firewall/guides/work-with-rules-engine/
 ---
 
 import Tabs from '~/components/tabs/Tabs'
 import Code from '~/components/Code/Code.astro'
 
 
-Implementing rules in your firewall using [Rules Engine](/en/documentation/products/secure/firewall/rules-engine/) will allow you to determine the rules it should execute in specific scenarios.
+Implementing rules in your firewall using [Rules Engine](/en/documentation/secure/firewall/reference/rules-engine/) will allow you to determine the rules it should execute in specific scenarios.
 
 This guide demonstrates the process of creating a rule with a practical example of verifying the existence of a certificate and returning a custom response when there isn't one. This behavior is useful in scenarios such as adjusting your policies to comply with BACEN requirements.
 
 :::note
-There are different criteria that require different Firewall modules. Make sure you have the [right module](/en/documentation/products/secure/firewall/rules-engine/#criteria) activated to create your rules.
+There are different criteria that require different Firewall modules. Make sure you have the [right module](/en/documentation/secure/firewall/reference/rules-engine/#criteria) activated to create your rules.
 :::
 
 ---
@@ -29,7 +29,7 @@ There are different criteria that require different Firewall modules. Make sure 
 <Fragment slot="panel.console">
 To create a rule:
 
-1. Access [Azion Console](/en/documentation/products/guides/how-to-access-azion-console/) > **Firewall**.
+1. Access [Azion Console](/en/documentation/account/guides/how-to-access-azion-console/) > **Firewall**.
 2. Select the firewall in which you want to configure the rule.
 3. Click the **Rules Engine** tab.
 4. Click the **+ Rule** button.
@@ -46,7 +46,7 @@ To create a rule:
 </Fragment>
 
 <Fragment slot="panel.api">
-1. Run the following `POST` request to create a rule, replacing `[TOKEN VALUE]` with your [personal token](/en/documentation/products/guides/personal-tokens/) and the `<edge_firewall_id>` variable with your firewall id value:
+1. Run the following `POST` request to create a rule, replacing `[TOKEN VALUE]` with your [personal token](/en/documentation/account/guides/personal-tokens/) and the `<edge_firewall_id>` variable with your firewall id value:
 
 <Code lang="bash" code={`
 curl --request POST \
@@ -136,6 +136,6 @@ Check the [Azion API documentation](https://api.azion.com/) to know more about a
 ---
 
 :::tip
-If you need to forward the authenticated client's identity to your origin server using mTLS — for example, passing the client certificate Common Name (CN) via the `client_cn` header — use [Rules Engine for Applications](/en/documentation/products/build/applications/rules-engine/) with the `${ssl_client_s_dn_parsed}` variable and the **Add Request Header** behavior. See [Specifying mTLS variables in HTTP headers](/en/documentation/products/guides/secure/mtls/#specifying-mtls-variables-in-http-headers) for a complete guide.
+If you need to forward the authenticated client's identity to your origin server using mTLS — for example, passing the client certificate Common Name (CN) via the `client_cn` header — use [Rules Engine for Applications](/en/documentation/build/applications/reference/rules-engine/) with the `${ssl_client_s_dn_parsed}` variable and the **Add Request Header** behavior. See [Specifying mTLS variables in HTTP headers](/en/documentation/secure/firewall/guides/mtls/#specifying-mtls-variables-in-http-headers) for a complete guide.
 :::
 

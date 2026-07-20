@@ -2,7 +2,7 @@
 title: Como excluir um banco de dados do SQL Database
 description: >-
   Aprenda como excluir um banco de dados do SQL Database.
-permalink: /documentacao/produtos/store/sql/deletar-database/
+permalink: /documentacao/store/sql-database/guides/deletar-database/
 meta_tags: >-
   SQL Database, SQL, database, delete, API
 namespace: docs_store_journey_sql_delete_database
@@ -13,7 +13,7 @@ Este guia demonstra como usar o **SQL Database** da Azion para excluir um banco 
 
 ## Exclua um banco de dados
 
-Execute a seguinte requisição `DELETE` no seu terminal, substituindo `[TOKEN VALUE]` pelo seu [personal token](/pt-br/documentacao/produtos/guias/personal-tokens/) e `{id_database}` pelo ID do banco de dados que você deseja excluir:
+Execute a seguinte requisição `DELETE` no seu terminal, substituindo `[TOKEN VALUE]` pelo seu [personal token](/pt-br/documentacao/account/guides/personal-tokens/) e `{id_database}` pelo ID do banco de dados que você deseja excluir:
 
 ```bash
 curl --location --request DELETE 'https://api.azion.com/v4/edge_sql/databases/{id_database}' \
