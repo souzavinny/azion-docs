@@ -1324,7 +1324,7 @@ export default [
 		header: true,
 		anchor: true,
 		type: 'learn',
-		icon: "ai ai-store-pillar",
+		icon: "ai ai-store",
 		key: "sec/store",
 		items: [
 			{
