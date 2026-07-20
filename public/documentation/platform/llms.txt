@@ -1,0 +1,11 @@
+# Azion Docs — platform
+
+> All pages of the platform section. Root index: https://www.azion.com/en/llms.txt
+
+- [Strengthen Governance, Risk & Compliance](https://www.azion.com/en/documentation/platform/compliance/governance-risk-compliance/): Azion supports compliance efforts at multiple levels by offering robust security tools, certifications, and a flexible infrastructure.
+- [PCI Compliance](https://www.azion.com/en/documentation/platform/compliance/pci-dss-certification/): As a PCI-DSS 4.0 Level 1 Service Provider, Azion keeps your valuable data secure across all edge locations, without compromising your site's performance.
+- [SOC Compliance](https://www.azion.com/en/documentation/platform/compliance/soc/): Azion receives biannual SOC 2 Type 2 and SOC 3 reports, which demonstrate that the security controls are continuously audited over the course of the year.
+- [Azion Network Program](https://www.azion.com/en/documentation/platform/network-program/): Founded in 2011, Azion enables you to build and run serverless applications at the edge of the network or your own premisses, closer to users and devices.
+- [Azion Web Platform Overview](https://www.azion.com/en/documentation/platform/overview/): This documentation introduces the Azion Web Platform, which unifies app development, security, and observability on a global infrastructure so you can ship faster with performance and control.
+- [Pricing](https://www.azion.com/en/documentation/platform/pricing/): Check prices for Azion products, services, and Support.
+- [Shared Responsibility Model](https://www.azion.com/en/documentation/platform/shared-responsibility/): This document highlights the roles and responsibilities of each party when organizations use the Azion Platform.

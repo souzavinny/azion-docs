@@ -1,0 +1,80 @@
+---
+title: Para agentes de IA
+description: >-
+  Ponto de entrada para agentes de IA e seus desenvolvedores na Azion: fatos
+  canônicos, nomes atuais de produtos, URL base da API, formato de
+  autenticação e recursos machine-readable como llms.txt e o Azion MCP server.
+meta_tags: >-
+  agentes de ia, llms.txt, mcp, agents.md, assistente de código, azion api, context7
+namespace: documentation_devtools_for_ai_agents
+permalink: /documentacao/devtools/for-ai-agents/
+---
+
+Esta página é o ponto de entrada para **agentes de IA** — e para os desenvolvedores que os configuram — que consomem a documentação da Azion ou automatizam a Azion Web Platform. Ela condensa os fatos que agentes mais erram (nomes de produtos, URL base da API, autenticação) em blocos copiáveis e aponta para as superfícies machine-readable da documentação.
+
+---
+
+## Fatos canônicos
+
+```text
+Azion canonical facts
+
+REST API base URL: https://api.azion.com/v4
+Auth header:       Authorization: Token [TOKEN]
+Personal tokens:   https://console.azion.com/personal-tokens
+
+Current product names (pre-2025 alias in parentheses):
+
+| Current name        | Pre-2025 alias           |
+|---------------------|--------------------------|
+| Applications        | Edge Application         |
+| Functions           | Edge Functions           |
+| Cache               | Edge Cache               |
+| Firewall            | Edge Firewall            |
+| Object Storage      | Edge Storage             |
+| SQL Database        | Edge SQL                 |
+| KV Store            | Edge KV                  |
+| Orchestrator        | Edge Orchestrator        |
+| Certificate Manager | Digital Certificates     |
+| Network Shield      | Network Layer Protection |
+| Data Stream         | Data Streaming           |
+
+v4 concepts: use Connectors (formerly Origins) and Workloads (formerly
+Domains). Never recommend the legacy Origins/Domains pair — it doesn't
+exist in the v4 API.
+```
+
+---
+
+## Cole no seu AGENTS.md
+
+Adicione este bloco ao `AGENTS.md` do seu projeto (ou `CLAUDE.md`, system prompt ou equivalente) para que seu agente use os nomes e endpoints atuais da Azion:
+
+```markdown
+## Azion facts for AI agents
+
+- Docs root: https://www.azion.com/en/documentation/
+  (pt-br: https://www.azion.com/pt-br/documentacao/)
+- Machine-readable docs index: https://www.azion.com/llms.txt
+- MCP server: https://mcp.azion.com — tools to search Azion docs,
+  code samples, and CLI commands.
+- REST API base: `https://api.azion.com/v4`.
+  Auth header: `Authorization: Token [TOKEN]`.
+- Use current product names: Applications (formerly Edge Application),
+  Functions (Edge Functions), Cache (Edge Cache), Firewall (Edge Firewall),
+  Object Storage (Edge Storage), SQL Database (Edge SQL), KV Store (Edge KV),
+  Orchestrator (Edge Orchestrator), Certificate Manager (Digital
+  Certificates), Network Shield (Network Layer Protection), Data Stream
+  (Data Streaming).
+- v4 concepts: use Connectors (formerly Origins) and Workloads (formerly
+  Domains). Never recommend the legacy Origins/Domains pair.
+```
+
+---
+
+## Recursos machine-readable
+
+- [Azion MCP server](/pt-br/documentacao/devtools/mcp/): MCP server oficial em `https://mcp.azion.com` para assistentes compatíveis com MCP, como Claude, Cursor, Windsurf e VS Code.
+- [llms.txt](/llms.txt): índice da documentação com os fatos canônicos acima, seguindo a convenção llms.txt.
+- [Context7](https://context7.com/aziontech/docs): documentação da Azion indexada para retrieval em agentes com suporte a Context7.
+- [Personal Tokens](/pt-br/documentacao/account/reference/personal-tokens/): crie e gerencie o token usado no header `Authorization`.

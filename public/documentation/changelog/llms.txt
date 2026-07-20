@@ -1,0 +1,6 @@
+# Azion Docs — changelog
+
+> All pages of the changelog section. Root index: https://www.azion.com/en/llms.txt
+
+- [Release notes](https://www.azion.com/en/documentation/changelog/): Check the latest changes and release notes in the Azion Web Platform, Azion API, CLI, and other channels and products.
+- [Changelog previous years](https://www.azion.com/en/documentation/changelog/archive/): Explore major updates for Azion's products and services, including Edge Applications, Data Stream, Edge Firewall adjustments and API V3 developments.

@@ -1,0 +1,16 @@
+# Azion Docs — services
+
+> All pages of the services section. Root index: https://www.azion.com/en/llms.txt
+
+- [Best Practices Review](https://www.azion.com/en/documentation/services/best-practices-review/): Offers a thorough evaluation of your infrastructure and provides expert recommendations to optimize performance, security, and efficiency.
+- [Business Events Support](https://www.azion.com/en/documentation/services/business-events-support/): Business Events Support refers to the support and assistance provided to assist customers during events, in real time.
+- [Instructor-Led Training](https://www.azion.com/en/documentation/services/instructor-led-training/): Instructor-Led Training offers learning experiences adapted to your specific needs.
+- [Integration Services](https://www.azion.com/en/documentation/services/integration-services/): The fastest and safest way to migrate your content, web applications, and APIs to Azion, no matter how complex and resource-intensive your infrastructure is.
+- [Managed Configurations](https://www.azion.com/en/documentation/services/managed-configurations/): Managed Configurations employs the expertise of a team of experienced engineers to tackle certain day-to-day tasks on your behalf, such as configuring and maintaining your configurations.
+- [Security Response Team](https://www.azion.com/en/documentation/services/security-response-team/): Managed service that authorizes Azion to impose technical measures available on the Azion's platform to control or mitigate DDoS attacks, even if such measures may result in an eventual performance degradation.
+- [Slack Channel](https://www.azion.com/en/documentation/services/slack-channel/): The Slack Channel service refers to support and assistance provided to assist customers through written communication.
+- [Technical Support](https://www.azion.com/en/documentation/services/support/): At Azion, you're served by a team of engineers who are specialized in performance, security, high availability, and scalability.
+- [Get help](https://www.azion.com/en/documentation/services/support/get-help/): See how to find help while using Azion products and services.
+- [How to open a Support Ticket](https://www.azion.com/en/documentation/services/support/guides/open-ticket/): Use tickets to ask questions, send suggestions, or report issues that occur while using Azion products.
+- [Azion HTTP Error Status Codes](https://www.azion.com/en/documentation/services/support/http-error-status-codes/): These are the most common web and server errors and how to solve them.
+- [Technical Account Manager](https://www.azion.com/en/documentation/services/technical-account-manager/): The TAM acts as a consultant, proactively providing strategic technical guidance to help accelerate the digital transformation and edge computing journey, and provide insights to maximize infrastructure investment
