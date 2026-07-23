@@ -10,6 +10,8 @@ export const baseSchema = z.object({
 	menu_namespace: z.string().optional().default('nav'),
 	meta_tags: z.string().optional(),
 	og_image: z.string().optional(),
+	/** page provides its own H1 (e.g. a hero) — the layout must not render the title */
+	hide_title: z.boolean().optional(),
 	i18nReady: z.boolean().default(false),
 	githubURL: z.string().url().optional(),
 	hasREADME: z.boolean().optional(),
