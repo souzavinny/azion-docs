@@ -42,12 +42,33 @@ PRODUCT_LABELS = {
 }
 ORDER_HINT = {"overview": 0, "quickstart": 1, "guides": 2, "reference": 3, "concepts": 4, "v3": 9, "archive": 9}
 
-# Subárvores profundas colapsadas em um link de hub (as páginas internas têm menu próprio):
+# Subárvores profundas colapsadas em um link de hub (as páginas internas têm menu próprio
+# ou são catálogo/legado que não pertence à sidebar):
 # key -> (label EN, label PT, permalink EN do hub)
 COLLAPSE_TO_LEAF = {
     "build/functions/runtime-apis": ("Runtime APIs", "Runtime APIs",
                                      "/documentation/build/functions/runtime-apis/overview/"),  # runtimeMenu (113 páginas)
+    "build/ai-inference/reference/models": ("Models", "Models",
+                                            "/documentation/build/ai-inference/reference/models/"),
+    "build/applications/reference/v3": ("v3 (legacy)", "v3 (legado)",
+                                        "/documentation/build/applications/reference/v3/"),
 }
+# Sub-grupos rasos demais para merecer um toggle: filhos sobem um nível
+# (o filho /overview herda o rótulo do grupo).
+HOIST = {
+    "build/applications/guides/troubleshooting",
+    "build/applications/reference/cache",
+    "build/applications/reference/domains",
+    "secure/firewall/reference/network-shield",
+    "services/support/guides",
+}
+# Catálogos sem página-hub: fora da sidebar até o catálogo filtrável (D6);
+# as páginas seguem alcançáveis por busca/conteúdo e aparecem no orphan report.
+DROP = {"marketplace/integrations", "marketplace/templates"}
+# Toggles Guides/Reference/Concepts curados: overview/first-steps/quickstart sempre;
+# demais folhas ranqueadas por links internos recebidos (inb_total do de-para).
+CURATE_SEGS = {"guides", "reference", "concepts"}
+CURATE_MAX = 8
 
 def read_frontmatter(path):
     txt = open(path, encoding="utf-8", errors="ignore").read()
@@ -213,8 +234,58 @@ menu = {
     ],
 }
 
+# ---- curadoria (aplicada sobre a estrutura montada) ----
+
 def count(items):
     return sum(1 + count(i.get("items", [])) for i in items)
+
+import csv
+INB = {}
+try:
+    for r in csv.DictReader(open(os.path.join(ROOT, "diagnosis/de-para-doc-azion.csv"), encoding="utf-8")):
+        if r["lang"] == "en":
+            perm = r["novo_lar"].replace("/en", "", 1).rstrip("/") + "/"
+            INB[perm] = int(r["inb_total"] or 0)
+except FileNotFoundError:
+    pass  # sem CSV: curadoria vira só corte alfabético estável
+
+stats = {"dropped": 0, "curated": 0, "hoisted": 0}
+
+def protected(entry):
+    seg = entry["key"].rsplit("/", 1)[-1]
+    return seg == "overview" or "first-steps" in seg or seg == "quickstart"
+
+def post_process(items):
+    out = []
+    for it in items:
+        if it["key"] in DROP:
+            stats["dropped"] += count([it])
+            continue
+        if it.get("items"):
+            it["items"] = post_process(it["items"])
+        if it["key"] in HOIST and it.get("items"):
+            stats["hoisted"] += 1
+            for c in it["items"]:
+                if c["key"] == f"{it['key']}/overview":
+                    c["label"] = it["label"]
+            out.extend(it["items"])
+            continue
+        seg = it["key"].rsplit("/", 1)[-1]
+        if (not it.get("slug") and it.get("items") and seg in CURATE_SEGS):
+            leaves = [c for c in it["items"] if not c.get("items")]
+            if len(leaves) > CURATE_MAX:
+                keep = [c for c in leaves if protected(c)]
+                rest = sorted((c for c in leaves if not protected(c)),
+                              key=lambda c: -INB.get(c.get("slug", {}).get("en", ""), 0))
+                keep += rest[:max(0, CURATE_MAX - len(keep))]
+                keep_keys = {c["key"] for c in keep}
+                stats["curated"] += len(leaves) - len(keep)
+                it["items"] = [c for c in it["items"] if c.get("items") or c["key"] in keep_keys]
+        out.append(it)
+    return out
+
+for g in menu["groups"]:
+    g["items"] = post_process(g["items"])
 
 out = os.path.join(ROOT, "src/i18n/nav.menu.json")
 open(out, "w", encoding="utf-8").write(json.dumps(menu, ensure_ascii=False, indent=1) + "\n")
@@ -222,3 +293,4 @@ total = sum(count(g["items"]) for g in menu["groups"])
 for g in menu["groups"]:
     print(f"{g['key']:20} {count(g['items']):4} entries")
 print(f"{'TOTAL':20} {total:4} entries (+{len(menu['mobileAnchors'])} mobile anchors) -> {os.path.relpath(out, ROOT)}")
+print(f"curadoria: {stats['dropped']} dropped (catálogos), {stats['curated']} podadas (toggles), {stats['hoisted']} hoisted")
