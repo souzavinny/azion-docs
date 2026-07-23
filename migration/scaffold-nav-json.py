@@ -31,7 +31,6 @@ OVERVIEW_CHILD_LABELS = {
     "agreements/tos": ("Current version", "Versão atual"),
     "agreements/sla": ("Current version", "Versão atual"),
     "agreements/customer-agreement": ("Current version", "Versão atual"),
-    "get-started/journeys/protect": None,
 }
 PRODUCT_LABELS = {
     "sql-database": "SQL Database", "kv-store": "KV Store", "edge-dns": "Edge DNS",
@@ -182,11 +181,57 @@ def find(items, key):
 
 # ---- montagem dos grupos (IA aprovada; razões no plano/PR) ----
 
+def take(items, key):
+    i, _ = find(items, key)
+    return items.pop(i)
+
+# Start: jornada enxuta — Overview -> First deploy -> Migrate -> Go live.
+# Frameworks saem da sidebar (cards na página-hub); Journeys dissolve em Build/Secure;
+# sub-páginas do first-deploy e start-with-a-template ficam fora (alcançáveis por conteúdo).
+gs_items = section_items("get-started")
+journeys = take(gs_items, "get-started/journeys")
+frameworks = take(gs_items, "get-started/frameworks")
+
+def strip_seo(items):
+    for it in items:
+        it["label"] = localized(*(it["label"].get(l, it["label"]["en"]).split(" | ")[0].strip()
+                                  for l in ("en", "pt-br")))
+        strip_seo(it.get("items", []))
+
+migrate = take(gs_items, "get-started/migrate")
+strip_seo(migrate["items"])
+
+start_items = [
+    take(gs_items, "get-started/overview"),
+    {"key": "get-started/first-deploy", "label": localized("First deploy", "Primeiro deploy"),
+     "slug": slug_of("/documentation/get-started/first-deploy/")},
+    migrate,
+    {"key": "get-started/production-checklist", "label": localized("Go live", "Entre em produção"),
+     "slug": slug_of("/documentation/get-started/production-checklist/")},
+]
+
 build_items = section_items("build")
+# jornada "Build an application" logo após o Overview do Build
+launch = take(journeys["items"], "get-started/journeys/launch")
+i_ov, _ = find(build_items, "build/overview")
+build_items.insert(i_ov + 1, launch)
+# ferramentas de ambiente de desenvolvimento (vindas do antigo toggle Frameworks)
+TOOLING = ["cli", "code-editor", "environment-variables", "go", "javascript",
+           "local-dev", "runtime-apis", "terraform-provider"]
+build_items.append({"key": "build/local-dev", "label": localized("Local development", "Desenvolvimento local"),
+                    "items": [take(frameworks["items"], f"get-started/frameworks/{k}") for k in TOOLING]})
 # Deploy vira folha dentro de Build (deploy = parte do fluxo de build/ship);
 deploy_items = section_items("deploy")
 _, deploy_ov = find(deploy_items, "deploy/overview")
 build_items.append({"key": "deploy/overview", "label": localized("Deploy", None), "slug": deploy_ov["slug"]})
+
+# jornada "Secure an application" (ex-journeys/protect) logo após o Overview do Secure
+secure_items = section_items("secure")
+protect = take(journeys["items"], "get-started/journeys/protect")
+p_ns = pages["en"]["/documentation/get-started/journeys/protect/"][1]
+protect["label"] = localized("Secure an application", ns_pt[p_ns][1] if p_ns in ns_pt else None)
+i_ov, _ = find(secure_items, "secure/overview")
+secure_items.insert(i_ov + 1, protect)
 
 # Orchestrator = ferramenta de ops -> Manage (o grupo Dev Tools saiu da sidebar:
 # duplicava o menu Dev Tools da barra de navegação superior)
@@ -222,10 +267,10 @@ menu = {
          "slug": {"en": "/documentation/devtools/", "pt-br": "/documentacao/devtools/"}},
     ],
     "groups": [
-        {"key": "grp/get-started", "ui": "menu.getStarted", "icon": "pi pi-bolt", "items": section_items("get-started")},
+        {"key": "grp/get-started", "ui": "menu.start", "icon": "pi pi-bolt", "items": start_items},
         {"key": "grp/build", "ui": "menu.build", "icon": "ai ai-build-pillar", "items": build_items},
         {"key": "grp/store", "ui": "menu.store", "icon": "ai ai-store", "items": section_items("store")},
-        {"key": "grp/secure", "ui": "menu.secure", "icon": "ai ai-secure-pillar", "items": section_items("secure")},
+        {"key": "grp/secure", "ui": "menu.secure", "icon": "ai ai-secure-pillar", "items": secure_items},
         {"key": "grp/observe", "ui": "menu.observe", "icon": "ai ai-observe-pillar", "items": section_items("observe")},
         {"key": "grp/resources", "ui": "menu.resources", "icon": "pi pi-book", "items": resources_items},
         {"key": "grp/manage", "ui": "menu.manage", "icon": "pi pi-user", "items": manage_items},

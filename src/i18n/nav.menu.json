@@ -36,7 +36,7 @@
  "groups": [
   {
    "key": "grp/get-started",
-   "ui": "menu.getStarted",
+   "ui": "menu.start",
    "icon": "pi pi-bolt",
    "items": [
     {
@@ -56,414 +56,10 @@
       "en": "First deploy",
       "pt-br": "Primeiro deploy"
      },
-     "items": [
-      {
-       "key": "get-started/first-deploy/overview",
-       "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
-       },
-       "slug": {
-        "en": "/documentation/get-started/first-deploy/",
-        "pt-br": "/documentacao/get-started/first-deploy/"
-       }
-      },
-      {
-       "key": "get-started/first-deploy/cli",
-       "label": {
-        "en": "Hosting an Edge Site",
-        "pt-br": "Hospede um Edge Site"
-       },
-       "slug": {
-        "en": "/documentation/get-started/first-deploy/cli/",
-        "pt-br": "/documentacao/get-started/first-deploy/cli/"
-       }
-      },
-      {
-       "key": "get-started/first-deploy/github",
-       "label": {
-        "en": "Github"
-       },
-       "items": [
-        {
-         "key": "get-started/first-deploy/github/azion-github-app",
-         "label": {
-          "en": "How to manage the Azion GitHub App",
-          "pt-br": "Como gerenciar a Azion GitHub App"
-         },
-         "slug": {
-          "en": "/documentation/get-started/first-deploy/github/azion-github-app/",
-          "pt-br": "/documentacao/get-started/first-deploy/github/azion-github-app/"
-         }
-        },
-        {
-         "key": "get-started/first-deploy/github/import-an-existing-project-from-github",
-         "label": {
-          "en": "Import & Deploy a Project from GitHub",
-          "pt-br": "Importe e implante um projeto do GitHub"
-         },
-         "slug": {
-          "en": "/documentation/get-started/first-deploy/github/import-an-existing-project-from-github/",
-          "pt-br": "/documentacao/get-started/first-deploy/github/importar-um-projeto-existente-do-github/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "get-started/first-deploy/template",
-       "label": {
-        "en": "Use a template via Azion Console",
-        "pt-br": "Usar um template via Azion Console"
-       },
-       "slug": {
-        "en": "/documentation/get-started/first-deploy/template/",
-        "pt-br": "/documentacao/get-started/first-deploy/template/"
-       }
-      }
-     ]
-    },
-    {
-     "key": "get-started/frameworks",
-     "label": {
-      "en": "Frameworks"
-     },
-     "items": [
-      {
-       "key": "get-started/frameworks/overview",
-       "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/overview/",
-        "pt-br": "/documentacao/get-started/frameworks/overview/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/angular",
-       "label": {
-        "en": "How to build with Angular",
-        "pt-br": "Deploy de aplicação Jamstack com Angular"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/angular/",
-        "pt-br": "/documentacao/get-started/frameworks/angular/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/astro",
-       "label": {
-        "en": "How to build with Astro",
-        "pt-br": "Deploy de aplicação Jamstack com Astro"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/astro/",
-        "pt-br": "/documentacao/get-started/frameworks/astro/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/cli",
-       "label": {
-        "en": "Develop with Azion CLI",
-        "pt-br": "Desenvolva com a Azion CLI"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/cli/",
-        "pt-br": "/documentacao/build/applications/guides/cli/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/code-editor",
-       "label": {
-        "en": "Functions Code Editor Overview",
-        "pt-br": "Visão geral do Functions Code Editor"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/code-editor/",
-        "pt-br": "/documentacao/build/applications/guides/code-editor/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/docusaurus",
-       "label": {
-        "en": "How to build with Docusaurus",
-        "pt-br": "Deploy de aplicação Jamstack com Docusaurus"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/docusaurus/",
-        "pt-br": "/documentacao/get-started/frameworks/docusaurus/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/eleventy",
-       "label": {
-        "en": "How to build with Eleventy",
-        "pt-br": "Deploy de aplicação Jamstack com Eleventy"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/eleventy/",
-        "pt-br": "/documentacao/get-started/frameworks/eleventy/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/environment-variables",
-       "label": {
-        "en": "Build with Environment Variables",
-        "pt-br": "Construa com Environment Variables"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/environment-variables/",
-        "pt-br": "/documentacao/build/applications/guides/environment-variables/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/gatsby",
-       "label": {
-        "en": "How to build with Gatsby",
-        "pt-br": "Deploy de aplicação Jamstack com Gatsby"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/gatsby/",
-        "pt-br": "/documentacao/get-started/frameworks/gatsby/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/go",
-       "label": {
-        "en": "Build with Azion Go SDK",
-        "pt-br": "Construa com o Azion Go SDK"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/go/",
-        "pt-br": "/documentacao/build/applications/guides/go/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/hexo",
-       "label": {
-        "en": "How to build with Hexo",
-        "pt-br": "Deploy de aplicação Jamstack com Hexo"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/hexo/",
-        "pt-br": "/documentacao/get-started/frameworks/hexo/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/hono",
-       "label": {
-        "en": "How to build with Hono",
-        "pt-br": "Deploy de aplicação Jamstack com Hono"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/hono/",
-        "pt-br": "/documentacao/get-started/frameworks/hono/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/hugo",
-       "label": {
-        "en": "How to build with Hugo",
-        "pt-br": "Deploy de aplicação Jamstack com Hugo"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/hugo/",
-        "pt-br": "/documentacao/get-started/frameworks/hugo/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/javascript",
-       "label": {
-        "en": "How to build functions",
-        "pt-br": "Como escrever functions"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/javascript/",
-        "pt-br": "/documentacao/build/applications/guides/javascript/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/jekyll",
-       "label": {
-        "en": "How to build with Jekyll",
-        "pt-br": "Como realizar o deploy de uma aplicação Jamstack com Jekyll"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/jekyll/",
-        "pt-br": "/documentacao/get-started/frameworks/jekyll/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/local-dev",
-       "label": {
-        "en": "Local development",
-        "pt-br": "Desenvolvimento local com a Azion CLI"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/local-dev/",
-        "pt-br": "/documentacao/build/applications/guides/local-dev/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/next",
-       "label": {
-        "en": "How to build with Next.js",
-        "pt-br": "Deploy de aplicação Jamstack com Next"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/next/",
-        "pt-br": "/documentacao/get-started/frameworks/next/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/nextal",
-       "label": {
-        "en": "How to build with Nextal",
-        "pt-br": "Como desenvolver com Nextal"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/nextal/",
-        "pt-br": "/documentacao/get-started/frameworks/nextal/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/react",
-       "label": {
-        "en": "How to build with React",
-        "pt-br": "Deploy de aplicação Jamstack com React"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/react/",
-        "pt-br": "/documentacao/get-started/frameworks/react/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/runtime-apis",
-       "label": {
-        "en": "Build with Azion Runtime",
-        "pt-br": "Construa com o Azion Runtime"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/runtime-apis/",
-        "pt-br": "/documentacao/build/applications/guides/runtime/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/svelte",
-       "label": {
-        "en": "How to build with Svelte",
-        "pt-br": "Deploy de aplicação Jamstack com Svelte"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/svelte/",
-        "pt-br": "/documentacao/get-started/frameworks/svelte/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/terraform-provider",
-       "label": {
-        "en": "Build with Azion Terraform Provider",
-        "pt-br": "Construa com o Azion Terraform Provider"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/terraform-provider/",
-        "pt-br": "/documentacao/build/applications/guides/terraform-provider/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/vite",
-       "label": {
-        "en": "How to build with VitePress",
-        "pt-br": "Deploy de aplicação Jamstack com VitePress"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/vite/",
-        "pt-br": "/documentacao/get-started/frameworks/vite/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/vue",
-       "label": {
-        "en": "How to build with Vue",
-        "pt-br": "Deploy de aplicação Jamstack com Vue"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/vue/",
-        "pt-br": "/documentacao/get-started/frameworks/vue/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/wasm",
-       "label": {
-        "en": "How to build with WebAssembly",
-        "pt-br": "Como construir funções no edge com WebAssembly"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/wasm/",
-        "pt-br": "/documentacao/build/applications/guides/wasm/"
-       }
-      }
-     ]
-    },
-    {
-     "key": "get-started/journeys",
-     "label": {
-      "en": "Journeys"
-     },
-     "items": [
-      {
-       "key": "get-started/journeys/launch",
-       "label": {
-        "en": "Build an application",
-        "pt-br": "Criar uma aplicação"
-       },
-       "slug": {
-        "en": "/documentation/get-started/journeys/launch/",
-        "pt-br": "/documentacao/build/applications/guides/criar-uma-aplicacao/"
-       }
-      },
-      {
-       "key": "get-started/journeys/protect",
-       "label": {
-        "en": "Protect"
-       },
-       "items": [
-        {
-         "key": "get-started/journeys/protect/overview",
-         "label": {
-          "en": "Secure an application",
-          "pt-br": "Proteja sua aplicação"
-         },
-         "slug": {
-          "en": "/documentation/get-started/journeys/protect/",
-          "pt-br": "/documentacao/secure/firewall/guides/proteja-aplicacao/"
-         }
-        },
-        {
-         "key": "get-started/journeys/protect/dns",
-         "label": {
-          "en": "Secure DNS",
-          "pt-br": "Proteja seu DNS"
-         },
-         "slug": {
-          "en": "/documentation/get-started/journeys/protect/dns/",
-          "pt-br": "/documentacao/secure/firewall/guides/proteja-dns/"
-         }
-        },
-        {
-         "key": "get-started/journeys/protect/infrastructure",
-         "label": {
-          "en": "Secure an infrastructure",
-          "pt-br": "Proteja sua infraestrutura"
-         },
-         "slug": {
-          "en": "/documentation/get-started/journeys/protect/infrastructure/",
-          "pt-br": "/documentacao/secure/firewall/guides/proteja-infraestrutura/"
-         }
-        }
-       ]
-      }
-     ]
+     "slug": {
+      "en": "/documentation/get-started/first-deploy/",
+      "pt-br": "/documentacao/get-started/first-deploy/"
+     }
     },
     {
      "key": "get-started/migrate",
@@ -485,8 +81,8 @@
       {
        "key": "get-started/migrate/akamai",
        "label": {
-        "en": "Migrate from Akamai to Azion | Full Guide",
-        "pt-br": "Migre da Akamai para a Azion | Guia completo"
+        "en": "Migrate from Akamai to Azion",
+        "pt-br": "Migre da Akamai para a Azion"
        },
        "slug": {
         "en": "/documentation/get-started/migrate/akamai/",
@@ -496,8 +92,8 @@
       {
        "key": "get-started/migrate/aws",
        "label": {
-        "en": "Migrate from AWS to Azion | Full Guide",
-        "pt-br": "Migre da AWS para a Azion | Guia completo"
+        "en": "Migrate from AWS to Azion",
+        "pt-br": "Migre da AWS para a Azion"
        },
        "slug": {
         "en": "/documentation/get-started/migrate/aws/",
@@ -507,8 +103,8 @@
       {
        "key": "get-started/migrate/cloudflare",
        "label": {
-        "en": "Migrate from Cloudflare to Azion | Full Guide",
-        "pt-br": "Migre da Cloudflare para a Azion | Guia completo"
+        "en": "Migrate from Cloudflare to Azion",
+        "pt-br": "Migre da Cloudflare para a Azion"
        },
        "slug": {
         "en": "/documentation/get-started/migrate/cloudflare/",
@@ -518,8 +114,8 @@
       {
        "key": "get-started/migrate/fastly",
        "label": {
-        "en": "Migrate from Fastly to Azion | Full Guide",
-        "pt-br": "Migre da Fastly para a Azion | Guia completo"
+        "en": "Migrate from Fastly to Azion",
+        "pt-br": "Migre da Fastly para a Azion"
        },
        "slug": {
         "en": "/documentation/get-started/migrate/fastly/",
@@ -529,8 +125,8 @@
       {
        "key": "get-started/migrate/vercel",
        "label": {
-        "en": "Migrate from Vercel to Azion | Complete migration guide for modern applications",
-        "pt-br": "Migre da Vercel para a Azion | Guia completo de migração"
+        "en": "Migrate from Vercel to Azion",
+        "pt-br": "Migre da Vercel para a Azion"
        },
        "slug": {
         "en": "/documentation/get-started/migrate/vercel/",
@@ -542,23 +138,12 @@
     {
      "key": "get-started/production-checklist",
      "label": {
-      "en": "Go live with Azion",
-      "pt-br": "Como ativar em produção"
+      "en": "Go live",
+      "pt-br": "Entre em produção"
      },
      "slug": {
       "en": "/documentation/get-started/production-checklist/",
       "pt-br": "/documentacao/get-started/ative-em-producao/"
-     }
-    },
-    {
-     "key": "get-started/start-with-a-template",
-     "label": {
-      "en": "Start with a template",
-      "pt-br": "Começar com um template"
-     },
-     "slug": {
-      "en": "/documentation/get-started/start-with-a-template/",
-      "pt-br": "/documentacao/get-started/comecar-com-um-template/"
      }
     }
    ]
@@ -577,6 +162,17 @@
      "slug": {
       "en": "/documentation/build/overview/",
       "pt-br": "/documentacao/build/overview/"
+     }
+    },
+    {
+     "key": "get-started/journeys/launch",
+     "label": {
+      "en": "Build an application",
+      "pt-br": "Criar uma aplicação"
+     },
+     "slug": {
+      "en": "/documentation/get-started/journeys/launch/",
+      "pt-br": "/documentacao/build/applications/guides/criar-uma-aplicacao/"
      }
     },
     {
@@ -1082,6 +678,103 @@
      ]
     },
     {
+     "key": "build/local-dev",
+     "label": {
+      "en": "Local development",
+      "pt-br": "Desenvolvimento local"
+     },
+     "items": [
+      {
+       "key": "get-started/frameworks/cli",
+       "label": {
+        "en": "Develop with Azion CLI",
+        "pt-br": "Desenvolva com a Azion CLI"
+       },
+       "slug": {
+        "en": "/documentation/get-started/frameworks/cli/",
+        "pt-br": "/documentacao/build/applications/guides/cli/"
+       }
+      },
+      {
+       "key": "get-started/frameworks/code-editor",
+       "label": {
+        "en": "Functions Code Editor Overview",
+        "pt-br": "Visão geral do Functions Code Editor"
+       },
+       "slug": {
+        "en": "/documentation/get-started/frameworks/code-editor/",
+        "pt-br": "/documentacao/build/applications/guides/code-editor/"
+       }
+      },
+      {
+       "key": "get-started/frameworks/environment-variables",
+       "label": {
+        "en": "Build with Environment Variables",
+        "pt-br": "Construa com Environment Variables"
+       },
+       "slug": {
+        "en": "/documentation/get-started/frameworks/environment-variables/",
+        "pt-br": "/documentacao/build/applications/guides/environment-variables/"
+       }
+      },
+      {
+       "key": "get-started/frameworks/go",
+       "label": {
+        "en": "Build with Azion Go SDK",
+        "pt-br": "Construa com o Azion Go SDK"
+       },
+       "slug": {
+        "en": "/documentation/get-started/frameworks/go/",
+        "pt-br": "/documentacao/build/applications/guides/go/"
+       }
+      },
+      {
+       "key": "get-started/frameworks/javascript",
+       "label": {
+        "en": "How to build functions",
+        "pt-br": "Como escrever functions"
+       },
+       "slug": {
+        "en": "/documentation/get-started/frameworks/javascript/",
+        "pt-br": "/documentacao/build/applications/guides/javascript/"
+       }
+      },
+      {
+       "key": "get-started/frameworks/local-dev",
+       "label": {
+        "en": "Local development",
+        "pt-br": "Desenvolvimento local com a Azion CLI"
+       },
+       "slug": {
+        "en": "/documentation/get-started/frameworks/local-dev/",
+        "pt-br": "/documentacao/build/applications/guides/local-dev/"
+       }
+      },
+      {
+       "key": "get-started/frameworks/runtime-apis",
+       "label": {
+        "en": "Build with Azion Runtime",
+        "pt-br": "Construa com o Azion Runtime"
+       },
+       "slug": {
+        "en": "/documentation/get-started/frameworks/runtime-apis/",
+        "pt-br": "/documentacao/build/applications/guides/runtime/"
+       }
+      },
+      {
+       "key": "get-started/frameworks/terraform-provider",
+       "label": {
+        "en": "Build with Azion Terraform Provider",
+        "pt-br": "Construa com o Azion Terraform Provider"
+       },
+       "slug": {
+        "en": "/documentation/get-started/frameworks/terraform-provider/",
+        "pt-br": "/documentacao/build/applications/guides/terraform-provider/"
+       }
+      }
+     ]
+    },
+    {
      "key": "deploy/overview",
      "label": {
       "en": "Deploy"
@@ -1428,6 +1121,48 @@
       "en": "/documentation/secure/overview/",
       "pt-br": "/documentacao/secure/overview/"
      }
+    },
+    {
+     "key": "get-started/journeys/protect",
+     "label": {
+      "en": "Secure an application",
+      "pt-br": "Proteja sua aplicação"
+     },
+     "items": [
+      {
+       "key": "get-started/journeys/protect/overview",
+       "label": {
+        "en": "Overview",
+        "pt-br": "Visão geral"
+       },
+       "slug": {
+        "en": "/documentation/get-started/journeys/protect/",
+        "pt-br": "/documentacao/secure/firewall/guides/proteja-aplicacao/"
+       }
+      },
+      {
+       "key": "get-started/journeys/protect/dns",
+       "label": {
+        "en": "Secure DNS",
+        "pt-br": "Proteja seu DNS"
+       },
+       "slug": {
+        "en": "/documentation/get-started/journeys/protect/dns/",
+        "pt-br": "/documentacao/secure/firewall/guides/proteja-dns/"
+       }
+      },
+      {
+       "key": "get-started/journeys/protect/infrastructure",
+       "label": {
+        "en": "Secure an infrastructure",
+        "pt-br": "Proteja sua infraestrutura"
+       },
+       "slug": {
+        "en": "/documentation/get-started/journeys/protect/infrastructure/",
+        "pt-br": "/documentacao/secure/firewall/guides/proteja-infraestrutura/"
+       }
+      }
+     ]
     },
     {
      "key": "secure/bot-manager",
