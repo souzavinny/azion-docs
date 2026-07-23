@@ -8,299 +8,527 @@ namespace: documentation_how_to
 permalink: /documentation/guides/
 ---
 
-## Getting Started
+import CardBaseClickable from 'azion-webkit/cardbaseclickable';
+import CardTitle from 'azion-webkit/cardtitle';
 
-- [How to configure cache policies for Applications](/en/documentation/build/applications/guides/cache-settings/)
-- [How to configure Advanced Cache Key for Applications](/en/documentation/build/applications/guides/advanced-cache-key/)
-- [How to configure mTLS on your Applications domains](/en/documentation/secure/certificate-manager/guides/mtls/)
-- [Customizing an error response page](/en/documentation/build/applications/guides/customizing-error-response-page/)
-- [How to send the client IP address through a dedicated HTTP header](/en/documentation/build/applications/guides/original-ip-header/)
-- [HTTP2](/en/documentation/build/applications/reference/main-settings/)
-- [How to check your WAF mode](/en/documentation/secure/waf/guides/how-to-check-your-waf-mode/)
-- [How to find the score of WAF blocked requests](/en/documentation/secure/waf/guides/how-to-find-waf-score/)
-- [How to mitigate the HTTPOxy vulnerability](/en/documentation/build/applications/guides/mitigating-a-vulnerability-httpoxy/)
-- [How to mitigate CVE-2025-29927: Next.js middleware authorization bypass](/en/documentation/secure/waf/guides/mitigate-cve-2025-29927-nextjs/)
-- [How to update Firewall](/en/documentation/secure/firewall/guides/how-to-update-your-firewall/)
-- [Setting up Cross-Origin Resource Sharing (CORS)](/en/documentation/build/applications/guides/cross-origin-resource-sharing-cors/)
-- [How to enable gzip compression for Applications](/en/documentation/build/applications/guides/gzip-compression/)
-- [How to create rules using Rules Engine for Applications](/en/documentation/build/applications/guides/rules-engine/)
-- [How to create IP, ASN, and geolocation blocklists with Network Lists](/en/documentation/secure/network-shield/guides/blocklists-ip-addresses-edge/)
-- [How to stage an application through the hosts file](/en/documentation/build/applications/guides/stage-applications-through-hosts-file/)
-- [How to create and modify an Object Storage bucket](/en/documentation/store/object-storage/guides/create-and-modify-bucket/)
-- [How to upload and download objects from an Object Storage bucket](/en/documentation/store/object-storage/guides/bucket-actions/)
-- [How to use an Object Storage bucket as the origin of a static application](/en/documentation/store/object-storage/guides/use-bucket-as-origin/)
-- [How to configure HTTP and HTTPS ports for origins and delivery address](/en/documentation/build/applications/guides/configure-ports/)
-- [Set up S3 credentials for Object Storage](/en/documentation/store/object-storage/guides/s3-protocol-for-object-storage/)
-- [How to enforce HLS cache for live streaming delivery](/en/documentation/build/applications/guides/enforce-hls-cache/)
-- [How to configure a WAF Custom Allowed Rule](/en/documentation/secure/waf/guides/configure-waf-allowed-rules/)
-- [How to configure WAF rules to allow requests with a specific cookie](/en/documentation/secure/waf/guides/waf-rules-for-specific-cookie/)
-- [How to install the Javascript Tag (JS TAG) through Azion](/en/documentation/marketplace/integrations/javascript-tag-js-tag/)
-- [How to generate a Let's Encrypt certificate for your domain](/en/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate/)
-- [How to generate a Let’s Encrypt certificate using the HTTP-01 challenge for your application via API](/en/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate-via-api/)
-- [How to migrate from Azion Terraform Provider v1.x to v2.0](/en/documentation/devtools/terraform/reference/terraform-migration-v3-to-v4/)
----
+Task-focused guides for building, securing, and operating on Azion. Pick what you want to do.
 
-## Migration Hub
+## Start and migrate
 
-- [Migrate from Akamai to Azion](/en/documentation/get-started/migrate/akamai/)
-- [Migrate from AWS to Azion](/en/documentation/get-started/migrate/aws/)
-- [Migrate from Cloudflare to Azion](/en/documentation/get-started/migrate/cloudflare/)
-- [Migrate from Fastly to Azion](/en/documentation/get-started/migrate/fastly/)
-- [Migrate from Vercel to Azion](/en/documentation/get-started/migrate/vercel/)
+Deploy your first application or bring an existing one from another provider.
 
----
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-6">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/get-started/first-deploy/" title="First deploy in 5 minutes">
+    <Fragment slot="content">
+      <i class='pi pi-bolt text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">First deploy in 5 minutes</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/get-started/start-with-a-template/" title="Start with a template">
+    <Fragment slot="content">
+      <i class='pi pi-bolt text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Start with a template</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/get-started/migrate/akamai/" title="Migrate from Akamai to Azion">
+    <Fragment slot="content">
+      <i class='pi pi-bolt text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Migrate from Akamai to Azion</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/get-started/migrate/aws/" title="Migrate from AWS to Azion">
+    <Fragment slot="content">
+      <i class='pi pi-bolt text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Migrate from AWS to Azion</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/get-started/migrate/cloudflare/" title="Migrate from Cloudflare to Azion">
+    <Fragment slot="content">
+      <i class='pi pi-bolt text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Migrate from Cloudflare to Azion</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/get-started/migrate/fastly/" title="Migrate from Fastly to Azion">
+    <Fragment slot="content">
+      <i class='pi pi-bolt text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Migrate from Fastly to Azion</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/get-started/migrate/vercel/" title="Migrate from Vercel to Azion">
+    <Fragment slot="content">
+      <i class='pi pi-bolt text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Migrate from Vercel to Azion</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+</div>
 
-## Build & Deploy
+## Configure and optimize delivery
 
-### Functions Demonstrations
+Tune caching, rules, and protocol behavior for your applications.
 
-- [How to build a browserless application with Functions](/en/documentation/build/functions/guides/browserless-functions/)
-- [How to implement file upload functionality with Functions](/en/documentation/build/functions/guides/file-upload-functions/)
-- [How to integrate Resend email service with Functions](/en/documentation/build/functions/guides/resend-email-functions/)
-- [How to build a RESTful API with Functions and SQL Database](/en/documentation/build/functions/guides/restful-tasks-api-functions/)
-- [How to handle Stripe webhooks with Functions](/en/documentation/build/functions/guides/stripe-webhooks-functions/)
-- [How to run serverless functions on Azion Console](/en/documentation/build/functions/guides/serverless-functions/)
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-6">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/applications/guides/cache-settings/" title="How to configure cache policies for Applications">
+    <Fragment slot="content">
+      <i class='pi pi-sliders-h text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to configure cache policies for Applications</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/applications/guides/advanced-cache-key/" title="How to configure Advanced Cache Key for Applications">
+    <Fragment slot="content">
+      <i class='pi pi-sliders-h text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to configure Advanced Cache Key for Applications</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/applications/guides/rules-engine/" title="Create Request & Response Rules">
+    <Fragment slot="content">
+      <i class='pi pi-sliders-h text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Create Request & Response Rules</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/applications/guides/cross-origin-resource-sharing-cors/" title="Cross-Origin Resource Sharing (CORS)">
+    <Fragment slot="content">
+      <i class='pi pi-sliders-h text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Cross-Origin Resource Sharing (CORS)</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/applications/guides/gzip-compression/" title="How to enable gzip compression for Applications">
+    <Fragment slot="content">
+      <i class='pi pi-sliders-h text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to enable gzip compression for Applications</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/applications/guides/customizing-error-response-page/" title="How to customize an error response page">
+    <Fragment slot="content">
+      <i class='pi pi-sliders-h text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to customize an error response page</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/applications/guides/configure-ports/" title="Configure HTTP and HTTPS Ports">
+    <Fragment slot="content">
+      <i class='pi pi-sliders-h text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Configure HTTP and HTTPS Ports</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/applications/guides/enforce-hls-cache/" title="How to enforce HLS cache for live streaming delivery">
+    <Fragment slot="content">
+      <i class='pi pi-sliders-h text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to enforce HLS cache for live streaming delivery</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/workloads/guides/create-azion-custom-domain/" title="How to Create an Azion Custom Domain">
+    <Fragment slot="content">
+      <i class='pi pi-sliders-h text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to Create an Azion Custom Domain</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+</div>
 
-### Azion Templates
+## Protect your application
 
-- [How to add Bot Manager Lite to an existent Firewall instance with a template](/en/documentation/marketplace/integrations/bot-manager-lite-integration-kit/)
-- [How to block Tor Exit Nodes requests using a template](/en/documentation/marketplace/integrations/bot-manager-lite-and-tor-block-starter-kit/)
-- [How to create an Artificial Intelligence agent with LangGraph](/en/documentation/marketplace/integrations/langgraph-ai-agent-boilerplate/)
-- [How to deploy a blog based on Gatsby using a template](/en/documentation/marketplace/integrations/gatsby-blog-starter-kit/)
-- [How to deploy a web application based on Clean Astro + Sanity application](/en/documentation/marketplace/integrations/clean-astro-sanity/)
-- [How to deploy a web application based on Butter using templates](/en/documentation/marketplace/integrations/butter-templates-collection/)
-- [How to deploy a web application based on VuePress using templates](/en/documentation/marketplace/integrations/vuepress-templates-collection/)
-- [How to deploy an Astro blog using a template](/en/documentation/marketplace/integrations/astro-blog-starter-kit/)
-- [How to deploy an e-commerce based on Astro using a template](/en/documentation/marketplace/integrations/astro-ecommerce-collection/)
-- [How to deploy an e-commerce based on Eleventy using a template](/en/documentation/marketplace/integrations/eleventy-ecommerce-collection/)
-- [How to deploy an e-commerce based on Hugo using a template](/en/documentation/marketplace/integrations/hugo-ecommerce-collection/)
-- [How to deploy an e-commerce based on Jekyll using a template](/en/documentation/marketplace/integrations/jekyll-ecommerce-collection/)
-- [How to deploy an e-commerce based on Next.js using a template](/en/documentation/marketplace/integrations/next-js-ecommerce-collection/)
-- [How to deploy and test HTMX on the edge with a template](/en/documentation/marketplace/integrations/htmx-boilerplate/)
-- [How to deploy applications with the Angular Boilerplate](/en/documentation/marketplace/integrations/angular-boilerplate/)
-- [How to deploy applications with the Astro Boilerplate](/en/documentation/marketplace/integrations/astro-boilerplate/)
-- [How to deploy applications with CosmicJS Agency Website](/en/documentation/marketplace/integrations/cosmic-agency-website/)
-- [How to deploy applications with Cosmic Simple Astro Blog](/en/documentation/marketplace/integrations/cosmic-simple-astro-blog/)
-- [How to deploy applications with Cosmic Simple Next.js Blog](/en/documentation/marketplace/integrations/cosmic-simple-next-blog/)
-- [How to deploy applications with the Gatsby Boilerplate](/en/documentation/marketplace/integrations/gatsby-boilerplate/)
-- [How to deploy applications with the Hexo Boilerplate](/en/documentation/marketplace/integrations/hexo-boilerplate/)
-- [How to deploy applications with the Next.js Static Boilerplate](/en/documentation/marketplace/integrations/nextjs-static-boilerplate/)
-- [How to deploy applications with the Preact JavaScript Boilerplate](/en/documentation/marketplace/integrations/preact-javascript-boilerplate/)
-- [How to deploy applications with the Preact TypeScript Boilerplate](/en/documentation/marketplace/integrations/preact-typescript-boilerplate/)
-- [How to deploy applications with the Qwik Boilerplate](/en/documentation/marketplace/integrations/qwik-boilerplate/)
-- [How to deploy applications with the Qwik Minimal template](/en/documentation/marketplace/integrations/qwik-minimal/)
-- [How to deploy applications with the React Boilerplate](/en/documentation/marketplace/integrations/react-boilerplate/)
-- [How to deploy applications with the Stencil Boilerplate](/en/documentation/marketplace/integrations/stencil-boilerplate/)
-- [How to deploy applications with the Vue Boilerplate](/en/documentation/marketplace/integrations/vue-boilerplate/)
-- [How to deploy applications with the VuePress Boilerplate](/en/documentation/marketplace/integrations/vuepress-boilerplate/)
-- [How to deploy applications with the Vue3/Vite Boilerplate](/en/documentation/marketplace/integrations/vue-vite-boilerplate/)
-- [How to deploy the Azion Starter Kit](/en/documentation/marketplace/integrations/azion-starter-kit/)
-- [How to deploy the Book Store React template](/en/documentation/marketplace/integrations/book-store-react/)
-- [How to deploy the DevsCard template](/en/documentation/marketplace/integrations/devscard/)
-- [How to deploy the Docusaurus JavaScript Boilerplate](/en/documentation/marketplace/integrations/docusaurus-javascript-boilerplate/)
-- [How to deploy the Docusaurus TypeScript Boilerplate](/en/documentation/marketplace/integrations/docusaurus-typescript-boilerplate/)
-- [How to deploy the Dynamic and Static File Optimization template](/en/documentation/marketplace/integrations/dynamic-and-static-file-optimization-template/)
-- [How to deploy the AI Inference Starter Kit template](/en/documentation/marketplace/integrations/ai-inference-starter-kit/)
-- [How to deploy the Application Proxy template](/en/documentation/marketplace/integrations/edge-application-proxy-template/)
-- [How to deploy the Function Starter Kit template](/en/documentation/marketplace/integrations/function-starter-kit/)
-- [How to deploy the SQL Database Starter Kit template](/en/documentation/marketplace/integrations/sqldatabase-starter-kit/)
-- [How to deploy the Gatsby E-commerce Theme template](/en/documentation/marketplace/integrations/gatsby-ecommerce-theme/)
-- [How to deploy the Hugo Boilerplate](/en/documentation/marketplace/integrations/hugo-boilerplate/)
-- [How to deploy the Image Optimization template](/en/documentation/marketplace/integrations/image-optimization-template/)
-- [How to deploy the Jekyll Boilerplate](/en/documentation/marketplace/integrations/jekyll-boilerplate/)
-- [How to deploy the MongoDB Atlas Boilerplate](/en/documentation/marketplace/integrations/mongodb-atlas/)
-- [How to deploy the Neon Database Starter Kit with Drizzle ORM template](/en/documentation/marketplace/integrations/neon-database-with-drizzle/)
-- [How to deploy the Nuxt 3 Static Boilerplate](/en/documentation/marketplace/integrations/nuxt-static-boilerplate/)
-- [How to deploy the Nuxt Content Template](/en/documentation/marketplace/integrations/nuxt-content/)
-- [How to deploy the Nuxt Notes Template](/en/documentation/marketplace/integrations/nuxt-notes/)
-- [How to deploy the Static Cache template](/en/documentation/marketplace/integrations/static-cache-template/)
-- [How to deploy the Static Cache + Videoteca Player template](/en/documentation/marketplace/integrations/static-cache-videoteca-template/)
-- [How to deploy the TiDB Starter Kit with Drizzle ORM template](/en/documentation/marketplace/integrations/tidb-with-drizzle/)
-- [How to deploy the Upstash Rate Limiting template](/en/documentation/marketplace/integrations/upstash-rate-limiting/)
-- [How to deploy the VitePress JavaScript Boilerplate](/en/documentation/marketplace/integrations/vitepress-javascript-boilerplate/)
-- [How to deploy the VitePress TypeScript Boilerplate](/en/documentation/marketplace/integrations/vitepress-typescript-boilerplate/)
-- [How to deploy the Webpage to PDF Resume template](/en/documentation/marketplace/integrations/webpage-to-pdf-resume/)
-- [How to migrate a WordPress website to the edge with WordPress EdgeAccelerator](/en/documentation/marketplace/integrations/wordpress-edgeaccelerator/)
-- [How to test Bot Manager Lite using a template](/en/documentation/marketplace/integrations/bot-manager-lite-starter-kit/)
-- [How to use the QStash Function Scheduler template](/en/documentation/marketplace/integrations/qstash-function-scheduler/)
-- [How to use the Upstash GeoLocation Deploy template](/en/documentation/marketplace/integrations/upstash-geolocation-edgedeploy/)
+Set up WAF, firewall rules, certificates, and access control.
 
----
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-6">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/secure/waf/guides/how-to-check-your-waf-mode/" title="How to check your WAF mode">
+    <Fragment slot="content">
+      <i class='ai ai-secure-pillar text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to check your WAF mode</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/secure/waf/guides/configure-waf-allowed-rules/" title="How to configure a WAF Custom Allowed Rule">
+    <Fragment slot="content">
+      <i class='ai ai-secure-pillar text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to configure a WAF Custom Allowed Rule</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/secure/waf/guides/how-to-find-waf-score/" title="How to find the score of WAF blocked requests">
+    <Fragment slot="content">
+      <i class='ai ai-secure-pillar text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to find the score of WAF blocked requests</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/secure/firewall/guides/firewall/" title="Azion Firewall — multi-layered security in Edge">
+    <Fragment slot="content">
+      <i class='ai ai-secure-pillar text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Azion Firewall — multi-layered security in Edge</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/secure/network-shield/guides/blocklists-ip-addresses-edge/" title="Create IP, ASN & Geo Blocklists">
+    <Fragment slot="content">
+      <i class='ai ai-secure-pillar text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Create IP, ASN & Geo Blocklists</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/secure/certificate-manager/guides/mtls/" title="How to configure mTLS">
+    <Fragment slot="content">
+      <i class='ai ai-secure-pillar text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to configure mTLS</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate/" title="Generate a Let's Encrypt Cert for Your Domain">
+    <Fragment slot="content">
+      <i class='ai ai-secure-pillar text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Generate a Let's Encrypt Cert for Your Domain</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/marketplace/integrations/secure-token/" title="How to Install the Secure Token Integration">
+    <Fragment slot="content">
+      <i class='ai ai-secure-pillar text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to Install the Secure Token Integration</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/functions/guides/paywall-function-jwt/" title="How to set up a paywall with Azion JWT solution">
+    <Fragment slot="content">
+      <i class='ai ai-secure-pillar text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to set up a paywall with Azion JWT solution</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+</div>
 
-## Configure
+## Manage DNS
 
-- [How to configure cache policies for Applications](/en/documentation/build/applications/guides/cache-settings/)
-- [How to configure Advanced Cache Key for Applications](/en/documentation/build/applications/guides/advanced-cache-key/)
-- [How to configure mTLS on your Applications domains](/en/documentation/secure/certificate-manager/guides/mtls/)
-- [Customizing an error response page](/en/documentation/build/applications/guides/customizing-error-response-page/)
-- [How to send the client IP address through a dedicated HTTP header](/en/documentation/build/applications/guides/original-ip-header/)
-- [HTTP2](/en/documentation/build/applications/reference/main-settings/)
-- [Setting up Cross-Origin Resource Sharing (CORS)](/en/documentation/build/applications/guides/cross-origin-resource-sharing-cors/)
-- [How to enable gzip compression for Applications](/en/documentation/build/applications/guides/gzip-compression/)
-- [How to create rules using Rules Engine for Applications](/en/documentation/build/applications/guides/rules-engine/)
-- [How to configure HTTP and HTTPS ports for origins and delivery address](/en/documentation/build/applications/guides/configure-ports/)
-- [How to enforce HLS cache for live streaming delivery](/en/documentation/build/applications/guides/enforce-hls-cache/)
-- [How to install the Javascript Tag (JS TAG) through Azion](/en/documentation/marketplace/integrations/javascript-tag-js-tag/)
-- [How to generate a Let's Encrypt certificate for your domain](/en/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate/)
-- [How to generate a Let's Encrypt certificate using the HTTP-01 challenge for your application via API](/en/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate-via-api/)
-- [How to customize the Azion Console interface using the Console Kit](/en/documentation/devtools/guides/customize-interface-console-kit/)
-- [How to integrate the Azion Console and the Azion API using the Console Kit](/en/documentation/devtools/guides/integrate-with-api-console-kit/)
+Host your zones and keep name resolution healthy.
 
----
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-6">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/secure/firewall/guides/edge-dns-configure-main-settings/" title="How to configure Edge DNS main settings">
+    <Fragment slot="content">
+      <i class='pi pi-globe text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to configure Edge DNS main settings</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/secure/firewall/guides/add-records/" title="How to add records">
+    <Fragment slot="content">
+      <i class='pi pi-globe text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to add records</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/secure/firewall/guides/activate-dnssec/" title="How to activate DNSSEC">
+    <Fragment slot="content">
+      <i class='pi pi-globe text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to activate DNSSEC</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/secure/firewall/guides/lets-encrypt-record/" title="Add a TXT Record for Let's Encrypt">
+    <Fragment slot="content">
+      <i class='pi pi-globe text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Add a TXT Record for Let's Encrypt</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/secure/firewall/guides/load-balance-dns/" title="How to perform a load balance between DNS records">
+    <Fragment slot="content">
+      <i class='pi pi-globe text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to perform a load balance between DNS records</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/secure/firewall/guides/access-root-domain/" title="How to access addresses through a root domain (ANAME)">
+    <Fragment slot="content">
+      <i class='pi pi-globe text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to access addresses through a root domain (ANAME)</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+</div>
 
-## Secure
+## Store and query data
 
-- [How to check your WAF mode](/en/documentation/secure/waf/guides/how-to-check-your-waf-mode/)
-- [How to find the score of WAF blocked requests](/en/documentation/secure/waf/guides/how-to-find-waf-score/)
-- [How to mitigate the HTTPOxy vulnerability](/en/documentation/build/applications/guides/mitigating-a-vulnerability-httpoxy/)
-- [How to update Firewall](/en/documentation/secure/firewall/guides/how-to-update-your-firewall/)
-- [How to create IP, ASN, and geolocation blocklists with Network Lists](/en/documentation/secure/network-shield/guides/blocklists-ip-addresses-edge/)
-- [How to configure a WAF Custom Allowed Rule](/en/documentation/secure/waf/guides/configure-waf-allowed-rules/)
-- [How to configure WAF rules to allow requests with a specific cookie](/en/documentation/secure/waf/guides/waf-rules-for-specific-cookie/)
-- [Azion Firewall: multi-layered security in Edge](/en/documentation/secure/firewall/guides/firewall/)
-- [Creating Blacklists of IP Addresses in Edge, using Azion Network Shield](/en/documentation/secure/network-shield/guides/blocklists-ip-addresses-edge/)
-- [Protect restricted content from improper access with Azion Secure Token](/en/documentation/marketplace/integrations/secure-token/)
-- [Paywall with Function JWT](/en/documentation/build/functions/guides/paywall-function-jwt/)
+Object storage, SQL, and key-value at the edge.
 
----
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-6">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/store/object-storage/guides/create-and-modify-bucket/" title="How to create and modify an Object Storage bucket">
+    <Fragment slot="content">
+      <i class='ai ai-store text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to create and modify an Object Storage bucket</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/store/object-storage/guides/bucket-actions/" title="Upload & Download Objects from a Bucket">
+    <Fragment slot="content">
+      <i class='ai ai-store text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Upload & Download Objects from a Bucket</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/store/object-storage/guides/use-bucket-as-origin/" title="Use an Object Storage Bucket as Origin">
+    <Fragment slot="content">
+      <i class='ai ai-store text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Use an Object Storage Bucket as Origin</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/store/object-storage/guides/s3-protocol-for-object-storage/" title="Set up S3 credentials for Object Storage">
+    <Fragment slot="content">
+      <i class='ai ai-store text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Set up S3 credentials for Object Storage</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/store/sql-database/guides/sql-database-vector-search/" title="How to implement SQL Database Vector Search">
+    <Fragment slot="content">
+      <i class='ai ai-store text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to implement SQL Database Vector Search</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/store/kv-store/guides/manage-with-functions/" title="How to manage KV Store with Functions">
+    <Fragment slot="content">
+      <i class='ai ai-store text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to manage KV Store with Functions</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/store/kv-store/guides/redis-compatibility/" title="How to use KV Store with Redis-compatible SDK">
+    <Fragment slot="content">
+      <i class='ai ai-store text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to use KV Store with Redis-compatible SDK</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+</div>
 
-## Observe
+## Run code at the edge
 
-- [How to configure Data Stream main settings](/en/documentation/observe/data-stream/guides/use-data-stream/)
-- [How to associate domains on Data Stream](/en/documentation/observe/data-stream/guides/data-stream-associate-domains/)
-- [How to set a payload on Data Stream](/en/documentation/observe/data-stream/guides/data-stream-set-payload/)
-- [How to create a custom template on Data Stream](/en/documentation/observe/data-stream/guides/data-stream-custom-template/)
-- [How to configure sampling on Data Stream](/en/documentation/observe/data-stream/guides/configure-sampling/)
-- [How to select variables on Data Stream](/en/documentation/observe/data-stream/guides/data-stream-select-variables/)
-- [How to stop or delete a data stream](/en/documentation/observe/data-stream/guides/delete-data-stream/)
-- [How to customize a dashboard with the Azion plugin on Grafana](/en/documentation/observe/real-time-metrics/guides/azion-plugin-grafana-custom-dash/)
-- [How to use a pre-built dashboard with the Azion plugin on Grafana](/en/documentation/observe/real-time-metrics/guides/azion-plugin-grafana-pre-built-dash/)
-- [How to use an HTTP/HTTPS POST connector to receive data from Data Stream](/en/documentation/observe/data-stream/guides/connector-standard-https-post/)
-- [How to use Amazon Kinesis Data Firehose to receive data from Data Stream](/en/documentation/observe/data-stream/guides/endpoint-amazon-kinesis/)
-- [How to use Amazon S3 to receive data from Data Stream](/en/documentation/observe/data-stream/guides/endpoint-amazon-s3/)
-- [How to use Azion Object Storage to receive data from Data Stream](/en/documentation/observe/data-stream/guides/connector-azion-object-storage/)
-- [How to use Azure Blob Storage to receive data from Data Stream](/en/documentation/observe/data-stream/guides/endpoint-azure-blob/)
-- [How to use Azure Monitor to receive data from Data Stream](/en/documentation/observe/data-stream/guides/endpoint-azure-monitor/)
-- [How to use Datadog to receive data from Data Stream](/en/documentation/observe/data-stream/guides/endpoint-datadog/)
-- [How to use Elasticsearch to receive data from Data Stream](/en/documentation/observe/data-stream/guides/endpoint-elasticsearch/)
-- [How to use Google BigQuery to receive data from Data Stream](/en/documentation/observe/data-stream/guides/endpoint-google-bigquery/)
-- [How to use Splunk to receive data from Data Stream](/en/documentation/observe/data-stream/guides/endpoint-splunk/)
-- [Data Transferred dashboard on Grafana JSON example](/en/documentation/observe/real-time-metrics/guides/data-transferred-dash/)
-- [How to select Top X queries with GraphQL API](/en/documentation/devtools/graphql/guides/graphql-top-x-query/)
-- [How to query aggregated data with GraphQL API](/en/documentation/devtools/graphql/guides/graphql-aggregated-data/)
-- [How to query GraphQL requests on Postman](/en/documentation/devtools/graphql/guides/query-graphql-postman/)
-- [How to query metadata with GraphQL API](/en/documentation/devtools/graphql/guides/graphql-metadata/)
-- [Real-Time Metrics GraphQL API dashboard on Grafana JSON example](/en/documentation/observe/real-time-metrics/guides/metrics-dash/)
-- [How to query Connected Users data with GraphQL API](/en/documentation/devtools/graphql/guides/query-connected-users-data-with-graphql/)
-- [How to query Bot Manager data with GraphQL API](/en/documentation/devtools/graphql/guides/query-bot-manager-data-with-graphql/)
-- [How to query the top URLs impacted by bots with GraphQL API](/en/documentation/devtools/graphql/guides/query-bot-manager-breakdown-data-with-graphql/)
-- [How to identify the Top IPs generating attack traffic using GraphQL API](/en/documentation/devtools/graphql/guides/query-top-ips-attack-traffic-with-graphql/)
-- [How to identify the top attacks using GraphQL API](/en/documentation/devtools/graphql/guides/query-top-attacks-with-graphql/)
-- [How to query data from the httpBreakdownMetrics dataset](/en/documentation/devtools/graphql/guides/query-httpbreakdownmetrics-data-with-graphql/)
-- [How to query usage data from Functions](/en/documentation/devtools/graphql/guides/query-functions-usage-data-with-graphql/)
-- [How to query usage data from Image Processor](/en/documentation/devtools/graphql/guides/query-image-processor-usage-data-with-graphql/)
-- [How to query usage data from Applications](/en/documentation/devtools/graphql/guides/query-applications-usage-data-with-graphql/)
-- [How to query usage data from Data Stream](/en/documentation/devtools/graphql/guides/query-data-stream-usage-data-with-graphql/)
-- [How to query usage data from Tiered Cache](/en/documentation/devtools/graphql/guides/query-tiered-cache-usage-data-with-graphql/)
+Build APIs, handle webhooks, and run serverless functions.
 
----
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-6">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/functions/guides/serverless-functions/" title="How to run serverless functions on Azion">
+    <Fragment slot="content">
+      <i class='pi pi-code text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to run serverless functions on Azion</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/functions/guides/restful-tasks-api-functions/" title="Build a RESTful API with Functions & SQL">
+    <Fragment slot="content">
+      <i class='pi pi-code text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Build a RESTful API with Functions & SQL</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/functions/guides/file-upload-functions/" title="Implement File Upload with Functions">
+    <Fragment slot="content">
+      <i class='pi pi-code text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Implement File Upload with Functions</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/functions/guides/stripe-webhooks-functions/" title="How to handle Stripe webhooks with Functions">
+    <Fragment slot="content">
+      <i class='pi pi-code text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to handle Stripe webhooks with Functions</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/functions/guides/resend-email-functions/" title="How to integrate Resend email service with Functions">
+    <Fragment slot="content">
+      <i class='pi pi-code text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to integrate Resend email service with Functions</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/functions/guides/browserless-functions/" title="How to build a browserless application with Functions">
+    <Fragment slot="content">
+      <i class='pi pi-code text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to build a browserless application with Functions</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+</div>
 
-## Integrate
+## Observe and analyze
 
-- [How to install the A/B tests through Azion Marketplace](/en/documentation/marketplace/integrations/ab-testing-marketplace/)
-- [How to install the Add Request ID integration through Azion Marketplace](/en/documentation/marketplace/integrations/add-request-id-header/)
-- [How to install the Axur Cardstream integration through Azion Marketplace](/en/documentation/marketplace/integrations/axur-cardstream/)
-- [How to install the Axur Leakstream integration through Azion Marketplace](/en/documentation/marketplace/integrations/axur-leakstream/)
-- [How to install the Azion Bot Manager Lite integration from Azion Marketplace](/en/documentation/marketplace/integrations/bot-manager-lite/)
-- [How to install DataDome Bot Protection through Azion Marketplace](/en/documentation/marketplace/integrations/datadome-bot-protection/)
-- [How to install the Content Targeting integration through Azion Marketplace](/en/documentation/marketplace/integrations/content-targeting-integration/)
-- [How to install the hCaptcha integration through Azion Marketplace](/en/documentation/marketplace/integrations/hcaptcha/)
-- [How to install the Hello World integration through Azion Marketplace](/en/documentation/marketplace/integrations/hello-world/)
-- [How to install the IP Address Reputation integration through Azion Marketplace](/en/documentation/marketplace/integrations/ip-address-reputation/)
-- [How to install the IPQualityScore Phone Validation integration through Azion Marketplace](/en/documentation/marketplace/integrations/ipqs-phone-validation/)
-- [How to install the IPQualityScore URL Validation integration through Azion Marketplace](/en/documentation/marketplace/integrations/ipqs-url-validation/)
-- [How to install the JWT integration through Azion Marketplace](/en/documentation/marketplace/integrations/jwt/)
-- [How to install the Limit Payload Size integration through Azion Marketplace](/en/documentation/marketplace/integrations/limit-payload-size/)
-- [How to install the Liveness Detection integration from Azion Marketplace](/en/documentation/marketplace/integrations/liveness-detection/)
-- [How to install the Massive Redirect integration through Azion Marketplace](/en/documentation/marketplace/integrations/massive-redirect-integration/)
-- [How to install the Method and Route Validator integration through Azion Marketplace](/en/documentation/marketplace/integrations/method-and-route-validator/)
-- [How to install the Radware Bot Manager integration through Azion Marketplace](/en/documentation/marketplace/integrations/radware-bot-manager/)
-- [How to install the reCaptcha integration through Azion Marketplace](/en/documentation/marketplace/integrations/recaptcha/)
-- [How to install the Process Request Data Into Headers integration from Azion Marketplace](/en/documentation/marketplace/integrations/process-request-data-into-headers/)
-- [How to install the Request Variation Controller integration through Azion Marketplace](/en/documentation/marketplace/integrations/request-variation-controller/)
-- [How to install the Scheduled Blocking integration through Azion Marketplace](/en/documentation/marketplace/integrations/scheduled-blocking/)
-- [How to install the Secure Token integration through Azion Marketplace](/en/documentation/marketplace/integrations/secure-token/)
-- [How to install the Send Event to Endpoint integration through Azion Marketplace](/en/documentation/marketplace/integrations/send-event-to-endpoint/)
-- [How to install the Send messages to a queue integration through Azion Marketplace](/en/documentation/marketplace/integrations/send-messages-to-a-queue/)
-- [How to install the Signed Cookies integration through Azion Marketplace](/en/documentation/marketplace/integrations/signed-cookies/)
-- [How to install the Upstash Rate Limiting integration through Azion Marketplace](/en/documentation/marketplace/integrations/upstash-rate-limiting-integration/)
-- [How to install the Upstash Waiting Room integration through Azion Marketplace](/en/documentation/marketplace/integrations/waiting-room/)
-- [How to install the Videoteca Player integration through Azion Marketplace](/en/documentation/marketplace/integrations/videofront-player/)
-- [How to use the ALTCHA Function through Azion Marketplace](/en/documentation/build/functions/guides/altcha/)
+Stream logs, build dashboards, and query metrics.
 
----
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-6">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/observe/data-stream/guides/use-data-stream/" title="How to configure Data Stream main settings">
+    <Fragment slot="content">
+      <i class='ai ai-observe-pillar text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to configure Data Stream main settings</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/observe/data-stream/guides/configure-sampling/" title="How to configure sampling on Data Stream">
+    <Fragment slot="content">
+      <i class='ai ai-observe-pillar text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to configure sampling on Data Stream</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/observe/real-time-metrics/guides/azion-plugin-grafana-pre-built-dash/" title="Use a Pre-Built Grafana Dashboard with Azion">
+    <Fragment slot="content">
+      <i class='ai ai-observe-pillar text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Use a Pre-Built Grafana Dashboard with Azion</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/observe/real-time-metrics/guides/azion-plugin-grafana-custom-dash/" title="Customize a Grafana Dashboard with Azion Plugin">
+    <Fragment slot="content">
+      <i class='ai ai-observe-pillar text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Customize a Grafana Dashboard with Azion Plugin</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/devtools/graphql/guides/graphql-top-x-query/" title="How to select Top X queries with GraphQL API">
+    <Fragment slot="content">
+      <i class='ai ai-observe-pillar text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to select Top X queries with GraphQL API</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/devtools/graphql/guides/graphql-aggregated-data/" title="How to query aggregated data with GraphQL API">
+    <Fragment slot="content">
+      <i class='ai ai-observe-pillar text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to query aggregated data with GraphQL API</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+</div>
 
-## Platform
+## Automate and integrate
 
-### Terraform
+Wire Azion into your stack with Terraform, Console Kit, and Marketplace integrations.
 
-- [How to migrate from Azion Terraform Provider v1.x to v2.0](/en/documentation/devtools/terraform/reference/terraform-migration-v3-to-v4/)
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-6">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="https://www.azion.com/en/marketplace/" title="Browse all Marketplace integrations">
+    <Fragment slot="content">
+      <i class='pi pi-th-large text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Browse all Marketplace integrations</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/devtools/terraform/reference/terraform-migration-v3-to-v4/" title="Migrating from Terraform Provider v1.x to v2.0">
+    <Fragment slot="content">
+      <i class='pi pi-th-large text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Migrating from Terraform Provider v1.x to v2.0</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/devtools/guides/customize-interface-console-kit/" title="Customize Azion Console with Console Kit">
+    <Fragment slot="content">
+      <i class='pi pi-th-large text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Customize Azion Console with Console Kit</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/devtools/guides/integrate-with-api-console-kit/" title="Integrate Azion Console & API with Console Kit">
+    <Fragment slot="content">
+      <i class='pi pi-th-large text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Integrate Azion Console & API with Console Kit</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/marketplace/integrations/bot-manager-lite/" title="How to Install Azion Bot Manager Lite">
+    <Fragment slot="content">
+      <i class='pi pi-th-large text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to Install Azion Bot Manager Lite</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/marketplace/integrations/recaptcha/" title="How to Install the reCAPTCHA Integration">
+    <Fragment slot="content">
+      <i class='pi pi-th-large text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to Install the reCAPTCHA Integration</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/marketplace/integrations/jwt/" title="How to Install the JWT Integration">
+    <Fragment slot="content">
+      <i class='pi pi-th-large text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to Install the JWT Integration</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/marketplace/integrations/waiting-room/" title="How to Install Upstash Waiting Room">
+    <Fragment slot="content">
+      <i class='pi pi-th-large text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to Install Upstash Waiting Room</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+</div>
 
-### DNS
+## Manage your account
 
-- [Securing your DNS](/en/documentation/get-started/journeys/protect/dns/)
-- [How to create zone settings](/en/documentation/secure/firewall/guides/edge-dns-configure-main-settings/)
-- [How to add DNS records](/en/documentation/secure/firewall/guides/add-records/)
-- [How to access root domain](/en/documentation/secure/firewall/guides/access-root-domain/)
-- [How to activate DNSSEC](/en/documentation/secure/firewall/guides/activate-dnssec/)
-- [How to configure Let's Encrypt](/en/documentation/secure/firewall/guides/lets-encrypt-record/)
-- [How to perform DNS load balance](/en/documentation/secure/firewall/guides/load-balance-dns/)
+Identity, access policies, and audit for your team.
 
-### Object Storage
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-6">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/account/guides/sso-google-saml/" title="Use Google SAML as an Identity Provider (IdP)">
+    <Fragment slot="content">
+      <i class='pi pi-user text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Use Google SAML as an Identity Provider (IdP)</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/account/guides/sso-microsoft-entra-saml/" title="Use Microsoft Entra SAML as an IdP">
+    <Fragment slot="content">
+      <i class='pi pi-user text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Use Microsoft Entra SAML as an IdP</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/account/guides/microsoft-entra-automated-user-provisioning/" title="Enable Microsoft Entra User Provisioning (SCIM)">
+    <Fragment slot="content">
+      <i class='pi pi-user text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Enable Microsoft Entra User Provisioning (SCIM)</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/account/guides/configure-user-session-timeout/" title="How to configure User Session Timeout">
+    <Fragment slot="content">
+      <i class='pi pi-user text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to configure User Session Timeout</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/account/guides/configure-account-lockout-policy/" title="How to configure Account Lockout Policy">
+    <Fragment slot="content">
+      <i class='pi pi-user text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to configure Account Lockout Policy</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/account/guides/conditional-access-by-ip-address/" title="Manage Conditional Access by IP Address">
+    <Fragment slot="content">
+      <i class='pi pi-user text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Manage Conditional Access by IP Address</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/account/guides/activity-history/" title="How to access Activity History">
+    <Fragment slot="content">
+      <i class='pi pi-user text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to access Activity History</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/services/support/guides/open-ticket/" title="How to open a Support Ticket">
+    <Fragment slot="content">
+      <i class='pi pi-user text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to open a Support Ticket</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+</div>
 
-- [How to create and modify an Object Storage bucket](/en/documentation/store/object-storage/guides/create-and-modify-bucket/)
-- [How to upload and download objects from an Object Storage bucket](/en/documentation/store/object-storage/guides/bucket-actions/)
-- [How to use an Object Storage bucket as the origin of a static application](/en/documentation/store/object-storage/guides/use-bucket-as-origin/)
-- [Set up S3 credentials for Object Storage](/en/documentation/store/object-storage/guides/s3-protocol-for-object-storage/)
+## Troubleshoot
 
-### Workloads
+Debug rules, functions, DNS, and cache behavior.
 
-- [How to create an Azion Custom Domain](/en/documentation/build/workloads/guides/create-azion-custom-domain/)
-
----
-
-## Store
-
-- [How to implement SQL Database Vector Search](/en/documentation/store/sql-database/guides/sql-database-vector-search/)
-- [How to manage data in KV Store](/en/documentation/store/kv-store/guides/manage-with-functions/)
-- [How to use KV Store with Redis compatibility](/en/documentation/store/kv-store/guides/redis-compatibility/)
----
-
-## Manage Account
-
-- [Using Google custom SAML app as an IdP for Azion](/en/documentation/account/guides/sso-google-saml/)
-- [How to use Microsoft Entra custom SAML app as an IdP for Azion](/en/documentation/account/guides/sso-microsoft-entra-saml/)
-- [How to configure User Session Timeout](/en/documentation/account/guides/configure-user-session-timeout/)
-- [How to manage a conditional access by IP address policy](/en/documentation/account/guides/conditional-access-by-ip-address/)
-- [How to configure Account Lockout Policy](/en/documentation/account/guides/configure-account-lockout-policy/)
-- [How to check Account Lockout Policy logs](/en/documentation/account/guides/account-lockout-policy-logs/)
-- [How to manually unlock a user from the Account Lockout Policy](/en/documentation/account/guides/unlock-account-lockout-policy/)
-- [How to enable Microsoft Entra Automated User Provisioning with SCIM for Azion](/en/documentation/account/guides/microsoft-entra-automated-user-provisioning/)
-- [How to access the Activity History](/en/documentation/account/guides/activity-history/)
-- [How to open a Support Ticket](/en/documentation/services/support/guides/open-ticket/)
-
----
-
-## Troubleshooting
-
-- [How to fix Cross-Origin Resource Sharing (CORS) policy errors](/en/documentation/build/applications/guides/cors-errors/)
-- [Looking up DNS servers with Dig command](/en/documentation/secure/edge-dns/guides/run-the-dig-command/)
-- [Diagnosing performance and delivery issues with Traceroute command](/en/documentation/secure/edge-dns/guides/run-the-traceroute-command/)
-- [How to verify application cache indicators using Modheader for Google Chrome](/en/documentation/build/applications/guides/check-page-cache-time/)
-- [How to debug rules created with Rules Engine](/en/documentation/build/applications/guides/debug-rules/)
-- [How to debug functions on Data Stream](/en/documentation/observe/data-stream/guides/debugging-functions-data-stream/)
-- [How to debug functions using GraphQL API](/en/documentation/build/functions/guides/debugging-functions-graphql/)
-- [How to test a DNS zone](/en/documentation/secure/firewall/guides/test-zone/)
-- [Understanding Edge DNS Metrics](/en/documentation/secure/firewall/guides/edge-dns-understand-metrics/)
-- [How to stage an application through the hosts file](/en/documentation/build/applications/guides/stage-applications-through-hosts-file/)
-- [How to test an origin with Functions](/en/documentation/build/functions/guides/test-origin-with-functions/)
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-6">
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/applications/guides/cors-errors/" title="How to Fix CORS Policy Errors">
+    <Fragment slot="content">
+      <i class='pi pi-wrench text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to Fix CORS Policy Errors</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/applications/guides/debug-rules/" title="How to debug rules created with Rules Engine">
+    <Fragment slot="content">
+      <i class='pi pi-wrench text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to debug rules created with Rules Engine</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/functions/guides/debugging-functions-graphql/" title="How to debug functions using GraphQL API">
+    <Fragment slot="content">
+      <i class='pi pi-wrench text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to debug functions using GraphQL API</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/applications/guides/check-page-cache-time/" title="Verify Cache Indicators with ModHeader">
+    <Fragment slot="content">
+      <i class='pi pi-wrench text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Verify Cache Indicators with ModHeader</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/secure/edge-dns/guides/run-the-dig-command/" title="How to look up DNS servers with Dig command">
+    <Fragment slot="content">
+      <i class='pi pi-wrench text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to look up DNS servers with Dig command</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/secure/edge-dns/guides/run-the-traceroute-command/" title="Diagnose Issues with the Traceroute Command">
+    <Fragment slot="content">
+      <i class='pi pi-wrench text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">Diagnose Issues with the Traceroute Command</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/secure/firewall/guides/test-zone/" title="How to test an Edge DNS zone processing">
+    <Fragment slot="content">
+      <i class='pi pi-wrench text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to test an Edge DNS zone processing</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/functions/guides/test-origin-with-functions/" title="How to test an origin with Functions">
+    <Fragment slot="content">
+      <i class='pi pi-wrench text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to test an origin with Functions</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/applications/guides/stage-applications-through-hosts-file/" title="How to stage an application through the hosts file">
+    <Fragment slot="content">
+      <i class='pi pi-wrench text-2xl'></i>
+      <CardTitle titleTag="h3" class="m-0">How to stage an application through the hosts file</CardTitle>
+    </Fragment>
+  </CardBaseClickable>
+</div>
