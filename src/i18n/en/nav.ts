@@ -44,9 +44,13 @@ export default [
 			},
 			{
 				text: "First deploy",
-				slug: "/documentation/get-started/first-deploy/",
 				key: "get-started/first-deploy",
 				items: [
+					{
+						text: "Overview",
+						slug: "/documentation/get-started/first-deploy/",
+						key: "get-started/first-deploy/overview",
+					},
 					{
 						text: "Hosting an Edge Site",
 						slug: "/documentation/get-started/first-deploy/cli/",
@@ -217,9 +221,13 @@ export default [
 					},
 					{
 						text: "Protect",
-						slug: "/documentation/get-started/journeys/protect/",
 						key: "get-started/journeys/protect",
 						items: [
+							{
+								text: "Secure an application",
+								slug: "/documentation/get-started/journeys/protect/",
+								key: "get-started/journeys/protect/overview",
+							},
 							{
 								text: "Secure DNS",
 								slug: "/documentation/get-started/journeys/protect/dns/",
@@ -236,9 +244,13 @@ export default [
 			},
 			{
 				text: "Migrate",
-				slug: "/documentation/get-started/migrate/",
 				key: "get-started/migrate",
 				items: [
+					{
+						text: "Overview",
+						slug: "/documentation/get-started/migrate/",
+						key: "get-started/migrate/overview",
+					},
 					{
 						text: "Migrate from Akamai to Azion | Full Guide",
 						slug: "/documentation/get-started/migrate/akamai/",
@@ -344,18 +356,26 @@ export default [
 			},
 			{
 				text: "AI Inference",
-				slug: "/documentation/build/ai-inference/",
 				key: "build/ai-inference",
 				items: [
+					{
+						text: "Overview",
+						slug: "/documentation/build/ai-inference/",
+						key: "build/ai-inference/overview",
+					},
 					{
 						text: "Reference",
 						key: "build/ai-inference/reference",
 						items: [
 							{
 								text: "Models",
-								slug: "/documentation/build/ai-inference/reference/models/",
 								key: "build/ai-inference/reference/models",
 								items: [
+									{
+										text: "Overview",
+										slug: "/documentation/build/ai-inference/reference/models/",
+										key: "build/ai-inference/reference/models/overview",
+									},
 									{
 										text: "BAAI/bge-reranker-v2-m3",
 										slug: "/documentation/build/ai-inference/reference/models/baai-bge-reranker-v2-m3/",
@@ -409,9 +429,13 @@ export default [
 			},
 			{
 				text: "Applications",
-				slug: "/documentation/build/applications/",
 				key: "build/applications",
 				items: [
+					{
+						text: "Overview",
+						slug: "/documentation/build/applications/",
+						key: "build/applications/overview",
+					},
 					{
 						text: "Applications first steps",
 						slug: "/documentation/build/applications/quickstart/",
@@ -600,9 +624,13 @@ export default [
 							},
 							{
 								text: "Cache",
-								slug: "/documentation/build/applications/reference/cache/",
 								key: "build/applications/reference/cache",
 								items: [
+									{
+										text: "Overview",
+										slug: "/documentation/build/applications/reference/cache/",
+										key: "build/applications/reference/cache/overview",
+									},
 									{
 										text: "Tiered Cache",
 										slug: "/documentation/build/applications/reference/cache/tiered-cache/",
@@ -627,9 +655,13 @@ export default [
 							},
 							{
 								text: "Domains",
-								slug: "/documentation/build/applications/reference/domains/",
 								key: "build/applications/reference/domains",
 								items: [
+									{
+										text: "Overview",
+										slug: "/documentation/build/applications/reference/domains/",
+										key: "build/applications/reference/domains/overview",
+									},
 									{
 										text: "Support for mTLS for Build",
 										slug: "/documentation/build/applications/reference/domains/mtls/",
@@ -684,9 +716,13 @@ export default [
 							},
 							{
 								text: "v3 (legacy)",
-								slug: "/documentation/build/applications/reference/v3/",
 								key: "build/applications/reference/v3",
 								items: [
+									{
+										text: "Overview",
+										slug: "/documentation/build/applications/reference/v3/",
+										key: "build/applications/reference/v3/overview",
+									},
 									{
 										text: "Main Settings | v3",
 										slug: "/documentation/build/applications/reference/v3/main-settings/",
@@ -700,9 +736,13 @@ export default [
 			},
 			{
 				text: "Connectors",
-				slug: "/documentation/build/connectors/",
 				key: "build/connectors",
 				items: [
+					{
+						text: "Overview",
+						slug: "/documentation/build/connectors/",
+						key: "build/connectors/overview",
+					},
 					{
 						text: "Reference",
 						key: "build/connectors/reference",
@@ -847,9 +887,13 @@ export default [
 									},
 									{
 										text: "Node",
-										slug: "/documentation/build/functions/runtime-apis/compatibility/node/",
 										key: "build/functions/runtime-apis/compatibility/node",
 										items: [
+											{
+												text: "Overview",
+												slug: "/documentation/build/functions/runtime-apis/compatibility/node/",
+												key: "build/functions/runtime-apis/compatibility/node/overview",
+											},
 											{
 												text: "Node.js API compatibility - Async hooks",
 												slug: "/documentation/build/functions/runtime-apis/compatibility/node/async-hooks/",
@@ -946,9 +990,13 @@ export default [
 							},
 							{
 								text: "Frameworks Compatibility",
-								slug: "/documentation/build/functions/runtime-apis/frameworks-compatibility/",
 								key: "build/functions/runtime-apis/frameworks-compatibility",
 								items: [
+									{
+										text: "Overview",
+										slug: "/documentation/build/functions/runtime-apis/frameworks-compatibility/",
+										key: "build/functions/runtime-apis/frameworks-compatibility/overview",
+									},
 									{
 										text: "Frameworks Compatibility | Angular",
 										slug: "/documentation/build/functions/runtime-apis/frameworks-compatibility/angular/",
@@ -1240,9 +1288,13 @@ export default [
 							},
 							{
 								text: "KV Store",
-								slug: "/documentation/build/functions/runtime-apis/kv-store/",
 								key: "build/functions/runtime-apis/kv-store",
 								items: [
+									{
+										text: "Overview",
+										slug: "/documentation/build/functions/runtime-apis/kv-store/",
+										key: "build/functions/runtime-apis/kv-store/overview",
+									},
 									{
 										text: "Delete key-value pairs",
 										slug: "/documentation/build/functions/runtime-apis/kv-store/delete/",
@@ -1281,9 +1333,13 @@ export default [
 			},
 			{
 				text: "Workloads",
-				slug: "/documentation/build/workloads/",
 				key: "build/workloads",
 				items: [
+					{
+						text: "Overview",
+						slug: "/documentation/build/workloads/",
+						key: "build/workloads/overview",
+					},
 					{
 						text: "Guides",
 						key: "build/workloads/guides",
@@ -1334,9 +1390,13 @@ export default [
 			},
 			{
 				text: "KV Store",
-				slug: "/documentation/store/kv-store/",
 				key: "store/kv-store",
 				items: [
+					{
+						text: "Overview",
+						slug: "/documentation/store/kv-store/",
+						key: "store/kv-store/overview",
+					},
 					{
 						text: "Guides",
 						key: "store/kv-store/guides",
@@ -1357,9 +1417,13 @@ export default [
 			},
 			{
 				text: "Object Storage",
-				slug: "/documentation/store/object-storage/",
 				key: "store/object-storage",
 				items: [
+					{
+						text: "Overview",
+						slug: "/documentation/store/object-storage/",
+						key: "store/object-storage/overview",
+					},
 					{
 						text: "Guides",
 						key: "store/object-storage/guides",
@@ -1445,9 +1509,13 @@ export default [
 			},
 			{
 				text: "SQL Database",
-				slug: "/documentation/store/sql-database/",
 				key: "store/sql-database",
 				items: [
+					{
+						text: "Overview",
+						slug: "/documentation/store/sql-database/",
+						key: "store/sql-database/overview",
+					},
 					{
 						text: "Guides",
 						key: "store/sql-database/guides",
@@ -1559,14 +1627,22 @@ export default [
 			},
 			{
 				text: "Bot Manager",
-				slug: "/documentation/secure/bot-manager/",
 				key: "secure/bot-manager",
 				items: [
 					{
+						text: "Overview",
+						slug: "/documentation/secure/bot-manager/",
+						key: "secure/bot-manager/overview",
+					},
+					{
 						text: "Reference",
-						slug: "/documentation/secure/bot-manager/reference/",
 						key: "secure/bot-manager/reference",
 						items: [
+							{
+								text: "Overview",
+								slug: "/documentation/secure/bot-manager/reference/",
+								key: "secure/bot-manager/reference/overview",
+							},
 							{
 								text: "Azion Bot Manager Lite",
 								slug: "/documentation/secure/bot-manager/reference/lite/",
@@ -1578,9 +1654,13 @@ export default [
 			},
 			{
 				text: "Certificate Manager",
-				slug: "/documentation/secure/certificate-manager/",
 				key: "secure/certificate-manager",
 				items: [
+					{
+						text: "Overview",
+						slug: "/documentation/secure/certificate-manager/",
+						key: "secure/certificate-manager/overview",
+					},
 					{
 						text: "Certificate Manager quickstart",
 						slug: "/documentation/secure/certificate-manager/quickstart/",
@@ -1627,9 +1707,13 @@ export default [
 			},
 			{
 				text: "DDoS Protection",
-				slug: "/documentation/secure/ddos-protection/",
 				key: "secure/ddos-protection",
 				items: [
+					{
+						text: "Overview",
+						slug: "/documentation/secure/ddos-protection/",
+						key: "secure/ddos-protection/overview",
+					},
 					{
 						text: "Reference",
 						key: "secure/ddos-protection/reference",
@@ -1645,9 +1729,13 @@ export default [
 			},
 			{
 				text: "Edge DNS",
-				slug: "/documentation/secure/edge-dns/",
 				key: "secure/edge-dns",
 				items: [
+					{
+						text: "Overview",
+						slug: "/documentation/secure/edge-dns/",
+						key: "secure/edge-dns/overview",
+					},
 					{
 						text: "Edge DNS quickstart",
 						slug: "/documentation/secure/edge-dns/quickstart/",
@@ -1689,9 +1777,13 @@ export default [
 			},
 			{
 				text: "Firewall",
-				slug: "/documentation/secure/firewall/",
 				key: "secure/firewall",
 				items: [
+					{
+						text: "Overview",
+						slug: "/documentation/secure/firewall/",
+						key: "secure/firewall/overview",
+					},
 					{
 						text: "Firewall quickstart",
 						slug: "/documentation/secure/firewall/quickstart/",
@@ -1879,9 +1971,13 @@ export default [
 			},
 			{
 				text: "Network Shield",
-				slug: "/documentation/secure/network-shield/",
 				key: "secure/network-shield",
 				items: [
+					{
+						text: "Overview",
+						slug: "/documentation/secure/network-shield/",
+						key: "secure/network-shield/overview",
+					},
 					{
 						text: "Guides",
 						key: "secure/network-shield/guides",
@@ -1897,9 +1993,13 @@ export default [
 			},
 			{
 				text: "WAF",
-				slug: "/documentation/secure/waf/",
 				key: "secure/waf",
 				items: [
+					{
+						text: "Overview",
+						slug: "/documentation/secure/waf/",
+						key: "secure/waf/overview",
+					},
 					{
 						text: "WAF quickstart",
 						slug: "/documentation/secure/waf/quickstart/",
@@ -1976,9 +2076,13 @@ export default [
 			},
 			{
 				text: "Orchestrator",
-				slug: "/documentation/deploy/orchestrator/",
 				key: "deploy/orchestrator",
 				items: [
+					{
+						text: "Overview",
+						slug: "/documentation/deploy/orchestrator/",
+						key: "deploy/orchestrator/overview",
+					},
 					{
 						text: "Guides",
 						key: "deploy/orchestrator/guides",
@@ -2100,9 +2204,13 @@ export default [
 			},
 			{
 				text: "Data Stream",
-				slug: "/documentation/observe/data-stream/",
 				key: "observe/data-stream",
 				items: [
+					{
+						text: "Overview",
+						slug: "/documentation/observe/data-stream/",
+						key: "observe/data-stream/overview",
+					},
 					{
 						text: "Data Stream quickstart",
 						slug: "/documentation/observe/data-stream/quickstart/",
@@ -2273,9 +2381,13 @@ export default [
 			},
 			{
 				text: "Edge Pulse",
-				slug: "/documentation/observe/edge-pulse/",
 				key: "observe/edge-pulse",
 				items: [
+					{
+						text: "Overview",
+						slug: "/documentation/observe/edge-pulse/",
+						key: "observe/edge-pulse/overview",
+					},
 					{
 						text: "Edge Pulse first steps",
 						slug: "/documentation/observe/edge-pulse/quickstart/",
@@ -2285,9 +2397,13 @@ export default [
 			},
 			{
 				text: "Real Time Events",
-				slug: "/documentation/observe/real-time-events/",
 				key: "observe/real-time-events",
 				items: [
+					{
+						text: "Overview",
+						slug: "/documentation/observe/real-time-events/",
+						key: "observe/real-time-events/overview",
+					},
 					{
 						text: "Real-Time Events first steps",
 						slug: "/documentation/observe/real-time-events/quickstart/",
@@ -2297,9 +2413,13 @@ export default [
 			},
 			{
 				text: "Real Time Metrics",
-				slug: "/documentation/observe/real-time-metrics/",
 				key: "observe/real-time-metrics",
 				items: [
+					{
+						text: "Overview",
+						slug: "/documentation/observe/real-time-metrics/",
+						key: "observe/real-time-metrics/overview",
+					},
 					{
 						text: "Real-Time Metrics first steps",
 						slug: "/documentation/observe/real-time-metrics/quickstart/",
@@ -2402,9 +2522,13 @@ export default [
 			},
 			{
 				text: "API",
-				slug: "/documentation/devtools/api/",
 				key: "devtools/api",
 				items: [
+					{
+						text: "Overview",
+						slug: "/documentation/devtools/api/",
+						key: "devtools/api/overview",
+					},
 					{
 						text: "API v4 Migration",
 						slug: "/documentation/devtools/api/v4-migration/",
@@ -2414,9 +2538,13 @@ export default [
 			},
 			{
 				text: "CLI",
-				slug: "/documentation/devtools/cli/",
 				key: "devtools/cli",
 				items: [
+					{
+						text: "Overview",
+						slug: "/documentation/devtools/cli/",
+						key: "devtools/cli/overview",
+					},
 					{
 						text: "Reference",
 						key: "devtools/cli/reference",
@@ -2572,9 +2700,13 @@ export default [
 			},
 			{
 				text: "GraphQL",
-				slug: "/documentation/devtools/graphql/",
 				key: "devtools/graphql",
 				items: [
+					{
+						text: "Overview",
+						slug: "/documentation/devtools/graphql/",
+						key: "devtools/graphql/overview",
+					},
 					{
 						text: "Guides",
 						key: "devtools/graphql/guides",
@@ -2731,9 +2863,13 @@ export default [
 			},
 			{
 				text: "Lib",
-				slug: "/documentation/devtools/lib/",
 				key: "devtools/lib",
 				items: [
+					{
+						text: "Overview",
+						slug: "/documentation/devtools/lib/",
+						key: "devtools/lib/overview",
+					},
 					{
 						text: "Reference",
 						key: "devtools/lib/reference",
@@ -2819,9 +2955,13 @@ export default [
 			},
 			{
 				text: "MCP",
-				slug: "/documentation/devtools/mcp/",
 				key: "devtools/mcp",
 				items: [
+					{
+						text: "Overview",
+						slug: "/documentation/devtools/mcp/",
+						key: "devtools/mcp/overview",
+					},
 					{
 						text: "Guides",
 						key: "devtools/mcp/guides",
@@ -2873,9 +3013,13 @@ export default [
 			},
 			{
 				text: "Terraform",
-				slug: "/documentation/devtools/terraform/",
 				key: "devtools/terraform",
 				items: [
+					{
+						text: "Overview",
+						slug: "/documentation/devtools/terraform/",
+						key: "devtools/terraform/overview",
+					},
 					{
 						text: "Guides",
 						key: "devtools/terraform/guides",
@@ -4154,9 +4298,13 @@ export default [
 			},
 			{
 				text: "Support",
-				slug: "/documentation/services/support/",
 				key: "services/support",
 				items: [
+					{
+						text: "Overview",
+						slug: "/documentation/services/support/",
+						key: "services/support/overview",
+					},
 					{
 						text: "Guides",
 						key: "services/support/guides",
@@ -4242,11 +4390,15 @@ export default [
 			},
 			{
 				text: "Customer Agreement",
-				slug: "/documentation/agreements/customer-agreement/",
 				key: "agreements/customer-agreement",
 				items: [
 					{
-						text: "Customer Agreement",
+						text: "Current version",
+						slug: "/documentation/agreements/customer-agreement/",
+						key: "agreements/customer-agreement/overview",
+					},
+					{
+						text: "Customer Agreement - July 28, 2016",
 						slug: "/documentation/agreements/customer-agreement/28-july-2016/",
 						key: "agreements/customer-agreement/28-july-2016",
 					},
@@ -4294,12 +4446,16 @@ export default [
 				key: "agreements/savings-plan-terms-and-conditions-10-july-2025",
 			},
 			{
-				text: "Sla",
-				slug: "/documentation/agreements/sla/",
+				text: "SLA",
 				key: "agreements/sla",
 				items: [
 					{
-						text: "Service Level Agreement",
+						text: "Current version",
+						slug: "/documentation/agreements/sla/",
+						key: "agreements/sla/overview",
+					},
+					{
+						text: "Service Level Agreement - May 25, 2016",
 						slug: "/documentation/agreements/sla/25-may-2016/",
 						key: "agreements/sla/25-may-2016",
 					},
@@ -4311,10 +4467,14 @@ export default [
 				key: "agreements/terms-and-conditions-of-reserved-capacity",
 			},
 			{
-				text: "Tos",
-				slug: "/documentation/agreements/tos/",
+				text: "Terms of Service",
 				key: "agreements/tos",
 				items: [
+					{
+						text: "Current version",
+						slug: "/documentation/agreements/tos/",
+						key: "agreements/tos/overview",
+					},
 					{
 						text: "Terms of Service - November 10, 2016",
 						slug: "/documentation/agreements/tos/10-november-2016/",
