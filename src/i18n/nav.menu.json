@@ -3617,8 +3617,8 @@
   },
   {
    "key": "grp/more",
-   "ui": "menu.more",
-   "icon": "pi pi-ellipsis-h",
+   "ui": "menu.updatesPolicies",
+   "icon": "pi pi-info-circle",
    "items": [
     {
      "key": "row/changelog",

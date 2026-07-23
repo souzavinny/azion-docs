@@ -229,7 +229,7 @@ menu = {
         {"key": "grp/observe", "ui": "menu.observe", "icon": "ai ai-observe-pillar", "items": section_items("observe")},
         {"key": "grp/resources", "ui": "menu.resources", "icon": "pi pi-book", "items": resources_items},
         {"key": "grp/manage", "ui": "menu.manage", "icon": "pi pi-user", "items": manage_items},
-        {"key": "grp/more", "ui": "menu.more", "icon": "pi pi-ellipsis-h", "items": more_items},
+        {"key": "grp/more", "ui": "menu.updatesPolicies", "icon": "pi pi-info-circle", "items": more_items},
     ],
 }
 

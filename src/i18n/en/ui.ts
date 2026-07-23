@@ -170,7 +170,7 @@ export default {
 	'menu.edgeSQL': 'SQL Database',
 	'menu.resources': 'Resources',
 	'menu.manage': 'Manage',
-	'menu.more': 'More'
+	'menu.updatesPolicies': 'Updates & Policies'
 
 
 };
