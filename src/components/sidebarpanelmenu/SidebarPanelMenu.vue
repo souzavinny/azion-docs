@@ -11,9 +11,10 @@
 			<div :class="(item.onlyMobile ? 'lg:hidden' : 'block')">
 				<p
 					v-if="item.hasLabel"
-					class="text-base pl-4 mb-2 cursor-text"
+					class="text-base pl-4 mb-2 cursor-text flex items-center"
 					:class="(item.index === 0 ? 'mt-2' : 'mt-5')"
 				>
+					<i v-if="item.labelIcon" :class="item.labelIcon" class="mr-2 text-sm"></i>
 					<strong class="font-medium">
 						{{ item.hasLabel }}
 					</strong>

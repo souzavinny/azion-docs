@@ -18,6 +18,8 @@ export interface NavGroup {
 	key: string;
 	/** ui.ts key rendered as the non-clickable overline label (via hasLabel) */
 	ui: string;
+	/** icon class rendered next to the label */
+	icon?: string;
 	items: NavEntry[];
 }
 export interface NavEntry {
@@ -57,7 +59,10 @@ export function navFromJson(menu: NavMenuJson, lang: 'en' | 'pt-br'): NavDict {
 	}));
 	for (const group of menu.groups) {
 		const rows = group.items.map(toEntry);
-		if (rows.length) rows[0].hasLabel = group.ui as UIDictionaryKeys;
+		if (rows.length) {
+			rows[0].hasLabel = group.ui as UIDictionaryKeys;
+			if (group.icon) rows[0].labelIcon = group.icon;
+		}
 		nav.push(...rows);
 	}
 	return nav;

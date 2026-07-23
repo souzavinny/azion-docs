@@ -37,6 +37,7 @@
   {
    "key": "grp/get-started",
    "ui": "menu.getStarted",
+   "icon": "pi pi-bolt",
    "items": [
     {
      "key": "get-started/overview",
@@ -565,6 +566,7 @@
   {
    "key": "grp/build",
    "ui": "menu.build",
+   "icon": "ai ai-build-pillar",
    "items": [
     {
      "key": "build/overview",
@@ -1094,6 +1096,7 @@
   {
    "key": "grp/store",
    "ui": "menu.store",
+   "icon": "ai ai-store",
    "items": [
     {
      "key": "store/overview",
@@ -1413,6 +1416,7 @@
   {
    "key": "grp/secure",
    "ui": "menu.secure",
+   "icon": "ai ai-secure-pillar",
    "items": [
     {
      "key": "secure/overview",
@@ -2076,6 +2080,7 @@
   {
    "key": "grp/observe",
    "ui": "menu.observe",
+   "icon": "ai ai-observe-pillar",
    "items": [
     {
      "key": "observe/overview",
@@ -2457,951 +2462,9 @@
    ]
   },
   {
-   "key": "grp/devtools",
-   "ui": "menu.devTools",
-   "items": [
-    {
-     "key": "devtools/overview",
-     "label": {
-      "en": "Overview",
-      "pt-br": "Visão geral"
-     },
-     "slug": {
-      "en": "/documentation/devtools/",
-      "pt-br": "/documentacao/devtools/"
-     }
-    },
-    {
-     "key": "devtools/guides",
-     "label": {
-      "en": "Guides",
-      "pt-br": "Guias"
-     },
-     "items": [
-      {
-       "key": "devtools/guides/customize-interface-console-kit",
-       "label": {
-        "en": "Customize Azion Console with Console Kit",
-        "pt-br": "Personalize o Console da Azion com o Console Kit"
-       },
-       "slug": {
-        "en": "/documentation/devtools/guides/customize-interface-console-kit/",
-        "pt-br": "/documentacao/devtools/guides/personalizar-interface-console-kit/"
-       }
-      },
-      {
-       "key": "devtools/guides/integrate-with-api-console-kit",
-       "label": {
-        "en": "Integrate Azion Console & API with Console Kit",
-        "pt-br": "Integre o Console e a API com o Console Kit"
-       },
-       "slug": {
-        "en": "/documentation/devtools/guides/integrate-with-api-console-kit/",
-        "pt-br": "/documentacao/devtools/guides/integrar-com-api-console-kit/"
-       }
-      }
-     ]
-    },
-    {
-     "key": "devtools/api",
-     "label": {
-      "en": "API"
-     },
-     "items": [
-      {
-       "key": "devtools/api/overview",
-       "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
-       },
-       "slug": {
-        "en": "/documentation/devtools/api/",
-        "pt-br": "/documentacao/devtools/api/quickstart/"
-       }
-      },
-      {
-       "key": "devtools/api/v4-migration",
-       "label": {
-        "en": "API v4 Migration",
-        "pt-br": "Migração para API v4"
-       },
-       "slug": {
-        "en": "/documentation/devtools/api/v4-migration/",
-        "pt-br": "/documentacao/devtools/api/v4-migration/"
-       }
-      }
-     ]
-    },
-    {
-     "key": "devtools/cli",
-     "label": {
-      "en": "CLI"
-     },
-     "items": [
-      {
-       "key": "devtools/cli/overview",
-       "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
-       },
-       "slug": {
-        "en": "/documentation/devtools/cli/",
-        "pt-br": "/documentacao/devtools/cli/"
-       }
-      },
-      {
-       "key": "devtools/cli/reference",
-       "label": {
-        "en": "Reference",
-        "pt-br": "Referência"
-       },
-       "items": [
-        {
-         "key": "devtools/cli/reference/azion-config-js",
-         "label": {
-          "en": "Azion IaC"
-         },
-         "slug": {
-          "en": "/documentation/devtools/cli/reference/azion-config-js/",
-          "pt-br": "/documentacao/devtools/cli/reference/azion-config-js/"
-         }
-        },
-        {
-         "key": "devtools/cli/reference/create",
-         "label": {
-          "en": "Azion CLI create"
-         },
-         "slug": {
-          "en": "/documentation/devtools/cli/reference/create/",
-          "pt-br": "/documentacao/devtools/cli/reference/create/"
-         }
-        },
-        {
-         "key": "devtools/cli/reference/delete",
-         "label": {
-          "en": "Azion CLI delete"
-         },
-         "slug": {
-          "en": "/documentation/devtools/cli/reference/delete/",
-          "pt-br": "/documentacao/devtools/cli/reference/delete/"
-         }
-        },
-        {
-         "key": "devtools/cli/reference/deploy",
-         "label": {
-          "en": "Azion CLI deploy"
-         },
-         "slug": {
-          "en": "/documentation/devtools/cli/reference/deploy/",
-          "pt-br": "/documentacao/devtools/cli/reference/deploy/"
-         }
-        },
-        {
-         "key": "devtools/cli/reference/globals",
-         "label": {
-          "en": "Azion CLI global options",
-          "pt-br": "Opções globais da Azion CLI"
-         },
-         "slug": {
-          "en": "/documentation/devtools/cli/reference/globals/",
-          "pt-br": "/documentacao/devtools/cli/reference/globals/"
-         }
-        },
-        {
-         "key": "devtools/cli/reference/link-command",
-         "label": {
-          "en": "Azion CLI link"
-         },
-         "slug": {
-          "en": "/documentation/devtools/cli/reference/link-command/",
-          "pt-br": "/documentacao/devtools/cli/reference/link-comando/"
-         }
-        },
-        {
-         "key": "devtools/cli/reference/login",
-         "label": {
-          "en": "Azion CLI login"
-         },
-         "slug": {
-          "en": "/documentation/devtools/cli/reference/login/",
-          "pt-br": "/documentacao/devtools/cli/reference/login/"
-         }
-        },
-        {
-         "key": "devtools/cli/reference/logout",
-         "label": {
-          "en": "Azion CLI logout"
-         },
-         "slug": {
-          "en": "/documentation/devtools/cli/reference/logout/",
-          "pt-br": "/documentacao/devtools/cli/reference/logout/"
-         }
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "key": "devtools/console-kit",
-     "label": {
-      "en": "Console Kit"
-     },
-     "slug": {
-      "en": "/documentation/devtools/console-kit/",
-      "pt-br": "/documentacao/devtools/console-kit/"
-     }
-    },
-    {
-     "key": "devtools/for-ai-agents",
-     "label": {
-      "en": "For AI Agents",
-      "pt-br": "Para agentes de IA"
-     },
-     "slug": {
-      "en": "/documentation/devtools/for-ai-agents/",
-      "pt-br": "/documentacao/devtools/for-ai-agents/"
-     }
-    },
-    {
-     "key": "devtools/form-builder",
-     "label": {
-      "en": "Form Builder"
-     },
-     "slug": {
-      "en": "/documentation/devtools/form-builder/",
-      "pt-br": "/documentacao/devtools/form-builder/"
-     }
-    },
-    {
-     "key": "devtools/graphql",
-     "label": {
-      "en": "GraphQL"
-     },
-     "items": [
-      {
-       "key": "devtools/graphql/overview",
-       "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
-       },
-       "slug": {
-        "en": "/documentation/devtools/graphql/",
-        "pt-br": "/documentacao/devtools/graphql/"
-       }
-      },
-      {
-       "key": "devtools/graphql/guides",
-       "label": {
-        "en": "Guides",
-        "pt-br": "Guias"
-       },
-       "items": [
-        {
-         "key": "devtools/graphql/guides/graphql-aggregated-data",
-         "label": {
-          "en": "How to query aggregated data with GraphQL API",
-          "pt-br": "Consultas agregando dados com a API GraphQL"
-         },
-         "slug": {
-          "en": "/documentation/devtools/graphql/guides/graphql-aggregated-data/",
-          "pt-br": "/documentacao/devtools/graphql/guides/graphql-dados-agregados/"
-         }
-        },
-        {
-         "key": "devtools/graphql/guides/graphql-metadata",
-         "label": {
-          "en": "How to query metadata with GraphQL API",
-          "pt-br": "Como consultar metadados com a API GraphQL"
-         },
-         "slug": {
-          "en": "/documentation/devtools/graphql/guides/graphql-metadata/",
-          "pt-br": "/documentacao/devtools/graphql/guides/graphql-metadados/"
-         }
-        },
-        {
-         "key": "devtools/graphql/guides/graphql-top-x-query",
-         "label": {
-          "en": "How to select Top X queries with GraphQL API",
-          "pt-br": "Como selecionar Top X queries com a GraphQL API"
-         },
-         "slug": {
-          "en": "/documentation/devtools/graphql/guides/graphql-top-x-query/",
-          "pt-br": "/documentacao/devtools/graphql/guides/graphql-query-top-x/"
-         }
-        },
-        {
-         "key": "devtools/graphql/guides/query-bot-manager-breakdown-data-with-graphql",
-         "label": {
-          "en": "Query Top URLs Impacted by Bots with GraphQL",
-          "pt-br": "Consulte URLs impactadas por bots com GraphQL"
-         },
-         "slug": {
-          "en": "/documentation/devtools/graphql/guides/query-bot-manager-breakdown-data-with-graphql/",
-          "pt-br": "/documentacao/devtools/graphql/guides/consultar-dados-bot-manager-breakdown-com-graphql/"
-         }
-        },
-        {
-         "key": "devtools/graphql/guides/query-bot-manager-data-with-graphql",
-         "label": {
-          "en": "How to query Bot Manager data with GraphQL API",
-          "pt-br": "Como consultar dados do Bot Manager com a GraphQL API"
-         },
-         "slug": {
-          "en": "/documentation/devtools/graphql/guides/query-bot-manager-data-with-graphql/",
-          "pt-br": "/documentacao/devtools/graphql/guides/consultar-dados-bot-manager-com-graphql/"
-         }
-        },
-        {
-         "key": "devtools/graphql/guides/query-connected-users-data-with-graphql",
-         "label": {
-          "en": "How to query Connected Users data with GraphQL API",
-          "pt-br": "Consulte dados de usuários conectados com GraphQL"
-         },
-         "slug": {
-          "en": "/documentation/devtools/graphql/guides/query-connected-users-data-with-graphql/",
-          "pt-br": "/documentacao/devtools/graphql/guides/query-dados-connected-users-com-graphql/"
-         }
-        },
-        {
-         "key": "devtools/graphql/guides/query-graphql-postman",
-         "label": {
-          "en": "How to query GraphQL requests on Postman",
-          "pt-br": "Como rodar requisições da GraphQL no Postman"
-         },
-         "slug": {
-          "en": "/documentation/devtools/graphql/guides/query-graphql-postman/",
-          "pt-br": "/documentacao/devtools/graphql/guides/consultar-graphql-postman/"
-         }
-        },
-        {
-         "key": "devtools/graphql/guides/query-httpbreakdownmetrics-data-with-graphql",
-         "label": {
-          "en": "Query the httpBreakdownMetrics Dataset",
-          "pt-br": "Como consultar dados do httpBreakdownMetrics dataset"
-         },
-         "slug": {
-          "en": "/documentation/devtools/graphql/guides/query-httpbreakdownmetrics-data-with-graphql/",
-          "pt-br": "/documentacao/devtools/graphql/guides/consultar-dados-httpbreakdownmetrics-com-graphql/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "devtools/graphql/reference",
-       "label": {
-        "en": "Reference",
-        "pt-br": "Referência"
-       },
-       "items": [
-        {
-         "key": "devtools/graphql/reference/overview",
-         "label": {
-          "en": "Overview",
-          "pt-br": "Visão geral"
-         },
-         "slug": {
-          "en": "/documentation/devtools/graphql/reference/overview/",
-          "pt-br": "/documentacao/devtools/graphql/reference/overview/"
-         }
-        },
-        {
-         "key": "devtools/graphql/reference/features",
-         "label": {
-          "en": "Features GraphQL API",
-          "pt-br": "Recursos API GraphQL"
-         },
-         "slug": {
-          "en": "/documentation/devtools/graphql/reference/features/",
-          "pt-br": "/documentacao/devtools/graphql/reference/recursos/"
-         }
-        },
-        {
-         "key": "devtools/graphql/reference/first-steps",
-         "label": {
-          "en": "First Steps GraphQL API",
-          "pt-br": "Primeiros Passos API GraphQL"
-         },
-         "slug": {
-          "en": "/documentation/devtools/graphql/reference/first-steps/",
-          "pt-br": "/documentacao/devtools/graphql/reference/first-steps/"
-         }
-        },
-        {
-         "key": "devtools/graphql/reference/gql-consumption-fields",
-         "label": {
-          "en": "Consumption GraphQL API Fields",
-          "pt-br": "Campos da GraphQL API de Consumption"
-         },
-         "slug": {
-          "en": "/documentation/devtools/graphql/reference/gql-consumption-fields/",
-          "pt-br": "/documentacao/devtools/graphql/reference/campos-gql-consumption/"
-         }
-        },
-        {
-         "key": "devtools/graphql/reference/gql-real-time-events-fields",
-         "label": {
-          "en": "Real-Time Events GraphQL API Fields",
-          "pt-br": "Campos da API GraphQL do Real-Time Events"
-         },
-         "slug": {
-          "en": "/documentation/devtools/graphql/reference/gql-real-time-events-fields/",
-          "pt-br": "/documentacao/devtools/graphql/reference/campos-gql-real-time-events/"
-         }
-        },
-        {
-         "key": "devtools/graphql/reference/gql-real-time-metrics-fields",
-         "label": {
-          "en": "Real-Time Metrics GraphQL API Fields",
-          "pt-br": "Campos da API GraphQL do Real-Time Metrics"
-         },
-         "slug": {
-          "en": "/documentation/devtools/graphql/reference/gql-real-time-metrics-fields/",
-          "pt-br": "/documentacao/devtools/graphql/reference/campos-gql-real-time-metrics/"
-         }
-        },
-        {
-         "key": "devtools/graphql/reference/playground",
-         "label": {
-          "en": "GraphiQL Playground",
-          "pt-br": "Playground GraphiQL"
-         },
-         "slug": {
-          "en": "/documentation/devtools/graphql/reference/playground/",
-          "pt-br": "/documentacao/devtools/graphql/reference/playground/"
-         }
-        },
-        {
-         "key": "devtools/graphql/reference/queries",
-         "label": {
-          "en": "Queries GraphQL API",
-          "pt-br": "Queries API GraphQL"
-         },
-         "slug": {
-          "en": "/documentation/devtools/graphql/reference/queries/",
-          "pt-br": "/documentacao/devtools/graphql/reference/queries/"
-         }
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "key": "devtools/lib",
-     "label": {
-      "en": "Lib"
-     },
-     "items": [
-      {
-       "key": "devtools/lib/overview",
-       "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
-       },
-       "slug": {
-        "en": "/documentation/devtools/lib/",
-        "pt-br": "/documentacao/devtools/lib/"
-       }
-      },
-      {
-       "key": "devtools/lib/reference",
-       "label": {
-        "en": "Reference",
-        "pt-br": "Referência"
-       },
-       "items": [
-        {
-         "key": "devtools/lib/reference/ai-client",
-         "label": {
-          "en": "Azion AI Client module",
-          "pt-br": "Módulo AI Client da Azion"
-         },
-         "slug": {
-          "en": "/documentation/devtools/lib/reference/ai-client/",
-          "pt-br": "/documentacao/devtools/lib/reference/ai-client/"
-         }
-        },
-        {
-         "key": "devtools/lib/reference/application",
-         "label": {
-          "en": "Azion Application module"
-         },
-         "slug": {
-          "en": "/documentation/devtools/lib/reference/application/"
-         }
-        },
-        {
-         "key": "devtools/lib/reference/client",
-         "label": {
-          "en": "Azion `Client` interface",
-          "pt-br": "Interface `Client` da Azion"
-         },
-         "slug": {
-          "en": "/documentation/devtools/lib/reference/client/",
-          "pt-br": "/documentacao/devtools/lib/reference/client/"
-         }
-        },
-        {
-         "key": "devtools/lib/reference/config",
-         "label": {
-          "en": "Azion `Config` module",
-          "pt-br": "Módulo `Config` da Azion"
-         },
-         "slug": {
-          "en": "/documentation/devtools/lib/reference/config/",
-          "pt-br": "/documentacao/devtools/lib/reference/config/"
-         }
-        },
-        {
-         "key": "devtools/lib/reference/cookies",
-         "label": {
-          "en": "Azion `Cookies` library",
-          "pt-br": "Biblioteca `Cookies` da Azion"
-         },
-         "slug": {
-          "en": "/documentation/devtools/lib/reference/cookies/",
-          "pt-br": "/documentacao/devtools/lib/reference/cookies/"
-         }
-        },
-        {
-         "key": "devtools/lib/reference/domains",
-         "label": {
-          "en": "Azion `Domains` library",
-          "pt-br": "Biblioteca `Domains` da Azion"
-         },
-         "slug": {
-          "en": "/documentation/devtools/lib/reference/domains/",
-          "pt-br": "/documentacao/devtools/lib/reference/domains/"
-         }
-        },
-        {
-         "key": "devtools/lib/reference/kv",
-         "label": {
-          "en": "Azion KV library",
-          "pt-br": "Biblioteca Azion KV"
-         },
-         "slug": {
-          "en": "/documentation/devtools/lib/reference/kv/",
-          "pt-br": "/documentacao/devtools/lib/reference/kv/"
-         }
-        },
-        {
-         "key": "devtools/lib/reference/storage",
-         "label": {
-          "en": "Azion `Storage` library",
-          "pt-br": "Biblioteca `Storage` da Azion"
-         },
-         "slug": {
-          "en": "/documentation/devtools/lib/reference/storage/",
-          "pt-br": "/documentacao/devtools/lib/reference/storage/"
-         }
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "key": "devtools/mcp",
-     "label": {
-      "en": "MCP"
-     },
-     "items": [
-      {
-       "key": "devtools/mcp/overview",
-       "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
-       },
-       "slug": {
-        "en": "/documentation/devtools/mcp/",
-        "pt-br": "/documentacao/devtools/mcp/"
-       }
-      },
-      {
-       "key": "devtools/mcp/guides",
-       "label": {
-        "en": "Guides",
-        "pt-br": "Guias"
-       },
-       "items": [
-        {
-         "key": "devtools/mcp/guides/run-mcp-server",
-         "label": {
-          "en": "How to run an MCP server on Azion",
-          "pt-br": "Como executar um servidor MCP na Azion"
-         },
-         "slug": {
-          "en": "/documentation/devtools/mcp/guides/run-mcp-server/",
-          "pt-br": "/documentacao/devtools/mcp/guides/run-mcp-server/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "devtools/mcp/reference",
-       "label": {
-        "en": "Reference",
-        "pt-br": "Referência"
-       },
-       "items": [
-        {
-         "key": "devtools/mcp/reference/cache-testing",
-         "label": {
-          "en": "MCP Cache Testing Guide",
-          "pt-br": "Guia de Teste de Cache MCP"
-         },
-         "slug": {
-          "en": "/documentation/devtools/mcp/reference/cache-testing/",
-          "pt-br": "/documentacao/devtools/mcp/reference/teste-cache/"
-         }
-        },
-        {
-         "key": "devtools/mcp/reference/configuration",
-         "label": {
-          "en": "MCP Configuration Guide",
-          "pt-br": "Guia de Configuração MCP"
-         },
-         "slug": {
-          "en": "/documentation/devtools/mcp/reference/configuration/",
-          "pt-br": "/documentacao/devtools/mcp/reference/configuracao/"
-         }
-        },
-        {
-         "key": "devtools/mcp/reference/examples",
-         "label": {
-          "en": "MCP Examples",
-          "pt-br": "Exemplos MCP"
-         },
-         "slug": {
-          "en": "/documentation/devtools/mcp/reference/examples/",
-          "pt-br": "/documentacao/devtools/mcp/reference/exemplos/"
-         }
-        },
-        {
-         "key": "devtools/mcp/reference/how-it-works",
-         "label": {
-          "en": "How MCP Works",
-          "pt-br": "Como o MCP Funciona"
-         },
-         "slug": {
-          "en": "/documentation/devtools/mcp/reference/how-it-works/",
-          "pt-br": "/documentacao/devtools/mcp/reference/como-funciona/"
-         }
-        },
-        {
-         "key": "devtools/mcp/reference/local-development",
-         "label": {
-          "en": "MCP Local Development",
-          "pt-br": "Desenvolvimento Local MCP"
-         },
-         "slug": {
-          "en": "/documentation/devtools/mcp/reference/local-development/",
-          "pt-br": "/documentacao/devtools/mcp/reference/desenvolvimento-local/"
-         }
-        },
-        {
-         "key": "devtools/mcp/reference/troubleshooting",
-         "label": {
-          "en": "MCP Troubleshooting",
-          "pt-br": "Solução de Problemas MCP"
-         },
-         "slug": {
-          "en": "/documentation/devtools/mcp/reference/troubleshooting/",
-          "pt-br": "/documentacao/devtools/mcp/reference/solucao-de-problemas/"
-         }
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "key": "devtools/terraform",
-     "label": {
-      "en": "Terraform"
-     },
-     "items": [
-      {
-       "key": "devtools/terraform/overview",
-       "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
-       },
-       "slug": {
-        "en": "/documentation/devtools/terraform/",
-        "pt-br": "/documentacao/devtools/terraform/"
-       }
-      },
-      {
-       "key": "devtools/terraform/guides",
-       "label": {
-        "en": "Guides",
-        "pt-br": "Guias"
-       },
-       "items": [
-        {
-         "key": "devtools/terraform/guides/migrate-v1-to-v2",
-         "label": {
-          "en": "Migrating from Terraform Provider v1.x to v2.0"
-         },
-         "slug": {
-          "en": "/documentation/devtools/terraform/guides/migrate-v1-to-v2/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "devtools/terraform/reference",
-       "label": {
-        "en": "Reference",
-        "pt-br": "Referência"
-       },
-       "items": [
-        {
-         "key": "devtools/terraform/reference/applications",
-         "label": {
-          "en": "Applications - Terraform Resources"
-         },
-         "slug": {
-          "en": "/documentation/devtools/terraform/reference/applications/",
-          "pt-br": "/documentacao/devtools/terraform/reference/applications/"
-         }
-        },
-        {
-         "key": "devtools/terraform/reference/best-practices",
-         "label": {
-          "en": "Best Practices - Terraform Provider",
-          "pt-br": "Boas Práticas - Terraform Provider"
-         },
-         "slug": {
-          "en": "/documentation/devtools/terraform/reference/best-practices/",
-          "pt-br": "/documentacao/devtools/terraform/reference/best-practices/"
-         }
-        },
-        {
-         "key": "devtools/terraform/reference/certificates",
-         "label": {
-          "en": "Certificates - Terraform Resources"
-         },
-         "slug": {
-          "en": "/documentation/devtools/terraform/reference/certificates/",
-          "pt-br": "/documentacao/devtools/terraform/reference/certificates/"
-         }
-        },
-        {
-         "key": "devtools/terraform/reference/connectors",
-         "label": {
-          "en": "Connectors - Terraform Resources"
-         },
-         "slug": {
-          "en": "/documentation/devtools/terraform/reference/connectors/",
-          "pt-br": "/documentacao/devtools/terraform/reference/connectors/"
-         }
-        },
-        {
-         "key": "devtools/terraform/reference/dns",
-         "label": {
-          "en": "Edge DNS - Terraform Resources"
-         },
-         "slug": {
-          "en": "/documentation/devtools/terraform/reference/dns/",
-          "pt-br": "/documentacao/devtools/terraform/reference/dns/"
-         }
-        },
-        {
-         "key": "devtools/terraform/reference/security",
-         "label": {
-          "en": "Security - Terraform Resources"
-         },
-         "slug": {
-          "en": "/documentation/devtools/terraform/reference/security/",
-          "pt-br": "/documentacao/devtools/terraform/reference/security/"
-         }
-        },
-        {
-         "key": "devtools/terraform/reference/terraform-migration-v3-to-v4",
-         "label": {
-          "en": "Migrating from Terraform Provider v1.x to v2.0",
-          "pt-br": "Migrando do Terraform Provider v1.x para v2.0"
-         },
-         "slug": {
-          "en": "/documentation/devtools/terraform/reference/terraform-migration-v3-to-v4/",
-          "pt-br": "/documentacao/devtools/terraform/reference/migration-v3-to-v4/"
-         }
-        },
-        {
-         "key": "devtools/terraform/reference/workloads",
-         "label": {
-          "en": "Workloads - Terraform Resources"
-         },
-         "slug": {
-          "en": "/documentation/devtools/terraform/reference/workloads/",
-          "pt-br": "/documentacao/devtools/terraform/reference/workloads/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "devtools/terraform/v1",
-       "label": {
-        "en": "Azion Terraform Provider v1.x (API v3)"
-       },
-       "slug": {
-        "en": "/documentation/devtools/terraform/v1/",
-        "pt-br": "/documentacao/devtools/terraform/v1/"
-       }
-      }
-     ]
-    },
-    {
-     "key": "deploy/orchestrator",
-     "label": {
-      "en": "Orchestrator"
-     },
-     "items": [
-      {
-       "key": "deploy/orchestrator/overview",
-       "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
-       },
-       "slug": {
-        "en": "/documentation/deploy/orchestrator/",
-        "pt-br": "/documentacao/deploy/orchestrator/"
-       }
-      },
-      {
-       "key": "deploy/orchestrator/guides",
-       "label": {
-        "en": "Guides",
-        "pt-br": "Guias"
-       },
-       "items": [
-        {
-         "key": "deploy/orchestrator/guides/authorize-an-edge-node",
-         "label": {
-          "en": "How to authorize an edge node",
-          "pt-br": "Como autorizar um edge node"
-         },
-         "slug": {
-          "en": "/documentation/deploy/orchestrator/guides/authorize-an-edge-node/",
-          "pt-br": "/documentacao/deploy/orchestrator/guides/autorizar-edge-node/"
-         }
-        },
-        {
-         "key": "deploy/orchestrator/guides/bind-service-node",
-         "label": {
-          "en": "How to bind an edge service to an edge node",
-          "pt-br": "Como vincular um edge service a um edge node"
-         },
-         "slug": {
-          "en": "/documentation/deploy/orchestrator/guides/bind-service-node/",
-          "pt-br": "/documentacao/deploy/orchestrator/guides/vincular-servico/"
-         }
-        },
-        {
-         "key": "deploy/orchestrator/guides/create-edge-service",
-         "label": {
-          "en": "How to create an edge service",
-          "pt-br": "Como criar um edge service"
-         },
-         "slug": {
-          "en": "/documentation/deploy/orchestrator/guides/create-edge-service/",
-          "pt-br": "/documentacao/deploy/orchestrator/guides/criar-edge-service/"
-         }
-        },
-        {
-         "key": "deploy/orchestrator/guides/edge-node-first-steps",
-         "label": {
-          "en": "Edge Node first steps",
-          "pt-br": "Primeiros passos no Edge Node"
-         },
-         "slug": {
-          "en": "/documentation/deploy/orchestrator/guides/edge-node-first-steps/",
-          "pt-br": "/documentacao/deploy/orchestrator/guides/edge-node-primeiros-passos/"
-         }
-        },
-        {
-         "key": "deploy/orchestrator/guides/edge-services-first-steps",
-         "label": {
-          "en": "Creating an Edge Service",
-          "pt-br": "Criando um edge service"
-         },
-         "slug": {
-          "en": "/documentation/deploy/orchestrator/guides/edge-services-first-steps/",
-          "pt-br": "/documentacao/deploy/orchestrator/guides/criando-edge-service/"
-         }
-        },
-        {
-         "key": "deploy/orchestrator/guides/install-orchestrator-agent",
-         "label": {
-          "en": "How to install Orchestrator Agent",
-          "pt-br": "Como instalar o Orchestrator Agent"
-         },
-         "slug": {
-          "en": "/documentation/deploy/orchestrator/guides/install-orchestrator-agent/",
-          "pt-br": "/documentacao/deploy/orchestrator/guides/instalar-orchestrator-agent/"
-         }
-        },
-        {
-         "key": "deploy/orchestrator/guides/watch-logs",
-         "label": {
-          "en": "How to watch Orchestrator logs",
-          "pt-br": "Como verificar os logs do Orchestrator"
-         },
-         "slug": {
-          "en": "/documentation/deploy/orchestrator/guides/watch-logs/",
-          "pt-br": "/documentacao/deploy/orchestrator/guides/verificar-logs/"
-         }
-        },
-        {
-         "key": "deploy/orchestrator/guides/work-with-variables",
-         "label": {
-          "en": "How to work with variables",
-          "pt-br": "Como trabalhar com variáveis no Orchestrator"
-         },
-         "slug": {
-          "en": "/documentation/deploy/orchestrator/guides/work-with-variables/",
-          "pt-br": "/documentacao/deploy/orchestrator/guides/trabalhar-com-variaveis/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "deploy/orchestrator/reference",
-       "label": {
-        "en": "Reference",
-        "pt-br": "Referência"
-       },
-       "items": [
-        {
-         "key": "deploy/orchestrator/reference/edge-node",
-         "label": {
-          "en": "Azion Edge Node"
-         },
-         "slug": {
-          "en": "/documentation/deploy/orchestrator/reference/edge-node/",
-          "pt-br": "/documentacao/deploy/orchestrator/reference/edge-node/"
-         }
-        },
-        {
-         "key": "deploy/orchestrator/reference/edge-services",
-         "label": {
-          "en": "Azion Edge Services",
-          "pt-br": "Edge Services"
-         },
-         "slug": {
-          "en": "/documentation/deploy/orchestrator/reference/edge-services/",
-          "pt-br": "/documentacao/deploy/orchestrator/reference/edge-services/"
-         }
-        }
-       ]
-      }
-     ]
-    }
-   ]
-  },
-  {
    "key": "grp/resources",
    "ui": "menu.resources",
+   "icon": "pi pi-book",
    "items": [
     {
      "key": "guides/overview",
@@ -3958,6 +3021,7 @@
   {
    "key": "grp/manage",
    "ui": "menu.manage",
+   "icon": "pi pi-user",
    "items": [
     {
      "key": "row/platform",
@@ -4262,6 +3326,152 @@
      ]
     },
     {
+     "key": "deploy/orchestrator",
+     "label": {
+      "en": "Orchestrator"
+     },
+     "items": [
+      {
+       "key": "deploy/orchestrator/overview",
+       "label": {
+        "en": "Overview",
+        "pt-br": "Visão geral"
+       },
+       "slug": {
+        "en": "/documentation/deploy/orchestrator/",
+        "pt-br": "/documentacao/deploy/orchestrator/"
+       }
+      },
+      {
+       "key": "deploy/orchestrator/guides",
+       "label": {
+        "en": "Guides",
+        "pt-br": "Guias"
+       },
+       "items": [
+        {
+         "key": "deploy/orchestrator/guides/authorize-an-edge-node",
+         "label": {
+          "en": "How to authorize an edge node",
+          "pt-br": "Como autorizar um edge node"
+         },
+         "slug": {
+          "en": "/documentation/deploy/orchestrator/guides/authorize-an-edge-node/",
+          "pt-br": "/documentacao/deploy/orchestrator/guides/autorizar-edge-node/"
+         }
+        },
+        {
+         "key": "deploy/orchestrator/guides/bind-service-node",
+         "label": {
+          "en": "How to bind an edge service to an edge node",
+          "pt-br": "Como vincular um edge service a um edge node"
+         },
+         "slug": {
+          "en": "/documentation/deploy/orchestrator/guides/bind-service-node/",
+          "pt-br": "/documentacao/deploy/orchestrator/guides/vincular-servico/"
+         }
+        },
+        {
+         "key": "deploy/orchestrator/guides/create-edge-service",
+         "label": {
+          "en": "How to create an edge service",
+          "pt-br": "Como criar um edge service"
+         },
+         "slug": {
+          "en": "/documentation/deploy/orchestrator/guides/create-edge-service/",
+          "pt-br": "/documentacao/deploy/orchestrator/guides/criar-edge-service/"
+         }
+        },
+        {
+         "key": "deploy/orchestrator/guides/edge-node-first-steps",
+         "label": {
+          "en": "Edge Node first steps",
+          "pt-br": "Primeiros passos no Edge Node"
+         },
+         "slug": {
+          "en": "/documentation/deploy/orchestrator/guides/edge-node-first-steps/",
+          "pt-br": "/documentacao/deploy/orchestrator/guides/edge-node-primeiros-passos/"
+         }
+        },
+        {
+         "key": "deploy/orchestrator/guides/edge-services-first-steps",
+         "label": {
+          "en": "Creating an Edge Service",
+          "pt-br": "Criando um edge service"
+         },
+         "slug": {
+          "en": "/documentation/deploy/orchestrator/guides/edge-services-first-steps/",
+          "pt-br": "/documentacao/deploy/orchestrator/guides/criando-edge-service/"
+         }
+        },
+        {
+         "key": "deploy/orchestrator/guides/install-orchestrator-agent",
+         "label": {
+          "en": "How to install Orchestrator Agent",
+          "pt-br": "Como instalar o Orchestrator Agent"
+         },
+         "slug": {
+          "en": "/documentation/deploy/orchestrator/guides/install-orchestrator-agent/",
+          "pt-br": "/documentacao/deploy/orchestrator/guides/instalar-orchestrator-agent/"
+         }
+        },
+        {
+         "key": "deploy/orchestrator/guides/watch-logs",
+         "label": {
+          "en": "How to watch Orchestrator logs",
+          "pt-br": "Como verificar os logs do Orchestrator"
+         },
+         "slug": {
+          "en": "/documentation/deploy/orchestrator/guides/watch-logs/",
+          "pt-br": "/documentacao/deploy/orchestrator/guides/verificar-logs/"
+         }
+        },
+        {
+         "key": "deploy/orchestrator/guides/work-with-variables",
+         "label": {
+          "en": "How to work with variables",
+          "pt-br": "Como trabalhar com variáveis no Orchestrator"
+         },
+         "slug": {
+          "en": "/documentation/deploy/orchestrator/guides/work-with-variables/",
+          "pt-br": "/documentacao/deploy/orchestrator/guides/trabalhar-com-variaveis/"
+         }
+        }
+       ]
+      },
+      {
+       "key": "deploy/orchestrator/reference",
+       "label": {
+        "en": "Reference",
+        "pt-br": "Referência"
+       },
+       "items": [
+        {
+         "key": "deploy/orchestrator/reference/edge-node",
+         "label": {
+          "en": "Azion Edge Node"
+         },
+         "slug": {
+          "en": "/documentation/deploy/orchestrator/reference/edge-node/",
+          "pt-br": "/documentacao/deploy/orchestrator/reference/edge-node/"
+         }
+        },
+        {
+         "key": "deploy/orchestrator/reference/edge-services",
+         "label": {
+          "en": "Azion Edge Services",
+          "pt-br": "Edge Services"
+         },
+         "slug": {
+          "en": "/documentation/deploy/orchestrator/reference/edge-services/",
+          "pt-br": "/documentacao/deploy/orchestrator/reference/edge-services/"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
      "key": "row/services",
      "label": {
       "en": "Services",
@@ -4408,6 +3618,7 @@
   {
    "key": "grp/more",
    "ui": "menu.more",
+   "icon": "pi pi-ellipsis-h",
    "items": [
     {
      "key": "row/changelog",

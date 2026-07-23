@@ -22,6 +22,7 @@ export type NavDict = Array<
 		items?: NavDict;
 		addBorder?: boolean;
 		hasLabel?: UIDictionaryKeys;
+		labelIcon?: string;
 		isProduct?: boolean
 	}
 >;

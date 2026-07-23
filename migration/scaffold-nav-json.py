@@ -188,10 +188,9 @@ deploy_items = section_items("deploy")
 _, deploy_ov = find(deploy_items, "deploy/overview")
 build_items.append({"key": "deploy/overview", "label": localized("Deploy", None), "slug": deploy_ov["slug"]})
 
-# Orchestrator = ferramenta de ops -> Developer tools
-devtools_items = section_items("devtools")
+# Orchestrator = ferramenta de ops -> Manage (o grupo Dev Tools saiu da sidebar:
+# duplicava o menu Dev Tools da barra de navegação superior)
 _, orch = find(deploy_items, "deploy/orchestrator")
-devtools_items.append(orch)
 
 resources_items = [
     {"key": "guides/overview", "label": localized("Guides", "Guias"), "slug": slug_of("/documentation/guides/")},
@@ -202,6 +201,7 @@ resources_items = [
 manage_items = [
     section_row("platform", "Platform", "Plataforma"),
     section_row("account", "Accounts", "Contas"),
+    orch,
     section_row("services", "Services", "Serviços"),
 ]
 
@@ -222,15 +222,14 @@ menu = {
          "slug": {"en": "/documentation/devtools/", "pt-br": "/documentacao/devtools/"}},
     ],
     "groups": [
-        {"key": "grp/get-started", "ui": "menu.getStarted", "items": section_items("get-started")},
-        {"key": "grp/build", "ui": "menu.build", "items": build_items},
-        {"key": "grp/store", "ui": "menu.store", "items": section_items("store")},
-        {"key": "grp/secure", "ui": "menu.secure", "items": section_items("secure")},
-        {"key": "grp/observe", "ui": "menu.observe", "items": section_items("observe")},
-        {"key": "grp/devtools", "ui": "menu.devTools", "items": devtools_items},
-        {"key": "grp/resources", "ui": "menu.resources", "items": resources_items},
-        {"key": "grp/manage", "ui": "menu.manage", "items": manage_items},
-        {"key": "grp/more", "ui": "menu.more", "items": more_items},
+        {"key": "grp/get-started", "ui": "menu.getStarted", "icon": "pi pi-bolt", "items": section_items("get-started")},
+        {"key": "grp/build", "ui": "menu.build", "icon": "ai ai-build-pillar", "items": build_items},
+        {"key": "grp/store", "ui": "menu.store", "icon": "ai ai-store", "items": section_items("store")},
+        {"key": "grp/secure", "ui": "menu.secure", "icon": "ai ai-secure-pillar", "items": section_items("secure")},
+        {"key": "grp/observe", "ui": "menu.observe", "icon": "ai ai-observe-pillar", "items": section_items("observe")},
+        {"key": "grp/resources", "ui": "menu.resources", "icon": "pi pi-book", "items": resources_items},
+        {"key": "grp/manage", "ui": "menu.manage", "icon": "pi pi-user", "items": manage_items},
+        {"key": "grp/more", "ui": "menu.more", "icon": "pi pi-ellipsis-h", "items": more_items},
     ],
 }
 
