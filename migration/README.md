@@ -8,6 +8,8 @@ Este diretório é a fonte de verdade da reestruturação da documentação (Mis
 | `de-para.csv` | Mapa de migração de registro: 1.474 páginas → destino canônico, seção Diátaxis, ação e fase |
 | `glossario.yaml` | Cânone de nomenclatura (nome vigente, aliases históricos, datas) |
 | `generate-redirects.mjs` | Gera entradas de redirect (`{from, moved}`) a partir do de-para, por fase |
+| `scaffold-nav-json.py` | One-off: gerou o `src/i18n/nav.menu.json` inicial (menu curado + regras de curadoria); o JSON é mantido à mão desde então |
+| `generate-nav.py` | **Aposentado** — gerava os nav.ts antigos; mantido só como referência/rollback |
 | `apresentacao-d0.md` | One-pager C-level do Entregável 0 |
 
 ## As 3 regras que geram a árvore inteira

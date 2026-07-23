@@ -269,12 +269,15 @@ class LanguageScaffolder {
 		},
 		{
 			getPath: (tag) => `../src/i18n/${tag}/nav.ts`,
-			getStub: () => `import { NavDictionary } from '../translation-checkers';
+			getStub: () => `/**
+ * Main sidebar — derived from src/i18n/nav.menu.json (hand-curated source of truth).
+ * TODO: add this language's labels/slugs to the JSON schema, then switch the
+ * second argument; until then the new language reuses the English sidebar.
+ */
+import menu from '../nav.menu.json';
+import { navFromJson, type NavMenuJson } from '../nav-transform';
 
-export default NavDictionary({
-	startHere: 'START-HERE-TRANSLATION',
-	'getting-started': 'GETTING-STARTED-TRANSLATION',
-});
+export default navFromJson(menu as NavMenuJson, 'en');
 `,
 		},
 		{

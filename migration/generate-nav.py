@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 """
+generate-nav.py — APOSENTADO. O menu principal agora vive em src/i18n/nav.menu.json
+(curado à mão; scaffold inicial por scaffold-nav-json.py; validação por lint:navcheck).
+NÃO rode este script: ele sobrescreveria os wrappers src/i18n/{en,pt-br}/nav.ts.
+Mantido como referência do formato antigo e como regenerador de rollback.
+
 generate-nav.py — gera src/i18n/{en,pt-br}/nav.ts a partir da árvore nova de permalinks
 ("menu é dado": a navegação deriva do conteúdo, não o contrário).
 
