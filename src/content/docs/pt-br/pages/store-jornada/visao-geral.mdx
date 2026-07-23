@@ -8,44 +8,22 @@ menu_namespace: storeMenu
 ---
 
 import LinkButton from 'azion-webkit/linkbutton'
-import CardBaseClickable from 'azion-webkit/cardbaseclickable';
-import CardTitle from 'azion-webkit/cardtitle';
-import CardDescription from 'azion-webkit/carddescription';
+import DocsCard from '~/components/DocsCard.astro';
 
 Os produtos de Store da Azion permitem armazenar, consultar e gerenciar dados próximos aos seus usuários e aplicações. Esta documentação apresenta o [SQL Database](/pt-br/documentacao/store/sql-database/) e o [Object Storage](/pt-br/documentacao/store/object-storage/), ferramentas poderosas para gerenciamento e processamento eficientes de dados.
 
 ### Produtos
 
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/store/object-storage/" title="Object Storage">
-    <Fragment slot="content">
-      <CardTitle titleTag="h3" class="m-0">Object Storage</CardTitle>
-      <CardDescription>Armazene e acesse arquivos com um object storage escalável e compatível com S3.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/store/sql-database/" title="SQL Database">
-    <Fragment slot="content">
-      <CardTitle titleTag="h3" class="m-0">SQL Database</CardTitle>
-      <CardDescription>Execute queries SQL em um banco de dados relacional nativo de edge.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/store/kv-store/" title="KV Store">
-    <Fragment slot="content">
-      <CardTitle titleTag="h3" class="m-0">KV Store</CardTitle>
-      <CardDescription>Gerencie dados de chave-valor para suas aplicações e functions.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
+<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+    <DocsCard link="/pt-br/documentacao/store/object-storage/" title="Object Storage" description="Armazene e acesse arquivos com um object storage escalável e compatível com S3." />
+    <DocsCard link="/pt-br/documentacao/store/sql-database/" title="SQL Database" description="Execute queries SQL em um banco de dados relacional nativo de edge." />
+    <DocsCard link="/pt-br/documentacao/store/kv-store/" title="KV Store" description="Gerencie dados de chave-valor para suas aplicações e functions." />
 </div>
 
 ### Recursos
 
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/guides/" title="Guias">
-    <Fragment slot="content">
-      <CardTitle titleTag="h3" class="m-0">Guias</CardTitle>
-      <CardDescription>Encontre documentações práticas sobre como utilizar os produtos.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
+<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+    <DocsCard link="/pt-br/documentacao/guides/" title="Guias" description="Encontre documentações práticas sobre como utilizar os produtos." />
 </div>
 
 ## Como funciona

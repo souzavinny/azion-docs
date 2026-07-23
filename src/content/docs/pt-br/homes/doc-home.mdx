@@ -9,9 +9,7 @@ permalink: /documentacao/
 
 import HeroHome from 'azion-webkit/herohome';
 import Container from 'azion-webkit/container';
-import CardBaseClickable from 'azion-webkit/cardbaseclickable';
-import CardTitle from 'azion-webkit/cardtitle';
-import CardDescription from 'azion-webkit/carddescription';
+import DocsCard from '~/components/DocsCard.astro';
 
 <div class="[&_.flex.flex-col]:!gap-4 [&_.flex.flex-col]:md:!gap-8 [&_.flex.flex-col]:2xl:!gap-16">
   <HeroHome
@@ -28,42 +26,18 @@ import CardDescription from 'azion-webkit/carddescription';
 
 ## Comece aqui, pelo seu perfil
 
-<div class="grid md:grid-cols-2 gap-3 my-8">
+<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
   <div id="persona-avaliador">
-    <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/get-started/first-deploy/" title="Estou avaliando a Azion">
-      <Fragment slot="content">
-        <i class='pi pi-bolt text-2xl'></i>
-        <CardTitle titleTag="h3" class="m-0">Estou avaliando a Azion</CardTitle>
-        <CardDescription>Veja o que dá para construir em 10 minutos: faça o deploy de uma aplicação real e verifique que ela está no ar, sem falar com vendas.</CardDescription>
-      </Fragment>
-    </CardBaseClickable>
+      <DocsCard link="/pt-br/documentacao/get-started/first-deploy/" title="Estou avaliando a Azion" icon="pi pi-bolt" description="Veja o que dá para construir em 10 minutos: faça o deploy de uma aplicação real e verifique que ela está no ar, sem falar com vendas." />
   </div>
   <div id="persona-implementador">
-    <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/guides/" title="Preciso implementar algo específico">
-      <Fragment slot="content">
-        <i class='pi pi-code text-2xl'></i>
-        <CardTitle titleTag="h3" class="m-0">Preciso implementar algo específico</CardTitle>
-        <CardDescription>Encontre a funcionalidade pelo termo que você já usa — URLs assinadas, relatórios, streaming ao vivo — e siga um guia passo a passo até a produção.</CardDescription>
-      </Fragment>
-    </CardBaseClickable>
+      <DocsCard link="/pt-br/documentacao/guides/" title="Preciso implementar algo específico" icon="pi pi-code" description="Encontre a funcionalidade pelo termo que você já usa — URLs assinadas, relatórios, streaming ao vivo — e siga um guia passo a passo até a produção." />
   </div>
   <div id="persona-operador">
-    <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/devtools/cli/" title="Opero a Azion em produção">
-      <Fragment slot="content">
-        <i class='pi pi-server text-2xl'></i>
-        <CardTitle titleTag="h3" class="m-0">Opero a Azion em produção</CardTitle>
-        <CardDescription>Administre como código com a CLI, a API e o Terraform, e mantenha faturamento e gestão de contas sob controle.</CardDescription>
-      </Fragment>
-    </CardBaseClickable>
+      <DocsCard link="/pt-br/documentacao/devtools/cli/" title="Opero a Azion em produção" icon="pi pi-server" description="Administre como código com a CLI, a API e o Terraform, e mantenha faturamento e gestão de contas sob controle." />
   </div>
   <div id="persona-decisor">
-    <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/platform/pricing/" title="Estou comparando fornecedores">
-      <Fragment slot="content">
-        <i class='pi pi-chart-line text-2xl'></i>
-        <CardTitle titleTag="h3" class="m-0">Estou comparando fornecedores</CardTitle>
-        <CardDescription>Veja o que está incluído, os limites por plano e os preços — dentro da documentação — além de arquiteturas de referência para o seu cenário.</CardDescription>
-      </Fragment>
-    </CardBaseClickable>
+      <DocsCard link="/pt-br/documentacao/platform/pricing/" title="Estou comparando fornecedores" icon="pi pi-chart-line" description="Veja o que está incluído, os limites por plano e os preços — dentro da documentação — além de arquiteturas de referência para o seu cenário." />
   </div>
 </div>
 
@@ -75,293 +49,83 @@ A maneira mais rápida de começar a utilizar a Azion Web Platform. Faça a impl
 
 Aqui estão alguns dos nossos templates mais populares para você começar. Para mais informações, acesse nossa página de documentação sobre [como usar templates](/pt-br/documentacao/get-started/first-deploy/template/).
 
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/marketplace/templates/astro-boilerplate/" title="Astro Boilerplate">
-    <Fragment slot="content">
-      <i class='ai ai-astro text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Astro Boilerplate</CardTitle>
-      <CardDescription>Sites rápidos e orientados a conteúdo, como blogs, páginas de marketing e lojas virtuais, com o mínimo de JavaScript no cliente.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/marketplace/templates/gatsby-blog/" title="Gatsby Blog Starter Kit">
-    <Fragment slot="content">
-      <i class='ai ai-gatsby text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Gatsby Blog Starter Kit</CardTitle>
-      <CardDescription>Sites de alto desempenho e otimizados para SEO com um gerador de sites estáticos baseado em React que integra conteúdo de qualquer fonte.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/marketplace/templates/react-boilerplate/" title="React Boilerplate">
-    <Fragment slot="content">
-      <i class='ai ai-react text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">React Boilerplate</CardTitle>
-      <CardDescription>Interfaces interativas com componentes reutilizáveis — ideal para iteração rápida e desenvolvimento orientado à UI no edge.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/marketplace/templates/nextjs-static-boilerplate/" title="Next.js Static Boilerplate">
-    <Fragment slot="content">
-      <i class='ai ai-nextjs text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Next.js Static Boilerplate</CardTitle>
-      <CardDescription>Renderização no servidor, geração de sites estáticos e roteamento avançado baseado em React, otimizado para deploy no edge.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="https://console.azion.com/create/vue/vue-boilerplate" title="Vue.js Boilerplate">
-    <Fragment slot="content">
-      <i class='ai ai-vue text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Vue.js Boilerplate</CardTitle>
-      <CardDescription>Interfaces web responsivas e fáceis de manter com um framework progressivo reconhecido por simplicidade e flexibilidade.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/marketplace/templates/angular-boilerplate/" title="Angular Boilerplate">
-    <Fragment slot="content">
-      <i class='ai ai-angular text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Angular Boilerplate</CardTitle>
-      <CardDescription>Aplicações web corporativas com TypeScript, estrutura consistente e ferramentas avançadas para a infraestrutura de edge.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/build/functions/runtime-apis/compatibility/" title="Mais frameworks">
-    <Fragment slot="content">
-      <i class='pi pi-th-large text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Mais frameworks</CardTitle>
-      <CardDescription>Estamos expandindo continuamente o suporte a frameworks. Veja a lista completa de frameworks compatíveis e seus templates.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
+<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+    <DocsCard link="/pt-br/documentacao/marketplace/templates/astro-boilerplate/" title="Astro Boilerplate" icon="ai ai-astro" description="Sites rápidos e orientados a conteúdo, como blogs, páginas de marketing e lojas virtuais, com o mínimo de JavaScript no cliente." />
+    <DocsCard link="/pt-br/documentacao/marketplace/templates/gatsby-blog/" title="Gatsby Blog Starter Kit" icon="ai ai-gatsby" description="Sites de alto desempenho e otimizados para SEO com um gerador de sites estáticos baseado em React que integra conteúdo de qualquer fonte." />
+    <DocsCard link="/pt-br/documentacao/marketplace/templates/react-boilerplate/" title="React Boilerplate" icon="ai ai-react" description="Interfaces interativas com componentes reutilizáveis — ideal para iteração rápida e desenvolvimento orientado à UI no edge." />
+    <DocsCard link="/pt-br/documentacao/marketplace/templates/nextjs-static-boilerplate/" title="Next.js Static Boilerplate" icon="ai ai-nextjs" description="Renderização no servidor, geração de sites estáticos e roteamento avançado baseado em React, otimizado para deploy no edge." />
+    <DocsCard link="https://console.azion.com/create/vue/vue-boilerplate" title="Vue.js Boilerplate" icon="ai ai-vue" description="Interfaces web responsivas e fáceis de manter com um framework progressivo reconhecido por simplicidade e flexibilidade." />
+    <DocsCard link="/pt-br/documentacao/marketplace/templates/angular-boilerplate/" title="Angular Boilerplate" icon="ai ai-angular" description="Aplicações web corporativas com TypeScript, estrutura consistente e ferramentas avançadas para a infraestrutura de edge." />
+    <DocsCard link="/pt-br/documentacao/build/functions/runtime-apis/compatibility/" title="Mais frameworks" icon="pi pi-th-large" description="Estamos expandindo continuamente o suporte a frameworks. Veja a lista completa de frameworks compatíveis e seus templates." />
 </div>
 
 ## Precisa implementar um projeto existente?
 
 Traga o que você já tem: conecte um repositório do GitHub ou vincule um projeto local pelo terminal.
 
-<div class="grid md:grid-cols-2 gap-3 my-8">
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/get-started/first-deploy/#importe-um-projeto-do-github" title="Importe do GitHub">
-    <Fragment slot="content">
-      <i class='pi pi-github text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Importe do GitHub</CardTitle>
-      <CardDescription>Conecte sua conta do GitHub, escolha um repositório e faça o deploy pelo Console em poucos cliques.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/get-started/first-deploy/#faça-deploy-com-a-azion-cli" title="Faça deploy com a Azion CLI">
-    <Fragment slot="content">
-      <i class='pi pi-wrench text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Faça deploy com a Azion CLI</CardTitle>
-      <CardDescription>Rode azion link na pasta do projeto e esteja no ar em menos de cinco minutos, direto do terminal.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
+<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+    <DocsCard link="/pt-br/documentacao/get-started/first-deploy/#importe-um-projeto-do-github" title="Importe do GitHub" icon="pi pi-github" description="Conecte sua conta do GitHub, escolha um repositório e faça o deploy pelo Console em poucos cliques." />
+    <DocsCard link="/pt-br/documentacao/get-started/first-deploy/#faça-deploy-com-a-azion-cli" title="Faça deploy com a Azion CLI" icon="pi pi-wrench" description="Rode azion link na pasta do projeto e esteja no ar em menos de cinco minutos, direto do terminal." />
 </div>
 
 Qualquer que seja a porta escolhida, o [tutorial de primeiro deploy](/pt-br/documentacao/get-started/first-deploy/) percorre os três caminhos e termina com um passo de verificação, para você saber que funcionou.
 
 ## Jornadas: do zero à produção
 
-<div class="grid md:grid-cols-2 gap-3 my-8">
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/get-started/" title="Coloque uma aplicação no ar">
-    <Fragment slot="content">
-      <i class='pi pi-code text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Coloque uma aplicação no ar</CardTitle>
-      <CardDescription>Do primeiro deploy a uma aplicação funcionando em uma URL real.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/secure/overview/" title="Proteja a aplicação">
-    <Fragment slot="content">
-      <i class='ai ai-edge-firewall text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Proteja a aplicação</CardTitle>
-      <CardDescription>Adicione WAF, proteção contra DDoS e regras de tráfego na frente do que você implantou.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/observe/overview/" title="Observe a aplicação">
-    <Fragment slot="content">
-      <i class='pi pi-chart-line text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Observe a aplicação</CardTitle>
-      <CardDescription>Acompanhe métricas, eventos e streams de dados do seu tráfego em tempo real.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
+<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+    <DocsCard link="/pt-br/documentacao/get-started/" title="Coloque uma aplicação no ar" icon="pi pi-code" description="Do primeiro deploy a uma aplicação funcionando em uma URL real." />
+    <DocsCard link="/pt-br/documentacao/secure/overview/" title="Proteja a aplicação" icon="ai ai-edge-firewall" description="Adicione WAF, proteção contra DDoS e regras de tráfego na frente do que você implantou." />
+    <DocsCard link="/pt-br/documentacao/observe/overview/" title="Observe a aplicação" icon="pi pi-chart-line" description="Acompanhe métricas, eventos e streams de dados do seu tráfego em tempo real." />
 </div>
 
 ## Explore por área
 
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/platform/overview/" title="Visão geral da plataforma Azion">
-    <Fragment slot="content">
-      <i class='ai ai-azion text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Visão geral da plataforma Azion</CardTitle>
-      <CardDescription>Conheça a Azion Web Platform e aprenda a utilizá-la.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/build/overview/" title="Build">
-    <Fragment slot="content">
-      <i class='ai ai-build-pillar text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Build</CardTitle>
-      <CardDescription>Construa aplicações com ferramentas e frameworks poderosos.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/store/overview/" title="Store">
-    <Fragment slot="content">
-      <i class='ai ai-store text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Store</CardTitle>
-      <CardDescription>Gerencie e processe dados no edge.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/secure/overview/" title="Secure">
-    <Fragment slot="content">
-      <i class='ai ai-secure-pillar text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Secure</CardTitle>
-      <CardDescription>Proteja totalmente suas aplicações.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/deploy/overview/" title="Deploy">
-    <Fragment slot="content">
-      <i class='ai ai-deploy-pillar text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Deploy</CardTitle>
-      <CardDescription>Gerencie recursos de edge de maneira eficiente.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/observe/overview/" title="Observe">
-    <Fragment slot="content">
-      <i class='ai ai-observe-pillar text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Observe</CardTitle>
-      <CardDescription>Monitore e obtenha análises em tempo real.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/devtools/" title="Dev Tools">
-    <Fragment slot="content">
-      <i class='pi pi-server text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Dev Tools</CardTitle>
-      <CardDescription>Construa, automatize e integre com as ferramentas para desenvolvedores da Azion.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
+<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+    <DocsCard link="/pt-br/documentacao/platform/overview/" title="Visão geral da plataforma Azion" icon="ai ai-azion" description="Conheça a Azion Web Platform e aprenda a utilizá-la." />
+    <DocsCard link="/pt-br/documentacao/build/overview/" title="Build" icon="ai ai-build-pillar" description="Construa aplicações com ferramentas e frameworks poderosos." />
+    <DocsCard link="/pt-br/documentacao/store/overview/" title="Store" icon="ai ai-store" description="Gerencie e processe dados no edge." />
+    <DocsCard link="/pt-br/documentacao/secure/overview/" title="Secure" icon="ai ai-secure-pillar" description="Proteja totalmente suas aplicações." />
+    <DocsCard link="/pt-br/documentacao/deploy/overview/" title="Deploy" icon="ai ai-deploy-pillar" description="Gerencie recursos de edge de maneira eficiente." />
+    <DocsCard link="/pt-br/documentacao/observe/overview/" title="Observe" icon="ai ai-observe-pillar" description="Monitore e obtenha análises em tempo real." />
+    <DocsCard link="/pt-br/documentacao/devtools/" title="Dev Tools" icon="pi pi-server" description="Construa, automatize e integre com as ferramentas para desenvolvedores da Azion." />
 </div>
 
 ## Conheça nossas ferramentas para desenvolvedores
 
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/account/guides/getting-to-know-azion-console/" title="Azion Console">
-    <Fragment slot="content">
-      <i class='ai ai-azion text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Azion Console</CardTitle>
-      <CardDescription>A interface de configuração da Azion: crie Applications, configure Functions, gerencie regras do Firewall, defina Cache e monitore métricas e eventos.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="https://api.azion.com/" title="Azion API">
-    <Fragment slot="content">
-      <i class='pi pi-code text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Azion API</CardTitle>
-      <CardDescription>Uma API RESTful baseada em requisições HTTPS que permite interagir totalmente com os produtos Azion.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/devtools/cli/" title="Azion CLI">
-    <Fragment slot="content">
-      <i class='pi pi-wrench text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Azion CLI</CardTitle>
-      <CardDescription>Nossa interface de linha de comando open source: inicialize, construa e faça deploy de aplicações, rode um servidor local e vincule projetos existentes.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/devtools/lib/" title="Azion Lib e SDKs">
-    <Fragment slot="content">
-      <i class='ai ai-edge-libraries text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Azion Lib e SDKs</CardTitle>
-      <CardDescription>Ferramentas JavaScript/TypeScript para o Azion Runtime e APIs REST; para projetos em Go, o SDK da Azion para Go cobre as mesmas operações.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/devtools/console-kit/" title="Console Kit">
-    <Fragment slot="content">
-      <i class='pi pi-th-large text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Console Kit</CardTitle>
-      <CardDescription>Um kit front-end para construir suas próprias interfaces do Console com Vue/Vite, Tailwind e PrimeVue, com suporte a multi-tenancy.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/devtools/graphql/" title="GraphQL API">
-    <Fragment slot="content">
-      <i class='pi pi-chart-line text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">GraphQL API</CardTitle>
-      <CardDescription>Um endpoint único para obter dados precisos: métricas em tempo real, eventos, faturamento e cobrança, sem requisições excessivas.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/devtools/terraform/" title="Terraform">
-    <Fragment slot="content">
-      <i class='pi pi-server text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Terraform</CardTitle>
-      <CardDescription>Gerencie sua infraestrutura na Azion como código reutilizável e versionado com o Azion Terraform Provider oficial.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
+<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+    <DocsCard link="/pt-br/documentacao/account/guides/getting-to-know-azion-console/" title="Azion Console" icon="ai ai-azion" description="A interface de configuração da Azion: crie Applications, configure Functions, gerencie regras do Firewall, defina Cache e monitore métricas e eventos." />
+    <DocsCard link="https://api.azion.com/" title="Azion API" icon="pi pi-code" description="Uma API RESTful baseada em requisições HTTPS que permite interagir totalmente com os produtos Azion." />
+    <DocsCard link="/pt-br/documentacao/devtools/cli/" title="Azion CLI" icon="pi pi-wrench" description="Nossa interface de linha de comando open source: inicialize, construa e faça deploy de aplicações, rode um servidor local e vincule projetos existentes." />
+    <DocsCard link="/pt-br/documentacao/devtools/lib/" title="Azion Lib e SDKs" icon="ai ai-edge-libraries" description="Ferramentas JavaScript/TypeScript para o Azion Runtime e APIs REST; para projetos em Go, o SDK da Azion para Go cobre as mesmas operações." />
+    <DocsCard link="/pt-br/documentacao/devtools/console-kit/" title="Console Kit" icon="pi pi-th-large" description="Um kit front-end para construir suas próprias interfaces do Console com Vue/Vite, Tailwind e PrimeVue, com suporte a multi-tenancy." />
+    <DocsCard link="/pt-br/documentacao/devtools/graphql/" title="GraphQL API" icon="pi pi-chart-line" description="Um endpoint único para obter dados precisos: métricas em tempo real, eventos, faturamento e cobrança, sem requisições excessivas." />
+    <DocsCard link="/pt-br/documentacao/devtools/terraform/" title="Terraform" icon="pi pi-server" description="Gerencie sua infraestrutura na Azion como código reutilizável e versionado com o Azion Terraform Provider oficial." />
 </div>
 
 Relacionados: [Azion Runtime](/pt-br/documentacao/build/functions/runtime-apis/overview/) · [SDK da Azion para Go](/pt-br/documentacao/devtools/lib/) · [CLI open source no GitHub](https://github.com/aziontech/azion)
 
 ## Encontre a solução ideal para você
 
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/architectures/by-solution/application-development/" title="Desenvolvimento de Aplicações">
-    <Fragment slot="content">
-      <i class='pi pi-code text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Desenvolvimento de Aplicações</CardTitle>
-      <CardDescription>Construa aplicações escaláveis e com baixa latência usando edge computing e funções serverless.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/architectures/by-solution/application-and-infrastructure-automation/" title="Automação de Aplicações e Infraestrutura">
-    <Fragment slot="content">
-      <i class='pi pi-server text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Automação de Aplicações e Infraestrutura</CardTitle>
-      <CardDescription>Automatize operações para otimizar a performance das aplicações e simplificar o gerenciamento da infraestrutura.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/architectures/by-solution/application-and-network-security/" title="Segurança de Aplicações e Redes">
-    <Fragment slot="content">
-      <i class='ai ai-edge-firewall text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Segurança de Aplicações e Redes</CardTitle>
-      <CardDescription>Proteja aplicações e redes contra ameaças com ferramentas de segurança e observabilidade nativas de edge.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/architectures/by-solution/artificial-intelligence/" title="Inteligência Artificial (AI)">
-    <Fragment slot="content">
-      <i class='pi pi-bolt text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Inteligência Artificial (AI)</CardTitle>
-      <CardDescription>Implemente AI no edge para insights em tempo real, respostas rápidas e experiências personalizadas.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/architectures/by-solution/service-performance-and-reliability/" title="Performance e confiabilidade do serviço">
-    <Fragment slot="content">
-      <i class='pi pi-chart-line text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Performance e confiabilidade do serviço</CardTitle>
-      <CardDescription>Melhore a performance das aplicações, reduza a latência e assegure a entrega confiável de serviços no edge.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/architectures/" title="Veja mais">
-    <Fragment slot="content">
-      <i class='pi pi-compass text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Veja mais</CardTitle>
-      <CardDescription>Consulte todas as soluções para casos de uso.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
+<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+    <DocsCard link="/pt-br/documentacao/architectures/by-solution/application-development/" title="Desenvolvimento de Aplicações" icon="pi pi-code" description="Construa aplicações escaláveis e com baixa latência usando edge computing e funções serverless." />
+    <DocsCard link="/pt-br/documentacao/architectures/by-solution/application-and-infrastructure-automation/" title="Automação de Aplicações e Infraestrutura" icon="pi pi-server" description="Automatize operações para otimizar a performance das aplicações e simplificar o gerenciamento da infraestrutura." />
+    <DocsCard link="/pt-br/documentacao/architectures/by-solution/application-and-network-security/" title="Segurança de Aplicações e Redes" icon="ai ai-edge-firewall" description="Proteja aplicações e redes contra ameaças com ferramentas de segurança e observabilidade nativas de edge." />
+    <DocsCard link="/pt-br/documentacao/architectures/by-solution/artificial-intelligence/" title="Inteligência Artificial (AI)" icon="pi pi-bolt" description="Implemente AI no edge para insights em tempo real, respostas rápidas e experiências personalizadas." />
+    <DocsCard link="/pt-br/documentacao/architectures/by-solution/service-performance-and-reliability/" title="Performance e confiabilidade do serviço" icon="pi pi-chart-line" description="Melhore a performance das aplicações, reduza a latência e assegure a entrega confiável de serviços no edge." />
+    <DocsCard link="/pt-br/documentacao/architectures/" title="Veja mais" icon="pi pi-compass" description="Consulte todas as soluções para casos de uso." />
 </div>
 
 ## O que há de novo?
 
-<div class="grid md:grid-cols-2 gap-3 my-8">
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/changelog/" title="Release notes">
-    <Fragment slot="content">
-      <i class='pi pi-megaphone text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Release notes</CardTitle>
-      <CardDescription>Fique por dentro das últimas mudanças e lançamentos dos produtos e serviços Azion.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="https://discord.com/invite/Yp9N7RMVZy" title="Junte-se à Comunidade">
-    <Fragment slot="content">
-      <i class='pi pi-discord text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Junte-se à Comunidade</CardTitle>
-      <CardDescription>Participe: compartilhe experiências com a comunidade Azion no Discord.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
+<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+    <DocsCard link="/pt-br/documentacao/changelog/" title="Release notes" icon="pi pi-megaphone" description="Fique por dentro das últimas mudanças e lançamentos dos produtos e serviços Azion." />
+    <DocsCard link="https://discord.com/invite/Yp9N7RMVZy" title="Junte-se à Comunidade" icon="pi pi-discord" description="Participe: compartilhe experiências com a comunidade Azion no Discord." />
 </div>
 
 ## Para agentes de IA
 
 Consumindo esta documentação com um assistente de IA ou agente de código? A Azion mantém um MCP server oficial com ferramentas de busca na documentação, em exemplos de código e em comandos da CLI, direto do seu agente.
 
-<div class="grid md:grid-cols-2 gap-3 my-8">
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/devtools/for-ai-agents/" title="Azion MCP Server">
-    <Fragment slot="content">
-      <i class='pi pi-microchip text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Azion MCP Server</CardTitle>
-      <CardDescription>Busque na documentação, em exemplos de código e em comandos da CLI a partir do seu agente de IA via MCP server oficial.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
+<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+    <DocsCard link="/pt-br/documentacao/devtools/for-ai-agents/" title="Azion MCP Server" icon="pi pi-microchip" description="Busque na documentação, em exemplos de código e em comandos da CLI a partir do seu agente de IA via MCP server oficial." />
 </div>

@@ -11,32 +11,20 @@ permalink: /documentation/deploy/overview/
 ---
 
 import LinkButton from 'azion-webkit/linkbutton'
-import CardBaseClickable from 'azion-webkit/cardbaseclickable';
-import CardTitle from 'azion-webkit/cardtitle';
-import CardDescription from 'azion-webkit/carddescription';
+import DocsCard from '~/components/DocsCard.astro';
 
 Azion **Deploy** products let you run your applications anywhere: on Azion's highly distributed network, on multi-cloud, or on-premises. They're designed to enhance the efficiency of managing edge resources in real time.
 
 ### Products
 
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/deploy/orchestrator/" title="Orchestrator">
-    <Fragment slot="content">
-      <CardTitle titleTag="h3" class="m-0">Orchestrator</CardTitle>
-      <CardDescription>Bring your applications closer to your users and devices by distributing them on Azion's edge or on your own edge.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
+<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+    <DocsCard link="/en/documentation/deploy/orchestrator/" title="Orchestrator" description="Bring your applications closer to your users and devices by distributing them on Azion's edge or on your own edge." />
 </div>
 
 ### Resources
 
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/guides/" title="Guides">
-    <Fragment slot="content">
-      <CardTitle titleTag="h3" class="m-0">Guides</CardTitle>
-      <CardDescription>Find practical documentation on how to use products.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
+<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+    <DocsCard link="/en/documentation/guides/" title="Guides" description="Find practical documentation on how to use products." />
 </div>
 
 ## How it works

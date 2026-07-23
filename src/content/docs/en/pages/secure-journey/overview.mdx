@@ -8,9 +8,7 @@ permalink: /documentation/secure/overview/
 ---
 
 import LinkButton from 'azion-webkit/linkbutton'
-import CardBaseClickable from 'azion-webkit/cardbaseclickable';
-import CardTitle from 'azion-webkit/cardtitle';
-import CardDescription from 'azion-webkit/carddescription';
+import DocsCard from '~/components/DocsCard.astro';
 
 Azion Secure products assist you in protecting your domains, applications, and infrastructure, guaranteeing the security, availability, and authenticity of your application's data.
 
@@ -18,53 +16,23 @@ Azion Secure products assist you in protecting your domains, applications, and i
 
 ### Products
 
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/secure/firewall/" title="Firewall">
-    <Fragment slot="content">
-      <CardTitle titleTag="h3" class="m-0">Firewall</CardTitle>
-      <CardDescription>Protect your application from the network to the application layer.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/secure/edge-dns/" title="Edge DNS">
-    <Fragment slot="content">
-      <CardTitle titleTag="h3" class="m-0">Edge DNS</CardTitle>
-      <CardDescription>Host domains for your application with an integrated traffic routing solution.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
+<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+    <DocsCard link="/en/documentation/secure/firewall/" title="Firewall" description="Protect your application from the network to the application layer." />
+    <DocsCard link="/en/documentation/secure/edge-dns/" title="Edge DNS" description="Host domains for your application with an integrated traffic routing solution." />
 </div>
 
 ### Modules
 
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/secure/ddos-protection/" title="DDoS Protection">
-    <Fragment slot="content">
-      <CardTitle titleTag="h3" class="m-0">DDoS Protection</CardTitle>
-      <CardDescription>Mitigate the largest and most complex network and transport-layer DDoS attacks.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/secure/network-shield/" title="Network Shield">
-    <Fragment slot="content">
-      <CardTitle titleTag="h3" class="m-0">Network Shield</CardTitle>
-      <CardDescription>Get protection from a programmable security perimeter for inbound and outbound traffic at the edge.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/secure/waf/" title="Web Application Firewall">
-    <Fragment slot="content">
-      <CardTitle titleTag="h3" class="m-0">Web Application Firewall</CardTitle>
-      <CardDescription>Secure your web application from OWASP Top 10 threats to sophisticated zero-day attacks.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
+<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+    <DocsCard link="/en/documentation/secure/ddos-protection/" title="DDoS Protection" description="Mitigate the largest and most complex network and transport-layer DDoS attacks." />
+    <DocsCard link="/en/documentation/secure/network-shield/" title="Network Shield" description="Get protection from a programmable security perimeter for inbound and outbound traffic at the edge." />
+    <DocsCard link="/en/documentation/secure/waf/" title="Web Application Firewall" description="Secure your web application from OWASP Top 10 threats to sophisticated zero-day attacks." />
 </div>
 
 ### Resources
 
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/guides/" title="Guides">
-    <Fragment slot="content">
-      <CardTitle titleTag="h3" class="m-0">Guides</CardTitle>
-      <CardDescription>Find practical documentation on how to use products.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
+<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+    <DocsCard link="/en/documentation/guides/" title="Guides" description="Find practical documentation on how to use products." />
 </div>
 
 ## How it works

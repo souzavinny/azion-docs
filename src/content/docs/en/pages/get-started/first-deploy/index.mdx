@@ -11,9 +11,8 @@ namespace: documentation_get_started_first_deploy
 permalink: /documentation/get-started/first-deploy/
 ---
 
-import CardBaseClickable from 'azion-webkit/cardbaseclickable';
-import CardTitle from 'azion-webkit/cardtitle';
-import CardDescription from 'azion-webkit/carddescription';
+import DocsCard from '~/components/DocsCard.astro';
+
 
 In this tutorial you'll deploy an application to Azion and confirm it's live on its own Azion domain. Expect about **5 minutes** from start to a working URL.
 
@@ -130,26 +129,8 @@ The first line of the response is `HTTP/2 200`.
 
 ## Next steps
 
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/get-started/production-checklist/" title="Go live with Azion">
-    <Fragment slot="content">
-      <i class='ai ai-azion text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Go live with Azion</CardTitle>
-      <CardDescription>Add a custom domain and point your traffic to the application you just deployed.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/secure/overview/" title="Secure your application">
-    <Fragment slot="content">
-      <i class='ai ai-secure-pillar text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Secure your application</CardTitle>
-      <CardDescription>Enable Firewall and WAF protection.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/observe/overview/" title="Observe your application">
-    <Fragment slot="content">
-      <i class='ai ai-observe-pillar text-2xl'></i>
-      <CardTitle titleTag="h3" class="m-0">Observe your application</CardTitle>
-      <CardDescription>Follow metrics and events in real time.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
+<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+    <DocsCard link="/en/documentation/get-started/production-checklist/" title="Go live with Azion" icon="ai ai-azion" description="Add a custom domain and point your traffic to the application you just deployed." />
+    <DocsCard link="/en/documentation/secure/overview/" title="Secure your application" icon="ai ai-secure-pillar" description="Enable Firewall and WAF protection." />
+    <DocsCard link="/en/documentation/observe/overview/" title="Observe your application" icon="ai ai-observe-pillar" description="Follow metrics and events in real time." />
 </div>

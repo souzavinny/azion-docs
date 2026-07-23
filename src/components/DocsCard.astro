@@ -1,0 +1,30 @@
+---
+/**
+ * Standard docs CTA card — the single card pattern for content pages (market-standard
+ * ~330×180 footprint): compact spacing, lg title, sm description clamped at 3 lines.
+ * Place inside a grid div with the canonical class:
+ *   <div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+ * (auto-fill keeps cards ~300-370px wide in any container: 4-up on the home,
+ * 2-up inside the docs content column.)
+ */
+interface Props {
+	link: string;
+	title: string;
+	icon?: string;
+	description?: string;
+	titleTag?: 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+}
+import CardBaseClickable from 'azion-webkit/cardbaseclickable';
+import CardTitle from 'azion-webkit/cardtitle';
+import CardDescription from 'azion-webkit/carddescription';
+
+const { link, title, icon, description, titleTag = 'h3' } = Astro.props;
+---
+
+<CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="compact" link={link} title={title}>
+	<Fragment slot="content">
+		{icon && <i class={`${icon} text-xl`}></i>}
+		<CardTitle titleTag={titleTag} class="m-0 !text-lg">{title}</CardTitle>
+		{description && <CardDescription class="!text-sm line-clamp-3">{description}</CardDescription>}
+	</Fragment>
+</CardBaseClickable>

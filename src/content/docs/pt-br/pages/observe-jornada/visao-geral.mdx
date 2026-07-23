@@ -12,56 +12,24 @@ menu_namespace: observeMenu
 ---
 
 import LinkButton from 'azion-webkit/linkbutton'
-import CardBaseClickable from 'azion-webkit/cardbaseclickable';
-import CardTitle from 'azion-webkit/cardtitle';
-import CardDescription from 'azion-webkit/carddescription';
+import DocsCard from '~/components/DocsCard.astro';
 
 Os produtos de Observe da Azion auxiliam você no monitoramento e acesso a informações relacionadas aos seus dados. Você pode analisá-los na Azion Web Platform ou conectar seus dados a plataformas de terceiros, melhorando sua compreensão do seu conteúdo, como seus usuários estão acessando elas, obtendo insights sobre desempenho e segurança e tomando decisões mais informadas.
 
 ### Produtos
 
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/observe/data-stream/" title="Data Stream">
-    <Fragment slot="content">
-      <CardTitle titleTag="h3" class="m-0">Data Stream</CardTitle>
-      <CardDescription>Disponibilize seus conteúdos e dados de aplicações em tempo real.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/observe/real-time-metrics/" title="Real-Time Metrics">
-    <Fragment slot="content">
-      <CardTitle titleTag="h3" class="m-0">Real-Time Metrics</CardTitle>
-      <CardDescription>Acesse métricas em tempo real e otimize seu monitoramento.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/observe/real-time-events/" title="Real-Time Events">
-    <Fragment slot="content">
-      <CardTitle titleTag="h3" class="m-0">Real-Time Events</CardTitle>
-      <CardDescription>Exiba logs em tempo real e realize pesquisas complexas.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/observe/edge-pulse/" title="Edge Pulse">
-    <Fragment slot="content">
-      <CardTitle titleTag="h3" class="m-0">Edge Pulse</CardTitle>
-      <CardDescription>Conheça a experiência de seus clientes para entregar conteúdos.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
+<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+    <DocsCard link="/pt-br/documentacao/observe/data-stream/" title="Data Stream" description="Disponibilize seus conteúdos e dados de aplicações em tempo real." />
+    <DocsCard link="/pt-br/documentacao/observe/real-time-metrics/" title="Real-Time Metrics" description="Acesse métricas em tempo real e otimize seu monitoramento." />
+    <DocsCard link="/pt-br/documentacao/observe/real-time-events/" title="Real-Time Events" description="Exiba logs em tempo real e realize pesquisas complexas." />
+    <DocsCard link="/pt-br/documentacao/observe/edge-pulse/" title="Edge Pulse" description="Conheça a experiência de seus clientes para entregar conteúdos." />
 </div>
 
 ### Recursos
 
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/guides/" title="Guias">
-    <Fragment slot="content">
-      <CardTitle titleTag="h3" class="m-0">Guias</CardTitle>
-      <CardDescription>Encontre documentações práticas sobre como utilizar os produtos e API.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/pt-br/documentacao/devtools/graphql/" title="GraphQL API">
-    <Fragment slot="content">
-      <CardTitle titleTag="h3" class="m-0">GraphQL API</CardTitle>
-      <CardDescription>Solicite os dados que deseja e receba exatamente o que foi solicitado.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
+<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+    <DocsCard link="/pt-br/documentacao/guides/" title="Guias" description="Encontre documentações práticas sobre como utilizar os produtos e API." />
+    <DocsCard link="/pt-br/documentacao/devtools/graphql/" title="GraphQL API" description="Solicite os dados que deseja e receba exatamente o que foi solicitado." />
 </div>
 
 ## Como funciona

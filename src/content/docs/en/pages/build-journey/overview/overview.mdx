@@ -10,67 +10,30 @@ permalink: /documentation/build/overview/
 ---
 
 import LinkButton from 'azion-webkit/linkbutton'
-import CardBaseClickable from 'azion-webkit/cardbaseclickable';
-import CardTitle from 'azion-webkit/cardtitle';
-import CardDescription from 'azion-webkit/carddescription';
+import DocsCard from '~/components/DocsCard.astro';
 
 The Azion Build products are your starting point for utilizing the power of edge computing in your applications. Build and run your application with Cache, Application Accelerator, and Functions right on Azion's global Edge Computing network, ensuring low-latency processing at the edge.
 
 ### Products
 
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/applications/" title="Applications">
-    <Fragment slot="content">
-      <CardTitle titleTag="h3" class="m-0">Applications</CardTitle>
-      <CardDescription>Applications allows you to build your web applications to run on Azion Web Platform.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
+<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+    <DocsCard link="/en/documentation/build/applications/" title="Applications" description="Applications allows you to build your web applications to run on Azion Web Platform." />
 </div>
 
 ### Modules
 
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/applications/reference/application-accelerator/" title="Application Accelerator">
-    <Fragment slot="content">
-      <CardTitle titleTag="h3" class="m-0">Application Accelerator</CardTitle>
-      <CardDescription>Speed ​​up the performance of your applications and APIs with protocol optimizations and advanced caching rules.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/applications/reference/cache/" title="Cache">
-    <Fragment slot="content">
-      <CardTitle titleTag="h3" class="m-0">Cache</CardTitle>
-      <CardDescription>Turbocharge delivery by caching content at the edge of the network, closer to your users.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/applications/reference/functions/" title="Functions">
-    <Fragment slot="content">
-      <CardTitle titleTag="h3" class="m-0">Functions</CardTitle>
-      <CardDescription>Create event-driven, serverless applications, at the edge of the network, closer to users.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/applications/reference/image-processor/" title="Image Processor">
-    <Fragment slot="content">
-      <CardTitle titleTag="h3" class="m-0">Image Processor</CardTitle>
-      <CardDescription>Optimize, convert, and manipulate your images just-in-time to enhance the user experience.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/build/connectors/reference/load-balancer/" title="Load Balancer">
-    <Fragment slot="content">
-      <CardTitle titleTag="h3" class="m-0">Load Balancer</CardTitle>
-      <CardDescription>Balance loads on your servers and across any cloud provider to boost the reliability and availability of your content, applications, and APIs.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
+<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+    <DocsCard link="/en/documentation/build/applications/reference/application-accelerator/" title="Application Accelerator" description="Speed ​​up the performance of your applications and APIs with protocol optimizations and advanced caching rules." />
+    <DocsCard link="/en/documentation/build/applications/reference/cache/" title="Cache" description="Turbocharge delivery by caching content at the edge of the network, closer to your users." />
+    <DocsCard link="/en/documentation/build/applications/reference/functions/" title="Functions" description="Create event-driven, serverless applications, at the edge of the network, closer to users." />
+    <DocsCard link="/en/documentation/build/applications/reference/image-processor/" title="Image Processor" description="Optimize, convert, and manipulate your images just-in-time to enhance the user experience." />
+    <DocsCard link="/en/documentation/build/connectors/reference/load-balancer/" title="Load Balancer" description="Balance loads on your servers and across any cloud provider to boost the reliability and availability of your content, applications, and APIs." />
 </div>
 
 ### Resources
 
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
-  <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="base" link="/en/documentation/guides/" title="Guides">
-    <Fragment slot="content">
-      <CardTitle titleTag="h3" class="m-0">Guides</CardTitle>
-      <CardDescription>Find practical documentation on how to use products.</CardDescription>
-    </Fragment>
-  </CardBaseClickable>
+<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+    <DocsCard link="/en/documentation/guides/" title="Guides" description="Find practical documentation on how to use products." />
 </div>
 
 ## How it works

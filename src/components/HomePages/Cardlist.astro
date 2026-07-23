@@ -11,9 +11,7 @@ interface Props {
 	}>;
 }
 
-import CardBaseClickable from 'azion-webkit/cardbaseclickable';
-import CardTitle from 'azion-webkit/cardtitle';
-import CardDescription from 'azion-webkit/carddescription';
+import DocsCard from '~/components/DocsCard.astro';
 
 const { data } = Astro.props;
 ---
@@ -23,30 +21,13 @@ const { data } = Astro.props;
 		<h2>
 			{item.title}
 		</h2>
-		<div class="grid md:grid-cols-2 gap-3 my-8">
+		<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
 			{
 				item.cards.map((card) => (
-					<CardBaseClickable
-						grid={true}
-						hover="outlined"
-						class="w-full"
-						spacing="base"
-						link={card.link}
-						title={card.title}
-					>
-						<Fragment slot="content">
-							<CardTitle titleTag="h3" class="m-0">
-								{card.title}
-							</CardTitle>
-							<CardDescription>
-								{card.description}
-							</CardDescription>
-						</Fragment>
-					</CardBaseClickable>
+					<DocsCard link={card.link} title={card.title} icon={card.icon} description={card.description} />
 				))
 			}
 		</div>
 	))
 }
 </div>
-	
