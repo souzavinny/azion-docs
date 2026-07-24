@@ -19,8 +19,8 @@ import { getPageBreadcrumb } from '~/util/getBreadcrumb';
 export interface Props {
 	content: { title: string };
 	fileToGetContributors: string;
-	previous?: { text: string; link: string };
-	next?: { text: string; link: string };
+	previous?: { text: string; link: string; context?: string };
+	next?: { text: string; link: string; context?: string };
 }
 
 const {content, fileToGetContributors, previous, next} = Astro.props;
@@ -99,9 +99,9 @@ const t = useTranslations(Astro);
 							next: next,
 						}}
 						overline={
-							{ 
-								prev: t('articleNav.prevPage'),
-								next: t('articleNav.nextPage')
+							{
+								prev: previous?.context ? `${t('articleNav.prevPage')} · ${previous.context}` : t('articleNav.prevPage'),
+								next: next?.context ? `${t('articleNav.nextPage')} · ${next.context}` : t('articleNav.nextPage')
 							}
 						}
 					/>
