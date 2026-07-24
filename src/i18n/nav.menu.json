@@ -165,17 +165,6 @@
      }
     },
     {
-     "key": "get-started/journeys/launch",
-     "label": {
-      "en": "Build an application",
-      "pt-br": "Criar uma aplicação"
-     },
-     "slug": {
-      "en": "/documentation/get-started/journeys/launch/",
-      "pt-br": "/documentacao/build/applications/guides/criar-uma-aplicacao/"
-     }
-    },
-    {
      "key": "build/ai-inference",
      "label": {
       "en": "AI Inference"
@@ -228,6 +217,17 @@
        "slug": {
         "en": "/documentation/build/applications/",
         "pt-br": "/documentacao/build/applications/"
+       }
+      },
+      {
+       "key": "get-started/journeys/launch",
+       "label": {
+        "en": "Build an application",
+        "pt-br": "Criar uma aplicação"
+       },
+       "slug": {
+        "en": "/documentation/get-started/journeys/launch/",
+        "pt-br": "/documentacao/build/applications/guides/criar-uma-aplicacao/"
        }
       },
       {

@@ -211,10 +211,11 @@ start_items = [
 ]
 
 build_items = section_items("build")
-# jornada "Build an application" logo após o Overview do Build
+# jornada "Build an application" dentro de Applications, logo após o Overview do produto
 launch = take(journeys["items"], "get-started/journeys/launch")
-i_ov, _ = find(build_items, "build/overview")
-build_items.insert(i_ov + 1, launch)
+_, apps = find(build_items, "build/applications")
+i_ov, _ = find(apps["items"], "build/applications/overview")
+apps["items"].insert(i_ov + 1, launch)
 # ferramentas de ambiente de desenvolvimento (vindas do antigo toggle Frameworks)
 TOOLING = ["cli", "code-editor", "environment-variables", "go", "javascript",
            "local-dev", "runtime-apis", "terraform-provider"]
