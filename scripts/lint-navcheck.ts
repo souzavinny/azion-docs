@@ -66,8 +66,9 @@ function checkEntry(e: NavEntry, depth: number) {
 	checkKey(e.key);
 	if (!e.label?.en) errors.push(`${e.key}: missing label.en`);
 	if (!e.slug && !e.items?.length) errors.push(`${e.key}: neither slug nor items`);
-	if (depth > 4) errors.push(`${e.key}: depth ${depth} > 4`);
-	else if (depth === 4) depth4.push(e.key);
+	// máx. 5 desde o toggle Modules dentro de Applications (Marcus, 2026-07-24)
+	if (depth > 5) errors.push(`${e.key}: depth ${depth} > 5`);
+	else if (depth >= 4) depth4.push(e.key);
 	if (e.slug) {
 		if (!isURL(e.slug.en) && !permalinks.en.has(norm(e.slug.en)))
 			errors.push(`${e.key}: slug.en not a content permalink: ${e.slug.en}`);

@@ -242,34 +242,310 @@
        }
       },
       {
+       "key": "build/applications/modules",
+       "label": {
+        "en": "Modules",
+        "pt-br": "Módulos"
+       },
+       "items": [
+        {
+         "key": "build/applications/application-accelerator",
+         "label": {
+          "en": "Application Accelerator"
+         },
+         "slug": {
+          "en": "/documentation/build/applications/application-accelerator/",
+          "pt-br": "/documentacao/build/applications/application-accelerator/"
+         }
+        },
+        {
+         "key": "build/applications/cache",
+         "label": {
+          "en": "Cache"
+         },
+         "items": [
+          {
+           "key": "build/applications/cache/overview",
+           "label": {
+            "en": "Overview",
+            "pt-br": "Visão geral"
+           },
+           "slug": {
+            "en": "/documentation/build/applications/cache/",
+            "pt-br": "/documentacao/build/applications/cache/"
+           }
+          },
+          {
+           "key": "build/applications/cache/guides",
+           "label": {
+            "en": "Guides",
+            "pt-br": "Guias"
+           },
+           "items": [
+            {
+             "key": "build/applications/cache/guides/advanced-cache-key",
+             "label": {
+              "en": "How to configure Advanced Cache Key for Applications",
+              "pt-br": "Como configurar a Advanced Cache Key para Applications"
+             },
+             "slug": {
+              "en": "/documentation/build/applications/cache/guides/advanced-cache-key/",
+              "pt-br": "/documentacao/build/applications/cache/guides/advanced-cache-key/"
+             }
+            },
+            {
+             "key": "build/applications/cache/guides/cache-settings",
+             "label": {
+              "en": "How to configure cache policies for Applications",
+              "pt-br": "Como configurar políticas de cache para Applications"
+             },
+             "slug": {
+              "en": "/documentation/build/applications/cache/guides/cache-settings/",
+              "pt-br": "/documentacao/build/applications/cache/guides/cache-settings/"
+             }
+            },
+            {
+             "key": "build/applications/cache/guides/check-page-cache-time",
+             "label": {
+              "en": "Verify Cache Indicators with ModHeader",
+              "pt-br": "Verifique indicadores de cache com o ModHeader"
+             },
+             "slug": {
+              "en": "/documentation/build/applications/cache/guides/check-page-cache-time/",
+              "pt-br": "/documentacao/build/applications/cache/guides/verificar-tempo-de-cache-da-pagina/"
+             }
+            },
+            {
+             "key": "build/applications/cache/guides/enforce-hls-cache",
+             "label": {
+              "en": "How to enforce HLS cache for live streaming delivery",
+              "pt-br": "Implemente cache HLS para streaming ao vivo"
+             },
+             "slug": {
+              "en": "/documentation/build/applications/cache/guides/enforce-hls-cache/",
+              "pt-br": "/documentacao/build/applications/cache/guides/implementar-cache-hls/"
+             }
+            },
+            {
+             "key": "build/applications/cache/guides/tune-cache-settings",
+             "label": {
+              "en": "How to tune your cache settings",
+              "pt-br": "Como ajustar as configurações de cache"
+             },
+             "slug": {
+              "en": "/documentation/build/applications/cache/guides/tune-cache-settings/",
+              "pt-br": "/documentacao/build/applications/cache/guides/ajustar-cache-settings/"
+             }
+            }
+           ]
+          },
+          {
+           "key": "build/applications/cache/tiered-cache",
+           "label": {
+            "en": "Tiered Cache"
+           },
+           "slug": {
+            "en": "/documentation/build/applications/cache/tiered-cache/",
+            "pt-br": "/documentacao/build/applications/cache/tiered-cache/"
+           }
+          }
+         ]
+        },
+        {
+         "key": "build/functions",
+         "label": {
+          "en": "Functions"
+         },
+         "items": [
+          {
+           "key": "build/functions/overview",
+           "label": {
+            "en": "Overview",
+            "pt-br": "Visão geral"
+           },
+           "slug": {
+            "en": "/documentation/build/applications/functions/",
+            "pt-br": "/documentacao/build/applications/functions/"
+           }
+          },
+          {
+           "key": "build/applications/reference/functions-instances",
+           "label": {
+            "en": "Functions Instances"
+           },
+           "slug": {
+            "en": "/documentation/build/applications/reference/functions-instances/",
+            "pt-br": "/documentacao/build/applications/reference/functions-instances/"
+           }
+          },
+          {
+           "key": "build/functions/guides",
+           "label": {
+            "en": "Guides",
+            "pt-br": "Guias"
+           },
+           "items": [
+            {
+             "key": "get-started/frameworks/javascript",
+             "label": {
+              "en": "How to build functions",
+              "pt-br": "Como escrever functions"
+             },
+             "slug": {
+              "en": "/documentation/get-started/frameworks/javascript/",
+              "pt-br": "/documentacao/build/applications/guides/javascript/"
+             }
+            },
+            {
+             "key": "build/functions/guides/altcha",
+             "label": {
+              "en": "How to Use the ALTCHA Function",
+              "pt-br": "Use a Function ALTCHA no Marketplace da Azion"
+             },
+             "slug": {
+              "en": "/documentation/build/functions/guides/altcha/",
+              "pt-br": "/documentacao/build/functions/guides/altcha/"
+             }
+            },
+            {
+             "key": "build/functions/guides/api-builder",
+             "label": {
+              "en": "How to build an API with Functions and ChatGPT",
+              "pt-br": "Como criar uma API com Functions e ChatGPT"
+             },
+             "slug": {
+              "en": "/documentation/build/functions/guides/api-builder/",
+              "pt-br": "/documentacao/build/functions/guides/api-builder/"
+             }
+            },
+            {
+             "key": "build/functions/guides/browserless-functions",
+             "label": {
+              "en": "How to build a browserless application with Functions",
+              "pt-br": "Como construir uma aplicação browserless com Functions"
+             },
+             "slug": {
+              "en": "/documentation/build/functions/guides/browserless-functions/",
+              "pt-br": "/documentacao/build/functions/guides/aplicacao-browserless-functions/"
+             }
+            },
+            {
+             "key": "build/functions/guides/debugging-functions-graphql",
+             "label": {
+              "en": "How to debug functions using GraphQL API",
+              "pt-br": "Como fazer o debug de functions usando a GraphQL⁠ API"
+             },
+             "slug": {
+              "en": "/documentation/build/functions/guides/debugging-functions-graphql/",
+              "pt-br": "/documentacao/build/functions/guides/debugging-functions-graphql/"
+             }
+            },
+            {
+             "key": "build/functions/guides/firewall",
+             "label": {
+              "en": "Create & Configure a Function on Firewall",
+              "pt-br": "Como criar e configurar uma function em seu Firewall"
+             },
+             "slug": {
+              "en": "/documentation/build/functions/guides/firewall/",
+              "pt-br": "/documentacao/build/functions/guides/firewall/"
+             }
+            },
+            {
+             "key": "build/functions/guides/paywall-function-jwt",
+             "label": {
+              "en": "How to set up a paywall with Azion JWT solution",
+              "pt-br": "Configure um paywall com a integração JWT"
+             },
+             "slug": {
+              "en": "/documentation/build/functions/guides/paywall-function-jwt/",
+              "pt-br": "/documentacao/build/functions/guides/paywall-function-jwt/"
+             }
+            },
+            {
+             "key": "build/functions/guides/serverless-functions",
+             "label": {
+              "en": "How to run serverless functions on Azion",
+              "pt-br": "Como executar funções serverless na Azion"
+             },
+             "slug": {
+              "en": "/documentation/build/functions/guides/serverless-functions/",
+              "pt-br": "/documentacao/build/functions/guides/funcoes-serverless/"
+             }
+            }
+           ]
+          },
+          {
+           "key": "build/functions/azion-runtime",
+           "label": {
+            "en": "Azion Runtime"
+           },
+           "slug": {
+            "en": "/documentation/runtime/overview/",
+            "pt-br": "/documentacao/runtime/visao-geral/"
+           }
+          }
+         ]
+        },
+        {
+         "key": "build/applications/image-processor",
+         "label": {
+          "en": "Image Processor"
+         },
+         "items": [
+          {
+           "key": "build/applications/image-processor/overview",
+           "label": {
+            "en": "Overview",
+            "pt-br": "Visão geral"
+           },
+           "slug": {
+            "en": "/documentation/build/applications/image-processor/",
+            "pt-br": "/documentacao/build/applications/image-processor/"
+           }
+          },
+          {
+           "key": "build/applications/image-processor/first-steps",
+           "label": {
+            "en": "First steps",
+            "pt-br": "Primeiros passos"
+           },
+           "slug": {
+            "en": "/documentation/build/applications/image-processor/first-steps/",
+            "pt-br": "/documentacao/build/applications/image-processor/first-steps/"
+           }
+          },
+          {
+           "key": "build/applications/image-processor/guides",
+           "label": {
+            "en": "Guides",
+            "pt-br": "Guias"
+           },
+           "items": [
+            {
+             "key": "build/applications/image-processor/guides/process-images",
+             "label": {
+              "en": "How to optimize image processing at the edge",
+              "pt-br": "Como otimizar o processamento de imagens no edge"
+             },
+             "slug": {
+              "en": "/documentation/build/applications/image-processor/guides/process-images/",
+              "pt-br": "/documentacao/build/applications/image-processor/guides/processar-imagens/"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
        "key": "build/applications/guides",
        "label": {
         "en": "Guides",
         "pt-br": "Guias"
        },
        "items": [
-        {
-         "key": "build/applications/guides/advanced-cache-key",
-         "label": {
-          "en": "How to configure Advanced Cache Key for Applications",
-          "pt-br": "Como configurar a Advanced Cache Key para Applications"
-         },
-         "slug": {
-          "en": "/documentation/build/applications/guides/advanced-cache-key/",
-          "pt-br": "/documentacao/build/applications/guides/advanced-cache-key/"
-         }
-        },
-        {
-         "key": "build/applications/guides/cache-settings",
-         "label": {
-          "en": "How to configure cache policies for Applications",
-          "pt-br": "Como configurar políticas de cache para Applications"
-         },
-         "slug": {
-          "en": "/documentation/build/applications/guides/cache-settings/",
-          "pt-br": "/documentacao/build/applications/guides/cache-settings/"
-         }
-        },
         {
          "key": "build/applications/guides/configure-main-settings",
          "label": {
@@ -279,6 +555,17 @@
          "slug": {
           "en": "/documentation/build/applications/guides/configure-main-settings/",
           "pt-br": "/documentacao/build/applications/guides/definir-configuracoes-principais/"
+         }
+        },
+        {
+         "key": "build/applications/guides/create-device-groups",
+         "label": {
+          "en": "How to create device groups",
+          "pt-br": "Como criar device groups"
+         },
+         "slug": {
+          "en": "/documentation/build/applications/guides/create-device-groups/",
+          "pt-br": "/documentacao/build/applications/guides/criar-device-groups/"
          }
         },
         {
@@ -293,6 +580,17 @@
          }
         },
         {
+         "key": "build/applications/guides/gzip-compression",
+         "label": {
+          "en": "How to enable gzip compression for Applications",
+          "pt-br": "Como habilitar a compressão gzip para Applications"
+         },
+         "slug": {
+          "en": "/documentation/build/applications/guides/gzip-compression/",
+          "pt-br": "/documentacao/build/applications/guides/gzip-compression/"
+         }
+        },
+        {
          "key": "build/applications/guides/how-to-generate-a-lets-encrypt-certificate",
          "label": {
           "en": "Generate a Let's Encrypt Cert for Your Domain",
@@ -304,25 +602,25 @@
          }
         },
         {
-         "key": "build/applications/guides/instantiate-functions",
+         "key": "build/applications/guides/stage-applications-through-hosts-file",
          "label": {
-          "en": "How to instantiate functions in your application",
-          "pt-br": "Como instanciar functions em sua aplicação"
+          "en": "How to stage an application through the hosts file",
+          "pt-br": "Faça staging de uma app pelo arquivo hosts"
          },
          "slug": {
-          "en": "/documentation/build/applications/guides/instantiate-functions/",
-          "pt-br": "/documentacao/build/applications/guides/instanciar-functions/"
+          "en": "/documentation/build/applications/guides/stage-applications-through-hosts-file/",
+          "pt-br": "/documentacao/build/applications/guides/testar-edge-application-atraves-do-arquivo-hosts/"
          }
         },
         {
-         "key": "build/applications/guides/process-images",
+         "key": "build/applications/guides/work-with-origins",
          "label": {
-          "en": "How to optimize image processing at the edge",
-          "pt-br": "Como otimizar o processamento de imagens no edge"
+          "en": "How to define a new origin for your application",
+          "pt-br": "Como definir uma nova origem para sua aplicação"
          },
          "slug": {
-          "en": "/documentation/build/applications/guides/process-images/",
-          "pt-br": "/documentacao/build/applications/guides/processar-imagens/"
+          "en": "/documentation/build/applications/guides/work-with-origins/",
+          "pt-br": "/documentacao/build/applications/guides/definir-origens/"
          }
         },
         {
@@ -346,36 +644,6 @@
        },
        "items": [
         {
-         "key": "build/applications/reference/application-accelerator",
-         "label": {
-          "en": "Application Accelerator"
-         },
-         "slug": {
-          "en": "/documentation/build/applications/reference/application-accelerator/",
-          "pt-br": "/documentacao/build/applications/reference/application-accelerator/"
-         }
-        },
-        {
-         "key": "build/applications/reference/cache/overview",
-         "label": {
-          "en": "Cache"
-         },
-         "slug": {
-          "en": "/documentation/build/applications/reference/cache/",
-          "pt-br": "/documentacao/build/applications/reference/cache/"
-         }
-        },
-        {
-         "key": "build/applications/reference/cache/tiered-cache",
-         "label": {
-          "en": "Tiered Cache"
-         },
-         "slug": {
-          "en": "/documentation/build/applications/reference/cache/tiered-cache/",
-          "pt-br": "/documentacao/build/applications/reference/cache/tiered-cache/"
-         }
-        },
-        {
          "key": "build/applications/reference/cache-settings",
          "label": {
           "en": "Cache Settings"
@@ -383,6 +651,16 @@
          "slug": {
           "en": "/documentation/build/applications/reference/cache-settings/",
           "pt-br": "/documentacao/build/applications/reference/cache-settings/"
+         }
+        },
+        {
+         "key": "build/applications/reference/device-groups",
+         "label": {
+          "en": "Device Groups"
+         },
+         "slug": {
+          "en": "/documentation/build/applications/reference/device-groups/",
+          "pt-br": "/documentacao/build/applications/reference/device-groups/"
          }
         },
         {
@@ -396,24 +674,45 @@
          }
         },
         {
-         "key": "build/applications/reference/functions",
+         "key": "build/applications/reference/domains/mtls",
          "label": {
-          "en": "Functions for Applications",
-          "pt-br": "Functions"
+          "en": "Support for mTLS for Build",
+          "pt-br": "Suporte para mTLS para Build"
          },
          "slug": {
-          "en": "/documentation/build/applications/reference/functions/",
-          "pt-br": "/documentacao/build/applications/reference/functions/"
+          "en": "/documentation/build/applications/reference/domains/mtls/",
+          "pt-br": "/documentacao/build/applications/reference/domains/mtls/"
          }
         },
         {
-         "key": "build/applications/reference/image-processor",
+         "key": "build/applications/reference/main-settings",
          "label": {
-          "en": "Image Processor"
+          "en": "Applications Main Settings",
+          "pt-br": "Main Settings"
          },
          "slug": {
-          "en": "/documentation/build/applications/reference/image-processor/",
-          "pt-br": "/documentacao/build/applications/reference/image-processor/"
+          "en": "/documentation/build/applications/reference/main-settings/",
+          "pt-br": "/documentacao/build/applications/reference/main-settings/"
+         }
+        },
+        {
+         "key": "build/applications/reference/origins",
+         "label": {
+          "en": "Origins"
+         },
+         "slug": {
+          "en": "/documentation/build/applications/reference/origins/",
+          "pt-br": "/documentacao/build/applications/reference/origins/"
+         }
+        },
+        {
+         "key": "build/applications/reference/real-time-purge",
+         "label": {
+          "en": "Real-Time Purge"
+         },
+         "slug": {
+          "en": "/documentation/build/applications/reference/real-time-purge/",
+          "pt-br": "/documentacao/build/applications/reference/real-time-purge/"
          }
         },
         {
@@ -425,252 +724,6 @@
          "slug": {
           "en": "/documentation/build/applications/reference/rules-engine/",
           "pt-br": "/documentacao/build/applications/reference/rules-engine/"
-         }
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "key": "build/connectors",
-     "label": {
-      "en": "Connectors"
-     },
-     "items": [
-      {
-       "key": "build/connectors/overview",
-       "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
-       },
-       "slug": {
-        "en": "/documentation/build/connectors/",
-        "pt-br": "/documentacao/build/connectors/"
-       }
-      },
-      {
-       "key": "build/connectors/reference",
-       "label": {
-        "en": "Reference",
-        "pt-br": "Referência"
-       },
-       "items": [
-        {
-         "key": "build/connectors/reference/load-balancer",
-         "label": {
-          "en": "Load Balancer"
-         },
-         "slug": {
-          "en": "/documentation/build/connectors/reference/load-balancer/",
-          "pt-br": "/documentacao/build/connectors/reference/load-balancer/"
-         }
-        },
-        {
-         "key": "build/connectors/reference/origin-shield",
-         "label": {
-          "en": "Origin Shield"
-         },
-         "slug": {
-          "en": "/documentation/build/connectors/reference/origin-shield/",
-          "pt-br": "/documentacao/build/connectors/reference/origin-shield/"
-         }
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "key": "build/functions",
-     "label": {
-      "en": "Functions"
-     },
-     "items": [
-      {
-       "key": "build/functions/guides",
-       "label": {
-        "en": "Guides",
-        "pt-br": "Guias"
-       },
-       "items": [
-        {
-         "key": "build/functions/guides/altcha",
-         "label": {
-          "en": "How to Use the ALTCHA Function",
-          "pt-br": "Use a Function ALTCHA no Marketplace da Azion"
-         },
-         "slug": {
-          "en": "/documentation/build/functions/guides/altcha/",
-          "pt-br": "/documentacao/build/functions/guides/altcha/"
-         }
-        },
-        {
-         "key": "build/functions/guides/api-builder",
-         "label": {
-          "en": "How to build an API with Functions and ChatGPT",
-          "pt-br": "Como criar uma API com Functions e ChatGPT"
-         },
-         "slug": {
-          "en": "/documentation/build/functions/guides/api-builder/",
-          "pt-br": "/documentacao/build/functions/guides/api-builder/"
-         }
-        },
-        {
-         "key": "build/functions/guides/browserless-functions",
-         "label": {
-          "en": "How to build a browserless application with Functions",
-          "pt-br": "Como construir uma aplicação browserless com Functions"
-         },
-         "slug": {
-          "en": "/documentation/build/functions/guides/browserless-functions/",
-          "pt-br": "/documentacao/build/functions/guides/aplicacao-browserless-functions/"
-         }
-        },
-        {
-         "key": "build/functions/guides/debugging-functions-graphql",
-         "label": {
-          "en": "How to debug functions using GraphQL API",
-          "pt-br": "Como fazer o debug de functions usando a GraphQL⁠ API"
-         },
-         "slug": {
-          "en": "/documentation/build/functions/guides/debugging-functions-graphql/",
-          "pt-br": "/documentacao/build/functions/guides/debugging-functions-graphql/"
-         }
-        },
-        {
-         "key": "build/functions/guides/firewall",
-         "label": {
-          "en": "Create & Configure a Function on Firewall",
-          "pt-br": "Como criar e configurar uma function em seu Firewall"
-         },
-         "slug": {
-          "en": "/documentation/build/functions/guides/firewall/",
-          "pt-br": "/documentacao/build/functions/guides/firewall/"
-         }
-        },
-        {
-         "key": "build/functions/guides/first-steps",
-         "label": {
-          "en": "Functions first steps",
-          "pt-br": "Functions primeiros passos"
-         },
-         "slug": {
-          "en": "/documentation/build/functions/guides/first-steps/",
-          "pt-br": "/documentacao/build/functions/guides/first-steps/"
-         }
-        },
-        {
-         "key": "build/functions/guides/paywall-function-jwt",
-         "label": {
-          "en": "How to set up a paywall with Azion JWT solution",
-          "pt-br": "Configure um paywall com a integração JWT"
-         },
-         "slug": {
-          "en": "/documentation/build/functions/guides/paywall-function-jwt/",
-          "pt-br": "/documentacao/build/functions/guides/paywall-function-jwt/"
-         }
-        },
-        {
-         "key": "build/functions/guides/serverless-functions",
-         "label": {
-          "en": "How to run serverless functions on Azion",
-          "pt-br": "Como executar funções serverless na Azion"
-         },
-         "slug": {
-          "en": "/documentation/build/functions/guides/serverless-functions/",
-          "pt-br": "/documentacao/build/functions/guides/funcoes-serverless/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "build/functions/runtime-apis",
-       "label": {
-        "en": "Runtime APIs"
-       },
-       "slug": {
-        "en": "/documentation/build/functions/runtime-apis/overview/",
-        "pt-br": "/documentacao/build/functions/runtime-apis/overview/"
-       }
-      }
-     ]
-    },
-    {
-     "key": "build/workloads",
-     "label": {
-      "en": "Workloads"
-     },
-     "items": [
-      {
-       "key": "build/workloads/overview",
-       "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
-       },
-       "slug": {
-        "en": "/documentation/build/workloads/",
-        "pt-br": "/documentacao/build/workloads/"
-       }
-      },
-      {
-       "key": "build/workloads/guides",
-       "label": {
-        "en": "Guides",
-        "pt-br": "Guias"
-       },
-       "items": [
-        {
-         "key": "build/workloads/guides/configure-a-domain",
-         "label": {
-          "en": "How to configure a domain",
-          "pt-br": "Como configurar um domínio"
-         },
-         "slug": {
-          "en": "/documentation/build/workloads/guides/configure-a-domain/",
-          "pt-br": "/documentacao/build/workloads/guides/configurar-dominio/"
-         }
-        },
-        {
-         "key": "build/workloads/guides/create-a-digital-certificate",
-         "label": {
-          "en": "How to create a digital certificate",
-          "pt-br": "Como criar um certificado digital"
-         },
-         "slug": {
-          "en": "/documentation/build/workloads/guides/create-a-digital-certificate/",
-          "pt-br": "/documentacao/build/workloads/guides/criar-certificado-digital/"
-         }
-        },
-        {
-         "key": "build/workloads/guides/create-azion-custom-domain",
-         "label": {
-          "en": "How to Create an Azion Custom Domain",
-          "pt-br": "Como criar um Azion Custom Domain"
-         },
-         "slug": {
-          "en": "/documentation/build/workloads/guides/create-azion-custom-domain/",
-          "pt-br": "/documentacao/build/workloads/guides/criar-dominio-personalizado-azion/"
-         }
-        },
-        {
-         "key": "build/workloads/guides/migrate-ns-to-azion",
-         "label": {
-          "en": "How to migrate nameservers to Azion",
-          "pt-br": "Como migrar nameservers para a Azion"
-         },
-         "slug": {
-          "en": "/documentation/build/workloads/guides/migrate-ns-to-azion/",
-          "pt-br": "/documentacao/build/workloads/guides/migrar-ns-para-a-azion/"
-         }
-        },
-        {
-         "key": "build/workloads/guides/point-domain-to-azion",
-         "label": {
-          "en": "How to point a domain to Azion",
-          "pt-br": "Como apontar um domínio para a Azion"
-         },
-         "slug": {
-          "en": "/documentation/build/workloads/guides/point-domain-to-azion/",
-          "pt-br": "/documentacao/build/workloads/guides/apontar-dominio-para-a-azion/"
          }
         }
        ]
@@ -726,17 +779,6 @@
        "slug": {
         "en": "/documentation/get-started/frameworks/go/",
         "pt-br": "/documentacao/build/applications/guides/go/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/javascript",
-       "label": {
-        "en": "How to build functions",
-        "pt-br": "Como escrever functions"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/javascript/",
-        "pt-br": "/documentacao/build/applications/guides/javascript/"
        }
       },
       {
@@ -1306,6 +1348,54 @@
      ]
     },
     {
+     "key": "secure/connectors",
+     "label": {
+      "en": "Connectors"
+     },
+     "items": [
+      {
+       "key": "secure/connectors/overview",
+       "label": {
+        "en": "Overview",
+        "pt-br": "Visão geral"
+       },
+       "slug": {
+        "en": "/documentation/secure/connectors/",
+        "pt-br": "/documentacao/secure/connectors/"
+       }
+      },
+      {
+       "key": "secure/connectors/reference",
+       "label": {
+        "en": "Reference",
+        "pt-br": "Referência"
+       },
+       "items": [
+        {
+         "key": "secure/connectors/reference/load-balancer",
+         "label": {
+          "en": "Load Balancer"
+         },
+         "slug": {
+          "en": "/documentation/secure/connectors/reference/load-balancer/",
+          "pt-br": "/documentacao/secure/connectors/reference/load-balancer/"
+         }
+        },
+        {
+         "key": "secure/connectors/reference/origin-shield",
+         "label": {
+          "en": "Origin Shield"
+         },
+         "slug": {
+          "en": "/documentation/secure/connectors/reference/origin-shield/",
+          "pt-br": "/documentacao/secure/connectors/reference/origin-shield/"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
      "key": "secure/custom-pages",
      "label": {
       "en": "Custom Pages"
@@ -1807,6 +1897,89 @@
         "en": "/documentation/secure/waf/concepts/",
         "pt-br": "/documentacao/secure/waf/concepts/"
        }
+      }
+     ]
+    },
+    {
+     "key": "secure/workloads",
+     "label": {
+      "en": "Workloads"
+     },
+     "items": [
+      {
+       "key": "secure/workloads/overview",
+       "label": {
+        "en": "Overview",
+        "pt-br": "Visão geral"
+       },
+       "slug": {
+        "en": "/documentation/secure/workloads/",
+        "pt-br": "/documentacao/secure/workloads/"
+       }
+      },
+      {
+       "key": "secure/workloads/guides",
+       "label": {
+        "en": "Guides",
+        "pt-br": "Guias"
+       },
+       "items": [
+        {
+         "key": "secure/workloads/guides/configure-a-domain",
+         "label": {
+          "en": "How to configure a domain",
+          "pt-br": "Como configurar um domínio"
+         },
+         "slug": {
+          "en": "/documentation/secure/workloads/guides/configure-a-domain/",
+          "pt-br": "/documentacao/secure/workloads/guides/configurar-dominio/"
+         }
+        },
+        {
+         "key": "secure/workloads/guides/create-a-digital-certificate",
+         "label": {
+          "en": "How to create a digital certificate",
+          "pt-br": "Como criar um certificado digital"
+         },
+         "slug": {
+          "en": "/documentation/secure/workloads/guides/create-a-digital-certificate/",
+          "pt-br": "/documentacao/secure/workloads/guides/criar-certificado-digital/"
+         }
+        },
+        {
+         "key": "secure/workloads/guides/create-azion-custom-domain",
+         "label": {
+          "en": "How to Create an Azion Custom Domain",
+          "pt-br": "Como criar um Azion Custom Domain"
+         },
+         "slug": {
+          "en": "/documentation/secure/workloads/guides/create-azion-custom-domain/",
+          "pt-br": "/documentacao/secure/workloads/guides/criar-dominio-personalizado-azion/"
+         }
+        },
+        {
+         "key": "secure/workloads/guides/migrate-ns-to-azion",
+         "label": {
+          "en": "How to migrate nameservers to Azion",
+          "pt-br": "Como migrar nameservers para a Azion"
+         },
+         "slug": {
+          "en": "/documentation/secure/workloads/guides/migrate-ns-to-azion/",
+          "pt-br": "/documentacao/secure/workloads/guides/migrar-ns-para-a-azion/"
+         }
+        },
+        {
+         "key": "secure/workloads/guides/point-domain-to-azion",
+         "label": {
+          "en": "How to point a domain to Azion",
+          "pt-br": "Como apontar um domínio para a Azion"
+         },
+         "slug": {
+          "en": "/documentation/secure/workloads/guides/point-domain-to-azion/",
+          "pt-br": "/documentacao/secure/workloads/guides/apontar-dominio-para-a-azion/"
+         }
+        }
+       ]
       }
      ]
     }
