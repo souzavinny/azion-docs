@@ -32,6 +32,10 @@ There are three complete paths. **Pick one** — they all end in the same place:
 
 No local tooling required.
 
+:::note
+Some templates are integrated with third-party services — you may need to create accounts, generate tokens, or activate Azion products before deploying. Templates integrated with GitHub ask you to connect your account: click **Connect with GitHub** when prompted and confirm the connection in the pop-up, setting permissions and repository access as desired. Each [template's guide](/en/documentation/guides/#azion-templates) lists its specific prerequisites.
+:::
+
 1. [Access Azion Console](https://console.azion.com).
 2. Click the **+ Create** button on the homepage.
 3. In the modal, select the **Templates** option.
@@ -39,11 +43,7 @@ No local tooling required.
 5. On the configuration page, provide the information to configure your application.
 6. Click the **Deploy** button, located in the bottom-right corner, to start the deployment process.
 
-During the deployment, you can follow the process through a window showing the logs. When it's complete, the page shows information about the application, including its name, deploy logs, and the **Azion domain**.
-
-:::note
-Some templates are integrated with third-party services or with GitHub — in those cases you'll be asked to connect accounts or provide tokens before deploying. Check the [template guide](/en/documentation/get-started/first-deploy/template/) for details.
-:::
+During the deployment, you can follow the process through a window showing the logs. When it's complete, the page shows information about the application, including its name, deploy logs, and the **Azion domain**. Besides the application and its domain, some templates also create a function and apply pre-defined configurations to optimize your application's performance — the template's guide lists what's included.
 
 ### You know it worked when
 
@@ -85,21 +85,27 @@ The first line of the response is `HTTP/2 200`, and the browser shows your appli
 
 ## Deploy with Azion CLI
 
-**Prerequisites:** a local project using one of the [supported frameworks](/en/documentation/build/functions/runtime-apis/frameworks-compatibility/), with its dependencies installed.
+**Prerequisites:** the Azion CLI installed — covered below — and a local project using one of the [supported frameworks](/en/documentation/build/functions/runtime-apis/frameworks-compatibility/), with its dependencies installed.
 
-1. Install the CLI:
+:::tip
+Starting from scratch instead of an existing project? Run `azion init` to create a new project from a framework template, then deploy it the same way. See the [CLI overview](/en/documentation/devtools/cli/) and the [link command reference](/en/documentation/devtools/cli/reference/link-command/) for details.
+:::
+
+### Install the Azion CLI
 
 ```bash
 curl -fsSL https://cli.azion.app/install.sh | bash
 ```
 
-2. Authenticate:
+### Link and deploy
+
+1. Authenticate:
 
 ```bash
 azion login
 ```
 
-3. In the project's root folder, link the project to Azion:
+2. In the project's root folder, link the project to Azion:
 
 ```bash
 azion link
@@ -112,10 +118,6 @@ azion deploy
 ```
 
 At the end of the deploy, the CLI prints your application's **Azion domain**.
-
-:::tip
-Starting from scratch instead of an existing project? Run `azion init` to create a new project from a framework template, then deploy it the same way. See the [CLI overview](/en/documentation/devtools/cli/) and the [link command reference](/en/documentation/devtools/cli/reference/link-command/) for details.
-:::
 
 ### You know it worked when
 
