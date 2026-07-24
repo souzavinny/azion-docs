@@ -23,17 +23,11 @@ Os produtos Build da Azion são o seu ponto de partida para utilizar o poder do 
 ### Módulos
 
 <div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-    <DocsCard link="/pt-br/documentacao/build/applications/reference/application-accelerator/" title="Application Accelerator" description="Acelera a performance de suas aplicações e APIs com otimização de protocolos e regras de cache avançadas." />
-    <DocsCard link="/pt-br/documentacao/build/applications/reference/cache/" title="Cache" description="Acelere entregas mantendo seu conteúdo em cache no edge da rede, mais próximo de seus usuários." />
-    <DocsCard link="/pt-br/documentacao/build/applications/reference/functions/" title="Functions" description="Crie aplicações serverless orientadas a eventos no edge da rede, mais perto dos usuários." />
-    <DocsCard link="/pt-br/documentacao/build/applications/reference/image-processor/" title="Image Processor" description="Otimize, converta e manipule suas imagens na hora certa para aprimorar a experiência do usuário." />
-    <DocsCard link="/pt-br/documentacao/build/connectors/reference/load-balancer/" title="Load Balancer" description="Distribua cargas em seus servidores e em qualquer provedor de cloud para aumentar a confiabilidade e disponibilidade de seus conteúdos, aplicações e APIs." />
-</div>
-
-### Recursos
-
-<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-    <DocsCard link="/pt-br/documentacao/guides/" title="Guias" description="Encontre documentações práticas sobre como utilizar os produtos." />
+    <DocsCard link="/pt-br/documentacao/build/applications/application-accelerator/" title="Application Accelerator" description="Acelera a performance de suas aplicações e APIs com otimização de protocolos e regras de cache avançadas." />
+    <DocsCard link="/pt-br/documentacao/build/applications/cache/" title="Cache" description="Acelere entregas mantendo seu conteúdo em cache no edge da rede, mais próximo de seus usuários." />
+    <DocsCard link="/pt-br/documentacao/build/applications/functions/" title="Functions" description="Crie aplicações serverless orientadas a eventos no edge da rede, mais perto dos usuários." />
+    <DocsCard link="/pt-br/documentacao/build/applications/image-processor/" title="Image Processor" description="Otimize, converta e manipule suas imagens na hora certa para aprimorar a experiência do usuário." />
+    <DocsCard link="/pt-br/documentacao/secure/connectors/reference/load-balancer/" title="Load Balancer" description="Distribua cargas em seus servidores e em qualquer provedor de cloud para aumentar a confiabilidade e disponibilidade de seus conteúdos, aplicações e APIs." />
 </div>
 
 ## Como funciona
@@ -52,7 +46,7 @@ Quando um usuário solicita conteúdo de sua application, o navegador converte o
 
 A requisição é direcionada para um edge node, onde ocorre seu processamento. Nesta etapa, além das personalizações de segurança e observabilidade, o edge node processa a requisição e executa configurações da aplicação, como [comportamentos](/pt-br/documentacao/build/applications/reference/rules-engine/) e [diretivas de cache](/pt-br/documentacao/build/applications/reference/cache-settings/).
 
-Após esse processo, o sistema pode utilizar [algoritmos de balanceamento de carga](/pt-br/documentacao/build/connectors/reference/load-balancer/) para distribuir requisições entre múltiplas origens.
+Após esse processo, o sistema pode utilizar [algoritmos de balanceamento de carga](/pt-br/documentacao/secure/connectors/reference/load-balancer/) para distribuir requisições entre múltiplas origens.
 
 Qualquer conteúdo em cache no edge será entregue diretamente na resposta ao usuário sem precisar ser requisitado da origem. Após a mediação pela Azion Web Platform, a requisição chega à sua origem, que irá responder à requisição. O edge processa novamente esta resposta antes de entregá-la ao usuário.
 
