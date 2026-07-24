@@ -23,7 +23,7 @@
 
 				<div
 					v-if="!item.slug && item.text"
-					class="flex hover:surface-hover py-1 px-4 border-none cursor-pointer rounded h-8"
+					class="flex hover:surface-hover py-1 px-4 border-none cursor-pointer rounded min-h-8"
 					:style="{ paddingLeft: `${(item.level * 16) + 16}px !important` }"
 				>
 					<p v-if="item.text" class="text-sm flex items-center">
@@ -41,7 +41,7 @@
 					:href="isCurrent(item) ? '#' : modelSlug(item.slug, item.isFallback, lang)"
 					:target="(isURL(item.slug) ? '_blank' : '_self')"
 					:class="isCurrent(item) ? 'surface-200': ''"
-					class="text-sm h-8 flex justify-between items-center hover:surface-hover py-1 px-4 border-none cursor-pointer rounded"
+					class="text-sm min-h-8 flex justify-between items-center hover:surface-hover py-1 px-4 border-none cursor-pointer rounded"
 					:style="{ paddingLeft: `${(item.level * 16) + 16}px !important` }"
 					@click="handleItemClick(item, $event)"
 				>
@@ -66,7 +66,7 @@
 					:href="modelSlug(item.slug, item.isFallback, lang)"
 					:target="(isURL(item.slug) ? '_blank' : '_self')"
 					:class="isCurrent(item) ? 'surface-200': ''"
-					class="text-sm h-8 flex justify-between items-center hover:surface-hover py-1 px-4 border-none cursor-pointer rounded"
+					class="text-sm min-h-8 flex justify-between items-center hover:surface-hover py-1 px-4 border-none cursor-pointer rounded"
 					:style="{ paddingLeft: `${(item.level * 16) + 16}px !important` }"
 					@click="trackSidebarClick(item, modelSlug(item.slug, item.isFallback, lang))"
 				>
