@@ -1,9 +1,9 @@
 ---
 title: 'First deploy in 5 minutes'
 description: >-
-  Deploy your first application on Azion using a template, a GitHub
-  repository, or the Azion CLI, and verify it's live with an HTTP 200
-  response on your Azion domain.
+  Put an application live on the Azion Web Platform in about 5 minutes,
+  using a template, a GitHub repository, or the Azion CLI, and verify it
+  answers HTTP 200 on its own Azion domain.
 meta_tags: >-
   Azion, first deploy, tutorial, quickstart, template, GitHub import, Azion
   CLI, azion link, edge application, verification
@@ -14,81 +14,87 @@ permalink: /documentation/get-started/first-deploy/
 import DocsCard from '~/components/DocsCard.astro';
 
 
-In this tutorial you'll deploy an application to Azion and confirm it's live on its own Azion domain. Expect about **5 minutes** from start to a working URL.
+By the end of this tutorial, an application will be live on the Azion Web Platform, answering HTTP 200 on its own Azion domain. It takes about 5 minutes.
 
-There are three complete paths. **Pick one** — they all end in the same place: your application answering `HTTP 200`.
+Three complete paths get you there. Pick one. They all end in the same place:
 
-| Path | Best when |
-|---|---|
-| [Deploy a template via Console](#deploy-a-template-via-console) | You're starting from scratch and want a ready-made project |
-| [Import a project from GitHub](#import-a-project-from-github) | Your project already lives in a GitHub repository |
-| [Deploy with Azion CLI](#deploy-with-azion-cli) | Your project is on your machine and you prefer the terminal |
+<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+    <DocsCard link="#deploy-a-template-via-console" title="Deploy a template via Console" icon="pi pi-th-large" description="You're starting from scratch and want a ready-made project." />
+    <DocsCard link="#import-a-project-from-github" title="Import a project from GitHub" icon="pi pi-github" description="Your project already lives in a GitHub repository." />
+    <DocsCard link="#deploy-with-azion-cli" title="Deploy with Azion CLI" icon="pi pi-wrench" description="Your project is on your machine and you prefer the terminal." />
+</div>
 
-**Prerequisites, all paths:** an Azion account — [create one for free](https://console.azion.com/signup/), no credit card required. Path-specific prerequisites are listed in each section.
+Not sure which one? Take the template path: it needs no local tooling.
+
+## Before you start
+
+All you need is an Azion account. You can [create one for free](https://console.azion.com/signup/), and it doesn't ask for a credit card. Anything path-specific is listed in the path itself.
 
 ---
 
 ## Deploy a template via Console
 
-No local tooling required.
+Templates are ready-made projects (e-commerce, blogs, APIs, full-stack SSR) that go live in a few clicks. You don't need any local tooling.
 
 :::note
-Some templates are integrated with third-party services — you may need to create accounts, generate tokens, or activate Azion products before deploying. Templates integrated with GitHub ask you to connect your account: click **Connect with GitHub** when prompted and confirm the connection in the pop-up, setting permissions and repository access as desired. Each [template's guide](/en/documentation/guides/#azion-templates) lists its specific prerequisites.
+Some templates are integrated with third-party services, so you may need to create accounts, generate tokens, or activate Azion products before deploying. Templates integrated with GitHub ask you to connect your account: click **Connect with GitHub** when prompted and confirm the connection in the pop-up. Each [template's guide](/en/documentation/guides/#azion-templates) lists its specific prerequisites.
 :::
 
 1. [Access Azion Console](https://console.azion.com).
-2. Click the **+ Create** button on the homepage.
-3. In the modal, select the **Templates** option.
-4. Browse and choose the one you want to start with.
-5. On the configuration page, provide the information to configure your application.
-6. Click the **Deploy** button, located in the bottom-right corner, to start the deployment process.
+2. Click **+ Create** on the homepage.
+3. In the modal, select **Templates**.
+4. Browse and pick the one you want to start with.
+5. Fill in the configuration page.
+6. Click **Deploy**, in the bottom-right corner.
 
-During the deployment, you can follow the process through a window showing the logs. When it's complete, the page shows information about the application, including its name, deploy logs, and the **Azion domain**. Besides the application and its domain, some templates also create a function and apply pre-defined configurations to optimize your application's performance — the template's guide lists what's included.
+Follow the deploy through the logs window. When it finishes, the page shows your application's name, its deploy logs, and its **Azion domain**. Some templates also create a function and apply pre-defined configurations to optimize your application's performance. The template's guide lists what's included.
 
-### You know it worked when
+### Test it
 
-Copy the Azion domain shown on the confirmation page and check it from your terminal:
+Copy the Azion domain from the confirmation page:
 
 ```bash
 curl -I https://<your-azion-domain>
+# HTTP/2 200
 ```
 
-The first line of the response is `HTTP/2 200`. Opening the same URL in the browser shows your running application.
+Open the same URL in the browser to see your application running.
 
 :::note
-It can take a few minutes for the URL to propagate to Azion's edge locations. If you get an error right after deploying, wait a moment and try again.
+New URLs can take a few minutes to propagate to Azion's edge locations. If you get an error right after deploying, wait a moment and try again.
 :::
 
 ---
 
 ## Import a project from GitHub
 
-**Prerequisites:** a GitHub account and a repository using one of the [supported frameworks](/en/documentation/build/functions/runtime-apis/frameworks-compatibility/).
+**Before you start:** you need a GitHub account and a repository using one of the [supported frameworks](/en/documentation/build/functions/runtime-apis/frameworks-compatibility/).
 
-1. In [Azion Console](https://console.azion.com), click the **+ Create** button.
-2. Select *Import from GitHub*.
+1. In [Azion Console](https://console.azion.com), click **+ Create**.
+2. Select **Import from GitHub**.
 3. Connect your GitHub account.
 4. Select your repository.
 5. Choose a name for the application and a **Framework Preset**.
 6. Enter the install command (usually `npm install`).
-7. Confirm to start the deployment and follow the logs until the **Azion domain** is displayed.
+7. Confirm and follow the logs until the **Azion domain** shows up.
 
-### You know it worked when
+### Test it
 
 ```bash
 curl -I https://<your-azion-domain>
+# HTTP/2 200
 ```
 
-The first line of the response is `HTTP/2 200`, and the browser shows your application on the Azion domain.
+Open the Azion domain in the browser to see your application running. If you get an error right away, wait a few minutes: new URLs take a moment to propagate to Azion's edge locations.
 
 ---
 
 ## Deploy with Azion CLI
 
-**Prerequisites:** the Azion CLI installed — covered below — and a local project using one of the [supported frameworks](/en/documentation/build/functions/runtime-apis/frameworks-compatibility/), with its dependencies installed.
+**Before you start:** you need the Azion CLI (installed below) and a local project using one of the [supported frameworks](/en/documentation/build/functions/runtime-apis/frameworks-compatibility/), with its dependencies installed.
 
 :::tip
-Starting from scratch instead of an existing project? Run `azion init` to create a new project from a framework template, then deploy it the same way. See the [CLI overview](/en/documentation/devtools/cli/) and the [link command reference](/en/documentation/devtools/cli/reference/link-command/) for details.
+Starting from scratch instead? Run `azion init` to create a new project from a framework template, then deploy it the same way. See the [CLI overview](/en/documentation/devtools/cli/) and the [link command reference](/en/documentation/devtools/cli/reference/link-command/) for details.
 :::
 
 ### Install the Azion CLI
@@ -99,35 +105,36 @@ curl -fsSL https://cli.azion.app/install.sh | bash
 
 ### Link and deploy
 
-1. Authenticate:
+Authenticate:
 
 ```bash
 azion login
 ```
 
-2. In the project's root folder, link the project to Azion:
+In the project's root folder, link it to Azion:
 
 ```bash
 azion link
 ```
 
-The CLI will guide you through the process: confirm the linking, accept or change the suggested application name, and choose a **preset** matching your framework. When asked `Do you want to deploy your project?`, answer **yes** — or deploy later with:
-
-```bash
-azion deploy
-```
+The CLI guides you from there: confirm the linking, accept or change the suggested application name, and pick a **preset** matching your framework. When it asks `Do you want to deploy your project?`, answer **yes**. (If you answer no, run `azion deploy` when you're ready.)
 
 At the end of the deploy, the CLI prints your application's **Azion domain**.
 
-### You know it worked when
+### Test it
 
 ```bash
 curl -I https://<your-azion-domain>
+# HTTP/2 200
 ```
 
-The first line of the response is `HTTP/2 200`.
+If you get an error right away, wait a few minutes: new URLs take a moment to propagate to Azion's edge locations.
 
 ---
+
+## What you built
+
+You deployed an application to Azion's global network and confirmed it answers on its own domain. The workflow is the same one you'll use for production projects.
 
 ## Next steps
 

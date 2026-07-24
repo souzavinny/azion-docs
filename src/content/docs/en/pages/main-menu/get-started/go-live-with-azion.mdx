@@ -1,103 +1,80 @@
 ---
 title: Go live with Azion
 description: >-
-  This documentation will guide you to add a custom domain and point your
-  traffic to Azion's network.
+  Add a custom domain to the application you deployed and bring your
+  traffic to Azion's network, either by migrating your NS or by pointing
+  your DNS to your Azion domain.
 meta_tags: >-
-  Azion, application, journey, onboarding, build from scratch, domain,
-  traffic
+  Azion, go live, custom domain, DNS, nameserver, NS, CNAME, digital
+  certificate, traffic
 namespace: documentation_go_live_with_azion
 permalink: /documentation/get-started/production-checklist/
 ---
 
 import LinkButton from 'azion-webkit/linkbutton';
 
-Once you’ve [built an application](/en/documentation/build/overview/), you can ensure that it’s accessible to your users while taking advantage of Azion highly distribuited network to attends to your traffic and deliver your content.
-
-Going live with Azion involves a few configurations to [add a custom domain](#adding-a-custom-domain), [migrate your ns](#migrating-your-ns-to-azion), and [point your traffic to Azion](#pointing-your-domain-to-azion) to the edge network.
+Your application is live on an Azion domain after the [first deploy](/en/documentation/get-started/first-deploy/). This guide puts it on your own domain: [add a custom domain](#add-a-custom-domain), then connect your DNS by [migrating your NS to Azion](#migrate-your-ns-to-azion) or by [pointing your domain to Azion](#point-your-domain-to-azion).
 
 ---
 
-## Adding a custom domain
+## Add a custom domain
 
-If you build a new application following the [build an application](/en/documentation/get-started/journeys/launch/) page, Azion automatically generates a subdomain to make it accessible, with this format: `xxxxxxxxxx.map.azionedge.net/`. 
+Azion generates a domain for every application, in this format: `xxxxxxxxxx.map.azionedge.net`. It identifies your application on Azion and can't be modified, but you can associate your own domain and subdomains to it to handle user access.
 
-This domain identifies your application on Azion and can't be modified. However, you can associate your own custom domain and subdomains to your Azion domain to handle user access to your application.
+### Access the Domains configuration page
 
-### Accessing the Domains' configuration page
+[Access Azion Console](https://console.azion.com) and click the **Manage your Domains** card on the homepage. As an alternative, open the **Products menu** (the three horizontal lines in the upper-left corner) and select **Workloads**.
 
-[Access Azion Console](https://console.azion.com) and click on **Manage your Domains** card on the homepage.
+### Set up a new custom domain
 
-- As an alternate path, select **Products menu**, represented by three horizontal lines on the upper-left corner, and then **Workloads**.
-
-This will open the Domains page to perform your changes.
-
-### Setting up a new custom domain
-
-To do so, click the **Add Domain** button and fill in the presented fields to set up your custom domain:
+Click **Add Domain** and fill in the fields:
 
 - **Add Configuration Name**: type a name for your domain. You can use the same name as your domain name.
-- [Digital Certificate](/en/documentation/secure/certificate-manager/): you can select the standard Azion Certificate (SAN), a [Let's Encrypt Certificate](/en/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate/), or any [third-party Digital Certificate](/en/documentation/build/workloads/guides/create-a-digital-certificate/).
-- [Canonical Names (CNAMES)](/en/documentation/build/applications/reference/domains/#cname): write all the CNAMES your domain has. CNAMES must be added one per line, no punctuation.
-- **CNAME Access Only** switch: it should be activated if you want your users to access your application only by CNAME.
-- **Application**: select the one your **Domain** will be connected to from the dropdown list.
-- The **Active** switch: it must be on.
+- [Digital Certificate](/en/documentation/secure/certificate-manager/): select the standard Azion certificate (SAN), a [Let's Encrypt certificate](/en/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate/), or any [third-party digital certificate](/en/documentation/build/workloads/guides/create-a-digital-certificate/).
+- [Canonical Names (CNAMES)](/en/documentation/build/applications/reference/domains/#cname): write all the CNAMES your domain has, one per line, no punctuation.
+- **CNAME Access Only** switch: activate it if you want your users to access your application only by CNAME.
+- **Application**: select the application your domain will be connected to.
+- **Active** switch: it must be on.
 
-Finally, click the **Save** button. Now, your custom domain is now connected to the application. 
+Click **Save**. Your custom domain is now connected to the application.
 
 :::note
-Your root domain (example: `myapp.com`) and all your subdomains (example: `user.myapp.com`) must each be configured as a standalone domain.
-
-To read about others ways to customize and configure your own domains or subdomains, visit the [Domains documentation](/en/documentation/build/workloads/guides/configure-a-domain/).
+Your root domain (example: `myapp.com`) and each of your subdomains (example: `user.myapp.com`) must be configured as a standalone domain. For other ways to configure domains and subdomains, visit the [Domains documentation](/en/documentation/build/workloads/guides/configure-a-domain/).
 :::
 
-### About Let's Encrypt
-If you selected a Let's Encrypt Certificate as the Digital Certificate associated with your custom domain, you need to complete a specific process to properly configure the DNS settings. Check this guide on [How to generate a Let's Encrypt Certificate](/en/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate/) for more details.
-
-After customizing domain, it's time to [migrate your ns](#migrating-your-ns-to-azion) or [point your traffic to Azion](#pointing-your-domain-to-azion) to use the global distributed network and other products.
+If you selected a Let's Encrypt certificate, you need to complete a specific process to configure the DNS settings. Check [How to generate a Let's Encrypt certificate](/en/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate/) for the details.
 
 ---
 
-## Migrating your NS to Azion 
+## Migrate your NS to Azion
 
-With this option, you rely on Azion's platform to host and manage DNS zones and records by redirecting the DNS resolution of your domain provider to Azion's authoritative nameservers (NS) through Azion [Edge DNS](/en/documentation/secure/edge-dns/).
+With this option, Azion hosts and manages your DNS zones and records: you redirect the DNS resolution of your domain provider to Azion's authoritative nameservers (NS) through [Edge DNS](/en/documentation/secure/edge-dns/).
 
-To complete this task, you must have:
+**Before you start:** you need a domain registered with a hosting service, an [application](/en/documentation/get-started/journeys/launch/), and a [custom domain](#add-a-custom-domain).
 
-- A domain registered with a hosting service.
-- An [application](/en/documentation/get-started/journeys/launch/).
-- A [custom domain](/en/documentation/build/workloads/guides/configure-a-domain/).
+Create a DNS zone and migrate your name resolution to Azion:
 
-Then, you must create a DNS zone and migrate your *name resolution* to Azion.
-
-<LinkButton link="/en/documentation/build/workloads/guides/migrate-ns-to-azion/" label="Go to Migrate your NS to Azion guide" severity="secondary" />
-
-
+<LinkButton link="/en/documentation/build/workloads/guides/migrate-ns-to-azion/" label="Migrate your NS to Azion" severity="secondary" />
 
 ---
 
-## Pointing your domain to Azion
+## Point your domain to Azion
 
-To complete this task, you must have:
+**Before you start:** you need a domain registered with a hosting service, an [application](/en/documentation/get-started/journeys/launch/), and a [custom domain](#add-a-custom-domain).
 
-- A domain registered with a hosting service.
-- An [application](/en/documentation/get-started/journeys/launch/).
-- A [custom domain](/en/documentation/build/workloads/guides/configure-a-domain/).
+Configure your third-party DNS provider and associate your custom domain's address with the `xxxxxxxxxx.map.azionedge.net` address:
 
-Then, you must configure your DNS third-party provider and associate the address of your custom domain to the `xxxxxxxxxx.map.azionedge.net` address, [as explained before](#adding-a-custom-domain).
-
-<LinkButton link="/en/documentation/build/workloads/guides/point-domain-to-azion/" label="Go to Point your domain to Azion guide" severity="secondary" />
-
-
+<LinkButton link="/en/documentation/build/workloads/guides/point-domain-to-azion/" label="Point your domain to Azion" severity="secondary" />
 
 ---
 
-## Next steps
+## Test it
 
-After finishing these configurations, you can confirm the incoming traffic through [Real-Time Metrics](/en/documentation/observe/real-time-metrics/).
+Once your DNS changes propagate, your own domain answers with your application's content:
 
-Click the **Next Page** button, located at the bottom-right corner of this page, to go to this step.
+```bash
+curl -I https://<your-domain>
+# HTTP/2 200
+```
 
-
-
-
+Confirm the incoming traffic in [Real-Time Metrics](/en/documentation/observe/real-time-metrics/).

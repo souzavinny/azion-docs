@@ -1,103 +1,80 @@
 ---
-title: Como ativar em produção
+title: Entre em produção com a Azion
 description: >-
-  Esta documentação vai te auxiliar no processo de ativar suas aplicações em
-  produção.
-meta_tags: 'Azion, application, journey, onboarding, templates, domain, traffic'
+  Adicione um domínio personalizado à aplicação que você publicou e traga o
+  seu tráfego para a rede da Azion, migrando seus NS ou apontando seu DNS
+  para o seu domínio Azion.
+meta_tags: >-
+  Azion, entrar em produção, domínio personalizado, DNS, nameserver, NS,
+  CNAME, certificado digital, tráfego
 namespace: documentation_go_live_with_azion
 permalink: /documentacao/get-started/ative-em-producao/
 ---
 
 import LinkButton from 'azion-webkit/linkbutton'
 
-Depois de [criar uma application](/pt-br/documentacao/get-started/comecar-com-um-template/), você pode garantir que ela esteja acessível aos seus usuários, aproveitando a rede altamente distribuída da Azion para atender ao seu tráfego e entregar seu conteúdo.
-
-O uso da rede da Azion envolve algumas configurações para [adicionar um domínio personalizado](#adicionar-um-dominio-personalizado), [migrar seus NS](#migrar-seus-ns-para-azion) e [direcionar seu tráfego](#direcionar-seu-trafego-para-azion) para a edge network da Azion.
+Sua aplicação está no ar em um domínio Azion depois do [primeiro deploy](/pt-br/documentacao/get-started/first-deploy/). Este guia coloca a aplicação no seu próprio domínio: [adicione um domínio personalizado](#adicione-um-domínio-personalizado) e depois conecte seu DNS, [migrando seus NS para a Azion](#migre-seus-ns-para-a-azion) ou [apontando seu domínio para a Azion](#aponte-seu-domínio-para-a-azion).
 
 ---
 
-## Adicionar um domínio personalizado
+## Adicione um domínio personalizado
 
-Se você construiu uma nova application seguindo a página sobre [criar uma aplicação](/pt-br/documentacao/build/applications/guides/criar-uma-aplicacao/), a Azion gera automaticamente um domínio para torná-lo acessível, com este formato: `xxxxxxxxxx.map.azionedge.net/`.
+A Azion gera um domínio para cada aplicação, neste formato: `xxxxxxxxxx.map.azionedge.net`. Ele identifica a sua aplicação na Azion e não pode ser modificado, mas você pode associar seu próprio domínio e subdomínios a ele para lidar com o acesso dos usuários.
 
-Este domínio identifica sua aplicação na Azion e não pode ser modificado. No entanto, você pode associar seu próprio domínio e subdomínios personalizados ao seu domínio Azion para lidar com o acesso do usuário à sua application.
+### Acesse a página de configuração de Domínios
 
-### Acessar a página de configuração dos Domínios
+Acesse o [Azion Console](https://console.azion.com) e clique no card **Manage your Domains** na página inicial. Como alternativa, abra o **Products menu** (as três linhas horizontais no canto superior esquerdo) e selecione **Workloads**.
 
-Acesse o [Azion Console](https://console.azion.com) e clique no card **Manage your Domains** na página inicial.
+### Configure um novo domínio personalizado
 
-- Como um caminho alternativo, selecione o **Products menu**, representado por três linhas horizontais no canto superior esquerdo, e depois **Workloads**.
-
-Isso abrirá a página de domínios para realizar suas alterações.
-
-### Configurar um novo domínio personalizado
-
-Para fazer isso, clique no botão **Add domain** e preencha os campos apresentados para configurar seu domínio personalizado:
+Clique em **Add Domain** e preencha os campos:
 
 - **Add Configuration Name**: digite um nome para o seu domínio. Você pode usar o mesmo nome do seu nome de domínio.
-- [Digital Certificate](/pt-br/documentacao/secure/certificate-manager/): você pode selecionar o certificado padrão da Azion (SAN), um [Certificado Let 's Encrypt](/pt-br/documentacao/build/applications/guides/como-gerar-um-certificado-lets-encrypt/) ou qualquer [certificado digital de terceiros](/pt-br/documentacao/build/workloads/guides/criar-certificado-digital/).
-- [Canonical Names (CNAMES)](/pt-br/documentacao/build/applications/reference/domains/#cname): escreva todos os CNAMES que seu domínio possui. Os CNAMES devem ser adicionado um por linha, sem pontuação.
-- O switch **CNAME Access Only**: deve ser ativado se você quiser que seus usuários acessem sua application apenas pelo CNAME.
-- **Applications**: na lista suspensa, selecione a aplicação à qual seu **domínio** será conectado.
+- [Digital Certificate](/pt-br/documentacao/secure/certificate-manager/): selecione o certificado padrão da Azion (SAN), um [certificado Let's Encrypt](/pt-br/documentacao/build/applications/guides/como-gerar-um-certificado-lets-encrypt/) ou qualquer [certificado digital de terceiros](/pt-br/documentacao/build/workloads/guides/criar-certificado-digital/).
+- [Canonical Names (CNAMES)](/pt-br/documentacao/build/applications/reference/domains/#cname): escreva todos os CNAMES que seu domínio possui, um por linha, sem pontuação.
+- O switch **CNAME Access Only**: ative se você quiser que seus usuários acessem sua aplicação apenas pelo CNAME.
+- **Application**: selecione a aplicação à qual seu domínio será conectado.
 - O switch **Active**: deve estar habilitado.
 
-Por fim, clique no botão **Save**. Agora, seu domínio personalizado está conectado a sua application.
+Clique em **Save**. Seu domínio personalizado está conectado à aplicação.
 
 :::note
-Seu domínio raiz (exemplo: `myapp.com`) e todos os seus subdomínios (exemplo: `user.myapp.com`) devem ser configurados como um domínio autônomo.
-
-Para ler sobre outras maneiras de personalizar e configurar seus próprios domínios ou subdomínios, visite a [documentação de Domínios](/pt-br/documentacao/build/workloads/guides/configurar-dominio/).
+Seu domínio raiz (exemplo: `myapp.com`) e cada um dos seus subdomínios (exemplo: `user.myapp.com`) devem ser configurados como um domínio autônomo. Para outras maneiras de configurar domínios e subdomínios, visite a [documentação de Domínios](/pt-br/documentacao/build/workloads/guides/configurar-dominio/).
 :::
 
-### Sobre o Let's Encrypt
-
-Se você selecionou **Let's Encrypt** como o certificado digital associado ao seu domínio personalizado, precisará concluir um processo específico para definir corretamente as configurações de DNS. Consulte o guia sobre [Como gerar um certificado Let's Encrypt](/pt-br/documentacao/build/applications/guides/como-gerar-um-certificado-lets-encrypt/) para obter mais detalhes.
-
-Depois de personalizar o domínio, é hora de [migrar seus NS](#migrar-seus-ns-para-azion) ou [direcionar seu tráfego para a Azion](#direcionar-seu-trafego-para-azion) para usar a rede distribuída global e outros produtos.
+Se você selecionou um certificado Let's Encrypt, precisa concluir um processo específico para definir as configurações de DNS. Consulte [Como gerar um certificado Let's Encrypt](/pt-br/documentacao/build/applications/guides/como-gerar-um-certificado-lets-encrypt/) para os detalhes.
 
 ---
 
-## Migrar seus NS para Azion
+## Migre seus NS para a Azion
 
-Com esta opção, você conta com a plataforma da Azion para hospedar e gerenciar zonas e registros DNS, redirecionando a resolução DNS do seu provedor de domínio para os servidores de nomes autorizados (NS) da Azion por meio do Azion [Edge DNS](/pt-br/documentacao/secure/edge-dns/).
+Com esta opção, a Azion hospeda e gerencia suas zonas e registros DNS: você redireciona a resolução DNS do seu provedor de domínio para os nameservers autoritativos (NS) da Azion por meio do [Edge DNS](/pt-br/documentacao/secure/edge-dns/).
 
-Para concluir esta tarefa, você deve ter:
+**Antes de começar:** você precisa de um domínio registrado em um serviço de hospedagem, de uma [aplicação](/pt-br/documentacao/build/applications/guides/criar-uma-aplicacao/) e de um [domínio personalizado](#adicione-um-domínio-personalizado).
 
-- Um domínio registrado com um serviço de hospedagem.
-- Uma [application](/pt-br/documentacao/build/applications/guides/criar-uma-aplicacao/).
-- Um [domínio personalizado](/pt-br/documentacao/build/workloads/guides/configurar-dominio/).
+Crie uma zona DNS e migre a sua resolução de nome para a Azion:
 
-Em seguida, você deve criar uma zona DNS e migrar sua *resolução de nome* para a Azion.
-
-<LinkButton link="/pt-br/documentacao/produtos/guias/migrar-ns-para-a-azion" label="leia o guia para migrar seu NS para Azion" severity="secondary" />
-
-
+<LinkButton link="/pt-br/documentacao/build/workloads/guides/migrar-ns-para-a-azion/" label="Migre seus NS para a Azion" severity="secondary" />
 
 ---
 
-## Direcionar seu tráfego para Azion
+## Aponte seu domínio para a Azion
 
-Para concluir esta tarefa, você deve ter:
+**Antes de começar:** você precisa de um domínio registrado em um serviço de hospedagem, de uma [aplicação](/pt-br/documentacao/build/applications/guides/criar-uma-aplicacao/) e de um [domínio personalizado](#adicione-um-domínio-personalizado).
 
-- Um domínio registrado com um serviço de hospedagem.
-- Uma [application](/pt-br/documentacao/build/applications/guides/criar-uma-aplicacao/).
-- Um [domínio personalizado](/pt-br/documentacao/build/workloads/guides/configurar-dominio/).
+Configure seu provedor de DNS de terceiros e associe o endereço do seu domínio personalizado ao endereço `xxxxxxxxxx.map.azionedge.net`:
 
-Em seguida, você deve configurar seu provedor de DNS de terceiros e associar o endereço do seu domínio personalizado ao endereço `xxxxxxxxxx.map.azionedge.net`, [conforme explicado anteriormente](#adicionar-um-dominio-personalizado).
-
-<LinkButton link="/pt-br/documentacao/build/workloads/guides/apontar-dominio-para-a-azion/" label="Leia o guia de como apontar seu domínio para Azion" severity="secondary" />
-
-
+<LinkButton link="/pt-br/documentacao/build/workloads/guides/apontar-dominio-para-a-azion/" label="Aponte seu domínio para a Azion" severity="secondary" />
 
 ---
 
-## Próximos passos
+## Teste
 
-Depois de concluir essas configurações, você pode confirmar o tráfego de entrada por meio do [Real-Time Metrics](/pt-br/documentacao/observe/real-time-metrics/).
+Quando as mudanças de DNS propagarem, o seu próprio domínio responde com o conteúdo da sua aplicação:
 
-Clique no botão **Próxima página**, localizado no canto inferior direito desta página, para ir para esta etapa.
+```bash
+curl -I https://<seu-dominio>
+# HTTP/2 200
+```
 
-
-
----
-
+Confirme o tráfego de entrada no [Real-Time Metrics](/pt-br/documentacao/observe/real-time-metrics/).

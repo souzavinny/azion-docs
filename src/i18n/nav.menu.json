@@ -42,8 +42,8 @@
     {
      "key": "get-started/overview",
      "label": {
-      "en": "Overview",
-      "pt-br": "Visão geral"
+      "en": "Getting Started",
+      "pt-br": "Ponto de partida"
      },
      "slug": {
       "en": "/documentation/get-started/",
