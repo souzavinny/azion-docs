@@ -10,7 +10,7 @@ import Tabs from '~/components/tabs/Tabs'
 import Code from '~/components/Code/Code.astro'
 
 
-[Certificate Manager](/en/documentation/secure/certificate-manager/) are essential to provide your infrastructure with reliability and compliance with data protection regulations. At Azion, you have several options to secure your domains with TLS certificates. Aside from [registering a certificate and private key](/en/documentation/build/workloads/guides/create-a-digital-certificate/) that you already own, you can also [request a Let's Encrypt certificate](/en/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate/) for your domain.
+[Certificate Manager](/en/documentation/secure/certificate-manager/) are essential to provide your infrastructure with reliability and compliance with data protection regulations. At Azion, you have several options to secure your domains with TLS certificates. Aside from [registering a certificate and private key](/en/documentation/secure/workloads/guides/create-a-digital-certificate/) that you already own, you can also [request a Let's Encrypt certificate](/en/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate/) for your domain.
 
 If you don't own a certificate, you can issue a request through Azion and submit it to a certificate authority. This guide will describe how you can generate a **Certificate Singing Request (CSR)** through Azion. 
 
@@ -41,7 +41,7 @@ A CSR is an encrypted request to a Certificate Authority (CA) for issuance of a 
   - **Subject Alternative Names (SAN)**: list of other names or records to be associated with the certificate as SANs. Separate each SAN by a new line. Example: `domain.net`.
 
 :::note
-Ensure that the subject name and the subject alternate names (SAN) listed are the same as the [domains you configure with Azion](/en/documentation/build/workloads/guides/configure-a-domain/). This will avoid errors from occurring when you associate the certificate with the domain.
+Ensure that the subject name and the subject alternate names (SAN) listed are the same as the [domains you configure with Azion](/en/documentation/secure/workloads/guides/configure-a-domain/). This will avoid errors from occurring when you associate the certificate with the domain.
 :::
 
 6. Click the **Save** button.
@@ -146,7 +146,7 @@ Whichever CA you choose will validate the information in the CSR generated again
 
 ## Step 3. Register the issued certificate with Azion
 
-Once you receive a certificate issued by your CA, you must associate it with the CSR entry you created. After your certificate is active with Azion, you may [associate the certificate to a domain](/en/documentation/build/workloads/guides/create-a-digital-certificate/#associate-certificate-to-domain).
+Once you receive a certificate issued by your CA, you must associate it with the CSR entry you created. After your certificate is active with Azion, you may [associate the certificate to a domain](/en/documentation/secure/workloads/guides/create-a-digital-certificate/#associate-certificate-to-domain).
 
 <Tabs client:visible>
     <Fragment slot="tab.console">Console</Fragment>

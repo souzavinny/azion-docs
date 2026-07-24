@@ -21,11 +21,11 @@ Se você não possui um certificado, pode [solicitar um certificado Let's Encryp
 
 - Uma conta no [Azion Console](https://console.azion.com). Você encontra mais informações sobre como criar uma na [página de documentação](/pt-br/documentacao/account/reference/criar-uma-conta/).
 - Um certificado TLS (X.509) e sua chave privada, em formato [ASCII PEM](https://www.ssl.com/guide/pem-der-crt-and-cer-x-509-encodings-and-conversions/). A chave privada não pode estar protegida por *passphrase*.
-- Um [domínio configurado com a Azion](/pt-br/documentacao/build/workloads/guides/configurar-dominio/) cujos hostnames correspondam ao certificado.
+- Um [domínio configurado com a Azion](/pt-br/documentacao/secure/workloads/guides/configurar-dominio/) cujos hostnames correspondam ao certificado.
 - Para o caminho pela API: um [personal token](/pt-br/documentacao/account/guides/personal-tokens/).
 
 :::note
-Este quickstart usa as configurações do [Workloads](/pt-br/documentacao/build/workloads/) e a Azion API v4. Há instruções separadas para contas que usam as configurações do [Domains](/pt-br/documentacao/build/applications/reference/domains/) legado no guia [Como criar um certificado digital](/pt-br/documentacao/build/workloads/guides/criar-certificado-digital/). Se você não tem certeza de quais passos se aplicam à sua conta, consulte o guia [Verifique a migração da sua conta](/pt-br/documentacao/account/guides/verificar-migracao-conta/).
+Este quickstart usa as configurações do [Workloads](/pt-br/documentacao/secure/workloads/) e a Azion API v4. Há instruções separadas para contas que usam as configurações do [Domains](/pt-br/documentacao/build/applications/reference/domains/) legado no guia [Como criar um certificado digital](/pt-br/documentacao/secure/workloads/guides/criar-certificado-digital/). Se você não tem certeza de quais passos se aplicam à sua conta, consulte o guia [Verifique a migração da sua conta](/pt-br/documentacao/account/guides/verificar-migracao-conta/).
 :::
 
 ---
@@ -143,7 +143,7 @@ openssl s_client -showcerts -connect seudominio.com:443
 
 ## Próximos passos
 
-- [Como criar um certificado digital](/pt-br/documentacao/build/workloads/guides/criar-certificado-digital/): o guia completo, incluindo o upload de Trusted CA para mTLS e os caminhos legados de Domains e API v3
+- [Como criar um certificado digital](/pt-br/documentacao/secure/workloads/guides/criar-certificado-digital/): o guia completo, incluindo o upload de Trusted CA para mTLS e os caminhos legados de Domains e API v3
 - [Conceitos do Certificate Manager](/pt-br/documentacao/secure/certificate-manager/concepts/)
 - [Como gerar um certificado Let's Encrypt](/pt-br/documentacao/build/applications/guides/como-gerar-um-certificado-lets-encrypt/)
 - [Suporte para mTLS](/pt-br/documentacao/secure/certificate-manager/reference/mtls/)

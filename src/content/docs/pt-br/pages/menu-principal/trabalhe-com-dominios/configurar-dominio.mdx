@@ -5,7 +5,7 @@ description: >-
   permitindo tráfego de usuários e monitoramento de métricas.
 meta_tags: 'domain, edge computing, edge network, custom domain'
 namespace: docs_guides_configure_domain
-permalink: /documentacao/build/workloads/guides/configurar-dominio/
+permalink: /documentacao/secure/workloads/guides/configurar-dominio/
 ---
 
 import Tabs from '~/components/tabs/Tabs'
@@ -17,7 +17,7 @@ import Apiv4Rollout from '~/includes/snippets/apiv4Rollout/en/snippet.mdx'
 
 Com a Azion, você pode criar e executar aplicações diretamente no edge. Para permitir o acesso à sua aplicação através do navegador e começar a receber usuários e monitorar métricas, você precisa de um domínio.
 
-Para criar um endereço de domínio gratuito para sua aplicação no formato `xxxxxxxxxx.map.azionedge.net`, siga os passos na aba apropriada abaixo. Há instruções separadas para as configurações do [Domains legado](/pt-br/documentacao/build/applications/reference/domains/) e para o novo produto [Workloads](/pt-br/documentacao/build/workloads/).
+Para criar um endereço de domínio gratuito para sua aplicação no formato `xxxxxxxxxx.map.azionedge.net`, siga os passos na aba apropriada abaixo. Há instruções separadas para as configurações do [Domains legado](/pt-br/documentacao/build/applications/reference/domains/) e para o novo produto [Workloads](/pt-br/documentacao/secure/workloads/).
 
 :::tip[Dica]
 Se você não tem certeza de quais passos se aplicam à sua conta, consulte [este guia](/pt-br/documentacao/account/guides/verificar-migracao-conta/) para determinar se sua conta já foi migrada.
@@ -94,7 +94,7 @@ Chave | Descrição |
 `name` | Define a string no valor como um nome da entrada do domínio com a Azion. Como este valor não representa um endereço de domínio, você pode modificá-lo para se adequar às suas necessidades. |
 `workload_domain_allow_access` | Quando definido como `true`, permite o acesso via endereço Azion `xxxxxxxxxx.map.azionedge.net`. |
 `infrastructure` | Infraestrutura para seu Workload: **Production Infrastructure** (1) ou **Staging Infrastructure** (2). |
-`digital_certificate_id` | Quando `null`, seleciona o certificado Azion SAN. Você também pode [associar um certificado digital](/pt-br/documentacao/build/workloads/guides/criar-certificado-digital/) a seu Workload. |
+`digital_certificate_id` | Quando `null`, seleciona o certificado Azion SAN. Você também pode [associar um certificado digital](/pt-br/documentacao/secure/workloads/guides/criar-certificado-digital/) a seu Workload. |
 
 2. Você receberá uma resposta semelhante a:
 
@@ -186,7 +186,7 @@ Confira a [documentação da API da Azion](https://api.azion.com/v4#) para saber
     | --- | --- |
     | `name` | Define a string no valor como um nome da entrada do domínio com a Azion. Como este valor não representa um endereço de domínio, você pode modificá-lo para se adequar às suas necessidades. |
     | `cname_access_only` | Quando definido como `false`, permite o acesso via endereço Azion. |
-    | `digital_certificate_id` | Quando `null`, seleciona o certificado Azion SAN. Você também pode [associar um certificado digital](/pt-br/documentacao/build/workloads/guides/criar-certificado-digital/) a seu domínio. |
+    | `digital_certificate_id` | Quando `null`, seleciona o certificado Azion SAN. Você também pode [associar um certificado digital](/pt-br/documentacao/secure/workloads/guides/criar-certificado-digital/) a seu domínio. |
     | `edge_application_id` | O [ID da application](/pt-br/documentacao/build/applications/guides/definir-configuracoes-principais/#via-api) vinculada ao domínio. |
 
 2. Você receberá uma resposta semelhante a:
@@ -228,5 +228,5 @@ Quando um usuário insere o nome do domínio em seu navegador, é iniciado um pr
 
 Uma vez que o navegador recebe o endereço IP, ele estabelece uma conexão com o edge node apropriado. O edge node então serve o conteúdo solicitado e o navegador entrega a application.
 
-Para personalizar o domínio de sua application, você pode optar por [associar um registro de domínio](/pt-br/documentacao/build/workloads/guides/apontar-dominio-para-a-azion/) ou [migrar nameservers para a Azion](/pt-br/documentacao/build/workloads/guides/migrar-ns-para-a-azion/).
+Para personalizar o domínio de sua application, você pode optar por [associar um registro de domínio](/pt-br/documentacao/secure/workloads/guides/apontar-dominio-para-a-azion/) ou [migrar nameservers para a Azion](/pt-br/documentacao/secure/workloads/guides/migrar-ns-para-a-azion/).
 

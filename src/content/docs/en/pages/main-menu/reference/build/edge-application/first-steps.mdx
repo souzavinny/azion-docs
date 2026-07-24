@@ -27,11 +27,11 @@ You're now in the page to configure the general delivery settings of your applic
 
 **Applications** offers the following modules:
 
-- [Application Accelerator](/en/documentation/build/applications/reference/application-accelerator/)
-- [Cache](/en/documentation/build/applications/reference/cache/)
-- [Functions](/en/documentation/build/applications/reference/functions/)
-- [Image Processor](/en/documentation/build/applications/reference/image-processor/)
-- [Tiered Cache](/en/documentation/build/applications/reference/cache/tiered-cache/)
+- [Application Accelerator](/en/documentation/build/applications/application-accelerator/)
+- [Cache](/en/documentation/build/applications/cache/)
+- [Functions](/en/documentation/build/applications/functions/)
+- [Image Processor](/en/documentation/build/applications/image-processor/)
+- [Tiered Cache](/en/documentation/build/applications/cache/tiered-cache/)
 
 Some **Applications modules** are billed products and it may generate usage-related costs. Check the [Applications modules pricing](/en/documentation/platform/pricing/) for more information.
 
@@ -58,7 +58,7 @@ Each tab stores in other configuration options for your application.
 
 A backend, also known as an origin, is the server from which Azion retrieves your content. This can include object storage services, cloud servers, or other infrastructure that hosts your application assets or data.
 
-To configure your application's origin you'll use [Connectors](/en/documentation/build/connectors/).
+To configure your application's origin you'll use [Connectors](/en/documentation/secure/connectors/).
 
 1. [Access Console](https://console.azion.com).
 2. On the upper-left corner of the page, select **Products Menu** > **Connectors**.
@@ -68,7 +68,7 @@ To configure your application's origin you'll use [Connectors](/en/documentation
 6. Click the **Save** button.
 
 :::note
-For more details on Connector Types, please visit the [Connectors reference](/en/documentation/build/connectors/).
+For more details on Connector Types, please visit the [Connectors reference](/en/documentation/secure/connectors/).
 :::
 
 To activate an Connector:
@@ -80,7 +80,7 @@ To activate an Connector:
 5. Select the Connector you want to apply.
 6. Click the **Save** button.
 
-**Connector** enables you to configure multiple origins and distribute traffic among them by using [Load Balancer](/en/documentation/build/connectors/reference/load-balancer/).
+**Connector** enables you to configure multiple origins and distribute traffic among them by using [Load Balancer](/en/documentation/secure/connectors/reference/load-balancer/).
 
 :::tip
 You can use [Custom Pages](/en/documentation/secure/custom-pages/) to configure custom error pages that are displayed when **Connector** receives specific error responses (such as HTTP 4xx or 5xx status codes) from your origin.
@@ -131,7 +131,7 @@ Edit your cache configuration in [Cache Settings](/en/documentation/build/applic
 
 #### Tiered Cache
 
-To use the [Tiered Cache](/en/documentation/build/applications/reference/cache/tiered-cache/) module:
+To use the [Tiered Cache](/en/documentation/build/applications/cache/tiered-cache/) module:
 
 1. In the **Main Settings** tab, at the end of the **Applications Modules** section, enable the **Tiered Cache** switch.
 2. Access the **Cache Settings** tab.

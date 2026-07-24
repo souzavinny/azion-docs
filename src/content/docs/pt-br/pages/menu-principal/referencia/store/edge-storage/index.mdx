@@ -25,7 +25,7 @@ O Object Storage permite que você crie buckets, que podem ser usados como orige
 - **Compatibilidade S3 Nativa**: Utilize o protocolo S3, garantindo compatibilidade imediata com o ecossistema de ferramentas, SDKs e bibliotecas que você já utiliza, como AWS CLI e Boto3.
 
 :::note
-Esse produto está disponível via [Console](https://console.azion.com/object-storage), [Azion API](https://api.azion.com), [Azion Runtime](/pt-br/documentacao/build/functions/runtime-apis/overview/) e [Azion CLI](/pt-br/documentacao/devtools/cli/).
+Esse produto está disponível via [Console](https://console.azion.com/object-storage), [Azion API](https://api.azion.com), [Azion Runtime](/pt-br/documentacao/runtime/visao-geral/) e [Azion CLI](/pt-br/documentacao/devtools/cli/).
 :::
 
 ---
@@ -36,7 +36,7 @@ Ao usar o **Object Storage**, é essencial entender a abordagem correta para ent
 
 ### Use Applications com Connectors para entrega de objetos
 
-A forma recomendada de entregar objetos armazenados no **Object Storage** aos usuários finais é através de [Applications](/pt-br/documentacao/build/applications/) conectadas aos seus buckets usando [Connectors](/pt-br/documentacao/build/connectors/). Esta abordagem:
+A forma recomendada de entregar objetos armazenados no **Object Storage** aos usuários finais é através de [Applications](/pt-br/documentacao/build/applications/) conectadas aos seus buckets usando [Connectors](/pt-br/documentacao/secure/connectors/). Esta abordagem:
 
 - Direciona o tráfego através da rede de edge da Azion, garantindo performance ideal e baixa latência
 - Fornece capacidades de caching para reduzir requisições à origem
@@ -72,7 +72,7 @@ Para gerenciar objetos (upload, delete, operações de listagem), continue usand
 | Criar e modificar um bucket | [Como criar e modificar um bucket do Object Storage](/pt-br/documentacao/store/object-storage/guides/criar-e-modificar-um-bucket/) |
 | Upload e download de objetos | [Como fazer o upload e download de objetos de um bucket do Object Storage](/pt-br/documentacao/store/object-storage/guides/upload-e-download-de-objetos-do-bucket/) |
 | Configurar o protocolo S3 | [Como acessar um bucket do Object Storage usando o protocolo S3](/pt-br/documentacao/store/object-storage/guides/s3-protocol-para-object-storage/) |
-| Runtime API | [Object Storage API](/pt-br/documentacao/build/functions/runtime-apis/storage/) |
+| Runtime API | [Object Storage API](/pt-br/documentacao/runtime/api-reference/storage/) |
 
 ---
 
@@ -90,7 +90,7 @@ As melhores práticas para nomear buckets incluem especificar que tipos de objet
 
 ## Objetos
 
-Objetos, ou arquivos, podem ser enviados, modificados, baixados e removidos dos buckets por meio da [Azion REST API](https://api.azion.com), do [Azion Runtime](/pt-br/documentacao/build/functions/runtime-apis/overview/) e do [protocolo S3](#compatiblidade-com-protocolo-s3).
+Objetos, ou arquivos, podem ser enviados, modificados, baixados e removidos dos buckets por meio da [Azion REST API](https://api.azion.com), do [Azion Runtime](/pt-br/documentacao/runtime/visao-geral/) e do [protocolo S3](#compatiblidade-com-protocolo-s3).
 
 ### Object key
 
@@ -120,7 +120,7 @@ O upload de um objeto diferente ou a modificação do conteúdo do objeto usando
 
 ### Origem
 
-Com **Object Storage**, você pode usar buckets como uma [origin](/pt-br/documentacao/build/connectors/#object-storage) no **Connector** da Azion para buscar o conteúdo de uma application.
+Com **Object Storage**, você pode usar buckets como uma [origin](/pt-br/documentacao/secure/connectors/#object-storage) no **Connector** da Azion para buscar o conteúdo de uma application.
 
 Você pode determinar se o conteúdo é retirado da raiz do bucket ou de um prefix dentro do bucket.
 

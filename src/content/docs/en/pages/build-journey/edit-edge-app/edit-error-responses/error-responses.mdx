@@ -37,13 +37,13 @@ Configure your application to handle error responses from the origin using [Cust
 2. Click **+ Custom Page**.
 3. In the **Page Codes** section, click **+ Custom Page Code** to add a page for a chosen status code. For example: `404`.
 4. In the new **Page Code** field, select the status code you want to customize.
-5. In the **Connector** field, select the [Connector](/en/documentation/build/connectors/) that is fetching the data from your origin. 
+5. In the **Connector** field, select the [Connector](/en/documentation/secure/connectors/) that is fetching the data from your origin. 
 6 In the **Page Path** field, add a *path* to an error page created in the source. For example: `/error/404`.
 1. In **Response TTL**, set the cache *time-to-live* (TTL), in seconds.
 2. In the **Response Custom Status Code** field, customize the HTTP status that'll be received by the user.
 3. Click the **Apply** button.
 
-Now let's bind the Custom Page to your [Workload](/en/documentation/build/workloads/).
+Now let's bind the Custom Page to your [Workload](/en/documentation/secure/workloads/).
 
 1. Access [Azion Console](/en/documentation/account/guides/how-to-access-azion-console/) > **Workloads**.
 2. Edit the desired Workload.

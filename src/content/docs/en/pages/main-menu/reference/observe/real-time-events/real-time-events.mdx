@@ -97,7 +97,7 @@ Displays the event records from requests made to your [Applications](/en/documen
 | SSL Protocol | Protocol for an established TLS connection. Example: `TLS v1.2` |
 | Stack Trace | Provides the names of the Rules Engine from your application or your Firewall that are run by the request. Example: `{\\\"edge_firewall\\\":[\\\"Global - Set WAF\\\"]}` |
 | Status | HTTP status code of the request. Example: `200` |
-| Upstream Addr | Client’s IP address and port. Can also store multiple servers or server groups. Example: `192.168.1.1:80`. When the response is `127.0.0.1:1666`, the upstream is [Azion Cells Runtime](/en/documentation/build/functions/runtime-apis/overview/). |
+| Upstream Addr | Client’s IP address and port. Can also store multiple servers or server groups. Example: `192.168.1.1:80`. When the response is `127.0.0.1:1666`, the upstream is [Azion Cells Runtime](/en/documentation/runtime/overview/). |
 | Upstream Bytes Received | Number of bytes received from the origin by the edge if the content isn’t cached. Example: `8304` |
 | Upstream Bytes Sent | Number of bytes sent to the origin. Example: `2733` |
 | Upstream Cache Status | Status of the local cache. Can be: `MISS`, `BYPASS`, `EXPIRED`, `STALE`, `UPDATING`, `REVALIDATED`, `HIT`, or `-` |
@@ -123,7 +123,7 @@ The `Set WAF [Your WAF]` Firewall behavior performs special processing, allowing
 
 Requires: <Tag severity="info" client:only="vue">Functions</Tag>
 
-Displays the event records of requests made to your [Functions](/en/documentation/build/applications/reference/functions/).
+Displays the event records of requests made to your [Functions](/en/documentation/build/applications/functions/).
 
 | Variable | Description |
 | -------- | ----------- |
@@ -137,14 +137,14 @@ Displays the event records of requests made to your [Functions](/en/documentatio
 | Virtual Host ID | Unique ID available on Azion Real-Time Manager. Set on virtual host configuration file. Example: `2410001a` |
 
 :::note
-See the [Debbuging documentation](/en/documentation/build/functions/runtime-apis/debugging/) for more options on viewing function's logs.
+See the [Debbuging documentation](/en/documentation/devtools/debugging/) for more options on viewing function's logs.
 :::
 
 ---
 
 ### Functions Console
 
-Displays the event records from applications using [Azion Runtime](/en/documentation/build/functions/runtime-apis/overview/) returned by Cells Console.
+Displays the event records from applications using [Azion Runtime](/en/documentation/runtime/overview/) returned by Cells Console.
 
 | Variable | Description |
 | -------- | ----------- |
@@ -162,7 +162,7 @@ Displays the event records from applications using [Azion Runtime](/en/documenta
 
 Requires: <Tag severity="info" client:only="vue">Image Processor</Tag>
 
-Displays the event records of requests made to applications using [Image Processor](/en/documentation/build/applications/reference/image-processor/).
+Displays the event records of requests made to applications using [Image Processor](/en/documentation/build/applications/image-processor/).
 
 | Variable | Description |
 | -------- | ----------- |
@@ -194,7 +194,7 @@ Displays the event records of requests made to applications using [Image Process
 
 Requires: <Tag severity="info" client:only="vue">Tiered Cache</Tag>
 
-Displays the event records of requests made to applications using [Tiered Cache](/en/documentation/build/applications/reference/cache/tiered-cache/).
+Displays the event records of requests made to applications using [Tiered Cache](/en/documentation/build/applications/cache/tiered-cache/).
 
 | Variable | Description |
 | -------- | ----------- |

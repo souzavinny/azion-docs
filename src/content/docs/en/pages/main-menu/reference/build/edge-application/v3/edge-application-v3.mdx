@@ -65,12 +65,12 @@ See the documentation for each module:
 
 | Module | Description |
 | --- | --- |
-| [Application Accelerator](/en/documentation/build/applications/reference/application-accelerator/) | Optimize API protocols and manage dynamic content delivery to accelerate applications and APIs. |
-| [Cache](/en/documentation/build/applications/reference/cache/) | Configure cache settings to speed up the delivery of static and dynamic content. |
-| [Functions](/en/documentation/build/applications/reference/functions/) | Build ultra-low latency applications and customize content delivery. |
-| [Image Processor](/en/documentation/build/applications/reference/image-processor/) | Optimize image processing for various devices, browsers, and screen resolutions. |
-| [Load Balancer](/en/documentation/build/connectors/reference/load-balancer/) | Balance traffic between your origin servers and cloud providers to improve fault tolerance and avoid network congestion. |
-| [Tiered Cache](/en/documentation/build/applications/reference/cache/tiered-cache/) | Add a cache layer between your users and the edge to keep objects in cache for longer periods of time. |
+| [Application Accelerator](/en/documentation/build/applications/application-accelerator/) | Optimize API protocols and manage dynamic content delivery to accelerate applications and APIs. |
+| [Cache](/en/documentation/build/applications/cache/) | Configure cache settings to speed up the delivery of static and dynamic content. |
+| [Functions](/en/documentation/build/applications/functions/) | Build ultra-low latency applications and customize content delivery. |
+| [Image Processor](/en/documentation/build/applications/image-processor/) | Optimize image processing for various devices, browsers, and screen resolutions. |
+| [Load Balancer](/en/documentation/secure/connectors/reference/load-balancer/) | Balance traffic between your origin servers and cloud providers to improve fault tolerance and avoid network congestion. |
+| [Tiered Cache](/en/documentation/build/applications/cache/tiered-cache/) | Add a cache layer between your users and the edge to keep objects in cache for longer periods of time. |
 | [WebSocket Proxy](/en/documentation/build/applications/reference/websocket/) | Enable the WebSocket protocol to establish full-duplex communication channels over one TCP connection. |
 
 ---
@@ -111,7 +111,7 @@ With **Certificate Manager**, you can enhance the security of your HTTPS applica
 
 ## Real-Time Purge
 
-Use **Real-Time Purge** to clear cached content from Azion's edge or from the [tiered cache layer](/en/documentation/build/applications/reference/cache/tiered-cache/) to maintain content accuracy, reduce outdated content delivery, and deliver an optimal user experience on your application. 
+Use **Real-Time Purge** to clear cached content from Azion's edge or from the [tiered cache layer](/en/documentation/build/applications/cache/tiered-cache/) to maintain content accuracy, reduce outdated content delivery, and deliver an optimal user experience on your application. 
 
 <LinkButton severity="secondary" label="Learn more about Real-Time Purge" link="/en/documentation/build/applications/reference/real-time-purge/" />
 
@@ -128,7 +128,7 @@ These are the **default limits**:
 
 | Scope | Limit |
 | ----- | ----- |
-| Minimum CDN cache TTL | 60 seconds<br /><br />For the [Application Accelerator](/en/documentation/build/applications/reference/application-accelerator/) module: 0 seconds |
+| Minimum CDN cache TTL | 60 seconds<br /><br />For the [Application Accelerator](/en/documentation/build/applications/application-accelerator/) module: 0 seconds |
 | Debug Rules log size | 1.5 kB |
 | Edge-client keepalive connection¹ | 10 to 15 minutes |
 | Single object size in cache | 10 GB |

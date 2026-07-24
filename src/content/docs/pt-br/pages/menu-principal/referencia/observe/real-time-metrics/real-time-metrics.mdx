@@ -234,7 +234,7 @@ Ele fornece a primeira camada de caching para o conteúdo do cliente no edge da 
 >
 > ORIGEM -> EDGE -> USUÁRIO FINAL
 
-Veja a [documentação de Cache](/pt-br/documentacao/build/applications/reference/cache/) para mais informações.
+Veja a [documentação de Cache](/pt-br/documentacao/build/applications/cache/) para mais informações.
 
 > **Em que unidade os dados aparecem no gráfico?**
 >
@@ -252,7 +252,7 @@ Fluxo **Data Transferred**:
 
 ![Fluxo de informação do gráfico Cache para Applications, representando os dados sendo transferidos tanto de Data Transferred In como de Data Transferred Out.](/assets/docs/images/uploads/edge-applications.png)
 
-Se você tem [Tiered Cache](/pt-br/documentacao/build/applications/reference/cache/#tiered-cache) habilitado, seu gráfico de Cache irá exibir:
+Se você tem [Tiered Cache](/pt-br/documentacao/build/applications/cache/#tiered-cache) habilitado, seu gráfico de Cache irá exibir:
 
 - **Data Transferred In**: ⁠dados transferidos do usuário final para os edges, e dos edges para a camada tiered cache.
 
@@ -500,7 +500,7 @@ O gráfico **Average Request Time** mostra a duração média das requisições 
 Com essas informações, você pode identificar rapidamente tendências e padrões nos tempos de processamento de requisições, como gargalos ou problemas que requerem atenção. Se você identificar esses problemas, pode abordá-los com soluções como:
 
 - [Melhorar suas consultas ao banco de dados](/pt-br/documentacao/devtools/graphql/reference/queries/) para desempenho ideal.
-- [Definir políticas de cache](/pt-br/documentacao/build/applications/guides/cache-settings/) e [Advanced Cache Key](/pt-br/documentacao/build/applications/guides/advanced-cache-key/).
+- [Definir políticas de cache](/pt-br/documentacao/build/applications/cache/guides/cache-settings/) e [Advanced Cache Key](/pt-br/documentacao/build/applications/cache/guides/advanced-cache-key/).
 - [Configurar múltiplas origens com algoritmos de balanceamento de carga](/pt-br/documentacao/build/applications/guides/configure-multiplas-origens/).
 
 > **Em que unidade os dados aparecem nos gráficos?**
@@ -607,7 +607,7 @@ Descubra mais sobre o gráfico:
 
 ###### Bandwidth Saving
 
-O gráfico **Bandwidth Saving** mostra a soma de dados salvos em todas as transmissões de imagens nos seus domínios, associados com uma application, que foram processados e entregues de alguma forma pelo [Image Processor](/pt-br/documentacao/build/applications/reference/image-processor/).
+O gráfico **Bandwidth Saving** mostra a soma de dados salvos em todas as transmissões de imagens nos seus domínios, associados com uma application, que foram processados e entregues de alguma forma pelo [Image Processor](/pt-br/documentacao/build/applications/image-processor/).
 
 O processamento de imagens pode estar relacionado a redimensionamento, recorte, alteração de qualidade ou qualquer outro recurso do Image Processor. Se uma imagem teve qualquer tipo de tratamento através do Image Processor, os dados salvos dessas imagens são exibidos no gráfico.
 
@@ -633,7 +633,7 @@ A tabela exibe os 10 endereços IP remotos mais utilizados, mas você pode aplic
 
 ### Tiered Cache
 
-A aba **Tiered Cache** mostra as métricas relacionadas aos dados de suas aplicações usando [o Tiered Cache](/pt-br/documentacao/build/applications/reference/cache/#tiered-cache) configuradas em sua conta.
+A aba **Tiered Cache** mostra as métricas relacionadas aos dados de suas aplicações usando [o Tiered Cache](/pt-br/documentacao/build/applications/cache/#tiered-cache) configuradas em sua conta.
 
 Descubra mais sobre cada gráfico:
 
@@ -655,7 +655,7 @@ Tiered Cache é um recurso para Applications que acrescenta uma camada adicional
 >
 > ORIGEM-> TIERED CACHE -> EDGE
 
-Para usar Tiered Cache e analisar seus dados, você deve ativá-lo em sua conta. Veja a [documentação de Tiered Cache](/pt-br/documentacao/build/applications/reference/cache/tiered-cache/) para mais informações.
+Para usar Tiered Cache e analisar seus dados, você deve ativá-lo em sua conta. Veja a [documentação de Tiered Cache](/pt-br/documentacao/build/applications/cache/tiered-cache/) para mais informações.
 
 > **Em que unidade os dados aparecem no gráfico?**
 >
@@ -691,7 +691,7 @@ Sua aplicação tem 1 GB de dados. Se o gráfico mostra que sua aplicação teve
 
 ### Functions
 
-A aba **Functions** mostra as métricas relacionadas às invocações de suas [functions](/pt-br/documentacao/build/applications/reference/functions/) configuradas em sua conta.
+A aba **Functions** mostra as métricas relacionadas às invocações de suas [functions](/pt-br/documentacao/build/applications/functions/) configuradas em sua conta.
 
 Descubra mais sobre o gráfico:
 
@@ -706,17 +706,17 @@ O gráfico **Total Invocations** mostra a soma de todas as ocasiões em que suas
 
 Cada vez que uma de suas functions configuradas é executada, uma invocação é calculada.
 
-Descubra mais sobre [como construir aplicações com Functions](/pt-br/documentacao/build/applications/reference/functions/).
+Descubra mais sobre [como construir aplicações com Functions](/pt-br/documentacao/build/applications/functions/).
 
 ### Image Processor
 
-A aba **Image Processor** mostra as métricas relacionadas às imagens processadas [através do Image Processor](/pt-br/documentacao/build/applications/reference/image-processor/) que estão configuradas em sua conta.
+A aba **Image Processor** mostra as métricas relacionadas às imagens processadas [através do Image Processor](/pt-br/documentacao/build/applications/image-processor/) que estão configuradas em sua conta.
 
 Descubra mais sobre cada gráfico:
 
 #### Total Requests
 
-O gráfico **Total Requests** mostra a soma de todas as requisições relacionadas a um conteúdo que tenha imagens processadas pelo [Image Processor](/pt-br/documentacao/build/applications/reference/image-processor/).
+O gráfico **Total Requests** mostra a soma de todas as requisições relacionadas a um conteúdo que tenha imagens processadas pelo [Image Processor](/pt-br/documentacao/build/applications/image-processor/).
 
 O processamento de imagens pode estar relacionado a redimensionamento, recorte, alteração de qualidade, ou qualquer outro recurso do Image Processor.
 
@@ -724,7 +724,7 @@ Se uma imagem teve qualquer tipo de tratamento através do Image Processor, as r
 
 #### Total Requests per Second
 
-O gráfico **Total Requests per Second** mostra a média de requisições por segundo relacionadas a um conteúdo que tenha imagens processadas pelo [Image Processor](/pt-br/documentacao/build/applications/reference/image-processor/).
+O gráfico **Total Requests per Second** mostra a média de requisições por segundo relacionadas a um conteúdo que tenha imagens processadas pelo [Image Processor](/pt-br/documentacao/build/applications/image-processor/).
 
 O processamento de imagens pode estar relacionado a redimensionamento, recorte, alteração de qualidade, ou qualquer outro recurso do Image Processor.
 

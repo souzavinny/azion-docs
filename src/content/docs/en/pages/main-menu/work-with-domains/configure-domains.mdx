@@ -5,7 +5,7 @@ description: >-
   and metrics tracking.
 meta_tags: 'domain, edge computing, edge network, custom domain'
 namespace: docs_guides_configure_domain
-permalink: /documentation/build/workloads/guides/configure-a-domain/
+permalink: /documentation/secure/workloads/guides/configure-a-domain/
 ---
 
 import Tabs from '~/components/tabs/Tabs'
@@ -17,7 +17,7 @@ import Apiv4Rollout from '~/includes/snippets/apiv4Rollout/en/snippet.mdx'
 
 With Azion, you can create and run applications directly at the edge. To allow access to your application through the browser and start receiving users and monitoring metrics, you need to configure a domain.
 
-To create a free domain address for your application in the format `xxxxxxxxxx.map.azionedge.net`, follow the steps in the appropriate tab below. There are separate instructions for the [legacy Domains](/en/documentation/build/applications/reference/domains/) settings and the new [Workloads](/en/documentation/build/workloads/) product.
+To create a free domain address for your application in the format `xxxxxxxxxx.map.azionedge.net`, follow the steps in the appropriate tab below. There are separate instructions for the [legacy Domains](/en/documentation/build/applications/reference/domains/) settings and the new [Workloads](/en/documentation/secure/workloads/) product.
 
 :::tip
 In this guide, there are separate instructions for API v3 and API v4. If you're not sure which steps apply to your account, see [the Verify Your Account Migration guide](/en/documentation/account/guides/verify-account-migration/) to determine if your account has already been migrated.
@@ -96,7 +96,7 @@ Wait a few minutes for your new domain to propagate to the edge nodes and access
 | `name` | Sets the value as the name of the domain entry with Azion. You may modify this value to fit your needs, since it does not represent a domain address. |
 | `workload_domain_allow_access` | When set to `true`, enables access via the `xxxxxxxxxx.map.azionedge.net` Azion address. |
 | `infrastructure` | Infrastructure for your Workload: **Production Infrastructure** (1) or **Staging Infrastructure** (2) |
-| `digital_certificate_id` | When `null`, selects the **Azion SAN** certificate. You can also [associate a digital certificate](/en/documentation/build/workloads/guides/create-a-digital-certificate/#via-api) to your Workload. |
+| `digital_certificate_id` | When `null`, selects the **Azion SAN** certificate. You can also [associate a digital certificate](/en/documentation/secure/workloads/guides/create-a-digital-certificate/#via-api) to your Workload. |
 
 2. You'll receive a response similar to:
 
@@ -187,7 +187,7 @@ Check the [Azion API documentation](https://api.azion.com/v4#) to know more abou
   | --- | --- |
   | `name` | Sets the string in value as a name of the domain entry with Azion. You may modify this value to fit your needs, since it does not represent a domain address. |
   | `cname_access_only` | When set to `false`, enables access via the Azion address. |
-  | `digital_certificate_id` | When `null`, selects the **Azion SAN** certificate. You can also [associate a digital certificate](/en/documentation/build/workloads/guides/create-a-digital-certificate/#via-api) to your domain. |
+  | `digital_certificate_id` | When `null`, selects the **Azion SAN** certificate. You can also [associate a digital certificate](/en/documentation/secure/workloads/guides/create-a-digital-certificate/#via-api) to your domain. |
   | `edge_application_id` | The [ID of the application](/en/documentation/get-started/journeys/launch/#via-api) linked to the domain. |
 
 2. You'll receive a response similar to:
@@ -229,5 +229,5 @@ When a user enters the custom domain name in their browser, a DNS lookup process
 
 Once the user's browser receives the IP address, it establishes a connection with the appropriate edge node. The edge node then serves the requested content, and the user's browser displays the application.
 
-You can choose to customize your domain by [associating a domain record](/en/documentation/build/workloads/guides/point-domain-to-azion/) or [migrating your name resolution to Azion](/en/documentation/build/workloads/guides/migrate-ns-to-azion/).
+You can choose to customize your domain by [associating a domain record](/en/documentation/secure/workloads/guides/point-domain-to-azion/) or [migrating your name resolution to Azion](/en/documentation/secure/workloads/guides/migrate-ns-to-azion/).
 

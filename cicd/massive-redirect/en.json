@@ -133,11 +133,7 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/application-acceleration/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/reference/application-accelerator/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/devtools/runtime-api/supported-frameworks/nextjs/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/frameworks-compatibility/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/application-accelerator/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/accounts/clients/",
@@ -181,7 +177,7 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/edge-application/application-acceleration/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/reference/application-accelerator/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/application-accelerator/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/edge-application/digital-certificates/",
@@ -197,11 +193,11 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/edge-application/edge-caching/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/reference/cache/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/cache/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/reference/functions/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/functions/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions-instances/",
@@ -209,11 +205,11 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/edge-application/image-processor/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/reference/image-processor/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/image-processor/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/edge-application/load-balancer/",
-    "moved": "https://www.azion.com/en/documentation/build/connectors/reference/load-balancer/"
+    "moved": "https://www.azion.com/en/documentation/secure/connectors/reference/load-balancer/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/edge-application/real-time-purge/",
@@ -310,30 +306,6 @@
   {
     "from": "https://www.azion.com/en/documentation/products/dev-tools/",
     "moved": "https://www.azion.com/en/documentation/devtools/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime/overview/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/overview/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/devtools/guides/cli/use-polyfills/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/guides/use-polyfills/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/debugging/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/debugging/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/javascript-examples/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/javascript-examples/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-api/supported-frameworks/nextjs/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/frameworks-compatibility/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-apis/javascript/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/javascript/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/cli/",
@@ -461,11 +433,11 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/guides/edge-caching/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/guides/cache-settings/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/cache/guides/cache-settings/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/guides/apis-performance-sites-application-acceleration/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/guides/advanced-cache-key/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/cache/guides/advanced-cache-key/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/guides/using-gzip-mime-types/",
@@ -581,7 +553,7 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/edge-functions/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/reference/functions/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/functions/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/CLI/",
@@ -677,7 +649,7 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/how-to/troubleshooting/check-page-cache-time/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/guides/check-page-cache-time/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/cache/guides/check-page-cache-time/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/how-to/troubleshooting/crossdomain-error-in-jw-player/",
@@ -701,7 +673,7 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/use-cases/apis-performance-sites-application-acceleration/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/guides/advanced-cache-key/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/cache/guides/advanced-cache-key/"
   },
   {
     "from": "https://www.azion.com/en/documentation/use-cases/blacklists-ip-addresses-edge/",
@@ -714,10 +686,6 @@
   {
     "from": "https://www.azion.com/en/documentation/use-cases/content-targeting/",
     "moved": "https://www.azion.com/en/documentation/marketplace/integrations/content-targeting-integration/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/use-cases/jamstack-using-flareact/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/frameworks-compatibility/"
   },
   {
     "from": "https://www.azion.com/en/documentation/use-cases/hosting-edge-website/",
@@ -753,7 +721,7 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/use-cases/edge-caching/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/guides/cache-settings/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/cache/guides/cache-settings/"
   },
   {
     "from": "https://www.azion.com/en/documentation/use-cases/edge-firewall/",
@@ -778,14 +746,6 @@
   {
     "from": "https://www.azion.com/en/documentation/products/how-to/troubleshooting/",
     "moved": "https://www.azion.com/en/documentation/guides/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-api/supported-frameworks/flareact/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/frameworks-compatibility/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/guides/jamstack-using-flareact/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/frameworks-compatibility/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/first-steps/",
@@ -832,10 +792,6 @@
     "moved": "https://www.azion.com/en/documentation/observe/real-time-metrics/guides/metrics-dash/"
   },
   {
-    "from": "https://www.azion.com/en/documentation/products/edge-functions/runtime-apis/lua/cache/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/overview/"
-  },
-  {
     "from": "https://www.azion.com/en/documentation/products/peering/",
     "moved": "https://www.azion.com/en/documentation/platform/network-program/"
   },
@@ -857,7 +813,7 @@
   },
   {
     "from": "https://www.azion.com/en/docs/products/load-balancer/",
-    "moved": "https://www.azion.com/en/documentation/build/connectors/reference/load-balancer/"
+    "moved": "https://www.azion.com/en/documentation/secure/connectors/reference/load-balancer/"
   },
   {
     "from": "https://www.azion.com/en/documentation/productos/edge-application/",
@@ -878,14 +834,6 @@
   {
     "from": "https://www.azion.com/en/documentation/services/support/business-events-support/",
     "moved": "https://www.azion.com/en/documentation/services/business-events-support/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-functions/runtime-apis/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/overview/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/use-cases/Flareact4azion/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/frameworks-compatibility/"
   },
   {
     "from": "https://www.azion.com/en/documentacao/produtos/terraform-provider/",
@@ -912,10 +860,6 @@
     "moved": "https://www.azion.com/en/documentation/products/deploy/credentials/"
   },
   {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-apis/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/overview/"
-  },
-  {
     "from": "https://www.azion.com/en/documentacao/servicos/solutions-lab/integration-services/",
     "moved": "https://www.azion.com/en/documentation/services/integration-services/"
   },
@@ -928,10 +872,6 @@
     "moved": "https://www.azion.com/en/documentation/devtools/lib/"
   },
   {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/javascript-runtime-apis/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/overview/"
-  },
-  {
     "from": "https://www.azion.com/en/documentation/products/network-layer-protection/",
     "moved": "https://www.azion.com/en/documentation/secure/network-shield/"
   },
@@ -941,7 +881,7 @@
   },
   {
     "from": "https://www.azion.com/en/docs/products/application-acceleration/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/reference/application-accelerator/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/application-accelerator/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/accounts/federated-authentication/",
@@ -956,32 +896,12 @@
     "moved": "https://www.azion.com/en/documentation/secure/firewall/"
   },
   {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/javascript-runtime-apis/response/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/response/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-functions/runtime-apis/lua/args/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/overview/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-functions/javascript-examples/ab-testing/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/javascript-examples/ab-testing/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/javascript-runtime-apis/web-standards/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/web-standards/"
-  },
-  {
     "from": "https://www.azion.com/en/documentation/products/edge-application/edge-function/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/reference/functions/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/functions/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/support/",
     "moved": "https://www.azion.com/en/documentation/services/support/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/javascript-runtime-apis/fetch/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/fetch/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/edge-application/digital-certificate/",
@@ -1053,7 +973,7 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/edge-application/l2-caching/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/reference/cache/tiered-cache/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/cache/tiered-cache/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/edge-application/first-steps/",
@@ -1061,7 +981,7 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/build/edge-application/edge-caching/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/reference/cache/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/cache/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/cli/cache-settings-crud/",
@@ -1169,23 +1089,7 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/build/edge-application/application-acceleration/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/reference/application-accelerator/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/devtools/runtime/api-reference/edge-sql/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/sql-database/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/devtools/runtime/api-reference/storage/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/storage/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/devtools/runtime/overview/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/overview/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/devtools/runtime-apis/javascript/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/javascript/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/application-accelerator/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/guides/s3-protocol-for-edge-storage/",
@@ -1224,16 +1128,12 @@
     "moved": "https://www.azion.com/en/documentation/build/ai-inference/reference/models/"
   },
   {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-apis/javascript/supported-types/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/azion-runtime-globals/"
-  },
-  {
     "from": "https://www.azion.com/en/documentation/products/azion-cli/",
     "moved": "https://www.azion.com/en/documentation/devtools/cli/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/build/edge-application/load-balancer/",
-    "moved": "https://www.azion.com/en/documentation/build/connectors/reference/load-balancer/"
+    "moved": "https://www.azion.com/en/documentation/secure/connectors/reference/load-balancer/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/ai/edge-ai/models/e5-mistral-7b-instruct/",
@@ -1273,7 +1173,7 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/guides/build/instantiate-edge-functions/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/guides/instantiate-functions/"
+    "moved": "https://www.azion.com/en/documentation/build/functions/guides/instantiate-functions/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/guides/connector-azion-edge-storage/",
@@ -1305,15 +1205,15 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/secure/edge-connector/",
-    "moved": "https://www.azion.com/en/documentation/build/connectors/"
+    "moved": "https://www.azion.com/en/documentation/secure/connectors/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/secure/edge-connector/load-balancer/",
-    "moved": "https://www.azion.com/en/documentation/build/connectors/reference/load-balancer/"
+    "moved": "https://www.azion.com/en/documentation/secure/connectors/reference/load-balancer/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/secure/edge-connector/origin-shield/",
-    "moved": "https://www.azion.com/en/documentation/build/connectors/reference/origin-shield/"
+    "moved": "https://www.azion.com/en/documentation/secure/connectors/reference/origin-shield/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/secure/edge-firewall/ddos-protection/ddos-mitigation/",
@@ -1368,178 +1268,6 @@
     "moved": "https://www.azion.com/en/documentation/secure/certificate-manager/reference/mtls/"
   },
   {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-api/ai-integration/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-api/ai-integration/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/runtime/api-reference/edge-sql/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/sql-database/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime/api-reference/environment-variables/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime/api-reference/environment-variables/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime/api-reference/metadata/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime/api-reference/metadata/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime/api-reference/network-list/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime/api-reference/network-list/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime/api-reference/handlers/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime/api-reference/handlers/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-api/code-editor/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-api/code-editor/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-functions/environment-variables/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/environment-variables/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/javascript-examples/ab-testing/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/javascript-examples/ab-testing/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/javascript-examples/cookie-value/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/javascript-examples/cookie-value/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/javascript-examples/adding-response-header/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/javascript-examples/adding-response-header/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/javascript-examples/deny-request/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/javascript-examples/deny-request/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/javascript-examples/general-firewall-example/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/javascript-examples/general-firewall-example/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/javascript-examples/hello-world/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/javascript-examples/hello-world/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/javascript-examples/redirect-requests/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/javascript-examples/redirect-requests/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/javascript-examples/respond-site/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/javascript-examples/respond-site/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/javascript-examples/rest-apis/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/javascript-examples/rest-apis/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/javascript-examples/return-html/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/javascript-examples/return-html/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/javascript-examples/return-json/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/javascript-examples/return-json/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/javascript-examples/using-args/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/javascript-examples/using-args/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-api/preview-deployment/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-api/preview-deployment/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-apis/javascript/add-eventlistener/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/add-eventlistener/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-apis/javascript/crypto/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/crypto/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-apis/javascript/crypto-key/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/crypto-key/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-apis/javascript/subtle-crypto/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/subtle-crypto/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-apis/javascript/encoding/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/encoding/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-apis/javascript/event-target/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/event-target/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-apis/javascript/fetch/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/fetch/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-apis/javascript/fetch-event/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/fetch-event/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-apis/javascript/azion-runtime-globals/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/azion-runtime-globals/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-apis/javascript/intl/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/intl/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-apis/javascript/readable-stream/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/readable-stream/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-apis/javascript/readable-byob-reader/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/readable-byob-reader/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-apis/javascript/readable-default-reader/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/readable-default-reader/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-apis/javascript/request/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/request/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-apis/javascript/response/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/response/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-apis/javascript/structured-clone/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/structured-clone/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-apis/javascript/transform-stream/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/transform-stream/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-apis/javascript/url-pattern/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/url-pattern/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-apis/javascript/web-standards/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/web-standards/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-apis/javascript/webassembly/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/webassembly/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-apis/javascript/writable-stream/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/writable-stream/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/edge-application/edge-functions/runtime-apis/javascript/stream-default-writer/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/stream-default-writer/"
-  },
-  {
     "from": "https://www.azion.com/en/documentation/products/store/edge-sql/",
     "moved": "https://www.azion.com/en/documentation/store/sql-database/"
   },
@@ -1565,7 +1293,7 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/build/edge-application/application-accelerator/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/reference/application-accelerator/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/application-accelerator/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/build/edge-application/cache-settings/",
@@ -1577,7 +1305,7 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/build/edge-application/edge-cache/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/reference/cache/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/cache/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/build/edge-application/origins/",
@@ -1589,7 +1317,7 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/build/edge-application/image-processor/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/reference/image-processor/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/image-processor/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/build/edge-application/device-groups/",
@@ -1609,7 +1337,7 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/build/edge-application/edge-functions/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/reference/functions/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/functions/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/build/edge-application/error-responses/",
@@ -1617,11 +1345,11 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/build/edge-application/tiered-cache/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/reference/cache/tiered-cache/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/cache/tiered-cache/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/build/applications/tiered-cache/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/reference/cache/tiered-cache/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/cache/tiered-cache/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/build/edge-application/main-settings/",
@@ -1657,15 +1385,15 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/secure/connector/",
-    "moved": "https://www.azion.com/en/documentation/build/connectors/"
+    "moved": "https://www.azion.com/en/documentation/secure/connectors/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/secure/connector/load-balancer/",
-    "moved": "https://www.azion.com/en/documentation/build/connectors/reference/load-balancer/"
+    "moved": "https://www.azion.com/en/documentation/secure/connectors/reference/load-balancer/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/secure/connector/origin-shield/",
-    "moved": "https://www.azion.com/en/documentation/build/connectors/reference/origin-shield/"
+    "moved": "https://www.azion.com/en/documentation/secure/connectors/reference/origin-shield/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/guides/build/file-upload-edge-functions/",
@@ -1860,286 +1588,6 @@
     "moved": "https://www.azion.com/en/documentation/devtools/graphql/reference/queries/"
   },
   {
-    "from": "https://www.azion.com/en/documentation/devtools/azion-edge-runtime/compatibility/nextjs/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/compatibility/nextjs/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/devtools/debugging/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/debugging/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/devtools/guides/use-polyfills/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/guides/use-polyfills/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/devtools/javascript-examples/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/javascript-examples/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/javascript-examples/ab-testing/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/javascript-examples/ab-testing/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/javascript-examples/adding-response-header/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/javascript-examples/adding-response-header/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/javascript-examples/cookie-value/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/javascript-examples/cookie-value/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/javascript-examples/deny-request/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/javascript-examples/deny-request/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/javascript-examples/general-firewall-example/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/javascript-examples/general-firewall-example/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/javascript-examples/hello-world/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/javascript-examples/hello-world/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/javascript-examples/redirect-requests/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/javascript-examples/redirect-requests/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/javascript-examples/respond-site/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/javascript-examples/respond-site/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/javascript-examples/rest-apis/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/javascript-examples/rest-apis/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/javascript-examples/return-html/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/javascript-examples/return-html/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/javascript-examples/return-json/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/javascript-examples/return-json/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/javascript-examples/using-args/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/javascript-examples/using-args/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/runtime-api/ai-integration/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-api/ai-integration/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/runtime-api/code-editor/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-api/code-editor/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/runtime-api/preview-deployment/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-api/preview-deployment/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/runtime-apis/javascript/add-eventlistener/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/add-eventlistener/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/runtime-apis/javascript/azion-runtime-globals/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/azion-runtime-globals/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/runtime-apis/javascript/crypto-key/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/crypto-key/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/runtime-apis/javascript/crypto/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/crypto/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/runtime-apis/javascript/encoding/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/encoding/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/runtime-apis/javascript/event-target/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/event-target/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/runtime-apis/javascript/fetch-event/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/fetch-event/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/runtime-apis/javascript/fetch/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/fetch/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/runtime-apis/javascript/intl/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/intl/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/runtime-apis/javascript/readable-byob-reader/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/readable-byob-reader/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/runtime-apis/javascript/readable-default-reader/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/readable-default-reader/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/runtime-apis/javascript/readable-stream/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/readable-stream/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/runtime-apis/javascript/request/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/request/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/runtime-apis/javascript/response/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/response/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/runtime-apis/javascript/stream-default-writer/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/stream-default-writer/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/runtime-apis/javascript/structured-clone/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/structured-clone/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/runtime-apis/javascript/subtle-crypto/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/subtle-crypto/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/runtime-apis/javascript/transform-stream/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/transform-stream/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/runtime-apis/javascript/url-pattern/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/url-pattern/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/runtime-apis/javascript/web-standards/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/web-standards/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/runtime-apis/javascript/webassembly/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/webassembly/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/runtime-apis/javascript/writable-stream/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-apis/javascript/writable-stream/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/runtime/api-reference/environment-variables/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime/api-reference/environment-variables/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/runtime/api-reference/handlers/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime/api-reference/handlers/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/runtime/api-reference/metadata/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime/api-reference/metadata/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/applications/functions/runtime/api-reference/network-list/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime/api-reference/network-list/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/azion-edge-runtime/compatibility/node/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/compatibility/node/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/azion-edge-runtime/compatibility/node/async-hooks/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/compatibility/node/async-hooks/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/azion-edge-runtime/compatibility/node/buffer/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/compatibility/node/buffer/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/azion-edge-runtime/compatibility/node/crypto/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/compatibility/node/crypto/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/azion-edge-runtime/compatibility/node/events/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/compatibility/node/events/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/azion-edge-runtime/compatibility/node/fs/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/compatibility/node/fs/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/azion-edge-runtime/compatibility/node/http/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/compatibility/node/http/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/azion-edge-runtime/compatibility/node/module/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/compatibility/node/module/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/azion-edge-runtime/compatibility/node/os/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/compatibility/node/os/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/azion-edge-runtime/compatibility/node/path/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/compatibility/node/path/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/azion-edge-runtime/compatibility/node/process/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/compatibility/node/process/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/azion-edge-runtime/compatibility/node/stream/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/compatibility/node/stream/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/azion-edge-runtime/compatibility/node/string-decoder/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/compatibility/node/string-decoder/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/azion-edge-runtime/compatibility/node/timers/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/compatibility/node/timers/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/azion-edge-runtime/compatibility/node/url/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/compatibility/node/url/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/azion-edge-runtime/compatibility/node/utils/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/compatibility/node/utils/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/azion-edge-runtime/compatibility/node/vm/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/compatibility/node/vm/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/azion-edge-runtime/compatibility/node/zlib/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/compatibility/node/zlib/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/devtools/azion-edge-runtime/frameworks-compatibility/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/frameworks-compatibility/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/devtools/azion-edge-runtime/frameworks-compatibility/angular/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/frameworks-compatibility/angular/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/devtools/azion-edge-runtime/frameworks-compatibility/astro/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/frameworks-compatibility/astro/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/devtools/azion-edge-runtime/frameworks-compatibility/gatsby/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/frameworks-compatibility/gatsby/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/devtools/azion-edge-runtime/frameworks-compatibility/nextjs/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/frameworks-compatibility/nextjs/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/devtools/azion-edge-runtime/frameworks-compatibility/react/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/frameworks-compatibility/react/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/products/functions/environment-variables/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/environment-variables/"
-  },
-  {
     "from": "https://www.azion.com/en/documentation/products/templates/angular-boilerplate/",
     "moved": "https://www.azion.com/en/documentation/marketplace/templates/angular-boilerplate/"
   },
@@ -2278,46 +1726,6 @@
   {
     "from": "https://www.azion.com/en/documentation/products/templates/space-jelly-shop/",
     "moved": "https://www.azion.com/en/documentation/marketplace/templates/space-jelly-shop/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/runtime-apis/javascript/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/javascript/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/runtime/api-reference/cache/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/cache/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/runtime/api-reference/kv-store/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/kv-store/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/runtime/api-reference/kv-store/delete/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/kv-store/delete/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/runtime/api-reference/kv-store/read/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/kv-store/read/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/runtime/api-reference/kv-store/write/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/kv-store/write/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/runtime/api-reference/sql-database/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/sql-database/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/runtime/api-reference/storage/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/storage/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/runtime/api-reference/websocket/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/websocket/"
-  },
-  {
-    "from": "https://www.azion.com/en/documentation/runtime/overview/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/runtime-apis/overview/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/azion-lib/ai-client/",
@@ -2649,15 +2057,15 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/guides/advanced-cache-key/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/guides/advanced-cache-key/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/cache/guides/advanced-cache-key/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/guides/cache-settings/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/guides/cache-settings/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/cache/guides/cache-settings/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/guides/check-page-cache-time/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/guides/check-page-cache-time/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/cache/guides/check-page-cache-time/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/guides/clone-applications/",
@@ -2685,7 +2093,7 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/guides/enforce-hls-cache/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/guides/enforce-hls-cache/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/cache/guides/enforce-hls-cache/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/guides/gzip-compression/",
@@ -2701,7 +2109,7 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/guides/image-processor/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/guides/image-processor/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/image-processor/first-steps/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/guides/mitigating-a-vulnerability-httpoxy/",
@@ -2769,7 +2177,7 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/guides/edge-functions/first-steps/",
-    "moved": "https://www.azion.com/en/documentation/build/functions/guides/first-steps/"
+    "moved": "https://www.azion.com/en/documentation/get-started/frameworks/javascript/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/guides/serverless-functions/",
@@ -3377,7 +2785,7 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/guides/create-azion-custom-domain/",
-    "moved": "https://www.azion.com/en/documentation/build/workloads/guides/create-azion-custom-domain/"
+    "moved": "https://www.azion.com/en/documentation/secure/workloads/guides/create-azion-custom-domain/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/changelog/previous-year/",
@@ -3525,7 +2933,7 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/guides/build/instantiate-functions/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/guides/instantiate-functions/"
+    "moved": "https://www.azion.com/en/documentation/build/functions/guides/instantiate-functions/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/guides/build/multiple-origins/",
@@ -3537,7 +2945,7 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/guides/build/process-images/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/guides/process-images/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/image-processor/guides/process-images/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/guides/build/set-error-pages/",
@@ -3545,7 +2953,7 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/guides/build/tune-cache-settings/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/guides/tune-cache-settings/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/cache/guides/tune-cache-settings/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/guides/build/work-with-origins/",
@@ -4153,7 +3561,7 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/build/applications/application-accelerator/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/reference/application-accelerator/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/application-accelerator/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/build/applications/cache-settings/",
@@ -4161,11 +3569,11 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/build/applications/cache/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/reference/cache/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/cache/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/build/applications/cache/tiered-cache/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/reference/cache/tiered-cache/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/cache/tiered-cache/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/build/applications/certificate-manager/",
@@ -4197,11 +3605,11 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/build/applications/functions/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/reference/functions/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/functions/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/build/applications/image-processor/",
-    "moved": "https://www.azion.com/en/documentation/build/applications/reference/image-processor/"
+    "moved": "https://www.azion.com/en/documentation/build/applications/image-processor/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/build/applications/main-settings/",
@@ -4301,15 +3709,15 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/secure/connectors/",
-    "moved": "https://www.azion.com/en/documentation/build/connectors/"
+    "moved": "https://www.azion.com/en/documentation/secure/connectors/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/secure/connectors/load-balancer/",
-    "moved": "https://www.azion.com/en/documentation/build/connectors/reference/load-balancer/"
+    "moved": "https://www.azion.com/en/documentation/secure/connectors/reference/load-balancer/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/secure/connectors/origin-shield/",
-    "moved": "https://www.azion.com/en/documentation/build/connectors/reference/origin-shield/"
+    "moved": "https://www.azion.com/en/documentation/secure/connectors/reference/origin-shield/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/secure/custom-pages/",
@@ -4389,7 +3797,7 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/secure/workloads/",
-    "moved": "https://www.azion.com/en/documentation/build/workloads/"
+    "moved": "https://www.azion.com/en/documentation/secure/workloads/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/siem-azion/",
@@ -4413,19 +3821,19 @@
   },
   {
     "from": "https://www.azion.com/en/documentation/products/guides/configure-a-domain/",
-    "moved": "https://www.azion.com/en/documentation/build/workloads/guides/configure-a-domain/"
+    "moved": "https://www.azion.com/en/documentation/secure/workloads/guides/configure-a-domain/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/guides/create-a-digital-certificate/",
-    "moved": "https://www.azion.com/en/documentation/build/workloads/guides/create-a-digital-certificate/"
+    "moved": "https://www.azion.com/en/documentation/secure/workloads/guides/create-a-digital-certificate/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/guides/migrate-ns-to-azion/",
-    "moved": "https://www.azion.com/en/documentation/build/workloads/guides/migrate-ns-to-azion/"
+    "moved": "https://www.azion.com/en/documentation/secure/workloads/guides/migrate-ns-to-azion/"
   },
   {
     "from": "https://www.azion.com/en/documentation/products/guides/point-domain-to-azion/",
-    "moved": "https://www.azion.com/en/documentation/build/workloads/guides/point-domain-to-azion/"
+    "moved": "https://www.azion.com/en/documentation/secure/workloads/guides/point-domain-to-azion/"
   },
   {
     "from": "https://www.azion.com/en/documentation/build/",

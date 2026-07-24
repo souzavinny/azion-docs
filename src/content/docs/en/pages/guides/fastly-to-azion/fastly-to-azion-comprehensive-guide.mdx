@@ -39,34 +39,34 @@ The following table provides a comprehensive mapping of Fastly products and conf
 | Fastly Product or Feature | Description | Azion Equivalent |
 | :------------------------ | :---------- | :--------------- |
 | **Full-Site Delivery** | Website, application, API, and mobile delivery through Fastly services. | [Applications](https://www.azion.com/en/documentation/build/applications/) |
-| **Fastly services** | Main delivery resource for domains, origins, caching, request handling, and service versions. | [Applications](https://www.azion.com/en/documentation/build/applications/) + [Workloads](https://www.azion.com/en/documentation/build/workloads/) |
-| **Domains** | Hostnames associated with Fastly services. | [Workloads](https://www.azion.com/en/documentation/build/workloads/) |
-| **Hosts and origins** | Backend origin configuration for Fastly delivery services. | [Connectors](https://www.azion.com/en/documentation/build/connectors/) |
-| **Origin Shield / shielding patterns** | Reduce origin traffic by routing cache misses through an intermediate shield location. | [Origin Shield](https://www.azion.com/en/documentation/build/connectors/reference/origin-shield/) + [Tiered Cache](https://www.azion.com/en/documentation/build/applications/reference/cache/tiered-cache/) |
+| **Fastly services** | Main delivery resource for domains, origins, caching, request handling, and service versions. | [Applications](https://www.azion.com/en/documentation/build/applications/) + [Workloads](https://www.azion.com/en/documentation/secure/workloads/) |
+| **Domains** | Hostnames associated with Fastly services. | [Workloads](https://www.azion.com/en/documentation/secure/workloads/) |
+| **Hosts and origins** | Backend origin configuration for Fastly delivery services. | [Connectors](https://www.azion.com/en/documentation/secure/connectors/) |
+| **Origin Shield / shielding patterns** | Reduce origin traffic by routing cache misses through an intermediate shield location. | [Origin Shield](https://www.azion.com/en/documentation/secure/connectors/reference/origin-shield/) + [Tiered Cache](https://www.azion.com/en/documentation/build/applications/cache/tiered-cache/) |
 | **Conditions** | Request, cache, and response conditions in Fastly service configuration. | [Rules Engine for Applications](https://www.azion.com/en/documentation/build/applications/reference/rules-engine/) |
-| **Request settings** | Request manipulation, forwarding, and handling behavior. | [Rules Engine for Applications](https://www.azion.com/en/documentation/build/applications/reference/rules-engine/) + [Functions](https://www.azion.com/en/documentation/build/applications/reference/functions/) |
+| **Request settings** | Request manipulation, forwarding, and handling behavior. | [Rules Engine for Applications](https://www.azion.com/en/documentation/build/applications/reference/rules-engine/) + [Functions](https://www.azion.com/en/documentation/build/applications/functions/) |
 | **Response settings** | Response header and delivery behavior. | [Rules Engine for Applications](https://www.azion.com/en/documentation/build/applications/reference/rules-engine/) |
-| **VCL snippets / custom VCL** | Custom delivery logic for redirects, headers, cache keys, origin selection, and request control. | [Rules Engine for Applications](https://www.azion.com/en/documentation/build/applications/reference/rules-engine/) + [Functions](https://www.azion.com/en/documentation/build/applications/reference/functions/) |
-| **Compute** | Serverless compute platform that runs custom code on Fastly's network. | [Functions for Applications](https://www.azion.com/en/documentation/build/applications/reference/functions/) |
-| **Compute packages** | Packaged application code deployed to Fastly Compute. | [Functions](https://www.azion.com/en/documentation/build/applications/reference/functions/) + [Azion CLI](https://www.azion.com/en/documentation/devtools/cli/) |
+| **VCL snippets / custom VCL** | Custom delivery logic for redirects, headers, cache keys, origin selection, and request control. | [Rules Engine for Applications](https://www.azion.com/en/documentation/build/applications/reference/rules-engine/) + [Functions](https://www.azion.com/en/documentation/build/applications/functions/) |
+| **Compute** | Serverless compute platform that runs custom code on Fastly's network. | [Functions for Applications](https://www.azion.com/en/documentation/build/applications/functions/) |
+| **Compute packages** | Packaged application code deployed to Fastly Compute. | [Functions](https://www.azion.com/en/documentation/build/applications/functions/) + [Azion CLI](https://www.azion.com/en/documentation/devtools/cli/) |
 | **Edge Data Storage** | Key-value data used by Fastly Compute services. | [KV Store](https://www.azion.com/en/documentation/store/kv-store/) |
 | **Object Storage** | S3-compatible object storage integrated with delivery and compute services. | [Object Storage](https://www.azion.com/en/documentation/store/object-storage/) |
-| **Cache Reservation** | Reserved cache capacity for content on Fastly. | [Cache](https://www.azion.com/en/documentation/build/applications/reference/cache/) + [Tiered Cache](https://www.azion.com/en/documentation/build/applications/reference/cache/tiered-cache/) |
-| **Cache APIs** | Programmatic cache interaction patterns for Compute applications. | [Functions](https://www.azion.com/en/documentation/build/applications/reference/functions/) + [Cache](https://www.azion.com/en/documentation/build/applications/reference/cache/) + [Real-Time Purge](https://www.azion.com/en/documentation/build/applications/reference/real-time-purge/) |
-| **Streaming Delivery** | Delivery of live and video-on-demand streaming content. | [Applications](https://www.azion.com/en/documentation/build/applications/) + [Cache](https://www.azion.com/en/documentation/build/applications/reference/cache/) + [Object Storage](https://www.azion.com/en/documentation/store/object-storage/) |
-| **Media Shield for Live** | Reduces origin traffic for live video workflows. | [Tiered Cache](https://www.azion.com/en/documentation/build/applications/reference/cache/tiered-cache/) + [Origin Shield](https://www.azion.com/en/documentation/build/connectors/reference/origin-shield/) |
-| **Media Shield for VOD** | Reduces origin traffic for video-on-demand workflows. | [Tiered Cache](https://www.azion.com/en/documentation/build/applications/reference/cache/tiered-cache/) + [Origin Shield](https://www.azion.com/en/documentation/build/connectors/reference/origin-shield/) |
-| **Image Optimizer** | Real-time image transformation and optimization service. | [Image Processor](https://www.azion.com/en/documentation/build/applications/reference/image-processor/) |
-| **WebSockets** | Long-lived, bidirectional communication for real-time applications. | [WebSocket Proxy](https://www.azion.com/en/documentation/build/applications/reference/websocket/) + [WebSocket API](https://www.azion.com/en/documentation/build/functions/runtime-apis/websocket/) |
-| **Fanout** | Publish-subscribe messaging patterns on Fastly. | [Functions](https://www.azion.com/en/documentation/build/applications/reference/functions/) + [WebSocket Proxy](https://www.azion.com/en/documentation/build/applications/reference/websocket/) |
-| **AI Accelerator** | Semantic caching and traffic acceleration for generative AI APIs. | [AI Inference](https://www.azion.com/en/documentation/build/ai-inference/) + [Cache](https://www.azion.com/en/documentation/build/applications/reference/cache/) |
+| **Cache Reservation** | Reserved cache capacity for content on Fastly. | [Cache](https://www.azion.com/en/documentation/build/applications/cache/) + [Tiered Cache](https://www.azion.com/en/documentation/build/applications/cache/tiered-cache/) |
+| **Cache APIs** | Programmatic cache interaction patterns for Compute applications. | [Functions](https://www.azion.com/en/documentation/build/applications/functions/) + [Cache](https://www.azion.com/en/documentation/build/applications/cache/) + [Real-Time Purge](https://www.azion.com/en/documentation/build/applications/reference/real-time-purge/) |
+| **Streaming Delivery** | Delivery of live and video-on-demand streaming content. | [Applications](https://www.azion.com/en/documentation/build/applications/) + [Cache](https://www.azion.com/en/documentation/build/applications/cache/) + [Object Storage](https://www.azion.com/en/documentation/store/object-storage/) |
+| **Media Shield for Live** | Reduces origin traffic for live video workflows. | [Tiered Cache](https://www.azion.com/en/documentation/build/applications/cache/tiered-cache/) + [Origin Shield](https://www.azion.com/en/documentation/secure/connectors/reference/origin-shield/) |
+| **Media Shield for VOD** | Reduces origin traffic for video-on-demand workflows. | [Tiered Cache](https://www.azion.com/en/documentation/build/applications/cache/tiered-cache/) + [Origin Shield](https://www.azion.com/en/documentation/secure/connectors/reference/origin-shield/) |
+| **Image Optimizer** | Real-time image transformation and optimization service. | [Image Processor](https://www.azion.com/en/documentation/build/applications/image-processor/) |
+| **WebSockets** | Long-lived, bidirectional communication for real-time applications. | [WebSocket Proxy](https://www.azion.com/en/documentation/build/applications/reference/websocket/) + [WebSocket API](https://www.azion.com/en/documentation/runtime/api-reference/websocket/) |
+| **Fanout** | Publish-subscribe messaging patterns on Fastly. | [Functions](https://www.azion.com/en/documentation/build/applications/functions/) + [WebSocket Proxy](https://www.azion.com/en/documentation/build/applications/reference/websocket/) |
+| **AI Accelerator** | Semantic caching and traffic acceleration for generative AI APIs. | [AI Inference](https://www.azion.com/en/documentation/build/ai-inference/) + [Cache](https://www.azion.com/en/documentation/build/applications/cache/) |
 | **Fastly Next-Gen WAF** | Web application firewall for suspicious traffic detection and application protection. | [Web Application Firewall](https://www.azion.com/en/documentation/secure/waf/) |
 | **Edge Rate Limiting** | Count requests and apply actions when limits are exceeded. | [Rules Engine for Firewall](https://www.azion.com/en/documentation/secure/firewall/reference/rules-engine/) + [Functions for Firewall](https://www.azion.com/en/documentation/secure/firewall/reference/functions/) |
 | **Fastly DDoS Protection** | DDoS visibility and mitigation. | [DDoS Protection](https://www.azion.com/en/documentation/secure/ddos-protection/) + [Network Shield](https://www.azion.com/en/documentation/secure/network-shield/) |
 | **Bot Management** | Detect and respond to automated traffic. | [Bot Manager](https://www.azion.com/en/documentation/secure/bot-manager/) + [Bot Manager Lite](https://www.azion.com/en/documentation/secure/bot-manager/reference/lite/) |
 | **Certainly** | Fastly certificate authority for TLS certificates. | [Certificate Manager](https://www.azion.com/en/documentation/secure/certificate-manager/) |
 | **Platform TLS** | API-driven TLS certificate and key management. | [Certificate Manager](https://www.azion.com/en/documentation/secure/certificate-manager/) + [Azion API](https://www.azion.com/en/documentation/devtools/api/) |
-| **TLS Service Options** | TLS configuration for serving sites and applications over HTTPS. | [Certificate Manager](https://www.azion.com/en/documentation/secure/certificate-manager/) + [Workloads](https://www.azion.com/en/documentation/build/workloads/) |
+| **TLS Service Options** | TLS configuration for serving sites and applications over HTTPS. | [Certificate Manager](https://www.azion.com/en/documentation/secure/certificate-manager/) + [Workloads](https://www.azion.com/en/documentation/secure/workloads/) |
 | **High Volume Logging** | Real-time log streaming to external destinations. | [Data Stream](https://www.azion.com/en/documentation/observe/data-stream/) |
 | **Log Explorer & Insights** | Inspect and monitor log data on the Fastly platform. | [Real-Time Events](https://www.azion.com/en/documentation/observe/real-time-events/) |
 | **Domain Inspector** | Domain-level traffic visibility and reporting. | [Real-Time Metrics](https://www.azion.com/en/documentation/observe/real-time-metrics/) |
@@ -363,7 +363,7 @@ export default defineConfig({
 * [Applications](https://www.azion.com/en/documentation/build/applications/)
 * [Applications Main Settings](https://www.azion.com/en/documentation/build/applications/reference/main-settings/)
 * [Rules Engine for Applications](https://www.azion.com/en/documentation/build/applications/reference/rules-engine/)
-* [Connectors](https://www.azion.com/en/documentation/build/connectors/)
+* [Connectors](https://www.azion.com/en/documentation/secure/connectors/)
 
 ### 5. Migrating VCL, Conditions, and Headers
 
@@ -436,7 +436,7 @@ export default config;
 #### Reference documentation
 
 * [Rules Engine for Applications](https://www.azion.com/en/documentation/build/applications/reference/rules-engine/)
-* [Functions](https://www.azion.com/en/documentation/build/applications/reference/functions/)
+* [Functions](https://www.azion.com/en/documentation/build/applications/functions/)
 * [azion.config.js reference](https://www.azion.com/en/documentation/devtools/cli/reference/azion-config-js/)
 
 ### 6. Migrating Compute to Functions
@@ -506,10 +506,10 @@ Fastly Compute projects written in Rust, Go, or other WebAssembly-targeted langu
 
 #### Reference documentation
 
-* [Functions](https://www.azion.com/en/documentation/build/applications/reference/functions/)
+* [Functions](https://www.azion.com/en/documentation/build/applications/functions/)
 * [Functions Instances](https://www.azion.com/en/documentation/build/applications/reference/functions-instances/)
 * [Runtime APIs](https://www.azion.com/en/documentation/get-started/frameworks/runtime-apis/)
-* [JavaScript Runtime APIs reference](https://www.azion.com/en/documentation/build/functions/runtime-apis/javascript/)
+* [JavaScript Runtime APIs reference](https://www.azion.com/en/documentation/runtime-apis/javascript/)
 
 ### 7. Migrating Load Balancing and Origin Failover
 
@@ -579,9 +579,9 @@ curl -X POST 'https://api.azionapi.net/v4/workspace/connectors' \
 
 #### Reference documentation
 
-* [Connectors](https://www.azion.com/en/documentation/build/connectors/)
-* [Load Balancer](https://www.azion.com/en/documentation/build/connectors/reference/load-balancer/)
-* [Origin Shield](https://www.azion.com/en/documentation/build/connectors/reference/origin-shield/)
+* [Connectors](https://www.azion.com/en/documentation/secure/connectors/)
+* [Load Balancer](https://www.azion.com/en/documentation/secure/connectors/reference/load-balancer/)
+* [Origin Shield](https://www.azion.com/en/documentation/secure/connectors/reference/origin-shield/)
 
 ### 8. Migrating Cache Configuration
 
@@ -665,9 +665,9 @@ curl -X POST 'https://api.azion.com/v4/workspace/purge/wildcard' \
 
 #### Reference documentation
 
-* [Cache](https://www.azion.com/en/documentation/build/applications/reference/cache/)
+* [Cache](https://www.azion.com/en/documentation/build/applications/cache/)
 * [Cache Settings](https://www.azion.com/en/documentation/build/applications/reference/cache-settings/)
-* [Tiered Cache](https://www.azion.com/en/documentation/build/applications/reference/cache/tiered-cache/)
+* [Tiered Cache](https://www.azion.com/en/documentation/build/applications/cache/tiered-cache/)
 * [Real-Time Purge](https://www.azion.com/en/documentation/build/applications/reference/real-time-purge/)
 
 ### 9. Migrating Image Optimizer to Image Processor
@@ -744,8 +744,8 @@ Azion Image Processor automatically optimizes image format based on the client's
 
 #### Reference documentation
 
-* [Image Processor](https://www.azion.com/en/documentation/build/applications/reference/image-processor/)
-* [How to process images](https://www.azion.com/en/documentation/build/applications/guides/process-images/)
+* [Image Processor](https://www.azion.com/en/documentation/build/applications/image-processor/)
+* [How to process images](https://www.azion.com/en/documentation/build/applications/image-processor/guides/process-images/)
 * [Object Storage](https://www.azion.com/en/documentation/store/object-storage/)
 
 ### 10. Migrating Streaming, Media Shield, WebSockets, and Fanout
@@ -793,9 +793,9 @@ export default {
 #### Reference documentation
 
 * [WebSocket Proxy](https://www.azion.com/en/documentation/build/applications/reference/websocket/)
-* [WebSocket API](https://www.azion.com/en/documentation/build/functions/runtime-apis/websocket/)
-* [Tiered Cache](https://www.azion.com/en/documentation/build/applications/reference/cache/tiered-cache/)
-* [Origin Shield](https://www.azion.com/en/documentation/build/connectors/reference/origin-shield/)
+* [WebSocket API](https://www.azion.com/en/documentation/runtime/api-reference/websocket/)
+* [Tiered Cache](https://www.azion.com/en/documentation/build/applications/cache/tiered-cache/)
+* [Origin Shield](https://www.azion.com/en/documentation/secure/connectors/reference/origin-shield/)
 
 ### 11. Migrating AI Accelerator Patterns
 
@@ -835,8 +835,8 @@ export default {
 
 * [AI Inference](https://www.azion.com/en/documentation/build/ai-inference/)
 * [AI Inference models](https://www.azion.com/en/documentation/build/ai-inference/reference/models/)
-* [Functions](https://www.azion.com/en/documentation/build/applications/reference/functions/)
-* [Cache](https://www.azion.com/en/documentation/build/applications/reference/cache/)
+* [Functions](https://www.azion.com/en/documentation/build/applications/functions/)
+* [Cache](https://www.azion.com/en/documentation/build/applications/cache/)
 
 ## Secure
 
@@ -861,7 +861,7 @@ Azion provides free Let's Encrypt certificates with automatic renewal.
 
 #### Configure the Domain
 
-Create a workload in Azion Console and associate your custom domain. See [Workloads Documentation](https://www.azion.com/en/documentation/build/workloads/).
+Create a workload in Azion Console and associate your custom domain. See [Workloads Documentation](https://www.azion.com/en/documentation/secure/workloads/).
 
 #### Point the Domain to Azion
 
@@ -905,8 +905,8 @@ Before switching production traffic, confirm: certificate is active, domain is a
 
 #### Reference documentation
 
-* [Workloads](https://www.azion.com/en/documentation/build/workloads/)
-* [Create an Azion custom domain](https://www.azion.com/en/documentation/build/workloads/guides/create-azion-custom-domain/)
+* [Workloads](https://www.azion.com/en/documentation/secure/workloads/)
+* [Create an Azion custom domain](https://www.azion.com/en/documentation/secure/workloads/guides/create-azion-custom-domain/)
 * [Edge DNS](https://www.azion.com/en/documentation/secure/edge-dns/)
 * [Certificate Manager](https://www.azion.com/en/documentation/secure/certificate-manager/)
 
@@ -957,7 +957,7 @@ curl -X POST 'https://api.azionapi.net/v4/workspace/tls/certificates' \
 #### Reference documentation
 
 * [Certificate Manager](/en/documentation/secure/certificate-manager/)
-* [Create a digital certificate](https://www.azion.com/en/documentation/build/workloads/guides/create-a-digital-certificate/)
+* [Create a digital certificate](https://www.azion.com/en/documentation/secure/workloads/guides/create-a-digital-certificate/)
 * [mTLS](https://www.azion.com/en/documentation/secure/certificate-manager/reference/mtls/)
 
 ### 3. Migrating Fastly Next-Gen WAF to Web Application Firewall
@@ -1265,8 +1265,8 @@ curl -X POST 'https://api.azionapi.net/v4/workspace/kv/namespaces' \
 
 * [KV Store](https://www.azion.com/en/documentation/store/kv-store/)
 * [How to manage KV Store with Functions](https://www.azion.com/en/documentation/store/kv-store/guides/manage-with-functions/)
-* [KV Store API](https://www.azion.com/en/documentation/build/functions/runtime-apis/kv-store/)
-* [Functions](https://www.azion.com/en/documentation/build/applications/reference/functions/)
+* [KV Store API](https://www.azion.com/en/documentation/runtime/api-reference/kv-store/)
+* [Functions](https://www.azion.com/en/documentation/build/applications/functions/)
 
 ## Observe
 

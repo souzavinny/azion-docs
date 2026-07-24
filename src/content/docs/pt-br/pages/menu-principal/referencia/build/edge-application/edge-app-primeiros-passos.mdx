@@ -27,11 +27,11 @@ Agora você está na área onde pode definir as configurações gerais de entreg
 
 **Applications** oferece os seguintes módulos:
 
-- [Application Accelerator](/pt-br/documentacao/build/applications/reference/application-accelerator/)
-- [Cache](/pt-br/documentacao/build/applications/reference/cache/)
-- [Functions](/pt-br/documentacao/build/applications/reference/functions/)
-- [Image Processor](/pt-br/documentacao/build/applications/reference/image-processor/)
-- [Tiered Cache](/pt-br/documentacao/build/applications/reference/cache/tiered-cache/)
+- [Application Accelerator](/pt-br/documentacao/build/applications/application-accelerator/)
+- [Cache](/pt-br/documentacao/build/applications/cache/)
+- [Functions](/pt-br/documentacao/build/applications/functions/)
+- [Image Processor](/pt-br/documentacao/build/applications/image-processor/)
+- [Tiered Cache](/pt-br/documentacao/build/applications/cache/tiered-cache/)
 
 Alguns **módulos de Applications** são produtos faturados.Isso pode gerar custos relacionados ao uso,consulte a [página de preços](/pt-br/documentacao/platform/pricing/) para mais informações.
 
@@ -58,7 +58,7 @@ Cada aba armazena outras opções de configuração para sua application.
 
 Um backend, também conhecido como origem, é o servidor do qual a Azion recupera seu conteúdo. Isso pode incluir serviços de armazenamento de objetos, servidores em nuvem ou outras infraestruturas que hospedam os ativos ou dados da sua aplicação.
 
-Para configurar a origem da sua Applications, você usará o [Connectors](/pt-br/documentacao/build/connectors/).
+Para configurar a origem da sua Applications, você usará o [Connectors](/pt-br/documentacao/secure/connectors/).
 
 1. [Acesse o Console](https://console.azion.com).
 2. No canto superior esquerdo da página, selecione **Products Menu** > **Connectors**.
@@ -68,7 +68,7 @@ Para configurar a origem da sua Applications, você usará o [Connectors](/pt-br
 6. Clique no botão **Save**.
 
 :::note
-Para mais detalhes sobre os tipos de conector, acesse a [referência do Connectors](/pt-br/documentacao/build/connectors/).
+Para mais detalhes sobre os tipos de conector, acesse a [referência do Connectors](/pt-br/documentacao/secure/connectors/).
 :::
 
 Para ativar um Connector:
@@ -80,7 +80,7 @@ Para ativar um Connector:
 5. Selecione o Connector que deseja aplicar.
 6. Clique no botão **Save**.
 
-O **Connectors** permite configurar múltiplas origens e distribuir o tráfego entre elas utilizando o [Load Balancer](/pt-br/documentacao/build/connectors/reference/load-balancer/).
+O **Connectors** permite configurar múltiplas origens e distribuir o tráfego entre elas utilizando o [Load Balancer](/pt-br/documentacao/secure/connectors/reference/load-balancer/).
 
 :::tip
 Você pode usar o [Custom Pages](/pt-br/documentacao/secure/custom-pages/) para configurar páginas de erro personalizadas que são exibidas quando o **Connectors** recebe respostas de erro específicas (como códigos de status HTTP 4xx ou 5xx) da sua origem.
@@ -117,7 +117,7 @@ Você também pode usar a variável `${device_group}` no **Rules Engine**:
 
 ### Cache Settings
 
-Edite suas configurações de cache na aba [Cache Settings](/pt-br/documentacao/build/applications/reference/cache/):
+Edite suas configurações de cache na aba [Cache Settings](/pt-br/documentacao/build/applications/cache/):
 
 1. Selecione a aba **Cache Settings**.
 2. Clique no botão **Add Cache Settings**.
@@ -131,7 +131,7 @@ Edite suas configurações de cache na aba [Cache Settings](/pt-br/documentacao/
 
 #### Tiered Cache
 
-Para usar o módulo [Tiered Cache](/pt-br/documentacao/build/applications/reference/cache/tiered-cache/):
+Para usar o módulo [Tiered Cache](/pt-br/documentacao/build/applications/cache/tiered-cache/):
 
 1. Na aba **Main Settings**, no final da seção **Applications Modules**, ative **Tiered Cache**.
 2. Selecione a aba **Cache Settings**.

@@ -12,14 +12,14 @@ import Apiv4Rollout from '~/includes/snippets/apiv4Rollout/pt/snippet.mdx'
 
 <Apiv4Rollout />
 :::caution[importante]
-A funcionalidade Domains foi substituída por **Workloads**. Para mais informações sobre o novo produto, acesse a [referência de Workloads](/pt-br/documentacao/build/workloads/).
+A funcionalidade Domains foi substituída por **Workloads**. Para mais informações sobre o novo produto, acesse a [referência de Workloads](/pt-br/documentacao/secure/workloads/).
 :::
 
 O **Domains** é um recurso do [Azion Console](https://console.azion.com) da Azion que fornece um serviço de geração e gerenciamento de domínios.
 
 Quando você [cria uma application](/pt-br/documentacao/build/applications/guides/criar-uma-aplicacao/), sua aplicação recebe um **Azion domain** gerado automaticamente, no formato `xxxx.map.azionedge.net`. Você pode criar vários domínios para suas applications.
 
-Se você já possui um domínio, você pode [redirecionar seu tráfego para a Azion](/pt-br/documentacao/build/workloads/guides/apontar-dominio-para-a-azion/) configurando os registros em seu provedor de DNS e listando seus **custom domains**.
+Se você já possui um domínio, você pode [redirecionar seu tráfego para a Azion](/pt-br/documentacao/secure/workloads/guides/apontar-dominio-para-a-azion/) configurando os registros em seu provedor de DNS e listando seus **custom domains**.
 
 Você também pode vincular um certificado digital a domínios que usam o protocolo HTTPS.
 
@@ -27,7 +27,7 @@ Você também pode vincular um certificado digital a domínios que usam o protoc
 
 | Escopo | Recurso |
 | --- | --- |
-| Adicionar um domínio personalizado | [Como configurar um domínio](/pt-br/documentacao/build/workloads/guides/configurar-dominio/) |
+| Adicionar um domínio personalizado | [Como configurar um domínio](/pt-br/documentacao/secure/workloads/guides/configurar-dominio/) |
 | Sobre Certificate Manager | [Certificate Manager](/pt-br/documentacao/secure/certificate-manager/) |
 | Sobre mTLS | [mTLS](/pt-br/documentacao/secure/certificate-manager/reference/mtls/) |
 
@@ -74,7 +74,7 @@ Essa configuração precisa ser ativada com a [equipe de Vendas](https://www.azi
 
 ## Stage local de domínio personalizado
 
-O arquivo local `etc/hosts` mapeia endereços IP para domínios. Quando você [associa o IP do edge node ao CNAME](/pt-br/documentacao/build/applications/guides/testar-edge-application-atraves-do-arquivo-hosts/) atribuído ao seu domínio no seu arquivo `hosts`, você força a resolução DNS do seu computador a acessar esse domínio através do nó edge e não através dos servidores DNS públicos. Assim, você pode realizar o stage de sua aplicação localmente como se já estivesse implantada no seu domínio personalizado antes de [apontar seu domínio](/pt-br/documentacao/build/workloads/guides/apontar-dominio-para-a-azion/).
+O arquivo local `etc/hosts` mapeia endereços IP para domínios. Quando você [associa o IP do edge node ao CNAME](/pt-br/documentacao/build/applications/guides/testar-edge-application-atraves-do-arquivo-hosts/) atribuído ao seu domínio no seu arquivo `hosts`, você força a resolução DNS do seu computador a acessar esse domínio através do nó edge e não através dos servidores DNS públicos. Assim, você pode realizar o stage de sua aplicação localmente como se já estivesse implantada no seu domínio personalizado antes de [apontar seu domínio](/pt-br/documentacao/secure/workloads/guides/apontar-dominio-para-a-azion/).
 
 ---
 

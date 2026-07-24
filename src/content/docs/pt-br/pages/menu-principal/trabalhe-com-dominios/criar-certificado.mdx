@@ -5,7 +5,7 @@ description: >-
   fornecendo autenticação e criptografia para seus dados.
 meta_tags: 'certificado digital, criptografia, TLS, SSL, autenticação, segurança'
 namespace: docs_guides_create_digital_certificate
-permalink: /documentacao/build/workloads/guides/criar-certificado-digital/
+permalink: /documentacao/secure/workloads/guides/criar-certificado-digital/
 ---
 
 import Tabs from '~/components/tabs/Tabs'
@@ -23,7 +23,7 @@ Você também pode solicitar que um **certificado Let's Encrypt** seja gerado pa
 - Não possui um certificado digital? Consulte o guia sobre [Como obter e registrar um certificado digital com a Azion](/pt-br/documentacao/secure/firewall/guides/certificado-digital/).
 :::
 
-Há instruções separadas para as configurações do [Domains legado](/pt-br/documentacao/build/applications/reference/domains/) e para o novo produto [Workloads](/pt-br/documentacao/build/workloads/).
+Há instruções separadas para as configurações do [Domains legado](/pt-br/documentacao/build/applications/reference/domains/) e para o novo produto [Workloads](/pt-br/documentacao/secure/workloads/).
 
 :::tip[Dica]
 Se você não tem certeza de quais passos se aplicam à sua conta, consulte [o guia Verifique a migração da sua conta para a API v4](/pt-br/documentacao/account/guides/verificar-migracao-conta/) para determinar se sua conta já foi migrada.
@@ -239,7 +239,7 @@ curl --request GET \
 4. Execute uma requisição `PATCH`, adicionando o `workload_id` como um caminho, para atualizar o campo `digital_certificate_id` com o id que você recebeu no processo de criação:
 
 :::note[Opcional]
-Como mostrado no exemplo abaixo, se você ainda não atualizou o campo CNAME com seu domínio personalizado, certifique-se de adicionar o host e quaisquer CNAMEs para a aplicação que são protegidos pelo certificado. Isso será útil para quando você [apontar seu domínio](/pt-br/documentacao/build/workloads/guides/apontar-dominio-para-a-azion/) ou [migrar sua resolução NS](/pt-br/documentacao/build/workloads/guides/migrar-ns-para-a-azion/) para a Azion.
+Como mostrado no exemplo abaixo, se você ainda não atualizou o campo CNAME com seu domínio personalizado, certifique-se de adicionar o host e quaisquer CNAMEs para a aplicação que são protegidos pelo certificado. Isso será útil para quando você [apontar seu domínio](/pt-br/documentacao/secure/workloads/guides/apontar-dominio-para-a-azion/) ou [migrar sua resolução NS](/pt-br/documentacao/secure/workloads/guides/migrar-ns-para-a-azion/) para a Azion.
 :::
 
 <Code lang="bash" code={`
@@ -304,7 +304,7 @@ curl --location 'https://api.azionapi.net/domains' \
 4. Execute uma requisição `PATCH`, adicionando o `domain_id` como um caminho, para atualizar o campo `digital_certificate_id` com o id que você recebeu no processo de criação:
 
 :::note[Opcional]
-Como mostrado no exemplo abaixo, se você ainda não atualizou o campo CNAME com seu domínio personalizado, certifique-se de adicionar o host e quaisquer CNAMEs para a aplicação que são protegidos pelo certificado. Isso será útil para quando você [apontar seu domínio](/pt-br/documentacao/build/workloads/guides/apontar-dominio-para-a-azion/) ou [migrar sua resolução NS](/pt-br/documentacao/build/workloads/guides/migrar-ns-para-a-azion/) para Azion.
+Como mostrado no exemplo abaixo, se você ainda não atualizou o campo CNAME com seu domínio personalizado, certifique-se de adicionar o host e quaisquer CNAMEs para a aplicação que são protegidos pelo certificado. Isso será útil para quando você [apontar seu domínio](/pt-br/documentacao/secure/workloads/guides/apontar-dominio-para-a-azion/) ou [migrar sua resolução NS](/pt-br/documentacao/secure/workloads/guides/migrar-ns-para-a-azion/) para Azion.
 :::
 
 <Code lang="bash" code={`

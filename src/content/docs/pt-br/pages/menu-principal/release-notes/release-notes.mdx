@@ -620,7 +620,7 @@ Como o tsup foi descontinuado, o sistema de build dos pacotes foi modernizado:
 - **Melhorias em Exports & Types**: Atualizados exports do `package.json` para incluir `"types"` explícito. Alteradas entradas para melhor compatibilidade Node/TS: CommonJS `.js` → `.cjs`, ESM `.js` → `.mjs`. Corrigidos/padronizados caminhos `.d.ts` e referências de tipos.
 - **Consistência interna**: Refatorado para usar `import type { ... }` para imports apenas de tipos. Padronizado `export type { ... }` para exports de tipos. Melhorados imports de cliente usando caminhos com alias em vez de imports relativos profundos.
 
-Leia mais sobre a [Azion CLI](/pt-br/documentacao/devtools/cli/), [Azion Lib](/pt-br/documentacao/devtools/lib/) e [Azion Bundler](/pt-br/documentacao/build/functions/runtime-apis/compatibility/).
+Leia mais sobre a [Azion CLI](/pt-br/documentacao/devtools/cli/), [Azion Lib](/pt-br/documentacao/devtools/lib/) e [Azion Bundler](/pt-br/documentacao/produtos/devtools/azion-edge-runtime/compatibilidade-frameworks/).
 
 ---
 
@@ -1072,7 +1072,7 @@ Para detalhes completos de configuração, consulte a [documentação do Bot Man
 
 Azion Edge Functions agora oferece suporte à Cache API, permitindo que você controle a leitura e escrita no [Edge Cache](https://www.azion.com/pt-br/produtos/edge-cache/) .
 
-Consulte a documentação da [Cache API](/pt-br/documentacao/build/functions/runtime-apis/cache/) para mais detalhes.
+Consulte a documentação da [Cache API](/pt-br/documentacao/runtime/api-reference/cache/) para mais detalhes.
 
 ## 2 de julho, 2025
 
@@ -1089,7 +1089,7 @@ Azion Edge Functions agora suporta o `WebSocket Proxy`, permitindo que sua Edge 
 - **Métricas & logs**: Novos eventos (websocket.connection.accepted, message.sent, message.received) estão disponíveis em Real-Time Metrics e LogStream.
 - **Suporte ao Edge Firewall**: O tráfego pode ser inspecionado por regras do Edge Firewall antes da finalização do upgrade.
 
-Para mais detalhes visite a documentação da [WebSocket API](/pt-br/documentacao/build/functions/runtime-apis/websocket/)
+Para mais detalhes visite a documentação da [WebSocket API](/pt-br/documentacao/runtime/api-reference/websocket/)
 
 #### Compatibilidade com Azion Runtime
 
@@ -1113,7 +1113,7 @@ Suporte a módulos ES do JavaScript:
 
 Edge Functions agora suporta módulos JavaScript, tornando mais fácil do que nunca trazer suas aplicações JavaScript para a Azion Web Platform.
 
-Visite a documentação de [handlers](/pt-br/documentacao/build/functions/runtime-apis/functions/runtime/api-reference/handlers/) para mais detalhes.
+Visite a documentação de [handlers](/pt-br/documentacao/produtos/applications/functions/runtime/api-reference/handlers/) para mais detalhes.
 
 ## 15 de maio, 2025
 
@@ -1148,8 +1148,8 @@ Essas melhorias, junto com as atualizações recentes da nossa plataforma, contr
 
 #### Edge Functions
 
-- **WinterTC (Padrão Aberto ECMA)**: compatibilidade aumentada com [WinterTC APIs](/pt-br/documentacao/build/functions/runtime-apis/javascript/), promovendo portabilidade e eliminando vendor lock-in.
-- **Compatibildade NodeJS**: [Compatibilidade com APIs NodeJS expandida](/pt-br/documentacao/build/functions/runtime-apis/compatibilidade/node/), utilizamos o Unenv para realizar Polyfills, expandindo compatibilidade com Node.js.
+- **WinterTC (Padrão Aberto ECMA)**: compatibilidade aumentada com [WinterTC APIs](/pt-br/documentacao/runtime-apis/javascript/), promovendo portabilidade e eliminando vendor lock-in.
+- **Compatibildade NodeJS**: [Compatibilidade com APIs NodeJS expandida](/pt-br/documentacao/produtos/devtools/azion-edge-runtime/compatibilidade/node/), utilizamos o Unenv para realizar Polyfills, expandindo compatibilidade com Node.js.
 - **Maiores limites de execução**: As Edge Functions agora executam até 5 minutos de tempo de CPU e suportam pacotes de aplicação de até 20 MB.
 
 #### Edge SQL
@@ -1185,7 +1185,7 @@ A Azion apresenta vários novos recursos de Inteligência Artificial, incluindo 
 - **LangGraph AI Agent Boilerplate**: Template para criar um agente que pode consultar e interagir com dados armazenados em bancos de dados EdgeSQL.
 - **Compatibilidade**: Integração com APIs compatíveis com OpenAI e LangChain/LangGraph para automação de workflows.
 
-Para mais detalhes, visite a documentação do [AI Inference](/pt-br/documentacao/build/ai-inference/), [Edge Functions](/pt-br/documentacao/build/applications/reference/functions/) e [Edge SQL](/pt-br/documentacao/store/sql-database/).
+Para mais detalhes, visite a documentação do [AI Inference](/pt-br/documentacao/build/ai-inference/), [Edge Functions](/pt-br/documentacao/build/applications/functions/) e [Edge SQL](/pt-br/documentacao/store/sql-database/).
 
 ## 26 de março, 2025
 
@@ -1195,7 +1195,7 @@ Compatibilidade ampliada com APIs:
 
 A Azion agora oferece suporte a várias APIs do Node.js no Azion Runtime, expandindo a compatibilidade para aproximadamente 88,4% das funcionalidades do Node.js. Isso foi possível graças ao uso do [unenv](https://github.com/unjs/unenv) para resolver polyfills.
 
-Para mais informações sobre as APIs do Node.js compatíveis, acesse a [lista de compatibilidade](/pt-br/documentacao/build/functions/runtime-apis/compatibilidade/node/).
+Para mais informações sobre as APIs do Node.js compatíveis, acesse a [lista de compatibilidade](/pt-br/documentacao/produtos/devtools/azion-edge-runtime/compatibilidade/node/).
 
 ## 19 de março, 2025
 
@@ -1361,7 +1361,7 @@ Consulte sobre os [gráficos de monitoramento do Real-Time Metrics](/pt-br/docum
 
 O **Azion Copilot** é um assistente com tecnologia de IA integrado diretamente ao Azion Console. Os clientes podem usá-lo para resolver problemas ou obter respostas para dúvidas, com respostas imediatas e orientadas por contexto, baseadas na base de conhecimento da Azion. Essa nova funcionalidade simplifica as tarefas para usuários de todos os níveis de habilidade, facilitando o uso dos produtos e aumentando a eficiência.
 
-Além disso, o Copilot roda diretamente na plataforma de edge distribuída da Azion, garantindo processamento rápido e aproveitando produtos nativos de edge, como [Edge Application](/pt-br/documentacao/build/applications/), [Edge Functions](/pt-br/documentacao/build/applications/reference/functions/) e [EdgeSQL](/pt-br/documentacao/store/sql-database/), para um alto desempenho.
+Além disso, o Copilot roda diretamente na plataforma de edge distribuída da Azion, garantindo processamento rápido e aproveitando produtos nativos de edge, como [Edge Application](/pt-br/documentacao/build/applications/), [Edge Functions](/pt-br/documentacao/build/applications/functions/) e [EdgeSQL](/pt-br/documentacao/store/sql-database/), para um alto desempenho.
 
 Para testar o novo Azion Copilot, acesse o [Azion Console](https://console.azion.com/).
 
@@ -1463,7 +1463,7 @@ Leia mais sobre este tópico na [documentação](/pt-br/documentacao/account/gui
 
 O módulo **Image Processor** agora pode processar imagens no formato `AVIF`, que oferece compressão e qualidade superiores em comparação com outros formatos como WEBP, JPEG ou PNG.
 
-Saiba mais sobre o [Image Processor](/pt-br/documentacao/build/applications/reference/image-processor/).
+Saiba mais sobre o [Image Processor](/pt-br/documentacao/build/applications/image-processor/).
 
 ---
 
@@ -2000,11 +2000,11 @@ Para mais detalhes, consulte a documentação sobre [Como integrar a Azion com o
 
 **Edge Functions**
 
-- Novo [Edge Functions Code Editor](/pt-br/documentacao/build/functions/runtime-apis/functions/runtime-api/code-editor/) com [Azion Preview Deployment](/pt-br/documentacao/build/functions/runtime-apis/functions/runtime-api/preview-deployment/) e [integração com IA generativa](/pt-br/documentacao/build/functions/runtime-apis/functions/runtime-api/ai-integration/).
+- Novo [Edge Functions Code Editor](/pt-br/documentacao/produtos/applications/functions/runtime-api/code-editor/) com [Azion Preview Deployment](/pt-br/documentacao/produtos/applications/functions/runtime-api/preview-deployment/) e [integração com IA generativa](/pt-br/documentacao/produtos/applications/functions/runtime-api/ai-integration/).
   - Consulte o guia [Como criar uma API com Edge Functions e ChatGPT](/pt-br/documentacao/build/functions/guides/api-builder/) para saber mais sobre essa funcionalidade.
   - Disponível em [Real-Time Manager](https://console.azion.com).
 
-- A nova interface, [Network List interface](/pt-br/documentacao/build/functions/runtime-apis/functions/runtime/api-reference/network-list/), que permite o acesso à [Network Lists](/pt-br/documentacao/secure/firewall/reference/network-shield/network-lists/) e informa se a lista contém um endereço IP específico está disponível.
+- A nova interface, [Network List interface](/pt-br/documentacao/produtos/applications/functions/runtime/api-reference/network-list/), que permite o acesso à [Network Lists](/pt-br/documentacao/secure/firewall/reference/network-shield/network-lists/) e informa se a lista contém um endereço IP específico está disponível.
 
 **GraphQL API**
 

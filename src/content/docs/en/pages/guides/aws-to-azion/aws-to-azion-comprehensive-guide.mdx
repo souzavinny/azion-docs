@@ -41,22 +41,22 @@ The following tables provide a comprehensive mapping of AWS products to their Az
 | :---------- | :---------- | :--------------- |
 | **Amazon CloudFront** | AWS CDN for delivering static content, dynamic content, APIs, applications, and video globally. | [Applications](https://www.azion.com/en/documentation/build/applications/) |
 | **CloudFront Distributions** | Main CloudFront delivery resource for domains, origins, cache behavior, certificates, security, and edge delivery settings. | [Applications](https://www.azion.com/en/documentation/build/applications/) |
-| **CloudFront Alternate Domain Names** | Configure custom domains for CloudFront distributions. | [Workloads](https://www.azion.com/en/documentation/build/workloads/) |
+| **CloudFront Alternate Domain Names** | Configure custom domains for CloudFront distributions. | [Workloads](https://www.azion.com/en/documentation/secure/workloads/) |
 | **CloudFront Cache Behaviors** | Path-based delivery behavior, cache policy, origin request policy, allowed methods, and edge function associations. | [Rules Engine for Applications](https://www.azion.com/en/documentation/build/applications/reference/rules-engine/) |
-| **CloudFront Cache Policies** | Control cache keys, TTLs, headers, cookies, query strings, and compression. | [Cache](https://www.azion.com/en/documentation/build/applications/reference/cache/) |
+| **CloudFront Cache Policies** | Control cache keys, TTLs, headers, cookies, query strings, and compression. | [Cache](https://www.azion.com/en/documentation/build/applications/cache/) |
 | **CloudFront Origin Request Policies** | Control which request values CloudFront forwards to origin. | [Rules Engine](https://www.azion.com/en/documentation/build/applications/reference/rules-engine/) |
 | **CloudFront Response Headers Policies** | Add or modify response headers such as security headers and CORS headers. | [Rules Engine for Applications](https://www.azion.com/en/documentation/build/applications/reference/rules-engine/) |
-| **CloudFront Origin Shield** | Additional centralized caching layer to reduce origin load and improve cache hit ratio. | [Tiered Cache](https://www.azion.com/en/documentation/build/applications/reference/cache/tiered-cache/) |
+| **CloudFront Origin Shield** | Additional centralized caching layer to reduce origin load and improve cache hit ratio. | [Tiered Cache](https://www.azion.com/en/documentation/build/applications/cache/tiered-cache/) |
 | **CloudFront Invalidation** | Remove content from CloudFront edge caches before expiration. | [Real-Time Purge](https://www.azion.com/en/documentation/build/applications/reference/real-time-purge/) |
-| **CloudFront Functions** | Lightweight JavaScript execution at the edge for redirects, rewrites, headers, and cache-key normalization. | [Functions for Applications](https://www.azion.com/en/documentation/build/applications/reference/functions/) |
-| **Lambda@Edge** | Node.js or Python functions triggered by CloudFront events to customize delivery. | [Functions for Applications](https://www.azion.com/en/documentation/build/applications/reference/functions/) |
+| **CloudFront Functions** | Lightweight JavaScript execution at the edge for redirects, rewrites, headers, and cache-key normalization. | [Functions for Applications](https://www.azion.com/en/documentation/build/applications/functions/) |
+| **Lambda@Edge** | Node.js or Python functions triggered by CloudFront events to customize delivery. | [Functions for Applications](https://www.azion.com/en/documentation/build/applications/functions/) |
 | **Lambda@Edge for security logic** | Use CloudFront-triggered functions for request validation, authentication, or blocking logic. | [Functions for Firewall](https://www.azion.com/en/documentation/secure/firewall/reference/functions/) |
 | **CloudFront Device Detection** | Detect device type and pass device metadata to the origin. | [Device Groups](https://www.azion.com/en/documentation/build/applications/reference/device-groups/) |
 | **AWS Elemental MediaLive** | Real-time live video encoding. | [Live Ingest](https://www.azion.com/en/documentation/build/applications/guides/live-ingest-best-practices/) |
 | **AWS Elemental MediaPackage** | Package and originate live video streams for HLS, DASH, and related formats. | [Live Ingest](https://www.azion.com/en/documentation/build/applications/guides/live-ingest-best-practices/) + [Applications](https://www.azion.com/en/documentation/build/applications/) |
 | **CloudFront for live streaming** | Deliver live video globally using CloudFront with AWS Media Services. | [Applications](https://www.azion.com/en/documentation/build/applications/) + [Live Ingest](https://www.azion.com/en/documentation/build/applications/guides/live-ingest-best-practices/) |
-| **AWS Lambda** | General-purpose serverless compute for event-driven code execution. | [Functions for Applications](https://www.azion.com/en/documentation/build/applications/reference/functions/) |
-| **Amazon API Gateway** | Create and manage REST, HTTP, and WebSocket APIs with backend integrations. | [Applications](https://www.azion.com/en/documentation/build/applications/) + [Functions](https://www.azion.com/en/documentation/build/applications/reference/functions/) |
+| **AWS Lambda** | General-purpose serverless compute for event-driven code execution. | [Functions for Applications](https://www.azion.com/en/documentation/build/applications/functions/) |
+| **Amazon API Gateway** | Create and manage REST, HTTP, and WebSocket APIs with backend integrations. | [Applications](https://www.azion.com/en/documentation/build/applications/) + [Functions](https://www.azion.com/en/documentation/build/applications/functions/) |
 | **API Gateway request validation / throttling** | Apply API request controls, throttling, and validation rules. | [Rules Engine](https://www.azion.com/en/documentation/build/applications/reference/rules-engine/) + [Firewall](https://www.azion.com/en/documentation/secure/firewall/) |
 | **AWS Amplify Hosting** | Git-based CI/CD and hosting for static and server-side rendered web apps. | [Applications](https://www.azion.com/en/documentation/build/applications/) + [Azion CLI](https://www.azion.com/en/documentation/devtools/cli/) |
 | **AWS App Runner** | Deploy source code or container images to managed web applications. | [Applications](https://www.azion.com/en/documentation/build/applications/) + [Orchestrator](https://www.azion.com/en/products/orchestrator/) |
@@ -67,8 +67,8 @@ The following tables provide a comprehensive mapping of AWS products to their Az
 | **Amazon SageMaker AI Real-Time Inference** | Deploy ML models to managed real-time inference endpoints. | [AI Inference](https://www.azion.com/en/documentation/build/ai-inference/) |
 | **Amazon S3** | Object storage for unstructured data, static assets, backups, archives, and websites. | [Object Storage](https://www.azion.com/en/documentation/store/object-storage/) |
 | **Amazon S3 Static Website Hosting** | Host static websites from S3 buckets. | [Object Storage](https://www.azion.com/en/documentation/store/object-storage/) + [Applications](https://www.azion.com/en/documentation/build/applications/) |
-| **S3 Object Lambda** | Transform S3 objects with Lambda before returning them to the requester. | [Object Storage](https://www.azion.com/en/documentation/store/object-storage/) + [Functions](https://www.azion.com/en/documentation/build/applications/reference/functions/) |
-| **S3 Object Lambda for image transformation** | Resize, watermark, redact, or transform content retrieved from S3. | [Image Processor](https://www.azion.com/en/documentation/build/applications/reference/image-processor/) + [Functions](https://www.azion.com/en/documentation/build/applications/reference/functions/) |
+| **S3 Object Lambda** | Transform S3 objects with Lambda before returning them to the requester. | [Object Storage](https://www.azion.com/en/documentation/store/object-storage/) + [Functions](https://www.azion.com/en/documentation/build/applications/functions/) |
+| **S3 Object Lambda for image transformation** | Resize, watermark, redact, or transform content retrieved from S3. | [Image Processor](https://www.azion.com/en/documentation/build/applications/image-processor/) + [Functions](https://www.azion.com/en/documentation/build/applications/functions/) |
 | **Amazon Aurora DSQL** | Serverless distributed relational SQL database for transactional workloads. | [SQL Database](https://www.azion.com/en/documentation/store/sql-database/) |
 | **Amazon DynamoDB** | Serverless key-value and document database. | [KV Store](https://www.azion.com/en/documentation/store/kv-store/) |
 | **DynamoDB Global Tables** | Multi-Region replication for globally distributed NoSQL data. | [KV Store](https://www.azion.com/en/documentation/store/kv-store/) |
@@ -82,12 +82,12 @@ The following tables provide a comprehensive mapping of AWS products to their Az
 | **AWS Shield Advanced** | Advanced DDoS protection with additional visibility and mitigation options. | [DDoS Protection](https://www.azion.com/en/documentation/secure/ddos-protection/) |
 | **Shield Advanced automatic DDoS mitigation** | Automatically creates or updates WAF protections during application-layer attacks. | [DDoS Protection](https://www.azion.com/en/documentation/secure/ddos-protection/) + [WAF](https://www.azion.com/en/documentation/secure/waf/) |
 | **AWS Network Firewall** | Managed VPC network firewall. | [Network Shield](https://www.azion.com/en/documentation/secure/network-shield/) |
-| **Elastic Load Balancing** | Distributes traffic across multiple targets and availability zones. | [Load Balancer](https://www.azion.com/en/documentation/build/connectors/reference/load-balancer/) |
-| **Application Load Balancer** | Layer 7 HTTP/HTTPS load balancing with application-level routing. | [Load Balancer](https://www.azion.com/en/documentation/build/connectors/reference/load-balancer/) |
-| **Network Load Balancer** | Layer 4 TCP/UDP/TLS load balancing. | [Load Balancer](https://www.azion.com/en/documentation/build/connectors/reference/load-balancer/) |
-| **AWS Global Accelerator** | Global Anycast IPs and optimized routing over the AWS global network. | [Applications](https://www.azion.com/en/documentation/build/applications/) + [Load Balancer](https://www.azion.com/en/documentation/build/connectors/reference/load-balancer/) |
-| **CloudFront Origin Access Control** | Secure S3 origins so users access content through CloudFront instead of directly from S3. | [Connectors](https://www.azion.com/en/documentation/build/connectors/) + [Origin Shield](https://www.azion.com/en/documentation/build/connectors/reference/origin-shield/) |
-| **CloudFront Signed URLs / Signed Cookies** | Restrict access to private content using signed URLs or cookies. | [Rules Engine](https://www.azion.com/en/documentation/build/applications/reference/rules-engine/) + [Functions](https://www.azion.com/en/documentation/build/applications/reference/functions/) |
+| **Elastic Load Balancing** | Distributes traffic across multiple targets and availability zones. | [Load Balancer](https://www.azion.com/en/documentation/secure/connectors/reference/load-balancer/) |
+| **Application Load Balancer** | Layer 7 HTTP/HTTPS load balancing with application-level routing. | [Load Balancer](https://www.azion.com/en/documentation/secure/connectors/reference/load-balancer/) |
+| **Network Load Balancer** | Layer 4 TCP/UDP/TLS load balancing. | [Load Balancer](https://www.azion.com/en/documentation/secure/connectors/reference/load-balancer/) |
+| **AWS Global Accelerator** | Global Anycast IPs and optimized routing over the AWS global network. | [Applications](https://www.azion.com/en/documentation/build/applications/) + [Load Balancer](https://www.azion.com/en/documentation/secure/connectors/reference/load-balancer/) |
+| **CloudFront Origin Access Control** | Secure S3 origins so users access content through CloudFront instead of directly from S3. | [Connectors](https://www.azion.com/en/documentation/secure/connectors/) + [Origin Shield](https://www.azion.com/en/documentation/secure/connectors/reference/origin-shield/) |
+| **CloudFront Signed URLs / Signed Cookies** | Restrict access to private content using signed URLs or cookies. | [Rules Engine](https://www.azion.com/en/documentation/build/applications/reference/rules-engine/) + [Functions](https://www.azion.com/en/documentation/build/applications/functions/) |
 | **CloudFront Geographic Restrictions** | Allow or block content access by country. | [Rules Engine](https://www.azion.com/en/documentation/build/applications/reference/rules-engine/) + [Network Shield](https://www.azion.com/en/documentation/secure/network-shield/) |
 | **Amazon Route 53** | Authoritative DNS, domain registration, routing policies, and health checks. | [Edge DNS](https://www.azion.com/en/documentation/secure/edge-dns/) |
 | **AWS Certificate Manager** | Provision, import, manage, deploy, and renew SSL/TLS certificates. | [Certificate Manager](https://www.azion.com/en/documentation/secure/certificate-manager/) |
@@ -113,8 +113,8 @@ The following tables provide a comprehensive mapping of AWS products to their Az
 | **AWS CloudFormation** | Infrastructure as Code service for modeling and provisioning AWS resources. | [Terraform Provider](https://www.azion.com/en/documentation/devtools/terraform/) |
 | **AWS Cloud Development Kit** | Define infrastructure using programming languages and synthesize to CloudFormation. | [Terraform Provider](https://www.azion.com/en/documentation/devtools/terraform/) + [Azion API](https://www.azion.com/en/documentation/devtools/api/) |
 | **Terraform AWS Provider** | Terraform provider for managing AWS resources. | [Terraform Provider](https://www.azion.com/en/documentation/devtools/terraform/) |
-| **Lambda runtime environment** | Runtime layer used by Lambda functions. | [Azion Runtime](https://www.azion.com/en/documentation/build/functions/runtime-apis/overview/) |
-| **CloudFront edge runtime** | Runtime environment for CloudFront Functions and Lambda@Edge. | [Azion Runtime](https://www.azion.com/en/documentation/build/functions/runtime-apis/overview/) |
+| **Lambda runtime environment** | Runtime layer used by Lambda functions. | [Azion Runtime](https://www.azion.com/en/documentation/runtime/overview/) |
+| **CloudFront edge runtime** | Runtime environment for CloudFront Functions and Lambda@Edge. | [Azion Runtime](https://www.azion.com/en/documentation/runtime/overview/) |
 
 ## Migration Strategy
 
@@ -302,7 +302,7 @@ Avoid copying secrets into local notes, tickets, chat messages, or temporary doc
 
 * [Environment Variables](https://www.azion.com/en/documentation/get-started/frameworks/environment-variables/)
 * [Working with variables](https://www.azion.com/en/documentation/deploy/orchestrator/guides/work-with-variables/)
-* [Azion runtime environment variables reference](https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/environment-variables/)
+* [Azion runtime environment variables reference](https://www.azion.com/en/documentation/products/functions/environment-variables/)
 
 ### 4. Migrating CloudFront to Applications
 
@@ -419,7 +419,7 @@ In CloudFront, Lambda@Edge functions trigger at different points. Azion maps the
 * [Applications](https://www.azion.com/en/documentation/build/applications/)
 * [Applications Main Settings](https://www.azion.com/en/documentation/build/applications/reference/main-settings/)
 * [Rules Engine for Applications](https://www.azion.com/en/documentation/build/applications/reference/rules-engine/)
-* [Connectors](https://www.azion.com/en/documentation/build/connectors/)
+* [Connectors](https://www.azion.com/en/documentation/secure/connectors/)
 
 ### 5. Migrating API Gateway to Applications + Functions
 
@@ -571,7 +571,7 @@ export default defineConfig({
 
 #### Reference documentation
 
-* [Functions](https://www.azion.com/en/documentation/build/applications/reference/functions/)
+* [Functions](https://www.azion.com/en/documentation/build/applications/functions/)
 * [Functions Instances](https://www.azion.com/en/documentation/build/applications/reference/functions-instances/)
 * [Rules Engine for Applications](https://www.azion.com/en/documentation/build/applications/reference/rules-engine/)
 
@@ -686,10 +686,10 @@ Azion Functions use V8 isolates (JavaScript runtime), providing consistent perfo
 
 #### Reference documentation
 
-* [Functions](https://www.azion.com/en/documentation/build/applications/reference/functions/)
+* [Functions](https://www.azion.com/en/documentation/build/applications/functions/)
 * [Functions Instances](https://www.azion.com/en/documentation/build/applications/reference/functions-instances/)
 * [Runtime APIs](https://www.azion.com/en/documentation/get-started/frameworks/runtime-apis/)
-* [JavaScript Runtime APIs reference](https://www.azion.com/en/documentation/build/functions/runtime-apis/javascript/)
+* [JavaScript Runtime APIs reference](https://www.azion.com/en/documentation/runtime-apis/javascript/)
 
 ### 7. Migrating Load Balancing (ALB/NLB to Load Balancer)
 
@@ -785,8 +785,8 @@ curl -X POST 'https://api.azionapi.net/v4/workspace/connectors' \
 
 #### Reference documentation
 
-* [Load Balancer](https://www.azion.com/en/documentation/build/connectors/reference/load-balancer/)
-* [Connectors](https://www.azion.com/en/documentation/build/connectors/)
+* [Load Balancer](https://www.azion.com/en/documentation/secure/connectors/reference/load-balancer/)
+* [Connectors](https://www.azion.com/en/documentation/secure/connectors/)
 * [Application Main Settings](https://www.azion.com/en/documentation/build/applications/reference/main-settings/)
 
 ### 8. Migrating Cache Configuration
@@ -896,9 +896,9 @@ curl -X POST 'https://api.azion.com/v4/workspace/purge/wildcard' \
 
 #### Reference documentation
 
-* [Cache](https://www.azion.com/en/documentation/build/applications/reference/cache/)
+* [Cache](https://www.azion.com/en/documentation/build/applications/cache/)
 * [Cache Settings](https://www.azion.com/en/documentation/build/applications/reference/cache-settings/)
-* [Tiered Cache](https://www.azion.com/en/documentation/build/applications/reference/cache/tiered-cache/)
+* [Tiered Cache](https://www.azion.com/en/documentation/build/applications/cache/tiered-cache/)
 * [Real-Time Purge](https://www.azion.com/en/documentation/build/applications/reference/real-time-purge/)
 
 ### 9. Migrating Image Optimization
@@ -979,8 +979,8 @@ Azion Image Processor automatically optimizes image format based on the client's
 
 #### Reference documentation
 
-* [Image Processor](https://www.azion.com/en/documentation/build/applications/reference/image-processor/)
-* [How to process images](https://www.azion.com/en/documentation/build/applications/guides/process-images/)
+* [Image Processor](https://www.azion.com/en/documentation/build/applications/image-processor/)
+* [How to process images](https://www.azion.com/en/documentation/build/applications/image-processor/guides/process-images/)
 * [Object Storage](https://www.azion.com/en/documentation/store/object-storage/)
 
 ### 10. Migrating AI Workloads (Bedrock to AI Inference)
@@ -1244,7 +1244,7 @@ export default {
 
 #### Reference documentation
 
-* [Functions](https://www.azion.com/en/documentation/build/applications/reference/functions/)
+* [Functions](https://www.azion.com/en/documentation/build/applications/functions/)
 * [Data Streaming](https://www.azion.com/en/documentation/products/observe/data-streaming/)
 
 
@@ -1271,7 +1271,7 @@ Azion provides free Let's Encrypt certificates with automatic renewal.
 
 #### Configure the Domain
 
-Create a workload in Azion Console and associate your custom domain. See [Workloads Documentation](https://www.azion.com/en/documentation/build/workloads/).
+Create a workload in Azion Console and associate your custom domain. See [Workloads Documentation](https://www.azion.com/en/documentation/secure/workloads/).
 
 #### Point the Domain to Azion
 
@@ -1314,8 +1314,8 @@ Before switching production traffic, confirm: certificate is active, domain is a
 
 #### Reference documentation
 
-* [Workloads](https://www.azion.com/en/documentation/build/workloads/)
-* [Create an Azion custom domain](https://www.azion.com/en/documentation/build/workloads/guides/create-azion-custom-domain/)
+* [Workloads](https://www.azion.com/en/documentation/secure/workloads/)
+* [Create an Azion custom domain](https://www.azion.com/en/documentation/secure/workloads/guides/create-azion-custom-domain/)
 * [Edge DNS](https://www.azion.com/en/documentation/secure/edge-dns/)
 * [Certificate Manager](https://www.azion.com/en/documentation/secure/certificate-manager/)
 
@@ -1552,7 +1552,7 @@ ACM Private CA certificates can be exported and uploaded to Azion as Trusted CA 
 #### Reference documentation
 
 * [Certificate Manager](https://www.azion.com/en/documentation/secure/certificate-manager/)
-* [Create a digital certificate](https://www.azion.com/en/documentation/build/workloads/guides/create-a-digital-certificate/)
+* [Create a digital certificate](https://www.azion.com/en/documentation/secure/workloads/guides/create-a-digital-certificate/)
 * [mTLS](https://www.azion.com/en/documentation/secure/certificate-manager/reference/mtls/)
 
 ### 4. Migrating WAF to Web Application Firewall
@@ -2488,7 +2488,7 @@ aws rds start-export-task \\
 * [Install SQL Shell](https://www.azion.com/en/documentation/store/sql-database/guides/install-edge-sql-shell/)
 * [SQL Database Shell commands](https://www.azion.com/en/documentation/store/sql-database/guides/sql-database-shell-commands/)
 * [Import data into SQL Database](https://www.azion.com/en/documentation/store/sql-database/guides/import-data-sql-database/)
-* [SQL Database API reference](https://www.azion.com/en/documentation/build/functions/runtime-apis/sql-database/)
+* [SQL Database API reference](https://www.azion.com/en/documentation/runtime/api-reference/sql-database/)
 
 ### 4. Migrating ElastiCache to Cache / KV Store
 
@@ -2555,9 +2555,9 @@ await client.delete('session:abc123');
 
 * [KV Store](https://www.azion.com/en/documentation/store/kv-store/)
 * [KV library (azion/kv)](https://www.azion.com/en/documentation/devtools/lib/reference/kv/)
-* [Cache](https://www.azion.com/en/documentation/build/applications/reference/cache/)
+* [Cache](https://www.azion.com/en/documentation/build/applications/cache/)
 * [Cache Settings](https://www.azion.com/en/documentation/build/applications/reference/cache-settings/)
-* [Tiered Cache](https://www.azion.com/en/documentation/build/applications/reference/cache/tiered-cache/)
+* [Tiered Cache](https://www.azion.com/en/documentation/build/applications/cache/tiered-cache/)
 * [Rules Engine for Applications](https://www.azion.com/en/documentation/build/applications/reference/rules-engine/)
 
 ## Observe 

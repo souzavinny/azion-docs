@@ -21,7 +21,7 @@ You're viewing the latest version of this documentation. If your account hasn't 
 
 By operating on a reverse proxy architecture, Applications allows you to create applications on the edge and direct traffic from your domain to Azion. Through this process, your users can access your application via a highly distributed global network of edge nodes. Then, Azion selects which edge node closest to the user can handle the request.
 
-Your content or application must be served from one or more origins. An origin, also called your applications backend, can be made up of one or more web servers in your infrastructure, a cloud service, or [Object Storage](/en/documentation/store/object-storage/). *Connector* is used to connect to these origin sources. For more information, see the [Connectors reference](/en/documentation/build/connectors/).
+Your content or application must be served from one or more origins. An origin, also called your applications backend, can be made up of one or more web servers in your infrastructure, a cloud service, or [Object Storage](/en/documentation/store/object-storage/). *Connector* is used to connect to these origin sources. For more information, see the [Connectors reference](/en/documentation/secure/connectors/).
 With Applications, you can:
 
 - Define how your content will be cached.
@@ -49,8 +49,8 @@ You can create and manage applications using:
 | Applications Cache Settings | [Cache Settings](/en/documentation/build/applications/reference/cache-settings/) |
 | Get to know Functions | [Functions Instances](/en/documentation/build/applications/reference/functions-instances/) |
 | Get to know Device Groups | [Device Groups](/en/documentation/build/applications/reference/device-groups/) |
-| Get to know Workloads | [Workloads](/en/documentation/build/workloads/) |
-| Get to know Connectors | [Connectors](/en/documentation/build/connectors/) |
+| Get to know Workloads | [Workloads](/en/documentation/secure/workloads/) |
+| Get to know Connectors | [Connectors](/en/documentation/secure/connectors/) |
 | Get to know Real-Time Purge | [Real-Time Purge](/en/documentation/build/applications/reference/real-time-purge/) |
 | Rules Engine for Applications | [Rules Engine](/en/documentation/build/applications/reference/rules-engine/) |
 
@@ -64,11 +64,11 @@ See the documentation for each module:
 
 | Module | Description |
 | --- | --- |
-| [Application Accelerator](/en/documentation/build/applications/reference/application-accelerator/) | Optimize API protocols and manage dynamic content delivery to accelerate applications and APIs. |
-| [Cache](/en/documentation/build/applications/reference/cache/) | Configure cache settings to speed up the delivery of static and dynamic content. |
-| [Functions](/en/documentation/build/applications/reference/functions/) | Build ultra-low latency applications and customize content delivery. |
-| [Image Processor](/en/documentation/build/applications/reference/image-processor/) | Optimize image processing for various devices, browsers, and screen resolutions. |
-| [Tiered Cache](/en/documentation/build/applications/reference/cache/tiered-cache/) | Add a cache layer between your users and the edge to keep objects in cache for longer periods of time. |
+| [Application Accelerator](/en/documentation/build/applications/application-accelerator/) | Optimize API protocols and manage dynamic content delivery to accelerate applications and APIs. |
+| [Cache](/en/documentation/build/applications/cache/) | Configure cache settings to speed up the delivery of static and dynamic content. |
+| [Functions](/en/documentation/build/applications/functions/) | Build ultra-low latency applications and customize content delivery. |
+| [Image Processor](/en/documentation/build/applications/image-processor/) | Optimize image processing for various devices, browsers, and screen resolutions. |
+| [Tiered Cache](/en/documentation/build/applications/cache/tiered-cache/) | Add a cache layer between your users and the edge to keep objects in cache for longer periods of time. |
 
 ---
 
@@ -90,7 +90,7 @@ See the documentation for each available setting:
 
 ## Real-Time Purge
 
-Use **Real-Time Purge** to clear cached content from Azion's edge or from the [tiered cache layer]](/en/documentation/build/applications/reference/cache/tiered-cache/) to maintain content accuracy, reduce outdated content delivery, and deliver an optimal user experience on your application. 
+Use **Real-Time Purge** to clear cached content from Azion's edge or from the [tiered cache layer]](/en/documentation/build/applications/cache/tiered-cache/) to maintain content accuracy, reduce outdated content delivery, and deliver an optimal user experience on your application. 
 
 <LinkButton severity="secondary" label="Learn more about Real-Time Purge" link="/en/documentation/build/applications/reference/real-time-purge/" />
 
@@ -107,7 +107,7 @@ These are the **default limits**:
 
 | Scope | Limit |
 | ----- | ----- |
-| Minimum CDN cache TTL | 60 seconds<br /><br />For the [Application Accelerator](/en/documentation/build/applications/reference/application-accelerator/) module: 0 seconds |
+| Minimum CDN cache TTL | 60 seconds<br /><br />For the [Application Accelerator](/en/documentation/build/applications/application-accelerator/) module: 0 seconds |
 | Debug Rules log size | 1.5 kB |
 | Edge-client keepalive connection¹ | 10 to 15 minutes |
 | Single object size in cache | 10 GB |

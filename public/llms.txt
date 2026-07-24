@@ -72,10 +72,8 @@
 
 - [AI Inference](https://www.azion.com/en/documentation/build/ai-inference/): Azion AI Inference empowers you to build and deploy intelligent applications that process data close to where it is generated.
 - [Applications](https://www.azion.com/en/documentation/build/applications/): Applications is a product that lets you build applications on Azion Global Network, reducing latency and throughput between origin servers and users.
-- [Connectors](https://www.azion.com/en/documentation/build/connectors/): Connectors allows you to connect your origin to an Application. An origin represents the server from which Azion retrieves your content, such as an object storage service or a cloud server.
 - [Build](https://www.azion.com/en/documentation/build/overview/): Build and run applications on Azion's Edge Computing network, ensuring low-latency processing closer to end users.
-- [Workloads](https://www.azion.com/en/documentation/build/workloads/): Workloads is an Azion Console tool that centralizes communication protocol settings, such as certificates, domains, ports and protocols.
-- Full section index: https://www.azion.com/en/documentation/build/llms.txt (170 pages)
+- Full section index: https://www.azion.com/en/documentation/build/llms.txt (80 pages)
 
 ## Store
 
@@ -89,6 +87,7 @@
 
 - [Azion Bot Manager](https://www.azion.com/en/documentation/secure/bot-manager/): Protect your applications against automated attacks such as bad bot signatures or scripted bots.
 - [Certificate Manager](https://www.azion.com/en/documentation/secure/certificate-manager/): Certificate Manager is the Secure product where you register and manage the TLS certificates that enable HTTPS traffic for your domains at Azion.
+- [Connectors](https://www.azion.com/en/documentation/secure/connectors/): Connectors allows you to connect your origin to an Application. An origin represents the server from which Azion retrieves your content, such as an object storage service or a cloud server.
 - [Custom Pages](https://www.azion.com/en/documentation/secure/custom-pages/): Custom Pages is a functionality that allows you to customize error pages for users based on the status code received from the edge connectors.
 - [DDoS Protection](https://www.azion.com/en/documentation/secure/ddos-protection/): Azion DDoS Protection defends your content and applications against Distributed Denial of Service (DDoS) attacks.
 - [Edge DNS](https://www.azion.com/en/documentation/secure/edge-dns/): Edge DNS is an authoritative DNS service that hosts your domains, zones, and records on Azion's distributed infrastructure, with DDoS protection and real-time record distribution.
@@ -96,7 +95,8 @@
 - [Network Shield](https://www.azion.com/en/documentation/secure/network-shield/): Explore Azion's Network Shield for robust firewall security. Safeguard your infrastructure with granular control and advanced filtering.
 - [Secure](https://www.azion.com/en/documentation/secure/overview/): Protect your domains, applications, and infrastructure at the edge, guaranteeing the security, availability, and authenticity of your data.
 - [Web Application Firewall](https://www.azion.com/en/documentation/secure/waf/): Protect your applications against threats like SQL Injections, Remote File Inclusion (RFI), Cross-Site Scripting (XSS), and others with Azion Web Application Firewall.
-- Full section index: https://www.azion.com/en/documentation/secure/llms.txt (65 pages)
+- [Workloads](https://www.azion.com/en/documentation/secure/workloads/): Workloads is an Azion Console tool that centralizes communication protocol settings, such as certificates, domains, ports and protocols.
+- Full section index: https://www.azion.com/en/documentation/secure/llms.txt (74 pages)
 
 ## Deploy
 
@@ -120,13 +120,15 @@
 - [Get started with Azion API](https://www.azion.com/en/documentation/devtools/api/): Learn more about official endpoints, methods, and API use cases of the Azion RESTful API.
 - [Azion CLI](https://www.azion.com/en/documentation/devtools/cli/): Explore Azion CLI for edge computing manage and deploy applications, integrate with Azion APIs, and optimize with Go SDK.
 - [Console Kit](https://www.azion.com/en/documentation/devtools/console-kit/): Developed with Vue/Vite, PrimeVue, and Tailwind, Azion Console Kit is a front-end development kit used for crafting a customized Azion Console interface.
+- [Debugging](https://www.azion.com/en/documentation/devtools/debugging/): Explore debugging in Functions for enhanced control and observability, including setup guides for log management and Data Stream on the Azion platform.
 - [For AI Agents](https://www.azion.com/en/documentation/devtools/for-ai-agents/): Entry point for AI agents and their developers building on Azion: canonical facts, current product names, API base URL, auth format, and machine-readable resources such as llms.txt and the Azion MCP server.
 - [Form Builder](https://www.azion.com/en/documentation/devtools/form-builder/): Build visual, schema-driven forms to configure Azion Functions arguments in Applications and Firewalls.
 - [GraphQL API](https://www.azion.com/en/documentation/devtools/graphql/): Request the data you want and receive nothing more, nothing less. The Azion GraphQL API lets you query metrics, events, and accounting data with precise, flexible requests, retrieving exactly the fields you need in a single call instead of over-fetching or under-fetching information.
+- [Functions - JavaScript Examples](https://www.azion.com/en/documentation/devtools/javascript-examples/): Examples of syntax patterns you can use in Functions - JavaScript.
 - [Azion Libraries overview](https://www.azion.com/en/documentation/devtools/lib/): Learn about Azion Libraries, a suite of tools for interacting with Azion services, products, and utilities.
 - [Model Context Protocol (MCP)](https://www.azion.com/en/documentation/devtools/mcp/): Connect AI code assistants to Azion Platform through the Model Context Protocol, enabling intelligent assistance for deployment, configuration, and management tasks.
 - [Azion Terraform Provider](https://www.azion.com/en/documentation/devtools/terraform/): Azion Terraform Provider v2.0 is an open source project that enables infrastructure as code management for Azion API v4. Manage workloads, connectors, applications, and more through Terraform configurations.
-- Full section index: https://www.azion.com/en/documentation/devtools/llms.txt (101 pages)
+- Full section index: https://www.azion.com/en/documentation/devtools/llms.txt (105 pages)
 
 ## Marketplace
 

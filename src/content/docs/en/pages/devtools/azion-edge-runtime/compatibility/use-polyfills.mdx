@@ -5,10 +5,10 @@ meta_tags: 'web frameworks, development, developer experience'
 namespace: documentation_cli_guide_polyfill
 menu_namespace: runtimeMenu
 og_image: ''
-permalink: /documentation/build/functions/runtime-apis/guides/use-polyfills/
+permalink: /documentation/devtools/guides/use-polyfills/
 ---
 
-Through [Azion CLI](/en/documentation/devtools/cli/), you can initialize an application based on starter templates or link an existing project. The list of supported web frameworks includes Next.js, React, Vue, Angular, Astro, JavaScript itself, and others. These JavaScript frameworks run at Azion's edge, on top of [Azion Runtime](/en/documentation/build/functions/runtime-apis/overview/).
+Through [Azion CLI](/en/documentation/devtools/cli/), you can initialize an application based on starter templates or link an existing project. The list of supported web frameworks includes Next.js, React, Vue, Angular, Astro, JavaScript itself, and others. These JavaScript frameworks run at Azion's edge, on top of [Azion Runtime](/en/documentation/runtime/overview/).
 
 The projects built with these frameworks typically use Node.js APIs. Through the Azion build process, carried by [Azion Bundler](https://github.com/aziontech/bundler), these APIs are resolved through the use of *polyfills*. 
 
@@ -20,7 +20,7 @@ This guide will show how to use **Node.js Buffer API** through polyfills in a Ja
 
 Before getting started, you must have:
 
-- An [Azion platform account](/en/documentation/account/reference/creating-account/) with [Functions](/en/documentation/build/applications/reference/functions/) enabled.
+- An [Azion platform account](/en/documentation/account/reference/creating-account/) with [Functions](/en/documentation/build/applications/functions/) enabled.
 - [The latest version of Azion CLI installed](/en/documentation/devtools/cli/).
 - Code editor.
 - Access to the terminal.
@@ -182,7 +182,7 @@ azion dev
 Now you can check the logs in the terminal and see the Buffer API working through polyfills. 
 
 :::tip
-You can access a list of APIs resolved through polyfills by Azion Bundler build on [its repository](https://github.com/aziontech/bundler) and on [Azion's compatibility documentation](/en/documentation/build/functions/runtime-apis/compatibility/node/). Azion Bundler's an **open-source** project and you can propose new presets and implementations.
+You can access a list of APIs resolved through polyfills by Azion Bundler build on [its repository](https://github.com/aziontech/bundler) and on [Azion's compatibility documentation](/en/documentation/products/azion-edge-runtime/compatibility/node/). Azion Bundler's an **open-source** project and you can propose new presets and implementations.
 :::
 
 

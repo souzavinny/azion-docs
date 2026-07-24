@@ -67,12 +67,12 @@ Veja a documentação de cada módulo:
 
 | Módulo | Descrição |
 | --- | --- |
-| [Application Accelerator](/pt-br/documentacao/build/applications/reference/application-accelerator/) | Otimize protocolos de API e gerencie a entrega dinâmica de conteúdo para acelerar aplicações e APIs. |
-| [Cache](/pt-br/documentacao/build/applications/reference/cache/) | Configure as configurações de cache para acelerar a entrega de conteúdo estático e dinâmico. |
-| [Functions](/pt-br/documentacao/build/applications/reference/functions/) | Crie aplicações de latência ultrabaixa e personalize a entrega de conteúdo. |
-| [Image Processor](/pt-br/documentacao/build/applications/reference/image-processor/) | Otimize o processamento de imagens para vários dispositivos, navegadores e resoluções de tela. |
-| [Load Balancer](/pt-br/documentacao/build/connectors/reference/load-balancer/) | Equilibre o tráfego entre seus servidores de origem e provedores de cloud para melhorar a tolerância a falhas e evitar o congestionamento da rede. |
-| [Tiered Cache](/pt-br/documentacao/build/applications/reference/cache/tiered-cache/) | Adicione uma camada de cache entre seus usuários e o edge para manter os objetos no cache por períodos mais longos. |
+| [Application Accelerator](/pt-br/documentacao/build/applications/application-accelerator/) | Otimize protocolos de API e gerencie a entrega dinâmica de conteúdo para acelerar aplicações e APIs. |
+| [Cache](/pt-br/documentacao/build/applications/cache/) | Configure as configurações de cache para acelerar a entrega de conteúdo estático e dinâmico. |
+| [Functions](/pt-br/documentacao/build/applications/functions/) | Crie aplicações de latência ultrabaixa e personalize a entrega de conteúdo. |
+| [Image Processor](/pt-br/documentacao/build/applications/image-processor/) | Otimize o processamento de imagens para vários dispositivos, navegadores e resoluções de tela. |
+| [Load Balancer](/pt-br/documentacao/secure/connectors/reference/load-balancer/) | Equilibre o tráfego entre seus servidores de origem e provedores de cloud para melhorar a tolerância a falhas e evitar o congestionamento da rede. |
+| [Tiered Cache](/pt-br/documentacao/build/applications/cache/tiered-cache/) | Adicione uma camada de cache entre seus usuários e o edge para manter os objetos no cache por períodos mais longos. |
 | [WebSocket Proxy](/pt-br/documentacao/build/applications/reference/websocket/) | Ative o protocolo WebSocket para estabelecer canais de comunicação full-duplex sobre uma única conexão TCP. |
 
 ---
@@ -113,7 +113,7 @@ Com **Certificate Manager**, você pode aprimorar a segurança de seus aplicativ
 
 ## Real-Time Purge
 
-Use o **Real-Time Purge** para limpar o conteúdo em cache do edge da Azion ou da camada [Tiered Cache](/pt-br/documentacao/build/applications/reference/cache/tiered-cache/). Dessa forma, você pode manter os conteúdos atualizados, reduzir a entrega de conteúdo desatualizado e oferecer uma experiência de usuário ideal em sua application.
+Use o **Real-Time Purge** para limpar o conteúdo em cache do edge da Azion ou da camada [Tiered Cache](/pt-br/documentacao/build/applications/cache/tiered-cache/). Dessa forma, você pode manter os conteúdos atualizados, reduzir a entrega de conteúdo desatualizado e oferecer uma experiência de usuário ideal em sua application.
 
 <LinkButton severity="secondary" label="Saiba mais sobre Real-Time Purge" link="/pt-br/documentacao/build/applications/reference/real-time-purge/" />
 
@@ -130,12 +130,12 @@ Estes são os **limites default**:
 
 | Escopo | Limite |
 | --- | --- |
-| TTL mínimo de CDN cache | 60 segundos<br /><br />Para o módulo [Application Accelerator](/pt-br/documentacao/build/applications/reference/application-accelerator/): 0 segundos |
+| TTL mínimo de CDN cache | 60 segundos<br /><br />Para o módulo [Application Accelerator](/pt-br/documentacao/build/applications/application-accelerator/): 0 segundos |
 | Tamanho de logs de Debug Rules | 1.5 kB |
 | Conexão keepalive edge-cliente¹ |  10 a 15 minutos |
 | Tamanho de objeto único em cache | 10 GB |
 
-> ¹ A Azion impõe um limite de duração de conexão keepalive entre usuários e applications. Para evitar o término de conexões ativas que exigem mais tempo para serem concluídas, considere a implementação de [file slicing](/pt-br/documentacao/build/applications/reference/cache/#large-file-optimization) ou [compressão de dados](/pt-br/documentacao/build/applications/guides/gzip-compression/).
+> ¹ A Azion impõe um limite de duração de conexão keepalive entre usuários e applications. Para evitar o término de conexões ativas que exigem mais tempo para serem concluídas, considere a implementação de [file slicing](/pt-br/documentacao/build/applications/cache/#large-file-optimization) ou [compressão de dados](/pt-br/documentacao/build/applications/guides/gzip-compression/).
 
 Estes são os **limites default** para cada Plano de Serviço:
 

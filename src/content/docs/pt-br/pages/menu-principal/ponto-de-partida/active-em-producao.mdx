@@ -30,7 +30,7 @@ Acesse o [Azion Console](https://console.azion.com) e clique no card **Manage yo
 Clique em **Add Domain** e preencha os campos:
 
 - **Add Configuration Name**: digite um nome para o seu domínio. Você pode usar o mesmo nome do seu nome de domínio.
-- [Digital Certificate](/pt-br/documentacao/secure/certificate-manager/): selecione o certificado padrão da Azion (SAN), um [certificado Let's Encrypt](/pt-br/documentacao/build/applications/guides/como-gerar-um-certificado-lets-encrypt/) ou qualquer [certificado digital de terceiros](/pt-br/documentacao/build/workloads/guides/criar-certificado-digital/).
+- [Digital Certificate](/pt-br/documentacao/secure/certificate-manager/): selecione o certificado padrão da Azion (SAN), um [certificado Let's Encrypt](/pt-br/documentacao/build/applications/guides/como-gerar-um-certificado-lets-encrypt/) ou qualquer [certificado digital de terceiros](/pt-br/documentacao/secure/workloads/guides/criar-certificado-digital/).
 - [Canonical Names (CNAMES)](/pt-br/documentacao/build/applications/reference/domains/#cname): escreva todos os CNAMES que seu domínio possui, um por linha, sem pontuação.
 - O switch **CNAME Access Only**: ative se você quiser que seus usuários acessem sua aplicação apenas pelo CNAME.
 - **Application**: selecione a aplicação à qual seu domínio será conectado.
@@ -39,7 +39,7 @@ Clique em **Add Domain** e preencha os campos:
 Clique em **Save**. Seu domínio personalizado está conectado à aplicação.
 
 :::note
-Seu domínio raiz (exemplo: `myapp.com`) e cada um dos seus subdomínios (exemplo: `user.myapp.com`) devem ser configurados como um domínio autônomo. Para outras maneiras de configurar domínios e subdomínios, visite a [documentação de Domínios](/pt-br/documentacao/build/workloads/guides/configurar-dominio/).
+Seu domínio raiz (exemplo: `myapp.com`) e cada um dos seus subdomínios (exemplo: `user.myapp.com`) devem ser configurados como um domínio autônomo. Para outras maneiras de configurar domínios e subdomínios, visite a [documentação de Domínios](/pt-br/documentacao/secure/workloads/guides/configurar-dominio/).
 :::
 
 Se você selecionou um certificado Let's Encrypt, precisa concluir um processo específico para definir as configurações de DNS. Consulte [Como gerar um certificado Let's Encrypt](/pt-br/documentacao/build/applications/guides/como-gerar-um-certificado-lets-encrypt/) para os detalhes.
@@ -54,7 +54,7 @@ Com esta opção, a Azion hospeda e gerencia suas zonas e registros DNS: você r
 
 Crie uma zona DNS e migre a sua resolução de nome para a Azion:
 
-<LinkButton link="/pt-br/documentacao/build/workloads/guides/migrar-ns-para-a-azion/" label="Migre seus NS para a Azion" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/secure/workloads/guides/migrar-ns-para-a-azion/" label="Migre seus NS para a Azion" severity="secondary" />
 
 ---
 
@@ -64,7 +64,7 @@ Crie uma zona DNS e migre a sua resolução de nome para a Azion:
 
 Configure seu provedor de DNS de terceiros e associe o endereço do seu domínio personalizado ao endereço `xxxxxxxxxx.map.azionedge.net`:
 
-<LinkButton link="/pt-br/documentacao/build/workloads/guides/apontar-dominio-para-a-azion/" label="Aponte seu domínio para a Azion" severity="secondary" />
+<LinkButton link="/pt-br/documentacao/secure/workloads/guides/apontar-dominio-para-a-azion/" label="Aponte seu domínio para a Azion" severity="secondary" />
 
 ---
 

@@ -3,7 +3,7 @@ title: Como instanciar functions em sua aplicação
 description: >-
   Aprenda como instanciar e configurar Functions na Azion para otimizar sua
   application usando o Console ou Real-Time Manager.
-permalink: /documentacao/build/applications/guides/instanciar-functions/
+permalink: /documentacao/build/functions/guides/instanciar-functions/
 meta_tags: >-
   Azion, Functions, serverless, Applications, Real-Time Manager,
   Console, instanciar função, Edge Computing, API Azion, Azion Marketplace
@@ -18,7 +18,7 @@ Instancie [funções serverless](/pt-br/documentacao/build/applications/referenc
 Este guia descreve como você pode instanciar a função *Azion - Hello World*, pré-configurada em sua conta. Você pode repetir este processo usando qualquer função já disponível no [Azion Marketplace](/pt-br/documentacao/marketplace/reference/marketplace/) ou [desenvolver sua própria função](/pt-br/documentacao/build/functions/guides/api-builder/).
 
 :::caution[Atenção]
-Você deve ativar o módulo [Functions](/pt-br/documentacao/build/applications/reference/functions/) para implementar funções em sua aplicação. Se **Functions** estiver ativado, o tempo de computação e as invocações podem gerar custos relacionados ao uso. Consulte a [página de preços](/pt-br/documentacao/platform/pricing/) para mais informações.
+Você deve ativar o módulo [Functions](/pt-br/documentacao/build/applications/functions/) para implementar funções em sua aplicação. Se **Functions** estiver ativado, o tempo de computação e as invocações podem gerar custos relacionados ao uso. Consulte a [página de preços](/pt-br/documentacao/platform/pricing/) para mais informações.
 :::
 
 ---
@@ -47,7 +47,7 @@ A página de funções agora lista a nova instância criada. No entanto, esta no
 14. Na seção **Criteria**, selecione a variável `${uri}`.
 
 :::note
-A variável `${uri}` pode já estar selecionada por padrão se você não ativou o módulo [Application Accelerator](/pt-br/documentacao/build/applications/reference/application-accelerator/).
+A variável `${uri}` pode já estar selecionada por padrão se você não ativou o módulo [Application Accelerator](/pt-br/documentacao/build/applications/application-accelerator/).
 :::
 
 15. Como operador de comparação, selecione **is equal**.
@@ -56,11 +56,11 @@ A variável `${uri}` pode já estar selecionada por padrão se você não ativou
 18. Selecione a função **Hello World**.
 19. Clique no botão **Save**.
 
-Para ver sua função em execução, acesse sua aplicação [usando seu domínio](/pt-br/documentacao/build/workloads/guides/configurar-dominio/) e o URI definido na regra, que está no formato `xxxxxxxxx.map.azionedge.net/hello-world`.
+Para ver sua função em execução, acesse sua aplicação [usando seu domínio](/pt-br/documentacao/secure/workloads/guides/configurar-dominio/) e o URI definido na regra, que está no formato `xxxxxxxxx.map.azionedge.net/hello-world`.
 </Fragment>
 
 <Fragment slot="panel.api">
-1. Execute a seguinte requisição `PATCH` em seu terminal, substituindo `[TOKEN VALUE]` por seu [personal token](/pt-br/documentacao/account/guides/personal-tokens/) e a variável `<application_id>` por [seu ID de application](/pt-br/documentacao/build/applications/guides/definir-configuracoes-principais/) para ativar o módulo [Functions](/pt-br/documentacao/build/applications/reference/functions/):
+1. Execute a seguinte requisição `PATCH` em seu terminal, substituindo `[TOKEN VALUE]` por seu [personal token](/pt-br/documentacao/account/guides/personal-tokens/) e a variável `<application_id>` por [seu ID de application](/pt-br/documentacao/build/applications/guides/definir-configuracoes-principais/) para ativar o módulo [Functions](/pt-br/documentacao/build/applications/functions/):
 
 <Code lang="bash" code={` 
 curl --request PATCH \
@@ -223,7 +223,7 @@ Para mais informações sobre o endpoint de regras, veja o guia [sobre como trab
 
 10. Aguarde alguns minutos para que as alterações se propaguem.
 
-Para ver sua função sendo executada, acesse sua aplicação [usando seu domínio](/pt-br/documentacao/build/workloads/guides/configurar-dominio/) e o URI definido na regra, que está no formato `xxxxxxxxx.map.azionedge.net/hello-world`.
+Para ver sua função sendo executada, acesse sua aplicação [usando seu domínio](/pt-br/documentacao/secure/workloads/guides/configurar-dominio/) e o URI definido na regra, que está no formato `xxxxxxxxx.map.azionedge.net/hello-world`.
 
 :::tip
 Confira a [documentação da API da Azion](https://api.azion.com/) e a [especificação OpenAPI](https://github.com/aziontech/azionapi-openapi/) para saber mais sobre o que a API Azion pode oferecer.

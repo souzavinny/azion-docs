@@ -40,7 +40,7 @@ Esta solução é ideal para provedores de conteúdo que necessitam de alta fide
 ### Componentes
 
 - [Applications](/pt-br/documentacao/build/applications/) permite que você construa aplicações na Azion Web Platform e entregue seu conteúdo.
-  - [Cache](/pt-br/documentacao/build/applications/reference/cache/) permite que você configure como sua aplicação armazena em cache o conteúdo para reduzir a latência e aumentar as taxas de transferência.
+  - [Cache](/pt-br/documentacao/build/applications/cache/) permite que você configure como sua aplicação armazena em cache o conteúdo para reduzir a latência e aumentar as taxas de transferência.
   - O componente de **ingestão** recebe sinal dos codificadores e distribui conteúdo no formato HLS. Ele funciona como a origem para a aplicação.
 
 ---
@@ -48,8 +48,8 @@ Esta solução é ideal para provedores de conteúdo que necessitam de alta fide
 ## Implementação
 
 1. [Crie uma aplicação](/pt-br/documentacao/build/applications/guides/criar-uma-aplicacao/).
-2. [Crie um domínio](/pt-br/documentacao/build/workloads/guides/configurar-dominio/#criar-um-dominio-com-a-azion) e [associe-o à aplicação](/pt-br/documentacao/build/workloads/guides/configurar-dominio/#vincular-um-dominio-personalizado-a-sua-application).
-3. Configure [políticas de cache para HLS](/pt-br/documentacao/build/applications/guides/implementar-cache-hls/) na aplicação.
+2. [Crie um domínio](/pt-br/documentacao/secure/workloads/guides/configurar-dominio/#criar-um-dominio-com-a-azion) e [associe-o à aplicação](/pt-br/documentacao/secure/workloads/guides/configurar-dominio/#vincular-um-dominio-personalizado-a-sua-application).
+3. Configure [políticas de cache para HLS](/pt-br/documentacao/build/applications/cache/guides/implementar-cache-hls/) na aplicação.
 4. Configure sua fonte e codificador apontando para as entradas DNS de ingestão da Azion.
 5. Transmita seu conteúdo via Azion Web Platform.
 

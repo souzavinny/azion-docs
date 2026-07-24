@@ -51,11 +51,11 @@ After all this process, the application returns a response to the request.
 
 ## Components
 - [Applications](/en/documentation/build/applications/): set up an application to configure delivery and cache policies, create rules to automate cache policy assignments based on content type, and determine how content is cached.
-    - [Cache](/en/documentation/build/applications/reference/cache/): global module to cache content at the edge.
-    - [Functions](/en/documentation/build/applications/reference/functions/): allows you to create event-driven, serverless applications, at the edge of the network, closer to users.
+    - [Cache](/en/documentation/build/applications/cache/): global module to cache content at the edge.
+    - [Functions](/en/documentation/build/applications/functions/): allows you to create event-driven, serverless applications, at the edge of the network, closer to users.
     - [Rules Engine](/en/documentation/build/applications/reference/rules-engine/): a tool to configure the scenarios in which a specific cache policy is enforced.
-    - [Tiered Cache](/en/documentation/build/applications/reference/cache/tiered-cache/): module that creates an additional cache layer between the edge and your origin servers, reducing latency and infrastructure costs. 
-    - [Load Balancer](/en/documentation/build/connectors/reference/load-balancer/): module designed to balance traffic across your origins, data centers, or cloud providers, mitigating network congestion and server overload.
+    - [Tiered Cache](/en/documentation/build/applications/cache/tiered-cache/): module that creates an additional cache layer between the edge and your origin servers, reducing latency and infrastructure costs. 
+    - [Load Balancer](/en/documentation/secure/connectors/reference/load-balancer/): module designed to balance traffic across your origins, data centers, or cloud providers, mitigating network congestion and server overload.
     - [Object Storage](/en/documentation/store/object-storage/): a scalable and secure storage service designed to integrate object storage with the Azion Web Platform using the S3 standard for object operations.
     - [Origins](/en/documentation/build/applications/reference/origins/):  allows you to customize the source address of your Application content, the Host header of your application, the path, and the HMAC authentication credentials for protected services.
     - [Domains](/en/documentation/build/applications/reference/domains/): register a custom domain with Azion to deliver the application.
@@ -72,10 +72,10 @@ After all this process, the application returns a response to the request.
     - Use the [Azion API](https://api.azion.com/#9c61e0fd-e7aa-4a5f-b29e-7f9d71b98d5f) to create an application.
     - Use the [Azion CLI](/en/documentation/devtools/cli/reference/create/#edge-applications) to create and deploy an application.
 2. Create a domain and associate it with the application: 
-    - On Console, [create a domain](/en/documentation/build/workloads/guides/configure-a-domain/) using the + Create button on the homepage.
+    - On Console, [create a domain](/en/documentation/secure/workloads/guides/configure-a-domain/) using the + Create button on the homepage.
     - Use the [Azion API](https://api.azion.com/#a258eabc-b419-47e6-be68-45c2ce0150dd) to create a domain.
     - If you created an application through a template, the domain is created for you.
-3. Point domain to Azion: [update your DNS settings](/en/documentation/build/workloads/guides/migrate-ns-to-azion/) to point your domain's CNAME record to the Azion CDN endpoint provided for your domain. This step isn't mandatory.
+3. Point domain to Azion: [update your DNS settings](/en/documentation/secure/workloads/guides/migrate-ns-to-azion/) to point your domain's CNAME record to the Azion CDN endpoint provided for your domain. This step isn't mandatory.
 
 :::note 
 The application is accessible through the domain provided by Azion, which looks similar to: `ftd1cvntfl.map.azionedge.net`. 
@@ -87,5 +87,5 @@ The application is accessible through the domain provided by Azion, which looks 
 ## Related docs
 
 - [Azion Marketplace](/en/documentation/marketplace/reference/marketplace/)
-- [Azion Runtime Web APIs compatibility](/en/documentation/build/functions/runtime-apis/frameworks-compatibility/)
-- [Azion Runtime Node.js compatibility](/en/documentation/build/functions/runtime-apis/compatibility/node/)
+- [Azion Runtime Web APIs compatibility](/en/documentation/products/devtools/azion-edge-runtime/frameworks-compatibility/)
+- [Azion Runtime Node.js compatibility](/en/documentation/products/azion-edge-runtime/compatibility/node/)

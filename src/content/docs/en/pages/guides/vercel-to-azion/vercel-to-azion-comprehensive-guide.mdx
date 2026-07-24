@@ -40,18 +40,18 @@ The following table provides a comprehensive mapping of Vercel products and conf
 | :------------------------ | :---------- | :--------------- |
 | **Projects** | Main application resource for build, deployment, environment, domains, and runtime settings. | [Applications](https://www.azion.com/en/documentation/build/applications/) |
 | **Production Deployments** | Production builds promoted to customer-facing domains. | [Applications](https://www.azion.com/en/documentation/build/applications/) + [Azion CLI](https://www.azion.com/en/documentation/devtools/cli/) |
-| **CI/CD and Preview Deployments** | Git-integrated build and deployment platform with automatic preview environments. | [Applications](https://www.azion.com/en/documentation/build/applications/) + [Azion CLI](https://www.azion.com/en/documentation/devtools/cli/) + [Preview Deployment](https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-api/preview-deployment/) |
-| **Content Delivery Network** | Global delivery for caching, routing, compression, TLS, redirects, and rewrites. | [Applications](https://www.azion.com/en/documentation/build/applications/) + [Cache](https://www.azion.com/en/documentation/build/applications/reference/cache/) + [Rules Engine](https://www.azion.com/en/documentation/build/applications/reference/rules-engine/) |
+| **CI/CD and Preview Deployments** | Git-integrated build and deployment platform with automatic preview environments. | [Applications](https://www.azion.com/en/documentation/build/applications/) + [Azion CLI](https://www.azion.com/en/documentation/devtools/cli/) + [Preview Deployment](https://www.azion.com/en/documentation/products/applications/functions/runtime-api/preview-deployment/) |
+| **Content Delivery Network** | Global delivery for caching, routing, compression, TLS, redirects, and rewrites. | [Applications](https://www.azion.com/en/documentation/build/applications/) + [Cache](https://www.azion.com/en/documentation/build/applications/cache/) + [Rules Engine](https://www.azion.com/en/documentation/build/applications/reference/rules-engine/) |
 | **Redirects and rewrites** | Path and host routing configured in project settings, framework config, or `vercel.json`. | [Rules Engine for Applications](https://www.azion.com/en/documentation/build/applications/reference/rules-engine/) |
 | **Headers** | Custom request or response headers configured for routes. | [Rules Engine for Applications](https://www.azion.com/en/documentation/build/applications/reference/rules-engine/) |
-| **Image Optimization** | On-demand image transformation and delivery. | [Image Processor](https://www.azion.com/en/documentation/build/applications/reference/image-processor/) |
+| **Image Optimization** | On-demand image transformation and delivery. | [Image Processor](https://www.azion.com/en/documentation/build/applications/image-processor/) |
 | **Microfrontends** | Compose independently deployed frontend projects under centralized routing. | [Applications](https://www.azion.com/en/documentation/build/applications/) + [Rules Engine](https://www.azion.com/en/documentation/build/applications/reference/rules-engine/) |
-| **Vercel Functions** | Managed server-side functions for APIs, dynamic pages, and backend integrations. | [Functions for Applications](https://www.azion.com/en/documentation/build/applications/reference/functions/) |
-| **Fluid Compute** | Server-side compute model designed to improve concurrency and reduce cold starts for dynamic workloads. | [Functions](https://www.azion.com/en/documentation/build/applications/reference/functions/) |
+| **Vercel Functions** | Managed server-side functions for APIs, dynamic pages, and backend integrations. | [Functions for Applications](https://www.azion.com/en/documentation/build/applications/functions/) |
+| **Fluid Compute** | Server-side compute model designed to improve concurrency and reduce cold starts for dynamic workloads. | [Functions](https://www.azion.com/en/documentation/build/applications/functions/) |
 | **Environment Variables** | Project-level values for production, preview, and development environments. | [Environment Variables](https://www.azion.com/en/documentation/get-started/frameworks/environment-variables/) + [Functions Instances](https://www.azion.com/en/documentation/build/applications/reference/functions-instances/) |
-| **AI Cloud** | Platform for building and operating AI applications. | [AI Inference](https://www.azion.com/en/documentation/build/ai-inference/) + [Functions](https://www.azion.com/en/documentation/build/applications/reference/functions/) + [Applications](https://www.azion.com/en/documentation/build/applications/) |
+| **AI Cloud** | Platform for building and operating AI applications. | [AI Inference](https://www.azion.com/en/documentation/build/ai-inference/) + [Functions](https://www.azion.com/en/documentation/build/applications/functions/) + [Applications](https://www.azion.com/en/documentation/build/applications/) |
 | **AI SDK** | TypeScript toolkit for building AI-powered applications, agents, streaming interfaces, and tool-calling experiences. | [AI Inference](https://www.azion.com/en/documentation/build/ai-inference/) + [Azion AI Client](https://www.azion.com/en/documentation/devtools/lib/reference/ai-client/) + [Azion Lib](https://www.azion.com/en/documentation/devtools/lib/) |
-| **AI Gateway** | Unified endpoint for model access, routing, fallbacks, retries, usage monitoring, and observability. | [AI Inference](https://www.azion.com/en/documentation/build/ai-inference/) + [Functions](https://www.azion.com/en/documentation/build/applications/reference/functions/) + [Real-Time Events](https://www.azion.com/en/documentation/observe/real-time-events/) |
+| **AI Gateway** | Unified endpoint for model access, routing, fallbacks, retries, usage monitoring, and observability. | [AI Inference](https://www.azion.com/en/documentation/build/ai-inference/) + [Functions](https://www.azion.com/en/documentation/build/applications/functions/) + [Real-Time Events](https://www.azion.com/en/documentation/observe/real-time-events/) |
 | **Vercel Blob** | Managed object storage for files, uploads, images, documents, and videos. | [Object Storage](https://www.azion.com/en/documentation/store/object-storage/) |
 | **Edge Config** | Globally replicated low-latency data store for feature flags, experiments, redirects, and configuration. | [KV Store](https://www.azion.com/en/documentation/store/kv-store/) |
 | **Platform Security** | DDoS mitigation, TLS, platform firewalling, access controls, and security monitoring. | [Firewall](https://www.azion.com/en/documentation/secure/firewall/) + [DDoS Protection](https://www.azion.com/en/documentation/secure/ddos-protection/) + [Network Shield](https://www.azion.com/en/documentation/secure/network-shield/) |
@@ -61,7 +61,7 @@ The following table provides a comprehensive mapping of Vercel products and conf
 | **BotID** | Invisible bot verification for sensitive actions. | [Bot Manager](https://www.azion.com/en/documentation/secure/bot-manager/) |
 | **Advanced Deployment Protection** | Access controls for deployment URLs using authentication, trusted IPs, passwords, or bypasses. | [Firewall](https://www.azion.com/en/documentation/secure/firewall/) + [Rules Engine for Firewall](https://www.azion.com/en/documentation/secure/firewall/reference/rules-engine/) + [Network Lists](https://www.azion.com/en/documentation/secure/firewall/reference/network-shield/network-lists/) |
 | **SAML Single Sign-On** | Centralized workforce authentication through a SAML-compatible identity provider. | [Single Sign-On](https://www.azion.com/en/documentation/account/reference/single-sign-on/) |
-| **Domains and DNS** | Custom domains, DNS records, nameservers, and SSL certificate automation. | [Workloads](https://www.azion.com/en/documentation/build/workloads/) + [Edge DNS](https://www.azion.com/en/documentation/secure/edge-dns/) + [Certificate Manager](https://www.azion.com/en/documentation/build/applications/reference/certificate-manager/) |
+| **Domains and DNS** | Custom domains, DNS records, nameservers, and SSL certificate automation. | [Workloads](https://www.azion.com/en/documentation/secure/workloads/) + [Edge DNS](https://www.azion.com/en/documentation/secure/edge-dns/) + [Certificate Manager](https://www.azion.com/en/documentation/build/applications/reference/certificate-manager/) |
 | **Observability** | Monitoring for traffic, builds, functions, external API calls, performance, errors, and usage. | [Real-Time Metrics](https://www.azion.com/en/documentation/observe/real-time-metrics/) + [Real-Time Events](https://www.azion.com/en/documentation/observe/real-time-events/) + [Data Stream](https://www.azion.com/en/documentation/observe/data-stream/) |
 | **Speed Insights** | Real-user performance monitoring based on Core Web Vitals. | [Edge Pulse](https://www.azion.com/en/documentation/observe/edge-pulse/) + [Real-Time Metrics](https://www.azion.com/en/documentation/observe/real-time-metrics/) |
 | **Web Analytics** | Website analytics for page views, visitors, referrers, demographics, custom events, and feature usage. | [Edge Pulse](https://www.azion.com/en/documentation/observe/edge-pulse/) + [Real-Time Metrics](https://www.azion.com/en/documentation/observe/real-time-metrics/) |
@@ -185,7 +185,7 @@ Before recreating the project in Azion, inventory:
 * [Azion CLI overview](https://www.azion.com/en/documentation/devtools/cli/)
 * [azion.config.js reference](https://www.azion.com/en/documentation/devtools/cli/reference/azion-config-js/)
 * [azion deploy command](https://www.azion.com/en/documentation/devtools/cli/reference/deploy/)
-* [Azion Preview Deployment](https://www.azion.com/en/documentation/build/functions/runtime-apis/functions/runtime-api/preview-deployment/)
+* [Azion Preview Deployment](https://www.azion.com/en/documentation/products/applications/functions/runtime-api/preview-deployment/)
 
 ### 3. Migrating Environment Variables
 
@@ -346,8 +346,8 @@ export default config;
 
 * [Applications](https://www.azion.com/en/documentation/build/applications/)
 * [Rules Engine for Applications](https://www.azion.com/en/documentation/build/applications/reference/rules-engine/)
-* [Connectors](https://www.azion.com/en/documentation/build/connectors/)
-* [Functions](https://www.azion.com/en/documentation/build/applications/reference/functions/)
+* [Connectors](https://www.azion.com/en/documentation/secure/connectors/)
+* [Functions](https://www.azion.com/en/documentation/build/applications/functions/)
 
 ### 5. Migrating Vercel Functions and Fluid Compute to Functions
 
@@ -417,10 +417,10 @@ export default defineConfig({
 
 #### Reference documentation
 
-* [Functions](https://www.azion.com/en/documentation/build/applications/reference/functions/)
+* [Functions](https://www.azion.com/en/documentation/build/applications/functions/)
 * [Functions Instances](https://www.azion.com/en/documentation/build/applications/reference/functions-instances/)
 * [Runtime APIs](https://www.azion.com/en/documentation/get-started/frameworks/runtime-apis/)
-* [JavaScript Runtime APIs reference](https://www.azion.com/en/documentation/build/functions/runtime-apis/javascript/)
+* [JavaScript Runtime APIs reference](https://www.azion.com/en/documentation/runtime-apis/javascript/)
 
 ### 6. Migrating Cache and Dynamic Delivery Behavior
 
@@ -491,9 +491,9 @@ curl -X POST 'https://api.azion.com/v4/workspace/purge/wildcard' \
 
 #### Reference documentation
 
-* [Cache](https://www.azion.com/en/documentation/build/applications/reference/cache/)
+* [Cache](https://www.azion.com/en/documentation/build/applications/cache/)
 * [Cache Settings](https://www.azion.com/en/documentation/build/applications/reference/cache-settings/)
-* [Tiered Cache](https://www.azion.com/en/documentation/build/applications/reference/cache/tiered-cache/)
+* [Tiered Cache](https://www.azion.com/en/documentation/build/applications/cache/tiered-cache/)
 * [Real-Time Purge](https://www.azion.com/en/documentation/build/applications/reference/real-time-purge/)
 
 ### 7. Migrating Image Optimization
@@ -567,8 +567,8 @@ Azion Image Processor automatically optimizes image format based on the client's
 
 #### Reference documentation
 
-* [Image Processor](https://www.azion.com/en/documentation/build/applications/reference/image-processor/)
-* [How to process images](https://www.azion.com/en/documentation/build/applications/guides/process-images/)
+* [Image Processor](https://www.azion.com/en/documentation/build/applications/image-processor/)
+* [How to process images](https://www.azion.com/en/documentation/build/applications/image-processor/guides/process-images/)
 * [Object Storage](https://www.azion.com/en/documentation/store/object-storage/)
 
 ### 8. Migrating AI Workloads
@@ -620,7 +620,7 @@ export default {
 * [AI Inference](https://www.azion.com/en/documentation/build/ai-inference/)
 * [AI Inference models](https://www.azion.com/en/documentation/build/ai-inference/reference/models/)
 * [Azion AI Client](https://www.azion.com/en/documentation/devtools/lib/reference/ai-client/)
-* [Functions](https://www.azion.com/en/documentation/build/applications/reference/functions/)
+* [Functions](https://www.azion.com/en/documentation/build/applications/functions/)
 
 ## Secure
 
@@ -645,7 +645,7 @@ Azion provides free Let's Encrypt certificates with automatic renewal.
 
 #### Configure the Domain
 
-Create a workload in Azion Console and associate your custom domain. See [Workloads Documentation](https://www.azion.com/en/documentation/build/workloads/).
+Create a workload in Azion Console and associate your custom domain. See [Workloads Documentation](https://www.azion.com/en/documentation/secure/workloads/).
 
 #### Point the Domain to Azion
 
@@ -689,8 +689,8 @@ Before switching production traffic, confirm: certificate is active, domain is a
 
 #### Reference documentation
 
-* [Workloads](https://www.azion.com/en/documentation/build/workloads/)
-* [Create an Azion custom domain](https://www.azion.com/en/documentation/build/workloads/guides/create-azion-custom-domain/)
+* [Workloads](https://www.azion.com/en/documentation/secure/workloads/)
+* [Create an Azion custom domain](https://www.azion.com/en/documentation/secure/workloads/guides/create-azion-custom-domain/)
 * [Edge DNS](https://www.azion.com/en/documentation/secure/edge-dns/)
 * [Certificate Manager](https://www.azion.com/en/documentation/build/applications/reference/certificate-manager/)
 
@@ -967,8 +967,8 @@ curl -X POST 'https://api.azionapi.net/v4/workspace/kv/namespaces' \
 
 * [KV Store](https://www.azion.com/en/documentation/store/kv-store/)
 * [How to manage KV Store with Functions](https://www.azion.com/en/documentation/store/kv-store/guides/manage-with-functions/)
-* [KV Store API](https://www.azion.com/en/documentation/build/functions/runtime-apis/kv-store/)
-* [Functions](https://www.azion.com/en/documentation/build/applications/reference/functions/)
+* [KV Store API](https://www.azion.com/en/documentation/runtime/api-reference/kv-store/)
+* [Functions](https://www.azion.com/en/documentation/build/applications/functions/)
 
 ## Observe
 

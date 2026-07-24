@@ -59,10 +59,10 @@ O Image Processor da Azion oferece simplicidade e automação para a [gestão de
     />
 
 2. Crie um domínio e o associe à aplicação: 
-    - No [Console](https://console.azion.com), [crie um domínio](/pt-br/documentacao/build/workloads/guides/configurar-dominio/) usando o botão **+ Create** na barra de navegação superior.
+    - No [Console](https://console.azion.com), [crie um domínio](/pt-br/documentacao/secure/workloads/guides/configurar-dominio/) usando o botão **+ Create** na barra de navegação superior.
     - Utilize a [Azion API](https://api.azion.com/#a258eabc-b419-47e6-be68-45c2ce0150dd) para criar um domínio.
     - Se você criou uma aplicação através de um template ou do Azion CLI, o domínio é criado para você.
-3. Configure políticas de cache: [configure uma política de cache](/pt-br/documentacao/build/applications/guides/cache-settings/) para imagens. A configuração recomendada é:
+3. Configure políticas de cache: [configure uma política de cache](/pt-br/documentacao/build/applications/cache/guides/cache-settings/) para imagens. A configuração recomendada é:
     - Imagens: defina configurações de cache para arquivos de imagem para otimizar a entrega. Para imagens, é recomendado mantê-las em cache no edge por períodos mais longos, como *1 ano* (31536000 segundos).
 4. Aplique políticas de cache em cenários específicos: use Rules Engine para [aplicar políticas específicas com base em várias condições](/pt-br/documentacao/build/applications/guides/rules-engine/). Crie e modifique as regras:
     - Regra padrão: ative o Image Processor com o comportamento Otimize Imagens.
@@ -70,7 +70,7 @@ O Image Processor da Azion oferece simplicidade e automação para a [gestão de
 5. Aplique algoritmos de processamento de imagem à sua aplicação:
     - Aplique consultas `?ims` a partir do código da própria aplicação.
     - Crie uma regra para reescrever a URL da requisição para adicionar a consulta `?ims`.
-6. Aponte o domínio para Azion: [atualize suas configurações de DNS](/pt-br/documentacao/build/workloads/guides/migrar-ns-para-a-azion/) para apontar o registro CNAME do seu domínio para o endpoint Azion fornecido para o seu domínio.
+6. Aponte o domínio para Azion: [atualize suas configurações de DNS](/pt-br/documentacao/secure/workloads/guides/migrar-ns-para-a-azion/) para apontar o registro CNAME do seu domínio para o endpoint Azion fornecido para o seu domínio.
 7. Teste e monitore: depois de configurar sua entrega de conteúdo, teste a entrega de conteúdo para garantir que está funcionando conforme esperado e [monitore o acesso de entrada](/pt-br/documentacao/observe/overview/).
 8. Faça ajustes nas políticas de cache, regras, otimização de imagem ou outras configurações conforme necessário com base nas métricas de desempenho e feedback dos usuários.
 
@@ -78,5 +78,5 @@ O Image Processor da Azion oferece simplicidade e automação para a [gestão de
 
 ## Documentos relacionados 
 
-- [Primeiros passos com Image Processor](/pt-br/documentacao/build/applications/guides/image-processor/).
+- [Primeiros passos com Image Processor](/pt-br/documentacao/build/applications/image-processor/first-steps/).
 - [Template de Otimização de Imagem](https://console.azion.com/create/azion/image-optimization).

@@ -21,7 +21,7 @@ Object Storage allows you to create buckets, which can be used as origins for ap
 - **Native S3 Compatibility**: Use the S3 protocol for immediate compatibility with the ecosystem of tools, SDKs, and libraries you already use, such as AWS CLI and Boto3.
 
 :::note
-This product is available through [Console](https://console.azion.com/object-storage), [Azion API](https://api.azion.com), [Azion Runtime](/en/documentation/build/functions/runtime-apis/overview/), and [Azion CLI](/en/documentation/devtools/cli/).
+This product is available through [Console](https://console.azion.com/object-storage), [Azion API](https://api.azion.com), [Azion Runtime](/en/documentation/runtime/overview/), and [Azion CLI](/en/documentation/devtools/cli/).
 :::
 
 ---
@@ -32,7 +32,7 @@ When using **Object Storage**, it's essential to understand the correct approach
 
 ### Use Applications with Connectors for object delivery
 
-The recommended way to deliver objects stored in **Object Storage** to end users is through [Applications](/en/documentation/build/applications/) connected to your buckets using [Connectors](/en/documentation/build/connectors/). This approach:
+The recommended way to deliver objects stored in **Object Storage** to end users is through [Applications](/en/documentation/build/applications/) connected to your buckets using [Connectors](/en/documentation/secure/connectors/). This approach:
 
 - Routes traffic through Azion's edge network, ensuring optimal performance and low latency
 - Provides caching capabilities to reduce origin requests
@@ -69,7 +69,7 @@ For managing objects (upload, delete, list operations), continue using the S3 en
 | Upload and download objects | [How to upload and download objects from an Object Storage bucket](/en/documentation/store/object-storage/guides/bucket-actions/) |
 | Use bucket as origin | [How to use an Object Storage bucket as the origin of a static application](/en/documentation/store/object-storage/guides/use-bucket-as-origin/) |
 | Set up S3 credentials | [Set up S3 credentials for Object Storage](/en/documentation/store/object-storage/guides/s3-protocol-for-object-storage/) |
-| Runtime API | [Object Storage API](/en/documentation/build/functions/runtime-apis/storage/) |
+| Runtime API | [Object Storage API](/en/documentation/runtime/api-reference/storage/) |
 
 ---
 
@@ -87,7 +87,7 @@ Best practices for naming buckets include specifying what types of objects are s
 
 ## Objects
 
-Objects, or files, can be uploaded, modified, downloaded, and removed from buckets using the [Azion API](https://api.azion.com), [Azion Runtime](/en/documentation/build/functions/runtime-apis/overview/), and the [S3 protocol](#s3-protocol-compatibility).
+Objects, or files, can be uploaded, modified, downloaded, and removed from buckets using the [Azion API](https://api.azion.com), [Azion Runtime](/en/documentation/runtime/overview/), and the [S3 protocol](#s3-protocol-compatibility).
 
 ### Object key
 
@@ -117,7 +117,7 @@ When creating an Object Storage origin, you can set a prefix to serve to the edg
 
 ### Origin
 
-With **Object Storage**, you can use buckets as an [origin](/en/documentation/build/connectors/#connector-type) in Azion **Connectors** to retrieve the content of an application.
+With **Object Storage**, you can use buckets as an [origin](/en/documentation/secure/connectors/#connector-type) in Azion **Connectors** to retrieve the content of an application.
 
 You can determine if the content is retrieved from the root of the bucket or from a prefix within the bucket.
 

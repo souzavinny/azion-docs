@@ -30,7 +30,7 @@ Azion generates a domain for every application, in this format: `xxxxxxxxxx.map.
 Click **Add Domain** and fill in the fields:
 
 - **Add Configuration Name**: type a name for your domain. You can use the same name as your domain name.
-- [Digital Certificate](/en/documentation/secure/certificate-manager/): select the standard Azion certificate (SAN), a [Let's Encrypt certificate](/en/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate/), or any [third-party digital certificate](/en/documentation/build/workloads/guides/create-a-digital-certificate/).
+- [Digital Certificate](/en/documentation/secure/certificate-manager/): select the standard Azion certificate (SAN), a [Let's Encrypt certificate](/en/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate/), or any [third-party digital certificate](/en/documentation/secure/workloads/guides/create-a-digital-certificate/).
 - [Canonical Names (CNAMES)](/en/documentation/build/applications/reference/domains/#cname): write all the CNAMES your domain has, one per line, no punctuation.
 - **CNAME Access Only** switch: activate it if you want your users to access your application only by CNAME.
 - **Application**: select the application your domain will be connected to.
@@ -39,7 +39,7 @@ Click **Add Domain** and fill in the fields:
 Click **Save**. Your custom domain is now connected to the application.
 
 :::note
-Your root domain (example: `myapp.com`) and each of your subdomains (example: `user.myapp.com`) must be configured as a standalone domain. For other ways to configure domains and subdomains, visit the [Domains documentation](/en/documentation/build/workloads/guides/configure-a-domain/).
+Your root domain (example: `myapp.com`) and each of your subdomains (example: `user.myapp.com`) must be configured as a standalone domain. For other ways to configure domains and subdomains, visit the [Domains documentation](/en/documentation/secure/workloads/guides/configure-a-domain/).
 :::
 
 If you selected a Let's Encrypt certificate, you need to complete a specific process to configure the DNS settings. Check [How to generate a Let's Encrypt certificate](/en/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate/) for the details.
@@ -54,7 +54,7 @@ With this option, Azion hosts and manages your DNS zones and records: you redire
 
 Create a DNS zone and migrate your name resolution to Azion:
 
-<LinkButton link="/en/documentation/build/workloads/guides/migrate-ns-to-azion/" label="Migrate your NS to Azion" severity="secondary" />
+<LinkButton link="/en/documentation/secure/workloads/guides/migrate-ns-to-azion/" label="Migrate your NS to Azion" severity="secondary" />
 
 ---
 
@@ -64,7 +64,7 @@ Create a DNS zone and migrate your name resolution to Azion:
 
 Configure your third-party DNS provider and associate your custom domain's address with the `xxxxxxxxxx.map.azionedge.net` address:
 
-<LinkButton link="/en/documentation/build/workloads/guides/point-domain-to-azion/" label="Point your domain to Azion" severity="secondary" />
+<LinkButton link="/en/documentation/secure/workloads/guides/point-domain-to-azion/" label="Point your domain to Azion" severity="secondary" />
 
 ---
 

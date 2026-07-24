@@ -67,7 +67,7 @@ Free certificates, generated internally by Azion (Azion SAN), don't support mTLS
 
 [Let's Encrypt](https://letsencrypt.org/)™ is a nonprofit global CA that allows people and organizations to obtain, renew, and manage TLS certificates for free. When [creating a Domain](/en/documentation/build/applications/reference/domains/) with Azion, you may choose to obtain a TLS certificate signed by Let's Encrypt. You can request Let's Encrypt certificates for domains hosted in [Edge DNS](/en/documentation/secure/edge-dns/) or in a third-party DNS provider.
 
-Once you [create a domain with Azion](/en/documentation/build/workloads/guides/configure-a-domain/), you can choose the option **Let's Encrypt** to automatically generate a Let's Encrypt certificate. An entry for this certificate will be listed in the **Certificate Manager** page in [Azion Console](https://console.azion.com). After the certificate undergoes DNS validation, issuance, and storage, it'll become active.
+Once you [create a domain with Azion](/en/documentation/secure/workloads/guides/configure-a-domain/), you can choose the option **Let's Encrypt** to automatically generate a Let's Encrypt certificate. An entry for this certificate will be listed in the **Certificate Manager** page in [Azion Console](https://console.azion.com). After the certificate undergoes DNS validation, issuance, and storage, it'll become active.
 
 Active Let's Encrypt certificates *will be renewed automatically before the expiration date* of 90 days, provided that you don't bind a custom certificate to the domain or delete the associated domain. Certificates that were unbound from a domain can be rebound if they remain valid.
 

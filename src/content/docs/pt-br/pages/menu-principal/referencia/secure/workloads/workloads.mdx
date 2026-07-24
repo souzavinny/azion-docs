@@ -4,7 +4,7 @@ description: >-
   Workloads é uma ferramenta do Azion Console que centraliza as configurações de protocolos de comunicação, como certificados, domínios, portas e protocolos.
 meta_tags: 'application, workloads, secure'
 namespace: documentation_products_secure_workloads
-permalink: /documentacao/build/workloads/
+permalink: /documentacao/secure/workloads/
 ---
 
 import LinkButton from 'azion-webkit/linkbutton'
@@ -20,7 +20,7 @@ Esta página documenta o novo produto Workloads. Se sua conta ainda não foi mig
 
 **Workloads** é uma funcionalidade do [Azion Console](https://console.azion.com) que centraliza as configurações de protocolos de comunicação, como certificados, domínios, portas e protocolos.
 
-Se você já possui um endereço de aplicação com um domínio existente como `www.azion.com`, pode [redirecionar seu tráfego para a Azion](/pt-br/documentacao/build/workloads/guides/apontar-dominio-para-a-azion/) configurando os registros no seu provedor de DNS e listando seus **domínios personalizados**.
+Se você já possui um endereço de aplicação com um domínio existente como `www.azion.com`, pode [redirecionar seu tráfego para a Azion](/pt-br/documentacao/secure/workloads/guides/apontar-dominio-para-a-azion/) configurando os registros no seu provedor de DNS e listando seus **domínios personalizados**.
 
 Você também pode vincular um **Digital Certificate** a seu workload para habilitar a criptografia de segurança HTTPS/TLS.
 
@@ -28,7 +28,7 @@ Você também pode vincular um **Digital Certificate** a seu workload para habil
 
 | Escopo | Recurso |
 | --- | --- |
-| Adicionando um domínio personalizado | [Primeiros passos](/pt-br/documentacao/build/workloads/guides/configurar-dominio/) |
+| Adicionando um domínio personalizado | [Primeiros passos](/pt-br/documentacao/secure/workloads/guides/configurar-dominio/) |
 | Sobre Certificados Digitais | [Certificados Digitais](/pt-br/documentacao/secure/certificate-manager/) |
 | Sobre mTLS | [mTLS](/pt-br/documentacao/secure/certificate-manager/reference/mtls/) |
 
@@ -43,7 +43,7 @@ Com esta configuração, é possível controlar onde sua configuração será im
 Selecione o tipo de infraestrutura para seu Worklaod. Uma vez que essa opção é salva, não pode ser alterada.
 
 :::tip[Dica]
-O arquivo local `etc/hosts` mapeia endereços IP para domínios. Ao [associar o IP do edge node ao CNAME](/pt-br/documentacao/build/applications/guides/testar-edge-application-atraves-do-arquivo-hosts/) atribuído ao seu domínio no arquivo `hosts`, você força a resolução DNS do seu computador a acessar esse domínio através do edge node e não por servidores DNS públicos. Assim, é possível fazer o staging da sua aplicação localmente como se já estivesse publicada no seu domínio personalizado no edge antes de [apontar seu domínio para a Azion](/pt-br/documentacao/build/workloads/guides/apontar-dominio-para-a-azion/).
+O arquivo local `etc/hosts` mapeia endereços IP para domínios. Ao [associar o IP do edge node ao CNAME](/pt-br/documentacao/build/applications/guides/testar-edge-application-atraves-do-arquivo-hosts/) atribuído ao seu domínio no arquivo `hosts`, você força a resolução DNS do seu computador a acessar esse domínio através do edge node e não por servidores DNS públicos. Assim, é possível fazer o staging da sua aplicação localmente como se já estivesse publicada no seu domínio personalizado no edge antes de [apontar seu domínio para a Azion](/pt-br/documentacao/secure/workloads/guides/apontar-dominio-para-a-azion/).
 :::
 
 ---

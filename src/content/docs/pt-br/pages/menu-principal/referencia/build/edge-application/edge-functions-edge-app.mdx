@@ -5,7 +5,7 @@ description: >-
   a eventos, na edge da rede, mais perto dos usuários.
 meta_tags: 'Functions, Edge Computing'
 namespace: documentation_products_edge_functions
-permalink: /documentacao/build/applications/reference/functions/
+permalink: /documentacao/build/applications/functions/
 ---
 
 import LinkButton from 'azion-webkit/linkbutton'
@@ -32,7 +32,7 @@ Com o Functions para **Applications**, você pode:
 | Escopo | Guia |
 | - | - |
 | API Builder| [Como construir uma API com Functions e ChatGPT](/pt-br/documentacao/build/functions/guides/api-builder/) 
-| Exemplos de functions em JavaScript| [Exemplos](/pt-br/documentacao/build/functions/runtime-apis/javascript-examples/)|
+| Exemplos de functions em JavaScript| [Exemplos](/pt-br/documentacao/devtools/javascript-exemplos/)|
 | GitHub | [Repositório de samples da Azion](https://github.com/aziontech/azion-samples/tree/dev/samples) |
 
 ---
@@ -41,13 +41,13 @@ Com o Functions para **Applications**, você pode:
 
 Ao usar JavaScript em Functions, você pode executar códigos mais próximos do usuário final, aprimorando o desempenho e habilitando a lógica personalizada para lidar com solicitações e respostas.
 
-Ao usar o [Azion Runtime](/pt-br/documentacao/build/functions/runtime-apis/overview/) para desenvolver suas functions, você tem um conjunto de ferramentas que o ajudam a implementar sua lógica.
+Ao usar o [Azion Runtime](/pt-br/documentacao/runtime/visao-geral/) para desenvolver suas functions, você tem um conjunto de ferramentas que o ajudam a implementar sua lógica.
 
-<LinkButton link="/pt-br/documentacao/build/functions/runtime-apis/overview/" label="saiba mais sobre o Azion Runtime" severity="secondary" target="_blank" />
+<LinkButton link="/pt-br/documentacao/runtime/visao-geral/" label="saiba mais sobre o Azion Runtime" severity="secondary" target="_blank" />
 
-<br /><LinkButton link="/pt-br/documentacao/build/functions/runtime-apis/compatibility/" label="saiba mais sobre os Web frameworks suportados" severity="secondary" target="_blank" />
-<br /><LinkButton link="/pt-br/documentacao/build/functions/runtime-apis/compatibilidade/node/" label="saiba mais sobre o suporte ao Node.js" severity="secondary" target="_blank" />
-<br /><LinkButton link="/pt-br/documentacao/build/functions/runtime-apis/javascript/" label="saiba mais sobre as Web APIs suportadas" severity="secondary" target="blank" />
+<br /><LinkButton link="/pt-br/documentacao/produtos/devtools/azion-edge-runtime/compatibilidade-frameworks/" label="saiba mais sobre os Web frameworks suportados" severity="secondary" target="_blank" />
+<br /><LinkButton link="/pt-br/documentacao/produtos/devtools/azion-edge-runtime/compatibilidade/node/" label="saiba mais sobre o suporte ao Node.js" severity="secondary" target="_blank" />
+<br /><LinkButton link="/pt-br/documentacao/runtime-apis/javascript/" label="saiba mais sobre as Web APIs suportadas" severity="secondary" target="blank" />
 
 ---
 
@@ -90,17 +90,17 @@ Código do Framework (Next.js, Astro, Vue, etc.)
 
 ### Frameworks suportados
 
-Para a lista completa de frameworks suportados e informações detalhadas de compatibilidade, consulte [Compatibilidade de frameworks](/pt-br/documentacao/build/functions/runtime-apis/compatibility/).
+Para a lista completa de frameworks suportados e informações detalhadas de compatibilidade, consulte [Compatibilidade de frameworks](/pt-br/documentacao/produtos/devtools/azion-edge-runtime/compatibilidade-frameworks/).
 
 ### Implicações práticas
 
 Ao fazer o deploy de um projeto com framework, considere:
 
 - **Custos de compute**: Deploys de frameworks geram Functions, que incorrem em cobranças de tempo de compute e invocações. Consulte [Preços](/pt-br/documentacao/platform/pricing/) para detalhes.
-- **Debugging**: Use [Preview Deployment](/pt-br/documentacao/build/functions/runtime-apis/functions/runtime-api/preview-deployment/), [Data Stream](/pt-br/documentacao/observe/data-stream/guides/debugging-functions-data-stream/) ou [GraphQL API](/pt-br/documentacao/build/functions/guides/debugging-functions-graphql/) para depurar Functions geradas por frameworks.
-- **Variáveis de ambiente**: Acesse variáveis de ambiente no código do seu framework usando a [API de variáveis de ambiente da Azion](/pt-br/documentacao/build/functions/runtime-apis/functions/runtime/api-reference/environment-variables/).
+- **Debugging**: Use [Preview Deployment](/pt-br/documentacao/produtos/applications/functions/runtime-api/preview-deployment/), [Data Stream](/pt-br/documentacao/observe/data-stream/guides/debugging-functions-data-stream/) ou [GraphQL API](/pt-br/documentacao/build/functions/guides/debugging-functions-graphql/) para depurar Functions geradas por frameworks.
+- **Variáveis de ambiente**: Acesse variáveis de ambiente no código do seu framework usando a [API de variáveis de ambiente da Azion](/pt-br/documentacao/produtos/applications/functions/runtime/api-reference/environment-variables/).
 
-<LinkButton link="/pt-br/documentacao/build/functions/runtime-apis/compatibility/" label="Ver todos os frameworks suportados" severity="secondary" target="_blank" />
+<LinkButton link="/pt-br/documentacao/produtos/devtools/azion-edge-runtime/compatibilidade-frameworks/" label="Ver todos os frameworks suportados" severity="secondary" target="_blank" />
 <br /><LinkButton link="https://github.com/aziontech/bundler" label="Explore o Azion Bundler no GitHub" severity="secondary" target="_blank" />
 
 ---
@@ -180,7 +180,7 @@ Alguns de seus principais recursos são:
 - IntelliSense
 - Debugging
 
-Saiba mais sobre o [Functions Code Editor](/pt-br/documentacao/build/functions/runtime-apis/functions/runtime-api/code-editor/).
+Saiba mais sobre o [Functions Code Editor](/pt-br/documentacao/produtos/applications/functions/runtime-api/code-editor/).
 
 ---
 
@@ -193,7 +193,7 @@ A IA generativa pode ser usada em quase todas as tarefas que envolvem a compreen
 - Refatorar o código.
 - Gerar código com base em prompts.
 
-Saiba mais sobre o [Assistente de IA](/pt-br/documentacao/build/functions/runtime-apis/functions/runtime-api/ai-integration/).
+Saiba mais sobre o [Assistente de IA](/pt-br/documentacao/produtos/applications/functions/runtime-api/ai-integration/).
 
 ---
 
@@ -201,13 +201,13 @@ Saiba mais sobre o [Assistente de IA](/pt-br/documentacao/build/functions/runtim
 
 Você pode verificar se a saída é a esperada com o Preview Deployment, fazendo uso da função `PreviewProvider`, que emula uma requisição.
 
-Saiba mais sobre o [Preview Deployment](/pt-br/documentacao/build/functions/runtime-apis/functions/runtime-api/preview-deployment/).
+Saiba mais sobre o [Preview Deployment](/pt-br/documentacao/produtos/applications/functions/runtime-api/preview-deployment/).
 
 ---
 
 ## Debug
 
-Você pode depurar suas functions em tempo real usando a ferramenta de `inspeção` dentro do [Preview Deployment](/pt-br/documentacao/build/functions/runtime-apis/functions/runtime-api/preview-deployment/).
+Você pode depurar suas functions em tempo real usando a ferramenta de `inspeção` dentro do [Preview Deployment](/pt-br/documentacao/produtos/applications/functions/runtime-api/preview-deployment/).
 
 Você também pode depurar usando:
 
@@ -220,7 +220,7 @@ Você também pode depurar usando:
 
 As variáveis de ambiente são um aspecto crucial no desenvolvimento e implantação de software. Elas são usadas para armazenar informações confidenciais ou definições de configuração que não devem ser codificadas na base de código.
 
-Saiba mais sobre a interface de [Variáveis de Ambiente](/pt-br/documentacao/build/functions/runtime-apis/functions/runtime/api-reference/environment-variables/).
+Saiba mais sobre a interface de [Variáveis de Ambiente](/pt-br/documentacao/produtos/applications/functions/runtime/api-reference/environment-variables/).
 
 ---
 
