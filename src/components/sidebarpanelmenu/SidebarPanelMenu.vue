@@ -5,6 +5,10 @@
 		:unstyled="true"
 		:pt="{
 			headerContent: { class: ['cursor-text'] },
+			// PrimeVue's default 'p-toggleable-content' name carries a runtime-injected
+			// 1s max-height animation, which replays when hydration re-expands the active
+			// chain. A name with no CSS makes expand/collapse instant.
+			transition: { name: 'sidebar-toggle-instant' },
 		}"
 	>
 		<template #item="{ item }">
