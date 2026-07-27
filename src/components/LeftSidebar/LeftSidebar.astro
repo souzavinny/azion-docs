@@ -85,29 +85,3 @@ function recursiveTranslation(menuList) {
 	}
 }
 </script>
-
-<!-- TEMP DIAGNOSTIC — remove after sidebar animation hunt -->
-<script is:inline>
-{
-	const area = document.querySelector('#left-sidebar');
-	if (area) {
-		const t0 = performance.now();
-		const ts = () => `[sidebar-diag ${(performance.now() - t0).toFixed(0)}ms]`;
-		const ident = (el) => `${el.tagName?.toLowerCase()}#${el.id || ''} pc=${el.dataset?.pcSection || ''} cls=${(typeof el.className === 'string' ? el.className : '').slice(0, 50)}`;
-		const mo = new MutationObserver((muts) => {
-			for (const m of muts) {
-				if (m.type === 'attributes') {
-					console.log(ts(), 'ATTR', m.attributeName, 'now=', (m.target.getAttribute(m.attributeName) || '').slice(0, 80), 'was=', (m.oldValue || '').slice(0, 80), 'on', ident(m.target));
-				} else if (m.addedNodes.length || m.removedNodes.length) {
-					console.log(ts(), 'CHILDREN', `+${m.addedNodes.length}/-${m.removedNodes.length}`, 'in', ident(m.target));
-				}
-			}
-		});
-		mo.observe(area, { subtree: true, childList: true, attributes: true, attributeOldValue: true, attributeFilter: ['style', 'class'] });
-		const wn = document.querySelector('#left-sidebar .wrap-nav');
-		if (wn) wn.addEventListener('scroll', () => console.log(ts(), 'SCROLL', wn.scrollTop), { passive: true });
-		setTimeout(() => { mo.disconnect(); console.log(ts(), 'diag off'); }, 8000);
-		console.log(ts(), 'diag armed');
-	}
-}
-</script>
