@@ -231,17 +231,6 @@
        }
       },
       {
-       "key": "build/applications/quickstart",
-       "label": {
-        "en": "Applications first steps",
-        "pt-br": "Applications primeiros passos"
-       },
-       "slug": {
-        "en": "/documentation/build/applications/quickstart/",
-        "pt-br": "/documentacao/build/applications/quickstart/"
-       }
-      },
-      {
        "key": "build/applications/modules",
        "label": {
         "en": "Modules",
