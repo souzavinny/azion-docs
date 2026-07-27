@@ -329,6 +329,35 @@
            ]
           },
           {
+           "key": "build/applications/cache/reference",
+           "label": {
+            "en": "Reference",
+            "pt-br": "Referência"
+           },
+           "items": [
+            {
+             "key": "build/applications/reference/cache-settings",
+             "label": {
+              "en": "Cache Settings"
+             },
+             "slug": {
+              "en": "/documentation/build/applications/reference/cache-settings/",
+              "pt-br": "/documentacao/build/applications/reference/cache-settings/"
+             }
+            },
+            {
+             "key": "build/applications/reference/real-time-purge",
+             "label": {
+              "en": "Real-Time Purge"
+             },
+             "slug": {
+              "en": "/documentation/build/applications/reference/real-time-purge/",
+              "pt-br": "/documentacao/build/applications/reference/real-time-purge/"
+             }
+            }
+           ]
+          },
+          {
            "key": "build/applications/cache/tiered-cache",
            "label": {
             "en": "Tiered Cache"
@@ -633,16 +662,6 @@
        },
        "items": [
         {
-         "key": "build/applications/reference/cache-settings",
-         "label": {
-          "en": "Cache Settings"
-         },
-         "slug": {
-          "en": "/documentation/build/applications/reference/cache-settings/",
-          "pt-br": "/documentacao/build/applications/reference/cache-settings/"
-         }
-        },
-        {
          "key": "build/applications/reference/device-groups",
          "label": {
           "en": "Device Groups"
@@ -692,16 +711,6 @@
          "slug": {
           "en": "/documentation/build/applications/reference/origins/",
           "pt-br": "/documentacao/build/applications/reference/origins/"
-         }
-        },
-        {
-         "key": "build/applications/reference/real-time-purge",
-         "label": {
-          "en": "Real-Time Purge"
-         },
-         "slug": {
-          "en": "/documentation/build/applications/reference/real-time-purge/",
-          "pt-br": "/documentacao/build/applications/reference/real-time-purge/"
          }
         },
         {
