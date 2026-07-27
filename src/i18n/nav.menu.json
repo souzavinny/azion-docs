@@ -815,16 +815,6 @@
        }
       }
      ]
-    },
-    {
-     "key": "deploy/overview",
-     "label": {
-      "en": "Deploy"
-     },
-     "slug": {
-      "en": "/documentation/deploy/overview/",
-      "pt-br": "/documentacao/deploy/overview/"
-     }
     }
    ]
   },
@@ -1299,17 +1289,6 @@
          "slug": {
           "en": "/documentation/secure/certificate-manager/guides/mtls/",
           "pt-br": "/documentacao/secure/certificate-manager/guides/mtls/"
-         }
-        },
-        {
-         "key": "secure/certificate-manager/guides/wildcard-lets-encrypt",
-         "label": {
-          "en": "Let's Encrypt Wildcard Certificates on Azion Platform",
-          "pt-br": "Certificados Wildcard Let's Encrypt na Plataforma Azion"
-         },
-         "slug": {
-          "en": "/documentation/secure/certificate-manager/guides/wildcard-lets-encrypt/",
-          "pt-br": "/documentacao/secure/firewall/reference/certificados-wildcard-lets-encrypt/"
          }
         }
        ]
@@ -2356,16 +2335,6 @@
        ]
       }
      ]
-    },
-    {
-     "key": "observe/siem",
-     "label": {
-      "en": "SIEM Azion"
-     },
-     "slug": {
-      "en": "/documentation/observe/siem/",
-      "pt-br": "/documentacao/observe/siem/"
-     }
     }
    ]
   },
@@ -3234,6 +3203,16 @@
      ]
     },
     {
+     "key": "deploy/overview",
+     "label": {
+      "en": "Deploy"
+     },
+     "slug": {
+      "en": "/documentation/deploy/overview/",
+      "pt-br": "/documentacao/deploy/overview/"
+     }
+    },
+    {
      "key": "deploy/orchestrator",
      "label": {
       "en": "Orchestrator"
@@ -3634,17 +3613,6 @@
           "en": "/documentation/agreements/customer-agreement/",
           "pt-br": "/documentacao/agreements/contrato-de-cliente/"
          }
-        },
-        {
-         "key": "agreements/customer-agreement/28-july-2016",
-         "label": {
-          "en": "Customer Agreement - July 28, 2016",
-          "pt-br": "Contrato de Cliente - 28 de julho de 2016"
-         },
-         "slug": {
-          "en": "/documentation/agreements/customer-agreement/28-july-2016/",
-          "pt-br": "/documentacao/agreements/contrato-de-cliente/28-july-2016/"
-         }
         }
        ]
       },
@@ -3747,17 +3715,6 @@
           "en": "/documentation/agreements/sla/",
           "pt-br": "/documentacao/agreements/sla/"
          }
-        },
-        {
-         "key": "agreements/sla/25-may-2016",
-         "label": {
-          "en": "Service Level Agreement - May 25, 2016",
-          "pt-br": "Acordo de Nível de Serviço - 25 de maio de 2016"
-         },
-         "slug": {
-          "en": "/documentation/agreements/sla/25-may-2016/",
-          "pt-br": "/documentacao/agreements/sla/25-march-2016/"
-         }
         }
        ]
       },
@@ -3833,17 +3790,6 @@
          }
         },
         {
-         "key": "agreements/tos/18-august-2020",
-         "label": {
-          "en": "Terms of Service - August 18, 2020",
-          "pt-br": "Termos de Serviço - 18 de Agosto de 2020"
-         },
-         "slug": {
-          "en": "/documentation/agreements/tos/18-august-2020/",
-          "pt-br": "/documentacao/agreements/tos/18-august-2020/"
-         }
-        },
-        {
          "key": "agreements/tos/18-september-2023",
          "label": {
           "en": "Terms of Service - September 18, 2023",
@@ -3852,17 +3798,6 @@
          "slug": {
           "en": "/documentation/agreements/tos/18-september-2023/",
           "pt-br": "/documentacao/agreements/tos/18-september-2023/"
-         }
-        },
-        {
-         "key": "agreements/tos/21-august-2025",
-         "label": {
-          "en": "Terms of Service - August 21, 2025",
-          "pt-br": "Termos de Serviço - 21 de agosto de 2025"
-         },
-         "slug": {
-          "en": "/documentation/agreements/tos/21-august-2025/",
-          "pt-br": "/documentacao/agreements/tos/21-august-2025/"
          }
         },
         {
