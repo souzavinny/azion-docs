@@ -70,8 +70,8 @@
       {
        "key": "get-started/migrate/overview",
        "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
+        "en": "About migration",
+        "pt-br": "Sobre a migração"
        },
        "slug": {
         "en": "/documentation/get-started/migrate/",
@@ -156,8 +156,8 @@
     {
      "key": "build/overview",
      "label": {
-      "en": "Overview",
-      "pt-br": "Visão geral"
+      "en": "About Build",
+      "pt-br": "Sobre Build"
      },
      "slug": {
       "en": "/documentation/build/overview/",
@@ -173,8 +173,8 @@
       {
        "key": "build/ai-inference/overview",
        "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
+        "en": "About AI Inference",
+        "pt-br": "Sobre AI Inference"
        },
        "slug": {
         "en": "/documentation/build/ai-inference/",
@@ -211,8 +211,8 @@
       {
        "key": "build/applications/overview",
        "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
+        "en": "About Applications",
+        "pt-br": "Sobre Applications"
        },
        "slug": {
         "en": "/documentation/build/applications/",
@@ -256,8 +256,8 @@
           {
            "key": "build/applications/cache/overview",
            "label": {
-            "en": "Overview",
-            "pt-br": "Visão geral"
+            "en": "About Cache",
+            "pt-br": "Sobre Cache"
            },
            "slug": {
             "en": "/documentation/build/applications/cache/",
@@ -349,8 +349,8 @@
           {
            "key": "build/functions/overview",
            "label": {
-            "en": "Overview",
-            "pt-br": "Visão geral"
+            "en": "About Functions",
+            "pt-br": "Sobre Functions"
            },
            "slug": {
             "en": "/documentation/build/applications/functions/",
@@ -485,8 +485,8 @@
           {
            "key": "build/applications/image-processor/overview",
            "label": {
-            "en": "Overview",
-            "pt-br": "Visão geral"
+            "en": "About Image Processor",
+            "pt-br": "Sobre Image Processor"
            },
            "slug": {
             "en": "/documentation/build/applications/image-processor/",
@@ -815,8 +815,8 @@
     {
      "key": "store/overview",
      "label": {
-      "en": "Overview",
-      "pt-br": "Visão geral"
+      "en": "About Store",
+      "pt-br": "Sobre Store"
      },
      "slug": {
       "en": "/documentation/store/overview/",
@@ -832,8 +832,8 @@
       {
        "key": "store/kv-store/overview",
        "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
+        "en": "About KV Store",
+        "pt-br": "Sobre KV Store"
        },
        "slug": {
         "en": "/documentation/store/kv-store/",
@@ -882,8 +882,8 @@
       {
        "key": "store/object-storage/overview",
        "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
+        "en": "About Object Storage",
+        "pt-br": "Sobre Object Storage"
        },
        "slug": {
         "en": "/documentation/store/object-storage/",
@@ -998,8 +998,8 @@
       {
        "key": "store/sql-database/overview",
        "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
+        "en": "About SQL Database",
+        "pt-br": "Sobre SQL Database"
        },
        "slug": {
         "en": "/documentation/store/sql-database/",
@@ -1135,8 +1135,8 @@
     {
      "key": "secure/overview",
      "label": {
-      "en": "Overview",
-      "pt-br": "Visão geral"
+      "en": "About Secure",
+      "pt-br": "Sobre Secure"
      },
      "slug": {
       "en": "/documentation/secure/overview/",
@@ -1153,8 +1153,8 @@
       {
        "key": "get-started/journeys/protect/overview",
        "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
+        "en": "About this journey",
+        "pt-br": "Sobre esta jornada"
        },
        "slug": {
         "en": "/documentation/get-started/journeys/protect/",
@@ -1194,8 +1194,8 @@
       {
        "key": "secure/bot-manager/overview",
        "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
+        "en": "About Bot Manager",
+        "pt-br": "Sobre Bot Manager"
        },
        "slug": {
         "en": "/documentation/secure/bot-manager/",
@@ -1212,8 +1212,8 @@
         {
          "key": "secure/bot-manager/reference/overview",
          "label": {
-          "en": "Overview",
-          "pt-br": "Visão geral"
+          "en": "Bot Manager Reference",
+          "pt-br": "Referência do Bot Manager"
          },
          "slug": {
           "en": "/documentation/secure/bot-manager/reference/",
@@ -1243,8 +1243,8 @@
       {
        "key": "secure/certificate-manager/overview",
        "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
+        "en": "About Certificate Manager",
+        "pt-br": "Sobre Certificate Manager"
        },
        "slug": {
         "en": "/documentation/secure/certificate-manager/",
@@ -1324,8 +1324,8 @@
       {
        "key": "secure/connectors/overview",
        "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
+        "en": "About Connectors",
+        "pt-br": "Sobre Connectors"
        },
        "slug": {
         "en": "/documentation/secure/connectors/",
@@ -1382,8 +1382,8 @@
       {
        "key": "secure/ddos-protection/overview",
        "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
+        "en": "About DDoS Protection",
+        "pt-br": "Sobre DDoS Protection"
        },
        "slug": {
         "en": "/documentation/secure/ddos-protection/",
@@ -1421,8 +1421,8 @@
       {
        "key": "secure/edge-dns/overview",
        "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
+        "en": "About Edge DNS",
+        "pt-br": "Sobre Edge DNS"
        },
        "slug": {
         "en": "/documentation/secure/edge-dns/",
@@ -1513,8 +1513,8 @@
       {
        "key": "secure/firewall/overview",
        "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
+        "en": "About Firewall",
+        "pt-br": "Sobre Firewall"
        },
        "slug": {
         "en": "/documentation/secure/firewall/",
@@ -1703,8 +1703,8 @@
       {
        "key": "secure/network-shield/overview",
        "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
+        "en": "About Network Shield",
+        "pt-br": "Sobre Network Shield"
        },
        "slug": {
         "en": "/documentation/secure/network-shield/",
@@ -1742,8 +1742,8 @@
       {
        "key": "secure/waf/overview",
        "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
+        "en": "About WAF",
+        "pt-br": "Sobre WAF"
        },
        "slug": {
         "en": "/documentation/secure/waf/",
@@ -1877,8 +1877,8 @@
       {
        "key": "secure/workloads/overview",
        "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
+        "en": "About Workloads",
+        "pt-br": "Sobre Workloads"
        },
        "slug": {
         "en": "/documentation/secure/workloads/",
@@ -1961,8 +1961,8 @@
     {
      "key": "observe/overview",
      "label": {
-      "en": "Overview",
-      "pt-br": "Visão geral"
+      "en": "About Observe",
+      "pt-br": "Sobre Observe"
      },
      "slug": {
       "en": "/documentation/observe/overview/",
@@ -1978,8 +1978,8 @@
       {
        "key": "observe/data-stream/overview",
        "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
+        "en": "About Data Stream",
+        "pt-br": "Sobre Data Stream"
        },
        "slug": {
         "en": "/documentation/observe/data-stream/",
@@ -2127,8 +2127,8 @@
       {
        "key": "observe/edge-pulse/overview",
        "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
+        "en": "About Edge Pulse",
+        "pt-br": "Sobre Edge Pulse"
        },
        "slug": {
         "en": "/documentation/observe/edge-pulse/",
@@ -2157,8 +2157,8 @@
       {
        "key": "observe/real-time-events/overview",
        "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
+        "en": "About Real Time Events",
+        "pt-br": "Sobre Real Time Events"
        },
        "slug": {
         "en": "/documentation/observe/real-time-events/",
@@ -2187,8 +2187,8 @@
       {
        "key": "observe/real-time-metrics/overview",
        "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
+        "en": "About Real Time Metrics",
+        "pt-br": "Sobre Real Time Metrics"
        },
        "slug": {
         "en": "/documentation/observe/real-time-metrics/",
@@ -2353,8 +2353,8 @@
       {
        "key": "architectures/overview",
        "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
+        "en": "About Architectures",
+        "pt-br": "Sobre arquiteturas"
        },
        "slug": {
         "en": "/documentation/architectures/",
@@ -2899,8 +2899,8 @@
       {
        "key": "platform/overview",
        "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
+        "en": "About the Platform",
+        "pt-br": "Sobre a Plataforma"
        },
        "slug": {
         "en": "/documentation/platform/overview/",
@@ -2993,8 +2993,8 @@
       {
        "key": "account/overview",
        "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
+        "en": "About Accounts",
+        "pt-br": "Sobre contas"
        },
        "slug": {
         "en": "/documentation/account/",
@@ -3210,8 +3210,8 @@
       {
        "key": "deploy/orchestrator/overview",
        "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
+        "en": "About Orchestrator",
+        "pt-br": "Sobre Orchestrator"
        },
        "slug": {
         "en": "/documentation/deploy/orchestrator/",
@@ -3434,8 +3434,8 @@
         {
          "key": "services/support/overview",
          "label": {
-          "en": "Overview",
-          "pt-br": "Visão geral"
+          "en": "About Support",
+          "pt-br": "Sobre o Suporte"
          },
          "slug": {
           "en": "/documentation/services/support/",
@@ -3505,8 +3505,8 @@
       {
        "key": "changelog/overview",
        "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
+        "en": "Latest updates",
+        "pt-br": "Últimas atualizações"
        },
        "slug": {
         "en": "/documentation/changelog/",
@@ -3534,8 +3534,8 @@
       {
        "key": "agreements/overview",
        "label": {
-        "en": "Overview",
-        "pt-br": "Visão geral"
+        "en": "All agreements",
+        "pt-br": "Todos os acordos"
        },
        "slug": {
         "en": "/documentation/agreements/",
