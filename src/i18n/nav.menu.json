@@ -731,8 +731,8 @@
     {
      "key": "build/local-dev",
      "label": {
-      "en": "Local development",
-      "pt-br": "Desenvolvimento local"
+      "en": "Develop with Azion",
+      "pt-br": "Desenvolva com a Azion"
      },
      "items": [
       {
