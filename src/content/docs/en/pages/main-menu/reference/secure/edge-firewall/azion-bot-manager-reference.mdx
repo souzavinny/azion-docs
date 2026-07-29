@@ -131,11 +131,11 @@ The variety of charts, combined with the use of filters and variation tags, allo
 
 #### GraphiQL Playground
 
-Use the GraphiQL Playground to access detailed information about Bot Manager's performance and operations. For example, you can [query Bot Manager data](/en/documentation/devtools/graphql/guides/query-bot-manager-data-with-graphql/) or [query the top URLs impacted by bots](/en/documentation/devtools/graphql/guides/query-bot-manager-breakdown-data-with-graphql/) to analyze bot activity, and retrieve data to optimize your configurations.
+Use the GraphiQL Playground to access detailed information about Bot Manager's performance and operations. For example, you can [query Bot Manager data](/en/documentation/products/guides/query-bot-manager-data-with-graphql/) or [query the top URLs impacted by bots](/en/documentation/products/guides/query-bot-manager-breakdown-data-with-graphql/) to analyze bot activity, and retrieve data to optimize your configurations.
 
-<LinkButton link="/en/documentation/devtools/graphql/reference/playground/" label="Go to GraphiQL Playground" severity="secondary"/>
+<LinkButton link="/en/documentation/products/devtools/graphql-playground/" label="Go to GraphiQL Playground" severity="secondary"/>
 <br />
-<LinkButton link="/en/documentation/devtools/graphql/reference/gql-real-time-metrics-fields/#botmanagermetrics" label="Go to Bot Manager Fields" severity="secondary"/>
+<LinkButton link="/en/documentation/devtools/graphql-api/features/gql-real-time-metrics-fields/#botmanagermetrics" label="Go to Bot Manager Fields" severity="secondary"/>
 
 ### Report Log explained
 
@@ -351,7 +351,7 @@ Rate limiting integration establishes thresholds for the number of requests a us
 
 A set of information (IP, `User-Agent` header) creates a hash for devices accessing your applications. The information is gathered by tracing the device's session and provides a more accurate detailing of the request's device, increasing the precision of Bot Manager logs.
 
-If you use Fingerprint with Bot Manager, you can also enable the use of Azion [Real-Time Metrics](/en/documentation/observe/real-time-metrics/) to query consolidated data via [GraphQL API](/en/documentation/devtools/graphql/reference/overview/) related to the access to the application protected by Bot Manager, facilitating the identification of patters and use this intelligence to optimize the rules. With this feature, you can define a threshold and take a specific action when the threshold is violated and the device or user is identified as malicious, based on the fingerprint data.
+If you use Fingerprint with Bot Manager, you can also enable the use of Azion [Real-Time Metrics](/en/documentation/observe/real-time-metrics/) to query consolidated data via [GraphQL API](/en/documentation/devtools/graphql-api/overview/) related to the access to the application protected by Bot Manager, facilitating the identification of patters and use this intelligence to optimize the rules. With this feature, you can define a threshold and take a specific action when the threshold is violated and the device or user is identified as malicious, based on the fingerprint data.
 
 ### Captcha 
 

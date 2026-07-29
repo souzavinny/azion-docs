@@ -48,7 +48,7 @@ The following table provides a comprehensive mapping of Fastly products and conf
 | **Response settings** | Response header and delivery behavior. | [Rules Engine for Applications](https://www.azion.com/en/documentation/build/applications/reference/rules-engine/) |
 | **VCL snippets / custom VCL** | Custom delivery logic for redirects, headers, cache keys, origin selection, and request control. | [Rules Engine for Applications](https://www.azion.com/en/documentation/build/applications/reference/rules-engine/) + [Functions](https://www.azion.com/en/documentation/build/applications/functions/) |
 | **Compute** | Serverless compute platform that runs custom code on Fastly's network. | [Functions for Applications](https://www.azion.com/en/documentation/build/applications/functions/) |
-| **Compute packages** | Packaged application code deployed to Fastly Compute. | [Functions](https://www.azion.com/en/documentation/build/applications/functions/) + [Azion CLI](https://www.azion.com/en/documentation/devtools/cli/) |
+| **Compute packages** | Packaged application code deployed to Fastly Compute. | [Functions](https://www.azion.com/en/documentation/build/applications/functions/) + [Azion CLI](https://www.azion.com/en/documentation/products/azion-cli/overview/) |
 | **Edge Data Storage** | Key-value data used by Fastly Compute services. | [KV Store](https://www.azion.com/en/documentation/store/kv-store/) |
 | **Object Storage** | S3-compatible object storage integrated with delivery and compute services. | [Object Storage](https://www.azion.com/en/documentation/store/object-storage/) |
 | **Cache Reservation** | Reserved cache capacity for content on Fastly. | [Cache](https://www.azion.com/en/documentation/build/applications/cache/) + [Tiered Cache](https://www.azion.com/en/documentation/build/applications/cache/tiered-cache/) |
@@ -73,8 +73,8 @@ The following table provides a comprehensive mapping of Fastly products and conf
 | **Origin Inspector** | Origin response visibility and reporting. | [Real-Time Metrics](https://www.azion.com/en/documentation/observe/real-time-metrics/) + [Real-Time Events](https://www.azion.com/en/documentation/observe/real-time-events/) |
 | **Observability features** | Traffic, security, performance, and origin visibility. | [Real-Time Metrics](https://www.azion.com/en/documentation/observe/real-time-metrics/) + [Real-Time Events](https://www.azion.com/en/documentation/observe/real-time-events/) + [Data Stream](https://www.azion.com/en/documentation/observe/data-stream/) |
 | **Fastly API** | Programmatic management of Fastly resources. | [Azion API](https://www.azion.com/en/documentation/devtools/api/) |
-| **Fastly CLI** | Command-line workflow for Fastly services and Compute projects. | [Azion CLI](https://www.azion.com/en/documentation/devtools/cli/) |
-| **Fastly Terraform Provider** | Infrastructure as Code for Fastly resources. | [Terraform Provider](https://www.azion.com/en/documentation/devtools/terraform/) |
+| **Fastly CLI** | Command-line workflow for Fastly services and Compute projects. | [Azion CLI](https://www.azion.com/en/documentation/products/azion-cli/overview/) |
+| **Fastly Terraform Provider** | Infrastructure as Code for Fastly resources. | [Terraform Provider](https://www.azion.com/en/documentation/products/terraform-provider/) |
 
 ## Migration Strategy
 
@@ -152,7 +152,7 @@ curl https://xxxxxxxxxx.map.azionedge.net/health
 
 * [Applications](https://www.azion.com/en/documentation/build/applications/)
 * [Applications first steps](https://www.azion.com/en/documentation/build/applications/quickstart/)
-* [Azion CLI overview](https://www.azion.com/en/documentation/devtools/cli/)
+* [Azion CLI overview](https://www.azion.com/en/documentation/products/azion-cli/overview/)
 * [Import an existing project from GitHub](https://www.azion.com/en/documentation/get-started/first-deploy/github/import-an-existing-project-from-github/)
 
 ### 2. Converting Service and Build Configuration
@@ -186,9 +186,9 @@ Before recreating the service in Azion, inventory:
 
 #### Reference documentation
 
-* [Azion CLI overview](https://www.azion.com/en/documentation/devtools/cli/)
-* [azion.config.js reference](https://www.azion.com/en/documentation/devtools/cli/reference/azion-config-js/)
-* [azion deploy command](https://www.azion.com/en/documentation/devtools/cli/reference/deploy/)
+* [Azion CLI overview](https://www.azion.com/en/documentation/products/azion-cli/overview/)
+* [azion.config.js reference](https://www.azion.com/en/documentation/devtools/cli/configs/azion-config-js/)
+* [azion deploy command](https://www.azion.com/en/documentation/devtools/cli/deploy/)
 
 ### 3. Migrating Environment Variables and Secrets
 
@@ -437,7 +437,7 @@ export default config;
 
 * [Rules Engine for Applications](https://www.azion.com/en/documentation/build/applications/reference/rules-engine/)
 * [Functions](https://www.azion.com/en/documentation/build/applications/functions/)
-* [azion.config.js reference](https://www.azion.com/en/documentation/devtools/cli/reference/azion-config-js/)
+* [azion.config.js reference](https://www.azion.com/en/documentation/devtools/cli/configs/azion-config-js/)
 
 ### 6. Migrating Compute to Functions
 
@@ -1528,7 +1528,7 @@ From there, expand gradually. Migrate more complex VCL. Move additional Compute 
 
 * [Create your free Azion account](https://console.azion.com/signup)
 * [Read the Applications documentation](https://www.azion.com/en/documentation/build/applications/)
-* [Explore the Azion CLI](https://www.azion.com/en/documentation/devtools/cli/)
+* [Explore the Azion CLI](https://www.azion.com/en/documentation/products/azion-cli/overview/)
 * [Review Data Stream](https://www.azion.com/en/documentation/observe/data-stream/)
 
 ## Need Help?

@@ -12,7 +12,7 @@ const menuData = {
     },
 		{
       label: 'DevTools',
-      href: '/pt-br/documentacao/devtools/',
+      href: '/pt-br/documentacao/produtos/devtools/',
       items: []
     }
   ]

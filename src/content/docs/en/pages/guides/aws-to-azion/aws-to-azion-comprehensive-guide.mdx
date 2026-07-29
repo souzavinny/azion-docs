@@ -58,7 +58,7 @@ The following tables provide a comprehensive mapping of AWS products to their Az
 | **AWS Lambda** | General-purpose serverless compute for event-driven code execution. | [Functions for Applications](https://www.azion.com/en/documentation/build/applications/functions/) |
 | **Amazon API Gateway** | Create and manage REST, HTTP, and WebSocket APIs with backend integrations. | [Applications](https://www.azion.com/en/documentation/build/applications/) + [Functions](https://www.azion.com/en/documentation/build/applications/functions/) |
 | **API Gateway request validation / throttling** | Apply API request controls, throttling, and validation rules. | [Rules Engine](https://www.azion.com/en/documentation/build/applications/reference/rules-engine/) + [Firewall](https://www.azion.com/en/documentation/secure/firewall/) |
-| **AWS Amplify Hosting** | Git-based CI/CD and hosting for static and server-side rendered web apps. | [Applications](https://www.azion.com/en/documentation/build/applications/) + [Azion CLI](https://www.azion.com/en/documentation/devtools/cli/) |
+| **AWS Amplify Hosting** | Git-based CI/CD and hosting for static and server-side rendered web apps. | [Applications](https://www.azion.com/en/documentation/build/applications/) + [Azion CLI](https://www.azion.com/en/documentation/products/azion-cli/overview/) |
 | **AWS App Runner** | Deploy source code or container images to managed web applications. | [Applications](https://www.azion.com/en/documentation/build/applications/) + [Orchestrator](https://www.azion.com/en/products/orchestrator/) |
 | **Amazon Bedrock** | Foundation model access and generative AI application development. | [AI Inference](https://www.azion.com/en/documentation/build/ai-inference/) |
 | **Amazon Bedrock model inference** | Invoke foundation models for text, image, embedding, and generative AI use cases. | [AI Inference](https://www.azion.com/en/documentation/build/ai-inference/) |
@@ -106,13 +106,13 @@ The following tables provide a comprehensive mapping of AWS products to their Az
 | **AWS Marketplace** | Discover, buy, deploy, and manage third-party software, data, and services. | [Marketplace](https://www.azion.com/en/documentation/marketplace/reference/marketplace/) |
 | **AWS Management Console** | Web interface for accessing and managing AWS services. | [Azion Console](https://console.azion.com/) |
 | **AWS APIs** | Programmatic interface for AWS service operations. | [Azion API](https://www.azion.com/en/documentation/devtools/api/) |
-| **Amazon CloudWatch APIs / Metrics APIs** | Query metrics, logs, alarms, and observability data programmatically. | [GraphQL API](https://www.azion.com/en/documentation/devtools/graphql/) |
-| **AWS CLI** | Command-line interface for managing AWS services. | [Azion CLI](https://www.azion.com/en/documentation/devtools/cli/) |
-| **AWS SDKs** | Language-specific SDKs for building integrations with AWS services. | [SDK](https://www.azion.com/en/documentation/devtools/lib/) |
-| **AWS SDK for JavaScript** | JavaScript libraries for interacting with AWS services. | [Azion Lib](https://www.azion.com/en/documentation/devtools/lib/) |
-| **AWS CloudFormation** | Infrastructure as Code service for modeling and provisioning AWS resources. | [Terraform Provider](https://www.azion.com/en/documentation/devtools/terraform/) |
-| **AWS Cloud Development Kit** | Define infrastructure using programming languages and synthesize to CloudFormation. | [Terraform Provider](https://www.azion.com/en/documentation/devtools/terraform/) + [Azion API](https://www.azion.com/en/documentation/devtools/api/) |
-| **Terraform AWS Provider** | Terraform provider for managing AWS resources. | [Terraform Provider](https://www.azion.com/en/documentation/devtools/terraform/) |
+| **Amazon CloudWatch APIs / Metrics APIs** | Query metrics, logs, alarms, and observability data programmatically. | [GraphQL API](https://www.azion.com/en/documentation/devtools/graphql-api/) |
+| **AWS CLI** | Command-line interface for managing AWS services. | [Azion CLI](https://www.azion.com/en/documentation/products/azion-cli/overview/) |
+| **AWS SDKs** | Language-specific SDKs for building integrations with AWS services. | [SDK](https://www.azion.com/en/documentation/products/azion-lib/overview/) |
+| **AWS SDK for JavaScript** | JavaScript libraries for interacting with AWS services. | [Azion Lib](https://www.azion.com/en/documentation/products/azion-lib/overview/) |
+| **AWS CloudFormation** | Infrastructure as Code service for modeling and provisioning AWS resources. | [Terraform Provider](https://www.azion.com/en/documentation/products/terraform-provider/) |
+| **AWS Cloud Development Kit** | Define infrastructure using programming languages and synthesize to CloudFormation. | [Terraform Provider](https://www.azion.com/en/documentation/products/terraform-provider/) + [Azion API](https://www.azion.com/en/documentation/devtools/api/) |
+| **Terraform AWS Provider** | Terraform provider for managing AWS resources. | [Terraform Provider](https://www.azion.com/en/documentation/products/terraform-provider/) |
 | **Lambda runtime environment** | Runtime layer used by Lambda functions. | [Azion Runtime](https://www.azion.com/en/documentation/runtime/overview/) |
 | **CloudFront edge runtime** | Runtime environment for CloudFront Functions and Lambda@Edge. | [Azion Runtime](https://www.azion.com/en/documentation/runtime/overview/) |
 
@@ -190,7 +190,7 @@ curl https://xxxxxxxxxx.map.azionedge.net/
 
 * [Applications](https://www.azion.com/en/documentation/build/applications/)
 * [Applications first steps](https://www.azion.com/en/documentation/build/applications/quickstart/)
-* [Azion CLI overview](https://www.azion.com/en/documentation/devtools/cli/)
+* [Azion CLI overview](https://www.azion.com/en/documentation/products/azion-cli/overview/)
 * [Import an existing project from GitHub](https://www.azion.com/en/documentation/get-started/first-deploy/github/import-an-existing-project-from-github/)
 
 ### 2. Converting Build Configuration
@@ -218,9 +218,9 @@ A migration can appear successful when the build passes but fail later when runt
 
 #### Reference documentation
 
-* [Azion CLI overview](https://www.azion.com/en/documentation/devtools/cli/)
-* [azion.config.js reference](https://www.azion.com/en/documentation/devtools/cli/reference/azion-config-js/)
-* [azion deploy command](https://www.azion.com/en/documentation/devtools/cli/reference/deploy/)
+* [Azion CLI overview](https://www.azion.com/en/documentation/products/azion-cli/overview/)
+* [azion.config.js reference](https://www.azion.com/en/documentation/devtools/cli/configs/azion-config-js/)
+* [azion deploy command](https://www.azion.com/en/documentation/devtools/cli/deploy/)
 
 ### 3. Migrating Environment Variables
 
@@ -2154,7 +2154,7 @@ Connectors are created via `/v4/workspace/connectors`. Use `type: "object_storag
 * [Create and modify a bucket](https://www.azion.com/en/documentation/store/object-storage/guides/create-and-modify-bucket/)
 * [Upload and download objects](https://www.azion.com/en/documentation/store/object-storage/guides/bucket-actions/)
 * [Use a bucket as origin](https://www.azion.com/en/documentation/store/object-storage/guides/use-bucket-as-origin/)
-* [Storage library reference](https://www.azion.com/en/documentation/devtools/lib/reference/storage/)
+* [Storage library reference](https://www.azion.com/en/documentation/products/azion-lib/storage/)
 
 ### 2. Migrating DynamoDB to KV Store / SQL Database
 
@@ -2345,7 +2345,7 @@ DynamoDB Global Tables provide multi-Region replication. KV Store is global by d
 #### Reference documentation
 
 * [KV Store](https://www.azion.com/en/documentation/store/kv-store/)
-* [KV library (azion/kv)](https://www.azion.com/en/documentation/devtools/lib/reference/kv/)
+* [KV library (azion/kv)](https://www.azion.com/en/documentation/products/azion-lib/kv/)
 * [SQL Database](https://www.azion.com/en/documentation/store/sql-database/)
 * [Create a database](https://www.azion.com/en/documentation/store/sql-database/guides/create-database/)
 * [Install SQL Shell](https://www.azion.com/en/documentation/store/sql-database/guides/install-edge-sql-shell/)
@@ -2554,7 +2554,7 @@ await client.delete('session:abc123');
 #### Reference documentation
 
 * [KV Store](https://www.azion.com/en/documentation/store/kv-store/)
-* [KV library (azion/kv)](https://www.azion.com/en/documentation/devtools/lib/reference/kv/)
+* [KV library (azion/kv)](https://www.azion.com/en/documentation/products/azion-lib/kv/)
 * [Cache](https://www.azion.com/en/documentation/build/applications/cache/)
 * [Cache Settings](https://www.azion.com/en/documentation/build/applications/reference/cache-settings/)
 * [Tiered Cache](https://www.azion.com/en/documentation/build/applications/cache/tiered-cache/)
@@ -3153,7 +3153,7 @@ From there, expand gradually. Migrate more complex cache behaviors. Move additio
 
 * [Create your free Azion account](https://console.azion.com/signup)
 * [Read the Applications documentation](https://www.azion.com/en/documentation/build/applications/)
-* [Explore the Azion CLI](https://www.azion.com/en/documentation/devtools/cli/)
+* [Explore the Azion CLI](https://www.azion.com/en/documentation/products/azion-cli/overview/)
 * [Join the Azion community](https://discord.gg/azion)
 
 ## Need Help?

@@ -25,8 +25,8 @@ export default [
             text: 'Inspect metrics', header: true, type: 'learn', key: 'observeInspectMetrics', hasLabel: 'menu.realTimeMetrics', items: [
                 { text: 'Analyze metrics', header: true, anchor: true, type: 'learn', slug: '/documentation/observe/data-stream/guides/analyze-metrics/', key: 'observeAnalyzeMetrics' },
                 { text: 'Add filters', header: true, anchor: true, type: 'learn', slug: '/documentation/observe/data-stream/guides/add-filters-metrics/', key: 'observeMetricsAddFilters' },
-                { text: 'Use GraphQL API', header: true, anchor: true, type: 'learn', slug: '/documentation/devtools/graphql/reference/overview/', key: 'observeGql' },
-                { text: 'Use GraphQL API playground', header: true, anchor: true, type: 'learn', slug: '/documentation/devtools/graphql/reference/playground/', key: 'observeGqlPlayground' },
+                { text: 'Use GraphQL API', header: true, anchor: true, type: 'learn', slug: '/documentation/devtools/graphql-api/overview/', key: 'observeGql' },
+                { text: 'Use GraphQL API playground', header: true, anchor: true, type: 'learn', slug: '/documentation/products/devtools/graphql-playground/', key: 'observeGqlPlayground' },
                 
             ]
         },
@@ -43,8 +43,8 @@ export default [
             { text: 'Understand logs', header: true, anchor: true, type: 'learn', slug: '/documentation/observe/data-stream/guides/understand-logs/', key: 'observeUnderstandLogs' },
             { text: 'Add filters', header: true, anchor: true, type: 'learn', slug: '/documentation/observe/data-stream/guides/add-filters-events/', key: 'observeEventsAddFilters' },
             { text: 'Collect navigation data', header: true, anchor: true, type: 'learn', slug: '/documentation/observe/data-stream/guides/analyze-navigation-data/', key: 'observeEventsCollectNavigationData' },
-            { text: 'Use GraphQL API', header: true, anchor: true, type: 'learn', slug: '/documentation/devtools/graphql/reference/overview/', key: 'observeGql' },
-            { text: 'Use GraphQL API playground', header: true, anchor: true, type: 'learn', slug: '/documentation/devtools/graphql/reference/playground/', key: 'observeGqlPlayground' },
+            { text: 'Use GraphQL API', header: true, anchor: true, type: 'learn', slug: '/documentation/devtools/graphql-api/overview/', key: 'observeGql' },
+            { text: 'Use GraphQL API playground', header: true, anchor: true, type: 'learn', slug: '/documentation/products/devtools/graphql-playground/', key: 'observeGqlPlayground' },
             
         ]
     },

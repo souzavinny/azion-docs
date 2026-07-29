@@ -40,12 +40,12 @@ Primeiro, você deve criar uma política de cache para os chunks:
     <Fragment slot="tab.console">Console </Fragment>
 
 <Fragment slot="panel.cli">
-1. Abra a [Azion CLI](/pt-br/documentacao/devtools/cli/) no seu terminal.
-2. Obtenha os detalhes de uma application existente usando o [comando list](/pt-br/documentacao/devtools/cli/reference/list/): `azion list edge-application --details`
+1. Abra a [Azion CLI](/pt-br/documentacao/produtos/azion-cli/visao-geral/) no seu terminal.
+2. Obtenha os detalhes de uma application existente usando o [comando list](/pt-br/documentacao/devtools/cli/list/): `azion list edge-application --details`
 3. Habilite o Tiered Cache para sua application: `$ azion update edge-application --application-id 1234 --l2-caching true`
 4. Crie uma origem: `$ azion create origin --application-id 1234 --name "origin-edge" --origin-type single_origin --addresses "example.com" --host-header "example.com"`
 5. Configure a política de cache para os chunk: `$ azion create cache-setting --application-id 1234 --name "chunks-policy" --browser-cache-settings "override" --browser-cache-settings-maximum-ttl 0 --cdn-cache-settings "override" --cnd-cache-settings-maximum-ttl 60`
-- Defina os comportamentos de **Advanced Cache Key** de acordo com suas necessidades. Verifique as flags opcionais para o [comando create](/pt-br/documentacao/devtools/cli/reference/create/#flags-opcionais-3).
+- Defina os comportamentos de **Advanced Cache Key** de acordo com suas necessidades. Verifique as flags opcionais para o [comando create](/pt-br/documentacao/devtools/cli/create/#flags-opcionais-3).
 - A recomendação é selecionar **Content does not vary**, para **Query String** and/or **Cookies**, conforme suas necessidades.
 </Fragment>
 
@@ -74,7 +74,7 @@ Primeiro, você deve criar uma política de cache para os chunks:
 
 <Fragment slot="panel.cli">
 Agora configure a política de cache para a playlist: `$ azion create cache-setting --application-id 1234 --name "playlist-policy" --browser-cache-settings "override" --browser-cache-settings-maximum-ttl 0 --cdn-cache-settings "override" --cnd-cache-settings-maximum-ttl 5`
-- Defina os comportamentos de **Advanced Cache Key** de acordo com suas necessidades. Verifique as flags opcionais para o [comando create](/pt-br/documentacao/devtools/cli/reference/create/#flags-opcionais-3).
+- Defina os comportamentos de **Advanced Cache Key** de acordo com suas necessidades. Verifique as flags opcionais para o [comando create](/pt-br/documentacao/devtools/cli/create/#flags-opcionais-3).
 - A recomendação é selecionar **Content does not vary**, para **Query String** and/or **Cookies**, conforme suas necessidades.
 </Fragment>
 

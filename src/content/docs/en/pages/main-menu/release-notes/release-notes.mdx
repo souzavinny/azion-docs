@@ -494,7 +494,7 @@ Updates deployed for the Azion platform:
 
 - `cascade delete` now supports `--config-dir` correctly
 
-Read more about [Azion CLI and its commands](/en/documentation/devtools/cli/).
+Read more about [Azion CLI and its commands](/en/documentation/products/azion-cli/overview/).
 
 ---
 
@@ -569,7 +569,7 @@ This release expands cache hydration to more resources and includes UI/permissio
 - Added install script for easier CLI installation
 - Added Chocolatey package manager support for Windows users
 
-Read more about [Azion CLI and its commands](/en/documentation/devtools/cli/).
+Read more about [Azion CLI and its commands](/en/documentation/products/azion-cli/overview/).
 
 ---
 
@@ -632,7 +632,7 @@ Because tsup was discontinued, the build system across packages was modernized:
 - **Exports & Type improvements**: Updated `package.json` exports to include explicit `"types"`. Switched entries for better Node/TS compatibility: CommonJS `.js` → `.cjs`, ESM `.js` → `.mjs`. Fixed/standardized `.d.ts` paths and type references.
 - **Internal consistency**: Refactored to use `import type { ... }` for type-only imports. Standardized `export type { ... }` for type exports. Improved client imports using aliased paths instead of deep relative imports.
 
-Read more about [Azion CLI](/en/documentation/devtools/cli/), [Azion Lib](/en/documentation/devtools/lib/), and [Azion Bundler](/en/documentation/products/devtools/azion-edge-runtime/frameworks-compatibility/).
+Read more about [Azion CLI](/en/documentation/products/azion-cli/overview/), [Azion Lib](/en/documentation/products/azion-lib/overview/), and [Azion Bundler](/en/documentation/products/devtools/azion-edge-runtime/frameworks-compatibility/).
 
 ---
 
@@ -675,7 +675,7 @@ This release includes improvements to storage and workloads configuration, along
 
 - Correctly sets function `json_args` during deployment.
 
-Read more about [Azion CLI and its commands](/en/documentation/devtools/cli/).
+Read more about [Azion CLI and its commands](/en/documentation/products/azion-cli/overview/).
 
 ---
 
@@ -728,7 +728,7 @@ Two new metrics are now available for monitoring:
 
 Improvements to Storage API calls for v3 commands and restored wiki documentation generation functionality.
 
-Read more about [Azion CLI and its commands](/en/documentation/devtools/cli/).
+Read more about [Azion CLI and its commands](/en/documentation/products/azion-cli/overview/).
 
 ---
 
@@ -752,7 +752,7 @@ New TypeScript library release with legacy track support for backward compatibil
 
 11 new templates are now available for faster application deployment.
 
-Read more about [Azion CLI](/en/documentation/devtools/cli/) and [Azion Templates](/en/documentation/marketplace/reference/templates/).
+Read more about [Azion CLI](/en/documentation/products/azion-cli/overview/) and [Azion Templates](/en/documentation/marketplace/reference/templates/).
 
 ---
 
@@ -781,7 +781,7 @@ New features and improvements:
 - **Skip Build Option**: The `--skip-framework-build` flag now also skips the static upload step.
 - **Rollback Command**: Refactored for improved reliability.
 
-Read more about [Azion CLI and its commands](/en/documentation/devtools/cli/).
+Read more about [Azion CLI and its commands](/en/documentation/products/azion-cli/overview/).
 
 ---
 
@@ -834,7 +834,7 @@ Sync command fix aligned with API page size maximum (100 items).
 
 Fixed an issue that blocked Let's Encrypt certificate issuance during domain creation.
 
-Read more about [Azion CLI](/en/documentation/devtools/cli/) and [Let's Encrypt certificates](/en/documentation/secure/certificate-manager/#lets-encrypt-certificate).
+Read more about [Azion CLI](/en/documentation/products/azion-cli/overview/) and [Let's Encrypt certificates](/en/documentation/secure/certificate-manager/#lets-encrypt-certificate).
 
 ---
 
@@ -861,7 +861,7 @@ New features for profile management and improved deployment reliability:
 - **Sync Improvements**: Preserves `azion.json` resource order after sync.
 - **Deploy Reliability**: Improved retry logic for Object Storage uploads during deployment.
 
-Read more about [Azion CLI and its commands](/en/documentation/devtools/cli/).
+Read more about [Azion CLI and its commands](/en/documentation/products/azion-cli/overview/).
 
 ---
 
@@ -916,7 +916,7 @@ Read more about [Real-Time Events](/en/documentation/observe/real-time-events/).
 
 New release with improved handling of sensitive fields for digital certificates and additional security improvements.
 
-Read more about the [Azion Terraform Provider](/en/documentation/devtools/terraform/).
+Read more about the [Azion Terraform Provider](/en/documentation/products/terraform-provider/).
 
 ---
 
@@ -932,7 +932,7 @@ New features for improved deployment workflows:
 - **Dev Server**: Added `--port` flag to API v3 version `dev` command.
 - **Remote Deploy**: Automatic cleanup of batch files and local `azion.config` writing after remote deploy.
 
-Read more about [Azion CLI and its commands](/en/documentation/devtools/cli/).
+Read more about [Azion CLI and its commands](/en/documentation/products/azion-cli/overview/).
 
 ---
 
@@ -946,7 +946,7 @@ Read more about [Azion CLI and its commands](/en/documentation/devtools/cli/).
 - **Deploy Resilience**: If a resource ID isn't found (deleted), CLI now attempts to create it instead of failing.
 - **Remote Deploy**: Remote deploy improvements for better reliability.
 
-Read more about [Azion CLI and its commands](/en/documentation/devtools/cli/).
+Read more about [Azion CLI and its commands](/en/documentation/products/azion-cli/overview/).
 
 ---
 
@@ -1227,7 +1227,7 @@ Key Features:
 
 - **Flexible Configuration**: supports environment variable-based configurations and debug modes to cater to various development needs.​
 
- For detailed installation and usage instructions, refer to the [Azion Lib documentation](/en/documentation/devtools/lib/) or visit the [NPM package page](https://www.npmjs.com/package/azion).
+ For detailed installation and usage instructions, refer to the [Azion Lib documentation](/en/documentation/products/azion-lib/overview/) or visit the [NPM package page](https://www.npmjs.com/package/azion).
 
 ### Azion Infrastructure as Code (IaC)
 
@@ -1241,7 +1241,7 @@ The `azion.config.js` file, integral to Azion's Infrastructure as Code (IaC) app
 
 - **Edge Firewall**: add-ons and Rules Engine.
 
-For a comprehensive overview of the configurable properties, consult the [Azion Config documentation](/en/documentation/devtools/cli/reference/azion-config-js/).
+For a comprehensive overview of the configurable properties, consult the [Azion Config documentation](/en/documentation/devtools/cli/configs/azion-config-js/).
 
 ### Azion CLI
 
@@ -1249,13 +1249,13 @@ For a comprehensive overview of the configurable properties, consult the [Azion 
 
 The `azion sync` command has been refined to enhance synchronization between local files and remote resources.
 
-For more information, visit the [CLI Command Sync documentation](/en/documentation/devtools/cli/reference/sync/).
+For more information, visit the [CLI Command Sync documentation](/en/documentation/devtools/cli/sync/).
 
 #### Native Windows support
 
 Azion CLI now offers native support for Windows operating systems using Powershell. You can install it through **Chocolatey** or **WinGet**.
 
-For more information on these updates, visit the [CLI documentation](/en/documentation/devtools/cli/).
+For more information on these updates, visit the [CLI documentation](/en/documentation/products/azion-cli/overview/).
 
 ## March 10, 2025
 
@@ -1263,7 +1263,7 @@ For more information on these updates, visit the [CLI documentation](/en/documen
 
 The GraphQL API now includes the **Consumption** dataset, offering detailed insights into product usage and the metrics accounted for in the client's account.
 
-Explore more about the [GraphQL API](/en/documentation/devtools/graphql/reference/overview/) and the [Consumption dataset](/en/documentation/devtools/graphql/reference/gql-consumption-fields/).
+Explore more about the [GraphQL API](/en/documentation/devtools/graphql-api/overview/) and the [Consumption dataset](/en/documentation/devtools/graphql-api/features/gql-consumption-fields/).
 
 ---
 
@@ -1281,7 +1281,7 @@ Explore more about the [GraphQL API](/en/documentation/devtools/graphql/referenc
 
 The new `httpBreakdownMetrics` dataset is available in the **Real-Time Metrics GraphQL API**. Through this dataset, you can get real-time, detailed, aggregated data on HTTP request events blocked.
 
-Find out more on [Real⁠-⁠Time Metrics GraphQL API Fields](/en/documentation/devtools/graphql/reference/gql-real-time-metrics-fields/) and learn [How to query data from the httpBreakdownMetrics dataset](/en/documentation/devtools/graphql/guides/query-httpbreakdownmetrics-data-with-graphql/).
+Find out more on [Real⁠-⁠Time Metrics GraphQL API Fields](/en/documentation/devtools/graphql-api/features/gql-real-time-metrics-fields/) and learn [How to query data from the httpBreakdownMetrics dataset](/en/documentation/products/guides/query-httpbreakdownmetrics-data-with-graphql/).
 
 ---
 
@@ -1323,11 +1323,11 @@ To learn more about Azion Console, check out the [documentation](/en/documentati
 
 **Version 2.3.1**
 
-In this new version of **Azion CLI**, existing environment variables will be updated with the use of the `sync`command. Also, when creating environment variables, they will be sent as `secret` depending on their key. You can check the [documentation](/en/documentation/devtools/cli/reference/create/#variables) for details.
+In this new version of **Azion CLI**, existing environment variables will be updated with the use of the `sync`command. Also, when creating environment variables, they will be sent as `secret` depending on their key. You can check the [documentation](/en/documentation/devtools/cli/create/#variables) for details.
 
 Additionally, this release includes several improvements for user experience and messages.
 
-Read more about [Azion CLI and its commands](/en/documentation/devtools/cli/).
+Read more about [Azion CLI and its commands](/en/documentation/products/azion-cli/overview/).
 
 ### Azion Console
 
@@ -1365,7 +1365,7 @@ Read more on [Real-Time Events](/en/documentation/observe/real-time-events/) and
 
 You can now view metrics related to **Bot Manager** activity through the Real-Time Metrics interface. This new dashboard provides a complete view with two sections: Overview and Breakdown. It displays metrics for monitoring traffic, bot hits, common actions, impacted URLs, and requests flagged as bad bots from different IP addresses, among other metrics.
 
-Check on [Metrics' monitoring charts](/en/documentation/observe/real-time-metrics/#metrics-monitoring-with-charts). You can also [query Bot Manager data with GraphQL API](/en/documentation/devtools/graphql/guides/query-bot-manager-data-with-graphql/).
+Check on [Metrics' monitoring charts](/en/documentation/observe/real-time-metrics/#metrics-monitoring-with-charts). You can also [query Bot Manager data with GraphQL API](/en/documentation/products/guides/query-bot-manager-data-with-graphql/).
 
 ---
 
@@ -1391,7 +1391,7 @@ The latest version of **Azion CLI** introduces synchronized deployment. By runni
 
 Additionally, this release includes several improvements for user experience and messages.
 
-Read more about [Azion CLI and its commands](/en/documentation/devtools/cli/).
+Read more about [Azion CLI and its commands](/en/documentation/products/azion-cli/overview/).
 
 ---
 
@@ -1424,7 +1424,7 @@ Now you can deploy on the edge faster. This one-click integration allows you to 
 
 The new `connectedUsersMetrics` dataset is available in the **Real-Time Metrics GraphQL API**. Through this dataset, you can get real-time aggregated data, provided by Azion Live Ingest, related to the number of users connected to your applications with live streamings.
 
-Find out more on [Real⁠-⁠Time Metrics GraphQL API Fields](/en/documentation/devtools/graphql/reference/gql-real-time-metrics-fields/#connectedusersmetrics-live-ingest) and learn [How to query Connected Users data with GraphQL API](/en/documentation/devtools/graphql/guides/query-connected-users-data-with-graphql/).
+Find out more on [Real⁠-⁠Time Metrics GraphQL API Fields](/en/documentation/devtools/graphql-api/features/gql-real-time-metrics-fields/#connectedusersmetrics-live-ingest) and learn [How to query Connected Users data with GraphQL API](/en/documentation/products/guides/query-connected-users-data-with-graphql/).
 
 ---
 
@@ -1495,7 +1495,7 @@ Access to the Real-Time Metrics REST APIs has been discontinued and deprecated. 
 - **Real-Time Metrics GraphQL API**, which provides aggregated metrics in real time.
 - **Real-Time Events GraphQL API**, which provides raw logs in real time.
 
-Read more about [GraphQL API](/en/documentation/devtools/graphql/reference/overview/) and the [First Steps](/en/documentation/devtools/graphql/reference/first-steps/) to start using it.  
+Read more about [GraphQL API](/en/documentation/devtools/graphql-api/overview/) and the [First Steps](/en/documentation/devtools/graphql-api/first-steps/) to start using it.  
 
 ---
 
@@ -1529,10 +1529,10 @@ To read more about Bot Manager Lite features and variables, check the [How to in
 
 Announcing two new features: 
 
-- `--no-color`: it's a global flag that indicates the output to not use colors. Check more on the [documentation](/en/documentation/devtools/cli/reference/globals/#no-color).
-- `reset`: with this command, you can reset your Azion CLI settings to default and delete the personal token if possible. Check more on the [documentation](/en/documentation/devtools/cli/reference/reset/).
+- `--no-color`: it's a global flag that indicates the output to not use colors. Check more on the [documentation](/en/documentation/devtools/cli/globals/#no-color).
+- `reset`: with this command, you can reset your Azion CLI settings to default and delete the personal token if possible. Check more on the [documentation](/en/documentation/devtools/cli/reset/).
 
-Read more about [Azion CLI and its commands](/en/documentation/devtools/cli/).
+Read more about [Azion CLI and its commands](/en/documentation/products/azion-cli/overview/).
 
 ---
 
@@ -1540,13 +1540,13 @@ Read more about [Azion CLI and its commands](/en/documentation/devtools/cli/).
 
 ### Azion CLI
 
-You can now generate and manage [Let's Encrypt digital certificates](/en/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate/) within your domain via CLI. To do so, check the [digital-certificate-id command](/en/documentation/devtools/cli/reference/create/#digital-certificate-id) documentation. 
+You can now generate and manage [Let's Encrypt digital certificates](/en/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate/) within your domain via CLI. To do so, check the [digital-certificate-id command](/en/documentation/devtools/cli/create/#digital-certificate-id) documentation. 
 
 Additionally, you can now schedule the deletion of an Object Storage bucket with objects inside by using the `--force` flag:
     - If you try to delete a bucket with objects inside, the platform will delete everything and schedule the bucket to be deleted after 24 hours (the time needed to delete a bucket after it's emptied).
     - Next time you run a command after 24 hours, the deletion will be executed.
 
-Read more about [Azion CLI and its commands](/en/documentation/devtools/cli/).
+Read more about [Azion CLI and its commands](/en/documentation/products/azion-cli/overview/).
 
 ---
 
@@ -1558,10 +1558,10 @@ Announcing new features:
 
 - **Output Export**: all CRUD commands now support the `--out` flag, allowing output export to JSON, TOML, and YAML files.
 - **Environment Variables Dump**: you can now dump all environment variables using the `azion list variables --dump` command.
-- **CLI Control File Updates**: updates to the CLI control file [(azion.json)](/en/documentation/devtools/cli/reference/azion-config-js/).
+- **CLI Control File Updates**: updates to the CLI control file [(azion.json)](/en/documentation/devtools/cli/configs/azion-config-js/).
 - **Enhanced Deployment Information**:  improvement on the information provided to the user during deployment. This includes changes in names, the actual name used in the created resource, and more.
 
-Get to know [Azion CLI and its commands](/en/documentation/devtools/cli/).
+Get to know [Azion CLI and its commands](/en/documentation/products/azion-cli/overview/).
 
 ---
 
@@ -1581,7 +1581,7 @@ Check the [How to import an existing project from GitHub and deploy it](/en/docu
 
 Purge operations support is now available in Azion CLI, allowing effective cache management through URLs, wildcards, and cache-key options. This enhancement enables precise and efficient cache management.
 
-Read more about the [Purge command](/en/documentation/devtools/cli/reference/purge/).
+Read more about the [Purge command](/en/documentation/devtools/cli/purge/).
 
 ---
 
@@ -1591,7 +1591,7 @@ Read more about the [Purge command](/en/documentation/devtools/cli/reference/pur
 
 **Remote Repository Link** feature available. It provides developers with a tool that significantly improves efficiency, team collaboration, and the speed of application development.
 
-Read more about [Azion CLI and its commands](/en/documentation/devtools/cli/).
+Read more about [Azion CLI and its commands](/en/documentation/products/azion-cli/overview/).
 
 ---
 
@@ -1601,10 +1601,10 @@ Read more about [Azion CLI and its commands](/en/documentation/devtools/cli/).
 
 Introducing CRUD functionalities for Object Storage via CLI, allowing management of your buckets and objects. It includes:
 
-    - [Create](/en/documentation/devtools/cli/reference/create/#edge-storage-bucket), [Read](/en/documentation/devtools/cli/reference/list/#edge-storage-bucket), [Update](/en/documentation/devtools/cli/reference/update/#edge-storage-bucket), and [Delete](/en/documentation/devtools/cli/reference/delete/#edge-storage-bucket) operations directly through CLI.
+    - [Create](/en/documentation/devtools/cli/create/#edge-storage-bucket), [Read](/en/documentation/devtools/cli/list/#edge-storage-bucket), [Update](/en/documentation/devtools/cli/update/#edge-storage-bucket), and [Delete](/en/documentation/devtools/cli/delete/#edge-storage-bucket) operations directly through CLI.
     - Full API compatibility, ensuring a smooth workflow.
 
-Get to know [Azion CLI and its commands](/en/documentation/devtools/cli/).
+Get to know [Azion CLI and its commands](/en/documentation/products/azion-cli/overview/).
 
 ---
 
@@ -1692,13 +1692,13 @@ Check the [How to install Azion Bot Manager Lite](/en/documentation/marketplace/
 
 The new `serverProtocol` field is available in the **Real-Time Metrics GraphQL API** through the **httpMetrics** datatset. It can also be queried through **Real-Time Metrics** in Real-Time Manager as `Server Protocol`.
 
-This field informs the version of the request protocol used. Find out more on [Real⁠-⁠Time Metrics GraphQL API Fields](/en/documentation/devtools/graphql/reference/gql-real-time-metrics-fields/#httpmetrics-edge-applications-waf) and in the [How to add filters on Real⁠-⁠Time Metrics](/en/documentation/observe/data-stream/guides/add-filters-metrics/) guide.
+This field informs the version of the request protocol used. Find out more on [Real⁠-⁠Time Metrics GraphQL API Fields](/en/documentation/devtools/graphql-api/features/gql-real-time-metrics-fields/#httpmetrics-edge-applications-waf) and in the [How to add filters on Real⁠-⁠Time Metrics](/en/documentation/observe/data-stream/guides/add-filters-metrics/) guide.
 
 **Selected fields limit**
 
 The new limit for selected fields in the **Real-Time Metrics GraphQL API** and the **Real-Time Events GraphQL API** is *37 fields* per query.
 
-Find out more on [GraphQL API limits](/en/documentation/devtools/graphql/reference/limits/).
+Find out more on [GraphQL API limits](/en/documentation/devtools/graphql-api/limits/).
 
 ---
 
@@ -1710,7 +1710,7 @@ Find out more on [GraphQL API limits](/en/documentation/devtools/graphql/referen
 
 **Object Storage** is a scalable and flexible data storage solution that stores data as discrete objects, each containing its own data, associated metadata, and a unique identifier. This solution now comes equipped with access to the Azion **Object Storage REST API**, providing high scalability, accessibility, and cost-effectiveness for various unstructured data storage needs.
 
-See more details on the [Object Storage documentation](/en/documentation/devtools/cli/), the [API documentation](https://api.azion.com/#565230b1-5f75-49e5-b025-0dc9e271883d), and the following guides:
+See more details on the [Object Storage documentation](/en/documentation/products/azion-cli/overview/), the [API documentation](https://api.azion.com/#565230b1-5f75-49e5-b025-0dc9e271883d), and the following guides:
 
 - [How to create and modify an Object Storage bucket](/en/documentation/store/object-storage/guides/create-and-modify-bucket/)
 - [How to upload and download objects from an Object Storage bucket](/en/documentation/store/object-storage/guides/bucket-actions/)
@@ -1822,7 +1822,7 @@ Adds management commands for the following products and features:
 - Cache Settings
 - Personal Tokens
 
-Usage of the new commands is described in the [Azion CLI documentation](/en/documentation/devtools/cli/) or via the `azion -h` command.
+Usage of the new commands is described in the [Azion CLI documentation](/en/documentation/products/azion-cli/overview/) or via the `azion -h` command.
 
 :::note
 See the full list of minor changes and updates in the [Azion CLI Github repository](https://github.com/aziontech/azion/releases).
@@ -1856,7 +1856,7 @@ Eight new fields are available to query on the Activity History dataset:
 - `userId`
 - `userIp`
 
-See more details on the [Real-Time Events GraphQL API Fields reference documentation](/en/documentation/devtools/graphql/reference/gql-real-time-events-fields/).
+See more details on the [Real-Time Events GraphQL API Fields reference documentation](/en/documentation/devtools/graphql-api/features/gql-real-time-events-fields/).
 
 ### Real-Time Metrics
 
@@ -1876,7 +1876,7 @@ See the [Real-Time Metrics](/en/documentation/observe/real-time-metrics/) docume
 
 The new `version 1.3.0` reintroduces Edge Application and Rules Engine granular commands, ensuring a seamless experience.
 
-Get to know more about [Azion CLI](/en/documentation/devtools/cli/) and its commands.
+Get to know more about [Azion CLI](/en/documentation/products/azion-cli/overview/) and its commands.
 
 ---
 
@@ -1973,7 +1973,7 @@ Azion now provides a [Grafana plugin integration](https://github.com/aziontech/g
 - Customized alerts.
 - Specific status codes.
 
-It queries data from [Real-Time Metrics](/en/documentation/observe/real-time-metrics/) and [Real-Time Events](/en/documentation/observe/real-time-events/), which use the [GraphQL APIs](/en/documentation/devtools/graphql/reference/overview/).
+It queries data from [Real-Time Metrics](/en/documentation/observe/real-time-metrics/) and [Real-Time Events](/en/documentation/observe/real-time-events/), which use the [GraphQL APIs](/en/documentation/devtools/graphql-api/overview/).
 
 For more details, check the documentation on [How to integrate Azion with Grafana](/en/documentation/observe/real-time-metrics/guides/integrate-grafana/) and [How to customize a dashboard with the Azion plugin on Grafana](/en/documentation/observe/real-time-metrics/guides/azion-plugin-grafana-custom-dash/).
 
@@ -2024,7 +2024,7 @@ For more details, check the documentation on [How to integrate Azion with Grafan
 
 **GraphQL API**
 
-- The [GraphQL API Sorting](/en/documentation/devtools/graphql/reference/features/#sorting) feature now allows you to use the descending order specification for all fields of all datasets with the `groupBy` property.
+- The [GraphQL API Sorting](/en/documentation/devtools/graphql-api/features/#sorting) feature now allows you to use the descending order specification for all fields of all datasets with the `groupBy` property.
 
 **Marketplace**
 
@@ -2033,7 +2033,7 @@ For more details, check the documentation on [How to integrate Azion with Grafan
 
 **CLI**
 
-- Type static for [Edge Applications](/en/documentation/devtools/cli/) is now available.
+- Type static for [Edge Applications](/en/documentation/products/azion-cli/overview/) is now available.
 
 ### Updates
 
@@ -2353,7 +2353,7 @@ Fixed timeout occurrence when managing **Edge Functions** and **Edge Services**.
 
 **Azion CLI**
 
-- **Beta Release**: now, you can publish your Javascript, NextJS, and Flareact applications on Azion. Furthermore, Azion clients can manage their Edge Functions and Edge Services through command lines. Find out more about Azion CLI [here](/en/documentation/devtools/cli/).
+- **Beta Release**: now, you can publish your Javascript, NextJS, and Flareact applications on Azion. Furthermore, Azion clients can manage their Edge Functions and Edge Services through command lines. Find out more about Azion CLI [here](/en/documentation/products/azion-cli/overview/).
 
 ------
 
