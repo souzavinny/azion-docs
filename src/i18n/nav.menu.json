@@ -907,17 +907,6 @@
        },
        "items": [
         {
-         "key": "store/object-storage/guides/create-and-modify-bucket",
-         "label": {
-          "en": "How to create and modify an Object Storage bucket",
-          "pt-br": "Como criar e modificar um bucket do Object Storage"
-         },
-         "slug": {
-          "en": "/documentation/store/object-storage/guides/create-and-modify-bucket/",
-          "pt-br": "/documentacao/store/object-storage/guides/criar-e-modificar-um-bucket/"
-         }
-        },
-        {
          "key": "store/object-storage/guides/create-bucket",
          "label": {
           "en": "How to create an Object Storage bucket",
@@ -981,17 +970,6 @@
          "slug": {
           "en": "/documentation/store/object-storage/guides/use-bucket-as-origin/",
           "pt-br": "/documentacao/store/object-storage/guides/bucket-como-connector/"
-         }
-        },
-        {
-         "key": "store/object-storage/guides/use-s3-compatible-tools-with-object-storage",
-         "label": {
-          "en": "Use S3-compatible tools with Object Storage",
-          "pt-br": "Como acessar o Object Storage usando o protocolo S3"
-         },
-         "slug": {
-          "en": "/documentation/store/object-storage/guides/use-s3-compatible-tools-with-object-storage/",
-          "pt-br": "/documentacao/store/object-storage/guides/protocolo-s3-para-object-storage/"
          }
         }
        ]
@@ -1075,17 +1053,6 @@
          "slug": {
           "en": "/documentation/store/sql-database/guides/list-databases/",
           "pt-br": "/documentacao/store/sql-database/guides/listar-bancos-de-dados/"
-         }
-        },
-        {
-         "key": "store/sql-database/guides/manage-sql-database",
-         "label": {
-          "en": "How to manage an SQL Database database",
-          "pt-br": "Como gerenciar um banco de dados SQL Database"
-         },
-         "slug": {
-          "en": "/documentation/store/sql-database/guides/manage-sql-database/",
-          "pt-br": "/documentacao/store/sql-database/guides/gerenciar-bancos-dados-edge-sql/"
          }
         },
         {
