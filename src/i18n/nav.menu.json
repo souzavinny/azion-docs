@@ -1162,284 +1162,6 @@
      ]
     },
     {
-     "key": "secure/bot-manager",
-     "label": {
-      "en": "Bot Manager"
-     },
-     "items": [
-      {
-       "key": "secure/bot-manager/overview",
-       "label": {
-        "en": "About Bot Manager",
-        "pt-br": "Sobre Bot Manager"
-       },
-       "slug": {
-        "en": "/documentation/secure/bot-manager/",
-        "pt-br": "/documentacao/secure/bot-manager/"
-       }
-      },
-      {
-       "key": "secure/bot-manager/guides",
-       "label": {
-        "en": "Guides",
-        "pt-br": "Guias"
-       },
-       "items": [
-        {
-         "key": "secure/firewall/guides/manage-bots",
-         "label": {
-          "en": "How to manage bots",
-          "pt-br": "Como gerenciar bots"
-         },
-         "slug": {
-          "en": "/documentation/secure/firewall/guides/manage-bots/",
-          "pt-br": "/documentacao/secure/firewall/guides/gerenciar-bots/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "secure/bot-manager/reference",
-       "label": {
-        "en": "Reference",
-        "pt-br": "Referência"
-       },
-       "items": [
-        {
-         "key": "secure/bot-manager/reference/lite",
-         "label": {
-          "en": "Azion Bot Manager Lite"
-         },
-         "slug": {
-          "en": "/documentation/secure/bot-manager/reference/lite/",
-          "pt-br": "/documentacao/secure/bot-manager/reference/lite/"
-         }
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "key": "secure/certificate-manager",
-     "label": {
-      "en": "Certificate Manager"
-     },
-     "items": [
-      {
-       "key": "secure/certificate-manager/overview",
-       "label": {
-        "en": "About Certificate Manager",
-        "pt-br": "Sobre Certificate Manager"
-       },
-       "slug": {
-        "en": "/documentation/secure/certificate-manager/",
-        "pt-br": "/documentacao/secure/certificate-manager/"
-       }
-      },
-      {
-       "key": "secure/certificate-manager/guides",
-       "label": {
-        "en": "Guides",
-        "pt-br": "Guias"
-       },
-       "items": [
-        {
-         "key": "secure/firewall/guides/certificate-manager",
-         "label": {
-          "en": "Acquire & Register a Digital Certificate",
-          "pt-br": "Obtenha e registre um Digital Certificate"
-         },
-         "slug": {
-          "en": "/documentation/secure/firewall/guides/certificate-manager/",
-          "pt-br": "/documentacao/secure/firewall/guides/certificado-digital/"
-         }
-        },
-        {
-         "key": "secure/certificate-manager/guides/mtls",
-         "label": {
-          "en": "How to configure mTLS",
-          "pt-br": "Como configurar mTLS"
-         },
-         "slug": {
-          "en": "/documentation/secure/certificate-manager/guides/mtls/",
-          "pt-br": "/documentacao/secure/certificate-manager/guides/mtls/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "secure/certificate-manager/reference",
-       "label": {
-        "en": "Reference",
-        "pt-br": "Referência"
-       },
-       "items": [
-        {
-         "key": "secure/certificate-manager/reference/mtls",
-         "label": {
-          "en": "Support for mTLS for Secure",
-          "pt-br": "Suporte para mTLS para Secure"
-         },
-         "slug": {
-          "en": "/documentation/secure/certificate-manager/reference/mtls/",
-          "pt-br": "/documentacao/secure/certificate-manager/reference/mtls/"
-         }
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "key": "secure/connectors",
-     "label": {
-      "en": "Connectors"
-     },
-     "items": [
-      {
-       "key": "secure/connectors/overview",
-       "label": {
-        "en": "About Connectors",
-        "pt-br": "Sobre Connectors"
-       },
-       "slug": {
-        "en": "/documentation/secure/connectors/",
-        "pt-br": "/documentacao/secure/connectors/"
-       }
-      },
-      {
-       "key": "secure/connectors/reference",
-       "label": {
-        "en": "Reference",
-        "pt-br": "Referência"
-       },
-       "items": [
-        {
-         "key": "secure/connectors/reference/load-balancer",
-         "label": {
-          "en": "Load Balancer"
-         },
-         "slug": {
-          "en": "/documentation/secure/connectors/reference/load-balancer/",
-          "pt-br": "/documentacao/secure/connectors/reference/load-balancer/"
-         }
-        },
-        {
-         "key": "secure/connectors/reference/origin-shield",
-         "label": {
-          "en": "Origin Shield"
-         },
-         "slug": {
-          "en": "/documentation/secure/connectors/reference/origin-shield/",
-          "pt-br": "/documentacao/secure/connectors/reference/origin-shield/"
-         }
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "key": "secure/custom-pages",
-     "label": {
-      "en": "Custom Pages"
-     },
-     "slug": {
-      "en": "/documentation/secure/custom-pages/",
-      "pt-br": "/documentacao/secure/custom-pages/"
-     }
-    },
-    {
-     "key": "secure/edge-dns",
-     "label": {
-      "en": "Edge DNS"
-     },
-     "items": [
-      {
-       "key": "secure/edge-dns/overview",
-       "label": {
-        "en": "About Edge DNS",
-        "pt-br": "Sobre Edge DNS"
-       },
-       "slug": {
-        "en": "/documentation/secure/edge-dns/",
-        "pt-br": "/documentacao/secure/edge-dns/"
-       }
-      },
-      {
-       "key": "secure/edge-dns/guides",
-       "label": {
-        "en": "Guides",
-        "pt-br": "Guias"
-       },
-       "items": [
-        {
-         "key": "secure/firewall/guides/edge-dns-configure-main-settings",
-         "label": {
-          "en": "How to configure Edge DNS main settings",
-          "pt-br": "Como definir as main settings de uma zona"
-         },
-         "slug": {
-          "en": "/documentation/secure/firewall/guides/edge-dns-configure-main-settings/",
-          "pt-br": "/documentacao/secure/firewall/guides/edge-dns-definir-main-settings/"
-         }
-        },
-        {
-         "key": "secure/firewall/guides/add-records",
-         "label": {
-          "en": "How to add records",
-          "pt-br": "Como adicionar registros em uma zona de DNS"
-         },
-         "slug": {
-          "en": "/documentation/secure/firewall/guides/add-records/",
-          "pt-br": "/documentacao/secure/firewall/guides/adicionar-registros/"
-         }
-        },
-        {
-         "key": "secure/edge-dns/guides/run-the-dig-command",
-         "label": {
-          "en": "How to look up DNS servers with Dig command",
-          "pt-br": "Encontre servidores DNS com o comando DIG"
-         },
-         "slug": {
-          "en": "/documentation/secure/edge-dns/guides/run-the-dig-command/",
-          "pt-br": "/documentacao/secure/edge-dns/guides/executar-o-comando-dig/"
-         }
-        },
-        {
-         "key": "secure/edge-dns/guides/run-the-traceroute-command",
-         "label": {
-          "en": "Diagnose Issues with the Traceroute Command",
-          "pt-br": "Diagnostique problemas com o comando Traceroute"
-         },
-         "slug": {
-          "en": "/documentation/secure/edge-dns/guides/run-the-traceroute-command/",
-          "pt-br": "/documentacao/secure/edge-dns/guides/executar-o-comando-traceroute/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "secure/edge-dns/reference",
-       "label": {
-        "en": "Reference",
-        "pt-br": "Referência"
-       },
-       "items": [
-        {
-         "key": "secure/edge-dns/reference/dnssec-compatibility",
-         "label": {
-          "en": "DNSSEC Compatibility",
-          "pt-br": "Compatibilidade com DNSSEC"
-         },
-         "slug": {
-          "en": "/documentation/secure/edge-dns/reference/dnssec-compatibility/",
-          "pt-br": "/documentacao/secure/edge-dns/reference/compatibilidade-dnssec/"
-         }
-        }
-       ]
-      }
-     ]
-    },
-    {
      "key": "secure/firewall",
      "label": {
       "en": "Firewall"
@@ -1773,6 +1495,98 @@
      ]
     },
     {
+     "key": "secure/edge-dns",
+     "label": {
+      "en": "Edge DNS"
+     },
+     "items": [
+      {
+       "key": "secure/edge-dns/overview",
+       "label": {
+        "en": "About Edge DNS",
+        "pt-br": "Sobre Edge DNS"
+       },
+       "slug": {
+        "en": "/documentation/secure/edge-dns/",
+        "pt-br": "/documentacao/secure/edge-dns/"
+       }
+      },
+      {
+       "key": "secure/edge-dns/guides",
+       "label": {
+        "en": "Guides",
+        "pt-br": "Guias"
+       },
+       "items": [
+        {
+         "key": "secure/firewall/guides/edge-dns-configure-main-settings",
+         "label": {
+          "en": "How to configure Edge DNS main settings",
+          "pt-br": "Como definir as main settings de uma zona"
+         },
+         "slug": {
+          "en": "/documentation/secure/firewall/guides/edge-dns-configure-main-settings/",
+          "pt-br": "/documentacao/secure/firewall/guides/edge-dns-definir-main-settings/"
+         }
+        },
+        {
+         "key": "secure/firewall/guides/add-records",
+         "label": {
+          "en": "How to add records",
+          "pt-br": "Como adicionar registros em uma zona de DNS"
+         },
+         "slug": {
+          "en": "/documentation/secure/firewall/guides/add-records/",
+          "pt-br": "/documentacao/secure/firewall/guides/adicionar-registros/"
+         }
+        },
+        {
+         "key": "secure/edge-dns/guides/run-the-dig-command",
+         "label": {
+          "en": "How to look up DNS servers with Dig command",
+          "pt-br": "Encontre servidores DNS com o comando DIG"
+         },
+         "slug": {
+          "en": "/documentation/secure/edge-dns/guides/run-the-dig-command/",
+          "pt-br": "/documentacao/secure/edge-dns/guides/executar-o-comando-dig/"
+         }
+        },
+        {
+         "key": "secure/edge-dns/guides/run-the-traceroute-command",
+         "label": {
+          "en": "Diagnose Issues with the Traceroute Command",
+          "pt-br": "Diagnostique problemas com o comando Traceroute"
+         },
+         "slug": {
+          "en": "/documentation/secure/edge-dns/guides/run-the-traceroute-command/",
+          "pt-br": "/documentacao/secure/edge-dns/guides/executar-o-comando-traceroute/"
+         }
+        }
+       ]
+      },
+      {
+       "key": "secure/edge-dns/reference",
+       "label": {
+        "en": "Reference",
+        "pt-br": "Referência"
+       },
+       "items": [
+        {
+         "key": "secure/edge-dns/reference/dnssec-compatibility",
+         "label": {
+          "en": "DNSSEC Compatibility",
+          "pt-br": "Compatibilidade com DNSSEC"
+         },
+         "slug": {
+          "en": "/documentation/secure/edge-dns/reference/dnssec-compatibility/",
+          "pt-br": "/documentacao/secure/edge-dns/reference/compatibilidade-dnssec/"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
      "key": "secure/workloads",
      "label": {
       "en": "Workloads"
@@ -1849,6 +1663,192 @@
          "slug": {
           "en": "/documentation/secure/workloads/guides/point-domain-to-azion/",
           "pt-br": "/documentacao/secure/workloads/guides/apontar-dominio-para-a-azion/"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "key": "secure/certificate-manager",
+     "label": {
+      "en": "Certificate Manager"
+     },
+     "items": [
+      {
+       "key": "secure/certificate-manager/overview",
+       "label": {
+        "en": "About Certificate Manager",
+        "pt-br": "Sobre Certificate Manager"
+       },
+       "slug": {
+        "en": "/documentation/secure/certificate-manager/",
+        "pt-br": "/documentacao/secure/certificate-manager/"
+       }
+      },
+      {
+       "key": "secure/certificate-manager/guides",
+       "label": {
+        "en": "Guides",
+        "pt-br": "Guias"
+       },
+       "items": [
+        {
+         "key": "secure/firewall/guides/certificate-manager",
+         "label": {
+          "en": "Acquire & Register a Digital Certificate",
+          "pt-br": "Obtenha e registre um Digital Certificate"
+         },
+         "slug": {
+          "en": "/documentation/secure/firewall/guides/certificate-manager/",
+          "pt-br": "/documentacao/secure/firewall/guides/certificado-digital/"
+         }
+        },
+        {
+         "key": "secure/certificate-manager/guides/mtls",
+         "label": {
+          "en": "How to configure mTLS",
+          "pt-br": "Como configurar mTLS"
+         },
+         "slug": {
+          "en": "/documentation/secure/certificate-manager/guides/mtls/",
+          "pt-br": "/documentacao/secure/certificate-manager/guides/mtls/"
+         }
+        }
+       ]
+      },
+      {
+       "key": "secure/certificate-manager/reference",
+       "label": {
+        "en": "Reference",
+        "pt-br": "Referência"
+       },
+       "items": [
+        {
+         "key": "secure/certificate-manager/reference/mtls",
+         "label": {
+          "en": "Support for mTLS for Secure",
+          "pt-br": "Suporte para mTLS para Secure"
+         },
+         "slug": {
+          "en": "/documentation/secure/certificate-manager/reference/mtls/",
+          "pt-br": "/documentacao/secure/certificate-manager/reference/mtls/"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "key": "secure/connectors",
+     "label": {
+      "en": "Connectors"
+     },
+     "items": [
+      {
+       "key": "secure/connectors/overview",
+       "label": {
+        "en": "About Connectors",
+        "pt-br": "Sobre Connectors"
+       },
+       "slug": {
+        "en": "/documentation/secure/connectors/",
+        "pt-br": "/documentacao/secure/connectors/"
+       }
+      },
+      {
+       "key": "secure/connectors/reference",
+       "label": {
+        "en": "Reference",
+        "pt-br": "Referência"
+       },
+       "items": [
+        {
+         "key": "secure/connectors/reference/load-balancer",
+         "label": {
+          "en": "Load Balancer"
+         },
+         "slug": {
+          "en": "/documentation/secure/connectors/reference/load-balancer/",
+          "pt-br": "/documentacao/secure/connectors/reference/load-balancer/"
+         }
+        },
+        {
+         "key": "secure/connectors/reference/origin-shield",
+         "label": {
+          "en": "Origin Shield"
+         },
+         "slug": {
+          "en": "/documentation/secure/connectors/reference/origin-shield/",
+          "pt-br": "/documentacao/secure/connectors/reference/origin-shield/"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "key": "secure/custom-pages",
+     "label": {
+      "en": "Custom Pages"
+     },
+     "slug": {
+      "en": "/documentation/secure/custom-pages/",
+      "pt-br": "/documentacao/secure/custom-pages/"
+     }
+    },
+    {
+     "key": "secure/bot-manager",
+     "label": {
+      "en": "Bot Manager"
+     },
+     "items": [
+      {
+       "key": "secure/bot-manager/overview",
+       "label": {
+        "en": "About Bot Manager",
+        "pt-br": "Sobre Bot Manager"
+       },
+       "slug": {
+        "en": "/documentation/secure/bot-manager/",
+        "pt-br": "/documentacao/secure/bot-manager/"
+       }
+      },
+      {
+       "key": "secure/bot-manager/guides",
+       "label": {
+        "en": "Guides",
+        "pt-br": "Guias"
+       },
+       "items": [
+        {
+         "key": "secure/firewall/guides/manage-bots",
+         "label": {
+          "en": "How to manage bots",
+          "pt-br": "Como gerenciar bots"
+         },
+         "slug": {
+          "en": "/documentation/secure/firewall/guides/manage-bots/",
+          "pt-br": "/documentacao/secure/firewall/guides/gerenciar-bots/"
+         }
+        }
+       ]
+      },
+      {
+       "key": "secure/bot-manager/reference",
+       "label": {
+        "en": "Reference",
+        "pt-br": "Referência"
+       },
+       "items": [
+        {
+         "key": "secure/bot-manager/reference/lite",
+         "label": {
+          "en": "Azion Bot Manager Lite"
+         },
+         "slug": {
+          "en": "/documentation/secure/bot-manager/reference/lite/",
+          "pt-br": "/documentacao/secure/bot-manager/reference/lite/"
          }
         }
        ]
