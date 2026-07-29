@@ -1179,6 +1179,26 @@
        }
       },
       {
+       "key": "secure/bot-manager/guides",
+       "label": {
+        "en": "Guides",
+        "pt-br": "Guias"
+       },
+       "items": [
+        {
+         "key": "secure/firewall/guides/manage-bots",
+         "label": {
+          "en": "How to manage bots",
+          "pt-br": "Como gerenciar bots"
+         },
+         "slug": {
+          "en": "/documentation/secure/firewall/guides/manage-bots/",
+          "pt-br": "/documentacao/secure/firewall/guides/gerenciar-bots/"
+         }
+        }
+       ]
+      },
+      {
        "key": "secure/bot-manager/reference",
        "label": {
         "en": "Reference",
@@ -1223,6 +1243,17 @@
         "pt-br": "Guias"
        },
        "items": [
+        {
+         "key": "secure/firewall/guides/certificate-manager",
+         "label": {
+          "en": "Acquire & Register a Digital Certificate",
+          "pt-br": "Obtenha e registre um Digital Certificate"
+         },
+         "slug": {
+          "en": "/documentation/secure/firewall/guides/certificate-manager/",
+          "pt-br": "/documentacao/secure/firewall/guides/certificado-digital/"
+         }
+        },
         {
          "key": "secure/certificate-manager/guides/mtls",
          "label": {
@@ -1317,45 +1348,6 @@
      }
     },
     {
-     "key": "secure/ddos-protection",
-     "label": {
-      "en": "DDoS Protection"
-     },
-     "items": [
-      {
-       "key": "secure/ddos-protection/overview",
-       "label": {
-        "en": "About DDoS Protection",
-        "pt-br": "Sobre DDoS Protection"
-       },
-       "slug": {
-        "en": "/documentation/secure/ddos-protection/",
-        "pt-br": "/documentacao/secure/ddos-protection/"
-       }
-      },
-      {
-       "key": "secure/ddos-protection/reference",
-       "label": {
-        "en": "Reference",
-        "pt-br": "Referência"
-       },
-       "items": [
-        {
-         "key": "secure/ddos-protection/reference/ddos-mitigation",
-         "label": {
-          "en": "DDoS Mitigation",
-          "pt-br": "Mecanismos de mitigação e ataques DDoS"
-         },
-         "slug": {
-          "en": "/documentation/secure/ddos-protection/reference/ddos-mitigation/",
-          "pt-br": "/documentacao/secure/ddos-protection/reference/ddos-mitigation/"
-         }
-        }
-       ]
-      }
-     ]
-    },
-    {
      "key": "secure/edge-dns",
      "label": {
       "en": "Edge DNS"
@@ -1379,6 +1371,28 @@
         "pt-br": "Guias"
        },
        "items": [
+        {
+         "key": "secure/firewall/guides/edge-dns-configure-main-settings",
+         "label": {
+          "en": "How to configure Edge DNS main settings",
+          "pt-br": "Como definir as main settings de uma zona"
+         },
+         "slug": {
+          "en": "/documentation/secure/firewall/guides/edge-dns-configure-main-settings/",
+          "pt-br": "/documentacao/secure/firewall/guides/edge-dns-definir-main-settings/"
+         }
+        },
+        {
+         "key": "secure/firewall/guides/add-records",
+         "label": {
+          "en": "How to add records",
+          "pt-br": "Como adicionar registros em uma zona de DNS"
+         },
+         "slug": {
+          "en": "/documentation/secure/firewall/guides/add-records/",
+          "pt-br": "/documentacao/secure/firewall/guides/adicionar-registros/"
+         }
+        },
         {
          "key": "secure/edge-dns/guides/run-the-dig-command",
          "label": {
@@ -1443,67 +1457,253 @@
        }
       },
       {
+       "key": "secure/firewall/modules",
+       "label": {
+        "en": "Modules",
+        "pt-br": "Módulos"
+       },
+       "items": [
+        {
+         "key": "secure/ddos-protection",
+         "label": {
+          "en": "DDoS Protection"
+         },
+         "items": [
+          {
+           "key": "secure/ddos-protection/overview",
+           "label": {
+            "en": "About DDoS Protection",
+            "pt-br": "Sobre DDoS Protection"
+           },
+           "slug": {
+            "en": "/documentation/secure/ddos-protection/",
+            "pt-br": "/documentacao/secure/ddos-protection/"
+           }
+          },
+          {
+           "key": "secure/ddos-protection/reference",
+           "label": {
+            "en": "Reference",
+            "pt-br": "Referência"
+           },
+           "items": [
+            {
+             "key": "secure/ddos-protection/reference/ddos-mitigation",
+             "label": {
+              "en": "DDoS Mitigation",
+              "pt-br": "Mecanismos de mitigação e ataques DDoS"
+             },
+             "slug": {
+              "en": "/documentation/secure/ddos-protection/reference/ddos-mitigation/",
+              "pt-br": "/documentacao/secure/ddos-protection/reference/ddos-mitigation/"
+             }
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "key": "secure/network-shield",
+         "label": {
+          "en": "Network Shield"
+         },
+         "items": [
+          {
+           "key": "secure/network-shield/overview",
+           "label": {
+            "en": "About Network Shield",
+            "pt-br": "Sobre Network Shield"
+           },
+           "slug": {
+            "en": "/documentation/secure/network-shield/",
+            "pt-br": "/documentacao/secure/network-shield/"
+           }
+          },
+          {
+           "key": "secure/network-shield/guides",
+           "label": {
+            "en": "Guides",
+            "pt-br": "Guias"
+           },
+           "items": [
+            {
+             "key": "secure/firewall/guides/block-tor-networks",
+             "label": {
+              "en": "How to block Tor exit node IP addresses",
+              "pt-br": "Como bloquear endereços IP de exit nodes Tor"
+             },
+             "slug": {
+              "en": "/documentation/secure/firewall/guides/block-tor-networks/",
+              "pt-br": "/documentacao/secure/firewall/guides/bloquear-redes-tor/"
+             }
+            },
+            {
+             "key": "secure/network-shield/guides/blocklists-ip-addresses-edge",
+             "label": {
+              "en": "Create IP, ASN & Geo Blocklists",
+              "pt-br": "Crie listas de bloqueio de IP, ASN e geo"
+             },
+             "slug": {
+              "en": "/documentation/secure/network-shield/guides/blocklists-ip-addresses-edge/",
+              "pt-br": "/documentacao/secure/network-shield/guides/blocklists-enderecos-ip-edge/"
+             }
+            }
+           ]
+          },
+          {
+           "key": "secure/network-shield/reference",
+           "label": {
+            "en": "Reference",
+            "pt-br": "Referência"
+           },
+           "items": [
+            {
+             "key": "secure/firewall/reference/network-shield/network-lists",
+             "label": {
+              "en": "Network Lists"
+             },
+             "slug": {
+              "en": "/documentation/secure/firewall/reference/network-shield/network-lists/",
+              "pt-br": "/documentacao/secure/firewall/reference/network-shield/network-lists/"
+             }
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "key": "secure/waf",
+         "label": {
+          "en": "WAF"
+         },
+         "items": [
+          {
+           "key": "secure/waf/overview",
+           "label": {
+            "en": "About WAF",
+            "pt-br": "Sobre WAF"
+           },
+           "slug": {
+            "en": "/documentation/secure/waf/",
+            "pt-br": "/documentacao/secure/waf/"
+           }
+          },
+          {
+           "key": "secure/waf/guides",
+           "label": {
+            "en": "Guides",
+            "pt-br": "Guias"
+           },
+           "items": [
+            {
+             "key": "secure/waf/guides/configure-waf-allowed-rules",
+             "label": {
+              "en": "How to configure a WAF Custom Allowed Rule",
+              "pt-br": "Como configurar uma WAF Custom Allowed Rule"
+             },
+             "slug": {
+              "en": "/documentation/secure/waf/guides/configure-waf-allowed-rules/",
+              "pt-br": "/documentacao/secure/waf/guides/configurar-waf-allowed-rules/"
+             }
+            },
+            {
+             "key": "secure/firewall/guides/create-waf-rule-set",
+             "label": {
+              "en": "How to create a WAF rule set",
+              "pt-br": "Como criar um WAF rule set"
+             },
+             "slug": {
+              "en": "/documentation/secure/firewall/guides/create-waf-rule-set/",
+              "pt-br": "/documentacao/secure/firewall/guides/criar-waf-rule-set/"
+             }
+            },
+            {
+             "key": "secure/waf/guides/how-to-check-your-waf-mode",
+             "label": {
+              "en": "How to check your WAF mode",
+              "pt-br": "Como verificar o modo do seu WAF"
+             },
+             "slug": {
+              "en": "/documentation/secure/waf/guides/how-to-check-your-waf-mode/",
+              "pt-br": "/documentacao/secure/waf/guides/como-verificar-modo-do-seu-waf/"
+             }
+            },
+            {
+             "key": "secure/waf/guides/how-to-find-waf-score",
+             "label": {
+              "en": "How to find the score of WAF blocked requests",
+              "pt-br": "Encontre o score de requisições do WAF"
+             },
+             "slug": {
+              "en": "/documentation/secure/waf/guides/how-to-find-waf-score/",
+              "pt-br": "/documentacao/secure/waf/guides/como-encontrar-score-de-requisicoes-bloqueadas-pelo-waf/"
+             }
+            },
+            {
+             "key": "secure/waf/guides/mitigate-cve-2025-29927-nextjs",
+             "label": {
+              "en": "Mitigating CVE-2025-29927: Next.js Middleware Authorization Bypass",
+              "pt-br": "Mitigando o CVE-2025-29927: bypass de autorização no middleware do Next.js"
+             },
+             "slug": {
+              "en": "/documentation/secure/waf/guides/mitigate-cve-2025-29927-nextjs/",
+              "pt-br": "/documentacao/secure/waf/guides/mitigar-cve-2025-29927-nextjs/"
+             }
+            },
+            {
+             "key": "secure/waf/guides/waf-rules-for-specific-cookie",
+             "label": {
+              "en": "Configure WAF Rules for a Specific Cookie",
+              "pt-br": "Configure regras de WAF para um cookie específico"
+             },
+             "slug": {
+              "en": "/documentation/secure/waf/guides/waf-rules-for-specific-cookie/",
+              "pt-br": "/documentacao/secure/waf/guides/waf-rules-para-cookie-especifico/"
+             }
+            }
+           ]
+          },
+          {
+           "key": "secure/waf/reference",
+           "label": {
+            "en": "Reference",
+            "pt-br": "Referência"
+           },
+           "items": [
+            {
+             "key": "secure/waf/reference/custom-allowed-rules",
+             "label": {
+              "en": "WAF Exceptions",
+              "pt-br": "Exceções do WAF"
+             },
+             "slug": {
+              "en": "/documentation/secure/waf/reference/custom-allowed-rules/",
+              "pt-br": "/documentacao/secure/waf/reference/custom-allowed-rules/"
+             }
+            },
+            {
+             "key": "secure/waf/reference/rules-set",
+             "label": {
+              "en": "WAF Rule Sets"
+             },
+             "slug": {
+              "en": "/documentation/secure/waf/reference/rules-set/",
+              "pt-br": "/documentacao/secure/waf/reference/rule-sets/"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
        "key": "secure/firewall/guides",
        "label": {
         "en": "Guides",
         "pt-br": "Guias"
        },
        "items": [
-        {
-         "key": "secure/firewall/guides/add-records",
-         "label": {
-          "en": "How to add records",
-          "pt-br": "Como adicionar registros em uma zona de DNS"
-         },
-         "slug": {
-          "en": "/documentation/secure/firewall/guides/add-records/",
-          "pt-br": "/documentacao/secure/firewall/guides/adicionar-registros/"
-         }
-        },
-        {
-         "key": "secure/firewall/guides/block-tor-networks",
-         "label": {
-          "en": "How to block Tor exit node IP addresses",
-          "pt-br": "Como bloquear endereços IP de exit nodes Tor"
-         },
-         "slug": {
-          "en": "/documentation/secure/firewall/guides/block-tor-networks/",
-          "pt-br": "/documentacao/secure/firewall/guides/bloquear-redes-tor/"
-         }
-        },
-        {
-         "key": "secure/firewall/guides/certificate-manager",
-         "label": {
-          "en": "Acquire & Register a Digital Certificate",
-          "pt-br": "Obtenha e registre um Digital Certificate"
-         },
-         "slug": {
-          "en": "/documentation/secure/firewall/guides/certificate-manager/",
-          "pt-br": "/documentacao/secure/firewall/guides/certificado-digital/"
-         }
-        },
-        {
-         "key": "secure/firewall/guides/create-waf-rule-set",
-         "label": {
-          "en": "How to create a WAF rule set",
-          "pt-br": "Como criar um WAF rule set"
-         },
-         "slug": {
-          "en": "/documentation/secure/firewall/guides/create-waf-rule-set/",
-          "pt-br": "/documentacao/secure/firewall/guides/criar-waf-rule-set/"
-         }
-        },
-        {
-         "key": "secure/firewall/guides/edge-dns-configure-main-settings",
-         "label": {
-          "en": "How to configure Edge DNS main settings",
-          "pt-br": "Como definir as main settings de uma zona"
-         },
-         "slug": {
-          "en": "/documentation/secure/firewall/guides/edge-dns-configure-main-settings/",
-          "pt-br": "/documentacao/secure/firewall/guides/edge-dns-definir-main-settings/"
-         }
-        },
         {
          "key": "secure/firewall/guides/firewall-configure-main-settings",
          "label": {
@@ -1513,17 +1713,6 @@
          "slug": {
           "en": "/documentation/secure/firewall/guides/firewall-configure-main-settings/",
           "pt-br": "/documentacao/secure/firewall/guides/firewall-definir-main-settings/"
-         }
-        },
-        {
-         "key": "secure/firewall/guides/manage-bots",
-         "label": {
-          "en": "How to manage bots",
-          "pt-br": "Como gerenciar bots"
-         },
-         "slug": {
-          "en": "/documentation/secure/firewall/guides/manage-bots/",
-          "pt-br": "/documentacao/secure/firewall/guides/gerenciar-bots/"
          }
         },
         {
@@ -1569,16 +1758,6 @@
          }
         },
         {
-         "key": "secure/firewall/reference/network-shield/network-lists",
-         "label": {
-          "en": "Network Lists"
-         },
-         "slug": {
-          "en": "/documentation/secure/firewall/reference/network-shield/network-lists/",
-          "pt-br": "/documentacao/secure/firewall/reference/network-shield/network-lists/"
-         }
-        },
-        {
          "key": "secure/firewall/reference/rules-engine",
          "label": {
           "en": "Rules Engine for Firewall",
@@ -1587,158 +1766,6 @@
          "slug": {
           "en": "/documentation/secure/firewall/reference/rules-engine/",
           "pt-br": "/documentacao/secure/firewall/reference/rules-engine/"
-         }
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "key": "secure/network-shield",
-     "label": {
-      "en": "Network Shield"
-     },
-     "items": [
-      {
-       "key": "secure/network-shield/overview",
-       "label": {
-        "en": "About Network Shield",
-        "pt-br": "Sobre Network Shield"
-       },
-       "slug": {
-        "en": "/documentation/secure/network-shield/",
-        "pt-br": "/documentacao/secure/network-shield/"
-       }
-      },
-      {
-       "key": "secure/network-shield/guides",
-       "label": {
-        "en": "Guides",
-        "pt-br": "Guias"
-       },
-       "items": [
-        {
-         "key": "secure/network-shield/guides/blocklists-ip-addresses-edge",
-         "label": {
-          "en": "Create IP, ASN & Geo Blocklists",
-          "pt-br": "Crie listas de bloqueio de IP, ASN e geo"
-         },
-         "slug": {
-          "en": "/documentation/secure/network-shield/guides/blocklists-ip-addresses-edge/",
-          "pt-br": "/documentacao/secure/network-shield/guides/blocklists-enderecos-ip-edge/"
-         }
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "key": "secure/waf",
-     "label": {
-      "en": "WAF"
-     },
-     "items": [
-      {
-       "key": "secure/waf/overview",
-       "label": {
-        "en": "About WAF",
-        "pt-br": "Sobre WAF"
-       },
-       "slug": {
-        "en": "/documentation/secure/waf/",
-        "pt-br": "/documentacao/secure/waf/"
-       }
-      },
-      {
-       "key": "secure/waf/guides",
-       "label": {
-        "en": "Guides",
-        "pt-br": "Guias"
-       },
-       "items": [
-        {
-         "key": "secure/waf/guides/configure-waf-allowed-rules",
-         "label": {
-          "en": "How to configure a WAF Custom Allowed Rule",
-          "pt-br": "Como configurar uma WAF Custom Allowed Rule"
-         },
-         "slug": {
-          "en": "/documentation/secure/waf/guides/configure-waf-allowed-rules/",
-          "pt-br": "/documentacao/secure/waf/guides/configurar-waf-allowed-rules/"
-         }
-        },
-        {
-         "key": "secure/waf/guides/how-to-check-your-waf-mode",
-         "label": {
-          "en": "How to check your WAF mode",
-          "pt-br": "Como verificar o modo do seu WAF"
-         },
-         "slug": {
-          "en": "/documentation/secure/waf/guides/how-to-check-your-waf-mode/",
-          "pt-br": "/documentacao/secure/waf/guides/como-verificar-modo-do-seu-waf/"
-         }
-        },
-        {
-         "key": "secure/waf/guides/how-to-find-waf-score",
-         "label": {
-          "en": "How to find the score of WAF blocked requests",
-          "pt-br": "Encontre o score de requisições do WAF"
-         },
-         "slug": {
-          "en": "/documentation/secure/waf/guides/how-to-find-waf-score/",
-          "pt-br": "/documentacao/secure/waf/guides/como-encontrar-score-de-requisicoes-bloqueadas-pelo-waf/"
-         }
-        },
-        {
-         "key": "secure/waf/guides/mitigate-cve-2025-29927-nextjs",
-         "label": {
-          "en": "Mitigating CVE-2025-29927: Next.js Middleware Authorization Bypass",
-          "pt-br": "Mitigando o CVE-2025-29927: bypass de autorização no middleware do Next.js"
-         },
-         "slug": {
-          "en": "/documentation/secure/waf/guides/mitigate-cve-2025-29927-nextjs/",
-          "pt-br": "/documentacao/secure/waf/guides/mitigar-cve-2025-29927-nextjs/"
-         }
-        },
-        {
-         "key": "secure/waf/guides/waf-rules-for-specific-cookie",
-         "label": {
-          "en": "Configure WAF Rules for a Specific Cookie",
-          "pt-br": "Configure regras de WAF para um cookie específico"
-         },
-         "slug": {
-          "en": "/documentation/secure/waf/guides/waf-rules-for-specific-cookie/",
-          "pt-br": "/documentacao/secure/waf/guides/waf-rules-para-cookie-especifico/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "secure/waf/reference",
-       "label": {
-        "en": "Reference",
-        "pt-br": "Referência"
-       },
-       "items": [
-        {
-         "key": "secure/waf/reference/custom-allowed-rules",
-         "label": {
-          "en": "WAF Exceptions",
-          "pt-br": "Exceções do WAF"
-         },
-         "slug": {
-          "en": "/documentation/secure/waf/reference/custom-allowed-rules/",
-          "pt-br": "/documentacao/secure/waf/reference/custom-allowed-rules/"
-         }
-        },
-        {
-         "key": "secure/waf/reference/rules-set",
-         "label": {
-          "en": "WAF Rule Sets"
-         },
-         "slug": {
-          "en": "/documentation/secure/waf/reference/rules-set/",
-          "pt-br": "/documentacao/secure/waf/reference/rule-sets/"
          }
         }
        ]
