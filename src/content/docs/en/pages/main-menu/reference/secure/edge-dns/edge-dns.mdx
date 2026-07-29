@@ -1,51 +1,52 @@
 ---
 title: Edge DNS
 description: >-
-  Edge DNS is an authoritative DNS service that hosts your domains, zones, and
-  records on Azion's distributed infrastructure, with DDoS protection and
-  real-time record distribution.
-meta_tags: 'Edge DNS, DNS, routing, zones, records, authoritative DNS'
+  Host domains, DNS zones, and records with Azion routing solutions and Edge
+  DNS.
+meta_tags: 'Edge DNS, DNS, routing'
 namespace: documentation_products_intelligent_dns
 permalink: /documentation/secure/edge-dns/
 ---
 
 import LinkButton from 'azion-webkit/linkbutton'
 
-**Edge DNS** hosts your domains on Azion's distributed infrastructure so they benefit from the same performance and security solutions built for other Azion products, combining techniques to optimize requests with protection against **Distributed Denial of Service (DDoS)** attacks.
+**Edge DNS** is a domain hosting service that is part of Azion's traffic routing solution. With Edge DNS, your domains are hosted on Azion's global infrastructure using the same performance and security solutions built for other Azion products, combining request optimization techniques with protection against **Distributed Denial of Service (DDoS)** attacks.
 
-It works as an authoritative DNS solution that lets you manage your domains, zones, and records through a friendly and intuitive interface. It's designed for those who want high performance and high availability for their hosting and their domain.
-
-The flow is: you create a zone with the domain you want to host, add the records that define how **Edge DNS** should answer queries, and point your domain's authoritative DNS servers at your registrar to Azion's nameservers. Your settings are saved and distributed to the Azion network practically in real time. You can manage your zones and records through [Azion Console](https://console.azion.com) or the [Azion API](https://api.azion.com/).
+Edge DNS works as an authoritative DNS solution that allows customers to manage their domains, zones, and records directly from Azion Console. It's designed for customers who need high performance and high availability for their domain hosting.
 
 ---
 
 ## Implementation
 
-| Type | Resource |
-| ---- | -------- |
-| Quickstart | [Create your first zone and record (Console and API)](/en/documentation/secure/edge-dns/quickstart/) |
-| Guide | [How to configure Edge DNS main settings](/en/documentation/secure/firewall/guides/edge-dns-configure-main-settings/) |
-| Guide | [How to add records](/en/documentation/secure/firewall/guides/add-records/) |
-| Guide | [How to migrate nameservers to Azion](/en/documentation/secure/workloads/guides/migrate-ns-to-azion/) |
-| Guide | [How to test an Edge DNS zone processing](/en/documentation/secure/firewall/guides/test-zone/) |
-| Guide | [How to perform a load balance between DNS records](/en/documentation/secure/firewall/guides/load-balance-dns/) |
-| Guide | [How to activate DNSSEC](/en/documentation/secure/firewall/guides/activate-dnssec/) |
-| Reference | [DNSSEC Compatibility](/en/documentation/secure/edge-dns/reference/dnssec-compatibility/) |
-| Concepts | [How Edge DNS works: resolution, policies, wildcards, and propagation](/en/documentation/secure/edge-dns/concepts/) |
+| Scope | Source |
+|-------|--------|
+| Main settings | [How to configure Edge DNS main settings](/en/documentation/secure/firewall/guides/edge-dns-configure-main-settings/) |
+| Dig command | [How to look up DNS servers with the dig command](/en/documentation/secure/edge-dns/guides/run-the-dig-command/) |
+| Traceroute command | [How to diagnose performance and delivery issues with the traceroute command](/en/documentation/secure/edge-dns/guides/run-the-traceroute-command/) |
 
-:::tip
-Visit the [Guides page](/en/documentation/guides/#secure) and the [Secure section](/en/documentation/secure/overview/) to explore more options for protecting your domains.
-:::
+---
+
+## Domain Name System (DNS)
+
+As the name implies, it's a domain name resolution system. It translates your site's domain name into an Internet Protocol (IP) address so a connection can be established with the destination that will provide the requested content.
+
+It's the DNS that allows you to type in a domain name instead of a string of numbers. In other words, DNS translates the string of numbers (IP) of the domain you want to access into words that form the URL you know.
+
+After configuring Edge DNS, you can test if your zone is processing your information.
+
+<LinkButton link="/en/documentation/secure/firewall/guides/test-zone/" label="go to test zone guide" severity="secondary" /> 
 
 ---
 
 ## Edge DNS Records
 
-Records define the DNS responses for your hosted zone. These are the fields you configure for each record.
+<LinkButton link="/en/documentation/secure/firewall/guides/add-records/" label="go to add records guide" severity="secondary" />
 
 ### Zone Name
 
-Identifier for the newly created *Record*. This description is the domain that you want to create. For example: `manager` in [console.azion.com](https://console.azion.com).
+Identifier for the newly created *Record*.
+
+This description is the domain that you want to create. For example: `manager` in [console.azion.com](https://console.azion.com).
 
 ### Type
 
@@ -56,7 +57,7 @@ This is the type of record that is being added, such as types A, AAAA, MX, or CN
 To provide record creation, Edge DNS supports the following types of DNS entries.
 
 | Type                                        | Description                                                                                                                                                                                                                                                                                   | Reference                 |
-|---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------|
+|---------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------|
 | A (IPv4 Address)                            | Address Mapping record (A Record), also known as a DNS host record, stores a hostname and its corresponding IPv4 address.                                                                                                                                                                     | RFC1035                   |
 | AAAA (IPv6 Address)                         | IP Version 6 Address record (AAAA Record) stores a hostname and its corresponding IPv6 address.                                                                                                                                                                                               | RFC3596                   |
 | ANAME (Maps a name to another name)         | ALIAS record is a virtual record type created to provide CNAME, like behavior on apex domains.                                                                                                                                                                                                | draft-ietf-dnsop-aname-04 |
@@ -75,22 +76,47 @@ This is the DNS response to the registered record. For example, an IPv4 address.
 
 ### TTL (seconds)
 
-This is the time a response can be cached for on a resolver server. Time-to-live (TTL) is a value in an IP packet that tells a network router whether or not the packet has been on the network too long and should be discarded.
+This is the time, in seconds, that a DNS response can be cached by a resolver. When the TTL expires, the resolver discards the cached response and queries the authoritative nameserver again for a fresh answer.
 
 ### Policy
 
-It allows you to specify which policy Edge DNS should consider while resolving requests answered by this record entry. This field is enabled just when you are configuring either A, AAAA, CNAME, ANAME or MX type records.
+It allows you to specify which policy Edge DNS should consider while resolving requests answered by this record entry.
 
 You can select either *Simple Policy* (to use the standard DNS functionality) or *Weighted Policy* (to specify the amount of traffic to send to each Record).
 
 By choosing the *Weighted Policy*, there'll be two more fields to be completed, which are:
+
+- *Weight*: you can choose a number between `0` and `255` to specify the weight for each record. When you choose 0, Edge DNS stops using this record.
+- *Description*: used to differentiate records with the same *Name* and *Type*.
+
+From this point on, this set of information will be synchronized with the **Edge DNS** service. Your settings are saved and distributed to the Azion network practically in real time.
+
+Your domain is now set up and ready to be served by Azion **Edge DNS**. To make sure everything is working well, run some of the tests described in the [test zone guide](/en/documentation/secure/firewall/guides/test-zone/).
+
+### Record Policies
+
+While you are adding or modifying a record on **Edge DNS**, you will find the *“Policy“* field. This field is enabled just when you are configuring either A, AAAA, CNAME, ANAME or MX type records. This field lets you to choose between two policies to specify how **Edge DNS** should deal with requests answered by this record.
+
+#### Simple Policy
+
+By selecting *simple policy*, **Edge DNS** uses the standard DNS records behavior, routing all the traffic to the specified addresses in the *"Value"* field.
+
+#### Weighted Policy
+
+By selecting *weighted policy*, **Edge DNS** allows you to create multiple records with the same *Name* and *Type*, enabling you to specify a Weight that defines how much traffic should be routed to each record. This configuration allows you to load balance your applications or even gradually test new configurations.
+
+By selecting *weighted policy*, different fields options are displayed:
 
 | Field                    | Description                                                                                                                                               |
 |--------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Weight<br />*required      | You need to specify a weight value between 0 and 255. Higher values increase the chances of a specific record to be used. Setting 0 disables the record. |
 | Description<br />*optional | You may add a description up to 45 characters to distinguish between records with same Name and Type. <br/>Example: Florida Load Balancer                 |
 
-See how each policy resolves queries in the [Edge DNS concepts](/en/documentation/secure/edge-dns/concepts/#record-policies-simple-and-weighted) page.
+Given a set of Weighted Records, with same *Name* and *Type*, the chances of a specific record to be chosen by **Edge DNS** is defined by the following formula:
+
+`Weight of the record / Sum of all Weights`
+
+<LinkButton link="/en/documentation/secure/firewall/guides/load-balance-dns/" label="go to load balance DNS records guide" severity="secondary" />
 
 ---
 
@@ -115,7 +141,7 @@ The accepted value's format varies according to the chosen record type.
 | MX    | It must be in the format `[priority] [address]`.<br /><br />Maximum of 10 IP addresses (one per line). | `10 mailserver.example.com`<br /><br /> `20 mailserver2.example.com` |
 | NS    | It must be in FQDN format or be an IP address.<br /><br />Maximum of 10 records (one per line).<br /><br />An NS can't be configured by the main domain of the zone (naked domain).<br /><br />It must point to the servers that have authority over that record. |`ns1.aziondns.net`<br /><br /> `ns2.aziondns.com`<br /><br /> `ns3.aziondns.org |
 | PTR   | Reverse zones lined to IPv6 addresses follow other rules. | After creating a reverse zone, you must create a type PTR record associated with it.<br /><br /> `www.exemplo.com` |
-| SRV   | The zone name must have the following format: `_service._protocol.name`. Example: `_ldap._tcp.azionsrv"`.<br /><br />The response values must be in the format `[priority] [weight] [port] [target]`.<br /><br />Maximum of 10 records (one per line).<br /><br />It must point to the host name that has an A or AAAA record.<br /><br />**Note**: Edge DNS won't validate this automatically. | `0 60 5060 bigbox.example.com` |
+| SRV   | The zone name must have the following format: `_service._protocol.name`. Example: `_ldap._tcp.azionsrv".<br /><br />The response values must be in the format `[priority] [weight] [port] [target]`.<br /><br />Maximum of 10 records (one per line).<br /><br />It must point to the host name that has an A or AAAA record.<br /><br />**Note**: Edge DNS won't validate this automatically. | `0 60 5060 bigbox.example.com` |
 | TXT   | Limited to 1000 characters.<br /><br />Text that is separated by ENTER is considered as different responses by Edge DNS | This domain name is reserved for use in documentation.<br /><br /> `"printer=lpr5"`<br /><br /> `"favorite drink=orange juice"` |
 
 You can set up a domain, such as `www.domain.com`, to be used as a naked domain, that is, only `domain.com`. There are two ways to configure this:
@@ -123,7 +149,34 @@ You can set up a domain, such as `www.domain.com`, to be used as a naked domain,
 - Create an A-type entry pointing to your webserver. Then, it'll be redirected to Azion. This option may impact your Google ranking.
 - Create an ANAME entry in your DNS and point it to Azion. If you're using a DNS service outside Azion or a domain pointing to another platform, this option may not be supported.
 
-<LinkButton link="/en/documentation/secure/firewall/guides/access-root-domain/" label="go to access addresses through a root domain guide" severity="secondary" />
+<LinkButton link="/en/documentation/secure/firewall/guides/access-root-domain/" label="go to access addresses through a root domain guide" severity="secondary" /> 
+
+---
+
+## Wildcards
+
+A wildcard record is a record that responds to DNS requests by domains that you haven’t defined yet. You can create them for any type, inserting an asterisk (*)  in the record name. For example, imagine that you have the following configuration for a zone whose domain is “*example.com*”:
+
+| Name       | Type | Value                                               |
+|------------|------|-----------------------------------------------------|
+| www        | A    | 192.168.0.1<br /><br /> 192.168.0.2<br /><br /> 192.168.0.3 |
+| *          | A    | 1.1.1.1                                             |
+| *.wildcard | A    | 2.2.2.2                                             |
+
+This means that:
+
+- If the query is made by `www.example.com`, the response will consist of 3 IP addresses: 192.168.0.1, 192.168.0.2, and 192.168.0. N.B. It isn't a wildcard, but it's given priority for the response because it correctly meets the record that is queried.
+- If the query is made by `ghost.example.com`, the response will be according to the wildcard it found. The response will be: 1.1.1.1.
+- If the query is made by `another.wildcard.example.com`, the response will be according to the wildcard it found this time. The response will be: 2.2.2.2.
+- If the query is made by `wrong.record.example.com`, the response will have no value, because there's nothing that corresponds to this structure.
+
+Only the left-most asterisk followed by a dot will be considered a wildcard. All other asterisks, if any, will be considered as valid characters.
+
+:::note
+Asterisks located further to the left that aren't followed by a dot won't be considered wildcards.
+:::
+
+It isn't allowed to use wildcard characters in SRV type records because it requires a standard format in its name.
 
 ---
 
@@ -134,14 +187,39 @@ In order for **Edge DNS** to become the authority over your zones, you must poin
 To point to your DNS registration, use one of the *nameservers* listed in the *Main Settings* tab of your Azion registered zones.
 
 :::note
-It's important to verify that all your records are properly registered and tested at **Edge DNS** before making this appointment. Otherwise, you risk having your service unavailable.
+It's important to verify that all your records are properly registered and tested at **Edge DNS** before making this change. Otherwise, you risk having your service unavailable.
 :::
 
 ---
 
-## Monitoring and troubleshooting
+## Domain Name System Security Extensions (DNSSEC) 
 
-Before troubleshooting DNS issues, verify the current health of Azion's platform on the [Azion Status Page](https://status.azion.com). To confirm your DNS zone is processing requests correctly, use the following diagnostic tools:
+The **Domain Name System Security Extensions (DNSSEC)** is a feature of the *Domain Name System (DNS)* that authenticates responses to domain name lookups. It doesn't provide privacy protections for those lookups but prevents attackers from manipulating or poisoning the responses to DNS requests.
+
+<LinkButton link="/en/documentation/secure/edge-dns/reference/dnssec-compatibility/" label="go to DNSSEC compatibility reference" severity="secondary" /> 
+ 
+
+---
+
+## Monitoring and Troubleshooting
+
+### Check Service Status
+
+Before troubleshooting DNS issues, verify the current health of Azion's platform on the [Azion Status Page](https://status.azion.com). This page provides real-time information about service availability and any ongoing incidents affecting Edge DNS or other Azion services.
+
+### DNS Propagation Time
+
+When you create or modify DNS records on Edge DNS, changes are distributed across Azion's global network within seconds. However, full propagation to all DNS resolvers worldwide depends on your record's TTL (Time-to-Live) configuration and the caching behavior of intermediate resolvers.
+
+Typical propagation characteristics:
+
+- **Azion network**: Changes propagate within seconds to all Azion data centers
+- **Global resolvers**: May take up to the configured TTL value (default: 3600 seconds)
+- **Negative caching**: Failed lookups may be cached according to the SOA minimum TTL
+
+### Verify DNS Configuration
+
+To confirm your DNS zone is processing requests correctly, use the following diagnostic tools:
 
 | Tool | Purpose | Guide |
 |------|---------|-------|
@@ -150,14 +228,29 @@ Before troubleshooting DNS issues, verify the current health of Azion's platform
 | **NSLOOKUP** | Query DNS records for domains and IPs | [Test zone guide](/en/documentation/secure/firewall/guides/test-zone/) |
 | **Traceroute** | Diagnose network path and latency issues | [How to use Traceroute](/en/documentation/secure/edge-dns/guides/run-the-traceroute-command/) |
 
+### Monitor DNS Queries
+
 Track DNS query patterns and identify potential issues using Azion's Observe products:
 
-- **[Real-Time Metrics](/en/documentation/observe/real-time-metrics/#edge-dns)**: view aggregated charts showing query volumes, response codes, and geographic distribution over time.
-- **[GraphQL API](/en/documentation/devtools/graphql-api/features/#datasets)**: query raw and aggregated DNS data for custom analysis and integration with monitoring tools.
+- **[Real-Time Metrics](/en/documentation/observe/real-time-metrics/#edge-dns)**: View aggregated charts showing query volumes, response codes, and geographic distribution over time.
+- **[GraphQL API](/en/documentation/devtools/graphql-api/features/#datasets)**: Query raw and aggregated DNS data for custom analysis and integration with monitoring tools.
 
 <LinkButton link="/en/documentation/secure/firewall/guides/edge-dns-understand-metrics/" label="view Edge DNS metrics guide" severity="secondary" />
 
-If you experience unexpected behavior with Edge DNS replication or query responses, contact [Azion Support](/en/documentation/services/support/) with: the DIG or HOST command output showing the unexpected response, the timestamp of the observed issue (UTC format preferred), the affected domain names and record types, the nameserver used in the query (e.g., `ns1.aziondns.net`), and the geographic location where the issue was observed.
+### Report Issues
+
+If you experience unexpected behavior with Edge DNS replication or query responses:
+
+1. **Collect diagnostic information**:
+   - DIG or HOST command output showing the unexpected response
+   - Timestamp of the observed issue (UTC format preferred)
+   - Affected domain names and record types
+   - Nameserver used in the query (e.g., `ns1.aziondns.net`)
+   - Geographic location where the issue was observed
+
+2. **Check the status page** for any ongoing incidents at [status.azion.com](https://status.azion.com)
+
+3. **Contact Azion Support** through [Azion Support](/en/documentation/services/support/) with the collected information
 
 ---
 
@@ -169,33 +262,76 @@ To configure massive redirection for domain migration, access the [Massive Redir
 
 ---
 
-## Limits and plans
+## Monitoring and troubleshooting replication issues
 
-These are the **quantified limits** documented for Edge DNS records:
+When you create or update records in **Edge DNS**, changes are distributed across Azion's global infrastructure in near real time. However, DNS propagation depends on TTL values and resolver caches, which means some resolvers may still return stale responses for a period after a change is applied.
 
-| Scope | Limit |
-| ----- | ----- |
-| A, AAAA, and MX record values | Maximum of 10 IP addresses (one per line) |
-| NS and SRV records | Maximum of 10 records (one per line) |
-| ANAME and CNAME records | Only one domain for each record |
-| TXT record values | Limited to 1,000 characters |
-| TTL | Maximum value: `2147483647` seconds |
-| Weight (Weighted Policy) | Values from `0` to `255`; `0` disables the record |
-| Description (Weighted Policy) | Up to 45 characters |
+### How replication works
 
-Edge DNS is billed based on two metrics: **Zones** and **Queries**. If Edge DNS is activated, hosted zones and queries could generate usage-related costs: check the [pricing page](/en/documentation/platform/pricing/) for more information.
+Edge DNS synchronizes zone data across Azion's distributed infrastructure automatically. The time a resolver takes to reflect a change depends on the **TTL (Time to Live)** value set on the record: lower TTL values reduce the window during which outdated responses are served.
+
+### Verifying propagation
+
+To confirm whether a record change has propagated correctly, use the `dig` command against one of Azion's authoritative nameservers directly, bypassing any intermediate resolver cache:
+
+```bash
+dig @<azion-nameserver> <your-domain> <record-type>
+```
+
+Replace `<azion-nameserver>` with any of the nameservers listed in the **Main Settings** tab of your zone in Azion Console (for example, `ns1.aziondns.net` or `ns2.aziondns.net`), `<your-domain>` with your zone's domain, and `<record-type>` with the DNS record type (for example, `A`, `CNAME`, or `MX`).
+
+<LinkButton link="/en/documentation/secure/edge-dns/guides/run-the-dig-command/" label="go to dig command guide" severity="secondary" />
+
+### Common replication issues
+
+| Symptom | Likely cause | Recommended action |
+|---|---|---|
+| Record not resolving after update | Resolver is serving a cached response | Wait for the TTL to expire or lower the TTL before making changes |
+| Inconsistent responses across regions | Propagation still in progress | Wait a few minutes and re-query; check the record in Azion Console |
+| Zone not resolving at all | Nameservers not pointed to Azion | Verify that your domain registrar is using Azion's NS records |
+| NXDOMAIN for a record that exists | Record name or type mismatch | Confirm the record name and type in **Edge DNS** match the query |
+
+### Using Real-Time Events to investigate DNS queries
+
+**Real-Time Events** records queries received by your Edge DNS zones, including the query type (`Q Type`), resolution method (`Resolution Type`), and response status code (`Status Code`). Use these logs to identify unexpected query patterns, resolution failures, or anomalous traffic.
+
+<LinkButton link="/en/documentation/observe/real-time-events/" label="go to Real-Time Events reference" severity="secondary" />
+
+### Using Real-Time Metrics to track query volume
+
+The **Edge DNS** tab in **Real-Time Metrics** displays the **Total Queries** graph, which shows the total number of queries received by your zones over a selected time range. You can filter by zone using the available filters. A sudden drop in query volume may indicate a misconfiguration or a propagation issue, while an unexpected spike may signal abnormal traffic.
+
+<LinkButton link="/en/documentation/observe/real-time-metrics/" label="go to Real-Time Metrics reference" severity="secondary" />
 
 ---
 
-## Machine-readable facts
+## Checking platform status and service disruptions
 
-```text
-product: Edge DNS
-former_name: Intelligent DNS (renamed on March 12, 2024)
-api_base: https://api.azion.com/v4
-api_resource: /edge_dns/zones
-auth_header: Authorization: Token [TOKEN]
-nameservers: ns1.aziondns.net, ns2.aziondns.com, ns3.aziondns.org
-supported_record_types: A, AAAA, ANAME, CAA, CNAME, DS, MX, NS, PTR, SRV, TXT
-billing_metrics: Zones and Queries
-```
+Azion publishes real-time operational status for all platform components, including **Edge DNS**, on the [Azion Status Page](https://status.azion.com).
+
+### What the status page shows
+
+The status page reports the current health of Azion services across regions and components. For Edge DNS, it reflects:
+
+- **Operational**: all zones are resolving normally across all data centers.
+- **Degraded performance**: query resolution is slower than expected in one or more regions.
+- **Partial outage**: some zones or record types are not resolving in specific regions.
+- **Major outage**: Edge DNS is unavailable in one or more regions.
+
+### Subscribing to status updates
+
+You can subscribe to incident notifications directly from the status page to receive email alerts when Azion opens, updates, or resolves an incident affecting Edge DNS or any other platform component.
+
+### During a service disruption
+
+If the status page reports an active incident affecting Edge DNS:
+
+1. Check the incident details on the status page for the affected regions and estimated resolution time.
+2. Avoid making zone changes during an active incident, as propagation behavior may be unpredictable.
+3. Monitor your TTL values: if your records have low TTL values, resolvers will re-query Azion's nameservers more frequently, which may amplify the impact of a disruption.
+4. Contact **Support** if your service is critically affected and the incident is not yet reflected on the status page.
+
+<LinkButton link="https://status.azion.com" label="go to Azion Status Page" severity="secondary" />
+<LinkButton link="/en/documentation/services/support/" label="go to Support documentation" severity="secondary" />
+
+---
