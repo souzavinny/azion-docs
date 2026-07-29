@@ -1219,17 +1219,6 @@
        },
        "items": [
         {
-         "key": "secure/bot-manager/reference/overview",
-         "label": {
-          "en": "Bot Manager Reference",
-          "pt-br": "Referência do Bot Manager"
-         },
-         "slug": {
-          "en": "/documentation/secure/bot-manager/reference/",
-          "pt-br": "/documentacao/secure/bot-manager/reference/"
-         }
-        },
-        {
          "key": "secure/bot-manager/reference/lite",
          "label": {
           "en": "Azion Bot Manager Lite"
@@ -1258,17 +1247,6 @@
        "slug": {
         "en": "/documentation/secure/certificate-manager/",
         "pt-br": "/documentacao/secure/certificate-manager/"
-       }
-      },
-      {
-       "key": "secure/certificate-manager/quickstart",
-       "label": {
-        "en": "Certificate Manager quickstart",
-        "pt-br": "Quickstart do Certificate Manager"
-       },
-       "slug": {
-        "en": "/documentation/secure/certificate-manager/quickstart/",
-        "pt-br": "/documentacao/secure/certificate-manager/quickstart/"
        }
       },
       {
@@ -1310,17 +1288,6 @@
          }
         }
        ]
-      },
-      {
-       "key": "secure/certificate-manager/concepts",
-       "label": {
-        "en": "Certificate Manager concepts",
-        "pt-br": "Conceitos do Certificate Manager"
-       },
-       "slug": {
-        "en": "/documentation/secure/certificate-manager/concepts/",
-        "pt-br": "/documentacao/secure/certificate-manager/concepts/"
-       }
       }
      ]
     },
@@ -1439,17 +1406,6 @@
        }
       },
       {
-       "key": "secure/edge-dns/quickstart",
-       "label": {
-        "en": "Edge DNS quickstart",
-        "pt-br": "Quickstart do Edge DNS"
-       },
-       "slug": {
-        "en": "/documentation/secure/edge-dns/quickstart/",
-        "pt-br": "/documentacao/secure/edge-dns/quickstart/"
-       }
-      },
-      {
        "key": "secure/edge-dns/guides",
        "label": {
         "en": "Guides",
@@ -1499,17 +1455,6 @@
          }
         }
        ]
-      },
-      {
-       "key": "secure/edge-dns/concepts",
-       "label": {
-        "en": "Edge DNS concepts",
-        "pt-br": "Conceitos do Edge DNS"
-       },
-       "slug": {
-        "en": "/documentation/secure/edge-dns/concepts/",
-        "pt-br": "/documentacao/secure/edge-dns/concepts/"
-       }
       }
      ]
     },
@@ -1528,17 +1473,6 @@
        "slug": {
         "en": "/documentation/secure/firewall/",
         "pt-br": "/documentacao/secure/firewall/"
-       }
-      },
-      {
-       "key": "secure/firewall/quickstart",
-       "label": {
-        "en": "Firewall quickstart",
-        "pt-br": "Quickstart do Firewall"
-       },
-       "slug": {
-        "en": "/documentation/secure/firewall/quickstart/",
-        "pt-br": "/documentacao/secure/firewall/quickstart/"
        }
       },
       {
@@ -1689,17 +1623,6 @@
          }
         }
        ]
-      },
-      {
-       "key": "secure/firewall/concepts",
-       "label": {
-        "en": "Firewall concepts",
-        "pt-br": "Conceitos do Firewall"
-       },
-       "slug": {
-        "en": "/documentation/secure/firewall/concepts/",
-        "pt-br": "/documentacao/secure/firewall/concepts/"
-       }
       }
      ]
     },
@@ -1757,17 +1680,6 @@
        "slug": {
         "en": "/documentation/secure/waf/",
         "pt-br": "/documentacao/secure/waf/"
-       }
-      },
-      {
-       "key": "secure/waf/quickstart",
-       "label": {
-        "en": "WAF quickstart",
-        "pt-br": "Quickstart do WAF"
-       },
-       "slug": {
-        "en": "/documentation/secure/waf/quickstart/",
-        "pt-br": "/documentacao/secure/waf/quickstart/"
        }
       },
       {
@@ -1863,17 +1775,6 @@
          }
         }
        ]
-      },
-      {
-       "key": "secure/waf/concepts",
-       "label": {
-        "en": "WAF concepts",
-        "pt-br": "Conceitos do WAF"
-       },
-       "slug": {
-        "en": "/documentation/secure/waf/concepts/",
-        "pt-br": "/documentacao/secure/waf/concepts/"
-       }
       }
      ]
     },
@@ -2102,28 +2003,6 @@
          }
         }
        ]
-      },
-      {
-       "key": "observe/data-stream/reference",
-       "label": {
-        "en": "Data Stream reference",
-        "pt-br": "Referência do Data Stream"
-       },
-       "slug": {
-        "en": "/documentation/observe/data-stream/reference/",
-        "pt-br": "/documentacao/observe/data-stream/reference/"
-       }
-      },
-      {
-       "key": "observe/data-stream/concepts",
-       "label": {
-        "en": "Data Stream concepts",
-        "pt-br": "Conceitos do Data Stream"
-       },
-       "slug": {
-        "en": "/documentation/observe/data-stream/concepts/",
-        "pt-br": "/documentacao/observe/data-stream/concepts/"
-       }
       }
      ]
     },
