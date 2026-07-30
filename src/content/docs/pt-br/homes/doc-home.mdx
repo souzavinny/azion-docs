@@ -10,6 +10,7 @@ permalink: /documentacao/
 
 import HeroHome from 'azion-webkit/herohome';
 import Container from 'azion-webkit/container';
+import LinkButton from 'azion-webkit/linkbutton';
 import DocsCard from '~/components/DocsCard.astro';
 
 <div class="[&_.flex.flex-col]:!gap-4 [&_.flex.flex-col]:md:!gap-8 [&_.flex.flex-col]:2xl:!gap-16">
@@ -17,28 +18,26 @@ import DocsCard from '~/components/DocsCard.astro';
     title="Bem-vindo à <span style='color:#F3652B!important'>Documentação Azion</span>"
     description="Tornamos toda aplicação rápida e confiável. Faça a implementação de seus projetos instantaneamente na rede global mais confiável, aproveite segurança em nível corporativo e escale do zero ao pico sem cold starts."
     logos={[]}
-    buttons={[
-      { label: "Primeiro deploy em poucos minutos", link: "/pt-br/documentacao/get-started/first-deploy/", outlined: false },
-      { label: "Crie a sua conta", link: "https://console.azion.com/signup/", severity: "secondary" },
-      { label: "Visão geral da plataforma", link: "/pt-br/documentacao/platform/overview/", severity: "secondary" }
-    ]}
+    bottomSpacing="mb-8"
   />
+  <div class="flex flex-wrap gap-4 justify-center mb-16">
+    <LinkButton link="/pt-br/documentacao/get-started/first-deploy/" label="Primeiro deploy em poucos minutos" />
+    <LinkButton link="https://console.azion.com/signup/" label="Crie a sua conta" outlined />
+    <LinkButton link="/pt-br/documentacao/platform/overview/" label="Visão geral da plataforma" outlined />
+  </div>
 </div>
 
 ## Comece aqui, pelo seu perfil
 
 <div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
   <div id="persona-avaliador">
-      <DocsCard link="/pt-br/documentacao/get-started/first-deploy/" title="Estou avaliando a Azion" icon="pi pi-bolt" description="Veja o que dá para construir em 10 minutos: faça o deploy de uma aplicação real e verifique que ela está no ar, sem falar com vendas." />
+      <DocsCard link="/pt-br/documentacao/get-started/first-deploy/" title="Estou avaliando a Azion" icon="pi pi-bolt" description="Veja o que dá para construir em poucos minutos: faça o deploy de uma aplicação real e verifique que ela está no ar, sem falar com vendas." />
   </div>
   <div id="persona-implementador">
       <DocsCard link="/pt-br/documentacao/guides/" title="Preciso implementar algo específico" icon="pi pi-code" description="Encontre a funcionalidade pelo termo que você já usa — URLs assinadas, relatórios, streaming ao vivo — e siga um guia passo a passo até a produção." />
   </div>
-  <div id="persona-operador">
-      <DocsCard link="/pt-br/documentacao/produtos/azion-cli/visao-geral/" title="Opero a Azion em produção" icon="pi pi-server" description="Administre como código com a CLI, a API e o Terraform, e mantenha faturamento e gestão de contas sob controle." />
-  </div>
   <div id="persona-decisor">
-      <DocsCard link="/pt-br/documentacao/platform/pricing/" title="Estou comparando fornecedores" icon="pi pi-chart-line" description="Veja o que está incluído, os limites por plano e os preços — dentro da documentação — além de arquiteturas de referência para o seu cenário." />
+      <DocsCard link="/pt-br/documentacao/platform/pricing/" title="Preciso saber o que está incluído" icon="pi pi-chart-line" description="Limites por plano, preços e o que cada produto cobre — dentro da documentação — além de arquiteturas de referência para o seu cenário." />
   </div>
   <div id="persona-guardiao">
       <DocsCard link="/pt-br/documentacao/secure/overview/" title="Sou responsável pela segurança" icon="ai ai-secure-pillar" description="Configure WAF, proteção contra DDoS, gestão de bots e regras de firewall — depois faça o tuning com tráfego real e envie os eventos para o seu SIEM." />
