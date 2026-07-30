@@ -40,6 +40,12 @@ import DocsCard from '~/components/DocsCard.astro';
   <div id="persona-decisor">
       <DocsCard link="/pt-br/documentacao/platform/pricing/" title="Estou comparando fornecedores" icon="pi pi-chart-line" description="Veja o que está incluído, os limites por plano e os preços — dentro da documentação — além de arquiteturas de referência para o seu cenário." />
   </div>
+  <div id="persona-guardiao">
+      <DocsCard link="/pt-br/documentacao/secure/overview/" title="Sou responsável pela segurança" icon="ai ai-secure-pillar" description="Configure WAF, proteção contra DDoS, gestão de bots e regras de firewall — depois faça o tuning com tráfego real e envie os eventos para o seu SIEM." />
+  </div>
+  <div id="persona-ciso">
+      <DocsCard link="/pt-br/documentacao/platform/shared-responsibility/" title="Respondo por risco e conformidade" icon="pi pi-verified" description="Veja o que a Azion cobre e o que continua sendo seu, consulte as certificações PCI DSS e SOC e encontre a evidência que a auditoria pede." />
+  </div>
 </div>
 
 Também úteis: [faturamento e gestão de contas](/pt-br/documentacao/account/) · [arquiteturas de referência](/pt-br/documentacao/architectures/)
@@ -78,6 +84,35 @@ Qualquer que seja a porta escolhida, o [tutorial de primeiro deploy](/pt-br/docu
     <DocsCard link="/pt-br/documentacao/secure/overview/" title="Proteja a aplicação" icon="ai ai-edge-firewall" description="Adicione WAF, proteção contra DDoS e regras de tráfego na frente do que você implantou." />
     <DocsCard link="/pt-br/documentacao/observe/overview/" title="Observe a aplicação" icon="pi pi-chart-line" description="Acompanhe métricas, eventos e streams de dados do seu tráfego em tempo real." />
 </div>
+
+## Configure e opere a proteção
+
+Tudo o que fica na frente do que você implantou: as regras, o tuning que evita que elas bloqueiem usuários reais e a evidência de que dispararam.
+
+<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+    <DocsCard link="/pt-br/documentacao/secure/waf/" title="Web Application Firewall" icon="ai ai-edge-firewall" description="Proteja aplicações contra SQL Injection, Cross-Site Scripting (XSS), Remote File Inclusion e outras ameaças com rule sets configuráveis." />
+    <DocsCard link="/pt-br/documentacao/secure/firewall/guides/tune-waf/" title="Faça o tuning do WAF com tráfego real" icon="pi pi-list-check" description="Filtre os ataques que suas regras capturaram, separe ameaças reais de falsos positivos e transforme as exceções em allowed rules." />
+    <DocsCard link="/pt-br/documentacao/secure/ddos-protection/" title="DDoS Protection" icon="pi pi-shield" description="Defenda conteúdo e aplicações contra ataques de negação de serviço distribuída, absorvidos pela rede." />
+    <DocsCard link="/pt-br/documentacao/secure/bot-manager/" title="Bot Manager" icon="pi pi-microchip" description="Proteja aplicações contra ataques automatizados, como assinaturas de bots maliciosos e bots por script." />
+    <DocsCard link="/pt-br/documentacao/secure/network-shield/" title="Network Shield" icon="pi pi-map" description="Filtragem granular por endereço IP, ASN e país, aplicada por network lists no edge." />
+    <DocsCard link="/pt-br/documentacao/secure/certificate-manager/" title="Certificate Manager" icon="pi pi-key" description="Vincule certificados TLS às suas aplicações HTTPS, incluindo wildcard Let's Encrypt e mTLS para autenticação do cliente." />
+    <DocsCard link="/pt-br/documentacao/secure/firewall/guides/integrar-siems/" title="Integre com o seu SIEM" icon="pi pi-arrow-right-arrow-left" description="Envie eventos de WAF e firewall para o SIEM que seu time já acompanha, para detecção e resposta a ameaças." />
+</div>
+
+## Avalie risco e comprove conformidade
+
+O que a plataforma cobre, o que continua sendo seu e onde está a evidência quando a auditoria pergunta.
+
+<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+    <DocsCard link="/pt-br/documentacao/platform/shared-responsibility/" title="Modelo de Responsabilidade Compartilhada" icon="pi pi-verified" description="Os papéis e responsabilidades de cada parte quando a sua organização roda na plataforma da Azion." />
+    <DocsCard link="/pt-br/documentacao/platform/compliance/governanca-risco-conformidade/" title="Governança, Risco e Conformidade" icon="pi pi-id-card" description="Como a Azion apoia os esforços de conformidade com ferramentas de segurança, certificações e infraestrutura flexível." />
+    <DocsCard link="/pt-br/documentacao/platform/compliance/pci-dss-certification/" title="Compliance PCI DSS" icon="pi pi-wallet" description="A Azion é PCI-DSS 4.0 Level 1 Service Provider: o que isso cobre para cargas de trabalho que lidam com dados de portadores de cartão." />
+    <DocsCard link="/pt-br/documentacao/platform/compliance/soc/" title="Compliance SOC" icon="pi pi-lock" description="Relatórios SOC 2 Type 2 e SOC 3 semestrais, que demonstram controles de segurança auditados continuamente ao longo do ano." />
+    <DocsCard link="/pt-br/documentacao/account/guides/activity-history/" title="Activity History" icon="pi pi-history" description="A trilha de auditoria da conta: quais ações foram executadas no Console, por quem e quando." />
+    <DocsCard link="/pt-br/documentacao/services/security-response-team/" title="Security Response Team" icon="pi pi-users" description="Serviço gerenciado que autoriza a Azion a aplicar medidas de mitigação em seu nome durante um ataque." />
+</div>
+
+Governança de acesso: [single sign-on](/pt-br/documentacao/account/guides/sso/) · [autenticação multifator](/pt-br/documentacao/account/guides/multi-factor-authentication/) · [times e permissões](/pt-br/documentacao/account/guides/teams-permissions/) · [acesso condicional por endereço IP](/pt-br/documentacao/account/guides/conditional-access-by-ip-address/)
 
 ## Explore por área
 
