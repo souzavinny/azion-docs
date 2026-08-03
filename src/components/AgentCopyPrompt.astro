@@ -1,0 +1,41 @@
+---
+/**
+ * Non-visual helper for the Agent Setup hub: wires the "Copy prompt" hero
+ * button (a webkit LinkButton with link="#" inside #agent-prompt-actions)
+ * to copy `prompt` to the clipboard, with a temporary label swap as feedback.
+ */
+interface Props {
+  prompt: string;
+  copiedLabel?: string;
+}
+
+const { prompt, copiedLabel = 'Copied!' } = Astro.props;
+---
+
+<script is:inline define:vars={{ prompt, copiedLabel }}>
+  (function () {
+    var actions = document.getElementById('agent-prompt-actions');
+    if (!actions) return;
+    var btn = actions.querySelector('a[href="#"]');
+    if (!btn) return;
+    var textNode = null;
+    for (var i = 0; i < btn.childNodes.length; i++) {
+      var node = btn.childNodes[i];
+      if (node.nodeType === 3 && node.nodeValue.trim().length) {
+        textNode = node;
+        break;
+      }
+    }
+    btn.addEventListener('click', function (event) {
+      event.preventDefault();
+      navigator.clipboard.writeText(prompt).then(function () {
+        if (!textNode) return;
+        var original = textNode.nodeValue;
+        textNode.nodeValue = copiedLabel;
+        setTimeout(function () {
+          textNode.nodeValue = original;
+        }, 2000);
+      });
+    });
+  })();
+</script>

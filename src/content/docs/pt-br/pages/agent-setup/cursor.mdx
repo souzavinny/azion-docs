@@ -1,0 +1,79 @@
+---
+title: Use o Cursor com a Azion
+description: >-
+  Conecte o Cursor ao servidor MCP da Azion, adicione contexto da plataforma
+  por meio de regras de projeto e verifique a configuração com um prompt de
+  teste.
+meta_tags: >-
+  cursor, azion, mcp, configuração de agentes, agente de ia, ide de ia
+namespace: documentation_agent_setup_cursor
+permalink: /documentacao/agent-setup/cursor/
+---
+
+import LinkButton from 'azion-webkit/linkbutton';
+import Code from '~/components/Code/Code.astro';
+import Steps from '~/components/Steps.astro';
+import ReadableColumn from '~/components/ReadableColumn.astro';
+
+<ReadableColumn />
+
+O [Cursor](https://cursor.com) é uma IDE AI-first. Conecte o agente dele à documentação ao vivo e às ferramentas MCP da Azion em quatro passos.
+
+## Início rápido
+
+<Steps>
+
+<div class="step">
+
+**Instale o Cursor** — baixe em [cursor.com](https://cursor.com).
+
+</div>
+
+<div class="step">
+
+**Conecte o servidor MCP da Azion** — nas configurações do Cursor, abra **Tools & Integrations** e adicione um novo servidor MCP, substituindo `YOUR_PERSONAL_TOKEN` por um [personal token da Azion](/pt-br/documentacao/account/reference/personal-tokens/). O Cursor usa o prefixo `Token` em vez de `Bearer`:
+
+<Code lang="json" code={`{
+    "mcpServers": {
+        "azion": {
+            "type": "streamable-http",
+            "url": "https://mcp.azion.com",
+            "headers": {
+                "Authorization": "Token YOUR_PERSONAL_TOKEN"
+            }
+        }
+    }
+}`} />
+
+</div>
+
+<div class="step">
+
+**Adicione contexto da Azion** — copie o bloco pronto de [Para agentes de IA](/pt-br/documentacao/devtools/for-ai-agents/) no `AGENTS.md` do projeto, ou salve-o como regra em `.cursor/rules`.
+
+</div>
+
+<div class="step">
+
+**Verifique** — abra o painel do agente e pergunte:
+
+<Code lang="text" code={`Usando o servidor MCP da Azion, busque na documentação como o cache funciona na Azion.`} />
+
+O agente deve responder por meio de `search_azion_docs_and_site`.
+
+</div>
+
+</Steps>
+
+## Prompts para experimentar
+
+- "Busque na documentação da Azion sobre configuração de WAF e proteja minha aplicação."
+- "Gere um arquivo azion.config para este projeto e explique cada opção."
+- "Consulte a API v4 da Azion para listar minhas aplicações — use meu token do ambiente."
+
+## Continue daqui
+
+<div class="flex flex-wrap gap-4 my-6">
+  <LinkButton link="/pt-br/documentacao/devtools/mcp/configuracao/" label="Guia de configuração do MCP" outlined />
+  <LinkButton link="/pt-br/documentacao/agent-setup/" label="Configuração de agentes" outlined />
+</div>

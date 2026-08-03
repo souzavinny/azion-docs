@@ -1,0 +1,68 @@
+---
+title: Use Claude Code with Azion
+description: >-
+  Connect Claude Code to the Azion MCP server, add platform context to
+  CLAUDE.md, and verify the setup with a test prompt.
+meta_tags: >-
+  claude code, anthropic, azion, mcp, agent setup, ai coding agent, terminal
+namespace: documentation_agent_setup_claude_code
+permalink: /documentation/agent-setup/claude-code/
+---
+
+import LinkButton from 'azion-webkit/linkbutton';
+import Code from '~/components/Code/Code.astro';
+import Steps from '~/components/Steps.astro';
+import ReadableColumn from '~/components/ReadableColumn.astro';
+
+<ReadableColumn />
+
+[Claude Code](https://www.anthropic.com/claude-code) is Anthropic's terminal coding agent. Connect it to Azion's live docs and MCP tools in four steps.
+
+## Quick start
+
+<Steps>
+
+<div class="step">
+
+**Install Claude Code** — follow [Anthropic's instructions](https://www.anthropic.com/claude-code) and authenticate.
+
+</div>
+
+<div class="step">
+
+**Connect the Azion MCP server** — run from your project root, replacing `YOUR_PERSONAL_TOKEN` with an [Azion personal token](/en/documentation/account/reference/personal-tokens/):
+
+<Code lang="bash" code={`claude mcp add "azion-mcp" "https://mcp.azion.com" -t http -H "Authorization: Bearer YOUR_PERSONAL_TOKEN"`} />
+
+</div>
+
+<div class="step">
+
+**Add Azion context** — copy the ready-made block from [For AI Agents](/en/documentation/devtools/for-ai-agents/) into your project's `CLAUDE.md` (or `AGENTS.md`).
+
+</div>
+
+<div class="step">
+
+**Verify** — `claude mcp list` should show `azion-mcp` connected. Then ask:
+
+<Code lang="text" code={`Using the Azion MCP server, search the docs for how to create an application with the CLI.`} />
+
+The agent should answer through `search_azion_docs_and_site` or `search_azion_cli_commands`.
+
+</div>
+
+</Steps>
+
+## Prompts to try
+
+- "Deploy this project to Azion with the CLI and give me the application's domain."
+- "Search the Azion docs for Firewall rate limiting and add it to my application."
+- "Create a Rules Engine rule that rewrites `/api/*` requests to my Connector."
+
+## Keep going
+
+<div class="flex flex-wrap gap-4 my-6">
+  <LinkButton link="/en/documentation/devtools/mcp/configuration/" label="MCP Configuration Guide" outlined />
+  <LinkButton link="/en/documentation/agent-setup/" label="Agent Setup" outlined />
+</div>

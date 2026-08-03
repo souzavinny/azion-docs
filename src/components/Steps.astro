@@ -1,0 +1,63 @@
+---
+/**
+ * Numbered steps for quick starts: each direct child with class="step" gets a
+ * numbered square marker (same tokens as webkit's Tile) and a vertical guide
+ * line connecting it to the next step. Code inside a step must use the Code
+ * component (~/components/Code/Code.astro) — expressive-code only processes
+ * root-level fences, so fenced blocks nested in a step render unstyled.
+ */
+---
+
+<div class="docs-steps">
+  <slot />
+</div>
+
+<style>
+  .docs-steps {
+    counter-reset: docs-step;
+    margin: 1.5rem 0 2rem;
+  }
+  .docs-steps > :global(.step) {
+    counter-increment: docs-step;
+    position: relative;
+    padding-left: 2.75rem;
+    padding-bottom: 1.5rem;
+  }
+  .docs-steps > :global(.step)::before {
+    content: counter(docs-step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.75rem;
+    height: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8125rem;
+    border-radius: 0.25rem;
+    background-color: var(--surface-400);
+    color: var(--text-color-secondary);
+  }
+  .docs-steps > :global(.step)::after {
+    content: '';
+    position: absolute;
+    left: 0.875rem;
+    top: 2.25rem;
+    bottom: 0.25rem;
+    width: 1px;
+    background-color: var(--surface-border);
+  }
+  .docs-steps > :global(.step:last-child) {
+    padding-bottom: 0;
+  }
+  .docs-steps > :global(.step:last-child)::after {
+    display: none;
+  }
+  .docs-steps > :global(.step > :first-child) {
+    margin-top: 0;
+  }
+  .docs-steps > :global(.step p) {
+    margin-top: 0.25rem;
+    margin-bottom: 0.75rem;
+  }
+</style>

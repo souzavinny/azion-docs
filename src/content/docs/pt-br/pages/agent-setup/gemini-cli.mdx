@@ -1,0 +1,79 @@
+---
+title: Use o Gemini CLI com a Azion
+description: >-
+  Conecte o Gemini CLI ao servidor MCP da Azion via settings.json, adicione
+  contexto da plataforma ao GEMINI.md e verifique a configuração com um
+  prompt de teste.
+meta_tags: >-
+  gemini cli, google, azion, mcp, configuração de agentes, agente de ia,
+  terminal
+namespace: documentation_agent_setup_gemini_cli
+permalink: /documentacao/agent-setup/gemini-cli/
+---
+
+import LinkButton from 'azion-webkit/linkbutton';
+import Code from '~/components/Code/Code.astro';
+import Steps from '~/components/Steps.astro';
+import ReadableColumn from '~/components/ReadableColumn.astro';
+
+<ReadableColumn />
+
+O [Gemini CLI](https://github.com/google-gemini/gemini-cli) é o agente de código open source de terminal do Google. Conecte-o à documentação ao vivo e às ferramentas MCP da Azion em quatro passos.
+
+## Início rápido
+
+<Steps>
+
+<div class="step">
+
+**Instale o Gemini CLI** — siga as [instruções de instalação](https://github.com/google-gemini/gemini-cli) e autentique-se.
+
+</div>
+
+<div class="step">
+
+**Conecte o servidor MCP da Azion** — adicione ao `.gemini/settings.json` do projeto (ou `~/.gemini/settings.json` para uso global), substituindo `YOUR_PERSONAL_TOKEN` por um [personal token da Azion](/pt-br/documentacao/account/reference/personal-tokens/):
+
+<Code lang="json" code={`{
+    "mcpServers": {
+        "azion": {
+            "httpUrl": "https://mcp.azion.com",
+            "headers": {
+                "Authorization": "Bearer YOUR_PERSONAL_TOKEN"
+            }
+        }
+    }
+}`} />
+
+</div>
+
+<div class="step">
+
+**Adicione contexto da Azion** — copie o bloco pronto de [Para agentes de IA](/pt-br/documentacao/devtools/for-ai-agents/) no `GEMINI.md` do seu projeto.
+
+</div>
+
+<div class="step">
+
+**Verifique** — execute `/mcp` dentro de uma sessão; o `azion` deve aparecer com as suas ferramentas. Depois pergunte:
+
+<Code lang="text" code={`Usando o servidor MCP da Azion, busque na documentação como o Data Stream funciona.`} />
+
+O agente deve responder por meio de `search_azion_docs_and_site`.
+
+</div>
+
+</Steps>
+
+## Prompts para experimentar
+
+- "Busque na documentação da Azion sobre SQL Database e crie uma tabela para os leads do meu app."
+- "Escreva uma query GraphQL com as minhas 10 URLs com mais tráfego na última hora."
+- "Configure uma regra no Rules Engine que adicione headers de segurança a todas as respostas."
+
+## Continue daqui
+
+<div class="flex flex-wrap gap-4 my-6">
+  <LinkButton link="/pt-br/documentacao/devtools/mcp/configuracao/" label="Guia de configuração do MCP" outlined />
+  <LinkButton link="/pt-br/documentacao/agent-setup/" label="Configuração de agentes" outlined />
+</div>

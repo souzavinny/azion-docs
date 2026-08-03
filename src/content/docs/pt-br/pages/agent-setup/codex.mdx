@@ -1,0 +1,71 @@
+---
+title: Use o Codex com a Azion
+description: >-
+  Conecte o OpenAI Codex ao servidor MCP da Azion via config.toml, adicione
+  contexto da plataforma ao AGENTS.md e verifique a configuração com um
+  prompt de teste.
+meta_tags: >-
+  codex, openai, azion, mcp, configuração de agentes, agente de ia, terminal
+namespace: documentation_agent_setup_codex
+permalink: /documentacao/agent-setup/codex/
+---
+
+import LinkButton from 'azion-webkit/linkbutton';
+import Code from '~/components/Code/Code.astro';
+import Steps from '~/components/Steps.astro';
+import ReadableColumn from '~/components/ReadableColumn.astro';
+
+<ReadableColumn />
+
+O [Codex](https://openai.com/codex/) é o agente de código de terminal da OpenAI. Conecte-o à documentação ao vivo e às ferramentas MCP da Azion em quatro passos.
+
+## Início rápido
+
+<Steps>
+
+<div class="step">
+
+**Instale o Codex** — siga as [instruções da OpenAI](https://openai.com/codex/) e autentique-se. Você também precisa de Node.js 18+ para o `mcp-remote`, instalado automaticamente via `npx`.
+
+</div>
+
+<div class="step">
+
+**Conecte o servidor MCP da Azion** — adicione ao `~/.codex/config.toml`, substituindo `YOUR_PERSONAL_TOKEN` por um [personal token da Azion](/pt-br/documentacao/account/reference/personal-tokens/):
+
+<Code lang="toml" code={`[mcp_servers.azion]
+command = "npx"
+args = ["-y", "mcp-remote", "https://mcp.azion.com", "--header", "Authorization: Bearer YOUR_PERSONAL_TOKEN"]`} />
+
+</div>
+
+<div class="step">
+
+**Adicione contexto da Azion** — o Codex lê `AGENTS.md` nativamente: copie o bloco pronto de [Para agentes de IA](/pt-br/documentacao/devtools/for-ai-agents/) no `AGENTS.md` do seu projeto.
+
+</div>
+
+<div class="step">
+
+**Verifique** — `codex mcp list` (ou o equivalente da sua versão) deve mostrar o `azion` registrado. Depois pergunte:
+
+<Code lang="text" code={`Usando o servidor MCP da Azion, busque na documentação como criar uma Function.`} />
+
+O agente deve responder por meio de `search_azion_docs_and_site`.
+
+</div>
+
+</Steps>
+
+## Prompts para experimentar
+
+- "Busque na documentação da Azion sobre KV Store e persista dados de sessão a partir da minha Function."
+- "Faça o deploy deste site estático na Azion e informe o domínio."
+- "Liste meus Workloads pela API v4 da Azion — o token está no meu ambiente."
+
+## Continue daqui
+
+<div class="flex flex-wrap gap-4 my-6">
+  <LinkButton link="/pt-br/documentacao/devtools/mcp/configuracao/" label="Guia de configuração do MCP" outlined />
+  <LinkButton link="/pt-br/documentacao/agent-setup/" label="Configuração de agentes" outlined />
+</div>

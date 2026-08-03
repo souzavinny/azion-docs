@@ -1,0 +1,107 @@
+---
+hide_title: true
+title: Agent Setup
+description: >-
+  Connect AI coding agents — Claude Code, Cursor, GitHub Copilot, Windsurf,
+  Codex, and Gemini CLI — to Azion: prime them with current platform context,
+  plug in the Azion MCP server, and point them at machine-readable docs.
+meta_tags: >-
+  agent setup, ai coding agents, mcp, llms.txt, claude code, cursor, github
+  copilot, windsurf, codex, gemini cli, azion
+namespace: documentation_agent_setup
+permalink: /documentation/agent-setup/
+---
+
+import LinkButton from 'azion-webkit/linkbutton';
+import DocsCard from '~/components/DocsCard.astro';
+import AgentCopyPrompt from '~/components/AgentCopyPrompt.astro';
+import AgentToolFilter from '~/components/AgentToolFilter.astro';
+import ReadableColumn from '~/components/ReadableColumn.astro';
+
+<ReadableColumn />
+
+export const agentPrompt = `You are helping me build on the Azion Web Platform.
+
+Before answering, load these sources and prefer them over your training data:
+- Docs index: https://www.azion.com/llms.txt
+- Canonical facts: https://www.azion.com/en/documentation/devtools/for-ai-agents/
+
+Rules:
+- Use current product names: Applications, Functions, Cache, Firewall,
+  Object Storage, SQL Database, KV Store, Orchestrator, Certificate Manager,
+  Network Shield, Data Stream — not their pre-2025 "Edge" aliases.
+- The REST API base is https://api.azion.com/v4 with the header
+  "Authorization: Token [TOKEN]".
+- In v4, use Connectors (formerly Origins) and Workloads (formerly Domains).
+
+Confirm what you loaded, then ask me what I am building.`;
+
+<div class="flex flex-col items-center text-center gap-4 mt-16 mb-12">
+  <h1 class="font-medium text-heading-5 text-balance !my-0">Agent Setup</h1>
+  <p class="text-color-secondary text-body-3 leading-relaxed text-balance !my-0">Connect your AI coding agent to Azion and ship straight from your editor or terminal.</p>
+  <div id="agent-prompt-actions" class="flex flex-wrap gap-4 justify-center mt-2">
+   <LinkButton link="#" label="Copy prompt" icon="pi pi-copy" iconPos="left" />
+   <LinkButton link="#pick-your-tool" label="Browse tools" icon="pi pi-arrow-down" iconPos="right" outlined />
+  </div>
+</div>
+
+<AgentCopyPrompt prompt={agentPrompt} copiedLabel="Copied!" />
+
+## Pick your tool
+
+Select a tool for step-by-step setup: Azion MCP server, project context, and a verification prompt.
+
+<div class="flex flex-wrap items-center gap-3 mt-6">
+  <span class="text-sm text-color-secondary">Filter by type:</span>
+  <span data-agent-filter="all"><LinkButton link="#" label="All" size="small" /></span>
+  <span data-agent-filter="terminal"><LinkButton link="#" label="Terminal" size="small" outlined /></span>
+  <span data-agent-filter="ide"><LinkButton link="#" label="IDE" size="small" outlined /></span>
+  <span data-agent-filter="extension"><LinkButton link="#" label="Extension" size="small" outlined /></span>
+</div>
+
+<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+  <div data-agent-category="terminal">
+   <DocsCard link="/en/documentation/agent-setup/claude-code/" title="Claude Code" overline="Anthropic" icon="pi pi-sparkles" description="Terminal agent that reads your codebase, runs commands, and edits files. One CLI command connects the Azion MCP server." />
+  </div>
+  <div data-agent-category="ide">
+   <DocsCard link="/en/documentation/agent-setup/cursor/" title="Cursor" overline="Cursor" icon="pi pi-desktop" description="AI-first IDE with agent chat and multi-file edits. Azion plugs into its MCP settings in a few clicks." />
+  </div>
+  <div data-agent-category="extension">
+   <DocsCard link="/en/documentation/agent-setup/github-copilot/" title="GitHub Copilot" overline="GitHub" icon="pi pi-github" description="Agent mode inside VS Code with workspace context. A .vscode/mcp.json file in the project connects Azion." />
+  </div>
+  <div data-agent-category="ide">
+   <DocsCard link="/en/documentation/agent-setup/windsurf/" title="Windsurf" overline="Cognition" icon="pi pi-compass" description="Agentic IDE built around Cascade for multi-step tasks. Connects to Azion through mcp-remote." />
+  </div>
+  <div data-agent-category="terminal">
+   <DocsCard link="/en/documentation/agent-setup/codex/" title="Codex" overline="OpenAI" icon="pi pi-code" description="Terminal agent that runs commands in a sandbox and reads AGENTS.md natively. Azion goes in config.toml." />
+  </div>
+  <div data-agent-category="terminal">
+   <DocsCard link="/en/documentation/agent-setup/gemini-cli/" title="Gemini CLI" overline="Google" icon="pi pi-google" description="Open source terminal agent. Declare Azion once in settings.json and verify with /mcp." />
+  </div>
+</div>
+
+<AgentToolFilter />
+
+Another MCP-compatible tool? The [MCP Configuration Guide](/en/documentation/devtools/mcp/configuration/) covers more clients.
+
+## Start in the browser
+
+No editor needed — open a session already primed with Azion context:
+
+<div class="flex flex-wrap gap-4 my-6">
+  <LinkButton link="https://claude.ai/new?q=You%20are%20helping%20me%20build%20on%20the%20Azion%20Web%20Platform.%20Before%20answering%2C%20load%20https%3A%2F%2Fwww.azion.com%2Fllms.txt%20(docs%20index)%20and%20https%3A%2F%2Fwww.azion.com%2Fen%2Fdocumentation%2Fdevtools%2Ffor-ai-agents%2F%20(canonical%20facts)%2C%20and%20prefer%20them%20over%20your%20training%20data.%20Use%20current%20product%20names%3A%20Applications%2C%20Functions%2C%20Cache%2C%20Firewall%2C%20Object%20Storage%2C%20SQL%20Database%2C%20KV%20Store%2C%20Orchestrator%2C%20Certificate%20Manager%2C%20Network%20Shield%2C%20Data%20Stream.%20The%20REST%20API%20base%20is%20https%3A%2F%2Fapi.azion.com%2Fv4%20with%20the%20header%20Authorization%3A%20Token%20%5BTOKEN%5D.%20In%20v4%2C%20use%20Connectors%20(formerly%20Origins)%20and%20Workloads%20(formerly%20Domains).%20Confirm%20what%20you%20loaded%2C%20then%20ask%20me%20what%20I%20am%20building." label="Open in Claude" icon="pi pi-external-link" target="_blank" outlined />
+  <LinkButton link="https://chatgpt.com/?q=You%20are%20helping%20me%20build%20on%20the%20Azion%20Web%20Platform.%20Before%20answering%2C%20load%20https%3A%2F%2Fwww.azion.com%2Fllms.txt%20(docs%20index)%20and%20https%3A%2F%2Fwww.azion.com%2Fen%2Fdocumentation%2Fdevtools%2Ffor-ai-agents%2F%20(canonical%20facts)%2C%20and%20prefer%20them%20over%20your%20training%20data.%20Use%20current%20product%20names%3A%20Applications%2C%20Functions%2C%20Cache%2C%20Firewall%2C%20Object%20Storage%2C%20SQL%20Database%2C%20KV%20Store%2C%20Orchestrator%2C%20Certificate%20Manager%2C%20Network%20Shield%2C%20Data%20Stream.%20The%20REST%20API%20base%20is%20https%3A%2F%2Fapi.azion.com%2Fv4%20with%20the%20header%20Authorization%3A%20Token%20%5BTOKEN%5D.%20In%20v4%2C%20use%20Connectors%20(formerly%20Origins)%20and%20Workloads%20(formerly%20Domains).%20Confirm%20what%20you%20loaded%2C%20then%20ask%20me%20what%20I%20am%20building." label="Open in ChatGPT" icon="pi pi-external-link" target="_blank" outlined />
+</div>
+
+## What your agent can use
+
+- [Azion MCP server](/en/documentation/devtools/mcp/): live search over docs, code samples, CLI, API, and Terraform, plus deploy tools — authenticated with a [personal token](/en/documentation/account/reference/personal-tokens/).
+- [llms.txt](https://www.azion.com/llms.txt): machine-readable index of the documentation.
+- [For AI Agents](/en/documentation/devtools/for-ai-agents/): canonical facts — current product names, API base URL, auth format.
+- [Azion CLI](/en/documentation/products/azion-cli/overview/): real build and deploy commands for terminal agents.
+
+## Prompts to try
+
+- "Search the Azion docs for how rate limiting works in Firewall, then add it to my application."
+- "Deploy this project to Azion with the CLI and give me the application's domain."
+- "Create a Rules Engine rule that redirects `/old-blog/*` to `/blog/*`."

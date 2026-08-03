@@ -1,0 +1,77 @@
+---
+title: Use Gemini CLI with Azion
+description: >-
+  Connect Gemini CLI to the Azion MCP server through settings.json, add
+  platform context to GEMINI.md, and verify the setup with a test prompt.
+meta_tags: >-
+  gemini cli, google, azion, mcp, agent setup, ai coding agent, terminal
+namespace: documentation_agent_setup_gemini_cli
+permalink: /documentation/agent-setup/gemini-cli/
+---
+
+import LinkButton from 'azion-webkit/linkbutton';
+import Code from '~/components/Code/Code.astro';
+import Steps from '~/components/Steps.astro';
+import ReadableColumn from '~/components/ReadableColumn.astro';
+
+<ReadableColumn />
+
+[Gemini CLI](https://github.com/google-gemini/gemini-cli) is Google's open source terminal coding agent. Connect it to Azion's live docs and MCP tools in four steps.
+
+## Quick start
+
+<Steps>
+
+<div class="step">
+
+**Install Gemini CLI** — follow the [install instructions](https://github.com/google-gemini/gemini-cli) and authenticate.
+
+</div>
+
+<div class="step">
+
+**Connect the Azion MCP server** — add this to `.gemini/settings.json` in your project (or `~/.gemini/settings.json` for global use), replacing `YOUR_PERSONAL_TOKEN` with an [Azion personal token](/en/documentation/account/reference/personal-tokens/):
+
+<Code lang="json" code={`{
+    "mcpServers": {
+        "azion": {
+            "httpUrl": "https://mcp.azion.com",
+            "headers": {
+                "Authorization": "Bearer YOUR_PERSONAL_TOKEN"
+            }
+        }
+    }
+}`} />
+
+</div>
+
+<div class="step">
+
+**Add Azion context** — copy the ready-made block from [For AI Agents](/en/documentation/devtools/for-ai-agents/) into your project's `GEMINI.md`.
+
+</div>
+
+<div class="step">
+
+**Verify** — run `/mcp` inside a session; `azion` should appear with its tools. Then ask:
+
+<Code lang="text" code={`Using the Azion MCP server, search the docs for how Data Stream works.`} />
+
+The agent should answer through `search_azion_docs_and_site`.
+
+</div>
+
+</Steps>
+
+## Prompts to try
+
+- "Search the Azion docs for SQL Database and create a table for my app's leads."
+- "Write a GraphQL query for my top 10 URLs by traffic in the last hour."
+- "Set up a Rules Engine rule that adds security headers to every response."
+
+## Keep going
+
+<div class="flex flex-wrap gap-4 my-6">
+  <LinkButton link="/en/documentation/devtools/mcp/configuration/" label="MCP Configuration Guide" outlined />
+  <LinkButton link="/en/documentation/agent-setup/" label="Agent Setup" outlined />
+</div>

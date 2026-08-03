@@ -1,0 +1,80 @@
+---
+title: Use Windsurf with Azion
+description: >-
+  Connect Windsurf to the Azion MCP server through mcp-remote, add platform
+  context through rules, and verify the setup with a test prompt.
+meta_tags: >-
+  windsurf, cascade, azion, mcp, agent setup, ai coding agent, agentic ide
+namespace: documentation_agent_setup_windsurf
+permalink: /documentation/agent-setup/windsurf/
+---
+
+import LinkButton from 'azion-webkit/linkbutton';
+import Code from '~/components/Code/Code.astro';
+import Steps from '~/components/Steps.astro';
+import ReadableColumn from '~/components/ReadableColumn.astro';
+
+<ReadableColumn />
+
+[Windsurf](https://windsurf.com) is an agentic IDE built around the Cascade agent. Connect it to Azion's live docs and MCP tools in four steps.
+
+## Quick start
+
+<Steps>
+
+<div class="step">
+
+**Install Windsurf** — download it from [windsurf.com](https://windsurf.com). You also need Node.js 18+ for `mcp-remote`, installed automatically via `npx`.
+
+</div>
+
+<div class="step">
+
+**Connect the Azion MCP server** — add this to `.codeium/windsurf/mcp_config.json` (also reachable from Cascade's settings), replacing `YOUR_PERSONAL_TOKEN` with an [Azion personal token](/en/documentation/account/reference/personal-tokens/):
+
+<Code lang="json" code={`{
+    "mcpServers": {
+        "azion": {
+            "command": "npx",
+            "args": [
+                "mcp-remote",
+                "https://mcp.azion.com",
+                "--header",
+                "Authorization: Bearer YOUR_PERSONAL_TOKEN"
+            ]
+        }
+    }
+}`} />
+
+</div>
+
+<div class="step">
+
+**Add Azion context** — copy the ready-made block from [For AI Agents](/en/documentation/devtools/for-ai-agents/) into a rules file such as `.windsurf/rules/azion.md`.
+
+</div>
+
+<div class="step">
+
+**Verify** — refresh the MCP servers in Cascade's settings; `azion` should appear. Then ask:
+
+<Code lang="text" code={`Using the Azion MCP server, search the docs for how Functions work.`} />
+
+The agent should answer through `search_azion_docs_and_site`.
+
+</div>
+
+</Steps>
+
+## Prompts to try
+
+- "Search the Azion docs for image processing and add it to my application."
+- "Build a Terraform file for an Azion application with a Connector to my backend."
+- "Create a Firewall rule set that blocks requests without a valid session cookie."
+
+## Keep going
+
+<div class="flex flex-wrap gap-4 my-6">
+  <LinkButton link="/en/documentation/devtools/mcp/configuration/" label="MCP Configuration Guide" outlined />
+  <LinkButton link="/en/documentation/agent-setup/" label="Agent Setup" outlined />
+</div>

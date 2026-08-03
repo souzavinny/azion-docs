@@ -51,6 +51,17 @@
      }
     },
     {
+     "key": "get-started/agent-setup",
+     "label": {
+      "en": "Agent Setup",
+      "pt-br": "Configuração de agentes"
+     },
+     "slug": {
+      "en": "/documentation/agent-setup/",
+      "pt-br": "/documentacao/agent-setup/"
+     }
+    },
+    {
      "key": "get-started/first-deploy",
      "label": {
       "en": "First deploy",

@@ -1,0 +1,18 @@
+---
+/**
+ * Page-scoped readable column: caps the docs content column and centers it on
+ * wide screens instead of letting the text stretch with the viewport. Astro
+ * only ships this style on pages that include the component, so importing it
+ * in a page's MDX opts that page in. Renders nothing.
+ */
+---
+
+<style is:global>
+	/* the sitewide .px-container rule caps at 1344px with !important —
+	   match it so the higher-specificity selector wins on these pages */
+	article > section.px-container,
+	article > aside.px-container {
+		max-width: 56rem !important;
+		margin-inline: auto;
+	}
+</style>

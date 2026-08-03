@@ -1,0 +1,78 @@
+---
+title: Use GitHub Copilot with Azion
+description: >-
+  Connect GitHub Copilot in VS Code to the Azion MCP server, add platform
+  context through copilot-instructions.md, and verify the setup.
+meta_tags: >-
+  github copilot, vs code, azion, mcp, agent setup, ai coding agent
+namespace: documentation_agent_setup_github_copilot
+permalink: /documentation/agent-setup/github-copilot/
+---
+
+import LinkButton from 'azion-webkit/linkbutton';
+import Code from '~/components/Code/Code.astro';
+import Steps from '~/components/Steps.astro';
+import ReadableColumn from '~/components/ReadableColumn.astro';
+
+<ReadableColumn />
+
+[GitHub Copilot](https://github.com/features/copilot) runs as an agent inside VS Code. Connect it to Azion's live docs and MCP tools in four steps.
+
+## Quick start
+
+<Steps>
+
+<div class="step">
+
+**Install the pieces** — VS Code with the GitHub Copilot extension and an active Copilot subscription.
+
+</div>
+
+<div class="step">
+
+**Connect the Azion MCP server** — create `.vscode/mcp.json` in your project root, replacing `YOUR_PERSONAL_TOKEN` with an [Azion personal token](/en/documentation/account/reference/personal-tokens/):
+
+<Code lang="json" code={`{
+    "servers": {
+        "azion": {
+            "type": "http",
+            "url": "https://mcp.azion.com",
+            "headers": {
+                "Authorization": "Bearer YOUR_PERSONAL_TOKEN"
+            }
+        }
+    }
+}`} />
+
+</div>
+
+<div class="step">
+
+**Add Azion context** — copy the ready-made block from [For AI Agents](/en/documentation/devtools/for-ai-agents/) into `.github/copilot-instructions.md` in your repository.
+
+</div>
+
+<div class="step">
+
+**Verify** — open Copilot Chat in agent mode, start the server when prompted, and ask:
+
+<Code lang="text" code={`Using the Azion MCP server, search the docs for how to create a Workload.`} />
+
+The Azion tools should appear in the tools picker, and the agent should answer through `search_azion_docs_and_site`.
+
+</div>
+
+</Steps>
+
+## Prompts to try
+
+- "Search the Azion docs for Object Storage and write an upload script using the API v4."
+- "Add a GitHub Actions workflow that deploys this project to Azion with the CLI."
+- "Explain the difference between Connectors and the legacy Origins concept."
+
+## Keep going
+
+<div class="flex flex-wrap gap-4 my-6">
+  <LinkButton link="/en/documentation/devtools/mcp/configuration/" label="MCP Configuration Guide" outlined />
+  <LinkButton link="/en/documentation/agent-setup/" label="Agent Setup" outlined />
+</div>

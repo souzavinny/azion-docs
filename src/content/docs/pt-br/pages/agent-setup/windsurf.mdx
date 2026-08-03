@@ -1,0 +1,82 @@
+---
+title: Use o Windsurf com a Azion
+description: >-
+  Conecte o Windsurf ao servidor MCP da Azion via mcp-remote, adicione
+  contexto da plataforma por meio de regras e verifique a configuração com um
+  prompt de teste.
+meta_tags: >-
+  windsurf, cascade, azion, mcp, configuração de agentes, agente de ia,
+  ide agêntica
+namespace: documentation_agent_setup_windsurf
+permalink: /documentacao/agent-setup/windsurf/
+---
+
+import LinkButton from 'azion-webkit/linkbutton';
+import Code from '~/components/Code/Code.astro';
+import Steps from '~/components/Steps.astro';
+import ReadableColumn from '~/components/ReadableColumn.astro';
+
+<ReadableColumn />
+
+O [Windsurf](https://windsurf.com) é uma IDE agêntica construída em torno do agente Cascade. Conecte-o à documentação ao vivo e às ferramentas MCP da Azion em quatro passos.
+
+## Início rápido
+
+<Steps>
+
+<div class="step">
+
+**Instale o Windsurf** — baixe em [windsurf.com](https://windsurf.com). Você também precisa de Node.js 18+ para o `mcp-remote`, instalado automaticamente via `npx`.
+
+</div>
+
+<div class="step">
+
+**Conecte o servidor MCP da Azion** — adicione ao `.codeium/windsurf/mcp_config.json` (também acessível pelas configurações do Cascade), substituindo `YOUR_PERSONAL_TOKEN` por um [personal token da Azion](/pt-br/documentacao/account/reference/personal-tokens/):
+
+<Code lang="json" code={`{
+    "mcpServers": {
+        "azion": {
+            "command": "npx",
+            "args": [
+                "mcp-remote",
+                "https://mcp.azion.com",
+                "--header",
+                "Authorization: Bearer YOUR_PERSONAL_TOKEN"
+            ]
+        }
+    }
+}`} />
+
+</div>
+
+<div class="step">
+
+**Adicione contexto da Azion** — copie o bloco pronto de [Para agentes de IA](/pt-br/documentacao/devtools/for-ai-agents/) em um arquivo de regras como `.windsurf/rules/azion.md`.
+
+</div>
+
+<div class="step">
+
+**Verifique** — atualize os servidores MCP nas configurações do Cascade; o `azion` deve aparecer. Depois pergunte:
+
+<Code lang="text" code={`Usando o servidor MCP da Azion, busque na documentação como funcionam as Functions.`} />
+
+O agente deve responder por meio de `search_azion_docs_and_site`.
+
+</div>
+
+</Steps>
+
+## Prompts para experimentar
+
+- "Busque na documentação da Azion sobre processamento de imagens e adicione à minha aplicação."
+- "Monte um arquivo Terraform para uma aplicação Azion com um Connector para o meu backend."
+- "Crie um conjunto de regras no Firewall que bloqueie requisições sem um cookie de sessão válido."
+
+## Continue daqui
+
+<div class="flex flex-wrap gap-4 my-6">
+  <LinkButton link="/pt-br/documentacao/devtools/mcp/configuracao/" label="Guia de configuração do MCP" outlined />
+  <LinkButton link="/pt-br/documentacao/agent-setup/" label="Configuração de agentes" outlined />
+</div>

@@ -60,6 +60,16 @@
 - [Secure DNS](https://www.azion.com/en/documentation/get-started/journeys/protect/dns/): Discover how to use Azion Secure products for your DNS. Strengthen your online security with robust DNS protection for your digital assets with Edge DNS.
 - [Secure an infrastructure](https://www.azion.com/en/documentation/get-started/journeys/protect/infrastructure/): Use Origin Shield to secure your infrastructure.
 
+## Agent setup
+
+- [Agent Setup](https://www.azion.com/en/documentation/agent-setup/): Connect AI coding agents to Azion: prime them with current platform context, plug in the Azion MCP server, and point them at machine-readable docs.
+- [Use Claude Code with Azion](https://www.azion.com/en/documentation/agent-setup/claude-code/): Connect Claude Code to the Azion MCP server, add platform context to CLAUDE.md, and verify the setup with a test prompt.
+- [Use Cursor with Azion](https://www.azion.com/en/documentation/agent-setup/cursor/): Connect Cursor to the Azion MCP server, add platform context through project rules, and verify the setup with a test prompt.
+- [Use GitHub Copilot with Azion](https://www.azion.com/en/documentation/agent-setup/github-copilot/): Connect GitHub Copilot in VS Code to the Azion MCP server, add platform context through copilot-instructions.md, and verify the setup.
+- [Use Windsurf with Azion](https://www.azion.com/en/documentation/agent-setup/windsurf/): Connect Windsurf to the Azion MCP server through mcp-remote, add platform context through rules, and verify the setup with a test prompt.
+- [Use Codex with Azion](https://www.azion.com/en/documentation/agent-setup/codex/): Connect OpenAI Codex to the Azion MCP server through config.toml, add platform context to AGENTS.md, and verify the setup with a test prompt.
+- [Use Gemini CLI with Azion](https://www.azion.com/en/documentation/agent-setup/gemini-cli/): Connect Gemini CLI to the Azion MCP server through settings.json, add platform context to GEMINI.md, and verify the setup with a test prompt.
+
 ## Platform
 
 - [Azion Network Program](https://www.azion.com/en/documentation/platform/network-program/): Founded in 2011, Azion enables you to build and run serverless applications at the edge of the network or your own premisses, closer to users and devices.

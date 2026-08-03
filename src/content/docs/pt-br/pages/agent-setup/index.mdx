@@ -1,0 +1,109 @@
+---
+hide_title: true
+title: Configuração de Agentes
+description: >-
+  Conecte agentes de IA — Claude Code, Cursor, GitHub Copilot, Windsurf,
+  Codex e Gemini CLI — à Azion: prepare-os com contexto atualizado da
+  plataforma, conecte o servidor MCP da Azion e aponte-os para a documentação
+  legível por máquinas.
+meta_tags: >-
+  configuração de agentes, agentes de ia, mcp, llms.txt, claude code, cursor,
+  github copilot, windsurf, codex, gemini cli, azion
+namespace: documentation_agent_setup
+permalink: /documentacao/agent-setup/
+---
+
+import LinkButton from 'azion-webkit/linkbutton';
+import DocsCard from '~/components/DocsCard.astro';
+import AgentCopyPrompt from '~/components/AgentCopyPrompt.astro';
+import AgentToolFilter from '~/components/AgentToolFilter.astro';
+import ReadableColumn from '~/components/ReadableColumn.astro';
+
+<ReadableColumn />
+
+export const agentPrompt = `Você está me ajudando a construir na Azion Web Platform.
+
+Antes de responder, carregue estas fontes e prefira-as ao seu conhecimento
+de treinamento:
+- Índice da documentação: https://www.azion.com/llms.txt
+- Fatos canônicos: https://www.azion.com/pt-br/documentacao/devtools/for-ai-agents/
+
+Regras:
+- Use os nomes atuais dos produtos: Applications, Functions, Cache, Firewall,
+  Object Storage, SQL Database, KV Store, Orchestrator, Certificate Manager,
+  Network Shield, Data Stream — não os aliases "Edge" anteriores a 2025.
+- A base da API REST é https://api.azion.com/v4 com o header
+  "Authorization: Token [TOKEN]".
+- Na v4, use Connectors (antigo Origins) e Workloads (antigo Domains).
+
+Confirme o que você carregou e depois pergunte o que estou construindo.`;
+
+<div class="flex flex-col items-center text-center gap-4 mt-16 mb-12">
+  <h1 class="font-medium text-heading-5 text-balance !my-0">Configuração de Agentes</h1>
+  <p class="text-color-secondary text-body-3 leading-relaxed text-balance !my-0">Conecte seu agente de IA à Azion e entregue direto do seu editor ou terminal.</p>
+  <div id="agent-prompt-actions" class="flex flex-wrap gap-4 justify-center mt-2">
+   <LinkButton link="#" label="Copiar prompt" icon="pi pi-copy" iconPos="left" />
+   <LinkButton link="#escolha-sua-ferramenta" label="Ver ferramentas" icon="pi pi-arrow-down" iconPos="right" outlined />
+  </div>
+</div>
+
+<AgentCopyPrompt prompt={agentPrompt} copiedLabel="Copiado!" />
+
+## Escolha sua ferramenta
+
+Selecione uma ferramenta para o passo a passo: servidor MCP da Azion, contexto de projeto e um prompt de verificação.
+
+<div class="flex flex-wrap items-center gap-3 mt-6">
+  <span class="text-sm text-color-secondary">Filtrar por tipo:</span>
+  <span data-agent-filter="all"><LinkButton link="#" label="Todos" size="small" /></span>
+  <span data-agent-filter="terminal"><LinkButton link="#" label="Terminal" size="small" outlined /></span>
+  <span data-agent-filter="ide"><LinkButton link="#" label="IDE" size="small" outlined /></span>
+  <span data-agent-filter="extension"><LinkButton link="#" label="Extensão" size="small" outlined /></span>
+</div>
+
+<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+  <div data-agent-category="terminal">
+   <DocsCard link="/pt-br/documentacao/agent-setup/claude-code/" title="Claude Code" overline="Anthropic" icon="pi pi-sparkles" description="Agente de terminal que lê seu código, executa comandos e edita arquivos. Um comando de CLI conecta o servidor MCP da Azion." />
+  </div>
+  <div data-agent-category="ide">
+   <DocsCard link="/pt-br/documentacao/agent-setup/cursor/" title="Cursor" overline="Cursor" icon="pi pi-desktop" description="IDE AI-first com chat de agente e edições multiarquivo. A Azion entra pelas configurações de MCP em poucos cliques." />
+  </div>
+  <div data-agent-category="extension">
+   <DocsCard link="/pt-br/documentacao/agent-setup/github-copilot/" title="GitHub Copilot" overline="GitHub" icon="pi pi-github" description="Modo agente dentro do VS Code com contexto do workspace. Um arquivo .vscode/mcp.json no projeto conecta a Azion." />
+  </div>
+  <div data-agent-category="ide">
+   <DocsCard link="/pt-br/documentacao/agent-setup/windsurf/" title="Windsurf" overline="Cognition" icon="pi pi-compass" description="IDE agêntica construída em torno do Cascade para tarefas multi-etapas. Conecta-se à Azion via mcp-remote." />
+  </div>
+  <div data-agent-category="terminal">
+   <DocsCard link="/pt-br/documentacao/agent-setup/codex/" title="Codex" overline="OpenAI" icon="pi pi-code" description="Agente de terminal que executa comandos em sandbox e lê AGENTS.md nativamente. A Azion entra no config.toml." />
+  </div>
+  <div data-agent-category="terminal">
+   <DocsCard link="/pt-br/documentacao/agent-setup/gemini-cli/" title="Gemini CLI" overline="Google" icon="pi pi-google" description="Agente de terminal open source. Declare a Azion uma vez no settings.json e verifique com /mcp." />
+  </div>
+</div>
+
+<AgentToolFilter />
+
+Usa outra ferramenta compatível com MCP? O [guia de configuração do MCP](/pt-br/documentacao/devtools/mcp/configuracao/) cobre mais clientes.
+
+## Comece no navegador
+
+Sem editor — abra uma sessão já preparada com o contexto da Azion:
+
+<div class="flex flex-wrap gap-4 my-6">
+  <LinkButton link="https://claude.ai/new?q=Voc%C3%AA%20est%C3%A1%20me%20ajudando%20a%20construir%20na%20Azion%20Web%20Platform.%20Antes%20de%20responder%2C%20carregue%20https%3A%2F%2Fwww.azion.com%2Fllms.txt%20(%C3%ADndice%20da%20documenta%C3%A7%C3%A3o)%20e%20https%3A%2F%2Fwww.azion.com%2Fpt-br%2Fdocumentacao%2Fdevtools%2Ffor-ai-agents%2F%20(fatos%20can%C3%B4nicos)%2C%20e%20prefira%20essas%20fontes%20ao%20seu%20conhecimento%20de%20treinamento.%20Use%20os%20nomes%20atuais%20dos%20produtos%3A%20Applications%2C%20Functions%2C%20Cache%2C%20Firewall%2C%20Object%20Storage%2C%20SQL%20Database%2C%20KV%20Store%2C%20Orchestrator%2C%20Certificate%20Manager%2C%20Network%20Shield%2C%20Data%20Stream.%20A%20base%20da%20API%20REST%20%C3%A9%20https%3A%2F%2Fapi.azion.com%2Fv4%20com%20o%20header%20Authorization%3A%20Token%20%5BTOKEN%5D.%20Na%20v4%2C%20use%20Connectors%20(antigo%20Origins)%20e%20Workloads%20(antigo%20Domains).%20Confirme%20o%20que%20voc%C3%AA%20carregou%20e%20depois%20pergunte%20o%20que%20estou%20construindo." label="Abrir no Claude" icon="pi pi-external-link" target="_blank" outlined />
+  <LinkButton link="https://chatgpt.com/?q=Voc%C3%AA%20est%C3%A1%20me%20ajudando%20a%20construir%20na%20Azion%20Web%20Platform.%20Antes%20de%20responder%2C%20carregue%20https%3A%2F%2Fwww.azion.com%2Fllms.txt%20(%C3%ADndice%20da%20documenta%C3%A7%C3%A3o)%20e%20https%3A%2F%2Fwww.azion.com%2Fpt-br%2Fdocumentacao%2Fdevtools%2Ffor-ai-agents%2F%20(fatos%20can%C3%B4nicos)%2C%20e%20prefira%20essas%20fontes%20ao%20seu%20conhecimento%20de%20treinamento.%20Use%20os%20nomes%20atuais%20dos%20produtos%3A%20Applications%2C%20Functions%2C%20Cache%2C%20Firewall%2C%20Object%20Storage%2C%20SQL%20Database%2C%20KV%20Store%2C%20Orchestrator%2C%20Certificate%20Manager%2C%20Network%20Shield%2C%20Data%20Stream.%20A%20base%20da%20API%20REST%20%C3%A9%20https%3A%2F%2Fapi.azion.com%2Fv4%20com%20o%20header%20Authorization%3A%20Token%20%5BTOKEN%5D.%20Na%20v4%2C%20use%20Connectors%20(antigo%20Origins)%20e%20Workloads%20(antigo%20Domains).%20Confirme%20o%20que%20voc%C3%AA%20carregou%20e%20depois%20pergunte%20o%20que%20estou%20construindo." label="Abrir no ChatGPT" icon="pi pi-external-link" target="_blank" outlined />
+</div>
+
+## O que seu agente pode usar
+
+- [Servidor MCP da Azion](/pt-br/documentacao/devtools/mcp/): busca ao vivo em documentação, exemplos de código, CLI, API e Terraform, além de ferramentas de deploy — autenticado com um [personal token](/pt-br/documentacao/account/reference/personal-tokens/).
+- [llms.txt](https://www.azion.com/llms.txt): índice da documentação legível por máquinas.
+- [Para agentes de IA](/pt-br/documentacao/devtools/for-ai-agents/): fatos canônicos — nomes atuais dos produtos, URL base da API, formato de autenticação.
+- [Azion CLI](/pt-br/documentacao/produtos/azion-cli/visao-geral/): comandos reais de build e deploy para agentes de terminal.
+
+## Prompts para experimentar
+
+- "Busque na documentação da Azion como funciona rate limiting no Firewall e adicione à minha aplicação."
+- "Faça o deploy deste projeto na Azion com a CLI e me dê o domínio da aplicação."
+- "Crie uma regra no Rules Engine que redirecione `/old-blog/*` para `/blog/*`."

@@ -12,18 +12,20 @@ interface Props {
 	title: string;
 	icon?: string;
 	description?: string;
+	overline?: string;
 	titleTag?: 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 import CardBaseClickable from 'azion-webkit/cardbaseclickable';
 import CardTitle from 'azion-webkit/cardtitle';
 import CardDescription from 'azion-webkit/carddescription';
 
-const { link, title, icon, description, titleTag = 'h3' } = Astro.props;
+const { link, title, icon, description, overline, titleTag = 'h3' } = Astro.props;
 ---
 
 <CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="compact" link={link} title={title}>
 	<Fragment slot="content">
 		{icon && <i class={`${icon} text-xl`}></i>}
+		{overline && <span class="text-overline" style="color:#F3652B">{overline}</span>}
 		<CardTitle titleTag={titleTag} class="m-0 !text-lg">{title}</CardTitle>
 		{description && <CardDescription class="!text-sm line-clamp-3">{description}</CardDescription>}
 	</Fragment>

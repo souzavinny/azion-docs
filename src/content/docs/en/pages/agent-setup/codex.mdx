@@ -1,0 +1,70 @@
+---
+title: Use Codex with Azion
+description: >-
+  Connect OpenAI Codex to the Azion MCP server through config.toml, add
+  platform context to AGENTS.md, and verify the setup with a test prompt.
+meta_tags: >-
+  codex, openai, azion, mcp, agent setup, ai coding agent, terminal
+namespace: documentation_agent_setup_codex
+permalink: /documentation/agent-setup/codex/
+---
+
+import LinkButton from 'azion-webkit/linkbutton';
+import Code from '~/components/Code/Code.astro';
+import Steps from '~/components/Steps.astro';
+import ReadableColumn from '~/components/ReadableColumn.astro';
+
+<ReadableColumn />
+
+[Codex](https://openai.com/codex/) is OpenAI's terminal coding agent. Connect it to Azion's live docs and MCP tools in four steps.
+
+## Quick start
+
+<Steps>
+
+<div class="step">
+
+**Install Codex** — follow [OpenAI's instructions](https://openai.com/codex/) and authenticate. You also need Node.js 18+ for `mcp-remote`, installed automatically via `npx`.
+
+</div>
+
+<div class="step">
+
+**Connect the Azion MCP server** — add this to `~/.codex/config.toml`, replacing `YOUR_PERSONAL_TOKEN` with an [Azion personal token](/en/documentation/account/reference/personal-tokens/):
+
+<Code lang="toml" code={`[mcp_servers.azion]
+command = "npx"
+args = ["-y", "mcp-remote", "https://mcp.azion.com", "--header", "Authorization: Bearer YOUR_PERSONAL_TOKEN"]`} />
+
+</div>
+
+<div class="step">
+
+**Add Azion context** — Codex reads `AGENTS.md` natively: copy the ready-made block from [For AI Agents](/en/documentation/devtools/for-ai-agents/) into your project's `AGENTS.md`.
+
+</div>
+
+<div class="step">
+
+**Verify** — `codex mcp list` (or your version's equivalent) should show `azion` registered. Then ask:
+
+<Code lang="text" code={`Using the Azion MCP server, search the docs for how to create a Function.`} />
+
+The agent should answer through `search_azion_docs_and_site`.
+
+</div>
+
+</Steps>
+
+## Prompts to try
+
+- "Search the Azion docs for KV Store and persist session data from my Function."
+- "Deploy this static site to Azion and report the domain."
+- "List my Workloads through the Azion API v4 — the token is in my environment."
+
+## Keep going
+
+<div class="flex flex-wrap gap-4 my-6">
+  <LinkButton link="/en/documentation/devtools/mcp/configuration/" label="MCP Configuration Guide" outlined />
+  <LinkButton link="/en/documentation/agent-setup/" label="Agent Setup" outlined />
+</div>

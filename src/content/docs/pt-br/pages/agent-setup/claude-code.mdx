@@ -1,0 +1,69 @@
+---
+title: Use o Claude Code com a Azion
+description: >-
+  Conecte o Claude Code ao servidor MCP da Azion, adicione contexto da
+  plataforma ao CLAUDE.md e verifique a configuração com um prompt de teste.
+meta_tags: >-
+  claude code, anthropic, azion, mcp, configuração de agentes, agente de ia,
+  terminal
+namespace: documentation_agent_setup_claude_code
+permalink: /documentacao/agent-setup/claude-code/
+---
+
+import LinkButton from 'azion-webkit/linkbutton';
+import Code from '~/components/Code/Code.astro';
+import Steps from '~/components/Steps.astro';
+import ReadableColumn from '~/components/ReadableColumn.astro';
+
+<ReadableColumn />
+
+O [Claude Code](https://www.anthropic.com/claude-code) é o agente de código de terminal da Anthropic. Conecte-o à documentação ao vivo e às ferramentas MCP da Azion em quatro passos.
+
+## Início rápido
+
+<Steps>
+
+<div class="step">
+
+**Instale o Claude Code** — siga as [instruções da Anthropic](https://www.anthropic.com/claude-code) e autentique-se.
+
+</div>
+
+<div class="step">
+
+**Conecte o servidor MCP da Azion** — execute na raiz do projeto, substituindo `YOUR_PERSONAL_TOKEN` por um [personal token da Azion](/pt-br/documentacao/account/reference/personal-tokens/):
+
+<Code lang="bash" code={`claude mcp add "azion-mcp" "https://mcp.azion.com" -t http -H "Authorization: Bearer YOUR_PERSONAL_TOKEN"`} />
+
+</div>
+
+<div class="step">
+
+**Adicione contexto da Azion** — copie o bloco pronto de [Para agentes de IA](/pt-br/documentacao/devtools/for-ai-agents/) no `CLAUDE.md` do seu projeto (ou `AGENTS.md`).
+
+</div>
+
+<div class="step">
+
+**Verifique** — `claude mcp list` deve mostrar o `azion-mcp` conectado. Depois pergunte:
+
+<Code lang="text" code={`Usando o servidor MCP da Azion, busque na documentação como criar uma aplicação com a CLI.`} />
+
+O agente deve responder por meio de `search_azion_docs_and_site` ou `search_azion_cli_commands`.
+
+</div>
+
+</Steps>
+
+## Prompts para experimentar
+
+- "Faça o deploy deste projeto na Azion com a CLI e me dê o domínio da aplicação."
+- "Busque na documentação da Azion sobre rate limiting no Firewall e adicione à minha aplicação."
+- "Crie uma regra no Rules Engine que reescreva requisições `/api/*` para o meu Connector."
+
+## Continue daqui
+
+<div class="flex flex-wrap gap-4 my-6">
+  <LinkButton link="/pt-br/documentacao/devtools/mcp/configuracao/" label="Guia de configuração do MCP" outlined />
+  <LinkButton link="/pt-br/documentacao/agent-setup/" label="Configuração de agentes" outlined />
+</div>

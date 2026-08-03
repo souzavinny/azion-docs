@@ -1,0 +1,78 @@
+---
+title: Use Cursor with Azion
+description: >-
+  Connect Cursor to the Azion MCP server, add platform context through project
+  rules, and verify the setup with a test prompt.
+meta_tags: >-
+  cursor, azion, mcp, agent setup, ai coding agent, ai ide
+namespace: documentation_agent_setup_cursor
+permalink: /documentation/agent-setup/cursor/
+---
+
+import LinkButton from 'azion-webkit/linkbutton';
+import Code from '~/components/Code/Code.astro';
+import Steps from '~/components/Steps.astro';
+import ReadableColumn from '~/components/ReadableColumn.astro';
+
+<ReadableColumn />
+
+[Cursor](https://cursor.com) is an AI-first IDE. Connect its agent to Azion's live docs and MCP tools in four steps.
+
+## Quick start
+
+<Steps>
+
+<div class="step">
+
+**Install Cursor** — download it from [cursor.com](https://cursor.com).
+
+</div>
+
+<div class="step">
+
+**Connect the Azion MCP server** — in Cursor Settings, open **Tools & Integrations** and add a new MCP server, replacing `YOUR_PERSONAL_TOKEN` with an [Azion personal token](/en/documentation/account/reference/personal-tokens/). Cursor uses the `Token` prefix instead of `Bearer`:
+
+<Code lang="json" code={`{
+    "mcpServers": {
+        "azion": {
+            "type": "streamable-http",
+            "url": "https://mcp.azion.com",
+            "headers": {
+                "Authorization": "Token YOUR_PERSONAL_TOKEN"
+            }
+        }
+    }
+}`} />
+
+</div>
+
+<div class="step">
+
+**Add Azion context** — copy the ready-made block from [For AI Agents](/en/documentation/devtools/for-ai-agents/) into your project's `AGENTS.md`, or save it as a project rule under `.cursor/rules`.
+
+</div>
+
+<div class="step">
+
+**Verify** — open the agent panel and ask:
+
+<Code lang="text" code={`Using the Azion MCP server, search the docs for how cache works on Azion.`} />
+
+The agent should answer through `search_azion_docs_and_site`.
+
+</div>
+
+</Steps>
+
+## Prompts to try
+
+- "Search the Azion docs for WAF configuration and protect my application."
+- "Generate an azion.config file for this project and explain each option."
+- "Query the Azion API v4 to list my applications — use my token from the environment."
+
+## Keep going
+
+<div class="flex flex-wrap gap-4 my-6">
+  <LinkButton link="/en/documentation/devtools/mcp/configuration/" label="MCP Configuration Guide" outlined />
+  <LinkButton link="/en/documentation/agent-setup/" label="Agent Setup" outlined />
+</div>

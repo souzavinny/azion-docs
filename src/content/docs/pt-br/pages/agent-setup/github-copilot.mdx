@@ -1,0 +1,79 @@
+---
+title: Use o GitHub Copilot com a Azion
+description: >-
+  Conecte o GitHub Copilot no VS Code ao servidor MCP da Azion, adicione
+  contexto da plataforma via copilot-instructions.md e verifique a
+  configuração.
+meta_tags: >-
+  github copilot, vs code, azion, mcp, configuração de agentes, agente de ia
+namespace: documentation_agent_setup_github_copilot
+permalink: /documentacao/agent-setup/github-copilot/
+---
+
+import LinkButton from 'azion-webkit/linkbutton';
+import Code from '~/components/Code/Code.astro';
+import Steps from '~/components/Steps.astro';
+import ReadableColumn from '~/components/ReadableColumn.astro';
+
+<ReadableColumn />
+
+O [GitHub Copilot](https://github.com/features/copilot) atua como agente dentro do VS Code. Conecte-o à documentação ao vivo e às ferramentas MCP da Azion em quatro passos.
+
+## Início rápido
+
+<Steps>
+
+<div class="step">
+
+**Instale as peças** — VS Code com a extensão GitHub Copilot e uma assinatura ativa do Copilot.
+
+</div>
+
+<div class="step">
+
+**Conecte o servidor MCP da Azion** — crie `.vscode/mcp.json` na raiz do projeto, substituindo `YOUR_PERSONAL_TOKEN` por um [personal token da Azion](/pt-br/documentacao/account/reference/personal-tokens/):
+
+<Code lang="json" code={`{
+    "servers": {
+        "azion": {
+            "type": "http",
+            "url": "https://mcp.azion.com",
+            "headers": {
+                "Authorization": "Bearer YOUR_PERSONAL_TOKEN"
+            }
+        }
+    }
+}`} />
+
+</div>
+
+<div class="step">
+
+**Adicione contexto da Azion** — copie o bloco pronto de [Para agentes de IA](/pt-br/documentacao/devtools/for-ai-agents/) no arquivo `.github/copilot-instructions.md` do repositório.
+
+</div>
+
+<div class="step">
+
+**Verifique** — abra o Copilot Chat em modo agente, inicie o servidor quando solicitado e pergunte:
+
+<Code lang="text" code={`Usando o servidor MCP da Azion, busque na documentação como criar um Workload.`} />
+
+As ferramentas da Azion devem aparecer no seletor de ferramentas, e o agente deve responder por meio de `search_azion_docs_and_site`.
+
+</div>
+
+</Steps>
+
+## Prompts para experimentar
+
+- "Busque na documentação da Azion sobre Object Storage e escreva um script de upload usando a API v4."
+- "Adicione um workflow do GitHub Actions que faça o deploy deste projeto na Azion com a CLI."
+- "Explique a diferença entre Connectors e o conceito legado de Origins."
+
+## Continue daqui
+
+<div class="flex flex-wrap gap-4 my-6">
+  <LinkButton link="/pt-br/documentacao/devtools/mcp/configuracao/" label="Guia de configuração do MCP" outlined />
+  <LinkButton link="/pt-br/documentacao/agent-setup/" label="Configuração de agentes" outlined />
+</div>

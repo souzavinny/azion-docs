@@ -1,0 +1,37 @@
+---
+/**
+ * Non-visual helper for the Agent Setup hub: wires the filter chips (webkit
+ * LinkButtons wrapped in spans carrying data-agent-filter) to show/hide the
+ * tool cards (wrappers carrying data-agent-category). The active chip loses
+ * its outlined style; "all" shows every card.
+ */
+---
+
+<script is:inline>
+  (function () {
+    var chips = Array.prototype.slice.call(document.querySelectorAll('[data-agent-filter]'));
+    var cards = Array.prototype.slice.call(document.querySelectorAll('[data-agent-category]'));
+    if (!chips.length || !cards.length) return;
+    function activate(active) {
+      var filter = active.getAttribute('data-agent-filter');
+      chips.forEach(function (wrap) {
+        var anchor = wrap.querySelector('a');
+        if (!anchor) return;
+        if (wrap === active) anchor.classList.remove('p-button-outlined');
+        else anchor.classList.add('p-button-outlined');
+      });
+      cards.forEach(function (card) {
+        var match = filter === 'all' || card.getAttribute('data-agent-category') === filter;
+        card.style.display = match ? '' : 'none';
+      });
+    }
+    chips.forEach(function (wrap) {
+      var anchor = wrap.querySelector('a');
+      if (!anchor) return;
+      anchor.addEventListener('click', function (event) {
+        event.preventDefault();
+        activate(wrap);
+      });
+    });
+  })();
+</script>
