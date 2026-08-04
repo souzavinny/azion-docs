@@ -1,72 +1,42 @@
 ---
 title: Get started with Azion
 description: >-
-  Start here: deploy your first application on Azion in minutes using a
-  template, a GitHub repository, or the Azion CLI, and find the right path
-  for your goal.
+  Create your account, then learn what Azion runs: applications and functions,
+  storage, security, and observability, with the page to read next for each one.
 meta_tags: >-
-  Azion, get started, first deploy, quickstart, template, GitHub, CLI,
-  onboarding, edge computing
+  Azion, get started, account, onboarding, platform overview, edge computing
 namespace: documentation_get_started
 permalink: /documentation/get-started/
 ---
 
 import LinkButton from 'azion-webkit/linkbutton';
-import DocsCard from '~/components/DocsCard.astro';
 
-**Azion Web Platform** lets you build, secure, and observe applications running on a global network. The fastest way to understand what that means is to put something live: the first deploy takes a few minutes and doesn't require a credit card.
+Before you can use Azion products, first create an account. Starting is free and doesn't ask for a credit card.
 
-## Deploy your first application
+<LinkButton link="https://console.azion.com/signup" label="Create your account" target="_blank" />
 
-Three doors, same destination: an application answering on its own Azion domain. Pick the one that matches how you work.
+If your company already uses Azion, ask an administrator to invite you rather than opening a second account. Permissions are granted per team, so what you can see and change depends on the team you belong to. Larger organizations usually set this up with [teams and permissions](/en/documentation/account/guides/teams-permissions/) and [single sign-on](/en/documentation/account/guides/sso/).
 
-<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-    <DocsCard link="/en/documentation/get-started/first-deploy/#deploy-a-template-via-console" title="Deploy a template via Console" icon="pi pi-th-large" description="One-click start from ready-made projects: e-commerce, blogs, APIs, full-stack SSR." />
-    <DocsCard link="/en/documentation/get-started/first-deploy/#import-a-project-from-github" title="Import a project from GitHub" icon="pi pi-github" description="Connect your repository and deploy an existing project." />
-    <DocsCard link="/en/documentation/get-started/first-deploy/#deploy-with-azion-cli" title="Deploy with Azion CLI" icon="pi pi-wrench" description="Link a local project from your terminal with azion link." />
-</div>
+## Learn about Azion's offerings
 
-<LinkButton link="/en/documentation/get-started/first-deploy/" label="First deploy in a few minutes" />
+### Build
 
-## Find your path
+An [Application](/en/documentation/build/applications/) is the unit you deploy. It runs on every point of the network at once, so the code answering a request is already near the person making it, and there is no region to pick and no server to size. [Functions](/en/documentation/build/applications/functions/) run your JavaScript or WebAssembly inside that same request, and [AI Inference](/en/documentation/build/ai-inference/) puts hosted models behind an OpenAI-compatible endpoint without any GPU to manage.
 
-<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-    <DocsCard link="/en/documentation/get-started/first-deploy/" title="I'm evaluating Azion" icon="pi pi-bolt" description="See what you can build and how much effort the first success takes." />
-    <DocsCard link="/en/documentation/guides/" title="I need to implement something specific" icon="pi pi-code" description="Browse how-to guides by product and by capability." />
-    <DocsCard link="/en/documentation/products/azion-cli/overview/" title="I operate Azion in production" icon="pi pi-server" description="Administer as code with the CLI and manage your account, teams, and billing." />
-    <DocsCard link="/en/documentation/platform/pricing/" title="I'm comparing vendors" icon="pi pi-chart-line" description="Check what's included in each plan and how real-world architectures look on Azion." />
-</div>
+Code that needs state reaches for [SQL Database](/en/documentation/store/sql-database/), [KV Store](/en/documentation/store/kv-store/), or [Object Storage](/en/documentation/store/object-storage/). These sit where the code runs, which is the point: a read doesn't travel back to a database parked in one region.
 
-Also useful: [Accounts and billing](/en/documentation/account/) · [Architectures](/en/documentation/architectures/)
+Reading about this only gets you so far. The [first deploy](/en/documentation/get-started/first-deploy/) puts something live in a few minutes from a template, a GitHub repository, or the CLI, and most frameworks have [a build path already written](/en/documentation/get-started/frameworks/overview/).
 
-## Build with your framework
+### Protect and deliver
 
-Ready-made build paths for the stack you already use.
+Everything you deploy can sit behind a [Firewall](/en/documentation/secure/firewall/quickstart/), which is also what turns on DDoS mitigation and gives the other modules somewhere to attach. From there, [WAF](/en/documentation/secure/waf/) inspects requests for injection and scripting attacks, [Bot Manager](/en/documentation/secure/bot-manager/) scores automated traffic, and [Network Shield](/en/documentation/secure/network-shield/) drops whole IP ranges, ASNs, or countries before they cost you anything.
 
-<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-    <DocsCard link="/en/documentation/get-started/frameworks/overview/" title="Frameworks overview" icon="pi pi-th-large" description="See every framework and build path supported on Azion." />
-    <DocsCard link="/en/documentation/get-started/frameworks/angular/" title="Angular" icon="ai ai-angular" description="Enterprise-grade web apps with TypeScript and robust tooling." />
-    <DocsCard link="/en/documentation/get-started/frameworks/astro/" title="Astro" icon="ai ai-astro" description="Content-focused sites with minimal client-side JavaScript." />
-    <DocsCard link="/en/documentation/get-started/frameworks/docusaurus/" title="Docusaurus" icon="ai ai-docusaurus" description="Documentation sites with React and built-in versioning." />
-    <DocsCard link="/en/documentation/get-started/frameworks/eleventy/" title="Eleventy" icon="ai ai-eleventy" description="Simple, fast static sites from plain templates." />
-    <DocsCard link="/en/documentation/get-started/frameworks/gatsby/" title="Gatsby" icon="ai ai-gatsby" description="SEO-friendly React sites that pull content from any source." />
-    <DocsCard link="/en/documentation/get-started/frameworks/hexo/" title="Hexo" icon="ai ai-hexo" description="Fast blogs generated from Markdown." />
-    <DocsCard link="/en/documentation/get-started/frameworks/hono/" title="Hono" icon="ai ai-hono" description="Ultrafast web framework built for edge runtimes." />
-    <DocsCard link="/en/documentation/get-started/frameworks/hugo/" title="Hugo" icon="ai ai-hugo" description="Static sites built in milliseconds with Go templates." />
-    <DocsCard link="/en/documentation/get-started/frameworks/jekyll/" title="Jekyll" icon="ai ai-jekyll" description="Blog-aware static sites from Markdown, Ruby-based." />
-    <DocsCard link="/en/documentation/get-started/frameworks/next/" title="Next.js" icon="ai ai-next" description="React with SSR, static generation, and powerful routing." />
-    <DocsCard link="/en/documentation/get-started/frameworks/nextal/" title="Nextal" icon="pi pi-code" description="Lightweight starter for fast static pages." />
-    <DocsCard link="/en/documentation/get-started/frameworks/react/" title="React" icon="ai ai-react" description="Interactive UIs with reusable components." />
-    <DocsCard link="/en/documentation/get-started/frameworks/svelte/" title="Svelte" icon="pi pi-code" description="Compiled components, no virtual DOM, tiny bundles." />
-    <DocsCard link="/en/documentation/get-started/frameworks/vite/" title="VitePress" icon="ai ai-vitepress" description="Vite-powered docs and static sites from Markdown." />
-    <DocsCard link="/en/documentation/get-started/frameworks/vue/" title="Vue" icon="ai ai-vue" description="Progressive framework for approachable, flexible UIs." />
-    <DocsCard link="/en/documentation/get-started/frameworks/wasm/" title="WebAssembly" icon="pi pi-code" description="Run near-native code at the edge from any language." />
-</div>
+The pieces that get traffic to your application live nearby: [Certificate Manager](/en/documentation/secure/certificate-manager/) for the TLS your own domain needs, and [Edge DNS](/en/documentation/secure/edge-dns/) if you want the authoritative zone here too.
 
-## After the first deploy
+### Observe and automate
 
-<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-    <DocsCard link="/en/documentation/get-started/production-checklist/" title="Go live with Azion" icon="ai ai-azion" description="Point a custom domain to your application." />
-    <DocsCard link="/en/documentation/secure/overview/" title="Secure your application" icon="ai ai-secure-pillar" description="Protect it with Firewall and WAF." />
-    <DocsCard link="/en/documentation/observe/overview/" title="Observe your application" icon="ai ai-observe-pillar" description="Monitor metrics and events in real time." />
-</div>
+[Real-Time Metrics](/en/documentation/observe/real-time-metrics/) and [Real-Time Events](/en/documentation/observe/real-time-events/) answer what is happening now, which is usually the question you have during an incident. For everything after that, [Data Stream](/en/documentation/observe/data-stream/) ships logs to the tools your team already watches.
+
+Once the shape of your setup stops changing, stop clicking it: the [CLI](/en/documentation/products/azion-cli/overview/), the [API](/en/documentation/devtools/api/), the [Terraform provider](/en/documentation/products/terraform-provider/), and [Orchestrator](/en/documentation/deploy/orchestrator/) all describe the same platform as code.
+
+Looking for a specific task rather than the tour? The [guides](/en/documentation/guides/) are indexed by what you're trying to do. If something doesn't work the way this page describes, the [Discord community](https://discord.com/invite/Yp9N7RMVZy) and [Azion support](/en/documentation/services/support/) are both worth a message.
