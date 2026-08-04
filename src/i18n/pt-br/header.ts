@@ -32,10 +32,11 @@ const menuSecondary = [
     destak: false,
   },
   {
-    text: "Conta Gratuita",
+    text: "Criar conta",
     title: "Crie sua Conta Gratuita",
     link: "https://console.azion.com/signup",
     destak: true,
+    minBreakpoint: 'md',
   }
 ];
 

@@ -32,10 +32,11 @@ const menuSecondary = [
     destak: false,
   },
   {
-    text: "Free account",
+    text: "Sign up",
     title: "Azion Free Account",
     link: "https://console.azion.com/signup",
     destak: true,
+    minBreakpoint: 'md',
   }
 ];
 

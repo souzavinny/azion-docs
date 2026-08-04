@@ -26,8 +26,7 @@ export const agentPrompt = `Me ajude a configurar a Azion neste projeto. Faça o
     <h1 class="font-medium text-heading-5 text-balance !my-0">Bem-vindo à <span style="color:#F3652B">Documentação Azion</span></h1>
     <p class="text-color-secondary text-body-3 leading-relaxed text-balance !my-0">Tornamos toda aplicação rápida e confiável. Faça a implementação de seus projetos instantaneamente na rede global mais confiável, aproveite segurança em nível corporativo e escale do zero ao pico sem cold starts.</p>
     <div class="flex flex-wrap gap-4 justify-center lg:justify-start mt-2">
-      <LinkButton link="/pt-br/documentacao/get-started/first-deploy/" label="Primeiro deploy em poucos minutos" />
-      <LinkButton link="https://console.azion.com/signup/" label="Crie a sua conta" outlined />
+      <LinkButton link="/pt-br/documentacao/get-started/first-deploy/" label="Faça o deploy da sua aplicação" />
       <LinkButton link="/pt-br/documentacao/platform/overview/" label="Visão geral da plataforma" outlined />
     </div>
   </div>
@@ -54,24 +53,43 @@ azion link`} />
   </div>
 </div>
 
-## Comece aqui, pelo seu perfil
+## Comece pelo objetivo
+
+Escolha o resultado que você quer e vá direto para as páginas que levam até ele.
 
 <div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-  <div id="persona-implementador">
-      <DocsCard link="/pt-br/documentacao/guides/" title="Preciso implementar algo específico" icon="pi pi-code" description="Encontre a funcionalidade pelo termo que você já usa — URLs assinadas, relatórios, streaming ao vivo — e siga um guia passo a passo até a produção." />
-  </div>
-  <div id="persona-decisor">
-      <DocsCard link="/pt-br/documentacao/platform/pricing/" title="Preciso saber o que está incluído" icon="pi pi-chart-line" description="Limites por plano, preços e o que cada produto cobre — dentro da documentação — além de arquiteturas de referência para o seu cenário." />
-  </div>
-  <div id="persona-guardiao">
-      <DocsCard link="/pt-br/documentacao/secure/overview/" title="Sou responsável pela segurança" icon="ai ai-secure-pillar" description="Configure WAF, proteção contra DDoS, gestão de bots e regras de firewall — depois faça o tuning com tráfego real e envie os eventos para o seu SIEM." />
-  </div>
-  <div id="persona-ciso">
-      <DocsCard link="/pt-br/documentacao/platform/shared-responsibility/" title="Respondo por risco e conformidade" icon="pi pi-verified" description="Veja o que a Azion cobre e o que continua sendo seu, consulte as certificações PCI DSS e SOC e encontre a evidência que a auditoria pede." />
-  </div>
+    <DocsCard link="/pt-br/documentacao/build/overview/" title="Construa sua aplicação" icon="ai ai-build-pillar" description="Applications, functions e regras na Azion Web Platform — da primeira rota ao tráfego de produção." />
+    <DocsCard link="/pt-br/documentacao/build/applications/application-accelerator/" title="Acelere sua aplicação" icon="pi pi-gauge" description="Acelere conteúdo dinâmico e APIs com otimizações de protocolo e faça o tuning do cache para reduzir o tráfego na origem." />
+    <DocsCard link="/pt-br/documentacao/secure/overview/" title="Proteja sua aplicação" icon="ai ai-secure-pillar" description="Coloque WAF, proteção contra DDoS, gestão de bots e regras de firewall na frente do que você implantou — e ajuste com tráfego real." />
+    <DocsCard link="/pt-br/documentacao/build/ai-inference/" title="Execute inferência de IA" icon="ai ai-ai-pillar" description="Rode modelos perto dos seus usuários: chat, embeddings, visão e OCR sem gerenciar infraestrutura de GPU." />
 </div>
 
-Também úteis: [faturamento e gestão de contas](/pt-br/documentacao/account/) · [arquiteturas de referência](/pt-br/documentacao/architectures/)
+Também úteis: [observe sua aplicação](/pt-br/documentacao/observe/overview/) · [arquiteturas de referência](/pt-br/documentacao/architectures/)
+
+## Comece pela interface
+
+A mesma plataforma, três formas de operar. Escolha a que combina com o seu jeito de trabalhar.
+
+<div class="not-prose grid md:grid-cols-3 border rounded-md overflow-hidden mt-6 mb-10">
+  <a href="/pt-br/documentacao/produtos/azion-cli/visao-geral/" class="flex flex-col gap-2 p-6 no-underline border-b md:border-b-0 md:border-r hover:bg-[--surface-hover]">
+    <span class="flex h-10 w-10 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-azion-cli text-xl"></i></span>
+    <span class="text-white text-lg font-medium mt-1">CLI</span>
+    <span class="text-color-secondary text-sm">Fique no terminal: vincule um projeto, rode localmente e faça deploy com um único binário.</span>
+    <span class="text-sm mt-auto pt-3 inline-flex items-center gap-2" style="color:#F3652B">Instalar a CLI<i class="pi pi-arrow-right text-xs"></i></span>
+  </a>
+  <a href="/pt-br/documentacao/agent-setup/" class="flex flex-col gap-2 p-6 no-underline border-b md:border-b-0 md:border-r hover:bg-[--surface-hover]">
+    <span class="flex h-10 w-10 items-center justify-center rounded bg-[--surface-400]"><i class="pi pi-sparkles text-xl"></i></span>
+    <span class="text-white text-lg font-medium mt-1">Agente</span>
+    <span class="text-color-secondary text-sm">Deixe seu agente de código fazer: documentação ao vivo por MCP e deploys reais direto do editor.</span>
+    <span class="text-sm mt-auto pt-3 inline-flex items-center gap-2" style="color:#F3652B">Conectar seu agente<i class="pi pi-arrow-right text-xs"></i></span>
+  </a>
+  <a href="/pt-br/documentacao/account/guides/getting-to-know-azion-console/" class="flex flex-col gap-2 p-6 no-underline hover:bg-[--surface-hover]">
+    <span class="flex h-10 w-10 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-azion text-xl"></i></span>
+    <span class="text-white text-lg font-medium mt-1">Plataforma</span>
+    <span class="text-color-secondary text-sm">Configure visualmente no Azion Console: applications, regras de firewall, métricas e eventos.</span>
+    <span class="text-sm mt-auto pt-3 inline-flex items-center gap-2" style="color:#F3652B">Abrir o Console<i class="pi pi-arrow-right text-xs"></i></span>
+  </a>
+</div>
 
 <div class="grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-center border rounded-md p-8 mt-12 mb-8 [&_h2]:!mt-0">
   <div>

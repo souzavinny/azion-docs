@@ -27,8 +27,7 @@ export const agentPrompt = `Help me set up Azion in this project. Do the followi
     <h1 class="font-medium text-heading-5 text-balance !my-0">Welcome to <span style="color:#F3652B">Azion Docs</span></h1>
     <p class="text-color-secondary text-body-3 leading-relaxed text-balance !my-0">We make every application fast and reliable. Deploy your projects instantly on the most reliable global network, leverage enterprise-grade security, and scale from zero to peak without cold starts.</p>
     <div class="flex flex-wrap gap-4 justify-center lg:justify-start mt-2">
-      <LinkButton link="/en/documentation/get-started/first-deploy/" label="First deploy in a few minutes" />
-      <LinkButton link="https://console.azion.com/signup/" label="Create an account" outlined />
+      <LinkButton link="/en/documentation/get-started/first-deploy/" label="Deploy your application" />
       <LinkButton link="/en/documentation/platform/overview/" label="Platform overview" outlined />
     </div>
   </div>
@@ -55,24 +54,43 @@ azion link`} />
   </div>
 </div>
 
-## Start here, by profile
+## Start by objective
+
+Pick the outcome you're after and go straight to the pages that get you there.
 
 <div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-  <div id="persona-implementador">
-      <DocsCard link="/en/documentation/guides/" title="I need to implement something specific" icon="pi pi-code" description="Find the feature by the term you already use—signed URLs, reports, live streaming—and follow a step-by-step guide to production." />
-  </div>
-  <div id="persona-decisor">
-      <DocsCard link="/en/documentation/platform/pricing/" title="I need to know what's included" icon="pi pi-chart-line" description="Per-plan limits, pricing, and what each product covers—inside the documentation—plus reference architectures for your target scenario." />
-  </div>
-  <div id="persona-guardiao">
-      <DocsCard link="/en/documentation/secure/overview/" title="I'm responsible for security" icon="ai ai-secure-pillar" description="Configure WAF, DDoS protection, bot management, and firewall rules—then tune them against real traffic and send the events to your SIEM." />
-  </div>
-  <div id="persona-ciso">
-      <DocsCard link="/en/documentation/platform/shared-responsibility/" title="I'm accountable for risk and compliance" icon="pi pi-verified" description="See what Azion covers and what stays yours, review the PCI DSS and SOC certifications, and find the evidence an audit asks for." />
-  </div>
+    <DocsCard link="/en/documentation/build/overview/" title="Build your application" icon="ai ai-build-pillar" description="Applications, functions, and rules on the Azion Web Platform—from the first route to production traffic." />
+    <DocsCard link="/en/documentation/build/applications/application-accelerator/" title="Accelerate your application" icon="pi pi-gauge" description="Speed up dynamic content and APIs with protocol optimizations, then tune cache to cut origin traffic." />
+    <DocsCard link="/en/documentation/secure/overview/" title="Secure your application" icon="ai ai-secure-pillar" description="Put WAF, DDoS protection, bot management, and firewall rules in front of what you deployed—and tune them with real traffic." />
+    <DocsCard link="/en/documentation/build/ai-inference/" title="Execute AI inference" icon="ai ai-ai-pillar" description="Run models close to your users: chat, embeddings, vision, and OCR without managing GPU infrastructure." />
 </div>
 
-Also useful: [billing and account management](/en/documentation/account/) · [reference architectures](/en/documentation/architectures/)
+Also useful: [observe your application](/en/documentation/observe/overview/) · [reference architectures](/en/documentation/architectures/)
+
+## Start by interface
+
+Same platform, three ways to drive it. Pick the one that fits how you work.
+
+<div class="not-prose grid md:grid-cols-3 border rounded-md overflow-hidden mt-6 mb-10">
+  <a href="/en/documentation/products/azion-cli/overview/" class="flex flex-col gap-2 p-6 no-underline border-b md:border-b-0 md:border-r hover:bg-[--surface-hover]">
+    <span class="flex h-10 w-10 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-azion-cli text-xl"></i></span>
+    <span class="text-white text-lg font-medium mt-1">CLI</span>
+    <span class="text-color-secondary text-sm">Stay in the terminal: link a project, run it locally, and deploy with a single binary.</span>
+    <span class="text-sm mt-auto pt-3 inline-flex items-center gap-2" style="color:#F3652B">Install the CLI<i class="pi pi-arrow-right text-xs"></i></span>
+  </a>
+  <a href="/en/documentation/agent-setup/" class="flex flex-col gap-2 p-6 no-underline border-b md:border-b-0 md:border-r hover:bg-[--surface-hover]">
+    <span class="flex h-10 w-10 items-center justify-center rounded bg-[--surface-400]"><i class="pi pi-sparkles text-xl"></i></span>
+    <span class="text-white text-lg font-medium mt-1">Agent</span>
+    <span class="text-color-secondary text-sm">Let your coding agent do it: live docs through MCP and real deploys from your editor.</span>
+    <span class="text-sm mt-auto pt-3 inline-flex items-center gap-2" style="color:#F3652B">Connect your agent<i class="pi pi-arrow-right text-xs"></i></span>
+  </a>
+  <a href="/en/documentation/account/guides/how-to-access-azion-console/" class="flex flex-col gap-2 p-6 no-underline hover:bg-[--surface-hover]">
+    <span class="flex h-10 w-10 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-azion text-xl"></i></span>
+    <span class="text-white text-lg font-medium mt-1">Platform</span>
+    <span class="text-color-secondary text-sm">Configure it visually in Azion Console: applications, firewall rules, metrics, and events.</span>
+    <span class="text-sm mt-auto pt-3 inline-flex items-center gap-2" style="color:#F3652B">Open the Console<i class="pi pi-arrow-right text-xs"></i></span>
+  </a>
+</div>
 
 <div class="grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-center border rounded-md p-8 mt-12 mb-8 [&_h2]:!mt-0">
   <div>
