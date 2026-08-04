@@ -79,17 +79,6 @@
      },
      "items": [
       {
-       "key": "get-started/migrate/overview",
-       "label": {
-        "en": "About migration",
-        "pt-br": "Sobre a migração"
-       },
-       "slug": {
-        "en": "/documentation/get-started/migrate/",
-        "pt-br": "/documentacao/get-started/migrate/"
-       }
-      },
-      {
        "key": "get-started/migrate/akamai",
        "label": {
         "en": "Migrate from Akamai to Azion",
@@ -144,7 +133,11 @@
         "pt-br": "/documentacao/get-started/migrate/vercel/"
        }
       }
-     ]
+     ],
+     "slug": {
+      "en": "/documentation/get-started/migrate/",
+      "pt-br": "/documentacao/get-started/migrate/"
+     }
     },
     {
      "key": "get-started/production-checklist",
@@ -163,35 +156,17 @@
    "key": "grp/build",
    "ui": "menu.build",
    "icon": "ai ai-build-pillar",
+   "slug": {
+    "en": "/documentation/build/overview/",
+    "pt-br": "/documentacao/build/overview/"
+   },
    "items": [
-    {
-     "key": "build/overview",
-     "label": {
-      "en": "About Build",
-      "pt-br": "Sobre Build"
-     },
-     "slug": {
-      "en": "/documentation/build/overview/",
-      "pt-br": "/documentacao/build/overview/"
-     }
-    },
     {
      "key": "build/ai-inference",
      "label": {
       "en": "AI Inference"
      },
      "items": [
-      {
-       "key": "build/ai-inference/overview",
-       "label": {
-        "en": "About AI Inference",
-        "pt-br": "Sobre AI Inference"
-       },
-       "slug": {
-        "en": "/documentation/build/ai-inference/",
-        "pt-br": "/documentacao/build/ai-inference/"
-       }
-      },
       {
        "key": "build/ai-inference/reference",
        "label": {
@@ -211,7 +186,11 @@
         }
        ]
       }
-     ]
+     ],
+     "slug": {
+      "en": "/documentation/build/ai-inference/",
+      "pt-br": "/documentacao/build/ai-inference/"
+     }
     },
     {
      "key": "build/applications",
@@ -219,17 +198,6 @@
       "en": "Applications"
      },
      "items": [
-      {
-       "key": "build/applications/overview",
-       "label": {
-        "en": "About Applications",
-        "pt-br": "Sobre Applications"
-       },
-       "slug": {
-        "en": "/documentation/build/applications/",
-        "pt-br": "/documentacao/build/applications/"
-       }
-      },
       {
        "key": "get-started/journeys/launch",
        "label": {
@@ -264,17 +232,6 @@
           "en": "Cache"
          },
          "items": [
-          {
-           "key": "build/applications/cache/overview",
-           "label": {
-            "en": "About Cache",
-            "pt-br": "Sobre Cache"
-           },
-           "slug": {
-            "en": "/documentation/build/applications/cache/",
-            "pt-br": "/documentacao/build/applications/cache/"
-           }
-          },
           {
            "key": "build/applications/cache/guides",
            "label": {
@@ -378,7 +335,11 @@
             "pt-br": "/documentacao/build/applications/cache/tiered-cache/"
            }
           }
-         ]
+         ],
+         "slug": {
+          "en": "/documentation/build/applications/cache/",
+          "pt-br": "/documentacao/build/applications/cache/"
+         }
         },
         {
          "key": "build/functions",
@@ -386,17 +347,6 @@
           "en": "Functions"
          },
          "items": [
-          {
-           "key": "build/functions/overview",
-           "label": {
-            "en": "About Functions",
-            "pt-br": "Sobre Functions"
-           },
-           "slug": {
-            "en": "/documentation/build/applications/functions/",
-            "pt-br": "/documentacao/build/applications/functions/"
-           }
-          },
           {
            "key": "build/applications/reference/functions-instances",
            "label": {
@@ -514,7 +464,11 @@
             "pt-br": "/documentacao/runtime/visao-geral/"
            }
           }
-         ]
+         ],
+         "slug": {
+          "en": "/documentation/build/applications/functions/",
+          "pt-br": "/documentacao/build/applications/functions/"
+         }
         },
         {
          "key": "build/applications/image-processor",
@@ -522,17 +476,6 @@
           "en": "Image Processor"
          },
          "items": [
-          {
-           "key": "build/applications/image-processor/overview",
-           "label": {
-            "en": "About Image Processor",
-            "pt-br": "Sobre Image Processor"
-           },
-           "slug": {
-            "en": "/documentation/build/applications/image-processor/",
-            "pt-br": "/documentacao/build/applications/image-processor/"
-           }
-          },
           {
            "key": "build/applications/image-processor/first-steps",
            "label": {
@@ -564,7 +507,11 @@
             }
            ]
           }
-         ]
+         ],
+         "slug": {
+          "en": "/documentation/build/applications/image-processor/",
+          "pt-br": "/documentacao/build/applications/image-processor/"
+         }
         }
        ]
       },
@@ -737,7 +684,11 @@
         }
        ]
       }
-     ]
+     ],
+     "slug": {
+      "en": "/documentation/build/applications/",
+      "pt-br": "/documentacao/build/applications/"
+     }
     },
     {
      "key": "build/local-dev",
@@ -831,35 +782,17 @@
    "key": "grp/store",
    "ui": "menu.store",
    "icon": "ai ai-store",
+   "slug": {
+    "en": "/documentation/store/overview/",
+    "pt-br": "/documentacao/store/overview/"
+   },
    "items": [
-    {
-     "key": "store/overview",
-     "label": {
-      "en": "About Store",
-      "pt-br": "Sobre Store"
-     },
-     "slug": {
-      "en": "/documentation/store/overview/",
-      "pt-br": "/documentacao/store/overview/"
-     }
-    },
     {
      "key": "store/kv-store",
      "label": {
       "en": "KV Store"
      },
      "items": [
-      {
-       "key": "store/kv-store/overview",
-       "label": {
-        "en": "About KV Store",
-        "pt-br": "Sobre KV Store"
-       },
-       "slug": {
-        "en": "/documentation/store/kv-store/",
-        "pt-br": "/documentacao/store/kv-store/"
-       }
-      },
       {
        "key": "store/kv-store/guides",
        "label": {
@@ -891,7 +824,11 @@
         }
        ]
       }
-     ]
+     ],
+     "slug": {
+      "en": "/documentation/store/kv-store/",
+      "pt-br": "/documentacao/store/kv-store/"
+     }
     },
     {
      "key": "store/object-storage",
@@ -899,17 +836,6 @@
       "en": "Object Storage"
      },
      "items": [
-      {
-       "key": "store/object-storage/overview",
-       "label": {
-        "en": "About Object Storage",
-        "pt-br": "Sobre Object Storage"
-       },
-       "slug": {
-        "en": "/documentation/store/object-storage/",
-        "pt-br": "/documentacao/store/object-storage/"
-       }
-      },
       {
        "key": "store/object-storage/guides",
        "label": {
@@ -985,7 +911,11 @@
         }
        ]
       }
-     ]
+     ],
+     "slug": {
+      "en": "/documentation/store/object-storage/",
+      "pt-br": "/documentacao/store/object-storage/"
+     }
     },
     {
      "key": "store/sql-database",
@@ -993,17 +923,6 @@
       "en": "SQL Database"
      },
      "items": [
-      {
-       "key": "store/sql-database/overview",
-       "label": {
-        "en": "About SQL Database",
-        "pt-br": "Sobre SQL Database"
-       },
-       "slug": {
-        "en": "/documentation/store/sql-database/",
-        "pt-br": "/documentacao/store/sql-database/"
-       }
-      },
       {
        "key": "store/sql-database/guides",
        "label": {
@@ -1110,7 +1029,11 @@
         }
        ]
       }
-     ]
+     ],
+     "slug": {
+      "en": "/documentation/store/sql-database/",
+      "pt-br": "/documentacao/store/sql-database/"
+     }
     }
    ]
   },
@@ -1118,18 +1041,11 @@
    "key": "grp/secure",
    "ui": "menu.secure",
    "icon": "ai ai-secure-pillar",
+   "slug": {
+    "en": "/documentation/secure/overview/",
+    "pt-br": "/documentacao/secure/overview/"
+   },
    "items": [
-    {
-     "key": "secure/overview",
-     "label": {
-      "en": "About Secure",
-      "pt-br": "Sobre Secure"
-     },
-     "slug": {
-      "en": "/documentation/secure/overview/",
-      "pt-br": "/documentacao/secure/overview/"
-     }
-    },
     {
      "key": "get-started/journeys/protect",
      "label": {
@@ -1137,17 +1053,6 @@
       "pt-br": "Proteja sua aplicação"
      },
      "items": [
-      {
-       "key": "get-started/journeys/protect/overview",
-       "label": {
-        "en": "About this journey",
-        "pt-br": "Sobre esta jornada"
-       },
-       "slug": {
-        "en": "/documentation/get-started/journeys/protect/",
-        "pt-br": "/documentacao/secure/firewall/guides/proteja-aplicacao/"
-       }
-      },
       {
        "key": "get-started/journeys/protect/dns",
        "label": {
@@ -1170,7 +1075,11 @@
         "pt-br": "/documentacao/secure/firewall/guides/proteja-infraestrutura/"
        }
       }
-     ]
+     ],
+     "slug": {
+      "en": "/documentation/get-started/journeys/protect/",
+      "pt-br": "/documentacao/secure/firewall/guides/proteja-aplicacao/"
+     }
     },
     {
      "key": "secure/firewall",
@@ -1178,17 +1087,6 @@
       "en": "Firewall"
      },
      "items": [
-      {
-       "key": "secure/firewall/overview",
-       "label": {
-        "en": "About Firewall",
-        "pt-br": "Sobre Firewall"
-       },
-       "slug": {
-        "en": "/documentation/secure/firewall/",
-        "pt-br": "/documentacao/secure/firewall/"
-       }
-      },
       {
        "key": "secure/firewall/modules",
        "label": {
@@ -1202,17 +1100,6 @@
           "en": "DDoS Protection"
          },
          "items": [
-          {
-           "key": "secure/ddos-protection/overview",
-           "label": {
-            "en": "About DDoS Protection",
-            "pt-br": "Sobre DDoS Protection"
-           },
-           "slug": {
-            "en": "/documentation/secure/ddos-protection/",
-            "pt-br": "/documentacao/secure/ddos-protection/"
-           }
-          },
           {
            "key": "secure/ddos-protection/reference",
            "label": {
@@ -1233,7 +1120,11 @@
             }
            ]
           }
-         ]
+         ],
+         "slug": {
+          "en": "/documentation/secure/ddos-protection/",
+          "pt-br": "/documentacao/secure/ddos-protection/"
+         }
         },
         {
          "key": "secure/network-shield",
@@ -1241,17 +1132,6 @@
           "en": "Network Shield"
          },
          "items": [
-          {
-           "key": "secure/network-shield/overview",
-           "label": {
-            "en": "About Network Shield",
-            "pt-br": "Sobre Network Shield"
-           },
-           "slug": {
-            "en": "/documentation/secure/network-shield/",
-            "pt-br": "/documentacao/secure/network-shield/"
-           }
-          },
           {
            "key": "secure/network-shield/guides",
            "label": {
@@ -1302,7 +1182,11 @@
             }
            ]
           }
-         ]
+         ],
+         "slug": {
+          "en": "/documentation/secure/network-shield/",
+          "pt-br": "/documentacao/secure/network-shield/"
+         }
         },
         {
          "key": "secure/waf",
@@ -1310,17 +1194,6 @@
           "en": "WAF"
          },
          "items": [
-          {
-           "key": "secure/waf/overview",
-           "label": {
-            "en": "About WAF",
-            "pt-br": "Sobre WAF"
-           },
-           "slug": {
-            "en": "/documentation/secure/waf/",
-            "pt-br": "/documentacao/secure/waf/"
-           }
-          },
           {
            "key": "secure/waf/guides",
            "label": {
@@ -1426,7 +1299,11 @@
             }
            ]
           }
-         ]
+         ],
+         "slug": {
+          "en": "/documentation/secure/waf/",
+          "pt-br": "/documentacao/secure/waf/"
+         }
         }
        ]
       },
@@ -1503,7 +1380,11 @@
         }
        ]
       }
-     ]
+     ],
+     "slug": {
+      "en": "/documentation/secure/firewall/",
+      "pt-br": "/documentacao/secure/firewall/"
+     }
     },
     {
      "key": "secure/edge-dns",
@@ -1511,17 +1392,6 @@
       "en": "Edge DNS"
      },
      "items": [
-      {
-       "key": "secure/edge-dns/overview",
-       "label": {
-        "en": "About Edge DNS",
-        "pt-br": "Sobre Edge DNS"
-       },
-       "slug": {
-        "en": "/documentation/secure/edge-dns/",
-        "pt-br": "/documentacao/secure/edge-dns/"
-       }
-      },
       {
        "key": "secure/edge-dns/guides",
        "label": {
@@ -1595,7 +1465,11 @@
         }
        ]
       }
-     ]
+     ],
+     "slug": {
+      "en": "/documentation/secure/edge-dns/",
+      "pt-br": "/documentacao/secure/edge-dns/"
+     }
     },
     {
      "key": "secure/workloads",
@@ -1603,17 +1477,6 @@
       "en": "Workloads"
      },
      "items": [
-      {
-       "key": "secure/workloads/overview",
-       "label": {
-        "en": "About Workloads",
-        "pt-br": "Sobre Workloads"
-       },
-       "slug": {
-        "en": "/documentation/secure/workloads/",
-        "pt-br": "/documentacao/secure/workloads/"
-       }
-      },
       {
        "key": "secure/workloads/guides",
        "label": {
@@ -1678,7 +1541,11 @@
         }
        ]
       }
-     ]
+     ],
+     "slug": {
+      "en": "/documentation/secure/workloads/",
+      "pt-br": "/documentacao/secure/workloads/"
+     }
     },
     {
      "key": "secure/certificate-manager",
@@ -1686,17 +1553,6 @@
       "en": "Certificate Manager"
      },
      "items": [
-      {
-       "key": "secure/certificate-manager/overview",
-       "label": {
-        "en": "About Certificate Manager",
-        "pt-br": "Sobre Certificate Manager"
-       },
-       "slug": {
-        "en": "/documentation/secure/certificate-manager/",
-        "pt-br": "/documentacao/secure/certificate-manager/"
-       }
-      },
       {
        "key": "secure/certificate-manager/guides",
        "label": {
@@ -1748,7 +1604,11 @@
         }
        ]
       }
-     ]
+     ],
+     "slug": {
+      "en": "/documentation/secure/certificate-manager/",
+      "pt-br": "/documentacao/secure/certificate-manager/"
+     }
     },
     {
      "key": "secure/connectors",
@@ -1756,17 +1616,6 @@
       "en": "Connectors"
      },
      "items": [
-      {
-       "key": "secure/connectors/overview",
-       "label": {
-        "en": "About Connectors",
-        "pt-br": "Sobre Connectors"
-       },
-       "slug": {
-        "en": "/documentation/secure/connectors/",
-        "pt-br": "/documentacao/secure/connectors/"
-       }
-      },
       {
        "key": "secure/connectors/reference",
        "label": {
@@ -1796,7 +1645,11 @@
         }
        ]
       }
-     ]
+     ],
+     "slug": {
+      "en": "/documentation/secure/connectors/",
+      "pt-br": "/documentacao/secure/connectors/"
+     }
     },
     {
      "key": "secure/custom-pages",
@@ -1814,17 +1667,6 @@
       "en": "Bot Manager"
      },
      "items": [
-      {
-       "key": "secure/bot-manager/overview",
-       "label": {
-        "en": "About Bot Manager",
-        "pt-br": "Sobre Bot Manager"
-       },
-       "slug": {
-        "en": "/documentation/secure/bot-manager/",
-        "pt-br": "/documentacao/secure/bot-manager/"
-       }
-      },
       {
        "key": "secure/bot-manager/guides",
        "label": {
@@ -1864,7 +1706,11 @@
         }
        ]
       }
-     ]
+     ],
+     "slug": {
+      "en": "/documentation/secure/bot-manager/",
+      "pt-br": "/documentacao/secure/bot-manager/"
+     }
     }
    ]
   },
@@ -1872,35 +1718,17 @@
    "key": "grp/observe",
    "ui": "menu.observe",
    "icon": "ai ai-observe-pillar",
+   "slug": {
+    "en": "/documentation/observe/overview/",
+    "pt-br": "/documentacao/observe/overview/"
+   },
    "items": [
-    {
-     "key": "observe/overview",
-     "label": {
-      "en": "About Observe",
-      "pt-br": "Sobre Observe"
-     },
-     "slug": {
-      "en": "/documentation/observe/overview/",
-      "pt-br": "/documentacao/observe/overview/"
-     }
-    },
     {
      "key": "observe/data-stream",
      "label": {
       "en": "Data Stream"
      },
      "items": [
-      {
-       "key": "observe/data-stream/overview",
-       "label": {
-        "en": "About Data Stream",
-        "pt-br": "Sobre Data Stream"
-       },
-       "slug": {
-        "en": "/documentation/observe/data-stream/",
-        "pt-br": "/documentacao/observe/data-stream/"
-       }
-      },
       {
        "key": "observe/data-stream/quickstart",
        "label": {
@@ -2009,7 +1837,11 @@
         }
        ]
       }
-     ]
+     ],
+     "slug": {
+      "en": "/documentation/observe/data-stream/",
+      "pt-br": "/documentacao/observe/data-stream/"
+     }
     },
     {
      "key": "observe/edge-pulse",
@@ -2017,17 +1849,6 @@
       "en": "Edge Pulse"
      },
      "items": [
-      {
-       "key": "observe/edge-pulse/overview",
-       "label": {
-        "en": "About Edge Pulse",
-        "pt-br": "Sobre Edge Pulse"
-       },
-       "slug": {
-        "en": "/documentation/observe/edge-pulse/",
-        "pt-br": "/documentacao/observe/edge-pulse/"
-       }
-      },
       {
        "key": "observe/edge-pulse/quickstart",
        "label": {
@@ -2039,7 +1860,11 @@
         "pt-br": "/documentacao/observe/edge-pulse/quickstart/"
        }
       }
-     ]
+     ],
+     "slug": {
+      "en": "/documentation/observe/edge-pulse/",
+      "pt-br": "/documentacao/observe/edge-pulse/"
+     }
     },
     {
      "key": "observe/real-time-events",
@@ -2047,17 +1872,6 @@
       "en": "Real Time Events"
      },
      "items": [
-      {
-       "key": "observe/real-time-events/overview",
-       "label": {
-        "en": "About Real Time Events",
-        "pt-br": "Sobre Real Time Events"
-       },
-       "slug": {
-        "en": "/documentation/observe/real-time-events/",
-        "pt-br": "/documentacao/observe/real-time-events/"
-       }
-      },
       {
        "key": "observe/real-time-events/quickstart",
        "label": {
@@ -2069,7 +1883,11 @@
         "pt-br": "/documentacao/observe/real-time-events/quickstart/"
        }
       }
-     ]
+     ],
+     "slug": {
+      "en": "/documentation/observe/real-time-events/",
+      "pt-br": "/documentacao/observe/real-time-events/"
+     }
     },
     {
      "key": "observe/real-time-metrics",
@@ -2077,17 +1895,6 @@
       "en": "Real Time Metrics"
      },
      "items": [
-      {
-       "key": "observe/real-time-metrics/overview",
-       "label": {
-        "en": "About Real Time Metrics",
-        "pt-br": "Sobre Real Time Metrics"
-       },
-       "slug": {
-        "en": "/documentation/observe/real-time-metrics/",
-        "pt-br": "/documentacao/observe/real-time-metrics/"
-       }
-      },
       {
        "key": "observe/real-time-metrics/quickstart",
        "label": {
@@ -2216,7 +2023,11 @@
         }
        ]
       }
-     ]
+     ],
+     "slug": {
+      "en": "/documentation/observe/real-time-metrics/",
+      "pt-br": "/documentacao/observe/real-time-metrics/"
+     }
     }
    ]
   },
@@ -2243,17 +2054,6 @@
       "pt-br": "Arquiteturas"
      },
      "items": [
-      {
-       "key": "architectures/overview",
-       "label": {
-        "en": "About Architectures",
-        "pt-br": "Sobre arquiteturas"
-       },
-       "slug": {
-        "en": "/documentation/architectures/",
-        "pt-br": "/documentacao/architectures/"
-       }
-      },
       {
        "key": "architectures/api-gateways",
        "label": {
@@ -2640,7 +2440,11 @@
         }
        ]
       }
-     ]
+     ],
+     "slug": {
+      "en": "/documentation/architectures/",
+      "pt-br": "/documentacao/architectures/"
+     }
     },
     {
      "key": "row/marketplace",
@@ -2790,17 +2594,6 @@
      },
      "items": [
       {
-       "key": "platform/overview",
-       "label": {
-        "en": "About the Platform",
-        "pt-br": "Sobre a Plataforma"
-       },
-       "slug": {
-        "en": "/documentation/platform/overview/",
-        "pt-br": "/documentacao/platform/overview/"
-       }
-      },
-      {
        "key": "platform/compliance",
        "label": {
         "en": "Compliance"
@@ -2874,7 +2667,11 @@
         "pt-br": "/documentacao/platform/shared-responsibility/"
        }
       }
-     ]
+     ],
+     "slug": {
+      "en": "/documentation/platform/overview/",
+      "pt-br": "/documentacao/platform/overview/"
+     }
     },
     {
      "key": "row/account",
@@ -2883,17 +2680,6 @@
       "pt-br": "Contas"
      },
      "items": [
-      {
-       "key": "account/overview",
-       "label": {
-        "en": "About Accounts",
-        "pt-br": "Sobre contas"
-       },
-       "slug": {
-        "en": "/documentation/account/",
-        "pt-br": "/documentacao/account/"
-       }
-      },
       {
        "key": "account/guides",
        "label": {
@@ -3082,7 +2868,11 @@
         }
        ]
       }
-     ]
+     ],
+     "slug": {
+      "en": "/documentation/account/",
+      "pt-br": "/documentacao/account/"
+     }
     },
     {
      "key": "deploy/overview",
@@ -3100,17 +2890,6 @@
       "en": "Orchestrator"
      },
      "items": [
-      {
-       "key": "deploy/orchestrator/overview",
-       "label": {
-        "en": "About Orchestrator",
-        "pt-br": "Sobre Orchestrator"
-       },
-       "slug": {
-        "en": "/documentation/deploy/orchestrator/",
-        "pt-br": "/documentacao/deploy/orchestrator/"
-       }
-      },
       {
        "key": "deploy/orchestrator/guides",
        "label": {
@@ -3238,7 +3017,11 @@
         }
        ]
       }
-     ]
+     ],
+     "slug": {
+      "en": "/documentation/deploy/orchestrator/",
+      "pt-br": "/documentacao/deploy/orchestrator/"
+     }
     },
     {
      "key": "row/services",
@@ -3325,17 +3108,6 @@
        },
        "items": [
         {
-         "key": "services/support/overview",
-         "label": {
-          "en": "About Support",
-          "pt-br": "Sobre o Suporte"
-         },
-         "slug": {
-          "en": "/documentation/services/support/",
-          "pt-br": "/documentacao/services/support/"
-         }
-        },
-        {
          "key": "services/support/guides/open-ticket",
          "label": {
           "en": "How to open a Support Ticket",
@@ -3368,7 +3140,11 @@
           "pt-br": "/documentacao/services/support/http-error-status-codes/"
          }
         }
-       ]
+       ],
+       "slug": {
+        "en": "/documentation/services/support/",
+        "pt-br": "/documentacao/services/support/"
+       }
       },
       {
        "key": "services/technical-account-manager",

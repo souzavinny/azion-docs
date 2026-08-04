@@ -92,6 +92,14 @@ for (const group of menu.groups) {
 	else if (!(group.ui in ptUI))
 		warnings.push(`${group.key}: ui key "${group.ui}" missing in pt-br/ui.ts (falls back to EN)`);
 	if (!group.items?.length) errors.push(`${group.key}: empty group`);
+	// A group slug makes the label itself a link, so it needs the same permalink
+	// check as a row's slug.
+	if (group.slug) {
+		if (!isURL(group.slug.en) && !permalinks.en.has(norm(group.slug.en)))
+			errors.push(`${group.key}: slug.en not a content permalink: ${group.slug.en}`);
+		if (group.slug['pt-br'] && !permalinks['pt-br'].has(norm(group.slug['pt-br'])))
+			errors.push(`${group.key}: slug.pt-br not a content permalink: ${group.slug['pt-br']}`);
+	}
 	for (const e of group.items) checkEntry(e, 1);
 }
 
@@ -105,7 +113,14 @@ function collectJson(e: NavEntry) {
 	for (const child of e.items ?? []) collectJson(child);
 }
 menu.mobileAnchors.forEach((a) => collectJson(a as NavEntry));
-menu.groups.forEach((g) => g.items.forEach(collectJson));
+menu.groups.forEach((g) => {
+	// The group label links here, so the page is reachable from the sidebar.
+	if (g.slug && !isURL(g.slug.en)) {
+		reachable.en.add(norm(g.slug.en));
+		if (g.slug['pt-br']) reachable['pt-br'].add(norm(g.slug['pt-br']));
+	}
+	g.items.forEach(collectJson);
+});
 
 function collectLegacy(entries: any[], lang: Lang) {
 	for (const e of entries ?? []) {

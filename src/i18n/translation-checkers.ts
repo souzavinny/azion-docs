@@ -23,6 +23,9 @@ export type NavDict = Array<
 		addBorder?: boolean;
 		hasLabel?: UIDictionaryKeys;
 		labelIcon?: string;
+		/** set -> the group label is a link to this slug, not plain text */
+		labelSlug?: string;
+		labelIsFallback?: boolean;
 		isProduct?: boolean
 	}
 >;

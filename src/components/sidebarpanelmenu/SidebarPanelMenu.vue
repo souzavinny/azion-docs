@@ -13,8 +13,24 @@
 	>
 		<template #item="{ item }">
 			<div :class="(item.onlyMobile ? 'lg:hidden' : 'block')">
+				<!-- Group label. With a labelSlug it is the pillar's overview link and
+				     behaves like a row (hover + active state); without one it stays
+				     plain text. .stop keeps PanelMenu from toggling the section. -->
+				<a
+					v-if="item.hasLabel && item.labelSlug"
+					:title="item.hasLabel"
+					:href="modelSlug(item.labelSlug, item.labelIsFallback, lang)"
+					class="text-base px-4 py-1 mb-1 rounded flex items-center cursor-pointer hover:surface-hover"
+					:class="[item.index === 0 ? 'mt-2' : 'mt-4', isCurrentLabel(item) ? 'surface-200' : '']"
+					@click.stop="trackSidebarClick({ ...item, slug: item.labelSlug, text: item.hasLabel }, modelSlug(item.labelSlug, item.labelIsFallback, lang))"
+				>
+					<i v-if="item.labelIcon" :class="item.labelIcon" class="mr-2 text-sm"></i>
+					<strong class="font-medium">
+						{{ item.hasLabel }}
+					</strong>
+				</a>
 				<p
-					v-if="item.hasLabel"
+					v-else-if="item.hasLabel"
 					class="text-base pl-4 mb-1 cursor-text flex items-center"
 					:class="(item.index === 0 ? 'mt-2' : 'mt-4')"
 					@click.stop.prevent
@@ -58,7 +74,7 @@
 						class="text-base pi pi-external-link text-primary mr-1">
 					</i>
 
-					<span @click="handleItemClick(item, $event)">
+					<span data-nav-toggle>
 						<i
 						:class="expandedKeys[item.key] ? 'pi-angle-down' : 'pi-angle-right'"
 						class="pi text-primary ml-auto pr-1">
@@ -159,24 +175,29 @@
 	}
 	const itemsByKey = indexByKey(dataWithIndex);
 
-	// PanelMenu already toggles a section on header click (it emits update:expandedKeys).
-	// This handler is only for slug+items rows: navigate on the label, toggle on the arrow
-	// or when the row is already the current page.
+	// PanelMenu owns expand/collapse: a click anywhere in the panel header makes it emit
+	// update:expandedKeys, which drives both the submenu and the arrow icon. So this
+	// handler must NOT toggle expandedKeys itself — doing that as well made the two
+	// mutations cancel out, which is why clicking a row of the page you were already on
+	// did nothing at all (and why the arrow only worked because a third handler on the
+	// arrow span made the count odd).
+	//
+	// All this decides is whether the click should also navigate. Suppress that for the
+	// arrow and for the current page's own row (its href is "#"); let everything else
+	// through. Never stop propagation — the toggle lives on an ancestor.
 	function handleItemClick(item, event) {
-		const isArrowClick = event.target.closest('span') || event.target.tagName === 'I';
-		if (isArrowClick || isCurrent(item)) {
-			event.preventDefault();
-			if (expandedKeys.value[item.key]) {
-				expandedKeys.value[item.key] = false;
-			} else {
-				expandedKeys.value[item.key] = true;
-			}
-		}
+		const isArrowClick = !!event.target.closest('[data-nav-toggle]');
+		if (isArrowClick || isCurrent(item)) event.preventDefault();
 	}
 
 	// Pure — safe to call during render (used only for the active-item highlight and href).
 	function isCurrent(item) {
 		return `${lang}${item.slug}` === props.currentPageMatch;
+	}
+
+	// Same, for the group label's own link (pillar overview pages).
+	function isCurrentLabel(item) {
+		return `${lang}${item.labelSlug}` === props.currentPageMatch;
 	}
 
 	// Expand the current page's ancestor chain once, on load, so the active section opens —

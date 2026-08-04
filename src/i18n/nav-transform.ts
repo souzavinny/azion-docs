@@ -16,10 +16,16 @@ export interface NavAnchor {
 export interface NavGroup {
 	/** "grp/..." — namespaced so group keys never collide with row keys */
 	key: string;
-	/** ui.ts key rendered as the non-clickable overline label (via hasLabel) */
+	/** ui.ts key rendered as the group label (via hasLabel) */
 	ui: string;
 	/** icon class rendered next to the label */
 	icon?: string;
+	/**
+	 * Present -> the label itself links here and renders as a hoverable button;
+	 * absent -> the label stays plain, non-clickable text. Pillars point this at
+	 * their overview page so it no longer needs an "About <pillar>" row.
+	 */
+	slug?: LocalizedSlug;
 	items: NavEntry[];
 }
 export interface NavEntry {
@@ -62,6 +68,10 @@ export function navFromJson(menu: NavMenuJson, lang: 'en' | 'pt-br'): NavDict {
 		if (rows.length) {
 			rows[0].hasLabel = group.ui as UIDictionaryKeys;
 			if (group.icon) rows[0].labelIcon = group.icon;
+			if (group.slug) {
+				rows[0].labelSlug = group.slug[lang] ?? group.slug.en;
+				if (!group.slug[lang] && !isURL(group.slug.en)) rows[0].labelIsFallback = true;
+			}
 		}
 		nav.push(...rows);
 	}
