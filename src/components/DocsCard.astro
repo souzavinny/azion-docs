@@ -1,8 +1,11 @@
 ---
 /**
  * Standard docs CTA card — the single card pattern for content pages, kept
- * deliberately compact: icon inline with the lg title, sm description clamped
- * at 2 lines, no action row. Place inside a grid div with the canonical class:
+ * deliberately compact: icon inline with the lg title, sm description, no
+ * action row. The description is NOT clamped: at the ~237px these cards get
+ * in a 4-up grid, a 2-line clamp truncated every description on the home, so
+ * cards show their full text and the grid equalises heights per row instead.
+ * Place inside a grid div with the canonical class:
  *   <div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
  * (auto-fill keeps cards ~300-370px wide in any container: 4-up on the home,
  * 2-up inside the docs content column.)
@@ -31,6 +34,6 @@ const { link, title, icon, description, overline, titleTag = 'h3' } = Astro.prop
 				<CardTitle titleTag={titleTag} class="m-0 !text-lg">{title}</CardTitle>
 			</div>
 		</div>
-		{description && <CardDescription class="!text-sm line-clamp-2">{description}</CardDescription>}
+		{description && <CardDescription class="!text-sm">{description}</CardDescription>}
 	</Fragment>
 </CardBaseClickable>

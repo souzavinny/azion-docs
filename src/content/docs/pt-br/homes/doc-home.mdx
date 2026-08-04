@@ -11,8 +11,6 @@ permalink: /documentacao/
 import Container from 'azion-webkit/container';
 import LinkButton from 'azion-webkit/linkbutton';
 import DocsCard from '~/components/DocsCard.astro';
-import Tabs from '~/components/tabs/Tabs';
-import Code from '~/components/Code/Code.astro';
 import AgentCopyPrompt from '~/components/AgentCopyPrompt.astro';
 
 export const agentPrompt = `Me ajude a configurar a Azion neste projeto. Faça o seguinte:
@@ -21,94 +19,73 @@ export const agentPrompt = `Me ajude a configurar a Azion neste projeto. Faça o
 3. Revise o projeto e verifique se ele já está vinculado à Azion; se não estiver, execute azion link e siga as instruções.
 4. Sugira os próximos passos mais relevantes.`;
 
-<div class="grid gap-8 lg:grid-cols-2 items-center mt-16 mb-14">
-  <div class="flex flex-col gap-4 items-center text-center lg:items-start lg:text-left">
-    <h1 class="font-medium text-heading-5 text-balance !my-0">Bem-vindo à <span style="color:#F3652B">Documentação Azion</span></h1>
-    <p class="text-color-secondary text-body-3 leading-relaxed text-balance !my-0">Tornamos toda aplicação rápida e confiável. Faça a implementação de seus projetos instantaneamente na rede global mais confiável, aproveite segurança em nível corporativo e escale do zero ao pico sem cold starts.</p>
-    <div class="flex flex-wrap gap-4 justify-center lg:justify-start mt-2">
-      <LinkButton link="/pt-br/documentacao/get-started/first-deploy/" label="Faça o deploy da sua aplicação" />
-      <LinkButton link="/pt-br/documentacao/platform/overview/" label="Visão geral da plataforma" outlined />
-    </div>
+<div class="flex flex-col items-center text-center gap-5 mt-20 mb-16">
+  <h1 class="font-medium text-heading-5 text-balance !my-0">Bem-vindo à <span style="color:#F3652B">Documentação Azion</span></h1>
+  <p class="text-color-secondary text-body-3 leading-relaxed text-balance !my-0 max-w-2xl">Tornamos toda aplicação rápida e confiável. Faça deploy em uma rede global, com segurança em nível corporativo e sem cold starts.</p>
+  <div data-agent-prompt-actions class="flex flex-wrap gap-4 justify-center items-center mt-1">
+    <LinkButton link="/pt-br/documentacao/get-started/" label="Comece agora" />
+    <a href="#" title="Copie o prompt de configuração para o seu agente de código" class="p-button p-component p-button-sm w-fit no-underline justify-center gap-3 px-4 p-button-outlined hover:surface-hover"><span class="flex -space-x-1 shrink-0"><span class="flex h-[1.625rem] w-[1.625rem] items-center justify-center rounded-full bg-[--surface-400] ring-2 ring-[--surface-0] text-white"><i class="pi pi-sparkles text-[0.8rem]"></i></span><span class="flex h-[1.625rem] w-[1.625rem] items-center justify-center rounded-full bg-[--surface-400] ring-2 ring-[--surface-0] text-white"><i class="pi pi-desktop text-[0.8rem]"></i></span><span class="flex h-[1.625rem] w-[1.625rem] items-center justify-center rounded-full bg-[--surface-400] ring-2 ring-[--surface-0] text-white"><i class="pi pi-github text-[0.8rem]"></i></span><span class="flex h-[1.625rem] w-[1.625rem] items-center justify-center rounded-full bg-[--surface-400] ring-2 ring-[--surface-0] text-white"><i class="pi pi-google text-[0.8rem]"></i></span></span>Copiar prompt</a>
   </div>
-  <div class="w-full">
-    <Tabs client:visible>
-      <Fragment slot="tab.prompt"><i class="pi pi-sparkles text-sm mr-2"></i>Prompt de IA</Fragment>
-      <Fragment slot="tab.cli"><i class="pi pi-code text-sm mr-2"></i>CLI</Fragment>
-
-<Fragment slot="panel.prompt">
-<Code lang="text" wrap code={agentPrompt} />
-</Fragment>
-
-<Fragment slot="panel.cli">
-<Code lang="bash" code={`# Instale a Azion CLI
-curl -fsSL https://cli.azion.app/install.sh | bash
-
-# Autentique-se
-azion login
-
-# Vincule este projeto e faça o deploy
-azion link`} />
-</Fragment>
-    </Tabs>
-  </div>
+  <p class="text-xs text-color-secondary !my-0 max-w-xl">O prompt entrega ao seu agente de código a CLI, a documentação ao vivo por MCP e este projeto vinculado. <a href="/pt-br/documentacao/agent-setup/">Configuração por ferramenta</a></p>
 </div>
 
 ## Comece pelo objetivo
 
-Escolha o resultado que você quer e vá direto para as páginas que levam até ele.
+Construa algo, deixe mais rápido, proteja e rode IA em cima.
 
 <div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-    <DocsCard link="/pt-br/documentacao/build/overview/" title="Construa sua aplicação" icon="ai ai-build-pillar" description="Applications, functions e regras na Azion Web Platform — da primeira rota ao tráfego de produção." />
-    <DocsCard link="/pt-br/documentacao/build/applications/application-accelerator/" title="Acelere sua aplicação" icon="pi pi-gauge" description="Acelere conteúdo dinâmico e APIs com otimizações de protocolo e faça o tuning do cache para reduzir o tráfego na origem." />
-    <DocsCard link="/pt-br/documentacao/secure/overview/" title="Proteja sua aplicação" icon="ai ai-secure-pillar" description="Coloque WAF, proteção contra DDoS, gestão de bots e regras de firewall na frente do que você implantou — e ajuste com tráfego real." />
-    <DocsCard link="/pt-br/documentacao/build/ai-inference/" title="Execute inferência de IA" icon="ai ai-ai-pillar" description="Rode modelos perto dos seus usuários: chat, embeddings, visão e OCR sem gerenciar infraestrutura de GPU." />
+    <DocsCard link="/pt-br/documentacao/get-started/first-deploy/" title="Construa sua aplicação" icon="ai ai-build-pillar" description="No ar a partir de um template, um repo ou da CLI." />
+    <DocsCard link="/pt-br/documentacao/build/applications/cache/guides/cache-settings/" title="Acelere sua aplicação" icon="pi pi-gauge" description="Cache no edge para a origem parar de se repetir." />
+    <DocsCard link="/pt-br/documentacao/secure/firewall/quickstart/" title="Proteja sua aplicação" icon="ai ai-secure-pillar" description="Um firewall na frente, com regra de bloqueio verificável." />
+    <DocsCard link="/pt-br/documentacao/marketplace/integrations/ai-inference-starter-kit/" title="Execute inferência de IA" icon="ai ai-ai-pillar" description="Modelo hospedado, endpoint compatível com OpenAI." />
 </div>
 
 Também úteis: [observe sua aplicação](/pt-br/documentacao/observe/overview/) · [arquiteturas de referência](/pt-br/documentacao/architectures/)
 
 ## Comece pela interface
 
-A mesma plataforma, três formas de operar. Escolha a que combina com o seu jeito de trabalhar.
+Entregue ao seu agente ou faça você mesmo. A plataforma é a mesma nos dois casos.
 
-<div class="not-prose grid md:grid-cols-3 border rounded-md overflow-hidden mt-6 mb-10">
-  <a href="/pt-br/documentacao/produtos/azion-cli/visao-geral/" class="flex flex-col gap-2 p-6 no-underline border-b md:border-b-0 md:border-r hover:bg-[--surface-hover]">
-    <span class="flex h-10 w-10 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-azion-cli text-xl"></i></span>
-    <span class="text-white text-lg font-medium mt-1">CLI</span>
-    <span class="text-color-secondary text-sm">Fique no terminal: vincule um projeto, rode localmente e faça deploy com um único binário.</span>
-    <span class="text-sm mt-auto pt-3 inline-flex items-center gap-2" style="color:#F3652B">Instalar a CLI<i class="pi pi-arrow-right text-xs"></i></span>
-  </a>
-  <a href="/pt-br/documentacao/agent-setup/" class="flex flex-col gap-2 p-6 no-underline border-b md:border-b-0 md:border-r hover:bg-[--surface-hover]">
-    <span class="flex h-10 w-10 items-center justify-center rounded bg-[--surface-400]"><i class="pi pi-sparkles text-xl"></i></span>
-    <span class="text-white text-lg font-medium mt-1">Agente</span>
-    <span class="text-color-secondary text-sm">Deixe seu agente de código fazer: documentação ao vivo por MCP e deploys reais direto do editor.</span>
-    <span class="text-sm mt-auto pt-3 inline-flex items-center gap-2" style="color:#F3652B">Conectar seu agente<i class="pi pi-arrow-right text-xs"></i></span>
-  </a>
-  <a href="/pt-br/documentacao/account/guides/getting-to-know-azion-console/" class="flex flex-col gap-2 p-6 no-underline hover:bg-[--surface-hover]">
-    <span class="flex h-10 w-10 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-azion text-xl"></i></span>
-    <span class="text-white text-lg font-medium mt-1">Plataforma</span>
-    <span class="text-color-secondary text-sm">Configure visualmente no Azion Console: applications, regras de firewall, métricas e eventos.</span>
-    <span class="text-sm mt-auto pt-3 inline-flex items-center gap-2" style="color:#F3652B">Abrir o Console<i class="pi pi-arrow-right text-xs"></i></span>
-  </a>
-</div>
+<div class="border rounded-md overflow-hidden mt-6 mb-10">
+  <div class="grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-center p-8 border-b !m-0 [&_h3]:!mt-0">
+    <div>
 
-<div class="grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-center border rounded-md p-8 mt-12 mb-8 [&_h2]:!mt-0">
-  <div>
-
-## Seu agente de IA, fluente em Azion
+### Seu agente de IA, fluente em Azion
 
 Um prompt ensina a plataforma a qualquer agente de código: nomes atuais dos produtos, documentação ao vivo pelo [servidor MCP da Azion](/pt-br/documentacao/devtools/mcp/) e deploys reais com a CLI.
 
-<div id="agent-prompt-actions" class="flex flex-wrap gap-4 mt-2">
+<div data-agent-prompt-actions class="flex flex-wrap gap-4 mt-2">
   <LinkButton link="#" label="Copiar prompt" icon="pi pi-copy" iconPos="left" outlined />
 </div>
 
-  </div>
-  <div class="flex flex-col gap-2 lg:border-l lg:pl-8">
+    </div>
+    <div class="flex flex-col gap-2 lg:border-l lg:pl-8">
 
 Prefere o caminho guiado? Quatro passos conectam Claude Code, Cursor, GitHub Copilot, Windsurf, Codex ou Gemini CLI.
 
 <LinkButton link="/pt-br/documentacao/agent-setup/" label="Configuração de agentes" />
 
+    </div>
+  </div>
+  <div class="not-prose grid md:grid-cols-3 !m-0">
+    <a href="/pt-br/documentacao/account/guides/getting-to-know-azion-console/" class="flex flex-col gap-2 p-6 no-underline border-b md:border-b-0 md:border-r hover:bg-[--surface-hover]">
+      <span class="flex h-10 w-10 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-azion text-xl"></i></span>
+      <span class="text-white text-lg font-medium mt-1">Plataforma</span>
+      <span class="text-color-secondary text-sm">Configure visualmente no Azion Console: applications, regras de firewall, métricas e eventos.</span>
+      <span class="text-sm mt-auto pt-3 inline-flex items-center gap-2" style="color:#F3652B">Abrir o Console<i class="pi pi-arrow-right text-xs"></i></span>
+    </a>
+    <a href="/pt-br/documentacao/produtos/azion-cli/visao-geral/" class="flex flex-col gap-2 p-6 no-underline border-b md:border-b-0 md:border-r hover:bg-[--surface-hover]">
+      <span class="flex h-10 w-10 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-azion-cli text-xl"></i></span>
+      <span class="text-white text-lg font-medium mt-1">CLI</span>
+      <span class="text-color-secondary text-sm">Fique no terminal: vincule um projeto, rode localmente e faça deploy com um único binário.</span>
+      <span class="text-sm mt-auto pt-3 inline-flex items-center gap-2" style="color:#F3652B">Instalar a CLI<i class="pi pi-arrow-right text-xs"></i></span>
+    </a>
+    <a href="/pt-br/documentacao/devtools/api/quickstart/" class="flex flex-col gap-2 p-6 no-underline hover:bg-[--surface-hover]">
+      <span class="flex h-10 w-10 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-azion-api text-xl"></i></span>
+      <span class="text-white text-lg font-medium mt-1">API</span>
+      <span class="text-color-secondary text-sm">Opere pelos seus próprios sistemas: crie e altere recursos por REST, com autenticação por token.</span>
+      <span class="text-sm mt-auto pt-3 inline-flex items-center gap-2" style="color:#F3652B">Chamar a API<i class="pi pi-arrow-right text-xs"></i></span>
+    </a>
   </div>
 </div>
 
@@ -117,9 +94,9 @@ Prefere o caminho guiado? Quatro passos conectam Claude Code, Cursor, GitHub Cop
 <div class="grid gap-8 lg:grid-cols-[minmax(240px,320px)_1fr] items-start mt-12 mb-10 [&_h2]:!mt-0">
   <div>
 
-## Deploy em um clique com templates prontos para usar
+## Templates prontos
 
-Comece de um projeto pronto com CI/CD pré-configurado. O [tutorial de primeiro deploy](/pt-br/documentacao/get-started/first-deploy/) mostra como os templates funcionam.
+Deploy em um clique, com CI/CD já configurado. O [tutorial de primeiro deploy](/pt-br/documentacao/get-started/first-deploy/) mostra como os templates funcionam.
 
   </div>
   <div class="not-prose grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-5 items-center lg:mt-2">
@@ -135,31 +112,33 @@ Comece de um projeto pronto com CI/CD pré-configurado. O [tutorial de primeiro 
   </div>
 </div>
 
-## Configure e opere a proteção
+## Bloqueie ataques
 
-Tudo o que fica na frente do que você implantou: as regras, o tuning que evita que elas bloqueiem usuários reais e a evidência de que dispararam.
+Tudo o que você precisa para proteger aplicações, APIs e o tráfego que chega até elas.
 
 <div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-    <DocsCard link="/pt-br/documentacao/secure/waf/" title="Web Application Firewall" icon="ai ai-edge-firewall" description="Proteja aplicações contra SQL Injection, Cross-Site Scripting (XSS), Remote File Inclusion e outras ameaças com rule sets configuráveis." />
-    <DocsCard link="/pt-br/documentacao/secure/firewall/guides/tune-waf/" title="Faça o tuning do WAF com tráfego real" icon="pi pi-list-check" description="Filtre os ataques que suas regras capturaram, separe ameaças reais de falsos positivos e transforme as exceções em allowed rules." />
-    <DocsCard link="/pt-br/documentacao/secure/ddos-protection/" title="DDoS Protection" icon="pi pi-shield" description="Defenda conteúdo e aplicações contra ataques de negação de serviço distribuída, absorvidos pela rede." />
-    <DocsCard link="/pt-br/documentacao/secure/bot-manager/" title="Bot Manager" icon="pi pi-microchip" description="Proteja aplicações contra ataques automatizados, como assinaturas de bots maliciosos e bots por script." />
-    <DocsCard link="/pt-br/documentacao/secure/network-shield/" title="Network Shield" icon="pi pi-map" description="Filtragem granular por endereço IP, ASN e país, aplicada por network lists no edge." />
-    <DocsCard link="/pt-br/documentacao/secure/certificate-manager/" title="Certificate Manager" icon="pi pi-key" description="Vincule certificados TLS às suas aplicações HTTPS, incluindo wildcard Let's Encrypt e mTLS para autenticação do cliente." />
-    <DocsCard link="/pt-br/documentacao/secure/firewall/guides/integrar-siems/" title="Integre com o seu SIEM" icon="pi pi-arrow-right-arrow-left" description="Envie eventos de WAF e firewall para o SIEM que seu time já acompanha, para detecção e resposta a ameaças." />
+    <DocsCard link="/pt-br/documentacao/secure/firewall/quickstart/" title="Coloque um firewall na frente" icon="ai ai-edge-firewall" description="Vincule ao seu workload e comprove um deny com curl." />
+    <DocsCard link="/pt-br/documentacao/secure/waf/quickstart/" title="Bloqueie ataques de injeção" icon="ai ai-waf-rules" description="Um rule set de SQL Injection, com bloqueios visíveis." />
+    <DocsCard link="/pt-br/documentacao/secure/firewall/guides/tune-waf/" title="Pare de bloquear seus próprios usuários" icon="pi pi-list-check" description="Transforme falsos positivos do WAF em allowed rules." />
+    <DocsCard link="/pt-br/documentacao/marketplace/integrations/bot-manager-lite/" title="Pontue e bloqueie bots ruins" icon="pi pi-microchip" description="Negue requisições acima do seu threshold." />
+    <DocsCard link="/pt-br/documentacao/secure/network-shield/guides/blocklists-enderecos-ip-edge/" title="Bloqueie IPs, ASNs e países" icon="pi pi-map" description="Descarte tráfego indesejado antes que chegue à aplicação." />
+    <DocsCard link="/pt-br/documentacao/secure/certificate-manager/quickstart/" title="Sirva o seu próprio certificado TLS" icon="pi pi-key" description="Suba certificado e chave e confira o handshake." />
+    <DocsCard link="/pt-br/documentacao/secure/firewall/guides/integrar-siems/" title="Envie eventos para o seu SIEM" icon="pi pi-arrow-right-arrow-left" description="Envie eventos de WAF e firewall para o seu SIEM." />
 </div>
+
+Referência, quando precisar dos detalhes: [DDoS Protection](/pt-br/documentacao/secure/ddos-protection/) (ilimitado, ativo por padrão) · [rule sets do WAF](/pt-br/documentacao/secure/waf/) · [Exceções do WAF](/pt-br/documentacao/secure/waf/reference/custom-allowed-rules/) · [Bot Manager](/pt-br/documentacao/secure/bot-manager/)
 
 ## Avalie risco e comprove conformidade
 
 O que a plataforma cobre, o que continua sendo seu e onde está a evidência quando a auditoria pergunta.
 
 <div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-    <DocsCard link="/pt-br/documentacao/platform/shared-responsibility/" title="Modelo de Responsabilidade Compartilhada" icon="pi pi-verified" description="Os papéis e responsabilidades de cada parte quando a sua organização roda na plataforma da Azion." />
-    <DocsCard link="/pt-br/documentacao/platform/compliance/governanca-risco-conformidade/" title="Governança, Risco e Conformidade" icon="pi pi-id-card" description="Como a Azion apoia os esforços de conformidade com ferramentas de segurança, certificações e infraestrutura flexível." />
-    <DocsCard link="/pt-br/documentacao/platform/compliance/pci-dss-certification/" title="Compliance PCI DSS" icon="pi pi-wallet" description="A Azion é PCI-DSS 4.0 Level 1 Service Provider: o que isso cobre para cargas de trabalho que lidam com dados de portadores de cartão." />
-    <DocsCard link="/pt-br/documentacao/platform/compliance/soc/" title="Compliance SOC" icon="pi pi-lock" description="Relatórios SOC 2 Type 2 e SOC 3 semestrais, que demonstram controles de segurança auditados continuamente ao longo do ano." />
-    <DocsCard link="/pt-br/documentacao/account/guides/activity-history/" title="Activity History" icon="pi pi-history" description="A trilha de auditoria da conta: quais ações foram executadas no Console, por quem e quando." />
-    <DocsCard link="/pt-br/documentacao/services/security-response-team/" title="Security Response Team" icon="pi pi-users" description="Serviço gerenciado que autoriza a Azion a aplicar medidas de mitigação em seu nome durante um ataque." />
+    <DocsCard link="/pt-br/documentacao/platform/shared-responsibility/" title="Modelo de Responsabilidade Compartilhada" icon="pi pi-verified" description="O que a Azion cobre e o que continua sendo seu." />
+    <DocsCard link="/pt-br/documentacao/platform/compliance/governanca-risco-conformidade/" title="Governança, Risco e Conformidade" icon="pi pi-id-card" description="As ferramentas e certificações por trás da conformidade." />
+    <DocsCard link="/pt-br/documentacao/platform/compliance/pci-dss-certification/" title="Compliance PCI DSS" icon="pi pi-wallet" description="PCI-DSS 4.0 Level 1 e o que cobre para dados de cartão." />
+    <DocsCard link="/pt-br/documentacao/platform/compliance/soc/" title="Compliance SOC" icon="pi pi-lock" description="Relatórios SOC 2 Type 2 e SOC 3, duas vezes por ano." />
+    <DocsCard link="/pt-br/documentacao/account/guides/activity-history/" title="Activity History" icon="pi pi-history" description="A trilha de auditoria: quem mudou o quê e quando." />
+    <DocsCard link="/pt-br/documentacao/services/security-response-team/" title="Security Response Team" icon="pi pi-users" description="A Azion mitiga em seu nome durante um ataque." />
 </div>
 
 Governança de acesso: [single sign-on](/pt-br/documentacao/account/guides/sso/) · [autenticação multifator](/pt-br/documentacao/account/guides/multi-factor-authentication/) · [times e permissões](/pt-br/documentacao/account/guides/teams-permissions/) · [acesso condicional por endereço IP](/pt-br/documentacao/account/guides/conditional-access-by-ip-address/)
@@ -167,32 +146,25 @@ Governança de acesso: [single sign-on](/pt-br/documentacao/account/guides/sso/)
 ## Conheça nossas ferramentas para desenvolvedores
 
 <div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-    <DocsCard link="/pt-br/documentacao/account/guides/getting-to-know-azion-console/" title="Azion Console" icon="ai ai-azion" description="A interface de configuração da Azion: crie Applications, configure Functions, gerencie regras do Firewall, defina Cache e monitore métricas e eventos." />
-    <DocsCard link="https://api.azion.com/" title="Azion API" icon="pi pi-code" description="Uma API RESTful baseada em requisições HTTPS que permite interagir totalmente com os produtos Azion." />
-    <DocsCard link="/pt-br/documentacao/produtos/azion-cli/visao-geral/" title="Azion CLI" icon="pi pi-wrench" description="Nossa interface de linha de comando open source: inicialize, construa e faça deploy de aplicações, rode um servidor local e vincule projetos existentes." />
-    <DocsCard link="/pt-br/documentacao/produtos/azion-lib/visao-geral/" title="Azion Lib e SDKs" icon="ai ai-edge-libraries" description="Ferramentas JavaScript/TypeScript para o Azion Runtime e APIs REST; para projetos em Go, o SDK da Azion para Go cobre as mesmas operações." />
-    <DocsCard link="/pt-br/documentacao/devtools/console-kit/" title="Console Kit" icon="pi pi-th-large" description="Um kit front-end para construir suas próprias interfaces do Console com Vue/Vite, Tailwind e PrimeVue, com suporte a multi-tenancy." />
-    <DocsCard link="/pt-br/documentacao/devtools/graphql-api/" title="GraphQL API" icon="pi pi-chart-line" description="Um endpoint único para obter dados precisos: métricas em tempo real, eventos, faturamento e cobrança, sem requisições excessivas." />
-    <DocsCard link="/pt-br/documentacao/produtos/terraform-provider/" title="Terraform" icon="pi pi-server" description="Gerencie sua infraestrutura na Azion como código reutilizável e versionado com o Azion Terraform Provider oficial." />
+    <DocsCard link="/pt-br/documentacao/account/guides/getting-to-know-azion-console/" title="Azion Console" icon="ai ai-azion" description="A interface web para tudo o que você roda na Azion." />
+    <DocsCard link="https://api.azion.com/" title="Azion API" icon="pi pi-code" description="Uma API REST que cobre todos os produtos Azion." />
+    <DocsCard link="/pt-br/documentacao/produtos/azion-cli/visao-geral/" title="Azion CLI" icon="pi pi-wrench" description="Construa, faça deploy e rode local pelo terminal." />
+    <DocsCard link="/pt-br/documentacao/produtos/azion-lib/visao-geral/" title="Azion Lib e SDKs" icon="ai ai-edge-libraries" description="Ferramentas JavaScript, TypeScript e Go." />
+    <DocsCard link="/pt-br/documentacao/devtools/console-kit/" title="Console Kit" icon="pi pi-th-large" description="Construa sua própria interface com Vue e PrimeVue." />
+    <DocsCard link="/pt-br/documentacao/devtools/graphql-api/" title="GraphQL API" icon="pi pi-chart-line" description="Um endpoint para métricas, eventos e faturamento." />
+    <DocsCard link="/pt-br/documentacao/produtos/terraform-provider/" title="Terraform" icon="pi pi-server" description="Sua infraestrutura na Azion como código versionado." />
 </div>
 
 Relacionados: [Azion Runtime](/pt-br/documentacao/runtime/visao-geral/) · [SDK da Azion para Go](/pt-br/documentacao/produtos/azion-lib/visao-geral/) · [CLI open source no GitHub](https://github.com/aziontech/azion)
 
-## Encontre a solução ideal para você
+## Acompanhe
+
+Release notes a cada lançamento, mais o blog, o canal no YouTube e o Discord onde as dúvidas são respondidas.
 
 <div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-    <DocsCard link="/pt-br/documentacao/architectures/by-solution/application-development/" title="Desenvolvimento de Aplicações" icon="pi pi-code" description="Construa aplicações escaláveis e com baixa latência usando edge computing e funções serverless." />
-    <DocsCard link="/pt-br/documentacao/architectures/by-solution/application-and-infrastructure-automation/" title="Automação de Aplicações e Infraestrutura" icon="pi pi-server" description="Automatize operações para otimizar a performance das aplicações e simplificar o gerenciamento da infraestrutura." />
-    <DocsCard link="/pt-br/documentacao/architectures/by-solution/application-and-network-security/" title="Segurança de Aplicações e Redes" icon="ai ai-edge-firewall" description="Proteja aplicações e redes contra ameaças com ferramentas de segurança e observabilidade nativas de edge." />
-    <DocsCard link="/pt-br/documentacao/architectures/by-solution/artificial-intelligence/" title="Inteligência Artificial (AI)" icon="pi pi-bolt" description="Implemente AI no edge para insights em tempo real, respostas rápidas e experiências personalizadas." />
-    <DocsCard link="/pt-br/documentacao/architectures/by-solution/service-performance-and-reliability/" title="Performance e confiabilidade do serviço" icon="pi pi-chart-line" description="Melhore a performance das aplicações, reduza a latência e assegure a entrega confiável de serviços no edge." />
-    <DocsCard link="/pt-br/documentacao/architectures/" title="Veja mais" icon="pi pi-compass" description="Consulte todas as soluções para casos de uso." />
-</div>
-
-## O que há de novo?
-
-<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-    <DocsCard link="/pt-br/documentacao/changelog/" title="Release notes" icon="pi pi-megaphone" description="Fique por dentro das últimas mudanças e lançamentos dos produtos e serviços Azion." />
-    <DocsCard link="https://discord.com/invite/Yp9N7RMVZy" title="Junte-se à Comunidade" icon="pi pi-discord" description="Participe: compartilhe experiências com a comunidade Azion no Discord." />
+    <DocsCard link="/pt-br/documentacao/changelog/" title="Release notes" icon="pi pi-megaphone" description="O que mudou nos produtos da Azion, a cada lançamento." />
+    <DocsCard link="https://www.azion.com/pt-br/blog/" title="Blog" icon="pi pi-book" description="Posts de engenharia e como clientes rodam na Azion." />
+    <DocsCard link="https://www.youtube.com/aziontech" title="YouTube" icon="pi pi-youtube" description="Walkthroughs, demos e sessões gravadas." />
+    <DocsCard link="https://discord.com/invite/Yp9N7RMVZy" title="Discord" icon="pi pi-discord" description="Tire dúvidas e troque experiências com outros devs." />
 </div>
 
