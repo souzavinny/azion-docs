@@ -9,31 +9,55 @@ namespace: documentation_home
 permalink: /documentation/
 ---
 
-import HeroHome from 'azion-webkit/herohome';
 import Container from 'azion-webkit/container';
 import LinkButton from 'azion-webkit/linkbutton';
 import DocsCard from '~/components/DocsCard.astro';
+import Tabs from '~/components/tabs/Tabs';
+import Code from '~/components/Code/Code.astro';
+import AgentCopyPrompt from '~/components/AgentCopyPrompt.astro';
 
-<div class="[&_.flex.flex-col]:!gap-4 [&_.flex.flex-col]:md:!gap-8 [&_.flex.flex-col]:2xl:!gap-16">
-  <HeroHome
-    title="Welcome to <span style='color:#F3652B!important'>Azion Docs</span>"
-    description="We make every application fast and reliable. Deploy your projects instantly on the most reliable global network, leverage enterprise-grade security, and scale from zero to peak without cold starts."
-    logos={[]}
-    bottomSpacing="mb-8"
-  />
-  <div class="flex flex-wrap gap-4 justify-center mb-16">
-    <LinkButton link="/en/documentation/get-started/first-deploy/" label="First deploy in a few minutes" />
-    <LinkButton link="https://console.azion.com/signup/" label="Create an account" outlined />
-    <LinkButton link="/en/documentation/platform/overview/" label="Platform overview" outlined />
+export const agentPrompt = `Help me set up Azion in this project. Do the following:
+1. Install the Azion CLI: curl -fsSL https://cli.azion.app/install.sh | bash
+2. Connect the Azion MCP server (https://mcp.azion.com) so you can search current Azion docs — per-tool setup: https://www.azion.com/en/documentation/agent-setup/
+3. Review the project and check whether it is already linked to Azion; if it is not, run azion link and follow the prompts.
+4. Suggest the most relevant next steps.`;
+
+<div class="grid gap-8 lg:grid-cols-2 items-center mt-16 mb-14">
+  <div class="flex flex-col gap-4 items-center text-center lg:items-start lg:text-left">
+    <h1 class="font-medium text-heading-5 text-balance !my-0">Welcome to <span style="color:#F3652B">Azion Docs</span></h1>
+    <p class="text-color-secondary text-body-3 leading-relaxed text-balance !my-0">We make every application fast and reliable. Deploy your projects instantly on the most reliable global network, leverage enterprise-grade security, and scale from zero to peak without cold starts.</p>
+    <div class="flex flex-wrap gap-4 justify-center lg:justify-start mt-2">
+      <LinkButton link="/en/documentation/get-started/first-deploy/" label="First deploy in a few minutes" />
+      <LinkButton link="https://console.azion.com/signup/" label="Create an account" outlined />
+      <LinkButton link="/en/documentation/platform/overview/" label="Platform overview" outlined />
+    </div>
+  </div>
+  <div class="w-full">
+    <Tabs client:visible>
+      <Fragment slot="tab.prompt"><i class="pi pi-sparkles text-sm mr-2"></i>AI Prompt</Fragment>
+      <Fragment slot="tab.cli"><i class="pi pi-code text-sm mr-2"></i>CLI</Fragment>
+
+<Fragment slot="panel.prompt">
+<Code lang="text" wrap code={agentPrompt} />
+</Fragment>
+
+<Fragment slot="panel.cli">
+<Code lang="bash" code={`# Install the Azion CLI
+curl -fsSL https://cli.azion.app/install.sh | bash
+
+# Authenticate
+azion login
+
+# Link this project and deploy
+azion link`} />
+</Fragment>
+    </Tabs>
   </div>
 </div>
 
 ## Start here, by profile
 
 <div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-  <div id="persona-avaliador">
-      <DocsCard link="/en/documentation/get-started/first-deploy/" title="I'm evaluating Azion" icon="pi pi-bolt" description="See what you can build in a few minutes: deploy a real application and verify it's live, no sales call required." />
-  </div>
   <div id="persona-implementador">
       <DocsCard link="/en/documentation/guides/" title="I need to implement something specific" icon="pi pi-code" description="Find the feature by the term you already use—signed URLs, reports, live streaming—and follow a step-by-step guide to production." />
   </div>
@@ -50,39 +74,48 @@ import DocsCard from '~/components/DocsCard.astro';
 
 Also useful: [billing and account management](/en/documentation/account/) · [reference architectures](/en/documentation/architectures/)
 
+<div class="grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-center border rounded-md p-8 mt-12 mb-8 [&_h2]:!mt-0">
+  <div>
+
+## Your AI agent, fluent in Azion
+
+One prompt teaches any coding agent the platform: current product names, live docs through the [Azion MCP server](/en/documentation/devtools/mcp/), and real deploys with the CLI.
+
+<div id="agent-prompt-actions" class="flex flex-wrap gap-4 mt-2">
+  <LinkButton link="#" label="Copy prompt" icon="pi pi-copy" iconPos="left" outlined />
+</div>
+
+  </div>
+  <div class="flex flex-col gap-2 lg:border-l lg:pl-8">
+
+Prefer the guided route? Four steps connect Claude Code, Cursor, GitHub Copilot, Windsurf, Codex, or Gemini CLI.
+
+<LinkButton link="/en/documentation/agent-setup/" label="Agent Setup" />
+
+  </div>
+</div>
+
+<AgentCopyPrompt prompt={agentPrompt} copiedLabel="Copied!" />
+
+<div class="grid gap-8 lg:grid-cols-[minmax(240px,320px)_1fr] items-start mt-12 mb-10 [&_h2]:!mt-0">
+  <div>
+
 ## One-click deploy with ready-to-use templates
 
-The fastest way to start using the Azion Web Platform. Deploy instantly from dozens of templates, including e-commerce, blogs, APIs, full-stack SSR, and more; leverage integrations by connecting to Sanity, Cosmic, ButterCMS, Turso, or bringing your own RESTful CMS or database. CI/CD is auto-configured so you can focus on your code, not the pipeline.
+Start from a ready-made project with CI/CD pre-configured. The [first deploy tutorial](/en/documentation/get-started/first-deploy/) shows how templates work.
 
-Here are a few of our most popular templates to get you started. For more information, you can visit our documentation page on [using templates](/en/documentation/get-started/first-deploy/).
-
-<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-    <DocsCard link="/en/documentation/marketplace/templates/astro-boilerplate/" title="Astro Boilerplate" icon="ai ai-astro" description="Fast, content-focused websites such as blogs, marketing pages, and e-commerce stores, with minimal client-side JavaScript." />
-    <DocsCard link="/en/documentation/marketplace/templates/gatsby-blog/" title="Gatsby Blog Starter Kit" icon="ai ai-gatsby" description="High-performance, SEO-friendly websites with a React-based static site generator that pulls content from any data source." />
-    <DocsCard link="/en/documentation/marketplace/templates/react-boilerplate/" title="React Boilerplate" icon="ai ai-react" description="Interactive user interfaces with reusable components—ideal for quick iteration and UI-centric development at the edge." />
-    <DocsCard link="/en/documentation/marketplace/templates/nextjs-static-boilerplate/" title="Next.js Static Boilerplate" icon="ai ai-nextjs" description="Server-side rendering, static site generation, and powerful routing built on React, optimized for edge deployment." />
-    <DocsCard link="https://console.azion.com/create/vue/vue-boilerplate" title="Vue.js Boilerplate" icon="ai ai-vue" description="Responsive, maintainable web interfaces with a progressive JavaScript framework known for simplicity and flexibility." />
-    <DocsCard link="/en/documentation/marketplace/templates/angular-boilerplate/" title="Angular Boilerplate" icon="ai ai-angular" description="Enterprise-grade web applications with TypeScript, robust structure, and advanced tooling for edge infrastructure." />
-    <DocsCard link="/en/documentation/products/devtools/azion-edge-runtime/frameworks-compatibility/" title="More frameworks" icon="pi pi-th-large" description="We're continuously expanding our framework support. See the full list of supported frameworks and their templates." />
-</div>
-
-## Need to deploy an existing project?
-
-Bring what you already have: connect a GitHub repository or link a local project from your terminal.
-
-<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-    <DocsCard link="/en/documentation/get-started/first-deploy/#import-a-project-from-github" title="Import from GitHub" icon="pi pi-github" description="Connect your GitHub account, pick a repository, and deploy it from the Console in a few clicks." />
-    <DocsCard link="/en/documentation/get-started/first-deploy/#deploy-with-azion-cli" title="Deploy with the Azion CLI" icon="pi pi-wrench" description="Run azion link in your project folder and be live in a few minutes, straight from the terminal." />
-</div>
-
-Whichever door you choose, the [first deploy tutorial](/en/documentation/get-started/first-deploy/) walks through all three paths and ends with a verification step, so you know it worked.
-
-## Journeys: from zero to production
-
-<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-    <DocsCard link="/en/documentation/get-started/" title="Put an application live" icon="pi pi-code" description="From your first deploy to a working application on a real URL." />
-    <DocsCard link="/en/documentation/secure/overview/" title="Protect your application" icon="ai ai-edge-firewall" description="Add WAF, DDoS protection, and traffic rules in front of what you deployed." />
-    <DocsCard link="/en/documentation/observe/overview/" title="Observe your application" icon="pi pi-chart-line" description="Follow metrics, events, and data streams from your traffic in real time." />
+  </div>
+  <div class="not-prose grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-5 items-center lg:mt-2">
+    <a href="/en/documentation/marketplace/templates/react-boilerplate/" class="flex items-center gap-3 no-underline"><span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-react text-xl"></i></span><span class="text-white">React</span></a>
+    <a href="/en/documentation/marketplace/templates/nextjs-static-boilerplate/" class="flex items-center gap-3 no-underline"><span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-next text-xl"></i></span><span class="text-white">Next.js</span></a>
+    <a href="/en/documentation/marketplace/templates/astro-boilerplate/" class="flex items-center gap-3 no-underline"><span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-astro text-xl"></i></span><span class="text-white">Astro</span></a>
+    <a href="https://console.azion.com/create/vue/vue-boilerplate" class="flex items-center gap-3 no-underline"><span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-vue text-xl"></i></span><span class="text-white">Vue.js</span></a>
+    <a href="/en/documentation/marketplace/templates/angular-boilerplate/" class="flex items-center gap-3 no-underline"><span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-angular text-xl"></i></span><span class="text-white">Angular</span></a>
+    <a href="/en/documentation/marketplace/templates/gatsby-blog/" class="flex items-center gap-3 no-underline"><span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-gatsby text-xl"></i></span><span class="text-white">Gatsby Blog</span></a>
+    <a href="/en/documentation/get-started/frameworks/hono/" class="flex items-center gap-3 no-underline"><span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-hono text-xl"></i></span><span class="text-white">Hono</span></a>
+    <a href="/en/documentation/get-started/frameworks/hugo/" class="flex items-center gap-3 no-underline"><span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-hugo text-xl"></i></span><span class="text-white">Hugo</span></a>
+    <a href="/en/documentation/products/devtools/azion-edge-runtime/frameworks-compatibility/" class="flex items-center gap-3 no-underline"><span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="pi pi-th-large text-xl"></i></span><span class="text-white">More frameworks</span></a>
+  </div>
 </div>
 
 ## Configure and operate protection
@@ -113,18 +146,6 @@ What the platform covers, what stays with you, and where the evidence lives when
 </div>
 
 Access governance: [single sign-on](/en/documentation/account/guides/sso/) · [multi-factor authentication](/en/documentation/account/guides/multi-factor-authentication/) · [teams and permissions](/en/documentation/account/guides/teams-permissions/) · [conditional access by IP address](/en/documentation/account/guides/conditional-access-by-ip-address/)
-
-## Explore by area
-
-<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-    <DocsCard link="/en/documentation/platform/overview/" title="Azion platform overview" icon="ai ai-azion" description="Get to know the Azion Web Platform and how to use it." />
-    <DocsCard link="/en/documentation/build/overview/" title="Build" icon="ai ai-build-pillar" description="Create with powerful tools and frameworks." />
-    <DocsCard link="/en/documentation/store/overview/" title="Store" icon="ai ai-store" description="Manage and process data at the edge." />
-    <DocsCard link="/en/documentation/secure/overview/" title="Secure" icon="ai ai-secure-pillar" description="Fully protect your applications." />
-    <DocsCard link="/en/documentation/deploy/overview/" title="Deploy" icon="ai ai-deploy-pillar" description="Manage edge resources efficiently." />
-    <DocsCard link="/en/documentation/observe/overview/" title="Observe" icon="ai ai-observe-pillar" description="Monitor and gain analytics in real-time." />
-    <DocsCard link="/en/documentation/devtools/" title="Dev Tools" icon="pi pi-server" description="Build, automate, and integrate with Azion's developer tools." />
-</div>
 
 ## Get to know our Developer tools
 
@@ -158,10 +179,3 @@ Related: [Azion Runtime](/en/documentation/runtime/overview/) · [Azion SDK for 
     <DocsCard link="https://discord.com/invite/Yp9N7RMVZy" title="Join the Community" icon="pi pi-discord" description="Share your experiences with the Azion community on Discord." />
 </div>
 
-## For AI agents
-
-Consuming these docs with an AI assistant or coding agent? Azion maintains an official MCP server with tools to search the documentation, code samples, and CLI commands directly from your agent.
-
-<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-    <DocsCard link="/en/documentation/devtools/for-ai-agents/" title="Azion MCP Server" icon="pi pi-microchip" description="Search the docs, code samples, and CLI commands from your AI agent via the official MCP server." />
-</div>

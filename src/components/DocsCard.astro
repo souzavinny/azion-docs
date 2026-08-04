@@ -1,8 +1,8 @@
 ---
 /**
- * Standard docs CTA card — the single card pattern for content pages (market-standard
- * ~330×180 footprint): compact spacing, lg title, sm description clamped at 3 lines.
- * Place inside a grid div with the canonical class:
+ * Standard docs CTA card — the single card pattern for content pages, kept
+ * deliberately compact: icon inline with the lg title, sm description clamped
+ * at 2 lines, no action row. Place inside a grid div with the canonical class:
  *   <div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
  * (auto-fill keeps cards ~300-370px wide in any container: 4-up on the home,
  * 2-up inside the docs content column.)
@@ -22,11 +22,15 @@ import CardDescription from 'azion-webkit/carddescription';
 const { link, title, icon, description, overline, titleTag = 'h3' } = Astro.props;
 ---
 
-<CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="compact" link={link} title={title}>
+<CardBaseClickable grid={true} hover="outlined" class="w-full" spacing="compact" link={link} title={title} disableAction={true}>
 	<Fragment slot="content">
-		{icon && <i class={`${icon} text-xl`}></i>}
-		{overline && <span class="text-overline" style="color:#F3652B">{overline}</span>}
-		<CardTitle titleTag={titleTag} class="m-0 !text-lg">{title}</CardTitle>
-		{description && <CardDescription class="!text-sm line-clamp-3">{description}</CardDescription>}
+		<div class="flex items-center gap-3">
+			{icon && <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class={`${icon} text-xl`}></i></span>}
+			<div class="flex flex-col">
+				{overline && <span class="text-overline" style="color:#F3652B">{overline}</span>}
+				<CardTitle titleTag={titleTag} class="m-0 !text-lg">{title}</CardTitle>
+			</div>
+		</div>
+		{description && <CardDescription class="!text-sm line-clamp-2">{description}</CardDescription>}
 	</Fragment>
 </CardBaseClickable>
