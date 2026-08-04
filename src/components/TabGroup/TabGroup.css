@@ -16,7 +16,7 @@
 	text-decoration: none;
 }
 
-.border {
+.TabGroup .border {
 	border-bottom: 4px solid var(--theme-bg-hover);
 	margin-top: -4px;
 }
