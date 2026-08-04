@@ -30,13 +30,6 @@ const menuSecondary = [
     title: "Azion SSO Login",
     link: "https://console.azion.com/login",
     destak: false,
-  },
-  {
-    text: "Sign up",
-    title: "Azion Free Account",
-    link: "https://console.azion.com/signup",
-    destak: true,
-    minBreakpoint: 'md',
   }
 ];
 

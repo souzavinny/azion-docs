@@ -20,7 +20,7 @@
             { 'p-button-info': menu.severity === 'info' },
             { 'p-button-outlined border-header': menu.outlined === true },
             menu.minBreakpoint && menu.minBreakpoint === 'sm' && 'block',
-            menu.minBreakpoint && menu.minBreakpoint === 'md' && 'hidden md:flex',
+            menu.minBreakpoint && menu.minBreakpoint === 'md' && 'hidden md:block',
             menu.minBreakpoint && menu.minBreakpoint === 'lg' && 'hidden lg:block',
             menu.minBreakpoint && menu.minBreakpoint === 'xl' && 'hidden xl:block',
             menu.minBreakpoint && menu.minBreakpoint === '2xl' && 'hidden 2xl:block'

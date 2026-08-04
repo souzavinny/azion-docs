@@ -124,6 +124,7 @@ export default {
 	'expressiveCode.copyButtonTooltip': 'Copy to clipboard',
 	'expressiveCode.copyButtonCopied': 'Copied!',
 	'breadcrumb.home': 'Documentation',
+	'header.consoleSignedIn': 'Console',
 	'menu.label': 'Products',
 	'menu.begin': 'Before you begin',
 	'menu.journey': 'Choose your journey',

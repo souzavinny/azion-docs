@@ -113,6 +113,7 @@ export default UIDictionary({
 	'recipesLink.singular': 'Receita relacionada:',
 	'recipesLink.plural': 'Receitas relacionadas',
 	'breadcrumb.home': 'Documentação',
+	'header.consoleSignedIn': 'Console',
 	'menu.label': 'Produtos',
 	'menu.begin': 'Antes de começar',
 	'menu.journey': 'Escolha sua jornada',

@@ -30,13 +30,6 @@ const menuSecondary = [
     title: "Azion SSO Login",
     link: "https://console.azion.com/login",
     destak: false,
-  },
-  {
-    text: "Criar conta",
-    title: "Crie sua Conta Gratuita",
-    link: "https://console.azion.com/signup",
-    destak: true,
-    minBreakpoint: 'md',
   }
 ];
 

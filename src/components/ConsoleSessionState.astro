@@ -1,0 +1,79 @@
+---
+/**
+ * Non-visual helper: upgrades the header's "Sign in" link when the visitor
+ * already has a live console.azion.com session. The href never changes, so
+ * clicking still lands in the Console either way; the link just switches to
+ * the filled Azion orange and reads "Console".
+ *
+ * Mechanism: www.azion.com and console.azion.com are same-site (both under the
+ * registrable domain azion.com), so a SameSite=Lax session cookie IS sent on a
+ * credentialed subresource fetch between them. console.azion.com/api/* answers
+ * that fetch with `Access-Control-Allow-Origin: https://www.azion.com` and
+ * `Allow-Credentials: true` on both the 200 and the 403, which is what makes
+ * the status readable from here.
+ *
+ * Progressive enhancement in one direction only: the rendered default is
+ * "Sign in" and it is upgraded solely on a confirmed 200. Every failure mode
+ * (CORS, network, timeout, non-production origin) leaves the header exactly as
+ * it is today. The probe runs once per tab, cached in sessionStorage.
+ *
+ * Only production origins are on the console's CORS allowlist, so this is inert
+ * on localhost and stage and cannot be exercised there.
+ */
+interface Props {
+  signedInLabel: string;
+}
+
+const { signedInLabel } = Astro.props;
+---
+
+<script is:inline define:vars={{ signedInLabel }}>
+  (function () {
+    var ALLOWED_ORIGINS = ['https://www.azion.com', 'https://docs.azion.com'];
+    if (ALLOWED_ORIGINS.indexOf(location.origin) === -1) return;
+
+    var link = document.querySelector('header a[href^="https://console.azion.com/login"]');
+    if (!link) return;
+
+    function markSignedIn() {
+      link.setAttribute('data-console-session', 'active');
+      // In this theme p-button-primary is the ghost variant and p-button-text
+      // strips the fill; dropping both leaves the plain .p-button, which is
+      // the filled Azion orange used by every primary CTA on the site. Done by
+      // class removal rather than a hardcoded colour so it tracks the theme.
+      link.classList.remove('p-button-primary', 'p-button-text', 'hover:surface-hover');
+      var span = link.querySelector('span');
+      if (span) span.textContent = signedInLabel;
+    }
+
+    var KEY = 'az_console_session';
+    var cached = null;
+    try {
+      cached = sessionStorage.getItem(KEY);
+    } catch (e) {}
+    if (cached === '1') return markSignedIn();
+    if (cached === '0') return;
+
+    var controller = new AbortController();
+    var timer = setTimeout(function () {
+      controller.abort();
+    }, 4000);
+
+    fetch('https://console.azion.com/api/account/info', {
+      credentials: 'include',
+      signal: controller.signal,
+      headers: { Accept: 'application/json' },
+    })
+      .then(function (res) {
+        clearTimeout(timer);
+        var signedIn = res.status === 200;
+        try {
+          sessionStorage.setItem(KEY, signedIn ? '1' : '0');
+        } catch (e) {}
+        if (signedIn) markSignedIn();
+      })
+      .catch(function () {
+        clearTimeout(timer);
+      });
+  })();
+</script>
