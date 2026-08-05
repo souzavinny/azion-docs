@@ -25,7 +25,7 @@ export const agentPrompt = `Help me set up Azion in this project. Do the followi
   <p class="text-color-secondary text-body-3 leading-relaxed text-balance !my-0 max-w-2xl">We make every application fast and reliable. Deploy on a global network, with enterprise-grade security and no cold starts.</p>
   <div data-agent-prompt-actions class="flex flex-wrap gap-4 justify-center items-center mt-1">
     <LinkButton link="/en/documentation/get-started/" label="Get Started" />
-    <a href="#" title="Copy the setup prompt for your AI coding agent" class="p-button p-component p-button-sm w-fit no-underline justify-center gap-3 px-4 p-button-outlined hover:surface-hover"><span class="flex -space-x-1 shrink-0"><span class="flex h-[1.625rem] w-[1.625rem] items-center justify-center rounded-full bg-[--surface-400] ring-2 ring-[--surface-0] text-white"><i class="pi pi-sparkles text-[0.8rem]"></i></span><span class="flex h-[1.625rem] w-[1.625rem] items-center justify-center rounded-full bg-[--surface-400] ring-2 ring-[--surface-0] text-white"><i class="pi pi-desktop text-[0.8rem]"></i></span><span class="flex h-[1.625rem] w-[1.625rem] items-center justify-center rounded-full bg-[--surface-400] ring-2 ring-[--surface-0] text-white"><i class="pi pi-github text-[0.8rem]"></i></span><span class="flex h-[1.625rem] w-[1.625rem] items-center justify-center rounded-full bg-[--surface-400] ring-2 ring-[--surface-0] text-white"><i class="pi pi-google text-[0.8rem]"></i></span></span>Copy prompt</a>
+    <a href="#" title="Copy the setup prompt for your AI coding agent" class="p-button p-component p-button-sm w-fit no-underline justify-center gap-3 px-4 p-button-outlined hover:surface-hover"><span class="flex -space-x-1 shrink-0"><span class="flex h-[1.625rem] w-[1.625rem] items-center justify-center rounded-full bg-[--surface-400] ring-2 ring-[--surface-0] text-[--text-color]"><i class="pi pi-sparkles text-[0.8rem]"></i></span><span class="flex h-[1.625rem] w-[1.625rem] items-center justify-center rounded-full bg-[--surface-400] ring-2 ring-[--surface-0] text-[--text-color]"><i class="pi pi-desktop text-[0.8rem]"></i></span><span class="flex h-[1.625rem] w-[1.625rem] items-center justify-center rounded-full bg-[--surface-400] ring-2 ring-[--surface-0] text-[--text-color]"><i class="pi pi-github text-[0.8rem]"></i></span><span class="flex h-[1.625rem] w-[1.625rem] items-center justify-center rounded-full bg-[--surface-400] ring-2 ring-[--surface-0] text-[--text-color]"><i class="pi pi-google text-[0.8rem]"></i></span></span>Copy prompt</a>
   </div>
   <p class="text-xs text-color-secondary !my-0 max-w-xl">The prompt hands your coding agent the CLI, live docs over MCP, and this project linked. <a href="/en/documentation/agent-setup/">Per-tool setup</a></p>
 </div>
@@ -70,20 +70,26 @@ Prefer the guided route? Four steps connect Claude Code, Cursor, GitHub Copilot,
   </div>
   <div class="not-prose grid md:grid-cols-3 !m-0">
     <a href="/en/documentation/account/guides/how-to-access-azion-console/" class="flex flex-col gap-2 p-6 no-underline border-b md:border-b-0 md:border-r hover:bg-[--surface-hover]">
-      <span class="flex h-10 w-10 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-azion text-xl"></i></span>
-      <span class="text-white text-lg font-medium mt-1">Platform</span>
+      <span class="flex items-center gap-3">
+        <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-azion text-xl"></i></span>
+        <span class="text-[--text-color] text-lg font-medium">Platform</span>
+      </span>
       <span class="text-color-secondary text-sm">Configure it visually in Azion Console: applications, firewall rules, metrics, and events.</span>
       <span class="text-sm mt-auto pt-3 inline-flex items-center gap-2" style="color:#F3652B">Open the Console<i class="pi pi-arrow-right text-xs"></i></span>
     </a>
     <a href="/en/documentation/products/azion-cli/overview/" class="flex flex-col gap-2 p-6 no-underline border-b md:border-b-0 md:border-r hover:bg-[--surface-hover]">
-      <span class="flex h-10 w-10 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-azion-cli text-xl"></i></span>
-      <span class="text-white text-lg font-medium mt-1">CLI</span>
+      <span class="flex items-center gap-3">
+        <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-azion-cli text-xl"></i></span>
+        <span class="text-[--text-color] text-lg font-medium">CLI</span>
+      </span>
       <span class="text-color-secondary text-sm">Stay in the terminal: link a project, run it locally, and deploy with a single binary.</span>
       <span class="text-sm mt-auto pt-3 inline-flex items-center gap-2" style="color:#F3652B">Install the CLI<i class="pi pi-arrow-right text-xs"></i></span>
     </a>
     <a href="/en/documentation/devtools/api/" class="flex flex-col gap-2 p-6 no-underline hover:bg-[--surface-hover]">
-      <span class="flex h-10 w-10 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-azion-api text-xl"></i></span>
-      <span class="text-white text-lg font-medium mt-1">API</span>
+      <span class="flex items-center gap-3">
+        <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-azion-api text-xl"></i></span>
+        <span class="text-[--text-color] text-lg font-medium">API</span>
+      </span>
       <span class="text-color-secondary text-sm">Drive it from your own systems: create and change resources over REST, token authenticated.</span>
       <span class="text-sm mt-auto pt-3 inline-flex items-center gap-2" style="color:#F3652B">Call the API<i class="pi pi-arrow-right text-xs"></i></span>
     </a>
@@ -101,15 +107,15 @@ Deploy in one click, with CI/CD already wired up. The [first deploy tutorial](/e
 
   </div>
   <div class="not-prose grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-5 items-center lg:mt-2">
-    <a href="/en/documentation/marketplace/templates/react-boilerplate/" class="flex items-center gap-3 no-underline"><span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-react text-xl"></i></span><span class="text-white">React</span></a>
-    <a href="/en/documentation/marketplace/templates/nextjs-static-boilerplate/" class="flex items-center gap-3 no-underline"><span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-next text-xl"></i></span><span class="text-white">Next.js</span></a>
-    <a href="/en/documentation/marketplace/templates/astro-boilerplate/" class="flex items-center gap-3 no-underline"><span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-astro text-xl"></i></span><span class="text-white">Astro</span></a>
-    <a href="https://console.azion.com/create/vue/vue-boilerplate" class="flex items-center gap-3 no-underline"><span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-vue text-xl"></i></span><span class="text-white">Vue.js</span></a>
-    <a href="/en/documentation/marketplace/templates/angular-boilerplate/" class="flex items-center gap-3 no-underline"><span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-angular text-xl"></i></span><span class="text-white">Angular</span></a>
-    <a href="/en/documentation/marketplace/templates/gatsby-blog/" class="flex items-center gap-3 no-underline"><span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-gatsby text-xl"></i></span><span class="text-white">Gatsby Blog</span></a>
-    <a href="/en/documentation/get-started/frameworks/hono/" class="flex items-center gap-3 no-underline"><span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-hono text-xl"></i></span><span class="text-white">Hono</span></a>
-    <a href="/en/documentation/get-started/frameworks/hugo/" class="flex items-center gap-3 no-underline"><span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-hugo text-xl"></i></span><span class="text-white">Hugo</span></a>
-    <a href="/en/documentation/products/devtools/azion-edge-runtime/frameworks-compatibility/" class="flex items-center gap-3 no-underline"><span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="pi pi-th-large text-xl"></i></span><span class="text-white">More frameworks</span></a>
+    <a href="/en/documentation/marketplace/templates/react-boilerplate/" class="flex items-center gap-3 no-underline"><span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-react text-xl"></i></span><span class="text-[--text-color]">React</span></a>
+    <a href="/en/documentation/marketplace/templates/nextjs-static-boilerplate/" class="flex items-center gap-3 no-underline"><span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-next text-xl"></i></span><span class="text-[--text-color]">Next.js</span></a>
+    <a href="/en/documentation/marketplace/templates/astro-boilerplate/" class="flex items-center gap-3 no-underline"><span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-astro text-xl"></i></span><span class="text-[--text-color]">Astro</span></a>
+    <a href="https://console.azion.com/create/vue/vue-boilerplate" class="flex items-center gap-3 no-underline"><span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-vue text-xl"></i></span><span class="text-[--text-color]">Vue.js</span></a>
+    <a href="/en/documentation/marketplace/templates/angular-boilerplate/" class="flex items-center gap-3 no-underline"><span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-angular text-xl"></i></span><span class="text-[--text-color]">Angular</span></a>
+    <a href="/en/documentation/marketplace/templates/gatsby-blog/" class="flex items-center gap-3 no-underline"><span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-gatsby text-xl"></i></span><span class="text-[--text-color]">Gatsby Blog</span></a>
+    <a href="/en/documentation/get-started/frameworks/hono/" class="flex items-center gap-3 no-underline"><span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-hono text-xl"></i></span><span class="text-[--text-color]">Hono</span></a>
+    <a href="/en/documentation/get-started/frameworks/hugo/" class="flex items-center gap-3 no-underline"><span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="ai ai-hugo text-xl"></i></span><span class="text-[--text-color]">Hugo</span></a>
+    <a href="/en/documentation/products/devtools/azion-edge-runtime/frameworks-compatibility/" class="flex items-center gap-3 no-underline"><span class="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[--surface-400]"><i class="pi pi-th-large text-xl"></i></span><span class="text-[--text-color]">More frameworks</span></a>
   </div>
 </div>
 
@@ -118,13 +124,13 @@ Deploy in one click, with CI/CD already wired up. The [first deploy tutorial](/e
 Everything you need to protect applications, APIs, and the traffic that reaches them.
 
 <div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-    <DocsCard link="/en/documentation/secure/firewall/quickstart/" title="Put a firewall in front" icon="ai ai-edge-firewall" description="Bind it to your workload and prove a deny rule with curl." />
+    <DocsCard link="/en/documentation/secure/firewall/quickstart/" title="Add a firewall" icon="ai ai-edge-firewall" description="Bind it to your workload and prove a deny rule with curl." />
     <DocsCard link="/en/documentation/secure/waf/quickstart/" title="Block injection attacks" icon="ai ai-waf-rules" description="A SQL Injection rule set, with the blocks visible in events." />
-    <DocsCard link="/en/documentation/secure/firewall/guides/tune-waf/" title="Stop blocking your own users" icon="pi pi-list-check" description="Turn WAF false positives into allowed rules." />
-    <DocsCard link="/en/documentation/marketplace/integrations/bot-manager-lite/" title="Score and deny bad bots" icon="pi pi-microchip" description="Deny automated requests that score above your threshold." />
-    <DocsCard link="/en/documentation/secure/network-shield/guides/blocklists-ip-addresses-edge/" title="Block IPs, ASNs, and countries" icon="pi pi-map" description="Drop unwanted traffic before it reaches your application." />
-    <DocsCard link="/en/documentation/secure/certificate-manager/quickstart/" title="Serve your own TLS certificate" icon="pi pi-key" description="Upload a certificate and key, then check the handshake." />
-    <DocsCard link="/en/documentation/secure/firewall/guides/integrate-siems/" title="Send events to your SIEM" icon="pi pi-arrow-right-arrow-left" description="Stream WAF and firewall events where your team watches." />
+    <DocsCard link="/en/documentation/secure/firewall/guides/tune-waf/" title="Tune false positives" icon="pi pi-list-check" description="Turn WAF false positives into allowed rules." />
+    <DocsCard link="/en/documentation/marketplace/integrations/bot-manager-lite/" title="Deny bad bots" icon="pi pi-microchip" description="Deny automated requests that score above your threshold." />
+    <DocsCard link="/en/documentation/secure/network-shield/guides/blocklists-ip-addresses-edge/" title="Network blocklists" icon="pi pi-map" description="Drop unwanted traffic before it reaches your application." />
+    <DocsCard link="/en/documentation/secure/certificate-manager/quickstart/" title="Install TLS certificates" icon="pi pi-key" description="Upload a certificate and key, then check the handshake." />
+    <DocsCard link="/en/documentation/secure/firewall/guides/integrate-siems/" title="Stream to SIEM" icon="pi pi-arrow-right-arrow-left" description="Stream WAF and firewall events where your team watches." />
 </div>
 
 Reference, when you need the details: [DDoS Protection](/en/documentation/secure/ddos-protection/) (unmetered, on by default) · [WAF rule sets](/en/documentation/secure/waf/) · [WAF Exceptions](/en/documentation/secure/waf/reference/custom-allowed-rules/) · [Bot Manager](/en/documentation/secure/bot-manager/)

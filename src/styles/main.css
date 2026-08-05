@@ -16,3 +16,30 @@
 .azion.azion-light td {
 	border-color: #e8e8e8 !important;
 }
+
+/*
+ * azion-theme's markdown rules (extended-components/_markdown.scss) force
+ * `color: var(--primary-text-color) !important` on EVERY .p-button inside
+ * .prose. That is the filled button's label colour, so an outlined button in
+ * page content renders near-white text — invisible on a light background.
+ * Restore the theme's own outlined colour.
+ *
+ * This MUST sit inside @layer primevue, where those rules live. For !important
+ * declarations the cascade inverts: a layered rule beats an unlayered one no
+ * matter how specific the unlayered one is, so an override outside the layer
+ * silently does nothing.
+ */
+@layer primevue {
+	.azion .prose :is(.p-button.p-button-outlined) {
+		color: var(--text-color) !important;
+	}
+}
+
+/*
+ * azion-webkit's <Community /> marks the X link with `ai-twitter`, a class the
+ * shipped icon font has no glyph for, so the row renders with a blank space
+ * where the icon should be. Point it at the X glyph the font does carry.
+ */
+.ai.ai-twitter::before {
+	content: '\f101';
+}
