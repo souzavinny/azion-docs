@@ -120,6 +120,17 @@
      },
      "items": [
       {
+       "key": "gd/build/applications/quickstart",
+       "label": {
+        "en": "Applications first steps",
+        "pt-br": "Applications primeiros passos"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/quickstart/",
+        "pt-br": "/documentacao/build/applications/quickstart/"
+       }
+      },
+      {
        "key": "gd/build/applications/guides/configure-main-settings",
        "label": {
         "en": "How to configure main settings",
@@ -205,6 +216,182 @@
        "slug": {
         "en": "/documentation/build/applications/guides/work-with-rules-engine/",
         "pt-br": "/documentacao/build/applications/guides/trabalhar-com-rules-engine/"
+       }
+      },
+      {
+       "key": "gd/build/applications/guides/clone-applications",
+       "label": {
+        "en": "How to clone applications",
+        "pt-br": "Como clonar uma application"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/clone-applications/",
+        "pt-br": "/documentacao/build/applications/guides/clonar-applications/"
+       }
+      },
+      {
+       "key": "gd/build/applications/guides/configure-ports",
+       "label": {
+        "en": "Configure HTTP and HTTPS Ports",
+        "pt-br": "Configure portas HTTP e HTTPS"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/configure-ports/",
+        "pt-br": "/documentacao/build/applications/guides/configurar-portas/"
+       }
+      },
+      {
+       "key": "gd/build/applications/guides/cors-errors",
+       "label": {
+        "en": "How to Fix CORS Policy Errors",
+        "pt-br": "Corrija erros da política CORS na aplicação"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/cors-errors/",
+        "pt-br": "/documentacao/build/applications/guides/erros-cors/"
+       }
+      },
+      {
+       "key": "gd/build/applications/guides/cross-origin-resource-sharing-cors",
+       "label": {
+        "en": "Cross-Origin Resource Sharing (CORS)",
+        "pt-br": "Configure Cross-Origin Resource Sharing (CORS)"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/cross-origin-resource-sharing-cors/",
+        "pt-br": "/documentacao/build/applications/guides/cross-origin-resource-sharing-cors/"
+       }
+      },
+      {
+       "key": "gd/build/applications/guides/crossdomain-error-in-jw-player",
+       "label": {
+        "en": "Crossdomain error with JW PLayer",
+        "pt-br": "Erro de crossdomain no JW Player"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/crossdomain-error-in-jw-player/",
+        "pt-br": "/documentacao/build/applications/guides/erro-de-crossdomain-xml-no-jw-player/"
+       }
+      },
+      {
+       "key": "gd/build/applications/guides/customizing-error-response-page",
+       "label": {
+        "en": "How to customize an error response page",
+        "pt-br": "Como personalizar uma página de resposta de erro"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/customizing-error-response-page/",
+        "pt-br": "/documentacao/build/applications/guides/personalizar-pagina-resposta-erro/"
+       }
+      },
+      {
+       "key": "gd/build/applications/guides/delete-applications",
+       "label": {
+        "en": "How to delete an application",
+        "pt-br": "Como excluir uma application"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/delete-applications/",
+        "pt-br": "/documentacao/build/applications/guides/excluir-applications/"
+       }
+      },
+      {
+       "key": "gd/build/applications/guides/how-to-generate-a-lets-encrypt-certificate-via-api",
+       "label": {
+        "en": "Generate a Let's Encrypt Cert via API (HTTP-01)",
+        "pt-br": "Gere um certificado Let's Encrypt via API"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate-via-api/",
+        "pt-br": "/documentacao/build/applications/guides/como-gerar-um-certificado-lets-encrypt-via-api/"
+       }
+      },
+      {
+       "key": "gd/build/applications/guides/live-ingest-best-practices",
+       "label": {
+        "en": "Best practices for using Live Ingest",
+        "pt-br": "Boas práticas para uso do Live Ingest"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/live-ingest-best-practices/",
+        "pt-br": "/documentacao/build/applications/guides/live-ingest-boas-praticas/"
+       }
+      },
+      {
+       "key": "gd/build/applications/guides/mitigating-a-vulnerability-httpoxy",
+       "label": {
+        "en": "How to mitigate the HTTPOxy vulnerability",
+        "pt-br": "Como mitigar a vulnerabilidade HTTPoxy"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/mitigating-a-vulnerability-httpoxy/",
+        "pt-br": "/documentacao/build/applications/guides/como-mitigar-vulnerabilidade-httpoxy/"
+       }
+      },
+      {
+       "key": "gd/build/applications/guides/original-ip-header",
+       "label": {
+        "en": "Send Client IP via a Dedicated HTTP Header",
+        "pt-br": "Isole o IP do cliente em um cabeçalho HTTP"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/original-ip-header/",
+        "pt-br": "/documentacao/build/applications/guides/ip-original-header/"
+       }
+      },
+      {
+       "key": "gd/build/applications/guides/rules-engine",
+       "label": {
+        "en": "Create Request & Response Rules",
+        "pt-br": "Crie regras de Request e Response no Rules Engine"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/rules-engine/",
+        "pt-br": "/documentacao/build/applications/guides/rules-engine/"
+       }
+      },
+      {
+       "key": "gd/build/applications/guides/multiple-origins",
+       "label": {
+        "en": "Configure Multiple Origins with Load Balancing",
+        "pt-br": "Configure múltiplas origens com load balancing"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/multiple-origins/",
+        "pt-br": "/documentacao/build/applications/guides/configure-multiplas-origens/"
+       }
+      },
+      {
+       "key": "gd/build/applications/guides/set-error-pages",
+       "label": {
+        "en": "How to set error pages",
+        "pt-br": "Como configurar páginas de erro"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/set-error-pages/",
+        "pt-br": "/documentacao/build/applications/guides/configurar-paginas-de-erro/"
+       }
+      },
+      {
+       "key": "gd/build/applications/guides/troubleshooting/debug-applications",
+       "label": {
+        "en": "Debug applications",
+        "pt-br": "Debugar aplicações"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/troubleshooting/debug-applications/",
+        "pt-br": "/documentacao/build/applications/guides/troubleshooting/debug-aplicacoes/"
+       }
+      },
+      {
+       "key": "gd/build/applications/guides/troubleshooting/understand-metrics",
+       "label": {
+        "en": "Understand metrics",
+        "pt-br": "Monitorar métricas"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/troubleshooting/understand-metrics/",
+        "pt-br": "/documentacao/build/applications/guides/troubleshooting/monitorar-metricas/"
        }
       }
      ]
@@ -365,6 +552,105 @@
         "en": "/documentation/build/functions/guides/serverless-functions/",
         "pt-br": "/documentacao/build/functions/guides/funcoes-serverless/"
        }
+      },
+      {
+       "key": "gd/build/functions/guides/file-upload-functions",
+       "label": {
+        "en": "Implement File Upload with Functions",
+        "pt-br": "Implemente upload de arquivos com Functions"
+       },
+       "slug": {
+        "en": "/documentation/build/functions/guides/file-upload-functions/",
+        "pt-br": "/documentacao/build/functions/guides/upload-arquivos-functions/"
+       }
+      },
+      {
+       "key": "gd/build/functions/guides/get-started",
+       "label": {
+        "en": "Get Started With OpenNext",
+        "pt-br": "Comece com o OpenNext"
+       },
+       "slug": {
+        "en": "/documentation/build/functions/guides/get-started/",
+        "pt-br": "/documentacao/build/functions/guides/como-comecar/"
+       }
+      },
+      {
+       "key": "gd/build/functions/guides/instantiate-functions",
+       "label": {
+        "en": "How to instantiate functions in your application",
+        "pt-br": "Como instanciar functions em sua aplicação"
+       },
+       "slug": {
+        "en": "/documentation/build/functions/guides/instantiate-functions/",
+        "pt-br": "/documentacao/build/functions/guides/instanciar-functions/"
+       }
+      },
+      {
+       "key": "gd/build/functions/guides/resend-email-functions",
+       "label": {
+        "en": "How to integrate Resend email service with Functions",
+        "pt-br": "Como integrar o serviço de email Resend com Functions"
+       },
+       "slug": {
+        "en": "/documentation/build/functions/guides/resend-email-functions/",
+        "pt-br": "/documentacao/build/functions/guides/integrar-resend-email-functions/"
+       }
+      },
+      {
+       "key": "gd/build/functions/guides/restful-tasks-api-functions",
+       "label": {
+        "en": "Build a RESTful API with Functions & SQL",
+        "pt-br": "Crie uma API RESTful com Functions e SQL"
+       },
+       "slug": {
+        "en": "/documentation/build/functions/guides/restful-tasks-api-functions/",
+        "pt-br": "/documentacao/build/functions/guides/api-restful-edge-functions-edge-sql/"
+       }
+      },
+      {
+       "key": "gd/build/functions/guides/stripe-webhooks-functions",
+       "label": {
+        "en": "How to handle Stripe webhooks with Functions",
+        "pt-br": "Como lidar com webhooks do Stripe com Functions"
+       },
+       "slug": {
+        "en": "/documentation/build/functions/guides/stripe-webhooks-functions/",
+        "pt-br": "/documentacao/build/functions/guides/webhooks-stripe-functions/"
+       }
+      },
+      {
+       "key": "gd/build/functions/guides/test-origin-with-functions",
+       "label": {
+        "en": "How to test an origin with Functions",
+        "pt-br": "Como testar uma origem com Functions"
+       },
+       "slug": {
+        "en": "/documentation/build/functions/guides/test-origin-with-functions/",
+        "pt-br": "/documentacao/build/functions/guides/test-origin-with-functions/"
+       }
+      },
+      {
+       "key": "gd/build/functions/guides/troubleshooting",
+       "label": {
+        "en": "Troubleshooting an OpenNext Application",
+        "pt-br": "Solução de problemas de uma aplicação OpenNext"
+       },
+       "slug": {
+        "en": "/documentation/build/functions/guides/troubleshooting/",
+        "pt-br": "/documentacao/build/functions/guides/troubleshooting/"
+       }
+      },
+      {
+       "key": "gd/build/functions/guides/webassembly-on-azion-platform",
+       "label": {
+        "en": "Create a Function with WebAssembly",
+        "pt-br": "Crie uma function com WebAssembly na Azion"
+       },
+       "slug": {
+        "en": "/documentation/build/functions/guides/webassembly-on-azion-platform/",
+        "pt-br": "/documentacao/build/functions/guides/webassembly-na-plataforma-azion/"
+       }
       }
      ]
     },
@@ -495,6 +781,103 @@
         "en": "/documentation/store/object-storage/guides/use-bucket-as-origin/",
         "pt-br": "/documentacao/store/object-storage/guides/bucket-como-connector/"
        }
+      },
+      {
+       "key": "gd/store/object-storage/guides/auth-layer-object-storage-functions",
+       "label": {
+        "en": "Implement an Authentication Layer for Object Storage with Functions",
+        "pt-br": "Implementar uma camada de autenticação para Object Storage com Functions"
+       },
+       "slug": {
+        "en": "/documentation/store/object-storage/guides/auth-layer-object-storage-functions/",
+        "pt-br": "/documentacao/store/object-storage/guides/camada-autenticacao-object-storage-functions/"
+       }
+      },
+      {
+       "key": "gd/store/object-storage/guides/create-and-modify-bucket",
+       "label": {
+        "en": "How to create and modify an Object Storage bucket",
+        "pt-br": "Como criar e modificar um bucket do Object Storage"
+       },
+       "slug": {
+        "en": "/documentation/store/object-storage/guides/create-and-modify-bucket/",
+        "pt-br": "/documentacao/store/object-storage/guides/criar-e-modificar-um-bucket/"
+       }
+      },
+      {
+       "key": "gd/store/object-storage/guides/download-object",
+       "label": {
+        "en": "How to download an object from an Object Storage bucket"
+       },
+       "slug": {
+        "en": "/documentation/store/object-storage/guides/download-object/"
+       }
+      },
+      {
+       "key": "gd/store/object-storage/guides/use-s3-compatible-tools-with-object-storage",
+       "label": {
+        "en": "Use S3-compatible tools with Object Storage",
+        "pt-br": "Como acessar o Object Storage usando o protocolo S3"
+       },
+       "slug": {
+        "en": "/documentation/store/object-storage/guides/use-s3-compatible-tools-with-object-storage/",
+        "pt-br": "/documentacao/store/object-storage/guides/protocolo-s3-para-object-storage/"
+       }
+      },
+      {
+       "key": "gd/store/object-storage/guides/bucket-actions",
+       "label": {
+        "en": "Upload & Download Objects from a Bucket",
+        "pt-br": "Upload e download de objetos no Object Storage"
+       },
+       "slug": {
+        "en": "/documentation/store/object-storage/guides/bucket-actions/",
+        "pt-br": "/documentacao/store/object-storage/guides/upload-e-download-de-objetos-do-bucket/"
+       }
+      },
+      {
+       "key": "gd/store/object-storage/guides/list-objects",
+       "label": {
+        "en": "How to list objects in an Object Storage bucket",
+        "pt-br": "Como listar objetos em um bucket do Object Storage"
+       },
+       "slug": {
+        "en": "/documentation/store/object-storage/guides/list-objects/",
+        "pt-br": "/documentacao/store/object-storage/guides/listar-objetos/"
+       }
+      },
+      {
+       "key": "gd/store/object-storage/guides/update-buckets",
+       "label": {
+        "en": "How to update an Object Storage bucket",
+        "pt-br": "Como atualizar um bucket do Object Storage"
+       },
+       "slug": {
+        "en": "/documentation/store/object-storage/guides/update-buckets/",
+        "pt-br": "/documentacao/store/object-storage/guides/atualizar-buckets/"
+       }
+      },
+      {
+       "key": "gd/store/object-storage/guides/update-object",
+       "label": {
+        "en": "How to update an object from an Object Storage bucket",
+        "pt-br": "Atualize um objeto no Object Storage"
+       },
+       "slug": {
+        "en": "/documentation/store/object-storage/guides/update-object/",
+        "pt-br": "/documentacao/store/object-storage/guides/atualizar-objeto/"
+       }
+      },
+      {
+       "key": "gd/store/object-storage/guides/upload-object",
+       "label": {
+        "en": "How to upload an object to an Object Storage bucket",
+        "pt-br": "Faça upload de um objeto no Object Storage"
+       },
+       "slug": {
+        "en": "/documentation/store/object-storage/guides/upload-object/",
+        "pt-br": "/documentacao/store/object-storage/guides/upload-de-objeto/"
+       }
       }
      ]
     },
@@ -580,6 +963,94 @@
         "en": "/documentation/store/sql-database/guides/sql-database-vector-search/",
         "pt-br": "/documentacao/store/sql-database/guides/edge-sql-vector-search/"
        }
+      },
+      {
+       "key": "gd/store/sql-database/guides/manage-sql-database",
+       "label": {
+        "en": "How to manage an SQL Database database",
+        "pt-br": "Como gerenciar um banco de dados SQL Database"
+       },
+       "slug": {
+        "en": "/documentation/store/sql-database/guides/manage-sql-database/",
+        "pt-br": "/documentacao/store/sql-database/guides/gerenciar-bancos-dados-edge-sql/"
+       }
+      },
+      {
+       "key": "gd/store/sql-database/guides/retrieve-data-sql-database",
+       "label": {
+        "en": "How to retrieve data from tables in SQL Database",
+        "pt-br": "Como recuperar dados de tabelas do SQL Database"
+       },
+       "slug": {
+        "en": "/documentation/store/sql-database/guides/retrieve-data-sql-database/",
+        "pt-br": "/documentacao/store/sql-database/guides/recuperar-dados-sql-database/"
+       }
+      },
+      {
+       "key": "gd/store/sql-database/guides/retrieve-data-with-functions",
+       "label": {
+        "en": "Retrieve Data with SQL Database & Functions",
+        "pt-br": "Recupere dados com o SQL Database e Functions"
+       },
+       "slug": {
+        "en": "/documentation/store/sql-database/guides/retrieve-data-with-functions/",
+        "pt-br": "/documentacao/store/sql-database/guides/listando-dados-edge-functions-edge-sql/"
+       }
+      },
+      {
+       "key": "gd/store/sql-database/guides/create-table",
+       "label": {
+        "en": "How to create a table in SQL Database",
+        "pt-br": "Como criar uma tabela no SQL Database"
+       },
+       "slug": {
+        "en": "/documentation/store/sql-database/guides/create-table/",
+        "pt-br": "/documentacao/store/sql-database/guides/criar-tabela/"
+       }
+      },
+      {
+       "key": "gd/store/sql-database/guides/delete-database",
+       "label": {
+        "en": "How to delete an SQL Database database",
+        "pt-br": "Como excluir um banco de dados do SQL Database"
+       },
+       "slug": {
+        "en": "/documentation/store/sql-database/guides/delete-database/",
+        "pt-br": "/documentacao/store/sql-database/guides/deletar-database/"
+       }
+      },
+      {
+       "key": "gd/store/sql-database/guides/delete-record",
+       "label": {
+        "en": "How to delete a record in an SQL Database database",
+        "pt-br": "Exclua um registro no SQL Database"
+       },
+       "slug": {
+        "en": "/documentation/store/sql-database/guides/delete-record/",
+        "pt-br": "/documentacao/store/sql-database/guides/deletar-registro/"
+       }
+      },
+      {
+       "key": "gd/store/sql-database/guides/insert-into-table",
+       "label": {
+        "en": "How to insert data into an SQL Database table",
+        "pt-br": "Como inserir dados em uma tabela do SQL Database"
+       },
+       "slug": {
+        "en": "/documentation/store/sql-database/guides/insert-into-table/",
+        "pt-br": "/documentacao/store/sql-database/guides/inserir-dados-em-tabela/"
+       }
+      },
+      {
+       "key": "gd/store/sql-database/guides/retrieve-db-info",
+       "label": {
+        "en": "How to retrieve an SQL Database database information",
+        "pt-br": "Recupere informações no SQL Database"
+       },
+       "slug": {
+        "en": "/documentation/store/sql-database/guides/retrieve-db-info/",
+        "pt-br": "/documentacao/store/sql-database/guides/recuperar-informacoes-do-banco/"
+       }
       }
      ]
     }
@@ -596,6 +1067,17 @@
       "en": "Firewall"
      },
      "items": [
+      {
+       "key": "gd/secure/firewall/quickstart",
+       "label": {
+        "en": "Firewall quickstart",
+        "pt-br": "Quickstart do Firewall"
+       },
+       "slug": {
+        "en": "/documentation/secure/firewall/quickstart/",
+        "pt-br": "/documentacao/secure/firewall/quickstart/"
+       }
+      },
       {
        "key": "gd/secure/firewall/guides/firewall-configure-main-settings",
        "label": {
@@ -616,6 +1098,215 @@
        "slug": {
         "en": "/documentation/secure/firewall/guides/work-with-rules-engine/",
         "pt-br": "/documentacao/secure/firewall/guides/trabalhar-com-rules-engine/"
+       }
+      },
+      {
+       "key": "gd/secure/firewall/guides/firewall-protect-your-domain",
+       "label": {
+        "en": "Protect your domain",
+        "pt-br": "Proteja seu domínio"
+       },
+       "slug": {
+        "en": "/documentation/secure/firewall/guides/firewall-protect-your-domain/",
+        "pt-br": "/documentacao/secure/firewall/guides/proteja-seu-dominio/"
+       }
+      },
+      {
+       "key": "gd/secure/firewall/guides/firewall-understand-metrics",
+       "label": {
+        "en": "Understand WAF metrics",
+        "pt-br": "Monitorar métricas do WAF"
+       },
+       "slug": {
+        "en": "/documentation/secure/firewall/guides/firewall-understand-metrics/",
+        "pt-br": "/documentacao/secure/firewall/guides/firewall-monitorar-metricas/"
+       }
+      },
+      {
+       "key": "gd/secure/firewall/guides/firewall",
+       "label": {
+        "en": "Azion Firewall — multi-layered security in Edge",
+        "pt-br": "Azion Firewall - segurança multi-camadas na Edge"
+       },
+       "slug": {
+        "en": "/documentation/secure/firewall/guides/firewall/",
+        "pt-br": "/documentacao/secure/firewall/guides/firewall/"
+       }
+      },
+      {
+       "key": "gd/secure/firewall/guides/how-to-update-your-firewall",
+       "label": {
+        "en": "How to update Firewall",
+        "pt-br": "Como atualizar o Firewall"
+       },
+       "slug": {
+        "en": "/documentation/secure/firewall/guides/how-to-update-your-firewall/",
+        "pt-br": "/documentacao/secure/firewall/guides/como-atualizar-seu-firewall/"
+       }
+      },
+      {
+       "key": "gd/secure/firewall/guides/instantiate-functions",
+       "label": {
+        "en": "How to instantiate functions in your firewall",
+        "pt-br": "Como instanciar functions em seu firewall"
+       },
+       "slug": {
+        "en": "/documentation/secure/firewall/guides/instantiate-functions/",
+        "pt-br": "/documentacao/secure/firewall/guides/instanciar-functions/"
+       }
+      },
+      {
+       "key": "gd/secure/firewall/guides/access-root-domain",
+       "label": {
+        "en": "How to access addresses through a root domain (ANAME)",
+        "pt-br": "Acesse IPs por meio de um root domain (ANAME)"
+       },
+       "slug": {
+        "en": "/documentation/secure/firewall/guides/access-root-domain/",
+        "pt-br": "/documentacao/secure/firewall/guides/acessar-root-domain/"
+       }
+      },
+      {
+       "key": "gd/secure/firewall/guides/activate-dnssec",
+       "label": {
+        "en": "How to activate DNSSEC",
+        "pt-br": "Como ativar o DNSSEC"
+       },
+       "slug": {
+        "en": "/documentation/secure/firewall/guides/activate-dnssec/",
+        "pt-br": "/documentacao/secure/firewall/guides/ativar-dnssec/"
+       }
+      },
+      {
+       "key": "gd/secure/firewall/guides/ciphers",
+       "label": {
+        "en": "Configure the TLS Cipher Suite for HTTPS",
+        "pt-br": "Configure o conjunto de cifras TLS para apps"
+       },
+       "slug": {
+        "en": "/documentation/secure/firewall/guides/ciphers/",
+        "pt-br": "/documentacao/secure/firewall/guides/cifras/"
+       }
+      },
+      {
+       "key": "gd/secure/firewall/guides/edge-dns-understand-metrics",
+       "label": {
+        "en": "Understand Edge DNS metrics",
+        "pt-br": "Monitorar métricas do Edge DNS"
+       },
+       "slug": {
+        "en": "/documentation/secure/firewall/guides/edge-dns-understand-metrics/",
+        "pt-br": "/documentacao/secure/firewall/guides/edge-dns-monitorar-metricas/"
+       }
+      },
+      {
+       "key": "gd/secure/firewall/guides/functions",
+       "label": {
+        "en": "Automate security with Azion Functions",
+        "pt-br": "Automatize a segurança com Azion Functions"
+       },
+       "slug": {
+        "en": "/documentation/secure/firewall/guides/functions/",
+        "pt-br": "/documentacao/secure/firewall/guides/functions/"
+       }
+      },
+      {
+       "key": "gd/secure/firewall/guides/integrate-siems",
+       "label": {
+        "en": "How to integrate WAF with SIEMs",
+        "pt-br": "Como integrar WAF com SIEMs"
+       },
+       "slug": {
+        "en": "/documentation/secure/firewall/guides/integrate-siems/",
+        "pt-br": "/documentacao/secure/firewall/guides/integrar-siems/"
+       }
+      },
+      {
+       "key": "gd/secure/firewall/guides/lets-encrypt-record",
+       "label": {
+        "en": "Add a TXT Record for Let's Encrypt",
+        "pt-br": "Adicione um registro TXT para Let's Encrypt"
+       },
+       "slug": {
+        "en": "/documentation/secure/firewall/guides/lets-encrypt-record/",
+        "pt-br": "/documentacao/secure/firewall/guides/registro-lets-encrypt/"
+       }
+      },
+      {
+       "key": "gd/secure/firewall/guides/load-balance-dns",
+       "label": {
+        "en": "How to perform a load balance between DNS records",
+        "pt-br": "Faça balanceamento de carga entre registros DNS"
+       },
+       "slug": {
+        "en": "/documentation/secure/firewall/guides/load-balance-dns/",
+        "pt-br": "/documentacao/secure/firewall/guides/balanceamento-de-carga-dns/"
+       }
+      },
+      {
+       "key": "gd/secure/firewall/guides/mtls",
+       "label": {
+        "en": "Configure & Associate an mTLS Certificate",
+        "pt-br": "Configure e associe um certificado mTLS"
+       },
+       "slug": {
+        "en": "/documentation/secure/firewall/guides/mtls/",
+        "pt-br": "/documentacao/secure/firewall/guides/mtls/"
+       }
+      },
+      {
+       "key": "gd/secure/firewall/guides/post-quantum-cryptography",
+       "label": {
+        "en": "Post-quantum cryptography support on Azion Platform",
+        "pt-br": "Suporte a criptografia pós-quântica na Azion Platform"
+       },
+       "slug": {
+        "en": "/documentation/secure/firewall/guides/post-quantum-cryptography/",
+        "pt-br": "/documentacao/secure/firewall/guides/post-quantum-cryptography/"
+       }
+      },
+      {
+       "key": "gd/secure/firewall/guides/sdk",
+       "label": {
+        "en": "Automate security with Azion SDK",
+        "pt-br": "Automatize a segurança através do Azion SDK"
+       },
+       "slug": {
+        "en": "/documentation/secure/firewall/guides/sdk/",
+        "pt-br": "/documentacao/secure/firewall/guides/sdk/"
+       }
+      },
+      {
+       "key": "gd/secure/firewall/guides/terraform",
+       "label": {
+        "en": "Automate security with Azion Terraform Provider",
+        "pt-br": "Automatize a segurança com o Azion Terraform Provider"
+       },
+       "slug": {
+        "en": "/documentation/secure/firewall/guides/terraform/",
+        "pt-br": "/documentacao/secure/firewall/guides/terraform/"
+       }
+      },
+      {
+       "key": "gd/secure/firewall/guides/test-zone",
+       "label": {
+        "en": "How to test an Edge DNS zone processing",
+        "pt-br": "Como testar o processamento de uma zona de Edge DNS"
+       },
+       "slug": {
+        "en": "/documentation/secure/firewall/guides/test-zone/",
+        "pt-br": "/documentacao/secure/firewall/guides/testar-zona/"
+       }
+      },
+      {
+       "key": "gd/secure/firewall/guides/tune-waf",
+       "label": {
+        "en": "How to tune WAF",
+        "pt-br": "Como fazer o tuning do WAF"
+       },
+       "slug": {
+        "en": "/documentation/secure/firewall/guides/tune-waf/",
+        "pt-br": "/documentacao/secure/firewall/guides/tune-waf/"
        }
       }
      ]
@@ -656,6 +1347,17 @@
       "en": "WAF"
      },
      "items": [
+      {
+       "key": "gd/secure/waf/quickstart",
+       "label": {
+        "en": "WAF quickstart",
+        "pt-br": "Quickstart do WAF"
+       },
+       "slug": {
+        "en": "/documentation/secure/waf/quickstart/",
+        "pt-br": "/documentacao/secure/waf/quickstart/"
+       }
+      },
       {
        "key": "gd/secure/waf/guides/configure-waf-allowed-rules",
        "label": {
@@ -730,6 +1432,17 @@
       "en": "Edge DNS"
      },
      "items": [
+      {
+       "key": "gd/secure/edge-dns/quickstart",
+       "label": {
+        "en": "Edge DNS quickstart",
+        "pt-br": "Quickstart do Edge DNS"
+       },
+       "slug": {
+        "en": "/documentation/secure/edge-dns/quickstart/",
+        "pt-br": "/documentacao/secure/edge-dns/quickstart/"
+       }
+      },
       {
        "key": "gd/secure/firewall/guides/edge-dns-configure-main-settings",
        "label": {
@@ -846,6 +1559,17 @@
      },
      "items": [
       {
+       "key": "gd/secure/certificate-manager/quickstart",
+       "label": {
+        "en": "Certificate Manager quickstart",
+        "pt-br": "Quickstart do Certificate Manager"
+       },
+       "slug": {
+        "en": "/documentation/secure/certificate-manager/quickstart/",
+        "pt-br": "/documentacao/secure/certificate-manager/quickstart/"
+       }
+      },
+      {
        "key": "gd/secure/firewall/guides/certificate-manager",
        "label": {
         "en": "Acquire & Register a Digital Certificate",
@@ -865,6 +1589,17 @@
        "slug": {
         "en": "/documentation/secure/certificate-manager/guides/mtls/",
         "pt-br": "/documentacao/secure/certificate-manager/guides/mtls/"
+       }
+      },
+      {
+       "key": "gd/secure/certificate-manager/guides/wildcard-lets-encrypt",
+       "label": {
+        "en": "Let's Encrypt Wildcard Certificates on Azion Platform",
+        "pt-br": "Certificados Wildcard Let's Encrypt na Plataforma Azion"
+       },
+       "slug": {
+        "en": "/documentation/secure/certificate-manager/guides/wildcard-lets-encrypt/",
+        "pt-br": "/documentacao/secure/firewall/reference/certificados-wildcard-lets-encrypt/"
        }
       }
      ]
@@ -987,6 +1722,237 @@
        "slug": {
         "en": "/documentation/observe/data-stream/guides/use-data-stream/",
         "pt-br": "/documentacao/observe/data-stream/guides/como-usar-data-stream/"
+       }
+      },
+      {
+       "key": "gd/observe/data-stream/guides/connector-azion-object-storage",
+       "label": {
+        "en": "Send Data Stream Data to Object Storage",
+        "pt-br": "Envie dados do Data Stream ao Object Storage"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/connector-azion-object-storage/",
+        "pt-br": "/documentacao/observe/data-stream/guides/conector-azion-object-storage/"
+       }
+      },
+      {
+       "key": "gd/observe/data-stream/guides/data-stream-associate-workloads",
+       "label": {
+        "en": "How to associate Workloads on Data Stream",
+        "pt-br": "Como associar Workloads no Data Stream"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/data-stream-associate-workloads/",
+        "pt-br": "/documentacao/observe/data-stream/guides/data-stream-associar-workloads/"
+       }
+      },
+      {
+       "key": "gd/observe/data-stream/guides/data-stream-custom-template",
+       "label": {
+        "en": "How to create a custom template on Data Stream",
+        "pt-br": "Como criar um template personalizado no Data Stream"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/data-stream-custom-template/",
+        "pt-br": "/documentacao/observe/data-stream/guides/data-stream-template-personalizado/"
+       }
+      },
+      {
+       "key": "gd/observe/data-stream/guides/debugging-functions-data-stream",
+       "label": {
+        "en": "How to debug functions on Data Stream",
+        "pt-br": "Como fazer o debug de functions no Data Stream"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/debugging-functions-data-stream/",
+        "pt-br": "/documentacao/observe/data-stream/guides/debugging-functions-data-stream/"
+       }
+      },
+      {
+       "key": "gd/observe/data-stream/guides/investigate-requests-graphql-api",
+       "label": {
+        "en": "Investigate Requests with Real-Time Events API",
+        "pt-br": "Investigue requisições com Real-Time Events"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/investigate-requests-graphql-api/",
+        "pt-br": "/documentacao/observe/data-stream/guides/investigar-requisicoes-api-graphql/"
+       }
+      },
+      {
+       "key": "gd/observe/data-stream/guides/add-filters-events",
+       "label": {
+        "en": "How to add filters on Real-Time Events",
+        "pt-br": "Como adicionar filtros no Real-Time Events"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/add-filters-events/",
+        "pt-br": "/documentacao/observe/data-stream/guides/adicionar-filtros-events/"
+       }
+      },
+      {
+       "key": "gd/observe/data-stream/guides/analyze-logs",
+       "label": {
+        "en": "Analyze logs",
+        "pt-br": "Analise logs"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/analyze-logs/",
+        "pt-br": "/documentacao/observe/data-stream/guides/analisar-logs/"
+       }
+      },
+      {
+       "key": "gd/observe/data-stream/guides/analyze-navigation-data",
+       "label": {
+        "en": "How to analyze navigation data from Edge Pulse",
+        "pt-br": "Como analisar dados de navegação do Edge Pulse"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/analyze-navigation-data/",
+        "pt-br": "/documentacao/observe/data-stream/guides/analisar-dados-navegacao/"
+       }
+      },
+      {
+       "key": "gd/observe/data-stream/guides/connector-standard-https-post",
+       "label": {
+        "en": "Send Data Stream Data via HTTP POST Connector",
+        "pt-br": "Receba dados do Data Stream via HTTP POST"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/connector-standard-https-post/",
+        "pt-br": "/documentacao/observe/data-stream/guides/conector-standard-https-post/"
+       }
+      },
+      {
+       "key": "gd/observe/data-stream/guides/data-stream-set-payload",
+       "label": {
+        "en": "How to set a payload on Data Stream",
+        "pt-br": "Como adicionar um payload no Data Stream"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/data-stream-set-payload/",
+        "pt-br": "/documentacao/observe/data-stream/guides/data-stream-adicionar-payload/"
+       }
+      },
+      {
+       "key": "gd/observe/data-stream/guides/data-stream-understand-metrics",
+       "label": {
+        "en": "Understand Data Stream metrics",
+        "pt-br": "Monitorar métricas do Data Stream"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/data-stream-understand-metrics/",
+        "pt-br": "/documentacao/observe/data-stream/guides/data-stream-monitorar-metricas/"
+       }
+      },
+      {
+       "key": "gd/observe/data-stream/guides/delete-data-stream",
+       "label": {
+        "en": "How to stop or delete a data stream",
+        "pt-br": "Como parar ou deletar um data stream"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/delete-data-stream/",
+        "pt-br": "/documentacao/observe/data-stream/guides/deletar-data-stream/"
+       }
+      },
+      {
+       "key": "gd/observe/data-stream/guides/endpoint-amazon-kinesis",
+       "label": {
+        "en": "Send Data Stream Data to Amazon Kinesis",
+        "pt-br": "Envie dados do Data Stream ao Amazon Kinesis"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/endpoint-amazon-kinesis/",
+        "pt-br": "/documentacao/observe/data-stream/guides/amazon-kinesis-endpoint/"
+       }
+      },
+      {
+       "key": "gd/observe/data-stream/guides/endpoint-azure-blob",
+       "label": {
+        "en": "Send Data Stream Data to Azure Blob Storage",
+        "pt-br": "Envie dados do Data Stream ao Azure Blob"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/endpoint-azure-blob/",
+        "pt-br": "/documentacao/observe/data-stream/guides/azure-blob-endpoint/"
+       }
+      },
+      {
+       "key": "gd/observe/data-stream/guides/endpoint-azure-monitor",
+       "label": {
+        "en": "Send Data Stream Data to Azure Monitor",
+        "pt-br": "Envie dados do Data Stream ao Azure Monitor"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/endpoint-azure-monitor/",
+        "pt-br": "/documentacao/observe/data-stream/guides/azure-monitor-endpoint/"
+       }
+      },
+      {
+       "key": "gd/observe/data-stream/guides/endpoint-datadog",
+       "label": {
+        "en": "How to use Datadog to receive data from Data Stream",
+        "pt-br": "Envie dados do Data Stream ao Datadog"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/endpoint-datadog/",
+        "pt-br": "/documentacao/observe/data-stream/guides/datadog-endpoint/"
+       }
+      },
+      {
+       "key": "gd/observe/data-stream/guides/endpoint-elasticsearch",
+       "label": {
+        "en": "Send Data Stream Data to Elasticsearch",
+        "pt-br": "Envie dados do Data Stream ao Elasticsearch"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/endpoint-elasticsearch/",
+        "pt-br": "/documentacao/observe/data-stream/guides/elasticsearch-endpoint/"
+       }
+      },
+      {
+       "key": "gd/observe/data-stream/guides/endpoint-google-bigquery",
+       "label": {
+        "en": "Send Data Stream Data to Google BigQuery",
+        "pt-br": "Envie dados do Data Stream ao Google BigQuery"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/endpoint-google-bigquery/",
+        "pt-br": "/documentacao/observe/data-stream/guides/google-bigquery-endpoint/"
+       }
+      },
+      {
+       "key": "gd/observe/data-stream/guides/endpoint-splunk",
+       "label": {
+        "en": "How to use Splunk to receive data from Data Stream",
+        "pt-br": "Envie dados do Data Stream ao Splunk"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/endpoint-splunk/",
+        "pt-br": "/documentacao/observe/data-stream/guides/splunk-endpoint/"
+       }
+      },
+      {
+       "key": "gd/observe/data-stream/guides/monitor-applications",
+       "label": {
+        "en": "Monitor applications",
+        "pt-br": "Monitore aplicações"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/monitor-applications/",
+        "pt-br": "/documentacao/observe/data-stream/guides/monitorar-aplicacoes/"
+       }
+      },
+      {
+       "key": "gd/observe/data-stream/guides/stream-data",
+       "label": {
+        "en": "Stream data",
+        "pt-br": "Transmita logs"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/stream-data/",
+        "pt-br": "/documentacao/observe/data-stream/guides/transmitir-dados/"
        }
       }
      ]
@@ -1188,6 +2154,160 @@
         "en": "/documentation/account/guides/verify-account-migration/",
         "pt-br": "/documentacao/account/guides/verificar-migracao-conta/"
        }
+      },
+      {
+       "key": "gd/account/guides/account-settings",
+       "label": {
+        "en": "How to configure your account",
+        "pt-br": "Como configurar sua conta"
+       },
+       "slug": {
+        "en": "/documentation/account/guides/account-settings/",
+        "pt-br": "/documentacao/account/guides/configuracoes-de-conta/"
+       }
+      },
+      {
+       "key": "gd/account/guides/activity-history",
+       "label": {
+        "en": "How to access Activity History",
+        "pt-br": "Como acessar o activity history"
+       },
+       "slug": {
+        "en": "/documentation/account/guides/activity-history/",
+        "pt-br": "/documentacao/account/guides/activity-history/"
+       }
+      },
+      {
+       "key": "gd/account/guides/billing-and-subscriptions",
+       "label": {
+        "en": "How to access Billing",
+        "pt-br": "Como acessar o faturamento"
+       },
+       "slug": {
+        "en": "/documentation/account/guides/billing-and-subscriptions/",
+        "pt-br": "/documentacao/account/guides/billing-and-subscriptions/"
+       }
+      },
+      {
+       "key": "gd/account/guides/conditional-access-by-ip-address",
+       "label": {
+        "en": "Manage Conditional Access by IP Address",
+        "pt-br": "Gerencie acesso condicional por endereço IP"
+       },
+       "slug": {
+        "en": "/documentation/account/guides/conditional-access-by-ip-address/",
+        "pt-br": "/documentacao/account/guides/conditional-access-by-ip-address/"
+       }
+      },
+      {
+       "key": "gd/account/guides/create-button",
+       "label": {
+        "en": "How to use the \"+ Create\" button",
+        "pt-br": "Como usar o botão \"+ Create"
+       },
+       "slug": {
+        "en": "/documentation/account/guides/create-button/",
+        "pt-br": "/documentacao/account/guides/create-button/"
+       }
+      },
+      {
+       "key": "gd/account/guides/delete-account",
+       "label": {
+        "en": "How to delete your account",
+        "pt-br": "Como deletar uma conta"
+       },
+       "slug": {
+        "en": "/documentation/account/guides/delete-account/",
+        "pt-br": "/documentacao/account/guides/excluir-conta/"
+       }
+      },
+      {
+       "key": "gd/account/guides/getting-to-know-azion-console",
+       "label": {
+        "en": "Getting to know Azion Console",
+        "pt-br": "Conhecendo o Azion Console"
+       },
+       "slug": {
+        "en": "/documentation/account/guides/getting-to-know-azion-console/",
+        "pt-br": "/documentacao/account/guides/getting-to-know-azion-console/"
+       }
+      },
+      {
+       "key": "gd/account/guides/multi-factor-authentication",
+       "label": {
+        "en": "How to enable Multi-Factor Authentication",
+        "pt-br": "Como habilitar Multi-Factor Authentication"
+       },
+       "slug": {
+        "en": "/documentation/account/guides/multi-factor-authentication/",
+        "pt-br": "/documentacao/account/guides/multi-factor-authentication/"
+       }
+      },
+      {
+       "key": "gd/account/guides/sso-google-saml",
+       "label": {
+        "en": "Use Google SAML as an Identity Provider (IdP)",
+        "pt-br": "Use o Google SAML como Identity Provider (IdP)"
+       },
+       "slug": {
+        "en": "/documentation/account/guides/sso-google-saml/",
+        "pt-br": "/documentacao/account/guides/sso-google-saml/"
+       }
+      },
+      {
+       "key": "gd/account/guides/sso-okta-saml",
+       "label": {
+        "en": "Use Okta SAML as an Identity Provider (IdP)",
+        "pt-br": "Use o Okta SAML como Identity Provider (IdP)"
+       },
+       "slug": {
+        "en": "/documentation/account/guides/sso-okta-saml/",
+        "pt-br": "/documentacao/account/guides/sso-okta-saml/"
+       }
+      },
+      {
+       "key": "gd/account/guides/sso",
+       "label": {
+        "en": "SSO",
+        "pt-br": "Como configurar SSO"
+       },
+       "slug": {
+        "en": "/documentation/account/guides/sso/",
+        "pt-br": "/documentacao/account/guides/sso/"
+       }
+      },
+      {
+       "key": "gd/account/guides/teams-permissions",
+       "label": {
+        "en": "How to manage teams with Teams Permissions",
+        "pt-br": "Como gerenciar permissões de times"
+       },
+       "slug": {
+        "en": "/documentation/account/guides/teams-permissions/",
+        "pt-br": "/documentacao/account/guides/teams-permissions/"
+       }
+      },
+      {
+       "key": "gd/account/guides/unlock-account-lockout-policy",
+       "label": {
+        "en": "Unlock a User from Account Lockout Policy",
+        "pt-br": "Desbloqueie um usuário da Account Lockout Policy"
+       },
+       "slug": {
+        "en": "/documentation/account/guides/unlock-account-lockout-policy/",
+        "pt-br": "/documentacao/account/guides/desbloquear-account-lockout-policy/"
+       }
+      },
+      {
+       "key": "gd/account/guides/users-management",
+       "label": {
+        "en": "How to manage users with Users Management",
+        "pt-br": "Como gerenciar usuários"
+       },
+       "slug": {
+        "en": "/documentation/account/guides/users-management/",
+        "pt-br": "/documentacao/account/guides/users-management/"
+       }
       }
      ]
     },
@@ -1284,6 +2404,94 @@
         "en": "/documentation/deploy/orchestrator/guides/work-with-variables/",
         "pt-br": "/documentacao/deploy/orchestrator/guides/trabalhar-com-variaveis/"
        }
+      },
+      {
+       "key": "gd/deploy/orchestrator/guides/api",
+       "label": {
+        "en": "Automate infrastructure with Azion API",
+        "pt-br": "Automatize sua infraestrutura com a API da Azion"
+       },
+       "slug": {
+        "en": "/documentation/deploy/orchestrator/guides/api/",
+        "pt-br": "/documentacao/deploy/orchestrator/guides/api/"
+       }
+      },
+      {
+       "key": "gd/deploy/orchestrator/guides/deploy-a-service",
+       "label": {
+        "en": "How to deploy a service",
+        "pt-br": "Como implantar um serviço"
+       },
+       "slug": {
+        "en": "/documentation/deploy/orchestrator/guides/deploy-a-service/",
+        "pt-br": "/documentacao/deploy/orchestrator/guides/implantar-servico/"
+       }
+      },
+      {
+       "key": "gd/deploy/orchestrator/guides/explore-usage",
+       "label": {
+        "en": "Explore Orchestrator",
+        "pt-br": "Explore o uso do Orchestrator"
+       },
+       "slug": {
+        "en": "/documentation/deploy/orchestrator/guides/explore-usage/",
+        "pt-br": "/documentacao/deploy/orchestrator/guides/explore-uso/"
+       }
+      },
+      {
+       "key": "gd/deploy/orchestrator/guides/provision-files",
+       "label": {
+        "en": "How to provision files",
+        "pt-br": "Como provisionar arquivos"
+       },
+       "slug": {
+        "en": "/documentation/deploy/orchestrator/guides/provision-files/",
+        "pt-br": "/documentacao/deploy/orchestrator/guides/provisionar-arquivos/"
+       }
+      },
+      {
+       "key": "gd/deploy/orchestrator/guides/run-scripts",
+       "label": {
+        "en": "How to run scripts on edge nodes",
+        "pt-br": "Como rodar scripts nos edge nodes"
+       },
+       "slug": {
+        "en": "/documentation/deploy/orchestrator/guides/run-scripts/",
+        "pt-br": "/documentacao/deploy/orchestrator/guides/rodar-scripts/"
+       }
+      },
+      {
+       "key": "gd/deploy/orchestrator/guides/unbind-service",
+       "label": {
+        "en": "How to unbind an edge service",
+        "pt-br": "Como desvincular um edge service"
+       },
+       "slug": {
+        "en": "/documentation/deploy/orchestrator/guides/unbind-service/",
+        "pt-br": "/documentacao/deploy/orchestrator/guides/desvincular-servico/"
+       }
+      },
+      {
+       "key": "gd/deploy/orchestrator/guides/uninstall-agent",
+       "label": {
+        "en": "How to uninstall Orchestrator Agent",
+        "pt-br": "Como desinstalar o Orchestrator Agent"
+       },
+       "slug": {
+        "en": "/documentation/deploy/orchestrator/guides/uninstall-agent/",
+        "pt-br": "/documentacao/deploy/orchestrator/guides/desinstalar-agent/"
+       }
+      },
+      {
+       "key": "gd/deploy/orchestrator/guides/zero-touch-provisioning",
+       "label": {
+        "en": "Automate the deployment with zero-touch provisioning",
+        "pt-br": "Automatize arquivos com zero-touch provisioning"
+       },
+       "slug": {
+        "en": "/documentation/deploy/orchestrator/guides/zero-touch-provisioning/",
+        "pt-br": "/documentacao/deploy/orchestrator/guides/zero-touch-provisioning/"
+       }
       }
      ]
     }
@@ -1320,6 +2528,28 @@
        "slug": {
         "en": "/documentation/marketplace/guides/update-an-integration/",
         "pt-br": "/documentacao/marketplace/reference/atualizar-uma-integracao/"
+       }
+      },
+      {
+       "key": "gd/marketplace/integrations/ai-inference-starter-kit",
+       "label": {
+        "en": "How to deploy the AI Inference Starter Kit template",
+        "pt-br": "Como implementar o template AI Inference Starter Kit"
+       },
+       "slug": {
+        "en": "/documentation/marketplace/integrations/ai-inference-starter-kit/",
+        "pt-br": "/documentacao/marketplace/integrations/ai-inference-starter-kit/"
+       }
+      },
+      {
+       "key": "gd/marketplace/integrations/bot-manager-lite",
+       "label": {
+        "en": "How to Install Azion Bot Manager Lite",
+        "pt-br": "Instale o Azion Bot Manager Lite"
+       },
+       "slug": {
+        "en": "/documentation/marketplace/integrations/bot-manager-lite/",
+        "pt-br": "/documentacao/marketplace/integrations/bot-manager-lite/"
        }
       }
      ]
