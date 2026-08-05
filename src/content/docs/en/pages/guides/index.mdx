@@ -1,158 +1,40 @@
 ---
 title: Guides
 description: >-
-  Unlock the potential of Azion's solutions with our comprehensive guides.
-  Find steps for all your processes and optimize performance effortlessly.
-meta_tags: 'guides, how-to'
+  Task-focused guides for Azion, sorted by where you are: shipping your first
+  application, moving from another provider, or working in a specific area of
+  the platform.
+meta_tags: 'guides, how-to, tutorials'
 namespace: documentation_how_to
 permalink: /documentation/guides/
+menu_namespace: guidesMenu
 ---
 
 import DocsCard from '~/components/DocsCard.astro';
 
-Task-focused guides for building, securing, and operating on Azion. Pick what you want to do.
+Every guide here ends with something working. The sidebar lists all of them by product; this page points you at the right shelf.
 
-## Start and migrate
+## Starting out
 
-Deploy your first application or bring an existing one from another provider.
-
-<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-  <DocsCard link="/en/documentation/get-started/first-deploy/" title="First deploy in a few minutes" icon="pi pi-bolt" />
-  <DocsCard link="/en/documentation/get-started/start-with-a-template/" title="Start with a template" icon="pi pi-th-large" />
-  <DocsCard link="/en/documentation/get-started/migrate/akamai/" title="Migrate from Akamai to Azion" icon="pi pi-arrow-right-arrow-left" />
-  <DocsCard link="/en/documentation/get-started/migrate/aws/" title="Migrate from AWS to Azion" icon="pi pi-arrow-right-arrow-left" />
-  <DocsCard link="/en/documentation/get-started/migrate/cloudflare/" title="Migrate from Cloudflare to Azion" icon="pi pi-arrow-right-arrow-left" />
-  <DocsCard link="/en/documentation/get-started/migrate/fastly/" title="Migrate from Fastly to Azion" icon="pi pi-arrow-right-arrow-left" />
-  <DocsCard link="/en/documentation/get-started/migrate/vercel/" title="Migrate from Vercel to Azion" icon="pi pi-arrow-right-arrow-left" />
-</div>
-
-## Configure and optimize delivery
-
-Tune caching, rules, and protocol behavior for your applications.
+You haven't shipped anything on Azion yet, or you're bringing over something that already runs somewhere else.
 
 <div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-  <DocsCard link="/en/documentation/build/applications/cache/guides/cache-settings/" title="How to configure cache policies for Applications" icon="ai ai-tiered-cache" />
-  <DocsCard link="/en/documentation/build/applications/cache/guides/advanced-cache-key/" title="How to configure Advanced Cache Key for Applications" icon="pi pi-key" />
-  <DocsCard link="/en/documentation/build/applications/guides/rules-engine/" title="Create Request & Response Rules" icon="pi pi-list-check" />
-  <DocsCard link="/en/documentation/build/applications/guides/cross-origin-resource-sharing-cors/" title="Cross-Origin Resource Sharing (CORS)" icon="pi pi-globe" />
-  <DocsCard link="/en/documentation/build/applications/guides/gzip-compression/" title="How to enable gzip compression for Applications" icon="pi pi-arrow-down-left-and-arrow-up-right-to-center" />
-  <DocsCard link="/en/documentation/build/applications/guides/customizing-error-response-page/" title="How to customize an error response page" icon="pi pi-exclamation-triangle" />
-  <DocsCard link="/en/documentation/build/applications/guides/configure-ports/" title="Configure HTTP and HTTPS Ports" icon="pi pi-arrows-h" />
-  <DocsCard link="/en/documentation/build/applications/cache/guides/enforce-hls-cache/" title="How to enforce HLS cache for live streaming delivery" icon="pi pi-video" />
-  <DocsCard link="/en/documentation/secure/workloads/guides/create-azion-custom-domain/" title="How to Create an Azion Custom Domain" icon="ai ai-domains" />
+    <DocsCard link="/en/documentation/get-started/first-deploy/" title="Deploy your first application" icon="pi pi-bolt" description="Template, repo, or CLI. Ends on your own Azion domain." />
+    <DocsCard link="/en/documentation/get-started/start-with-a-template/" title="Start from a template" icon="pi pi-th-large" description="Ready-made projects, CI/CD already wired up." />
+    <DocsCard link="/en/documentation/get-started/migrate/" title="Move from another provider" icon="pi pi-arrow-right-arrow-left" description="Akamai, AWS, Cloudflare, Fastly, and Vercel." />
 </div>
 
-## Protect your application
+## Working in a specific area
 
-Set up WAF, firewall rules, certificates, and access control.
+You know what you need. Pick the area and the sidebar opens on its guides.
 
 <div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-  <DocsCard link="/en/documentation/secure/waf/guides/how-to-check-your-waf-mode/" title="How to check your WAF mode" icon="ai ai-waf-rules" />
-  <DocsCard link="/en/documentation/secure/waf/guides/configure-waf-allowed-rules/" title="How to configure a WAF Custom Allowed Rule" icon="pi pi-check-circle" />
-  <DocsCard link="/en/documentation/secure/waf/guides/how-to-find-waf-score/" title="How to find the score of WAF blocked requests" icon="pi pi-gauge" />
-  <DocsCard link="/en/documentation/secure/firewall/guides/firewall/" title="Azion Firewall — multi-layered security in Edge" icon="ai ai-edge-firewall" />
-  <DocsCard link="/en/documentation/secure/network-shield/guides/blocklists-ip-addresses-edge/" title="Create IP, ASN & Geo Blocklists" icon="ai ai-network-lists" />
-  <DocsCard link="/en/documentation/secure/certificate-manager/guides/mtls/" title="How to configure mTLS" icon="ai ai-digital-certificates" />
-  <DocsCard link="/en/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate/" title="Generate a Let's Encrypt Cert for Your Domain" icon="pi pi-lock" />
-  <DocsCard link="/en/documentation/marketplace/integrations/secure-token/" title="How to Install the Secure Token Integration" icon="pi pi-key" />
-  <DocsCard link="/en/documentation/build/functions/guides/paywall-function-jwt/" title="How to set up a paywall with Azion JWT solution" icon="pi pi-wallet" />
+    <DocsCard link="/en/documentation/build/applications/guides/configure-main-settings/" title="Build" icon="ai ai-build-pillar" description="22 guides: applications, cache, functions, images." />
+    <DocsCard link="/en/documentation/store/kv-store/guides/manage-with-functions/" title="Store" icon="ai ai-store" description="15 guides: KV Store, Object Storage, SQL Database." />
+    <DocsCard link="/en/documentation/secure/firewall/guides/firewall-configure-main-settings/" title="Secure" icon="ai ai-secure-pillar" description="22 guides: firewall, WAF, bots, network lists, DNS, TLS." />
+    <DocsCard link="/en/documentation/observe/data-stream/guides/add-filters-metrics/" title="Observe" icon="ai ai-observe-pillar" description="16 guides: metrics, events, dashboards, log streaming." />
+    <DocsCard link="/en/documentation/account/guides/account-lockout-policy-logs/" title="Account and deploy" icon="pi pi-user" description="16 guides: identity, access, audit, Orchestrator." />
+    <DocsCard link="/en/documentation/marketplace/guides/install-an-integration/" title="Marketplace" icon="ai ai-marketplace" description="Install and configure ready-made integrations." />
 </div>
 
-## Manage DNS
-
-Host your zones and keep name resolution healthy.
-
-<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-  <DocsCard link="/en/documentation/secure/firewall/guides/edge-dns-configure-main-settings/" title="How to configure Edge DNS main settings" icon="ai ai-edge-dns" />
-  <DocsCard link="/en/documentation/secure/firewall/guides/add-records/" title="How to add records" icon="pi pi-plus-circle" />
-  <DocsCard link="/en/documentation/secure/firewall/guides/activate-dnssec/" title="How to activate DNSSEC" icon="pi pi-shield" />
-  <DocsCard link="/en/documentation/secure/firewall/guides/lets-encrypt-record/" title="Add a TXT Record for Let's Encrypt" icon="pi pi-lock" />
-  <DocsCard link="/en/documentation/secure/firewall/guides/load-balance-dns/" title="How to perform a load balance between DNS records" icon="ai ai-load-balancer" />
-  <DocsCard link="/en/documentation/secure/firewall/guides/access-root-domain/" title="How to access addresses through a root domain (ANAME)" icon="ai ai-domains" />
-</div>
-
-## Store and query data
-
-Object storage, SQL, and key-value at the edge.
-
-<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-  <DocsCard link="/en/documentation/store/object-storage/guides/create-and-modify-bucket/" title="How to create and modify an Object Storage bucket" icon="ai ai-edge-storage" />
-  <DocsCard link="/en/documentation/store/object-storage/guides/bucket-actions/" title="Upload & Download Objects from a Bucket" icon="pi pi-cloud-upload" />
-  <DocsCard link="/en/documentation/store/object-storage/guides/use-bucket-as-origin/" title="Use an Object Storage Bucket as Origin" icon="pi pi-server" />
-  <DocsCard link="/en/documentation/store/object-storage/guides/s3-protocol-for-object-storage/" title="Set up S3 credentials for Object Storage" icon="pi pi-amazon" />
-  <DocsCard link="/en/documentation/store/sql-database/guides/sql-database-vector-search/" title="How to implement SQL Database Vector Search" icon="ai ai-edge-sql" />
-  <DocsCard link="/en/documentation/store/kv-store/guides/manage-with-functions/" title="How to manage KV Store with Functions" icon="ai ai-edge-kv" />
-  <DocsCard link="/en/documentation/store/kv-store/guides/redis-compatibility/" title="How to use KV Store with Redis-compatible SDK" icon="ai ai-redis" />
-</div>
-
-## Run code at the edge
-
-Build APIs, handle webhooks, and run serverless functions.
-
-<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-  <DocsCard link="/en/documentation/build/functions/guides/serverless-functions/" title="How to run serverless functions on Azion" icon="ai ai-edge-functions" />
-  <DocsCard link="/en/documentation/build/functions/guides/restful-tasks-api-functions/" title="Build a RESTful API with Functions & SQL" icon="pi pi-code" />
-  <DocsCard link="/en/documentation/build/functions/guides/file-upload-functions/" title="Implement File Upload with Functions" icon="pi pi-file-arrow-up" />
-  <DocsCard link="/en/documentation/build/functions/guides/stripe-webhooks-functions/" title="How to handle Stripe webhooks with Functions" icon="pi pi-credit-card" />
-  <DocsCard link="/en/documentation/build/functions/guides/resend-email-functions/" title="How to integrate Resend email service with Functions" icon="pi pi-envelope" />
-  <DocsCard link="/en/documentation/build/functions/guides/browserless-functions/" title="How to build a browserless application with Functions" icon="pi pi-desktop" />
-</div>
-
-## Observe and analyze
-
-Stream logs, build dashboards, and query metrics.
-
-<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-  <DocsCard link="/en/documentation/observe/data-stream/guides/use-data-stream/" title="How to configure Data Stream main settings" icon="ai ai-data-stream" />
-  <DocsCard link="/en/documentation/observe/data-stream/guides/configure-sampling/" title="How to configure sampling on Data Stream" icon="pi pi-filter" />
-  <DocsCard link="/en/documentation/observe/real-time-metrics/guides/azion-plugin-grafana-pre-built-dash/" title="Use a Pre-Built Grafana Dashboard with Azion" icon="pi pi-chart-bar" />
-  <DocsCard link="/en/documentation/observe/real-time-metrics/guides/azion-plugin-grafana-custom-dash/" title="Customize a Grafana Dashboard with Azion Plugin" icon="pi pi-chart-line" />
-  <DocsCard link="/en/documentation/products/guides/graphql-top-x-query/" title="How to select Top X queries with GraphQL API" icon="ai ai-graphql" />
-  <DocsCard link="/en/documentation/products/guides/graphql-aggregated-data/" title="How to query aggregated data with GraphQL API" icon="pi pi-chart-pie" />
-</div>
-
-## Automate and integrate
-
-Wire Azion into your stack with Terraform, Console Kit, and Marketplace integrations.
-
-<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-  <DocsCard link="https://www.azion.com/en/marketplace/" title="Browse all Marketplace integrations" icon="ai ai-marketplace" />
-  <DocsCard link="/en/documentation/products/terraform-provider/terraform-migration-v3-to-v4/" title="Migrating from Terraform Provider v1.x to v2.0" icon="ai ai-terraform" />
-  <DocsCard link="/en/documentation/products/guides/customize-interface-console-kit/" title="Customize Azion Console with Console Kit" icon="pi pi-palette" />
-  <DocsCard link="/en/documentation/products/guides/integrate-with-api-console-kit/" title="Integrate Azion Console & API with Console Kit" icon="ai ai-azion-api" />
-  <DocsCard link="/en/documentation/marketplace/integrations/bot-manager-lite/" title="How to Install Azion Bot Manager Lite" icon="pi pi-android" />
-  <DocsCard link="/en/documentation/marketplace/integrations/recaptcha/" title="How to Install the reCAPTCHA Integration" icon="pi pi-verified" />
-  <DocsCard link="/en/documentation/marketplace/integrations/jwt/" title="How to Install the JWT Integration" icon="pi pi-id-card" />
-  <DocsCard link="/en/documentation/marketplace/integrations/waiting-room/" title="How to Install Upstash Waiting Room" icon="pi pi-hourglass" />
-</div>
-
-## Manage your account
-
-Identity, access policies, and audit for your team.
-
-<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-  <DocsCard link="/en/documentation/account/guides/sso-google-saml/" title="Use Google SAML as an Identity Provider (IdP)" icon="pi pi-google" />
-  <DocsCard link="/en/documentation/account/guides/sso-microsoft-entra-saml/" title="Use Microsoft Entra SAML as an IdP" icon="pi pi-microsoft" />
-  <DocsCard link="/en/documentation/account/guides/microsoft-entra-automated-user-provisioning/" title="Enable Microsoft Entra User Provisioning (SCIM)" icon="pi pi-users" />
-  <DocsCard link="/en/documentation/account/guides/configure-user-session-timeout/" title="How to configure User Session Timeout" icon="pi pi-clock" />
-  <DocsCard link="/en/documentation/account/guides/configure-account-lockout-policy/" title="How to configure Account Lockout Policy" icon="pi pi-lock" />
-  <DocsCard link="/en/documentation/account/guides/conditional-access-by-ip-address/" title="Manage Conditional Access by IP Address" icon="pi pi-ban" />
-  <DocsCard link="/en/documentation/account/guides/activity-history/" title="How to access Activity History" icon="pi pi-history" />
-  <DocsCard link="/en/documentation/services/support/guides/open-ticket/" title="How to open a Support Ticket" icon="pi pi-ticket" />
-</div>
-
-## Troubleshoot
-
-Debug rules, functions, DNS, and cache behavior.
-
-<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-  <DocsCard link="/en/documentation/build/applications/guides/cors-errors/" title="How to Fix CORS Policy Errors" icon="pi pi-times-circle" />
-  <DocsCard link="/en/documentation/build/applications/guides/debug-rules/" title="How to debug rules created with Rules Engine" icon="pi pi-wrench" />
-  <DocsCard link="/en/documentation/build/functions/guides/debugging-functions-graphql/" title="How to debug functions using GraphQL API" icon="ai ai-graphql" />
-  <DocsCard link="/en/documentation/build/applications/cache/guides/check-page-cache-time/" title="Verify Cache Indicators with ModHeader" icon="pi pi-stopwatch" />
-  <DocsCard link="/en/documentation/secure/edge-dns/guides/run-the-dig-command/" title="How to look up DNS servers with Dig command" icon="pi pi-search" />
-  <DocsCard link="/en/documentation/secure/edge-dns/guides/run-the-traceroute-command/" title="Diagnose Issues with the Traceroute Command" icon="pi pi-map" />
-  <DocsCard link="/en/documentation/secure/firewall/guides/test-zone/" title="How to test an Edge DNS zone processing" icon="pi pi-check-square" />
-  <DocsCard link="/en/documentation/build/functions/guides/test-origin-with-functions/" title="How to test an origin with Functions" icon="pi pi-server" />
-  <DocsCard link="/en/documentation/build/applications/guides/stage-applications-through-hosts-file/" title="How to stage an application through the hosts file" icon="pi pi-file-edit" />
-</div>
+Something already live behaving oddly? Start with [debugging rules](/en/documentation/build/applications/guides/debug-rules/), [checking cache indicators](/en/documentation/build/applications/cache/guides/check-page-cache-time/), or [looking up DNS with dig](/en/documentation/secure/edge-dns/guides/run-the-dig-command/).

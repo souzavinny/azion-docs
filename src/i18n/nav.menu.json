@@ -3,8 +3,8 @@
   {
    "key": "documentation",
    "label": {
-    "en": "Documentation",
-    "pt-br": "Documentação"
+    "en": "Reference",
+    "pt-br": "Referência"
    },
    "slug": {
     "en": "/documentation/",
@@ -73,73 +73,6 @@
      }
     },
     {
-     "key": "get-started/migrate",
-     "label": {
-      "en": "Migrate"
-     },
-     "items": [
-      {
-       "key": "get-started/migrate/akamai",
-       "label": {
-        "en": "Migrate from Akamai to Azion",
-        "pt-br": "Migre da Akamai para a Azion"
-       },
-       "slug": {
-        "en": "/documentation/get-started/migrate/akamai/",
-        "pt-br": "/documentacao/get-started/migrate/akamai/"
-       }
-      },
-      {
-       "key": "get-started/migrate/aws",
-       "label": {
-        "en": "Migrate from AWS to Azion",
-        "pt-br": "Migre da AWS para a Azion"
-       },
-       "slug": {
-        "en": "/documentation/get-started/migrate/aws/",
-        "pt-br": "/documentacao/get-started/migrate/aws/"
-       }
-      },
-      {
-       "key": "get-started/migrate/cloudflare",
-       "label": {
-        "en": "Migrate from Cloudflare to Azion",
-        "pt-br": "Migre da Cloudflare para a Azion"
-       },
-       "slug": {
-        "en": "/documentation/get-started/migrate/cloudflare/",
-        "pt-br": "/documentacao/get-started/migrate/cloudflare/"
-       }
-      },
-      {
-       "key": "get-started/migrate/fastly",
-       "label": {
-        "en": "Migrate from Fastly to Azion",
-        "pt-br": "Migre da Fastly para a Azion"
-       },
-       "slug": {
-        "en": "/documentation/get-started/migrate/fastly/",
-        "pt-br": "/documentacao/get-started/migrate/fastly/"
-       }
-      },
-      {
-       "key": "get-started/migrate/vercel",
-       "label": {
-        "en": "Migrate from Vercel to Azion",
-        "pt-br": "Migre da Vercel para a Azion"
-       },
-       "slug": {
-        "en": "/documentation/get-started/migrate/vercel/",
-        "pt-br": "/documentacao/get-started/migrate/vercel/"
-       }
-      }
-     ],
-     "slug": {
-      "en": "/documentation/get-started/migrate/",
-      "pt-br": "/documentacao/get-started/migrate/"
-     }
-    },
-    {
      "key": "get-started/production-checklist",
      "label": {
       "en": "Go live",
@@ -168,23 +101,14 @@
      },
      "items": [
       {
-       "key": "build/ai-inference/reference",
+       "key": "build/ai-inference/reference/models",
        "label": {
-        "en": "Reference",
-        "pt-br": "Referência"
+        "en": "Models"
        },
-       "items": [
-        {
-         "key": "build/ai-inference/reference/models",
-         "label": {
-          "en": "Models"
-         },
-         "slug": {
-          "en": "/documentation/build/ai-inference/reference/models/",
-          "pt-br": "/documentacao/build/ai-inference/reference/modelos/"
-         }
-        }
-       ]
+       "slug": {
+        "en": "/documentation/build/ai-inference/reference/models/",
+        "pt-br": "/documentacao/build/ai-inference/reference/modelos/"
+       }
       }
      ],
      "slug": {
@@ -233,97 +157,24 @@
          },
          "items": [
           {
-           "key": "build/applications/cache/guides",
+           "key": "build/applications/reference/cache-settings",
            "label": {
-            "en": "Guides",
-            "pt-br": "Guias"
+            "en": "Cache Settings"
            },
-           "items": [
-            {
-             "key": "build/applications/cache/guides/advanced-cache-key",
-             "label": {
-              "en": "How to configure Advanced Cache Key for Applications",
-              "pt-br": "Como configurar a Advanced Cache Key para Applications"
-             },
-             "slug": {
-              "en": "/documentation/build/applications/cache/guides/advanced-cache-key/",
-              "pt-br": "/documentacao/build/applications/cache/guides/advanced-cache-key/"
-             }
-            },
-            {
-             "key": "build/applications/cache/guides/cache-settings",
-             "label": {
-              "en": "How to configure cache policies for Applications",
-              "pt-br": "Como configurar políticas de cache para Applications"
-             },
-             "slug": {
-              "en": "/documentation/build/applications/cache/guides/cache-settings/",
-              "pt-br": "/documentacao/build/applications/cache/guides/cache-settings/"
-             }
-            },
-            {
-             "key": "build/applications/cache/guides/check-page-cache-time",
-             "label": {
-              "en": "Verify Cache Indicators with ModHeader",
-              "pt-br": "Verifique indicadores de cache com o ModHeader"
-             },
-             "slug": {
-              "en": "/documentation/build/applications/cache/guides/check-page-cache-time/",
-              "pt-br": "/documentacao/build/applications/cache/guides/verificar-tempo-de-cache-da-pagina/"
-             }
-            },
-            {
-             "key": "build/applications/cache/guides/enforce-hls-cache",
-             "label": {
-              "en": "How to enforce HLS cache for live streaming delivery",
-              "pt-br": "Implemente cache HLS para streaming ao vivo"
-             },
-             "slug": {
-              "en": "/documentation/build/applications/cache/guides/enforce-hls-cache/",
-              "pt-br": "/documentacao/build/applications/cache/guides/implementar-cache-hls/"
-             }
-            },
-            {
-             "key": "build/applications/cache/guides/tune-cache-settings",
-             "label": {
-              "en": "How to tune your cache settings",
-              "pt-br": "Como ajustar as configurações de cache"
-             },
-             "slug": {
-              "en": "/documentation/build/applications/cache/guides/tune-cache-settings/",
-              "pt-br": "/documentacao/build/applications/cache/guides/ajustar-cache-settings/"
-             }
-            }
-           ]
+           "slug": {
+            "en": "/documentation/build/applications/reference/cache-settings/",
+            "pt-br": "/documentacao/build/applications/reference/cache-settings/"
+           }
           },
           {
-           "key": "build/applications/cache/reference",
+           "key": "build/applications/reference/real-time-purge",
            "label": {
-            "en": "Reference",
-            "pt-br": "Referência"
+            "en": "Real-Time Purge"
            },
-           "items": [
-            {
-             "key": "build/applications/reference/cache-settings",
-             "label": {
-              "en": "Cache Settings"
-             },
-             "slug": {
-              "en": "/documentation/build/applications/reference/cache-settings/",
-              "pt-br": "/documentacao/build/applications/reference/cache-settings/"
-             }
-            },
-            {
-             "key": "build/applications/reference/real-time-purge",
-             "label": {
-              "en": "Real-Time Purge"
-             },
-             "slug": {
-              "en": "/documentation/build/applications/reference/real-time-purge/",
-              "pt-br": "/documentacao/build/applications/reference/real-time-purge/"
-             }
-            }
-           ]
+           "slug": {
+            "en": "/documentation/build/applications/reference/real-time-purge/",
+            "pt-br": "/documentacao/build/applications/reference/real-time-purge/"
+           }
           },
           {
            "key": "build/applications/cache/tiered-cache",
@@ -358,103 +209,6 @@
            }
           },
           {
-           "key": "build/functions/guides",
-           "label": {
-            "en": "Guides",
-            "pt-br": "Guias"
-           },
-           "items": [
-            {
-             "key": "get-started/frameworks/javascript",
-             "label": {
-              "en": "How to build functions",
-              "pt-br": "Como escrever functions"
-             },
-             "slug": {
-              "en": "/documentation/get-started/frameworks/javascript/",
-              "pt-br": "/documentacao/build/applications/guides/javascript/"
-             }
-            },
-            {
-             "key": "build/functions/guides/altcha",
-             "label": {
-              "en": "How to Use the ALTCHA Function",
-              "pt-br": "Use a Function ALTCHA no Marketplace da Azion"
-             },
-             "slug": {
-              "en": "/documentation/build/functions/guides/altcha/",
-              "pt-br": "/documentacao/build/functions/guides/altcha/"
-             }
-            },
-            {
-             "key": "build/functions/guides/api-builder",
-             "label": {
-              "en": "How to build an API with Functions and ChatGPT",
-              "pt-br": "Como criar uma API com Functions e ChatGPT"
-             },
-             "slug": {
-              "en": "/documentation/build/functions/guides/api-builder/",
-              "pt-br": "/documentacao/build/functions/guides/api-builder/"
-             }
-            },
-            {
-             "key": "build/functions/guides/browserless-functions",
-             "label": {
-              "en": "How to build a browserless application with Functions",
-              "pt-br": "Como construir uma aplicação browserless com Functions"
-             },
-             "slug": {
-              "en": "/documentation/build/functions/guides/browserless-functions/",
-              "pt-br": "/documentacao/build/functions/guides/aplicacao-browserless-functions/"
-             }
-            },
-            {
-             "key": "build/functions/guides/debugging-functions-graphql",
-             "label": {
-              "en": "How to debug functions using GraphQL API",
-              "pt-br": "Como fazer o debug de functions usando a GraphQL⁠ API"
-             },
-             "slug": {
-              "en": "/documentation/build/functions/guides/debugging-functions-graphql/",
-              "pt-br": "/documentacao/build/functions/guides/debugging-functions-graphql/"
-             }
-            },
-            {
-             "key": "build/functions/guides/firewall",
-             "label": {
-              "en": "Create & Configure a Function on Firewall",
-              "pt-br": "Como criar e configurar uma function em seu Firewall"
-             },
-             "slug": {
-              "en": "/documentation/build/functions/guides/firewall/",
-              "pt-br": "/documentacao/build/functions/guides/firewall/"
-             }
-            },
-            {
-             "key": "build/functions/guides/paywall-function-jwt",
-             "label": {
-              "en": "How to set up a paywall with Azion JWT solution",
-              "pt-br": "Configure um paywall com a integração JWT"
-             },
-             "slug": {
-              "en": "/documentation/build/functions/guides/paywall-function-jwt/",
-              "pt-br": "/documentacao/build/functions/guides/paywall-function-jwt/"
-             }
-            },
-            {
-             "key": "build/functions/guides/serverless-functions",
-             "label": {
-              "en": "How to run serverless functions on Azion",
-              "pt-br": "Como executar funções serverless na Azion"
-             },
-             "slug": {
-              "en": "/documentation/build/functions/guides/serverless-functions/",
-              "pt-br": "/documentacao/build/functions/guides/funcoes-serverless/"
-             }
-            }
-           ]
-          },
-          {
            "key": "build/functions/azion-runtime",
            "label": {
             "en": "Azion Runtime"
@@ -486,26 +240,6 @@
             "en": "/documentation/build/applications/image-processor/first-steps/",
             "pt-br": "/documentacao/build/applications/image-processor/first-steps/"
            }
-          },
-          {
-           "key": "build/applications/image-processor/guides",
-           "label": {
-            "en": "Guides",
-            "pt-br": "Guias"
-           },
-           "items": [
-            {
-             "key": "build/applications/image-processor/guides/process-images",
-             "label": {
-              "en": "How to optimize image processing at the edge",
-              "pt-br": "Como otimizar o processamento de imagens no edge"
-             },
-             "slug": {
-              "en": "/documentation/build/applications/image-processor/guides/process-images/",
-              "pt-br": "/documentacao/build/applications/image-processor/guides/processar-imagens/"
-             }
-            }
-           ]
           }
          ],
          "slug": {
@@ -516,173 +250,67 @@
        ]
       },
       {
-       "key": "build/applications/guides",
+       "key": "build/applications/reference/device-groups",
        "label": {
-        "en": "Guides",
-        "pt-br": "Guias"
+        "en": "Device Groups"
        },
-       "items": [
-        {
-         "key": "build/applications/guides/configure-main-settings",
-         "label": {
-          "en": "How to configure main settings",
-          "pt-br": "Defina as configurações principais de uma app"
-         },
-         "slug": {
-          "en": "/documentation/build/applications/guides/configure-main-settings/",
-          "pt-br": "/documentacao/build/applications/guides/definir-configuracoes-principais/"
-         }
-        },
-        {
-         "key": "build/applications/guides/create-device-groups",
-         "label": {
-          "en": "How to create device groups",
-          "pt-br": "Como criar device groups"
-         },
-         "slug": {
-          "en": "/documentation/build/applications/guides/create-device-groups/",
-          "pt-br": "/documentacao/build/applications/guides/criar-device-groups/"
-         }
-        },
-        {
-         "key": "build/applications/guides/debug-rules",
-         "label": {
-          "en": "How to debug rules created with Rules Engine",
-          "pt-br": "Como fazer o debug de regras criadas com Rules Engine"
-         },
-         "slug": {
-          "en": "/documentation/build/applications/guides/debug-rules/",
-          "pt-br": "/documentacao/build/applications/guides/debug-regras/"
-         }
-        },
-        {
-         "key": "build/applications/guides/gzip-compression",
-         "label": {
-          "en": "How to enable gzip compression for Applications",
-          "pt-br": "Como habilitar a compressão gzip para Applications"
-         },
-         "slug": {
-          "en": "/documentation/build/applications/guides/gzip-compression/",
-          "pt-br": "/documentacao/build/applications/guides/gzip-compression/"
-         }
-        },
-        {
-         "key": "build/applications/guides/how-to-generate-a-lets-encrypt-certificate",
-         "label": {
-          "en": "Generate a Let's Encrypt Cert for Your Domain",
-          "pt-br": "Gere um certificado Let's Encrypt para o domínio"
-         },
-         "slug": {
-          "en": "/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate/",
-          "pt-br": "/documentacao/build/applications/guides/como-gerar-um-certificado-lets-encrypt/"
-         }
-        },
-        {
-         "key": "build/applications/guides/stage-applications-through-hosts-file",
-         "label": {
-          "en": "How to stage an application through the hosts file",
-          "pt-br": "Faça staging de uma app pelo arquivo hosts"
-         },
-         "slug": {
-          "en": "/documentation/build/applications/guides/stage-applications-through-hosts-file/",
-          "pt-br": "/documentacao/build/applications/guides/testar-edge-application-atraves-do-arquivo-hosts/"
-         }
-        },
-        {
-         "key": "build/applications/guides/work-with-origins",
-         "label": {
-          "en": "How to define a new origin for your application",
-          "pt-br": "Como definir uma nova origem para sua aplicação"
-         },
-         "slug": {
-          "en": "/documentation/build/applications/guides/work-with-origins/",
-          "pt-br": "/documentacao/build/applications/guides/definir-origens/"
-         }
-        },
-        {
-         "key": "build/applications/guides/work-with-rules-engine",
-         "label": {
-          "en": "Automate Behaviors with Rules Engine",
-          "pt-br": "Automatize comportamentos com o Rules Engine"
-         },
-         "slug": {
-          "en": "/documentation/build/applications/guides/work-with-rules-engine/",
-          "pt-br": "/documentacao/build/applications/guides/trabalhar-com-rules-engine/"
-         }
-        }
-       ]
+       "slug": {
+        "en": "/documentation/build/applications/reference/device-groups/",
+        "pt-br": "/documentacao/build/applications/reference/device-groups/"
+       }
       },
       {
-       "key": "build/applications/reference",
+       "key": "build/applications/reference/domains/overview",
        "label": {
-        "en": "Reference",
-        "pt-br": "Referência"
+        "en": "Domains"
        },
-       "items": [
-        {
-         "key": "build/applications/reference/device-groups",
-         "label": {
-          "en": "Device Groups"
-         },
-         "slug": {
-          "en": "/documentation/build/applications/reference/device-groups/",
-          "pt-br": "/documentacao/build/applications/reference/device-groups/"
-         }
-        },
-        {
-         "key": "build/applications/reference/domains/overview",
-         "label": {
-          "en": "Domains"
-         },
-         "slug": {
-          "en": "/documentation/build/applications/reference/domains/",
-          "pt-br": "/documentacao/build/applications/reference/domains/"
-         }
-        },
-        {
-         "key": "build/applications/reference/domains/mtls",
-         "label": {
-          "en": "Support for mTLS for Build",
-          "pt-br": "Suporte para mTLS para Build"
-         },
-         "slug": {
-          "en": "/documentation/build/applications/reference/domains/mtls/",
-          "pt-br": "/documentacao/build/applications/reference/domains/mtls/"
-         }
-        },
-        {
-         "key": "build/applications/reference/main-settings",
-         "label": {
-          "en": "Applications Main Settings",
-          "pt-br": "Main Settings"
-         },
-         "slug": {
-          "en": "/documentation/build/applications/reference/main-settings/",
-          "pt-br": "/documentacao/build/applications/reference/main-settings/"
-         }
-        },
-        {
-         "key": "build/applications/reference/origins",
-         "label": {
-          "en": "Origins"
-         },
-         "slug": {
-          "en": "/documentation/build/applications/reference/origins/",
-          "pt-br": "/documentacao/build/applications/reference/origins/"
-         }
-        },
-        {
-         "key": "build/applications/reference/rules-engine",
-         "label": {
-          "en": "Rules Engine for Applications",
-          "pt-br": "Rules Engine para Applications"
-         },
-         "slug": {
-          "en": "/documentation/build/applications/reference/rules-engine/",
-          "pt-br": "/documentacao/build/applications/reference/rules-engine/"
-         }
-        }
-       ]
+       "slug": {
+        "en": "/documentation/build/applications/reference/domains/",
+        "pt-br": "/documentacao/build/applications/reference/domains/"
+       }
+      },
+      {
+       "key": "build/applications/reference/domains/mtls",
+       "label": {
+        "en": "Support for mTLS for Build",
+        "pt-br": "Suporte para mTLS para Build"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/reference/domains/mtls/",
+        "pt-br": "/documentacao/build/applications/reference/domains/mtls/"
+       }
+      },
+      {
+       "key": "build/applications/reference/main-settings",
+       "label": {
+        "en": "Applications Main Settings",
+        "pt-br": "Main Settings"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/reference/main-settings/",
+        "pt-br": "/documentacao/build/applications/reference/main-settings/"
+       }
+      },
+      {
+       "key": "build/applications/reference/origins",
+       "label": {
+        "en": "Origins"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/reference/origins/",
+        "pt-br": "/documentacao/build/applications/reference/origins/"
+       }
+      },
+      {
+       "key": "build/applications/reference/rules-engine",
+       "label": {
+        "en": "Rules Engine for Applications",
+        "pt-br": "Rules Engine para Applications"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/reference/rules-engine/",
+        "pt-br": "/documentacao/build/applications/reference/rules-engine/"
+       }
       }
      ],
      "slug": {
@@ -792,39 +420,6 @@
      "label": {
       "en": "KV Store"
      },
-     "items": [
-      {
-       "key": "store/kv-store/guides",
-       "label": {
-        "en": "Guides",
-        "pt-br": "Guias"
-       },
-       "items": [
-        {
-         "key": "store/kv-store/guides/manage-with-functions",
-         "label": {
-          "en": "How to manage KV Store with Functions",
-          "pt-br": "Como gerenciar KV Store com Functions"
-         },
-         "slug": {
-          "en": "/documentation/store/kv-store/guides/manage-with-functions/",
-          "pt-br": "/documentacao/store/kv-store/guides/gerenciar-com-funcoes/"
-         }
-        },
-        {
-         "key": "store/kv-store/guides/redis-compatibility",
-         "label": {
-          "en": "How to use KV Store with Redis-compatible SDK",
-          "pt-br": "Como usar KV Store com SDK compatível com Redis"
-         },
-         "slug": {
-          "en": "/documentation/store/kv-store/guides/redis-compatibility/",
-          "pt-br": "/documentacao/store/kv-store/guides/compatibilidade-redis/"
-         }
-        }
-       ]
-      }
-     ],
      "slug": {
       "en": "/documentation/store/kv-store/",
       "pt-br": "/documentacao/store/kv-store/"
@@ -835,83 +430,6 @@
      "label": {
       "en": "Object Storage"
      },
-     "items": [
-      {
-       "key": "store/object-storage/guides",
-       "label": {
-        "en": "Guides",
-        "pt-br": "Guias"
-       },
-       "items": [
-        {
-         "key": "store/object-storage/guides/create-bucket",
-         "label": {
-          "en": "How to create an Object Storage bucket",
-          "pt-br": "Como criar um bucket do Object Storage"
-         },
-         "slug": {
-          "en": "/documentation/store/object-storage/guides/create-bucket/",
-          "pt-br": "/documentacao/store/object-storage/guides/criar-bucket/"
-         }
-        },
-        {
-         "key": "store/object-storage/guides/delete-buckets",
-         "label": {
-          "en": "How to delete an Object Storage bucket",
-          "pt-br": "Como excluir um bucket do Object Storage"
-         },
-         "slug": {
-          "en": "/documentation/store/object-storage/guides/delete-buckets/",
-          "pt-br": "/documentacao/store/object-storage/guides/deletar-buckets/"
-         }
-        },
-        {
-         "key": "store/object-storage/guides/delete-object",
-         "label": {
-          "en": "How to delete an object from an Object Storage bucket",
-          "pt-br": "Como excluir um objeto de um bucket do Object Storage"
-         },
-         "slug": {
-          "en": "/documentation/store/object-storage/guides/delete-object/",
-          "pt-br": "/documentacao/store/object-storage/guides/deletar-objeto/"
-         }
-        },
-        {
-         "key": "store/object-storage/guides/list-buckets",
-         "label": {
-          "en": "How to list Object Storage buckets",
-          "pt-br": "Como listar buckets do Object Storage"
-         },
-         "slug": {
-          "en": "/documentation/store/object-storage/guides/list-buckets/",
-          "pt-br": "/documentacao/store/object-storage/guides/listar-buckets/"
-         }
-        },
-        {
-         "key": "store/object-storage/guides/s3-protocol-for-object-storage",
-         "label": {
-          "en": "Set up S3 credentials for Object Storage",
-          "pt-br": "Acesse o Object Storage com o protocolo S3"
-         },
-         "slug": {
-          "en": "/documentation/store/object-storage/guides/s3-protocol-for-object-storage/",
-          "pt-br": "/documentacao/store/object-storage/guides/s3-protocol-para-object-storage/"
-         }
-        },
-        {
-         "key": "store/object-storage/guides/use-bucket-as-origin",
-         "label": {
-          "en": "Use an Object Storage Bucket as Origin",
-          "pt-br": "Use um bucket do Object Storage como origem"
-         },
-         "slug": {
-          "en": "/documentation/store/object-storage/guides/use-bucket-as-origin/",
-          "pt-br": "/documentacao/store/object-storage/guides/bucket-como-connector/"
-         }
-        }
-       ]
-      }
-     ],
      "slug": {
       "en": "/documentation/store/object-storage/",
       "pt-br": "/documentacao/store/object-storage/"
@@ -924,110 +442,15 @@
      },
      "items": [
       {
-       "key": "store/sql-database/guides",
+       "key": "store/sql-database/reference/vector-search",
        "label": {
-        "en": "Guides",
-        "pt-br": "Guias"
+        "en": "SQL Database Vector Search",
+        "pt-br": "Vector Search do SQL Database"
        },
-       "items": [
-        {
-         "key": "store/sql-database/guides/create-database",
-         "label": {
-          "en": "How to create an SQL Database database",
-          "pt-br": "Como criar um banco de dados do SQL Database"
-         },
-         "slug": {
-          "en": "/documentation/store/sql-database/guides/create-database/",
-          "pt-br": "/documentacao/store/sql-database/guides/criar-banco-de-dados/"
-         }
-        },
-        {
-         "key": "store/sql-database/guides/create-tables-sql-database",
-         "label": {
-          "en": "How to create and query data on SQL Database",
-          "pt-br": "Como criar e consultar dados no SQL Database"
-         },
-         "slug": {
-          "en": "/documentation/store/sql-database/guides/create-tables-sql-database/",
-          "pt-br": "/documentacao/store/sql-database/guides/criar-tabelas-edge-sql/"
-         }
-        },
-        {
-         "key": "store/sql-database/guides/import-data-sql-database",
-         "label": {
-          "en": "How to import data to SQL Database",
-          "pt-br": "Como importar dados para o SQL Database"
-         },
-         "slug": {
-          "en": "/documentation/store/sql-database/guides/import-data-sql-database/",
-          "pt-br": "/documentacao/store/sql-database/guides/importar-dados-edge-sql/"
-         }
-        },
-        {
-         "key": "store/sql-database/guides/install-edge-sql-shell",
-         "label": {
-          "en": "How to install SQL Database Shell",
-          "pt-br": "Como instalar o EdgeSQL Shell"
-         },
-         "slug": {
-          "en": "/documentation/store/sql-database/guides/install-edge-sql-shell/",
-          "pt-br": "/documentacao/store/sql-database/guides/install-edge-sql-shell/"
-         }
-        },
-        {
-         "key": "store/sql-database/guides/list-databases",
-         "label": {
-          "en": "How to list SQL Database databases",
-          "pt-br": "Como listar bancos de dados do SQL Database"
-         },
-         "slug": {
-          "en": "/documentation/store/sql-database/guides/list-databases/",
-          "pt-br": "/documentacao/store/sql-database/guides/listar-bancos-de-dados/"
-         }
-        },
-        {
-         "key": "store/sql-database/guides/sql-database-shell-commands",
-         "label": {
-          "en": "How to use SQL Database Shell commands",
-          "pt-br": "Como usar os comandos do EdgeSQL Shell"
-         },
-         "slug": {
-          "en": "/documentation/store/sql-database/guides/sql-database-shell-commands/",
-          "pt-br": "/documentacao/store/sql-database/guides/edge-sql-shell-commands/"
-         }
-        },
-        {
-         "key": "store/sql-database/guides/sql-database-vector-search",
-         "label": {
-          "en": "How to implement SQL Database Vector Search",
-          "pt-br": "Como implementar o Vector Search do SQL Database"
-         },
-         "slug": {
-          "en": "/documentation/store/sql-database/guides/sql-database-vector-search/",
-          "pt-br": "/documentacao/store/sql-database/guides/edge-sql-vector-search/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "store/sql-database/reference",
-       "label": {
-        "en": "Reference",
-        "pt-br": "Referência"
-       },
-       "items": [
-        {
-         "key": "store/sql-database/reference/vector-search",
-         "label": {
-          "en": "SQL Database Vector Search",
-          "pt-br": "Vector Search do SQL Database"
-         },
-         "slug": {
-          "en": "/documentation/store/sql-database/reference/vector-search/",
-          "pt-br": "/documentacao/store/sql-database/reference/vector-search/"
-         }
-        }
-       ]
+       "slug": {
+        "en": "/documentation/store/sql-database/reference/vector-search/",
+        "pt-br": "/documentacao/store/sql-database/reference/vector-search/"
+       }
       }
      ],
      "slug": {
@@ -1101,24 +524,15 @@
          },
          "items": [
           {
-           "key": "secure/ddos-protection/reference",
+           "key": "secure/ddos-protection/reference/ddos-mitigation",
            "label": {
-            "en": "Reference",
-            "pt-br": "Referência"
+            "en": "DDoS Mitigation",
+            "pt-br": "Mecanismos de mitigação e ataques DDoS"
            },
-           "items": [
-            {
-             "key": "secure/ddos-protection/reference/ddos-mitigation",
-             "label": {
-              "en": "DDoS Mitigation",
-              "pt-br": "Mecanismos de mitigação e ataques DDoS"
-             },
-             "slug": {
-              "en": "/documentation/secure/ddos-protection/reference/ddos-mitigation/",
-              "pt-br": "/documentacao/secure/ddos-protection/reference/ddos-mitigation/"
-             }
-            }
-           ]
+           "slug": {
+            "en": "/documentation/secure/ddos-protection/reference/ddos-mitigation/",
+            "pt-br": "/documentacao/secure/ddos-protection/reference/ddos-mitigation/"
+           }
           }
          ],
          "slug": {
@@ -1133,54 +547,14 @@
          },
          "items": [
           {
-           "key": "secure/network-shield/guides",
+           "key": "secure/firewall/reference/network-shield/network-lists",
            "label": {
-            "en": "Guides",
-            "pt-br": "Guias"
+            "en": "Network Lists"
            },
-           "items": [
-            {
-             "key": "secure/firewall/guides/block-tor-networks",
-             "label": {
-              "en": "How to block Tor exit node IP addresses",
-              "pt-br": "Como bloquear endereços IP de exit nodes Tor"
-             },
-             "slug": {
-              "en": "/documentation/secure/firewall/guides/block-tor-networks/",
-              "pt-br": "/documentacao/secure/firewall/guides/bloquear-redes-tor/"
-             }
-            },
-            {
-             "key": "secure/network-shield/guides/blocklists-ip-addresses-edge",
-             "label": {
-              "en": "Create IP, ASN & Geo Blocklists",
-              "pt-br": "Crie listas de bloqueio de IP, ASN e geo"
-             },
-             "slug": {
-              "en": "/documentation/secure/network-shield/guides/blocklists-ip-addresses-edge/",
-              "pt-br": "/documentacao/secure/network-shield/guides/blocklists-enderecos-ip-edge/"
-             }
-            }
-           ]
-          },
-          {
-           "key": "secure/network-shield/reference",
-           "label": {
-            "en": "Reference",
-            "pt-br": "Referência"
-           },
-           "items": [
-            {
-             "key": "secure/firewall/reference/network-shield/network-lists",
-             "label": {
-              "en": "Network Lists"
-             },
-             "slug": {
-              "en": "/documentation/secure/firewall/reference/network-shield/network-lists/",
-              "pt-br": "/documentacao/secure/firewall/reference/network-shield/network-lists/"
-             }
-            }
-           ]
+           "slug": {
+            "en": "/documentation/secure/firewall/reference/network-shield/network-lists/",
+            "pt-br": "/documentacao/secure/firewall/reference/network-shield/network-lists/"
+           }
           }
          ],
          "slug": {
@@ -1195,109 +569,25 @@
          },
          "items": [
           {
-           "key": "secure/waf/guides",
+           "key": "secure/waf/reference/custom-allowed-rules",
            "label": {
-            "en": "Guides",
-            "pt-br": "Guias"
+            "en": "WAF Exceptions",
+            "pt-br": "Exceções do WAF"
            },
-           "items": [
-            {
-             "key": "secure/waf/guides/configure-waf-allowed-rules",
-             "label": {
-              "en": "How to configure a WAF Custom Allowed Rule",
-              "pt-br": "Como configurar uma WAF Custom Allowed Rule"
-             },
-             "slug": {
-              "en": "/documentation/secure/waf/guides/configure-waf-allowed-rules/",
-              "pt-br": "/documentacao/secure/waf/guides/configurar-waf-allowed-rules/"
-             }
-            },
-            {
-             "key": "secure/firewall/guides/create-waf-rule-set",
-             "label": {
-              "en": "How to create a WAF rule set",
-              "pt-br": "Como criar um WAF rule set"
-             },
-             "slug": {
-              "en": "/documentation/secure/firewall/guides/create-waf-rule-set/",
-              "pt-br": "/documentacao/secure/firewall/guides/criar-waf-rule-set/"
-             }
-            },
-            {
-             "key": "secure/waf/guides/how-to-check-your-waf-mode",
-             "label": {
-              "en": "How to check your WAF mode",
-              "pt-br": "Como verificar o modo do seu WAF"
-             },
-             "slug": {
-              "en": "/documentation/secure/waf/guides/how-to-check-your-waf-mode/",
-              "pt-br": "/documentacao/secure/waf/guides/como-verificar-modo-do-seu-waf/"
-             }
-            },
-            {
-             "key": "secure/waf/guides/how-to-find-waf-score",
-             "label": {
-              "en": "How to find the score of WAF blocked requests",
-              "pt-br": "Encontre o score de requisições do WAF"
-             },
-             "slug": {
-              "en": "/documentation/secure/waf/guides/how-to-find-waf-score/",
-              "pt-br": "/documentacao/secure/waf/guides/como-encontrar-score-de-requisicoes-bloqueadas-pelo-waf/"
-             }
-            },
-            {
-             "key": "secure/waf/guides/mitigate-cve-2025-29927-nextjs",
-             "label": {
-              "en": "Mitigating CVE-2025-29927: Next.js Middleware Authorization Bypass",
-              "pt-br": "Mitigando o CVE-2025-29927: bypass de autorização no middleware do Next.js"
-             },
-             "slug": {
-              "en": "/documentation/secure/waf/guides/mitigate-cve-2025-29927-nextjs/",
-              "pt-br": "/documentacao/secure/waf/guides/mitigar-cve-2025-29927-nextjs/"
-             }
-            },
-            {
-             "key": "secure/waf/guides/waf-rules-for-specific-cookie",
-             "label": {
-              "en": "Configure WAF Rules for a Specific Cookie",
-              "pt-br": "Configure regras de WAF para um cookie específico"
-             },
-             "slug": {
-              "en": "/documentation/secure/waf/guides/waf-rules-for-specific-cookie/",
-              "pt-br": "/documentacao/secure/waf/guides/waf-rules-para-cookie-especifico/"
-             }
-            }
-           ]
+           "slug": {
+            "en": "/documentation/secure/waf/reference/custom-allowed-rules/",
+            "pt-br": "/documentacao/secure/waf/reference/custom-allowed-rules/"
+           }
           },
           {
-           "key": "secure/waf/reference",
+           "key": "secure/waf/reference/rules-set",
            "label": {
-            "en": "Reference",
-            "pt-br": "Referência"
+            "en": "WAF Rule Sets"
            },
-           "items": [
-            {
-             "key": "secure/waf/reference/custom-allowed-rules",
-             "label": {
-              "en": "WAF Exceptions",
-              "pt-br": "Exceções do WAF"
-             },
-             "slug": {
-              "en": "/documentation/secure/waf/reference/custom-allowed-rules/",
-              "pt-br": "/documentacao/secure/waf/reference/custom-allowed-rules/"
-             }
-            },
-            {
-             "key": "secure/waf/reference/rules-set",
-             "label": {
-              "en": "WAF Rule Sets"
-             },
-             "slug": {
-              "en": "/documentation/secure/waf/reference/rules-set/",
-              "pt-br": "/documentacao/secure/waf/reference/rule-sets/"
-             }
-            }
-           ]
+           "slug": {
+            "en": "/documentation/secure/waf/reference/rules-set/",
+            "pt-br": "/documentacao/secure/waf/reference/rule-sets/"
+           }
           }
          ],
          "slug": {
@@ -1308,77 +598,37 @@
        ]
       },
       {
-       "key": "secure/firewall/guides",
+       "key": "secure/firewall/reference/functions",
        "label": {
-        "en": "Guides",
-        "pt-br": "Guias"
+        "en": "Functions for Firewall",
+        "pt-br": "Functions no Firewall"
        },
-       "items": [
-        {
-         "key": "secure/firewall/guides/firewall-configure-main-settings",
-         "label": {
-          "en": "How to configure Firewall main settings",
-          "pt-br": "Como definir as main settings de um firewall"
-         },
-         "slug": {
-          "en": "/documentation/secure/firewall/guides/firewall-configure-main-settings/",
-          "pt-br": "/documentacao/secure/firewall/guides/firewall-definir-main-settings/"
-         }
-        },
-        {
-         "key": "secure/firewall/guides/work-with-rules-engine",
-         "label": {
-          "en": "Create Firewall Rules with Rules Engine",
-          "pt-br": "Crie regras no Rules Engine para o Firewall"
-         },
-         "slug": {
-          "en": "/documentation/secure/firewall/guides/work-with-rules-engine/",
-          "pt-br": "/documentacao/secure/firewall/guides/trabalhar-com-rules-engine/"
-         }
-        }
-       ]
+       "slug": {
+        "en": "/documentation/secure/firewall/reference/functions/",
+        "pt-br": "/documentacao/secure/firewall/reference/functions/"
+       }
       },
       {
-       "key": "secure/firewall/reference",
+       "key": "secure/firewall/reference/functions-instances",
        "label": {
-        "en": "Reference",
-        "pt-br": "Referência"
+        "en": "Functions Instances for Firewall",
+        "pt-br": "Functions Instances para Firewall"
        },
-       "items": [
-        {
-         "key": "secure/firewall/reference/functions",
-         "label": {
-          "en": "Functions for Firewall",
-          "pt-br": "Functions no Firewall"
-         },
-         "slug": {
-          "en": "/documentation/secure/firewall/reference/functions/",
-          "pt-br": "/documentacao/secure/firewall/reference/functions/"
-         }
-        },
-        {
-         "key": "secure/firewall/reference/functions-instances",
-         "label": {
-          "en": "Functions Instances for Firewall",
-          "pt-br": "Functions Instances para Firewall"
-         },
-         "slug": {
-          "en": "/documentation/secure/firewall/reference/functions-instances/",
-          "pt-br": "/documentacao/secure/firewall/reference/functions-instances/"
-         }
-        },
-        {
-         "key": "secure/firewall/reference/rules-engine",
-         "label": {
-          "en": "Rules Engine for Firewall",
-          "pt-br": "Rules Engine para Firewall"
-         },
-         "slug": {
-          "en": "/documentation/secure/firewall/reference/rules-engine/",
-          "pt-br": "/documentacao/secure/firewall/reference/rules-engine/"
-         }
-        }
-       ]
+       "slug": {
+        "en": "/documentation/secure/firewall/reference/functions-instances/",
+        "pt-br": "/documentacao/secure/firewall/reference/functions-instances/"
+       }
+      },
+      {
+       "key": "secure/firewall/reference/rules-engine",
+       "label": {
+        "en": "Rules Engine for Firewall",
+        "pt-br": "Rules Engine para Firewall"
+       },
+       "slug": {
+        "en": "/documentation/secure/firewall/reference/rules-engine/",
+        "pt-br": "/documentacao/secure/firewall/reference/rules-engine/"
+       }
       }
      ],
      "slug": {
@@ -1393,77 +643,15 @@
      },
      "items": [
       {
-       "key": "secure/edge-dns/guides",
+       "key": "secure/edge-dns/reference/dnssec-compatibility",
        "label": {
-        "en": "Guides",
-        "pt-br": "Guias"
+        "en": "DNSSEC Compatibility",
+        "pt-br": "Compatibilidade com DNSSEC"
        },
-       "items": [
-        {
-         "key": "secure/firewall/guides/edge-dns-configure-main-settings",
-         "label": {
-          "en": "How to configure Edge DNS main settings",
-          "pt-br": "Como definir as main settings de uma zona"
-         },
-         "slug": {
-          "en": "/documentation/secure/firewall/guides/edge-dns-configure-main-settings/",
-          "pt-br": "/documentacao/secure/firewall/guides/edge-dns-definir-main-settings/"
-         }
-        },
-        {
-         "key": "secure/firewall/guides/add-records",
-         "label": {
-          "en": "How to add records",
-          "pt-br": "Como adicionar registros em uma zona de DNS"
-         },
-         "slug": {
-          "en": "/documentation/secure/firewall/guides/add-records/",
-          "pt-br": "/documentacao/secure/firewall/guides/adicionar-registros/"
-         }
-        },
-        {
-         "key": "secure/edge-dns/guides/run-the-dig-command",
-         "label": {
-          "en": "How to look up DNS servers with Dig command",
-          "pt-br": "Encontre servidores DNS com o comando DIG"
-         },
-         "slug": {
-          "en": "/documentation/secure/edge-dns/guides/run-the-dig-command/",
-          "pt-br": "/documentacao/secure/edge-dns/guides/executar-o-comando-dig/"
-         }
-        },
-        {
-         "key": "secure/edge-dns/guides/run-the-traceroute-command",
-         "label": {
-          "en": "Diagnose Issues with the Traceroute Command",
-          "pt-br": "Diagnostique problemas com o comando Traceroute"
-         },
-         "slug": {
-          "en": "/documentation/secure/edge-dns/guides/run-the-traceroute-command/",
-          "pt-br": "/documentacao/secure/edge-dns/guides/executar-o-comando-traceroute/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "secure/edge-dns/reference",
-       "label": {
-        "en": "Reference",
-        "pt-br": "Referência"
-       },
-       "items": [
-        {
-         "key": "secure/edge-dns/reference/dnssec-compatibility",
-         "label": {
-          "en": "DNSSEC Compatibility",
-          "pt-br": "Compatibilidade com DNSSEC"
-         },
-         "slug": {
-          "en": "/documentation/secure/edge-dns/reference/dnssec-compatibility/",
-          "pt-br": "/documentacao/secure/edge-dns/reference/compatibilidade-dnssec/"
-         }
-        }
-       ]
+       "slug": {
+        "en": "/documentation/secure/edge-dns/reference/dnssec-compatibility/",
+        "pt-br": "/documentacao/secure/edge-dns/reference/compatibilidade-dnssec/"
+       }
       }
      ],
      "slug": {
@@ -1476,72 +664,6 @@
      "label": {
       "en": "Workloads"
      },
-     "items": [
-      {
-       "key": "secure/workloads/guides",
-       "label": {
-        "en": "Guides",
-        "pt-br": "Guias"
-       },
-       "items": [
-        {
-         "key": "secure/workloads/guides/configure-a-domain",
-         "label": {
-          "en": "How to configure a domain",
-          "pt-br": "Como configurar um domínio"
-         },
-         "slug": {
-          "en": "/documentation/secure/workloads/guides/configure-a-domain/",
-          "pt-br": "/documentacao/secure/workloads/guides/configurar-dominio/"
-         }
-        },
-        {
-         "key": "secure/workloads/guides/create-a-digital-certificate",
-         "label": {
-          "en": "How to create a digital certificate",
-          "pt-br": "Como criar um certificado digital"
-         },
-         "slug": {
-          "en": "/documentation/secure/workloads/guides/create-a-digital-certificate/",
-          "pt-br": "/documentacao/secure/workloads/guides/criar-certificado-digital/"
-         }
-        },
-        {
-         "key": "secure/workloads/guides/create-azion-custom-domain",
-         "label": {
-          "en": "How to Create an Azion Custom Domain",
-          "pt-br": "Como criar um Azion Custom Domain"
-         },
-         "slug": {
-          "en": "/documentation/secure/workloads/guides/create-azion-custom-domain/",
-          "pt-br": "/documentacao/secure/workloads/guides/criar-dominio-personalizado-azion/"
-         }
-        },
-        {
-         "key": "secure/workloads/guides/migrate-ns-to-azion",
-         "label": {
-          "en": "How to migrate nameservers to Azion",
-          "pt-br": "Como migrar nameservers para a Azion"
-         },
-         "slug": {
-          "en": "/documentation/secure/workloads/guides/migrate-ns-to-azion/",
-          "pt-br": "/documentacao/secure/workloads/guides/migrar-ns-para-a-azion/"
-         }
-        },
-        {
-         "key": "secure/workloads/guides/point-domain-to-azion",
-         "label": {
-          "en": "How to point a domain to Azion",
-          "pt-br": "Como apontar um domínio para a Azion"
-         },
-         "slug": {
-          "en": "/documentation/secure/workloads/guides/point-domain-to-azion/",
-          "pt-br": "/documentacao/secure/workloads/guides/apontar-dominio-para-a-azion/"
-         }
-        }
-       ]
-      }
-     ],
      "slug": {
       "en": "/documentation/secure/workloads/",
       "pt-br": "/documentacao/secure/workloads/"
@@ -1554,55 +676,15 @@
      },
      "items": [
       {
-       "key": "secure/certificate-manager/guides",
+       "key": "secure/certificate-manager/reference/mtls",
        "label": {
-        "en": "Guides",
-        "pt-br": "Guias"
+        "en": "Support for mTLS for Secure",
+        "pt-br": "Suporte para mTLS para Secure"
        },
-       "items": [
-        {
-         "key": "secure/firewall/guides/certificate-manager",
-         "label": {
-          "en": "Acquire & Register a Digital Certificate",
-          "pt-br": "Obtenha e registre um Digital Certificate"
-         },
-         "slug": {
-          "en": "/documentation/secure/firewall/guides/certificate-manager/",
-          "pt-br": "/documentacao/secure/firewall/guides/certificado-digital/"
-         }
-        },
-        {
-         "key": "secure/certificate-manager/guides/mtls",
-         "label": {
-          "en": "How to configure mTLS",
-          "pt-br": "Como configurar mTLS"
-         },
-         "slug": {
-          "en": "/documentation/secure/certificate-manager/guides/mtls/",
-          "pt-br": "/documentacao/secure/certificate-manager/guides/mtls/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "secure/certificate-manager/reference",
-       "label": {
-        "en": "Reference",
-        "pt-br": "Referência"
-       },
-       "items": [
-        {
-         "key": "secure/certificate-manager/reference/mtls",
-         "label": {
-          "en": "Support for mTLS for Secure",
-          "pt-br": "Suporte para mTLS para Secure"
-         },
-         "slug": {
-          "en": "/documentation/secure/certificate-manager/reference/mtls/",
-          "pt-br": "/documentacao/secure/certificate-manager/reference/mtls/"
-         }
-        }
-       ]
+       "slug": {
+        "en": "/documentation/secure/certificate-manager/reference/mtls/",
+        "pt-br": "/documentacao/secure/certificate-manager/reference/mtls/"
+       }
       }
      ],
      "slug": {
@@ -1617,33 +699,24 @@
      },
      "items": [
       {
-       "key": "secure/connectors/reference",
+       "key": "secure/connectors/reference/load-balancer",
        "label": {
-        "en": "Reference",
-        "pt-br": "Referência"
+        "en": "Load Balancer"
        },
-       "items": [
-        {
-         "key": "secure/connectors/reference/load-balancer",
-         "label": {
-          "en": "Load Balancer"
-         },
-         "slug": {
-          "en": "/documentation/secure/connectors/reference/load-balancer/",
-          "pt-br": "/documentacao/secure/connectors/reference/load-balancer/"
-         }
-        },
-        {
-         "key": "secure/connectors/reference/origin-shield",
-         "label": {
-          "en": "Origin Shield"
-         },
-         "slug": {
-          "en": "/documentation/secure/connectors/reference/origin-shield/",
-          "pt-br": "/documentacao/secure/connectors/reference/origin-shield/"
-         }
-        }
-       ]
+       "slug": {
+        "en": "/documentation/secure/connectors/reference/load-balancer/",
+        "pt-br": "/documentacao/secure/connectors/reference/load-balancer/"
+       }
+      },
+      {
+       "key": "secure/connectors/reference/origin-shield",
+       "label": {
+        "en": "Origin Shield"
+       },
+       "slug": {
+        "en": "/documentation/secure/connectors/reference/origin-shield/",
+        "pt-br": "/documentacao/secure/connectors/reference/origin-shield/"
+       }
       }
      ],
      "slug": {
@@ -1668,43 +741,14 @@
      },
      "items": [
       {
-       "key": "secure/bot-manager/guides",
+       "key": "secure/bot-manager/reference/lite",
        "label": {
-        "en": "Guides",
-        "pt-br": "Guias"
+        "en": "Azion Bot Manager Lite"
        },
-       "items": [
-        {
-         "key": "secure/firewall/guides/manage-bots",
-         "label": {
-          "en": "How to manage bots",
-          "pt-br": "Como gerenciar bots"
-         },
-         "slug": {
-          "en": "/documentation/secure/firewall/guides/manage-bots/",
-          "pt-br": "/documentacao/secure/firewall/guides/gerenciar-bots/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "secure/bot-manager/reference",
-       "label": {
-        "en": "Reference",
-        "pt-br": "Referência"
-       },
-       "items": [
-        {
-         "key": "secure/bot-manager/reference/lite",
-         "label": {
-          "en": "Azion Bot Manager Lite"
-         },
-         "slug": {
-          "en": "/documentation/secure/bot-manager/reference/lite/",
-          "pt-br": "/documentacao/secure/bot-manager/reference/lite/"
-         }
-        }
-       ]
+       "slug": {
+        "en": "/documentation/secure/bot-manager/reference/lite/",
+        "pt-br": "/documentacao/secure/bot-manager/reference/lite/"
+       }
       }
      ],
      "slug": {
@@ -1739,103 +783,6 @@
         "en": "/documentation/observe/data-stream/quickstart/",
         "pt-br": "/documentacao/observe/data-stream/quickstart/"
        }
-      },
-      {
-       "key": "observe/data-stream/guides",
-       "label": {
-        "en": "Guides",
-        "pt-br": "Guias"
-       },
-       "items": [
-        {
-         "key": "observe/data-stream/guides/add-filters-metrics",
-         "label": {
-          "en": "How to add filters on Real-Time Metrics",
-          "pt-br": "Como adicionar filtros no Real-Time Metrics"
-         },
-         "slug": {
-          "en": "/documentation/observe/data-stream/guides/add-filters-metrics/",
-          "pt-br": "/documentacao/observe/data-stream/guides/adicionar-filtros-metrics/"
-         }
-        },
-        {
-         "key": "observe/data-stream/guides/analyze-metrics",
-         "label": {
-          "en": "How to analyze metrics on Real-Time Metrics",
-          "pt-br": "Como analisar métricas no Real-Time Metrics"
-         },
-         "slug": {
-          "en": "/documentation/observe/data-stream/guides/analyze-metrics/",
-          "pt-br": "/documentacao/observe/data-stream/guides/analisar-metricas/"
-         }
-        },
-        {
-         "key": "observe/data-stream/guides/configure-sampling",
-         "label": {
-          "en": "How to configure sampling on Data Stream",
-          "pt-br": "Como configurar sampling no Data Stream"
-         },
-         "slug": {
-          "en": "/documentation/observe/data-stream/guides/configure-sampling/",
-          "pt-br": "/documentacao/observe/data-stream/guides/configurar-sampling/"
-         }
-        },
-        {
-         "key": "observe/data-stream/guides/data-stream-associate-domains",
-         "label": {
-          "en": "How to associate domains on Data Stream",
-          "pt-br": "Como associar domínios no Data Stream"
-         },
-         "slug": {
-          "en": "/documentation/observe/data-stream/guides/data-stream-associate-domains/",
-          "pt-br": "/documentacao/observe/data-stream/guides/data-stream-associar-dominios/"
-         }
-        },
-        {
-         "key": "observe/data-stream/guides/data-stream-select-variables",
-         "label": {
-          "en": "How to select variables on Data Stream",
-          "pt-br": "Como selecionar variáveis no Data Stream"
-         },
-         "slug": {
-          "en": "/documentation/observe/data-stream/guides/data-stream-select-variables/",
-          "pt-br": "/documentacao/observe/data-stream/guides/data-stream-selecionar-variaveis/"
-         }
-        },
-        {
-         "key": "observe/data-stream/guides/endpoint-amazon-s3",
-         "label": {
-          "en": "How to use Amazon S3 to receive data from Data Stream",
-          "pt-br": "Envie dados do Data Stream ao Amazon S3"
-         },
-         "slug": {
-          "en": "/documentation/observe/data-stream/guides/endpoint-amazon-s3/",
-          "pt-br": "/documentacao/observe/data-stream/guides/amazon-s3-endpoint/"
-         }
-        },
-        {
-         "key": "observe/data-stream/guides/understand-logs",
-         "label": {
-          "en": "How to understand Real-Time Events logs",
-          "pt-br": "Como entender os logs do Real-Time Events"
-         },
-         "slug": {
-          "en": "/documentation/observe/data-stream/guides/understand-logs/",
-          "pt-br": "/documentacao/observe/data-stream/guides/entender-logs/"
-         }
-        },
-        {
-         "key": "observe/data-stream/guides/use-data-stream",
-         "label": {
-          "en": "How to configure Data Stream main settings",
-          "pt-br": "Como configurar as main settings do Data Stream"
-         },
-         "slug": {
-          "en": "/documentation/observe/data-stream/guides/use-data-stream/",
-          "pt-br": "/documentacao/observe/data-stream/guides/como-usar-data-stream/"
-         }
-        }
-       ]
       }
      ],
      "slug": {
@@ -1907,121 +854,15 @@
        }
       },
       {
-       "key": "observe/real-time-metrics/guides",
+       "key": "observe/real-time-metrics/reference/historical-real-time-metrics",
        "label": {
-        "en": "Guides",
-        "pt-br": "Guias"
+        "en": "Historical Real-Time Metrics",
+        "pt-br": "Real-Time Metrics Histórico"
        },
-       "items": [
-        {
-         "key": "observe/real-time-metrics/guides/azion-plugin-grafana-custom-dash",
-         "label": {
-          "en": "Customize a Grafana Dashboard with Azion Plugin",
-          "pt-br": "Personalize um dashboard no Grafana com a Azion"
-         },
-         "slug": {
-          "en": "/documentation/observe/real-time-metrics/guides/azion-plugin-grafana-custom-dash/",
-          "pt-br": "/documentacao/observe/real-time-metrics/guides/azion-plugin-grafana/"
-         }
-        },
-        {
-         "key": "observe/real-time-metrics/guides/azion-plugin-grafana-customize-log-table",
-         "label": {
-          "en": "Customize a Log Table with Azion Plugin",
-          "pt-br": "Personalize uma tabela de logs no Grafana"
-         },
-         "slug": {
-          "en": "/documentation/observe/real-time-metrics/guides/azion-plugin-grafana-customize-log-table/",
-          "pt-br": "/documentacao/observe/real-time-metrics/guides/azion-plugin-grafana-personalizar-tabela-logs/"
-         }
-        },
-        {
-         "key": "observe/real-time-metrics/guides/azion-plugin-grafana-pre-built-dash",
-         "label": {
-          "en": "Use a Pre-Built Grafana Dashboard with Azion",
-          "pt-br": "Use um dashboard pré-configurado no Grafana"
-         },
-         "slug": {
-          "en": "/documentation/observe/real-time-metrics/guides/azion-plugin-grafana-pre-built-dash/",
-          "pt-br": "/documentacao/observe/real-time-metrics/guides/azion-plugin-grafana-dash-pre-configurado/"
-         }
-        },
-        {
-         "key": "observe/real-time-metrics/guides/best-practices-grafana",
-         "label": {
-          "en": "How to use Grafana with best practices",
-          "pt-br": "Como usar o Grafana com boas práticas"
-         },
-         "slug": {
-          "en": "/documentation/observe/real-time-metrics/guides/best-practices-grafana/",
-          "pt-br": "/documentacao/observe/real-time-metrics/guides/boas-praticas-grafana/"
-         }
-        },
-        {
-         "key": "observe/real-time-metrics/guides/data-transferred-dash",
-         "label": {
-          "en": "Data Transferred dashboard on Grafana JSON example",
-          "pt-br": "Dashboard JSON de Data Transferred no Grafana"
-         },
-         "slug": {
-          "en": "/documentation/observe/real-time-metrics/guides/data-transferred-dash/",
-          "pt-br": "/documentacao/observe/real-time-metrics/guides/data-transferred-dash/"
-         }
-        },
-        {
-         "key": "observe/real-time-metrics/guides/integrate-grafana",
-         "label": {
-          "en": "How to integrate Azion with Grafana",
-          "pt-br": "Como integrar a Azion com o Grafana"
-         },
-         "slug": {
-          "en": "/documentation/observe/real-time-metrics/guides/integrate-grafana/",
-          "pt-br": "/documentacao/observe/real-time-metrics/guides/integrar-grafana/"
-         }
-        },
-        {
-         "key": "observe/real-time-metrics/guides/metrics-dash",
-         "label": {
-          "en": "Real-Time Metrics GraphQL Dashboard for Grafana",
-          "pt-br": "Dashboard JSON do Real-Time Metrics no Grafana"
-         },
-         "slug": {
-          "en": "/documentation/observe/real-time-metrics/guides/metrics-dash/",
-          "pt-br": "/documentacao/observe/real-time-metrics/guides/metrics-dash/"
-         }
-        },
-        {
-         "key": "observe/real-time-metrics/guides/use-real-time-metrics",
-         "label": {
-          "en": "How to use Real-Time Metrics",
-          "pt-br": "Como utilizar o Real-Time Metrics"
-         },
-         "slug": {
-          "en": "/documentation/observe/real-time-metrics/guides/use-real-time-metrics/",
-          "pt-br": "/documentacao/observe/real-time-metrics/guides/usar-real-time-metrics/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "observe/real-time-metrics/reference",
-       "label": {
-        "en": "Reference",
-        "pt-br": "Referência"
-       },
-       "items": [
-        {
-         "key": "observe/real-time-metrics/reference/historical-real-time-metrics",
-         "label": {
-          "en": "Historical Real-Time Metrics",
-          "pt-br": "Real-Time Metrics Histórico"
-         },
-         "slug": {
-          "en": "/documentation/observe/real-time-metrics/reference/historical-real-time-metrics/",
-          "pt-br": "/documentacao/observe/real-time-metrics-historico/"
-         }
-        }
-       ]
+       "slug": {
+        "en": "/documentation/observe/real-time-metrics/reference/historical-real-time-metrics/",
+        "pt-br": "/documentacao/observe/real-time-metrics-historico/"
+       }
       }
      ],
      "slug": {
@@ -2036,17 +877,6 @@
    "ui": "menu.resources",
    "icon": "pi pi-book",
    "items": [
-    {
-     "key": "guides/overview",
-     "label": {
-      "en": "Guides",
-      "pt-br": "Guias"
-     },
-     "slug": {
-      "en": "/documentation/guides/",
-      "pt-br": "/documentacao/guides/"
-     }
-    },
     {
      "key": "row/architectures",
      "label": {
@@ -2453,129 +1283,89 @@
      },
      "items": [
       {
-       "key": "marketplace/guides",
+       "key": "marketplace/reference/first-steps",
        "label": {
-        "en": "Guides",
-        "pt-br": "Guias"
+        "en": "Azion Marketplace first steps",
+        "pt-br": "Primeiros passos no Marketplace da Azion"
        },
-       "items": [
-        {
-         "key": "marketplace/guides/install-an-integration",
-         "label": {
-          "en": "How to install an integration",
-          "pt-br": "Como instalar uma integração"
-         },
-         "slug": {
-          "en": "/documentation/marketplace/guides/install-an-integration/",
-          "pt-br": "/documentacao/marketplace/reference/instalar-uma-integracao/"
-         }
-        },
-        {
-         "key": "marketplace/guides/update-an-integration",
-         "label": {
-          "en": "How to update an integration",
-          "pt-br": "Como atualizar uma integração"
-         },
-         "slug": {
-          "en": "/documentation/marketplace/guides/update-an-integration/",
-          "pt-br": "/documentacao/marketplace/reference/atualizar-uma-integracao/"
-         }
-        }
-       ]
+       "slug": {
+        "en": "/documentation/marketplace/reference/first-steps/",
+        "pt-br": "/documentacao/marketplace/reference/first-steps/"
+       }
       },
       {
-       "key": "marketplace/reference",
+       "key": "marketplace/reference/integrations",
        "label": {
-        "en": "Reference",
-        "pt-br": "Referência"
+        "en": "Azion Integrations"
        },
-       "items": [
-        {
-         "key": "marketplace/reference/first-steps",
-         "label": {
-          "en": "Azion Marketplace first steps",
-          "pt-br": "Primeiros passos no Marketplace da Azion"
-         },
-         "slug": {
-          "en": "/documentation/marketplace/reference/first-steps/",
-          "pt-br": "/documentacao/marketplace/reference/first-steps/"
-         }
-        },
-        {
-         "key": "marketplace/reference/integrations",
-         "label": {
-          "en": "Azion Integrations"
-         },
-         "slug": {
-          "en": "/documentation/marketplace/reference/integrations/",
-          "pt-br": "/documentacao/marketplace/reference/integracoes/"
-         }
-        },
-        {
-         "key": "marketplace/reference/isv-signup",
-         "label": {
-          "en": "Become an ISV on Azion Marketplace",
-          "pt-br": "Torne-se um ISV no Azion Marketplace"
-         },
-         "slug": {
-          "en": "/documentation/marketplace/reference/isv-signup/",
-          "pt-br": "/documentacao/marketplace/reference/isv-signup/"
-         }
-        },
-        {
-         "key": "marketplace/reference/marketplace",
-         "label": {
-          "en": "Azion Marketplace",
-          "pt-br": "Marketplace da Azion"
-         },
-         "slug": {
-          "en": "/documentation/marketplace/reference/marketplace/",
-          "pt-br": "/documentacao/marketplace/reference/marketplace/"
-         }
-        },
-        {
-         "key": "marketplace/reference/marketplace-seller-guide",
-         "label": {
-          "en": "Marketplace Seller Guide"
-         },
-         "slug": {
-          "en": "/documentation/marketplace/reference/marketplace-seller-guide/",
-          "pt-br": "/documentacao/marketplace/reference/marketplace-seller-guide/"
-         }
-        },
-        {
-         "key": "marketplace/reference/permissions-marketplace",
-         "label": {
-          "en": "Azion Marketplace's permissions",
-          "pt-br": "Permissões do Marketplace da Azion"
-         },
-         "slug": {
-          "en": "/documentation/marketplace/reference/permissions-marketplace/",
-          "pt-br": "/documentacao/marketplace/reference/permissions-marketplace/"
-         }
-        },
-        {
-         "key": "marketplace/reference/templates",
-         "label": {
-          "en": "Azion Templates"
-         },
-         "slug": {
-          "en": "/documentation/marketplace/reference/templates/",
-          "pt-br": "/documentacao/marketplace/reference/templates/"
-         }
-        },
-        {
-         "key": "marketplace/reference/templates-and-integrations-overview",
-         "label": {
-          "en": "Templates and Integrations",
-          "pt-br": "Templates e integrações"
-         },
-         "slug": {
-          "en": "/documentation/marketplace/reference/templates-and-integrations-overview/",
-          "pt-br": "/documentacao/marketplace/reference/overview-templates-e-integracoes/"
-         }
-        }
-       ]
+       "slug": {
+        "en": "/documentation/marketplace/reference/integrations/",
+        "pt-br": "/documentacao/marketplace/reference/integracoes/"
+       }
+      },
+      {
+       "key": "marketplace/reference/isv-signup",
+       "label": {
+        "en": "Become an ISV on Azion Marketplace",
+        "pt-br": "Torne-se um ISV no Azion Marketplace"
+       },
+       "slug": {
+        "en": "/documentation/marketplace/reference/isv-signup/",
+        "pt-br": "/documentacao/marketplace/reference/isv-signup/"
+       }
+      },
+      {
+       "key": "marketplace/reference/marketplace",
+       "label": {
+        "en": "Azion Marketplace",
+        "pt-br": "Marketplace da Azion"
+       },
+       "slug": {
+        "en": "/documentation/marketplace/reference/marketplace/",
+        "pt-br": "/documentacao/marketplace/reference/marketplace/"
+       }
+      },
+      {
+       "key": "marketplace/reference/marketplace-seller-guide",
+       "label": {
+        "en": "Marketplace Seller Guide"
+       },
+       "slug": {
+        "en": "/documentation/marketplace/reference/marketplace-seller-guide/",
+        "pt-br": "/documentacao/marketplace/reference/marketplace-seller-guide/"
+       }
+      },
+      {
+       "key": "marketplace/reference/permissions-marketplace",
+       "label": {
+        "en": "Azion Marketplace's permissions",
+        "pt-br": "Permissões do Marketplace da Azion"
+       },
+       "slug": {
+        "en": "/documentation/marketplace/reference/permissions-marketplace/",
+        "pt-br": "/documentacao/marketplace/reference/permissions-marketplace/"
+       }
+      },
+      {
+       "key": "marketplace/reference/templates",
+       "label": {
+        "en": "Azion Templates"
+       },
+       "slug": {
+        "en": "/documentation/marketplace/reference/templates/",
+        "pt-br": "/documentacao/marketplace/reference/templates/"
+       }
+      },
+      {
+       "key": "marketplace/reference/templates-and-integrations-overview",
+       "label": {
+        "en": "Templates and Integrations",
+        "pt-br": "Templates e integrações"
+       },
+       "slug": {
+        "en": "/documentation/marketplace/reference/templates-and-integrations-overview/",
+        "pt-br": "/documentacao/marketplace/reference/overview-templates-e-integracoes/"
+       }
       }
      ]
     }
@@ -2681,192 +1471,86 @@
      },
      "items": [
       {
-       "key": "account/guides",
+       "key": "account/reference/account-lockout-policy",
        "label": {
-        "en": "Guides",
-        "pt-br": "Guias"
+        "en": "Account Lockout Policy"
        },
-       "items": [
-        {
-         "key": "account/guides/account-lockout-policy-logs",
-         "label": {
-          "en": "How to check Account Lockout Policy logs",
-          "pt-br": "Verifique os logs da Account Lockout Policy"
-         },
-         "slug": {
-          "en": "/documentation/account/guides/account-lockout-policy-logs/",
-          "pt-br": "/documentacao/account/guides/account-lockout-policy-logs/"
-         }
-        },
-        {
-         "key": "account/guides/configure-account-lockout-policy",
-         "label": {
-          "en": "How to configure Account Lockout Policy",
-          "pt-br": "Como configurar a Account Lockout Policy"
-         },
-         "slug": {
-          "en": "/documentation/account/guides/configure-account-lockout-policy/",
-          "pt-br": "/documentacao/account/guides/configurar-account-lockout-policy/"
-         }
-        },
-        {
-         "key": "account/guides/configure-user-session-timeout",
-         "label": {
-          "en": "How to configure User Session Timeout",
-          "pt-br": "Como configurar o User Session Timeout"
-         },
-         "slug": {
-          "en": "/documentation/account/guides/configure-user-session-timeout/",
-          "pt-br": "/documentacao/account/guides/configurar-user-session-timeout/"
-         }
-        },
-        {
-         "key": "account/guides/how-to-access-azion-console",
-         "label": {
-          "en": "How to access Azion Console",
-          "pt-br": "Como acessar o Azion Console"
-         },
-         "slug": {
-          "en": "/documentation/account/guides/how-to-access-azion-console/",
-          "pt-br": "/documentacao/account/guides/como-acessar-o-azion-console/"
-         }
-        },
-        {
-         "key": "account/guides/microsoft-entra-automated-user-provisioning",
-         "label": {
-          "en": "Enable Microsoft Entra User Provisioning (SCIM)",
-          "pt-br": "Provisione usuários do Microsoft Entra com SCIM"
-         },
-         "slug": {
-          "en": "/documentation/account/guides/microsoft-entra-automated-user-provisioning/",
-          "pt-br": "/documentacao/account/guides/microsoft-entra-provisionamento-automatizado-de-usuarios/"
-         }
-        },
-        {
-         "key": "account/guides/personal-tokens",
-         "label": {
-          "en": "How to manage a personal token",
-          "pt-br": "Como criar um personal token"
-         },
-         "slug": {
-          "en": "/documentation/account/guides/personal-tokens/",
-          "pt-br": "/documentacao/account/guides/personal-tokens/"
-         }
-        },
-        {
-         "key": "account/guides/sso-microsoft-entra-saml",
-         "label": {
-          "en": "Use Microsoft Entra SAML as an IdP",
-          "pt-br": "Use o Microsoft Entra SAML como IdP"
-         },
-         "slug": {
-          "en": "/documentation/account/guides/sso-microsoft-entra-saml/",
-          "pt-br": "/documentacao/account/guides/sso-microsoft-entra-saml/"
-         }
-        },
-        {
-         "key": "account/guides/verify-account-migration",
-         "label": {
-          "en": "Verify Your Account Migration to API v4",
-          "pt-br": "Verifique a migração da sua conta para a API v4"
-         },
-         "slug": {
-          "en": "/documentation/account/guides/verify-account-migration/",
-          "pt-br": "/documentacao/account/guides/verificar-migracao-conta/"
-         }
-        }
-       ]
+       "slug": {
+        "en": "/documentation/account/reference/account-lockout-policy/",
+        "pt-br": "/documentacao/account/reference/account-lockout-policy/"
+       }
       },
       {
-       "key": "account/reference",
+       "key": "account/reference/activity-history",
        "label": {
-        "en": "Reference",
-        "pt-br": "Referência"
+        "en": "Activity History"
        },
-       "items": [
-        {
-         "key": "account/reference/account-lockout-policy",
-         "label": {
-          "en": "Account Lockout Policy"
-         },
-         "slug": {
-          "en": "/documentation/account/reference/account-lockout-policy/",
-          "pt-br": "/documentacao/account/reference/account-lockout-policy/"
-         }
-        },
-        {
-         "key": "account/reference/activity-history",
-         "label": {
-          "en": "Activity History"
-         },
-         "slug": {
-          "en": "/documentation/account/reference/activity-history/",
-          "pt-br": "/documentacao/account/reference/activity-history/"
-         }
-        },
-        {
-         "key": "account/reference/billing-and-subscriptions",
-         "label": {
-          "en": "Billing",
-          "pt-br": "Faturamento"
-         },
-         "slug": {
-          "en": "/documentation/account/reference/billing-and-subscriptions/",
-          "pt-br": "/documentacao/account/reference/billing-and-subscriptions/"
-         }
-        },
-        {
-         "key": "account/reference/creating-account",
-         "label": {
-          "en": "How to create an account on Azion",
-          "pt-br": "Como criar uma conta na Azion"
-         },
-         "slug": {
-          "en": "/documentation/account/reference/creating-account/",
-          "pt-br": "/documentacao/account/reference/criar-uma-conta/"
-         }
-        },
-        {
-         "key": "account/reference/multi-factor-authentication",
-         "label": {
-          "en": "Multi-Factor Authentication"
-         },
-         "slug": {
-          "en": "/documentation/account/reference/multi-factor-authentication/",
-          "pt-br": "/documentacao/account/reference/multi-factor-authentication/"
-         }
-        },
-        {
-         "key": "account/reference/personal-tokens",
-         "label": {
-          "en": "Personal Tokens"
-         },
-         "slug": {
-          "en": "/documentation/account/reference/personal-tokens/",
-          "pt-br": "/documentacao/account/reference/personal-tokens/"
-         }
-        },
-        {
-         "key": "account/reference/teams-permissions",
-         "label": {
-          "en": "Teams Permissions"
-         },
-         "slug": {
-          "en": "/documentation/account/reference/teams-permissions/",
-          "pt-br": "/documentacao/account/reference/teams-permissions/"
-         }
-        },
-        {
-         "key": "account/reference/user-session-timeout",
-         "label": {
-          "en": "User Session Timeout"
-         },
-         "slug": {
-          "en": "/documentation/account/reference/user-session-timeout/",
-          "pt-br": "/documentacao/account/reference/user-session-timeout/"
-         }
-        }
-       ]
+       "slug": {
+        "en": "/documentation/account/reference/activity-history/",
+        "pt-br": "/documentacao/account/reference/activity-history/"
+       }
+      },
+      {
+       "key": "account/reference/billing-and-subscriptions",
+       "label": {
+        "en": "Billing",
+        "pt-br": "Faturamento"
+       },
+       "slug": {
+        "en": "/documentation/account/reference/billing-and-subscriptions/",
+        "pt-br": "/documentacao/account/reference/billing-and-subscriptions/"
+       }
+      },
+      {
+       "key": "account/reference/creating-account",
+       "label": {
+        "en": "How to create an account on Azion",
+        "pt-br": "Como criar uma conta na Azion"
+       },
+       "slug": {
+        "en": "/documentation/account/reference/creating-account/",
+        "pt-br": "/documentacao/account/reference/criar-uma-conta/"
+       }
+      },
+      {
+       "key": "account/reference/multi-factor-authentication",
+       "label": {
+        "en": "Multi-Factor Authentication"
+       },
+       "slug": {
+        "en": "/documentation/account/reference/multi-factor-authentication/",
+        "pt-br": "/documentacao/account/reference/multi-factor-authentication/"
+       }
+      },
+      {
+       "key": "account/reference/personal-tokens",
+       "label": {
+        "en": "Personal Tokens"
+       },
+       "slug": {
+        "en": "/documentation/account/reference/personal-tokens/",
+        "pt-br": "/documentacao/account/reference/personal-tokens/"
+       }
+      },
+      {
+       "key": "account/reference/teams-permissions",
+       "label": {
+        "en": "Teams Permissions"
+       },
+       "slug": {
+        "en": "/documentation/account/reference/teams-permissions/",
+        "pt-br": "/documentacao/account/reference/teams-permissions/"
+       }
+      },
+      {
+       "key": "account/reference/user-session-timeout",
+       "label": {
+        "en": "User Session Timeout"
+       },
+       "slug": {
+        "en": "/documentation/account/reference/user-session-timeout/",
+        "pt-br": "/documentacao/account/reference/user-session-timeout/"
+       }
       }
      ],
      "slug": {
@@ -2891,131 +1575,25 @@
      },
      "items": [
       {
-       "key": "deploy/orchestrator/guides",
+       "key": "deploy/orchestrator/reference/edge-node",
        "label": {
-        "en": "Guides",
-        "pt-br": "Guias"
+        "en": "Azion Edge Node"
        },
-       "items": [
-        {
-         "key": "deploy/orchestrator/guides/authorize-an-edge-node",
-         "label": {
-          "en": "How to authorize an edge node",
-          "pt-br": "Como autorizar um edge node"
-         },
-         "slug": {
-          "en": "/documentation/deploy/orchestrator/guides/authorize-an-edge-node/",
-          "pt-br": "/documentacao/deploy/orchestrator/guides/autorizar-edge-node/"
-         }
-        },
-        {
-         "key": "deploy/orchestrator/guides/bind-service-node",
-         "label": {
-          "en": "How to bind an edge service to an edge node",
-          "pt-br": "Como vincular um edge service a um edge node"
-         },
-         "slug": {
-          "en": "/documentation/deploy/orchestrator/guides/bind-service-node/",
-          "pt-br": "/documentacao/deploy/orchestrator/guides/vincular-servico/"
-         }
-        },
-        {
-         "key": "deploy/orchestrator/guides/create-edge-service",
-         "label": {
-          "en": "How to create an edge service",
-          "pt-br": "Como criar um edge service"
-         },
-         "slug": {
-          "en": "/documentation/deploy/orchestrator/guides/create-edge-service/",
-          "pt-br": "/documentacao/deploy/orchestrator/guides/criar-edge-service/"
-         }
-        },
-        {
-         "key": "deploy/orchestrator/guides/edge-node-first-steps",
-         "label": {
-          "en": "Edge Node first steps",
-          "pt-br": "Primeiros passos no Edge Node"
-         },
-         "slug": {
-          "en": "/documentation/deploy/orchestrator/guides/edge-node-first-steps/",
-          "pt-br": "/documentacao/deploy/orchestrator/guides/edge-node-primeiros-passos/"
-         }
-        },
-        {
-         "key": "deploy/orchestrator/guides/edge-services-first-steps",
-         "label": {
-          "en": "Creating an Edge Service",
-          "pt-br": "Criando um edge service"
-         },
-         "slug": {
-          "en": "/documentation/deploy/orchestrator/guides/edge-services-first-steps/",
-          "pt-br": "/documentacao/deploy/orchestrator/guides/criando-edge-service/"
-         }
-        },
-        {
-         "key": "deploy/orchestrator/guides/install-orchestrator-agent",
-         "label": {
-          "en": "How to install Orchestrator Agent",
-          "pt-br": "Como instalar o Orchestrator Agent"
-         },
-         "slug": {
-          "en": "/documentation/deploy/orchestrator/guides/install-orchestrator-agent/",
-          "pt-br": "/documentacao/deploy/orchestrator/guides/instalar-orchestrator-agent/"
-         }
-        },
-        {
-         "key": "deploy/orchestrator/guides/watch-logs",
-         "label": {
-          "en": "How to watch Orchestrator logs",
-          "pt-br": "Como verificar os logs do Orchestrator"
-         },
-         "slug": {
-          "en": "/documentation/deploy/orchestrator/guides/watch-logs/",
-          "pt-br": "/documentacao/deploy/orchestrator/guides/verificar-logs/"
-         }
-        },
-        {
-         "key": "deploy/orchestrator/guides/work-with-variables",
-         "label": {
-          "en": "How to work with variables",
-          "pt-br": "Como trabalhar com variáveis no Orchestrator"
-         },
-         "slug": {
-          "en": "/documentation/deploy/orchestrator/guides/work-with-variables/",
-          "pt-br": "/documentacao/deploy/orchestrator/guides/trabalhar-com-variaveis/"
-         }
-        }
-       ]
+       "slug": {
+        "en": "/documentation/deploy/orchestrator/reference/edge-node/",
+        "pt-br": "/documentacao/deploy/orchestrator/reference/edge-node/"
+       }
       },
       {
-       "key": "deploy/orchestrator/reference",
+       "key": "deploy/orchestrator/reference/edge-services",
        "label": {
-        "en": "Reference",
-        "pt-br": "Referência"
+        "en": "Azion Edge Services",
+        "pt-br": "Edge Services"
        },
-       "items": [
-        {
-         "key": "deploy/orchestrator/reference/edge-node",
-         "label": {
-          "en": "Azion Edge Node"
-         },
-         "slug": {
-          "en": "/documentation/deploy/orchestrator/reference/edge-node/",
-          "pt-br": "/documentacao/deploy/orchestrator/reference/edge-node/"
-         }
-        },
-        {
-         "key": "deploy/orchestrator/reference/edge-services",
-         "label": {
-          "en": "Azion Edge Services",
-          "pt-br": "Edge Services"
-         },
-         "slug": {
-          "en": "/documentation/deploy/orchestrator/reference/edge-services/",
-          "pt-br": "/documentacao/deploy/orchestrator/reference/edge-services/"
-         }
-        }
-       ]
+       "slug": {
+        "en": "/documentation/deploy/orchestrator/reference/edge-services/",
+        "pt-br": "/documentacao/deploy/orchestrator/reference/edge-services/"
+       }
       }
      ],
      "slug": {

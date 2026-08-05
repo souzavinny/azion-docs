@@ -51,6 +51,12 @@ for (const lang of LANGS) {
 const menu: NavMenuJson = JSON.parse(
 	fs.readFileSync(path.join(ROOT, 'src/i18n/nav.menu.json'), 'utf-8')
 );
+// Guides live in their own top-level section with their own sidebar, curated the same
+// way. Same checks, same file format; keys are namespaced (gd/...) so the two never
+// collide in the shared duplicate-key check below.
+const guidesMenu: NavMenuJson = JSON.parse(
+	fs.readFileSync(path.join(ROOT, 'src/i18n/guides.menu.json'), 'utf-8')
+);
 const errors: string[] = [];
 const warnings: string[] = [];
 const seenKeys = new Set<string>();
@@ -86,7 +92,7 @@ function checkEntry(e: NavEntry, depth: number) {
 const { default: enUI } = await import('../src/i18n/en/ui');
 const { default: ptUI } = await import('../src/i18n/pt-br/ui');
 for (const anchor of menu.mobileAnchors) checkEntry(anchor as NavEntry, 0);
-for (const group of menu.groups) {
+for (const group of [...menu.groups, ...guidesMenu.groups]) {
 	checkKey(group.key);
 	if (!(group.ui in enUI)) errors.push(`${group.key}: ui key "${group.ui}" missing in en/ui.ts`);
 	else if (!(group.ui in ptUI))
@@ -113,7 +119,7 @@ function collectJson(e: NavEntry) {
 	for (const child of e.items ?? []) collectJson(child);
 }
 menu.mobileAnchors.forEach((a) => collectJson(a as NavEntry));
-menu.groups.forEach((g) => {
+[...menu.groups, ...guidesMenu.groups].forEach((g) => {
 	// The group label links here, so the page is reachable from the sidebar.
 	if (g.slug && !isURL(g.slug.en)) {
 		reachable.en.add(norm(g.slug.en));

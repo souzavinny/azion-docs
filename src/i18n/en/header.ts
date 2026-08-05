@@ -1,7 +1,7 @@
 const menuData = {
   items: [
 		{
-      label: 'Documentation',
+      label: 'Reference',
       href: '/en/documentation/',
       items: []
     },
