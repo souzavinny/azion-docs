@@ -38,18 +38,11 @@
    "key": "grp/get-started",
    "ui": "menu.start",
    "icon": "pi pi-bolt",
+   "slug": {
+    "en": "/documentation/get-started/",
+    "pt-br": "/documentacao/get-started/"
+   },
    "items": [
-    {
-     "key": "get-started/overview",
-     "label": {
-      "en": "Getting Started",
-      "pt-br": "Ponto de partida"
-     },
-     "slug": {
-      "en": "/documentation/get-started/",
-      "pt-br": "/documentacao/get-started/"
-     }
-    },
     {
      "key": "get-started/agent-setup",
      "label": {
@@ -876,6 +869,10 @@
    "key": "grp/resources",
    "ui": "menu.resources",
    "icon": "pi pi-book",
+   "slug": {
+    "en": "/documentation/architectures/",
+    "pt-br": "/documentacao/architectures/"
+   },
    "items": [
     {
      "key": "row/architectures",
@@ -1375,92 +1372,83 @@
    "key": "grp/manage",
    "ui": "menu.manage",
    "icon": "pi pi-user",
+   "slug": {
+    "en": "/documentation/platform/overview/",
+    "pt-br": "/documentacao/platform/overview/"
+   },
    "items": [
     {
-     "key": "row/platform",
+     "key": "platform/compliance",
      "label": {
-      "en": "Platform",
-      "pt-br": "Plataforma"
+      "en": "Compliance"
      },
      "items": [
       {
-       "key": "platform/compliance",
+       "key": "platform/compliance/governance-risk-compliance",
        "label": {
-        "en": "Compliance"
-       },
-       "items": [
-        {
-         "key": "platform/compliance/governance-risk-compliance",
-         "label": {
-          "en": "Strengthen Governance, Risk & Compliance",
-          "pt-br": "Fortaleça Governança, Risco e Conformidade"
-         },
-         "slug": {
-          "en": "/documentation/platform/compliance/governance-risk-compliance/",
-          "pt-br": "/documentacao/platform/compliance/governanca-risco-conformidade/"
-         }
-        },
-        {
-         "key": "platform/compliance/pci-dss-certification",
-         "label": {
-          "en": "PCI Compliance",
-          "pt-br": "Compliance PCI"
-         },
-         "slug": {
-          "en": "/documentation/platform/compliance/pci-dss-certification/",
-          "pt-br": "/documentacao/platform/compliance/pci-dss-certification/"
-         }
-        },
-        {
-         "key": "platform/compliance/soc",
-         "label": {
-          "en": "SOC Compliance",
-          "pt-br": "Compliance SOC"
-         },
-         "slug": {
-          "en": "/documentation/platform/compliance/soc/",
-          "pt-br": "/documentacao/platform/compliance/soc/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "platform/network-program",
-       "label": {
-        "en": "Azion Network Program",
-        "pt-br": "Azion Network Appliance"
+        "en": "Strengthen Governance, Risk & Compliance",
+        "pt-br": "Fortaleça Governança, Risco e Conformidade"
        },
        "slug": {
-        "en": "/documentation/platform/network-program/",
-        "pt-br": "/documentacao/platform/network-program/"
+        "en": "/documentation/platform/compliance/governance-risk-compliance/",
+        "pt-br": "/documentacao/platform/compliance/governanca-risco-conformidade/"
        }
       },
       {
-       "key": "platform/pricing",
+       "key": "platform/compliance/pci-dss-certification",
        "label": {
-        "en": "Pricing",
-        "pt-br": "Preços"
+        "en": "PCI Compliance",
+        "pt-br": "Compliance PCI"
        },
        "slug": {
-        "en": "/documentation/platform/pricing/",
-        "pt-br": "/documentacao/platform/pricing/"
+        "en": "/documentation/platform/compliance/pci-dss-certification/",
+        "pt-br": "/documentacao/platform/compliance/pci-dss-certification/"
        }
       },
       {
-       "key": "platform/shared-responsibility",
+       "key": "platform/compliance/soc",
        "label": {
-        "en": "Shared Responsibility Model",
-        "pt-br": "Modelo de Responsabilidade Compartilhada"
+        "en": "SOC Compliance",
+        "pt-br": "Compliance SOC"
        },
        "slug": {
-        "en": "/documentation/platform/shared-responsibility/",
-        "pt-br": "/documentacao/platform/shared-responsibility/"
+        "en": "/documentation/platform/compliance/soc/",
+        "pt-br": "/documentacao/platform/compliance/soc/"
        }
       }
-     ],
+     ]
+    },
+    {
+     "key": "platform/network-program",
+     "label": {
+      "en": "Azion Network Program",
+      "pt-br": "Azion Network Appliance"
+     },
      "slug": {
-      "en": "/documentation/platform/overview/",
-      "pt-br": "/documentacao/platform/overview/"
+      "en": "/documentation/platform/network-program/",
+      "pt-br": "/documentacao/platform/network-program/"
+     }
+    },
+    {
+     "key": "platform/pricing",
+     "label": {
+      "en": "Pricing",
+      "pt-br": "Preços"
+     },
+     "slug": {
+      "en": "/documentation/platform/pricing/",
+      "pt-br": "/documentacao/platform/pricing/"
+     }
+    },
+    {
+     "key": "platform/shared-responsibility",
+     "label": {
+      "en": "Shared Responsibility Model",
+      "pt-br": "Modelo de Responsabilidade Compartilhada"
+     },
+     "slug": {
+      "en": "/documentation/platform/shared-responsibility/",
+      "pt-br": "/documentacao/platform/shared-responsibility/"
      }
     },
     {
