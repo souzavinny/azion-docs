@@ -1,0 +1,438 @@
+---
+/**
+ * Filterable catalog of every docs page in the current language, rendered on
+ * the Guides landing. Kind comes from
+ * the permalink shape, topic from the sidebar that owns the page; reference
+ * pages are left out — the catalog carries learning content only.
+ * Filter state round-trips through ?q=&kind=&topic= via the inline script.
+ * The page-scoped :has() styles below hide both docs sidebars, so the hub
+ * keeps only the sitewide readable column.
+ */
+import { allPages } from '~/content';
+import youtube from '~/data/youtube-videos.json';
+
+interface Props {
+	lang: 'en' | 'pt-br';
+}
+
+const { lang } = Astro.props;
+
+const KINDS = [
+	{ key: 'learning-path', label: { en: 'Learning path', 'pt-br': 'Trilha de aprendizado' }, defaultOn: true },
+	{ key: 'tutorial', label: { en: 'Tutorial', 'pt-br': 'Tutorial' }, defaultOn: true },
+	{ key: 'reference-architecture', label: { en: 'Reference architecture', 'pt-br': 'Arquitetura de referência' }, defaultOn: true },
+	{ key: 'video', label: { en: 'Video', 'pt-br': 'Vídeo' }, defaultOn: true },
+];
+
+const TS_MENU_TOPICS: Record<string, { key: string; title: { en: string; 'pt-br'?: string } }> = {
+	runtimeMenu: { key: 'runtime', title: { en: 'Azion Runtime' } },
+	cliMenuAlpha: { key: 'cli', title: { en: 'Azion CLI' } },
+	graphqlMenu: { key: 'graphql', title: { en: 'GraphQL API' } },
+	devtoolsMenu: { key: 'devtools', title: { en: 'Dev Tools' } },
+	libMenu: { key: 'lib', title: { en: 'Azion Lib' } },
+	mcpMenu: { key: 'mcp', title: { en: 'MCP Server' } },
+};
+
+const FALLBACK_TOPIC = { key: 'platform', title: { en: 'Platform', 'pt-br': 'Plataforma' } };
+
+const UI = {
+	en: {
+		searchPlaceholder: 'Search by name or description',
+		searchAria: 'Search pages',
+		filtersAria: 'Filters',
+		contentType: 'Content type',
+		topics: 'Topics',
+		clear: 'Clear filters',
+		empty: 'No pages match your filters.',
+		pageOne: 'page',
+		pageMany: 'pages',
+	},
+	'pt-br': {
+		searchPlaceholder: 'Busque por nome ou descrição',
+		searchAria: 'Buscar páginas',
+		filtersAria: 'Filtros',
+		contentType: 'Tipo de conteúdo',
+		topics: 'Tópicos',
+		clear: 'Limpar filtros',
+		empty: 'Nenhuma página corresponde aos filtros.',
+		pageOne: 'página',
+		pageMany: 'páginas',
+	},
+}[lang];
+
+const menuModules = import.meta.glob('../i18n/menus/*.menu.json', { eager: true });
+const camelize = (kebab: string) => kebab.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+
+const topicByMenu = new Map<string, { key: string; label: string }>();
+for (const [path, mod] of Object.entries(menuModules)) {
+	const kebab = path.split('/').pop()!.replace('.menu.json', '');
+	const meta = ((mod as any).default ?? mod).meta;
+	if (!meta?.title) continue;
+	topicByMenu.set(`${camelize(kebab)}Menu`, {
+		key: kebab,
+		label: meta.title[lang] ?? meta.title.en,
+	});
+}
+for (const [menuName, topic] of Object.entries(TS_MENU_TOPICS)) {
+	topicByMenu.set(menuName, { key: topic.key, label: topic.title[lang] ?? topic.title.en });
+}
+const fallbackTopic = { key: FALLBACK_TOPIC.key, label: FALLBACK_TOPIC.title[lang] ?? FALLBACK_TOPIC.title.en };
+
+const kindOf = (permalink: string) => {
+	if (permalink.includes('/guides/') || permalink.includes('/guias/')) return 'tutorial';
+	if (/^\/(documentation|documentacao)\/architectures\//.test(permalink)) return 'reference-architecture';
+	if (/^\/(documentation|documentacao)\/(get-started|agent-setup)\//.test(permalink)) return 'learning-path';
+	return 'reference';
+};
+
+const items = allPages
+	.filter(
+		(page) =>
+			page.slug.startsWith(`${lang}/`) &&
+			typeof page.data.permalink === 'string' &&
+			page.data.type !== 'homepage' &&
+			page.data.namespace !== 'documentation_how_to'
+	)
+	.map((page) => {
+		const topic = topicByMenu.get(page.data.menu_namespace) ?? fallbackTopic;
+		return {
+			href: `/${lang}${page.data.permalink}`,
+			title: page.data.title,
+			description: page.data.description ?? '',
+			kind: kindOf(page.data.permalink),
+			topicKey: topic.key,
+			topicLabel: topic.label,
+			external: false,
+		};
+	})
+	.filter((item) => item.kind !== 'reference')
+	.concat(
+		youtube.videos.map((video) => ({
+			href: `https://www.youtube.com/watch?v=${video.id}`,
+			title: video.title,
+			description: video.description ?? '',
+			kind: 'video',
+			topicKey: 'youtube',
+			topicLabel: 'YouTube',
+			external: true,
+		}))
+	)
+	.sort((a, b) => a.title.localeCompare(b.title, lang));
+
+const kindLabel = new Map(KINDS.map((k) => [k.key, k.label[lang] ?? k.label.en]));
+const kindCount = new Map(KINDS.map((k) => [k.key, items.filter((i) => i.kind === k.key).length]));
+const topics = [...new Map(items.map((i) => [i.topicKey, i.topicLabel]))]
+	.map(([key, label]) => ({ key, label, count: items.filter((i) => i.topicKey === key).length }))
+	.sort((a, b) => a.label.localeCompare(b.label, lang));
+
+const defaultKinds = KINDS.filter((k) => k.defaultOn).map((k) => k.key);
+const defaultCount = items.filter((i) => defaultKinds.includes(i.kind)).length;
+---
+
+<div
+	id="guides-catalog"
+	data-default-kinds={defaultKinds.join(',')}
+	data-page-one={UI.pageOne}
+	data-page-many={UI.pageMany}
+>
+	<aside class="catalog-filters" aria-label={UI.filtersAria}>
+		<input
+			type="search"
+			class="p-inputtext w-full"
+			data-catalog-search
+			placeholder={UI.searchPlaceholder}
+			aria-label={UI.searchAria}
+		/>
+
+		<p class="catalog-group-label" id="catalog-kinds-label">{UI.contentType}</p>
+		<ul class="catalog-options" role="group" aria-labelledby="catalog-kinds-label">
+			{
+				KINDS.map((k) => (
+					<li>
+						<label class="catalog-option">
+							<input type="checkbox" data-catalog-kind={k.key} checked={k.defaultOn} />
+							<span>{kindLabel.get(k.key)}</span>
+							<span class="catalog-option-count">{kindCount.get(k.key)}</span>
+						</label>
+					</li>
+				))
+			}
+		</ul>
+
+		<p class="catalog-group-label" id="catalog-topics-label">{UI.topics}</p>
+		<ul class="catalog-options" role="group" aria-labelledby="catalog-topics-label">
+			{
+				topics.map((topic) => (
+					<li>
+						<label class="catalog-option">
+							<input type="checkbox" data-catalog-topic={topic.key} />
+							<span>{topic.label}</span>
+							<span class="catalog-option-count">{topic.count}</span>
+						</label>
+					</li>
+				))
+			}
+		</ul>
+	</aside>
+
+	<div class="catalog-results">
+		<div class="flex items-center justify-between mb-2">
+			<p class="m-0 text-sm text-color-secondary" data-catalog-count aria-live="polite">
+				{defaultCount} {defaultCount === 1 ? UI.pageOne : UI.pageMany}
+			</p>
+			<button type="button" class="p-button p-button-sm p-button-text" data-catalog-clear>
+				{UI.clear}
+			</button>
+		</div>
+
+		<div class="grid gap-3 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+			{
+				items.map((item) => (
+					<a
+						class="catalog-item"
+						href={item.href}
+						target={item.external ? '_blank' : undefined}
+						rel={item.external ? 'noopener' : undefined}
+						hidden={!defaultKinds.includes(item.kind)}
+						data-catalog-item
+						data-kind={item.kind}
+						data-topic={item.topicKey}
+						data-search={`${item.title} ${item.description}`.toLowerCase()}
+					>
+						<span class="catalog-overline">
+							{
+								kindLabel.get(item.kind) === item.topicLabel
+									? item.topicLabel
+									: `${kindLabel.get(item.kind)} · ${item.topicLabel}`
+							}
+						</span>
+						<span class="catalog-title">{item.title}</span>
+						{item.description && <span class="catalog-description">{item.description}</span>}
+					</a>
+				))
+			}
+		</div>
+
+		<p class="mt-4 text-color-secondary" data-catalog-empty hidden>{UI.empty}</p>
+	</div>
+</div>
+
+<style is:global>
+	body:has(#guides-catalog) #left-sidebar,
+	body:has(#guides-catalog) #right-sidebar {
+		display: none !important;
+	}
+	body:has(#guides-catalog) .layout {
+		grid-template-columns: 1fr !important;
+	}
+</style>
+
+<style>
+	#guides-catalog {
+		display: grid;
+		grid-template-columns: 15rem 1fr;
+		gap: 2rem;
+		align-items: start;
+	}
+	.catalog-filters {
+		position: sticky;
+		top: 5rem;
+		max-height: calc(100vh - 6rem);
+		overflow-y: auto;
+	}
+	@media (max-width: 767px) {
+		#guides-catalog {
+			grid-template-columns: 1fr;
+		}
+		.catalog-filters {
+			position: static;
+			max-height: none;
+		}
+	}
+	.catalog-group-label {
+		margin: 1.5rem 0 0.5rem;
+		font-size: 0.6875rem;
+		font-weight: 500;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--text-color-secondary);
+	}
+	.catalog-options {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.375rem;
+	}
+	.catalog-option {
+		display: flex;
+		align-items: baseline;
+		gap: 0.5rem;
+		font-size: 0.875rem;
+		cursor: pointer;
+	}
+	.catalog-option input {
+		accent-color: var(--primary-color);
+		cursor: pointer;
+	}
+	.catalog-option-count {
+		color: var(--text-color-secondary);
+		font-size: 0.75rem;
+	}
+	.catalog-item {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+		padding: 1rem;
+		border: 1px solid var(--surface-border);
+		border-radius: 6px;
+		text-decoration: none;
+		color: var(--text-color);
+	}
+	.catalog-item[hidden] {
+		display: none;
+	}
+	.catalog-item:hover {
+		border-color: var(--primary-color);
+	}
+	.catalog-overline {
+		font-size: 0.6875rem;
+		font-weight: 500;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: var(--text-color-secondary);
+	}
+	.catalog-title {
+		font-weight: 500;
+	}
+	.catalog-description {
+		font-size: 0.875rem;
+		color: var(--text-color-secondary);
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+</style>
+
+<script is:inline>
+	(function () {
+		var root = document.getElementById('guides-catalog');
+		if (!root) return;
+		var input = root.querySelector('[data-catalog-search]');
+		var kindBoxes = Array.prototype.slice.call(root.querySelectorAll('[data-catalog-kind]'));
+		var topicBoxes = Array.prototype.slice.call(root.querySelectorAll('[data-catalog-topic]'));
+		var items = Array.prototype.slice.call(root.querySelectorAll('[data-catalog-item]'));
+		var countEl = root.querySelector('[data-catalog-count]');
+		var emptyEl = root.querySelector('[data-catalog-empty]');
+		var clearBtn = root.querySelector('[data-catalog-clear]');
+		var defaultKinds = root.getAttribute('data-default-kinds').split(',');
+
+		function norm(s) {
+			return s
+				.toLowerCase()
+				.normalize('NFD')
+				.replace(/[\u0300-\u036f]/g, '');
+		}
+		items.forEach(function (item) {
+			item._search = norm(item.getAttribute('data-search') || '');
+		});
+
+		var state = { q: '', kinds: defaultKinds.slice(), topics: [] };
+
+		function readUrl() {
+			var params = new URLSearchParams(location.search);
+			state.q = params.get('q') || '';
+			var topic = params.get('topic');
+			state.topics = topic ? topic.split(',') : [];
+			var kind = params.get('kind');
+			if (kind === null) state.kinds = defaultKinds.slice();
+			else if (kind === 'all' || kind === '') state.kinds = [];
+			else state.kinds = kind.split(',');
+		}
+
+		function writeUrl() {
+			var params = new URLSearchParams(location.search);
+			state.q ? params.set('q', state.q) : params.delete('q');
+			state.topics.length
+				? params.set('topic', state.topics.slice().sort().join(','))
+				: params.delete('topic');
+			var sorted = state.kinds.slice().sort().join(',');
+			if (sorted === defaultKinds.slice().sort().join(',')) params.delete('kind');
+			else if (!state.kinds.length) params.set('kind', 'all');
+			else params.set('kind', sorted);
+			var query = params.toString();
+			history.replaceState(null, '', location.pathname + (query ? '?' + query : ''));
+		}
+
+		function apply() {
+			input.value = state.q;
+			kindBoxes.forEach(function (box) {
+				box.checked = state.kinds.indexOf(box.getAttribute('data-catalog-kind')) !== -1;
+			});
+			topicBoxes.forEach(function (box) {
+				box.checked = state.topics.indexOf(box.getAttribute('data-catalog-topic')) !== -1;
+			});
+			var q = norm(state.q.trim());
+			var visible = 0;
+			items.forEach(function (item) {
+				var match =
+					(!state.kinds.length || state.kinds.indexOf(item.getAttribute('data-kind')) !== -1) &&
+					(!state.topics.length || state.topics.indexOf(item.getAttribute('data-topic')) !== -1) &&
+					(!q || item._search.indexOf(q) !== -1);
+				item.hidden = !match;
+				if (match) visible++;
+			});
+			countEl.textContent =
+				visible +
+				' ' +
+				(visible === 1 ? root.getAttribute('data-page-one') : root.getAttribute('data-page-many'));
+			emptyEl.hidden = visible > 0;
+		}
+
+		var debounce;
+		input.addEventListener('input', function () {
+			clearTimeout(debounce);
+			debounce = setTimeout(function () {
+				state.q = input.value;
+				apply();
+				writeUrl();
+			}, 120);
+		});
+		kindBoxes.forEach(function (box) {
+			box.addEventListener('change', function () {
+				state.kinds = kindBoxes
+					.filter(function (b) {
+						return b.checked;
+					})
+					.map(function (b) {
+						return b.getAttribute('data-catalog-kind');
+					});
+				apply();
+				writeUrl();
+			});
+		});
+		topicBoxes.forEach(function (box) {
+			box.addEventListener('change', function () {
+				state.topics = topicBoxes
+					.filter(function (b) {
+						return b.checked;
+					})
+					.map(function (b) {
+						return b.getAttribute('data-catalog-topic');
+					});
+				apply();
+				writeUrl();
+			});
+		});
+		clearBtn.addEventListener('click', function () {
+			state = { q: '', kinds: defaultKinds.slice(), topics: [] };
+			apply();
+			writeUrl();
+		});
+
+		readUrl();
+		apply();
+	})();
+</script>

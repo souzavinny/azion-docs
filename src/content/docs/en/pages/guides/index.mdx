@@ -1,40 +1,15 @@
 ---
-title: Guides
+title: Guides and tutorials
 description: >-
-  Task-focused guides for Azion, sorted by where you are: shipping your first
-  application, moving from another provider, or working in a specific area of
-  the platform.
-meta_tags: 'guides, how-to, tutorials'
+  Find guides, tutorials, how-tos, and reference content for every Azion topic.
+  Filter by topic or content type, or search by name.
+meta_tags: 'guides, tutorials, how-to, reference, search'
 namespace: documentation_how_to
 permalink: /documentation/guides/
-menu_namespace: guidesMenu
 ---
 
-import DocsCard from '~/components/DocsCard.astro';
+import GuidesCatalog from '~/components/GuidesCatalog.astro';
 
-Every guide here ends with something working. The sidebar lists all of them by product; this page points you at the right shelf.
+Every learning path, tutorial, reference architecture, and video for Azion, in one place. Filter by content type or topic, or search by name. Videos come from the [Azion channel on YouTube](https://www.youtube.com/@aziontech) and open there.
 
-## Starting out
-
-You haven't shipped anything on Azion yet, or you're bringing over something that already runs somewhere else.
-
-<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-    <DocsCard link="/en/documentation/get-started/first-deploy/" title="First deploy" icon="pi pi-bolt" description="Template, repo, or CLI. Ends on your own Azion domain." />
-    <DocsCard link="/en/documentation/get-started/start-with-a-template/" title="Use a template" icon="pi pi-th-large" description="Ready-made projects, CI/CD already wired up." />
-    <DocsCard link="/en/documentation/get-started/migrate/" title="Migrate to Azion" icon="pi pi-arrow-right-arrow-left" description="Akamai, AWS, Cloudflare, Fastly, and Vercel." />
-</div>
-
-## Working in a specific area
-
-You know what you need. Pick the area and the sidebar opens on its guides.
-
-<div class="grid gap-3 my-6 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-    <DocsCard link="/en/documentation/build/applications/guides/configure-main-settings/" title="Build" icon="ai ai-build-pillar" description="22 guides: applications, cache, functions, images." />
-    <DocsCard link="/en/documentation/store/kv-store/guides/manage-with-functions/" title="Store" icon="ai ai-store" description="15 guides: KV Store, Object Storage, SQL Database." />
-    <DocsCard link="/en/documentation/secure/firewall/guides/firewall-configure-main-settings/" title="Secure" icon="ai ai-secure-pillar" description="22 guides: firewall, WAF, bots, network lists, DNS, TLS." />
-    <DocsCard link="/en/documentation/observe/data-stream/guides/add-filters-metrics/" title="Observe" icon="ai ai-observe-pillar" description="16 guides: metrics, events, dashboards, log streaming." />
-    <DocsCard link="/en/documentation/account/guides/account-lockout-policy-logs/" title="Account and deploy" icon="pi pi-user" description="16 guides: identity, access, audit, Orchestrator." />
-    <DocsCard link="/en/documentation/marketplace/guides/install-an-integration/" title="Marketplace" icon="ai ai-marketplace" description="Install and configure ready-made integrations." />
-</div>
-
-Something already live behaving oddly? Start with [debugging rules](/en/documentation/build/applications/guides/debug-rules/), [checking cache indicators](/en/documentation/build/applications/cache/guides/check-page-cache-time/), or [looking up DNS with dig](/en/documentation/secure/edge-dns/guides/run-the-dig-command/).
+<GuidesCatalog lang="en" />

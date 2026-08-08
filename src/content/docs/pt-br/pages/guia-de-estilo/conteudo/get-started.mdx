@@ -1,0 +1,108 @@
+---
+title: Páginas Get started
+description: >-
+  Como escrever uma página Get started: um tutorial cujo objetivo é a primeira
+  ativação de um produto, com um único caminho e pré-requisitos mínimos.
+meta_tags: 'style guide, get started'
+namespace: documentation_style_guide_get_started
+permalink: /documentacao/guia-de-estilo/conteudo/get-started/
+menu_namespace: styleGuideMenu
+---
+
+## Propósito
+
+Uma página Get started é um tutorial cujo objetivo é a primeira ativação de um produto: de não usar o produto até o menor resultado que funciona. Ela é um padrão do tipo [tutorial](/pt-br/documentacao/guia-de-estilo/conteudo/tutoriais/), não um novo tipo de conteúdo.
+
+## Quando usar
+
+- Escreva uma página Get started quando um produto precisa de um caminho documentado até o primeiro resultado que funciona.
+- Escreva uma página Get started por produto, como ponto de entrada logo depois do Overview do produto.
+- Não escreva uma página Get started para uma tarefa que o leitor já tem em mente. Essa tarefa precisa de um [guia how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/).
+- Não escreva uma página Get started para apresentar opções ou comparar interfaces. O padrão tem um único caminho.
+- Não escreva uma página Get started separada para uma solução ou um recurso. O padrão cobre um produto inteiro.
+
+## Estrutura
+
+Uma página Get started segue o esqueleto do tutorial. [Tutoriais](/pt-br/documentacao/guia-de-estilo/conteudo/tutoriais/) argumenta cada parte; a lista abaixo nomeia o que o padrão exige.
+
+**Componentes obrigatórios**
+
+- **Parágrafo de abertura**: o que o leitor terá ao final e aproximadamente quanto tempo a página leva.
+- **Antes de começar**: o conjunto mínimo real de pré-requisitos, cada um como link ou comando de uma linha.
+- **Passos**: seções de passos numerados em um único caminho, até o menor resultado que funciona.
+- **O que você construiu**: um parágrafo que reafirma o resultado que funciona.
+- **Próximos passos**: dois ou três links para os guias do produto, cada um com uma razão para o clique.
+
+**Componentes opcionais**
+
+- **Capturas de tela**: para um passo cujo resultado visível é uma tela, não a saída de um comando.
+- **Asides**: raros. Um tutorial cheio de blocos de nota tenta ser material de referência.
+
+## Template
+
+```md
+[Um parágrafo: o que o leitor terá ao final e
+aproximadamente quanto tempo leva.]
+
+## Antes de começar
+
+- <Pré-requisito que a página não pode fornecer, como link ou comando de uma linha>
+
+## Passo 1: <frase verbal>
+
+<O que fazer. Uma instrução por frase.>
+
+<O que o leitor vê: saída de comando, captura de tela ou uma URL para abrir.>
+
+## Passo 2: <frase verbal>
+
+<...>
+
+## O que você construiu
+
+<Um parágrafo. Reafirme o resultado que funciona.>
+
+## Próximos passos
+
+- <Guia how-to dos Guias deste produto, com uma razão para o clique>
+- <Um segundo guia, ou a referência do produto>
+```
+
+## Mantenha os pré-requisitos no mínimo real
+
+Cada item em "Antes de começar" é uma razão para o leitor abandonar a página. Liste somente o que a página não pode fornecer, como uma conta na Azion. Forneça todo o resto dentro dos passos e coloque um link em cada item que sobrar.
+
+## Documente o caminho mínimo
+
+Uma página Get started mostra um caminho e nenhuma opção. O autor escolhe a interface, escolhe cada valor e não diz nada sobre alternativas. Opções pertencem aos [guias how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/), onde o leitor tem uma situação real para comparar com elas.
+
+- Incorreto: `Crie a função pelo Console, pela Azion CLI ou pela API.`
+- Correto: `Crie a função pelo Console.`
+
+As frases "você também pode" e "dependendo da sua configuração" marcam a saída do padrão. O conteúdo atrás de qualquer uma delas pertence a um guia how-to.
+
+## Termine com o resultado que funciona
+
+Depois do último passo, o produto funciona, e o leitor vê que o produto funciona. "O que você construiu" reafirma o resultado em um parágrafo. "Próximos passos" traz dois ou três links para os guias do produto, cada um com uma razão para o clique. O leitor que termina a ativação vira um leitor de guia how-to, e os guias do produto servem esse leitor.
+
+## Posicione a página no topo da seção de produto
+
+Toda seção de produto abre com um Overview e seu ponto de entrada Get started. A página Get started fica logo depois do Overview, antes das páginas de referência e dos guias. [Arquitetura de informação](/pt-br/documentacao/guia-de-estilo/conteudo/arquitetura-de-informacao/) cobre a estrutura completa da seção de produto.
+
+## Aplique todas as regras de tutorial
+
+Uma página Get started é um tutorial, então todas as regras da página [Tutoriais](/pt-br/documentacao/guia-de-estilo/conteudo/tutoriais/) se aplicam. As regras que mais falham em rascunhos:
+
+- Escreva uma instrução por passo, com no máximo 20 palavras por frase, no imperativo.
+- Termine cada passo com um resultado visível.
+- Teste cada comando e cada trecho de código antes de publicar a página.
+- Não ramifique e não explique. Dê a um conceito necessário uma frase e um link.
+
+Tutoriais são caros de manter, então mantenha os tutoriais escassos. Para a maioria dos produtos, a página Get started é o único tutorial de que o produto precisa.
+
+## Páginas relacionadas
+
+- [Tutoriais](/pt-br/documentacao/guia-de-estilo/conteudo/tutoriais/): o tipo de conteúdo que este padrão aplica, com as regras completas.
+- [Guias how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/): para onde vão as opções e as alternativas.
+- [Arquitetura de informação](/pt-br/documentacao/guia-de-estilo/conteudo/arquitetura-de-informacao/): onde a página fica na seção de produto.
+- [Escolher um tipo de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/): os quatro tipos de conteúdo e os testes que os separam.

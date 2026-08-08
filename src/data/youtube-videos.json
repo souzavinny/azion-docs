@@ -1,0 +1,60 @@
+{
+	"channel": "https://www.youtube.com/@aziontech",
+	"videos": [
+		{
+			"id": "-JvpRhO_GIM",
+			"title": "Next.js Without Vendor Lock-in: OpenNext Step-by-Step Guide",
+			"description": "Deploy a Next.js application on Azion with OpenNext, from azion init to azion link."
+		},
+		{
+			"id": "RvjAX1Dc_R4",
+			"title": "Automatic Image Optimization for E-commerce - full setup in few minutes",
+			"description": "Configure automatic image optimization at the infrastructure level, with no code on your server."
+		},
+		{
+			"id": "krF8EYT3K3k",
+			"title": "DDoS, Hijacking, Tunneling: How to Protect DNS with Azion Edge DNS + DNSSEC",
+			"description": "Harden your DNS against flooding, hijacking, poisoning, and tunneling with Azion Edge DNS and DNSSEC."
+		},
+		{
+			"id": "C7OMOj6ERu8",
+			"title": "Rate Limiting That Actually Works: Protecting E-commerce Checkout Endpoints",
+			"description": "Configure a WAF that rate-limits checkout endpoints without blocking legitimate buyers."
+		},
+		{
+			"id": "0fQkO_Jjxxo",
+			"title": "I Built & Deployed a Website Using ONLY AI (Codex + Azion MCP Challenge)",
+			"description": "Set up Azion MCP in the OpenAI Codex app and deploy an AI-generated website step by step."
+		},
+		{
+			"id": "cSR2-5ku_mw",
+			"title": "How to Deploy Static Sites FAST (Without Docker, YAML, or Server Headaches)",
+			"description": "Deploy a static site from GitHub to a global network in minutes, without Docker or YAML."
+		},
+		{
+			"id": "3Xq0w2Y2Nj4",
+			"title": "How I Implemented RAG on Azion (with code included)",
+			"description": "Build a complete RAG system with Azion SQL Database vector search, TypeScript, and AI Inference."
+		},
+		{
+			"id": "DEyaofQOjro",
+			"title": "Scale AI Agents - Security Agents in Azion's Distributed Infrastructure",
+			"description": "Orchestrate AI and security agents with LangGraph in Functions, SQL Database, MCP, and LangSmith."
+		},
+		{
+			"id": "WCTvtkaoJWo",
+			"title": "Azion Edge Storage via Command Line Interface CLI",
+			"description": "Create, read, update, and delete Edge Storage buckets and objects with the Azion CLI."
+		},
+		{
+			"id": "oopZvom3YhY",
+			"title": "How to Install & Use the DIG Command on Windows",
+			"description": "Install the dig tool on Windows and use it to query DNS servers and troubleshoot DNS issues."
+		},
+		{
+			"id": "KB4f4bSyHgI",
+			"title": "Dig into DNS: Install & Use Dig Command Like a Pro",
+			"description": "Install dig on Windows, Mac, and Linux and use it for DNS lookups, CNAME checks, and validation."
+		}
+	]
+}

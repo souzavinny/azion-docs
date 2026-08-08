@@ -5,10 +5,11 @@
 		:unstyled="true"
 		:pt="{
 			headerContent: { class: ['cursor-text'] },
-			// PrimeVue's default 'p-toggleable-content' name carries a runtime-injected
-			// 1s max-height animation, which replays when hydration re-expands the active
-			// chain. A name with no CSS makes expand/collapse instant.
-			transition: { name: 'sidebar-toggle-instant' },
+			// Starts as a name with no CSS so the hydration re-expand of the active
+			// chain stays instant (PrimeVue seeds its state in mounted(), which would
+			// replay the animation on every page load); switches to the animated name
+			// once that has settled, so only user toggles animate.
+			transition: { name: transitionName },
 		}"
 	>
 		<template #item="{ item }">
@@ -109,11 +110,18 @@
 	 * https://v3.primevue.org/panelmenu/#controlled
 	 *
 	 */
-	import { ref } from 'vue';
+	import { onMounted, ref } from 'vue';
 	import PanelMenu from 'primevue/panelmenu';
 	import { modelSlug, isURL } from '~/util';
 
 	const expandedKeys = ref({});
+	const transitionName = ref('sidebar-toggle-instant');
+	onMounted(() => {
+		// Two frames guarantee the hydration expand has rendered under the instant name.
+		requestAnimationFrame(() => requestAnimationFrame(() => {
+			transitionName.value = 'sidebar-toggle';
+		}));
+	});
 	const props = defineProps({
 		currentPageMatch: { type: String },
 		lang: {  type: String },
@@ -215,3 +223,29 @@
 		}
 	})();
 </script>
+<style>
+/* PrimeVue's standard toggleable-content slide, under a local name so the
+   instant hydration name above can opt out of it. */
+.sidebar-toggle-enter-active {
+	overflow: hidden;
+	transition: max-height 1s ease-in-out;
+}
+.sidebar-toggle-leave-active {
+	overflow: hidden;
+	transition: max-height 0.45s cubic-bezier(0, 1, 0, 1);
+}
+.sidebar-toggle-enter-from,
+.sidebar-toggle-leave-to {
+	max-height: 0;
+}
+.sidebar-toggle-enter-to,
+.sidebar-toggle-leave-from {
+	max-height: 1200px;
+}
+@media (prefers-reduced-motion: reduce) {
+	.sidebar-toggle-enter-active,
+	.sidebar-toggle-leave-active {
+		transition: none;
+	}
+}
+</style>

@@ -61,5 +61,5 @@ Verifique qualquer um dos caminhos com o mesmo `curl -I` acima.
 ## Depois do deploy
 
 - Entre em produção com um domínio próprio: https://www.azion.com/pt-br/documentacao/get-started/ative-em-producao.md
-- Proteja a aplicação (Firewall, WAF): https://www.azion.com/pt-br/documentacao/secure/overview.md
-- Observe métricas e eventos: https://www.azion.com/pt-br/documentacao/observe/overview.md
+- Proteja a aplicação (Firewall, WAF): https://www.azion.com/pt-br/documentacao/secure/firewall.md
+- Observe métricas e eventos: https://www.azion.com/pt-br/documentacao/observe/real-time-metrics.md

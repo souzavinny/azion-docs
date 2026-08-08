@@ -6,6 +6,7 @@ permalink: /documentacao/architectures/api-gateways/implementar-seguranca-api-ga
 meta_tags: >-
   Segurança de API Gateways, perímetro de segurança, API Gateways, Firewall, DDoS Protection, regras WAF, políticas de segurança, Azion Web Platform, criptografia de tráfego, atividade maliciosa
 namespace: docs_arch_api_gateways_security
+menu_namespace: architecturesMenu
 ---
 
 [API Gateways](https://www.azion.com/pt-br/solucoes/api-gateway/) permitem a gestão e roteamento inteligente de requisições de API para os microserviços de backend apropriados em redes distribuídas. Eles atuam como um único ponto de entrada para todas as requisições de API. Enquanto um API Gateway facilita o fluxo eficiente de tráfego e centraliza o controle, ele também introduz a necessidade de medidas de segurança e monitoramento para prevenir problemas de desempenho e vulnerabilidades de segurança.
@@ -58,7 +59,7 @@ Através desse perímetro, você pode implementar soluções como:
 ## Implementação
 
 1. Implement your API Gateway.
-2. [Crie uma aplicação](/pt-br/documentacao/build/overview/).
+2. [Crie uma aplicação](/pt-br/documentacao/build/applications/).
     - Você pode usar o [Azion Console](https://console.azion.com/), a [Azion API](https://api.azion.com/) ou a [Azion CLI](/pt-br/documentacao/produtos/azion-cli/visao-geral/) para criar e implantar uma aplicação.
     - [Defina as configurações principais da aplicação](/pt-br/documentacao/build/applications/guides/definir-configuracoes-principais/).
 3. Associe o [domínio personalizado](/pt-br/documentacao/secure/workloads/guides/configurar-dominio/) do seu API Gateway com sua application.
@@ -66,7 +67,7 @@ Através desse perímetro, você pode implementar soluções como:
 5. [Crie um firewall](/pt-br/documentacao/secure/firewall/guides/firewall-definir-main-settings/) e selecione o domínio que deseja proteger.
     - Defina quaisquer [regras WAF](/pt-br/documentacao/secure/firewall/guides/criar-waf-rule-set/), [regras do Rules Engine](/pt-br/documentacao/secure/firewall/reference/rules-engine/) ou [functions](/pt-br/documentacao/secure/firewall/reference/functions/) que deseja implementar e instanciar no firewall.
     - Instale e configure as [Azion Integrations](/pt-br/documentacao/marketplace/reference/integracoes/) que deseja usar para aprimorar suas políticas de segurança.
-6. [Monitore o comportamento do seu API Gateway ](/pt-br/documentacao/observe/overview/) através dos produtos Observe.
+6. [Monitore o comportamento do seu API Gateway ](/pt-br/documentacao/) através dos produtos Observe.
 
 ---
 

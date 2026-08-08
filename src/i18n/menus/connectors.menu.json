@@ -1,0 +1,49 @@
+{
+ "meta": {
+  "title": {
+   "en": "Connectors"
+  },
+  "root": {
+   "en": "/documentation/secure/connectors/",
+   "pt-br": "/documentacao/secure/connectors/"
+  }
+ },
+ "groups": [
+  {
+   "key": "conn/grp",
+   "items": [
+    {
+     "key": "conn/overview",
+     "label": {
+      "en": "Overview",
+      "pt-br": "Visão geral"
+     },
+     "slug": {
+      "en": "/documentation/secure/connectors/",
+      "pt-br": "/documentacao/secure/connectors/"
+     }
+    },
+    {
+     "key": "conn/secure/connectors/reference/load-balancer",
+     "label": {
+      "en": "Load Balancer"
+     },
+     "slug": {
+      "en": "/documentation/secure/connectors/reference/load-balancer/",
+      "pt-br": "/documentacao/secure/connectors/reference/load-balancer/"
+     }
+    },
+    {
+     "key": "conn/secure/connectors/reference/origin-shield",
+     "label": {
+      "en": "Origin Shield"
+     },
+     "slug": {
+      "en": "/documentation/secure/connectors/reference/origin-shield/",
+      "pt-br": "/documentacao/secure/connectors/reference/origin-shield/"
+     }
+    }
+   ]
+  }
+ ]
+}

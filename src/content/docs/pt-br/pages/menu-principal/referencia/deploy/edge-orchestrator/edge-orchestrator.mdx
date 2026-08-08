@@ -6,6 +6,7 @@ description: >-
   redes Edge de grande escala
 meta_tags: 'Orchestrator, Edge Computing'
 namespace: documentation_products_edge_orchestrator
+menu_namespace: orchestratorMenu
 permalink: /documentacao/deploy/orchestrator/
 ---
 
@@ -17,6 +18,8 @@ Com o Orchestrator, você pode:
 - Abrir e executar em vários tipos de arquiteturas, como microprocessadores como x86 e ARM, e em vários tipos de tamanho de equipamento, incluindo Raspberry PI, equipamentos de rede como switches e roteadores SD-WAN e também servidores corporativos, pois foi projetado para isso.
 - Usar na maioria das arquiteturas de rede, incluindo redes locais e públicas, e também por trás de NATs.
 - Simplificar a instalação e atualização do software, pois é compilado com todas as dependências do núcleo e de bibliotecas.
+
+O Orchestrator implanta cargas de trabalho na rede distribuída da Azion, em plataformas multi-cloud, on-premises ou em dispositivos remotos. Ele pode rodar nativamente no sistema operacional, dentro de contêineres ou em cima do [Azion Runtime](/pt-br/documentacao/runtime/visao-geral/).
 
 ---
 
@@ -36,7 +39,9 @@ Um agente do Azion Orchestrator é instalado nos Edge Nodes e fornece gerenciame
 1. Manual em cada Edge Node.
 2. Automática junto com os sistemas operacionais como: uma distro linux ou imagem O.S do cliente ou fornecedor de hardware, por exemplo: um roteador SD-WAN, um switch de rede ou um servidor Linux. Os clientes podem usar um modo de registro automático, simplificando a implementação (exemplo: novos locais de nodes ou escalonamento automático de nodes), atualização e gerenciamento de uma grande quantidade de Edge Nodes em escala.
 
-Todos os serviços vinculados aos Edge Nodes serão orquestrados e configurados a partir do momento em que o dispositivo é autorizado via painel de controle. A orquestração é feita de forma sequencial e respeita as dependências entre recursos e gatilhos necessários para a sua configuração.
+Todos os serviços vinculados aos Edge Nodes serão orquestrados e configurados a partir do momento em que o dispositivo é autorizado via painel de controle. Um serviço pode ser vinculado a vários Edge Nodes: quando um serviço é atualizado, ele é automaticamente implantado nos Edge Nodes aos quais está relacionado.
+
+A orquestração é feita de forma sequencial e respeita as dependências entre recursos e gatilhos necessários para a sua configuração.
 
 ---
 
@@ -51,7 +56,7 @@ Saiba mais sobre [Edge Node](/pt-br/documentacao/deploy/orchestrator/reference/e
 
 ## Edge Services
 
-O módulo Edge Services habilita a criação de serviços próprios do cliente. Você pode levar seus serviços customizados para o Edge e garantir o gerenciamento e orquestração nos dispositivos via painel de controle.
+O módulo Edge Services habilita a criação de serviços próprios do cliente. Você pode levar seus serviços customizados para o Edge e garantir o gerenciamento e orquestração nos dispositivos via painel de controle. Você pode configurar gatilhos de instalação, desinstalação e recarregamento, e definir dependências de recursos para a execução do serviço.
 
 [Saiba mais sobre Edge Services](/pt-br/documentacao/deploy/orchestrator/reference/edge-services/).
 

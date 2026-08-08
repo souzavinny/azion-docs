@@ -6,6 +6,7 @@ description: >-
 namespace: >-
   documentation_products_edge_firewall_web_application_firewall_custom_allowed_rules
 permalink: /documentacao/secure/waf/reference/custom-allowed-rules/
+menu_namespace: firewallMenu
 ---
 
 **Web Application Firewall (WAF) Exceções** são configurações que explicitamente permitem que certos padrões de requisições não sejam bloqueados, sobrepondo a definição das regras de segurança do WAF padrão que identificariam essas requisições como potencialmente maliciosas. Operam em alto nível, analisando componentes específicos das requisições HTTP, como parâmetros (ARGS), conteúdos do corpo da requisição (BODY) ou o caminho da URL (URL). A exceção é definida com um identificador único, um string de correspondência e uma zona de aplicação, assegurando que o filtro de segurança permaneça eficaz ao minimizar bloqueios de requisições que contenham características consideradas necessárias ou legítimas pelo usuário, ou seja, falsos positivos.

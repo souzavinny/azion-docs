@@ -1,0 +1,416 @@
+{
+ "meta": {
+  "title": {
+   "en": "Architectures",
+   "pt-br": "Arquiteturas"
+  },
+  "root": {
+   "en": "/documentation/architectures/",
+   "pt-br": "/documentacao/architectures/"
+  }
+ },
+ "groups": [
+  {
+   "key": "arch/grp",
+   "items": [
+    {
+     "key": "arch/overview",
+     "label": {
+      "en": "Overview",
+      "pt-br": "Visão geral"
+     },
+     "slug": {
+      "en": "/documentation/architectures/",
+      "pt-br": "/documentacao/architectures/"
+     }
+    },
+    {
+     "key": "arch/architectures/api-gateways",
+     "label": {
+      "en": "API Gateways"
+     },
+     "items": [
+      {
+       "key": "arch/architectures/api-gateways/implement-api-gateways-security",
+       "label": {
+        "en": "Secure Your API Gateway with a Perimeter",
+        "pt-br": "Perímetro de segurança no seu API Gateway"
+       },
+       "slug": {
+        "en": "/documentation/architectures/api-gateways/implement-api-gateways-security/",
+        "pt-br": "/documentacao/architectures/api-gateways/implementar-seguranca-api-gateways/"
+       }
+      }
+     ]
+    },
+    {
+     "key": "arch/architectures/applications",
+     "label": {
+      "en": "Applications"
+     },
+     "items": [
+      {
+       "key": "arch/architectures/applications/application-acceleration",
+       "label": {
+        "en": "Accelerate Applications and APIs with Edge Computing",
+        "pt-br": "Acelere aplicações e APIs com edge computing"
+       },
+       "slug": {
+        "en": "/documentation/architectures/applications/application-acceleration/",
+        "pt-br": "/documentacao/architectures/applications/application-acceleration/"
+       }
+      },
+      {
+       "key": "arch/architectures/applications/application-modernization",
+       "label": {
+        "en": "Accelerate Application Modernization at the Edge",
+        "pt-br": "Acelere a modernização de aplicações no edge"
+       },
+       "slug": {
+        "en": "/documentation/architectures/applications/application-modernization/",
+        "pt-br": "/documentacao/architectures/applications/modernizacao-de-aplicacoes/"
+       }
+      },
+      {
+       "key": "arch/architectures/applications/content-delivery",
+       "label": {
+        "en": "Boost Content Delivery Speed at the Edge",
+        "pt-br": "Acelere o content delivery no edge"
+       },
+       "slug": {
+        "en": "/documentation/architectures/applications/content-delivery/",
+        "pt-br": "/documentacao/architectures/applications/content-delivery/"
+       }
+      },
+      {
+       "key": "arch/architectures/applications/edge-enhanced-applications",
+       "label": {
+        "en": "Enhance Applications with Edge Computing",
+        "pt-br": "Melhore aplicações com edge computing"
+       },
+       "slug": {
+        "en": "/documentation/architectures/applications/edge-enhanced-applications/",
+        "pt-br": "/documentacao/architectures/applications/aplicacoes-edge-enhanced/"
+       }
+      },
+      {
+       "key": "arch/architectures/applications/edge-native-applications",
+       "label": {
+        "en": "Develop edge-native applications with Azion",
+        "pt-br": "Desenvolva aplicações edge-native com a Azion"
+       },
+       "slug": {
+        "en": "/documentation/architectures/applications/edge-native-applications/",
+        "pt-br": "/documentacao/architectures/applications/aplicacoes-edge-native/"
+       }
+      },
+      {
+       "key": "arch/architectures/applications/image-processing",
+       "label": {
+        "en": "Optimize and process images with Azion Web Platform",
+        "pt-br": "Otimize o processamento de imagens com a Azion"
+       },
+       "slug": {
+        "en": "/documentation/architectures/applications/image-processing/",
+        "pt-br": "/documentacao/architectures/applications/image-processor/"
+       }
+      },
+      {
+       "key": "arch/architectures/applications/microservices-applications",
+       "label": {
+        "en": "Build Microservices Apps with Functions",
+        "pt-br": "Implemente microsserviços com Azion Functions"
+       },
+       "slug": {
+        "en": "/documentation/architectures/applications/microservices-applications/",
+        "pt-br": "/documentacao/architectures/applications/aplicacoes-microsservicos/"
+       }
+      },
+      {
+       "key": "arch/architectures/applications/serverless-applications",
+       "label": {
+        "en": "Implement Serverless Architecture with Azion",
+        "pt-br": "Implemente uma arquitetura serverless com a Azion"
+       },
+       "slug": {
+        "en": "/documentation/architectures/applications/serverless-applications/",
+        "pt-br": "/documentacao/architectures/applications/serverless-applications/"
+       }
+      }
+     ]
+    },
+    {
+     "key": "arch/architectures/artificial-intelligence",
+     "label": {
+      "en": "Artificial Intelligence"
+     },
+     "items": [
+      {
+       "key": "arch/architectures/artificial-intelligence/ai-agent-copilot-assistant",
+       "label": {
+        "en": "Build a Copilot Assistant with a ReAct AI Agent",
+        "pt-br": "Crie um assistente Copilot com agente de IA ReAct"
+       },
+       "slug": {
+        "en": "/documentation/architectures/artificial-intelligence/ai-agent-copilot-assistant/",
+        "pt-br": "/documentacao/architectures/artificial-intelligence/agente-ai-assistente-copilot/"
+       }
+      },
+      {
+       "key": "arch/architectures/artificial-intelligence/ai-agent-third-party-llm",
+       "label": {
+        "en": "AI Agents Configuration for Third Party LLM Providers",
+        "pt-br": "Configure AI Agents para LLMs de terceiros"
+       },
+       "slug": {
+        "en": "/documentation/architectures/artificial-intelligence/ai-agent-third-party-llm/",
+        "pt-br": "/documentacao/architectures/artificial-intelligence/ai-agent-third-party-llm/"
+       }
+      },
+      {
+       "key": "arch/architectures/artificial-intelligence/ai-inference-architecture",
+       "label": {
+        "en": "Implement AI Inference in your applications",
+        "pt-br": "Implemenete AI Inference em suas aplicações"
+       },
+       "slug": {
+        "en": "/documentation/architectures/artificial-intelligence/ai-inference-architecture/",
+        "pt-br": "/documentacao/architectures/artificial-intelligence/ai-inference-architecture/"
+       }
+      },
+      {
+       "key": "arch/architectures/artificial-intelligence/autonomous-security-ai-agent",
+       "label": {
+        "en": "AI Inference for Threat Protection in Uploads",
+        "pt-br": "AI Inference para proteção em uploads de arquivos"
+       },
+       "slug": {
+        "en": "/documentation/architectures/artificial-intelligence/autonomous-security-ai-agent/",
+        "pt-br": "/documentacao/architectures/artificial-intelligence/ai-agent-seguranca-autonoma/"
+       }
+      }
+     ]
+    },
+    {
+     "key": "arch/architectures/bot-management",
+     "label": {
+      "en": "Bot Management"
+     },
+     "items": [
+      {
+       "key": "arch/architectures/bot-management/protect-your-applications-with-bot-management",
+       "label": {
+        "en": "Protect Your Apps with Bot Management",
+        "pt-br": "Proteja suas apps com gerenciamento de bots"
+       },
+       "slug": {
+        "en": "/documentation/architectures/bot-management/protect-your-applications-with-bot-management/",
+        "pt-br": "/documentacao/architectures/gerenciamento-de-bots/proteja-edge-applications-com-bot-management/"
+       }
+      }
+     ]
+    },
+    {
+     "key": "arch/architectures/by-solution",
+     "label": {
+      "en": "By solution",
+      "pt-br": "Por solução"
+     },
+     "items": [
+      {
+       "key": "arch/architectures/by-solution/application-and-infrastructure-automation",
+       "label": {
+        "en": "Application and Infrastructure Automation",
+        "pt-br": "Automação de aplicações e infraestrutura"
+       },
+       "slug": {
+        "en": "/documentation/architectures/by-solution/application-and-infrastructure-automation/",
+        "pt-br": "/documentacao/architectures/by-solution/application-and-infrastructure-automation/"
+       }
+      },
+      {
+       "key": "arch/architectures/by-solution/application-and-network-security",
+       "label": {
+        "en": "Application and Network Security",
+        "pt-br": "Segurança de aplicações e redes"
+       },
+       "slug": {
+        "en": "/documentation/architectures/by-solution/application-and-network-security/",
+        "pt-br": "/documentacao/architectures/by-solution/application-and-network-security/"
+       }
+      },
+      {
+       "key": "arch/architectures/by-solution/application-development",
+       "label": {
+        "en": "Application Development",
+        "pt-br": "Desenvolvimento de aplicações"
+       },
+       "slug": {
+        "en": "/documentation/architectures/by-solution/application-development/",
+        "pt-br": "/documentacao/architectures/by-solution/application-development/"
+       }
+      },
+      {
+       "key": "arch/architectures/by-solution/artificial-intelligence",
+       "label": {
+        "en": "Artificial Intelligence (AI)",
+        "pt-br": "Inteligência artificial (IA)"
+       },
+       "slug": {
+        "en": "/documentation/architectures/by-solution/artificial-intelligence/",
+        "pt-br": "/documentacao/architectures/by-solution/artificial-intelligence/"
+       }
+      },
+      {
+       "key": "arch/architectures/by-solution/service-performance-and-reliability",
+       "label": {
+        "en": "Service Performance and Reliability",
+        "pt-br": "Performance e confiabilidade do serviço"
+       },
+       "slug": {
+        "en": "/documentation/architectures/by-solution/service-performance-and-reliability/",
+        "pt-br": "/documentacao/architectures/by-solution/service-performance-and-reliability/"
+       }
+      }
+     ]
+    },
+    {
+     "key": "arch/architectures/deploy",
+     "label": {
+      "en": "Deploy"
+     },
+     "items": [
+      {
+       "key": "arch/architectures/deploy/application-delivery",
+       "label": {
+        "en": "Streamline App Delivery with Orchestrator",
+        "pt-br": "Otimize a entrega de apps com o Orchestrator"
+       },
+       "slug": {
+        "en": "/documentation/architectures/deploy/application-delivery/",
+        "pt-br": "/documentacao/architectures/deploy/entrega-aplicacoes/"
+       }
+      },
+      {
+       "key": "arch/architectures/deploy/infrastructure-orchestration",
+       "label": {
+        "en": "Automate Infrastructure with Azion Orchestrator",
+        "pt-br": "Automatize a infraestrutura com o Azion Orchestrator"
+       },
+       "slug": {
+        "en": "/documentation/architectures/deploy/infrastructure-orchestration/",
+        "pt-br": "/documentacao/architectures/deploy/orquestracao-de-infraestrutura/"
+       }
+      }
+     ]
+    },
+    {
+     "key": "arch/architectures/firewall",
+     "label": {
+      "en": "Firewall"
+     },
+     "items": [
+      {
+       "key": "arch/architectures/firewall/online-fraud-prevention",
+       "label": {
+        "en": "Reinforce Online Fraud Prevention",
+        "pt-br": "Reforce a prevenção de fraudes online"
+       },
+       "slug": {
+        "en": "/documentation/architectures/firewall/online-fraud-prevention/",
+        "pt-br": "/documentacao/architectures/firewall/prevencao-fraudes-online/"
+       }
+      },
+      {
+       "key": "arch/architectures/firewall/web-application-and-api-protection-waap",
+       "label": {
+        "en": "Enhance Cybersecurity with Azion WAAP",
+        "pt-br": "Reforce a segurança com o WAAP da Azion"
+       },
+       "slug": {
+        "en": "/documentation/architectures/firewall/web-application-and-api-protection-waap/",
+        "pt-br": "/documentacao/architectures/firewall/web-application-and-api-protection-waap/"
+       }
+      }
+     ]
+    },
+    {
+     "key": "arch/architectures/jamstack",
+     "label": {
+      "en": "Jamstack"
+     },
+     "items": [
+      {
+       "key": "arch/architectures/jamstack/deploy-jamstack-applications",
+       "label": {
+        "en": "Deploy Jamstack Websites at the Edge",
+        "pt-br": "Implante Sites Jamstack no Edge da Rede"
+       },
+       "slug": {
+        "en": "/documentation/architectures/jamstack/deploy-jamstack-applications/",
+        "pt-br": "/documentacao/architectures/jamstack/implantacao-aplicacoes-jamstack/"
+       }
+      }
+     ]
+    },
+    {
+     "key": "arch/architectures/live-streaming-delivery",
+     "label": {
+      "en": "Live Streaming Delivery"
+     },
+     "items": [
+      {
+       "key": "arch/architectures/live-streaming-delivery/live-streaming-delivery-with-hls",
+       "label": {
+        "en": "Optimize Video Delivery with Live Streaming",
+        "pt-br": "Distribua vídeo com streaming ao vivo"
+       },
+       "slug": {
+        "en": "/documentation/architectures/live-streaming-delivery/live-streaming-delivery-with-hls/",
+        "pt-br": "/documentacao/architectures/live-streaming-delivery/live-streaming-delivery-com-hls/"
+       }
+      }
+     ]
+    },
+    {
+     "key": "arch/architectures/security-automation",
+     "label": {
+      "en": "Security Automation"
+     },
+     "items": [
+      {
+       "key": "arch/architectures/security-automation/security-automation-with-edge-computing",
+       "label": {
+        "en": "Protect Your Business with Security Automation",
+        "pt-br": "Proteja seu negócio com automação de segurança"
+       },
+       "slug": {
+        "en": "/documentation/architectures/security-automation/security-automation-with-edge-computing/",
+        "pt-br": "/documentacao/architectures/automacao-da-seguranca/automacao-da-seguranca-com-edge-computing/"
+       }
+      }
+     ]
+    },
+    {
+     "key": "arch/architectures/security-modernization",
+     "label": {
+      "en": "Security Modernization"
+     },
+     "items": [
+      {
+       "key": "arch/architectures/security-modernization/security-modernization-with-edge-computing",
+       "label": {
+        "en": "Accelerate security modernization with edge computing",
+        "pt-br": "Acelere a modernização da segurança com edge computing"
+       },
+       "slug": {
+        "en": "/documentation/architectures/security-modernization/security-modernization-with-edge-computing/",
+        "pt-br": "/documentacao/architectures/modernizacao-da-seguranca/modernizacao-da-seguranca-com-edge-computing/"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

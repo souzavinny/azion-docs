@@ -4,7 +4,7 @@ description: With this solution, your web application firewall can accurately fi
 meta_tags: edge, security, firewall, session cookies, WAF, WAF Rule Sets, allowlist
 namespace: documentation_secure_waf_specific_cookie
 permalink: /documentation/secure/waf/guides/waf-rules-for-specific-cookie/
-menu_namespace: guidesMenu
+menu_namespace: firewallMenu
 ---
 
 This guide implements a solution to configure security policies to manage requests based on specific cookie values through Firewall and WAF Rules. With this solution, your firewall will manage incoming requests based on specified cookies, enabling granular control using multiple rule sets to the same endpoint, ensuring that legitimate traffic reaches your application.
@@ -111,5 +111,5 @@ Still on the **Rules Engine** tab:
 Done. Now, when a request reaches your application, Firewall will check if it includes your specific cookie. If it doesn't include your specific cookie, it'll execute your standard rule. If it identifies the specified cookie, the request will be evaluated by the second rule; in this case, it won't weigh the specific Rule ID and cookie on its evaluation, it'll still check all other rules.
 
 :::tip
-You can use [Azion Observe products](/en/documentation/observe/overview/) to monitor your application delivery, incoming traffic, and how your security logics are being applied and with which requests.
+You can use [Azion Observe products](/en/documentation/) to monitor your application delivery, incoming traffic, and how your security logics are being applied and with which requests.
 :::

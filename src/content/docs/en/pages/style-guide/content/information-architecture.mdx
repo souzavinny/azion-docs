@@ -1,0 +1,75 @@
+---
+title: Information architecture
+description: >-
+  The target structure for Azion documentation: the product section skeleton,
+  the order of the reader's journey, and where a new page goes.
+meta_tags: 'style guide, information architecture, navigation, sidebar'
+namespace: documentation_style_guide_information_architecture
+permalink: /documentation/style-guide/content/information-architecture/
+menu_namespace: styleGuideMenu
+---
+
+This page defines the target structure for the Azion documentation. New sections follow it, and existing sections converge on it as they are revised. Do not copy the structure of an existing section: the pattern below wins.
+
+Two principles organize everything. Sections follow the order of the reader's journey with the product. Each section holds one [content type](/en/documentation/style-guide/content/choose-a-content-type/), so the journey decides where a section sits and the type decides what its pages look like.
+
+## The product section skeleton
+
+Every product section follows this order. The table shows what each section holds and when it exists.
+
+| Order | Section | Required | Holds |
+| --- | --- | --- | --- |
+| 1 | Overview | Yes | The product root page: what the product is, what it does, when to use it |
+| 2 | Get started | Yes | One [Get started page](/en/documentation/style-guide/content/get-started/): from not using the product to the smallest working result |
+| 3 | Guides | When the product has tasks | [How-to guides](/en/documentation/style-guide/content/how-to-guides/), including the product's [troubleshooting pages](/en/documentation/style-guide/content/troubleshooting/) |
+| 4 | Concepts | When the product needs explaining | [Explanation pages](/en/documentation/style-guide/content/explanation/): how it works, how to choose between options |
+| 5 | Reference | When the product has settings or limits | [Reference pages](/en/documentation/style-guide/content/reference/): fields, values, defaults — closing with limits and plan availability |
+
+A product with modules repeats the pattern one level down: a module with its own surface gets a subsection with the same skeleton, reduced to the parts it needs.
+
+## Order sections by the reader's journey
+
+The order mirrors adoption. The reader learns what the product is, activates it, accomplishes tasks, understands it deeply, and looks up facts. A section never moves ahead of its stage: a fact page does not sit before the activation page that makes it meaningful.
+
+The journey decides only the order. What a page looks like inside a section is decided by its content type, never by its position.
+
+## Earn every section
+
+Overview and Get started are the required minimum: a product section ships with both or it does not ship. Every other section exists only when real content fills it. Do not create a section to complete the pattern, and do not keep an empty section as a placeholder.
+
+## Grow by splitting, not by adding kinds
+
+A product section grows in one way: Guides splits into named task areas when it holds too many pages to scan. The five section kinds never grow in number. A page that fits none of them is a page whose content type is still undecided — return to [Choose a content type](/en/documentation/style-guide/content/choose-a-content-type/).
+
+## One page, one section
+
+Every page belongs to exactly one section, set by the `menu_namespace` field in its frontmatter. A section can list a page that another section owns: that row is a cross-link, and the reader who clicks it moves to the owning section. Keep ownership with the section where the page's neighbors live.
+
+Navigation hubs collect links and carry one sentence of orientation. A hub is not a content type, and it needs a real audience before it exists.
+
+## Platform-level sections
+
+Content that no single product owns lives beside the products, not inside one of them:
+
+- Platform concepts, accounts, and billing: the Fundamentals section.
+- Help, contact, and platform-wide troubleshooting: the Support section.
+- Designs that combine products: the Architectures section.
+- Goal-first guides that span products: with the platform sections, never inside one product.
+
+## URLs
+
+The `permalink` frontmatter field defines the page URL. The language prefix comes from the directory tree: `/en/documentation/...` for English, `/pt-br/documentacao/...` for Portuguese.
+
+Moving a file does not change its URL. Changing a `permalink` does, and the old URL then needs a redirect entry. Pick the URL for the page's subject, not for its current sidebar position, and the URL survives every future reorganization.
+
+## Place a new page
+
+Decide by the reader the page serves:
+
+- The page documents one product: place it in that product's section, in the skeleton slot its content type indicates.
+- The page explains the platform, accounts, or billing: it goes in Fundamentals.
+- The page diagnoses platform problems or reaches the support team: it goes in Support.
+- The page shows how products combine into a solution: it goes in Architectures.
+- The page collects links for an area: it is a hub, and it needs a real audience before it exists.
+
+When no section fits, ask before you create one. A new section changes navigation for every reader.

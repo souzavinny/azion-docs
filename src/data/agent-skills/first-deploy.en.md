@@ -61,5 +61,5 @@ Verify either path with the same `curl -I` check above.
 ## After the deploy
 
 - Go live with a custom domain: https://www.azion.com/en/documentation/get-started/production-checklist.md
-- Secure the application (Firewall, WAF): https://www.azion.com/en/documentation/secure/overview.md
-- Observe metrics and events: https://www.azion.com/en/documentation/observe/overview.md
+- Secure the application (Firewall, WAF): https://www.azion.com/en/documentation/secure/firewall.md
+- Observe metrics and events: https://www.azion.com/en/documentation/observe/real-time-metrics.md

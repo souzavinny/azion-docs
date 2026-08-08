@@ -1,0 +1,40 @@
+{
+ "meta": {
+  "title": {
+   "en": "Real Time Events"
+  },
+  "root": {
+   "en": "/documentation/observe/real-time-events/",
+   "pt-br": "/documentacao/observe/real-time-events/"
+  }
+ },
+ "groups": [
+  {
+   "key": "rte/grp",
+   "items": [
+    {
+     "key": "rte/overview",
+     "label": {
+      "en": "Overview",
+      "pt-br": "Visão geral"
+     },
+     "slug": {
+      "en": "/documentation/observe/real-time-events/",
+      "pt-br": "/documentacao/observe/real-time-events/"
+     }
+    },
+    {
+     "key": "rte/observe/real-time-events/quickstart",
+     "label": {
+      "en": "Real-Time Events first steps",
+      "pt-br": "Primeiros passos do Real-Time Events"
+     },
+     "slug": {
+      "en": "/documentation/observe/real-time-events/quickstart/",
+      "pt-br": "/documentacao/observe/real-time-events/quickstart/"
+     }
+    }
+   ]
+  }
+ ]
+}

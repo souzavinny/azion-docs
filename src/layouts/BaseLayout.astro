@@ -53,7 +53,7 @@ import { getNavigationMenu } from '~/util/getNav';
 const currentPageMatch = removeLeadingSlash(currentPage);
 
 // to right sidebar mobile menu
-const sidebarSections = (await getNavigationMenu(Astro, 'nav')).reduce((collection, item) => {
+const sidebarSections = (await getNavigationMenu(Astro, content?.menu_namespace ?? 'nav')).reduce((collection, item) => {
 	collection.push({...item});
 	return collection;
 }, []);

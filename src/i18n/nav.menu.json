@@ -38,10 +38,6 @@
    "key": "grp/get-started",
    "ui": "menu.start",
    "icon": "pi pi-bolt",
-   "slug": {
-    "en": "/documentation/get-started/",
-    "pt-br": "/documentacao/get-started/"
-   },
    "items": [
     {
      "key": "get-started/agent-setup",
@@ -75,6 +71,18 @@
       "en": "/documentation/get-started/production-checklist/",
       "pt-br": "/documentacao/get-started/ative-em-producao/"
      }
+    },
+    {
+     "key": "start/support",
+     "label": {
+      "en": "Support",
+      "pt-br": "Suporte"
+     },
+     "slug": {
+      "en": "/documentation/support/",
+      "pt-br": "/documentacao/support/"
+     },
+     "menu": "supportMenu"
     }
    ]
   },
@@ -82,320 +90,28 @@
    "key": "grp/build",
    "ui": "menu.build",
    "icon": "ai ai-build-pillar",
-   "slug": {
-    "en": "/documentation/build/overview/",
-    "pt-br": "/documentacao/build/overview/"
-   },
    "items": [
     {
      "key": "build/ai-inference",
      "label": {
       "en": "AI Inference"
      },
-     "items": [
-      {
-       "key": "build/ai-inference/reference/models",
-       "label": {
-        "en": "Models"
-       },
-       "slug": {
-        "en": "/documentation/build/ai-inference/reference/models/",
-        "pt-br": "/documentacao/build/ai-inference/reference/modelos/"
-       }
-      }
-     ],
      "slug": {
       "en": "/documentation/build/ai-inference/",
       "pt-br": "/documentacao/build/ai-inference/"
-     }
+     },
+     "menu": "aiInferenceMenu"
     },
     {
      "key": "build/applications",
      "label": {
       "en": "Applications"
      },
-     "items": [
-      {
-       "key": "get-started/journeys/launch",
-       "label": {
-        "en": "Build an application",
-        "pt-br": "Criar uma aplicação"
-       },
-       "slug": {
-        "en": "/documentation/get-started/journeys/launch/",
-        "pt-br": "/documentacao/build/applications/guides/criar-uma-aplicacao/"
-       }
-      },
-      {
-       "key": "build/applications/modules",
-       "label": {
-        "en": "Modules",
-        "pt-br": "Módulos"
-       },
-       "items": [
-        {
-         "key": "build/applications/application-accelerator",
-         "label": {
-          "en": "Application Accelerator"
-         },
-         "slug": {
-          "en": "/documentation/build/applications/application-accelerator/",
-          "pt-br": "/documentacao/build/applications/application-accelerator/"
-         }
-        },
-        {
-         "key": "build/applications/cache",
-         "label": {
-          "en": "Cache"
-         },
-         "items": [
-          {
-           "key": "build/applications/reference/cache-settings",
-           "label": {
-            "en": "Cache Settings"
-           },
-           "slug": {
-            "en": "/documentation/build/applications/reference/cache-settings/",
-            "pt-br": "/documentacao/build/applications/reference/cache-settings/"
-           }
-          },
-          {
-           "key": "build/applications/reference/real-time-purge",
-           "label": {
-            "en": "Real-Time Purge"
-           },
-           "slug": {
-            "en": "/documentation/build/applications/reference/real-time-purge/",
-            "pt-br": "/documentacao/build/applications/reference/real-time-purge/"
-           }
-          },
-          {
-           "key": "build/applications/cache/tiered-cache",
-           "label": {
-            "en": "Tiered Cache"
-           },
-           "slug": {
-            "en": "/documentation/build/applications/cache/tiered-cache/",
-            "pt-br": "/documentacao/build/applications/cache/tiered-cache/"
-           }
-          }
-         ],
-         "slug": {
-          "en": "/documentation/build/applications/cache/",
-          "pt-br": "/documentacao/build/applications/cache/"
-         }
-        },
-        {
-         "key": "build/functions",
-         "label": {
-          "en": "Functions"
-         },
-         "items": [
-          {
-           "key": "build/applications/reference/functions-instances",
-           "label": {
-            "en": "Functions Instances"
-           },
-           "slug": {
-            "en": "/documentation/build/applications/reference/functions-instances/",
-            "pt-br": "/documentacao/build/applications/reference/functions-instances/"
-           }
-          },
-          {
-           "key": "build/functions/azion-runtime",
-           "label": {
-            "en": "Azion Runtime"
-           },
-           "slug": {
-            "en": "/documentation/runtime/overview/",
-            "pt-br": "/documentacao/runtime/visao-geral/"
-           }
-          }
-         ],
-         "slug": {
-          "en": "/documentation/build/applications/functions/",
-          "pt-br": "/documentacao/build/applications/functions/"
-         }
-        },
-        {
-         "key": "build/applications/image-processor",
-         "label": {
-          "en": "Image Processor"
-         },
-         "items": [
-          {
-           "key": "build/applications/image-processor/first-steps",
-           "label": {
-            "en": "First steps",
-            "pt-br": "Primeiros passos"
-           },
-           "slug": {
-            "en": "/documentation/build/applications/image-processor/first-steps/",
-            "pt-br": "/documentacao/build/applications/image-processor/first-steps/"
-           }
-          }
-         ],
-         "slug": {
-          "en": "/documentation/build/applications/image-processor/",
-          "pt-br": "/documentacao/build/applications/image-processor/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "build/applications/reference/device-groups",
-       "label": {
-        "en": "Device Groups"
-       },
-       "slug": {
-        "en": "/documentation/build/applications/reference/device-groups/",
-        "pt-br": "/documentacao/build/applications/reference/device-groups/"
-       }
-      },
-      {
-       "key": "build/applications/reference/domains/overview",
-       "label": {
-        "en": "Domains"
-       },
-       "slug": {
-        "en": "/documentation/build/applications/reference/domains/",
-        "pt-br": "/documentacao/build/applications/reference/domains/"
-       }
-      },
-      {
-       "key": "build/applications/reference/domains/mtls",
-       "label": {
-        "en": "Support for mTLS for Build",
-        "pt-br": "Suporte para mTLS para Build"
-       },
-       "slug": {
-        "en": "/documentation/build/applications/reference/domains/mtls/",
-        "pt-br": "/documentacao/build/applications/reference/domains/mtls/"
-       }
-      },
-      {
-       "key": "build/applications/reference/main-settings",
-       "label": {
-        "en": "Applications Main Settings",
-        "pt-br": "Main Settings"
-       },
-       "slug": {
-        "en": "/documentation/build/applications/reference/main-settings/",
-        "pt-br": "/documentacao/build/applications/reference/main-settings/"
-       }
-      },
-      {
-       "key": "build/applications/reference/origins",
-       "label": {
-        "en": "Origins"
-       },
-       "slug": {
-        "en": "/documentation/build/applications/reference/origins/",
-        "pt-br": "/documentacao/build/applications/reference/origins/"
-       }
-      },
-      {
-       "key": "build/applications/reference/rules-engine",
-       "label": {
-        "en": "Rules Engine for Applications",
-        "pt-br": "Rules Engine para Applications"
-       },
-       "slug": {
-        "en": "/documentation/build/applications/reference/rules-engine/",
-        "pt-br": "/documentacao/build/applications/reference/rules-engine/"
-       }
-      }
-     ],
      "slug": {
       "en": "/documentation/build/applications/",
       "pt-br": "/documentacao/build/applications/"
-     }
-    },
-    {
-     "key": "build/local-dev",
-     "label": {
-      "en": "Develop with Azion",
-      "pt-br": "Desenvolva com a Azion"
      },
-     "items": [
-      {
-       "key": "get-started/frameworks/cli",
-       "label": {
-        "en": "Develop with Azion CLI",
-        "pt-br": "Desenvolva com a Azion CLI"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/cli/",
-        "pt-br": "/documentacao/build/applications/guides/cli/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/code-editor",
-       "label": {
-        "en": "Functions Code Editor Overview",
-        "pt-br": "Visão geral do Functions Code Editor"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/code-editor/",
-        "pt-br": "/documentacao/build/applications/guides/code-editor/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/environment-variables",
-       "label": {
-        "en": "Build with Environment Variables",
-        "pt-br": "Construa com Environment Variables"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/environment-variables/",
-        "pt-br": "/documentacao/build/applications/guides/environment-variables/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/go",
-       "label": {
-        "en": "Build with Azion Go SDK",
-        "pt-br": "Construa com o Azion Go SDK"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/go/",
-        "pt-br": "/documentacao/build/applications/guides/go/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/local-dev",
-       "label": {
-        "en": "Local development",
-        "pt-br": "Desenvolvimento local com a Azion CLI"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/local-dev/",
-        "pt-br": "/documentacao/build/applications/guides/local-dev/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/runtime-apis",
-       "label": {
-        "en": "Build with Azion Runtime",
-        "pt-br": "Construa com o Azion Runtime"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/runtime-apis/",
-        "pt-br": "/documentacao/build/applications/guides/runtime/"
-       }
-      },
-      {
-       "key": "get-started/frameworks/terraform-provider",
-       "label": {
-        "en": "Build with Azion Terraform Provider",
-        "pt-br": "Construa com o Azion Terraform Provider"
-       },
-       "slug": {
-        "en": "/documentation/get-started/frameworks/terraform-provider/",
-        "pt-br": "/documentacao/build/applications/guides/terraform-provider/"
-       }
-      }
-     ]
+     "menu": "applicationsMenu"
     }
    ]
   },
@@ -403,10 +119,6 @@
    "key": "grp/store",
    "ui": "menu.store",
    "icon": "ai ai-store",
-   "slug": {
-    "en": "/documentation/store/overview/",
-    "pt-br": "/documentacao/store/overview/"
-   },
    "items": [
     {
      "key": "store/kv-store",
@@ -416,7 +128,8 @@
      "slug": {
       "en": "/documentation/store/kv-store/",
       "pt-br": "/documentacao/store/kv-store/"
-     }
+     },
+     "menu": "kvStoreMenu"
     },
     {
      "key": "store/object-storage",
@@ -426,30 +139,19 @@
      "slug": {
       "en": "/documentation/store/object-storage/",
       "pt-br": "/documentacao/store/object-storage/"
-     }
+     },
+     "menu": "objectStorageMenu"
     },
     {
      "key": "store/sql-database",
      "label": {
       "en": "SQL Database"
      },
-     "items": [
-      {
-       "key": "store/sql-database/reference/vector-search",
-       "label": {
-        "en": "SQL Database Vector Search",
-        "pt-br": "Vector Search do SQL Database"
-       },
-       "slug": {
-        "en": "/documentation/store/sql-database/reference/vector-search/",
-        "pt-br": "/documentacao/store/sql-database/reference/vector-search/"
-       }
-      }
-     ],
      "slug": {
       "en": "/documentation/store/sql-database/",
       "pt-br": "/documentacao/store/sql-database/"
-     }
+     },
+     "menu": "sqlDatabaseMenu"
     }
    ]
   },
@@ -457,200 +159,28 @@
    "key": "grp/secure",
    "ui": "menu.secure",
    "icon": "ai ai-secure-pillar",
-   "slug": {
-    "en": "/documentation/secure/overview/",
-    "pt-br": "/documentacao/secure/overview/"
-   },
    "items": [
-    {
-     "key": "get-started/journeys/protect",
-     "label": {
-      "en": "Secure an application",
-      "pt-br": "Proteja sua aplicação"
-     },
-     "items": [
-      {
-       "key": "get-started/journeys/protect/dns",
-       "label": {
-        "en": "Secure DNS",
-        "pt-br": "Proteja seu DNS"
-       },
-       "slug": {
-        "en": "/documentation/get-started/journeys/protect/dns/",
-        "pt-br": "/documentacao/secure/firewall/guides/proteja-dns/"
-       }
-      },
-      {
-       "key": "get-started/journeys/protect/infrastructure",
-       "label": {
-        "en": "Secure an infrastructure",
-        "pt-br": "Proteja sua infraestrutura"
-       },
-       "slug": {
-        "en": "/documentation/get-started/journeys/protect/infrastructure/",
-        "pt-br": "/documentacao/secure/firewall/guides/proteja-infraestrutura/"
-       }
-      }
-     ],
-     "slug": {
-      "en": "/documentation/get-started/journeys/protect/",
-      "pt-br": "/documentacao/secure/firewall/guides/proteja-aplicacao/"
-     }
-    },
     {
      "key": "secure/firewall",
      "label": {
       "en": "Firewall"
      },
-     "items": [
-      {
-       "key": "secure/firewall/modules",
-       "label": {
-        "en": "Modules",
-        "pt-br": "Módulos"
-       },
-       "items": [
-        {
-         "key": "secure/ddos-protection",
-         "label": {
-          "en": "DDoS Protection"
-         },
-         "items": [
-          {
-           "key": "secure/ddos-protection/reference/ddos-mitigation",
-           "label": {
-            "en": "DDoS Mitigation",
-            "pt-br": "Mecanismos de mitigação e ataques DDoS"
-           },
-           "slug": {
-            "en": "/documentation/secure/ddos-protection/reference/ddos-mitigation/",
-            "pt-br": "/documentacao/secure/ddos-protection/reference/ddos-mitigation/"
-           }
-          }
-         ],
-         "slug": {
-          "en": "/documentation/secure/ddos-protection/",
-          "pt-br": "/documentacao/secure/ddos-protection/"
-         }
-        },
-        {
-         "key": "secure/network-shield",
-         "label": {
-          "en": "Network Shield"
-         },
-         "items": [
-          {
-           "key": "secure/firewall/reference/network-shield/network-lists",
-           "label": {
-            "en": "Network Lists"
-           },
-           "slug": {
-            "en": "/documentation/secure/firewall/reference/network-shield/network-lists/",
-            "pt-br": "/documentacao/secure/firewall/reference/network-shield/network-lists/"
-           }
-          }
-         ],
-         "slug": {
-          "en": "/documentation/secure/network-shield/",
-          "pt-br": "/documentacao/secure/network-shield/"
-         }
-        },
-        {
-         "key": "secure/waf",
-         "label": {
-          "en": "WAF"
-         },
-         "items": [
-          {
-           "key": "secure/waf/reference/custom-allowed-rules",
-           "label": {
-            "en": "WAF Exceptions",
-            "pt-br": "Exceções do WAF"
-           },
-           "slug": {
-            "en": "/documentation/secure/waf/reference/custom-allowed-rules/",
-            "pt-br": "/documentacao/secure/waf/reference/custom-allowed-rules/"
-           }
-          },
-          {
-           "key": "secure/waf/reference/rules-set",
-           "label": {
-            "en": "WAF Rule Sets"
-           },
-           "slug": {
-            "en": "/documentation/secure/waf/reference/rules-set/",
-            "pt-br": "/documentacao/secure/waf/reference/rule-sets/"
-           }
-          }
-         ],
-         "slug": {
-          "en": "/documentation/secure/waf/",
-          "pt-br": "/documentacao/secure/waf/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "secure/firewall/reference/functions",
-       "label": {
-        "en": "Functions for Firewall",
-        "pt-br": "Functions no Firewall"
-       },
-       "slug": {
-        "en": "/documentation/secure/firewall/reference/functions/",
-        "pt-br": "/documentacao/secure/firewall/reference/functions/"
-       }
-      },
-      {
-       "key": "secure/firewall/reference/functions-instances",
-       "label": {
-        "en": "Functions Instances for Firewall",
-        "pt-br": "Functions Instances para Firewall"
-       },
-       "slug": {
-        "en": "/documentation/secure/firewall/reference/functions-instances/",
-        "pt-br": "/documentacao/secure/firewall/reference/functions-instances/"
-       }
-      },
-      {
-       "key": "secure/firewall/reference/rules-engine",
-       "label": {
-        "en": "Rules Engine for Firewall",
-        "pt-br": "Rules Engine para Firewall"
-       },
-       "slug": {
-        "en": "/documentation/secure/firewall/reference/rules-engine/",
-        "pt-br": "/documentacao/secure/firewall/reference/rules-engine/"
-       }
-      }
-     ],
      "slug": {
       "en": "/documentation/secure/firewall/",
       "pt-br": "/documentacao/secure/firewall/"
-     }
+     },
+     "menu": "firewallMenu"
     },
     {
      "key": "secure/edge-dns",
      "label": {
       "en": "Edge DNS"
      },
-     "items": [
-      {
-       "key": "secure/edge-dns/reference/dnssec-compatibility",
-       "label": {
-        "en": "DNSSEC Compatibility",
-        "pt-br": "Compatibilidade com DNSSEC"
-       },
-       "slug": {
-        "en": "/documentation/secure/edge-dns/reference/dnssec-compatibility/",
-        "pt-br": "/documentacao/secure/edge-dns/reference/compatibilidade-dnssec/"
-       }
-      }
-     ],
      "slug": {
       "en": "/documentation/secure/edge-dns/",
       "pt-br": "/documentacao/secure/edge-dns/"
-     }
+     },
+     "menu": "edgeDnsMenu"
     },
     {
      "key": "secure/workloads",
@@ -660,62 +190,41 @@
      "slug": {
       "en": "/documentation/secure/workloads/",
       "pt-br": "/documentacao/secure/workloads/"
-     }
+     },
+     "menu": "workloadsMenu"
     },
     {
      "key": "secure/certificate-manager",
      "label": {
       "en": "Certificate Manager"
      },
-     "items": [
-      {
-       "key": "secure/certificate-manager/reference/mtls",
-       "label": {
-        "en": "Support for mTLS for Secure",
-        "pt-br": "Suporte para mTLS para Secure"
-       },
-       "slug": {
-        "en": "/documentation/secure/certificate-manager/reference/mtls/",
-        "pt-br": "/documentacao/secure/certificate-manager/reference/mtls/"
-       }
-      }
-     ],
      "slug": {
       "en": "/documentation/secure/certificate-manager/",
       "pt-br": "/documentacao/secure/certificate-manager/"
-     }
+     },
+     "menu": "certificateManagerMenu"
     },
     {
      "key": "secure/connectors",
      "label": {
       "en": "Connectors"
      },
-     "items": [
-      {
-       "key": "secure/connectors/reference/load-balancer",
-       "label": {
-        "en": "Load Balancer"
-       },
-       "slug": {
-        "en": "/documentation/secure/connectors/reference/load-balancer/",
-        "pt-br": "/documentacao/secure/connectors/reference/load-balancer/"
-       }
-      },
-      {
-       "key": "secure/connectors/reference/origin-shield",
-       "label": {
-        "en": "Origin Shield"
-       },
-       "slug": {
-        "en": "/documentation/secure/connectors/reference/origin-shield/",
-        "pt-br": "/documentacao/secure/connectors/reference/origin-shield/"
-       }
-      }
-     ],
      "slug": {
       "en": "/documentation/secure/connectors/",
       "pt-br": "/documentacao/secure/connectors/"
-     }
+     },
+     "menu": "connectorsMenu"
+    },
+    {
+     "key": "secure/bot-manager",
+     "label": {
+      "en": "Bot Manager"
+     },
+     "slug": {
+      "en": "/documentation/secure/bot-manager/",
+      "pt-br": "/documentacao/secure/bot-manager/"
+     },
+     "menu": "botManagerMenu"
     },
     {
      "key": "secure/custom-pages",
@@ -726,28 +235,6 @@
       "en": "/documentation/secure/custom-pages/",
       "pt-br": "/documentacao/secure/custom-pages/"
      }
-    },
-    {
-     "key": "secure/bot-manager",
-     "label": {
-      "en": "Bot Manager"
-     },
-     "items": [
-      {
-       "key": "secure/bot-manager/reference/lite",
-       "label": {
-        "en": "Azion Bot Manager Lite"
-       },
-       "slug": {
-        "en": "/documentation/secure/bot-manager/reference/lite/",
-        "pt-br": "/documentacao/secure/bot-manager/reference/lite/"
-       }
-      }
-     ],
-     "slug": {
-      "en": "/documentation/secure/bot-manager/",
-      "pt-br": "/documentacao/secure/bot-manager/"
-     }
     }
    ]
   },
@@ -755,113 +242,50 @@
    "key": "grp/observe",
    "ui": "menu.observe",
    "icon": "ai ai-observe-pillar",
-   "slug": {
-    "en": "/documentation/observe/overview/",
-    "pt-br": "/documentacao/observe/overview/"
-   },
    "items": [
     {
      "key": "observe/data-stream",
      "label": {
       "en": "Data Stream"
      },
-     "items": [
-      {
-       "key": "observe/data-stream/quickstart",
-       "label": {
-        "en": "Data Stream quickstart",
-        "pt-br": "Quickstart do Data Stream"
-       },
-       "slug": {
-        "en": "/documentation/observe/data-stream/quickstart/",
-        "pt-br": "/documentacao/observe/data-stream/quickstart/"
-       }
-      }
-     ],
      "slug": {
       "en": "/documentation/observe/data-stream/",
       "pt-br": "/documentacao/observe/data-stream/"
-     }
+     },
+     "menu": "dataStreamMenu"
     },
     {
      "key": "observe/edge-pulse",
      "label": {
       "en": "Edge Pulse"
      },
-     "items": [
-      {
-       "key": "observe/edge-pulse/quickstart",
-       "label": {
-        "en": "Edge Pulse first steps",
-        "pt-br": "Primeiros passos do Edge Pulse"
-       },
-       "slug": {
-        "en": "/documentation/observe/edge-pulse/quickstart/",
-        "pt-br": "/documentacao/observe/edge-pulse/quickstart/"
-       }
-      }
-     ],
      "slug": {
       "en": "/documentation/observe/edge-pulse/",
       "pt-br": "/documentacao/observe/edge-pulse/"
-     }
+     },
+     "menu": "edgePulseMenu"
     },
     {
      "key": "observe/real-time-events",
      "label": {
       "en": "Real Time Events"
      },
-     "items": [
-      {
-       "key": "observe/real-time-events/quickstart",
-       "label": {
-        "en": "Real-Time Events first steps",
-        "pt-br": "Primeiros passos do Real-Time Events"
-       },
-       "slug": {
-        "en": "/documentation/observe/real-time-events/quickstart/",
-        "pt-br": "/documentacao/observe/real-time-events/quickstart/"
-       }
-      }
-     ],
      "slug": {
       "en": "/documentation/observe/real-time-events/",
       "pt-br": "/documentacao/observe/real-time-events/"
-     }
+     },
+     "menu": "realTimeEventsMenu"
     },
     {
      "key": "observe/real-time-metrics",
      "label": {
       "en": "Real Time Metrics"
      },
-     "items": [
-      {
-       "key": "observe/real-time-metrics/quickstart",
-       "label": {
-        "en": "Real-Time Metrics first steps",
-        "pt-br": "Primeiros passos do Real-Time Metrics"
-       },
-       "slug": {
-        "en": "/documentation/observe/real-time-metrics/quickstart/",
-        "pt-br": "/documentacao/observe/real-time-metrics/quickstart/"
-       }
-      },
-      {
-       "key": "observe/real-time-metrics/reference/historical-real-time-metrics",
-       "label": {
-        "en": "Historical Real-Time Metrics",
-        "pt-br": "Real-Time Metrics Histórico"
-       },
-       "slug": {
-        "en": "/documentation/observe/real-time-metrics/reference/historical-real-time-metrics/",
-        "pt-br": "/documentacao/observe/real-time-metrics-historico/"
-       }
-      }
-     ],
      "slug": {
       "en": "/documentation/observe/real-time-metrics/",
       "pt-br": "/documentacao/observe/real-time-metrics/"
-     }
+     },
+     "menu": "realTimeMetricsMenu"
     }
    ]
   },
@@ -869,10 +293,6 @@
    "key": "grp/resources",
    "ui": "menu.resources",
    "icon": "pi pi-book",
-   "slug": {
-    "en": "/documentation/architectures/",
-    "pt-br": "/documentacao/architectures/"
-   },
    "items": [
     {
      "key": "row/architectures",
@@ -880,491 +300,22 @@
       "en": "Architectures",
       "pt-br": "Arquiteturas"
      },
-     "items": [
-      {
-       "key": "architectures/api-gateways",
-       "label": {
-        "en": "API Gateways"
-       },
-       "items": [
-        {
-         "key": "architectures/api-gateways/implement-api-gateways-security",
-         "label": {
-          "en": "Secure Your API Gateway with a Perimeter",
-          "pt-br": "Perímetro de segurança no seu API Gateway"
-         },
-         "slug": {
-          "en": "/documentation/architectures/api-gateways/implement-api-gateways-security/",
-          "pt-br": "/documentacao/architectures/api-gateways/implementar-seguranca-api-gateways/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "architectures/applications",
-       "label": {
-        "en": "Applications"
-       },
-       "items": [
-        {
-         "key": "architectures/applications/application-acceleration",
-         "label": {
-          "en": "Accelerate Applications and APIs with Edge Computing",
-          "pt-br": "Acelere aplicações e APIs com edge computing"
-         },
-         "slug": {
-          "en": "/documentation/architectures/applications/application-acceleration/",
-          "pt-br": "/documentacao/architectures/applications/application-acceleration/"
-         }
-        },
-        {
-         "key": "architectures/applications/application-modernization",
-         "label": {
-          "en": "Accelerate Application Modernization at the Edge",
-          "pt-br": "Acelere a modernização de aplicações no edge"
-         },
-         "slug": {
-          "en": "/documentation/architectures/applications/application-modernization/",
-          "pt-br": "/documentacao/architectures/applications/modernizacao-de-aplicacoes/"
-         }
-        },
-        {
-         "key": "architectures/applications/content-delivery",
-         "label": {
-          "en": "Boost Content Delivery Speed at the Edge",
-          "pt-br": "Acelere o content delivery no edge"
-         },
-         "slug": {
-          "en": "/documentation/architectures/applications/content-delivery/",
-          "pt-br": "/documentacao/architectures/applications/content-delivery/"
-         }
-        },
-        {
-         "key": "architectures/applications/edge-enhanced-applications",
-         "label": {
-          "en": "Enhance Applications with Edge Computing",
-          "pt-br": "Melhore aplicações com edge computing"
-         },
-         "slug": {
-          "en": "/documentation/architectures/applications/edge-enhanced-applications/",
-          "pt-br": "/documentacao/architectures/applications/aplicacoes-edge-enhanced/"
-         }
-        },
-        {
-         "key": "architectures/applications/edge-native-applications",
-         "label": {
-          "en": "Develop edge-native applications with Azion",
-          "pt-br": "Desenvolva aplicações edge-native com a Azion"
-         },
-         "slug": {
-          "en": "/documentation/architectures/applications/edge-native-applications/",
-          "pt-br": "/documentacao/architectures/applications/aplicacoes-edge-native/"
-         }
-        },
-        {
-         "key": "architectures/applications/image-processing",
-         "label": {
-          "en": "Optimize and process images with Azion Web Platform",
-          "pt-br": "Otimize o processamento de imagens com a Azion"
-         },
-         "slug": {
-          "en": "/documentation/architectures/applications/image-processing/",
-          "pt-br": "/documentacao/architectures/applications/image-processor/"
-         }
-        },
-        {
-         "key": "architectures/applications/microservices-applications",
-         "label": {
-          "en": "Build Microservices Apps with Functions",
-          "pt-br": "Implemente microsserviços com Azion Functions"
-         },
-         "slug": {
-          "en": "/documentation/architectures/applications/microservices-applications/",
-          "pt-br": "/documentacao/architectures/applications/aplicacoes-microsservicos/"
-         }
-        },
-        {
-         "key": "architectures/applications/serverless-applications",
-         "label": {
-          "en": "Implement Serverless Architecture with Azion",
-          "pt-br": "Implemente uma arquitetura serverless com a Azion"
-         },
-         "slug": {
-          "en": "/documentation/architectures/applications/serverless-applications/",
-          "pt-br": "/documentacao/architectures/applications/serverless-applications/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "architectures/artificial-intelligence",
-       "label": {
-        "en": "Artificial Intelligence"
-       },
-       "items": [
-        {
-         "key": "architectures/artificial-intelligence/ai-agent-copilot-assistant",
-         "label": {
-          "en": "Build a Copilot Assistant with a ReAct AI Agent",
-          "pt-br": "Crie um assistente Copilot com agente de IA ReAct"
-         },
-         "slug": {
-          "en": "/documentation/architectures/artificial-intelligence/ai-agent-copilot-assistant/",
-          "pt-br": "/documentacao/architectures/artificial-intelligence/agente-ai-assistente-copilot/"
-         }
-        },
-        {
-         "key": "architectures/artificial-intelligence/ai-agent-third-party-llm",
-         "label": {
-          "en": "AI Agents Configuration for Third Party LLM Providers",
-          "pt-br": "Configure AI Agents para LLMs de terceiros"
-         },
-         "slug": {
-          "en": "/documentation/architectures/artificial-intelligence/ai-agent-third-party-llm/",
-          "pt-br": "/documentacao/architectures/artificial-intelligence/ai-agent-third-party-llm/"
-         }
-        },
-        {
-         "key": "architectures/artificial-intelligence/ai-inference-architecture",
-         "label": {
-          "en": "Implement AI Inference in your applications",
-          "pt-br": "Implemenete AI Inference em suas aplicações"
-         },
-         "slug": {
-          "en": "/documentation/architectures/artificial-intelligence/ai-inference-architecture/",
-          "pt-br": "/documentacao/architectures/artificial-intelligence/ai-inference-architecture/"
-         }
-        },
-        {
-         "key": "architectures/artificial-intelligence/autonomous-security-ai-agent",
-         "label": {
-          "en": "AI Inference for Threat Protection in Uploads",
-          "pt-br": "AI Inference para proteção em uploads de arquivos"
-         },
-         "slug": {
-          "en": "/documentation/architectures/artificial-intelligence/autonomous-security-ai-agent/",
-          "pt-br": "/documentacao/architectures/artificial-intelligence/ai-agent-seguranca-autonoma/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "architectures/bot-management",
-       "label": {
-        "en": "Bot Management"
-       },
-       "items": [
-        {
-         "key": "architectures/bot-management/protect-your-applications-with-bot-management",
-         "label": {
-          "en": "Protect Your Apps with Bot Management",
-          "pt-br": "Proteja suas apps com gerenciamento de bots"
-         },
-         "slug": {
-          "en": "/documentation/architectures/bot-management/protect-your-applications-with-bot-management/",
-          "pt-br": "/documentacao/architectures/gerenciamento-de-bots/proteja-edge-applications-com-bot-management/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "architectures/by-solution",
-       "label": {
-        "en": "By solution",
-        "pt-br": "Por solução"
-       },
-       "items": [
-        {
-         "key": "architectures/by-solution/application-and-infrastructure-automation",
-         "label": {
-          "en": "Application and Infrastructure Automation",
-          "pt-br": "Automação de aplicações e infraestrutura"
-         },
-         "slug": {
-          "en": "/documentation/architectures/by-solution/application-and-infrastructure-automation/",
-          "pt-br": "/documentacao/architectures/by-solution/application-and-infrastructure-automation/"
-         }
-        },
-        {
-         "key": "architectures/by-solution/application-and-network-security",
-         "label": {
-          "en": "Application and Network Security",
-          "pt-br": "Segurança de aplicações e redes"
-         },
-         "slug": {
-          "en": "/documentation/architectures/by-solution/application-and-network-security/",
-          "pt-br": "/documentacao/architectures/by-solution/application-and-network-security/"
-         }
-        },
-        {
-         "key": "architectures/by-solution/application-development",
-         "label": {
-          "en": "Application Development",
-          "pt-br": "Desenvolvimento de aplicações"
-         },
-         "slug": {
-          "en": "/documentation/architectures/by-solution/application-development/",
-          "pt-br": "/documentacao/architectures/by-solution/application-development/"
-         }
-        },
-        {
-         "key": "architectures/by-solution/artificial-intelligence",
-         "label": {
-          "en": "Artificial Intelligence (AI)",
-          "pt-br": "Inteligência artificial (IA)"
-         },
-         "slug": {
-          "en": "/documentation/architectures/by-solution/artificial-intelligence/",
-          "pt-br": "/documentacao/architectures/by-solution/artificial-intelligence/"
-         }
-        },
-        {
-         "key": "architectures/by-solution/service-performance-and-reliability",
-         "label": {
-          "en": "Service Performance and Reliability",
-          "pt-br": "Performance e confiabilidade do serviço"
-         },
-         "slug": {
-          "en": "/documentation/architectures/by-solution/service-performance-and-reliability/",
-          "pt-br": "/documentacao/architectures/by-solution/service-performance-and-reliability/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "architectures/deploy",
-       "label": {
-        "en": "Deploy"
-       },
-       "items": [
-        {
-         "key": "architectures/deploy/application-delivery",
-         "label": {
-          "en": "Streamline App Delivery with Orchestrator",
-          "pt-br": "Otimize a entrega de apps com o Orchestrator"
-         },
-         "slug": {
-          "en": "/documentation/architectures/deploy/application-delivery/",
-          "pt-br": "/documentacao/architectures/deploy/entrega-aplicacoes/"
-         }
-        },
-        {
-         "key": "architectures/deploy/infrastructure-orchestration",
-         "label": {
-          "en": "Automate Infrastructure with Azion Orchestrator",
-          "pt-br": "Automatize a infraestrutura com o Azion Orchestrator"
-         },
-         "slug": {
-          "en": "/documentation/architectures/deploy/infrastructure-orchestration/",
-          "pt-br": "/documentacao/architectures/deploy/orquestracao-de-infraestrutura/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "architectures/firewall",
-       "label": {
-        "en": "Firewall"
-       },
-       "items": [
-        {
-         "key": "architectures/firewall/online-fraud-prevention",
-         "label": {
-          "en": "Reinforce Online Fraud Prevention",
-          "pt-br": "Reforce a prevenção de fraudes online"
-         },
-         "slug": {
-          "en": "/documentation/architectures/firewall/online-fraud-prevention/",
-          "pt-br": "/documentacao/architectures/firewall/prevencao-fraudes-online/"
-         }
-        },
-        {
-         "key": "architectures/firewall/web-application-and-api-protection-waap",
-         "label": {
-          "en": "Enhance Cybersecurity with Azion WAAP",
-          "pt-br": "Reforce a segurança com o WAAP da Azion"
-         },
-         "slug": {
-          "en": "/documentation/architectures/firewall/web-application-and-api-protection-waap/",
-          "pt-br": "/documentacao/architectures/firewall/web-application-and-api-protection-waap/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "architectures/jamstack",
-       "label": {
-        "en": "Jamstack"
-       },
-       "items": [
-        {
-         "key": "architectures/jamstack/deploy-jamstack-applications",
-         "label": {
-          "en": "Deploy Jamstack Websites at the Edge",
-          "pt-br": "Implante Sites Jamstack no Edge da Rede"
-         },
-         "slug": {
-          "en": "/documentation/architectures/jamstack/deploy-jamstack-applications/",
-          "pt-br": "/documentacao/architectures/jamstack/implantacao-aplicacoes-jamstack/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "architectures/live-streaming-delivery",
-       "label": {
-        "en": "Live Streaming Delivery"
-       },
-       "items": [
-        {
-         "key": "architectures/live-streaming-delivery/live-streaming-delivery-with-hls",
-         "label": {
-          "en": "Optimize Video Delivery with Live Streaming",
-          "pt-br": "Distribua vídeo com streaming ao vivo"
-         },
-         "slug": {
-          "en": "/documentation/architectures/live-streaming-delivery/live-streaming-delivery-with-hls/",
-          "pt-br": "/documentacao/architectures/live-streaming-delivery/live-streaming-delivery-com-hls/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "architectures/security-automation",
-       "label": {
-        "en": "Security Automation"
-       },
-       "items": [
-        {
-         "key": "architectures/security-automation/security-automation-with-edge-computing",
-         "label": {
-          "en": "Protect Your Business with Security Automation",
-          "pt-br": "Proteja seu negócio com automação de segurança"
-         },
-         "slug": {
-          "en": "/documentation/architectures/security-automation/security-automation-with-edge-computing/",
-          "pt-br": "/documentacao/architectures/automacao-da-seguranca/automacao-da-seguranca-com-edge-computing/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "architectures/security-modernization",
-       "label": {
-        "en": "Security Modernization"
-       },
-       "items": [
-        {
-         "key": "architectures/security-modernization/security-modernization-with-edge-computing",
-         "label": {
-          "en": "Accelerate security modernization with edge computing",
-          "pt-br": "Acelere a modernização da segurança com edge computing"
-         },
-         "slug": {
-          "en": "/documentation/architectures/security-modernization/security-modernization-with-edge-computing/",
-          "pt-br": "/documentacao/architectures/modernizacao-da-seguranca/modernizacao-da-seguranca-com-edge-computing/"
-         }
-        }
-       ]
-      }
-     ],
      "slug": {
       "en": "/documentation/architectures/",
       "pt-br": "/documentacao/architectures/"
-     }
+     },
+     "menu": "architecturesMenu"
     },
     {
      "key": "row/marketplace",
      "label": {
       "en": "Marketplace"
      },
-     "items": [
-      {
-       "key": "marketplace/reference/first-steps",
-       "label": {
-        "en": "Azion Marketplace first steps",
-        "pt-br": "Primeiros passos no Marketplace da Azion"
-       },
-       "slug": {
-        "en": "/documentation/marketplace/reference/first-steps/",
-        "pt-br": "/documentacao/marketplace/reference/first-steps/"
-       }
-      },
-      {
-       "key": "marketplace/reference/integrations",
-       "label": {
-        "en": "Azion Integrations"
-       },
-       "slug": {
-        "en": "/documentation/marketplace/reference/integrations/",
-        "pt-br": "/documentacao/marketplace/reference/integracoes/"
-       }
-      },
-      {
-       "key": "marketplace/reference/isv-signup",
-       "label": {
-        "en": "Become an ISV on Azion Marketplace",
-        "pt-br": "Torne-se um ISV no Azion Marketplace"
-       },
-       "slug": {
-        "en": "/documentation/marketplace/reference/isv-signup/",
-        "pt-br": "/documentacao/marketplace/reference/isv-signup/"
-       }
-      },
-      {
-       "key": "marketplace/reference/marketplace",
-       "label": {
-        "en": "Azion Marketplace",
-        "pt-br": "Marketplace da Azion"
-       },
-       "slug": {
-        "en": "/documentation/marketplace/reference/marketplace/",
-        "pt-br": "/documentacao/marketplace/reference/marketplace/"
-       }
-      },
-      {
-       "key": "marketplace/reference/marketplace-seller-guide",
-       "label": {
-        "en": "Marketplace Seller Guide"
-       },
-       "slug": {
-        "en": "/documentation/marketplace/reference/marketplace-seller-guide/",
-        "pt-br": "/documentacao/marketplace/reference/marketplace-seller-guide/"
-       }
-      },
-      {
-       "key": "marketplace/reference/permissions-marketplace",
-       "label": {
-        "en": "Azion Marketplace's permissions",
-        "pt-br": "Permissões do Marketplace da Azion"
-       },
-       "slug": {
-        "en": "/documentation/marketplace/reference/permissions-marketplace/",
-        "pt-br": "/documentacao/marketplace/reference/permissions-marketplace/"
-       }
-      },
-      {
-       "key": "marketplace/reference/templates",
-       "label": {
-        "en": "Azion Templates"
-       },
-       "slug": {
-        "en": "/documentation/marketplace/reference/templates/",
-        "pt-br": "/documentacao/marketplace/reference/templates/"
-       }
-      },
-      {
-       "key": "marketplace/reference/templates-and-integrations-overview",
-       "label": {
-        "en": "Templates and Integrations",
-        "pt-br": "Templates e integrações"
-       },
-       "slug": {
-        "en": "/documentation/marketplace/reference/templates-and-integrations-overview/",
-        "pt-br": "/documentacao/marketplace/reference/overview-templates-e-integracoes/"
-       }
-      }
-     ]
+     "slug": {
+      "en": "/documentation/marketplace/reference/marketplace/",
+      "pt-br": "/documentacao/marketplace/reference/marketplace/"
+     },
+     "menu": "marketplaceMenu"
     }
    ]
   },
@@ -1372,51 +323,29 @@
    "key": "grp/manage",
    "ui": "menu.manage",
    "icon": "pi pi-user",
-   "slug": {
-    "en": "/documentation/platform/overview/",
-    "pt-br": "/documentacao/platform/overview/"
-   },
    "items": [
     {
-     "key": "platform/compliance",
+     "key": "deploy/orchestrator",
      "label": {
-      "en": "Compliance"
+      "en": "Orchestrator"
      },
-     "items": [
-      {
-       "key": "platform/compliance/governance-risk-compliance",
-       "label": {
-        "en": "Strengthen Governance, Risk & Compliance",
-        "pt-br": "Fortaleça Governança, Risco e Conformidade"
-       },
-       "slug": {
-        "en": "/documentation/platform/compliance/governance-risk-compliance/",
-        "pt-br": "/documentacao/platform/compliance/governanca-risco-conformidade/"
-       }
-      },
-      {
-       "key": "platform/compliance/pci-dss-certification",
-       "label": {
-        "en": "PCI Compliance",
-        "pt-br": "Compliance PCI"
-       },
-       "slug": {
-        "en": "/documentation/platform/compliance/pci-dss-certification/",
-        "pt-br": "/documentacao/platform/compliance/pci-dss-certification/"
-       }
-      },
-      {
-       "key": "platform/compliance/soc",
-       "label": {
-        "en": "SOC Compliance",
-        "pt-br": "Compliance SOC"
-       },
-       "slug": {
-        "en": "/documentation/platform/compliance/soc/",
-        "pt-br": "/documentacao/platform/compliance/soc/"
-       }
-      }
-     ]
+     "slug": {
+      "en": "/documentation/deploy/orchestrator/",
+      "pt-br": "/documentacao/deploy/orchestrator/"
+     },
+     "menu": "orchestratorMenu"
+    },
+    {
+     "key": "row/services",
+     "label": {
+      "en": "Services",
+      "pt-br": "Serviços"
+     },
+     "slug": {
+      "en": "/documentation/services/",
+      "pt-br": "/documentacao/services/"
+     },
+     "menu": "servicesMenu"
     },
     {
      "key": "platform/network-program",
@@ -1428,301 +357,6 @@
       "en": "/documentation/platform/network-program/",
       "pt-br": "/documentacao/platform/network-program/"
      }
-    },
-    {
-     "key": "platform/pricing",
-     "label": {
-      "en": "Pricing",
-      "pt-br": "Preços"
-     },
-     "slug": {
-      "en": "/documentation/platform/pricing/",
-      "pt-br": "/documentacao/platform/pricing/"
-     }
-    },
-    {
-     "key": "platform/shared-responsibility",
-     "label": {
-      "en": "Shared Responsibility Model",
-      "pt-br": "Modelo de Responsabilidade Compartilhada"
-     },
-     "slug": {
-      "en": "/documentation/platform/shared-responsibility/",
-      "pt-br": "/documentacao/platform/shared-responsibility/"
-     }
-    },
-    {
-     "key": "row/account",
-     "label": {
-      "en": "Accounts",
-      "pt-br": "Contas"
-     },
-     "items": [
-      {
-       "key": "account/reference/account-lockout-policy",
-       "label": {
-        "en": "Account Lockout Policy"
-       },
-       "slug": {
-        "en": "/documentation/account/reference/account-lockout-policy/",
-        "pt-br": "/documentacao/account/reference/account-lockout-policy/"
-       }
-      },
-      {
-       "key": "account/reference/activity-history",
-       "label": {
-        "en": "Activity History"
-       },
-       "slug": {
-        "en": "/documentation/account/reference/activity-history/",
-        "pt-br": "/documentacao/account/reference/activity-history/"
-       }
-      },
-      {
-       "key": "account/reference/billing-and-subscriptions",
-       "label": {
-        "en": "Billing",
-        "pt-br": "Faturamento"
-       },
-       "slug": {
-        "en": "/documentation/account/reference/billing-and-subscriptions/",
-        "pt-br": "/documentacao/account/reference/billing-and-subscriptions/"
-       }
-      },
-      {
-       "key": "account/reference/creating-account",
-       "label": {
-        "en": "How to create an account on Azion",
-        "pt-br": "Como criar uma conta na Azion"
-       },
-       "slug": {
-        "en": "/documentation/account/reference/creating-account/",
-        "pt-br": "/documentacao/account/reference/criar-uma-conta/"
-       }
-      },
-      {
-       "key": "account/reference/multi-factor-authentication",
-       "label": {
-        "en": "Multi-Factor Authentication"
-       },
-       "slug": {
-        "en": "/documentation/account/reference/multi-factor-authentication/",
-        "pt-br": "/documentacao/account/reference/multi-factor-authentication/"
-       }
-      },
-      {
-       "key": "account/reference/personal-tokens",
-       "label": {
-        "en": "Personal Tokens"
-       },
-       "slug": {
-        "en": "/documentation/account/reference/personal-tokens/",
-        "pt-br": "/documentacao/account/reference/personal-tokens/"
-       }
-      },
-      {
-       "key": "account/reference/teams-permissions",
-       "label": {
-        "en": "Teams Permissions"
-       },
-       "slug": {
-        "en": "/documentation/account/reference/teams-permissions/",
-        "pt-br": "/documentacao/account/reference/teams-permissions/"
-       }
-      },
-      {
-       "key": "account/reference/user-session-timeout",
-       "label": {
-        "en": "User Session Timeout"
-       },
-       "slug": {
-        "en": "/documentation/account/reference/user-session-timeout/",
-        "pt-br": "/documentacao/account/reference/user-session-timeout/"
-       }
-      }
-     ],
-     "slug": {
-      "en": "/documentation/account/",
-      "pt-br": "/documentacao/account/"
-     }
-    },
-    {
-     "key": "deploy/overview",
-     "label": {
-      "en": "Deploy"
-     },
-     "slug": {
-      "en": "/documentation/deploy/overview/",
-      "pt-br": "/documentacao/deploy/overview/"
-     }
-    },
-    {
-     "key": "deploy/orchestrator",
-     "label": {
-      "en": "Orchestrator"
-     },
-     "items": [
-      {
-       "key": "deploy/orchestrator/reference/edge-node",
-       "label": {
-        "en": "Azion Edge Node"
-       },
-       "slug": {
-        "en": "/documentation/deploy/orchestrator/reference/edge-node/",
-        "pt-br": "/documentacao/deploy/orchestrator/reference/edge-node/"
-       }
-      },
-      {
-       "key": "deploy/orchestrator/reference/edge-services",
-       "label": {
-        "en": "Azion Edge Services",
-        "pt-br": "Edge Services"
-       },
-       "slug": {
-        "en": "/documentation/deploy/orchestrator/reference/edge-services/",
-        "pt-br": "/documentacao/deploy/orchestrator/reference/edge-services/"
-       }
-      }
-     ],
-     "slug": {
-      "en": "/documentation/deploy/orchestrator/",
-      "pt-br": "/documentacao/deploy/orchestrator/"
-     }
-    },
-    {
-     "key": "row/services",
-     "label": {
-      "en": "Services",
-      "pt-br": "Serviços"
-     },
-     "items": [
-      {
-       "key": "services/best-practices-review",
-       "label": {
-        "en": "Best Practices Review"
-       },
-       "slug": {
-        "en": "/documentation/services/best-practices-review/",
-        "pt-br": "/documentacao/services/best-practices-review/"
-       }
-      },
-      {
-       "key": "services/business-events-support",
-       "label": {
-        "en": "Business Events Support"
-       },
-       "slug": {
-        "en": "/documentation/services/business-events-support/",
-        "pt-br": "/documentacao/services/business-events-support/"
-       }
-      },
-      {
-       "key": "services/instructor-led-training",
-       "label": {
-        "en": "Instructor-Led Training"
-       },
-       "slug": {
-        "en": "/documentation/services/instructor-led-training/",
-        "pt-br": "/documentacao/services/instructor-led-training/"
-       }
-      },
-      {
-       "key": "services/integration-services",
-       "label": {
-        "en": "Integration Services"
-       },
-       "slug": {
-        "en": "/documentation/services/integration-services/",
-        "pt-br": "/documentacao/services/solutions-lab/integration-services/"
-       }
-      },
-      {
-       "key": "services/managed-configurations",
-       "label": {
-        "en": "Managed Configurations"
-       },
-       "slug": {
-        "en": "/documentation/services/managed-configurations/",
-        "pt-br": "/documentacao/services/managed-configurations/"
-       }
-      },
-      {
-       "key": "services/security-response-team",
-       "label": {
-        "en": "Security Response Team"
-       },
-       "slug": {
-        "en": "/documentation/services/security-response-team/",
-        "pt-br": "/documentacao/services/security-response-team/"
-       }
-      },
-      {
-       "key": "services/slack-channel",
-       "label": {
-        "en": "Slack Channel"
-       },
-       "slug": {
-        "en": "/documentation/services/slack-channel/",
-        "pt-br": "/documentacao/services/slack-channel/"
-       }
-      },
-      {
-       "key": "services/support",
-       "label": {
-        "en": "Support",
-        "pt-br": "Suporte"
-       },
-       "items": [
-        {
-         "key": "services/support/guides/open-ticket",
-         "label": {
-          "en": "How to open a Support Ticket",
-          "pt-br": "Como abrir um Ticket de Suporte"
-         },
-         "slug": {
-          "en": "/documentation/services/support/guides/open-ticket/",
-          "pt-br": "/documentacao/services/support/guides/open-ticket/"
-         }
-        },
-        {
-         "key": "services/support/get-help",
-         "label": {
-          "en": "Get help",
-          "pt-br": "Obter ajuda"
-         },
-         "slug": {
-          "en": "/documentation/services/support/get-help/",
-          "pt-br": "/documentacao/get-started/before-you-begin/"
-         }
-        },
-        {
-         "key": "services/support/http-error-status-codes",
-         "label": {
-          "en": "Azion HTTP Error Status Codes",
-          "pt-br": "Códigos de Status de Erro HTTP da Azion"
-         },
-         "slug": {
-          "en": "/documentation/services/support/http-error-status-codes/",
-          "pt-br": "/documentacao/services/support/http-error-status-codes/"
-         }
-        }
-       ],
-       "slug": {
-        "en": "/documentation/services/support/",
-        "pt-br": "/documentacao/services/support/"
-       }
-      },
-      {
-       "key": "services/technical-account-manager",
-       "label": {
-        "en": "Technical Account Manager"
-       },
-       "slug": {
-        "en": "/documentation/services/technical-account-manager/",
-        "pt-br": "/documentacao/services/technical-account-manager/"
-       }
-      }
-     ]
     }
    ]
   },
@@ -1732,32 +366,24 @@
    "icon": "pi pi-info-circle",
    "items": [
     {
-     "key": "row/changelog",
+     "key": "changelog/overview",
      "label": {
-      "en": "Changelog"
+      "en": "Latest updates",
+      "pt-br": "Últimas atualizações"
      },
-     "items": [
-      {
-       "key": "changelog/overview",
-       "label": {
-        "en": "Latest updates",
-        "pt-br": "Últimas atualizações"
-       },
-       "slug": {
-        "en": "/documentation/changelog/",
-        "pt-br": "/documentacao/changelog/"
-       }
-      },
-      {
-       "key": "changelog/archive",
-       "label": {
-        "en": "Changelog previous years"
-       },
-       "slug": {
-        "en": "/documentation/changelog/archive/"
-       }
-      }
-     ]
+     "slug": {
+      "en": "/documentation/changelog/",
+      "pt-br": "/documentacao/changelog/"
+     }
+    },
+    {
+     "key": "changelog/archive",
+     "label": {
+      "en": "Changelog previous years"
+     },
+     "slug": {
+      "en": "/documentation/changelog/archive/"
+     }
     },
     {
      "key": "row/agreements",
@@ -1765,376 +391,11 @@
       "en": "Agreements & Policies",
       "pt-br": "Acordos e políticas"
      },
-     "items": [
-      {
-       "key": "agreements/overview",
-       "label": {
-        "en": "All agreements",
-        "pt-br": "Todos os acordos"
-       },
-       "slug": {
-        "en": "/documentation/agreements/",
-        "pt-br": "/documentacao/agreements/"
-       }
-      },
-      {
-       "key": "agreements/acceptable-use-policy",
-       "label": {
-        "en": "Acceptable Use Policy",
-        "pt-br": "Política de Uso Aceitável"
-       },
-       "slug": {
-        "en": "/documentation/agreements/acceptable-use-policy/",
-        "pt-br": "/documentacao/agreements/politica-de-uso-aceitavel/"
-       }
-      },
-      {
-       "key": "agreements/azion-affiliate-program-terms",
-       "label": {
-        "en": "Azion Affiliate Program Terms",
-        "pt-br": "Termos dos Programas de Affiliates da Azion"
-       },
-       "slug": {
-        "en": "/documentation/agreements/azion-affiliate-program-terms/",
-        "pt-br": "/documentacao/agreements/termos-programas-affiliates-azion/"
-       }
-      },
-      {
-       "key": "agreements/azion-incentive-credits-terms-and-conditions",
-       "label": {
-        "en": "Terms and Conditions of Azion Incentive Credits",
-        "pt-br": "Termos e Condições de Créditos de Incentivo"
-       },
-       "slug": {
-        "en": "/documentation/agreements/azion-incentive-credits-terms-and-conditions/",
-        "pt-br": "/documentacao/agreements/termos-e-condicoes-azion-creditos-incentivo/"
-       }
-      },
-      {
-       "key": "agreements/azion-plans-terms-and-conditions",
-       "label": {
-        "en": "Terms and Conditions of Azion Plans",
-        "pt-br": "Termos e Condições do Azion Plans"
-       },
-       "slug": {
-        "en": "/documentation/agreements/azion-plans-terms-and-conditions/",
-        "pt-br": "/documentacao/agreements/termos-e-condicoes-azion-plan/"
-       }
-      },
-      {
-       "key": "agreements/customer-agreement",
-       "label": {
-        "en": "Customer Agreement"
-       },
-       "items": [
-        {
-         "key": "agreements/customer-agreement/overview",
-         "label": {
-          "en": "Current version",
-          "pt-br": "Versão atual"
-         },
-         "slug": {
-          "en": "/documentation/agreements/customer-agreement/",
-          "pt-br": "/documentacao/agreements/contrato-de-cliente/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "agreements/faq-azion-customers",
-       "label": {
-        "en": "Data Privacy FAQ – Customers",
-        "pt-br": "FAQ sobre Privacidade de Dados - Clientes"
-       },
-       "slug": {
-        "en": "/documentation/agreements/faq-azion-customers/",
-        "pt-br": "/documentacao/agreements/faq-clientes-azion/"
-       }
-      },
-      {
-       "key": "agreements/faq-end-users",
-       "label": {
-        "en": "Data Privacy FAQ – End Users",
-        "pt-br": "FAQ sobre Privacidade de Dados - Usuários Finais"
-       },
-       "slug": {
-        "en": "/documentation/agreements/faq-end-users/",
-        "pt-br": "/documentacao/agreements/faq-usuarios-finais/"
-       }
-      },
-      {
-       "key": "agreements/faqs",
-       "label": {
-        "en": "Data Privacy FAQs",
-        "pt-br": "FAQs sobre privacidade de dados"
-       },
-       "slug": {
-        "en": "/documentation/agreements/faqs/",
-        "pt-br": "/documentacao/agreements/faqs/"
-       }
-      },
-      {
-       "key": "agreements/marketplace",
-       "label": {
-        "en": "Marketplace"
-       },
-       "items": [
-        {
-         "key": "agreements/marketplace/marketplace-agreement",
-         "label": {
-          "en": "Azion Marketplace Agreement"
-         },
-         "slug": {
-          "en": "/documentation/agreements/marketplace/marketplace-agreement/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "agreements/privacy-policy",
-       "label": {
-        "en": "Privacy Policy",
-        "pt-br": "Política de Privacidade"
-       },
-       "slug": {
-        "en": "/documentation/agreements/privacy-policy/",
-        "pt-br": "/documentacao/agreements/politica-de-privacidade/"
-       }
-      },
-      {
-       "key": "agreements/savings-plan-terms-and-conditions",
-       "label": {
-        "en": "Savings Plan Terms and Conditions",
-        "pt-br": "Termos e Condições do Savings Plan"
-       },
-       "slug": {
-        "en": "/documentation/agreements/savings-plan-terms-and-conditions/",
-        "pt-br": "/documentacao/agreements/termos-e-condicoes-savings-plan/"
-       }
-      },
-      {
-       "key": "agreements/savings-plan-terms-and-conditions-10-july-2025",
-       "label": {
-        "en": "Savings Plan Terms and Conditions - July 10, 2025",
-        "pt-br": "Termos e Condições do Savings Plan - 10/07/2025"
-       },
-       "slug": {
-        "en": "/documentation/agreements/savings-plan-terms-and-conditions-10-july-2025/",
-        "pt-br": "/documentacao/agreements/termos-e-condicoes-savings-plan-10-7-2025/"
-       }
-      },
-      {
-       "key": "agreements/sla",
-       "label": {
-        "en": "SLA"
-       },
-       "items": [
-        {
-         "key": "agreements/sla/overview",
-         "label": {
-          "en": "Current version",
-          "pt-br": "Versão atual"
-         },
-         "slug": {
-          "en": "/documentation/agreements/sla/",
-          "pt-br": "/documentacao/agreements/sla/"
-         }
-        }
-       ]
-      },
-      {
-       "key": "agreements/terms-and-conditions-of-reserved-capacity",
-       "label": {
-        "en": "Terms and Conditions of Reserved Capacity",
-        "pt-br": "Termos e Condições da Reserva de Capacidade"
-       },
-       "slug": {
-        "en": "/documentation/agreements/terms-and-conditions-of-reserved-capacity/",
-        "pt-br": "/documentacao/agreements/termos-e-condicoes-reserva-de-capacidade/"
-       }
-      },
-      {
-       "key": "agreements/tos",
-       "label": {
-        "en": "Terms of Service",
-        "pt-br": "Termos de Serviço"
-       },
-       "items": [
-        {
-         "key": "agreements/tos/overview",
-         "label": {
-          "en": "Current version",
-          "pt-br": "Versão atual"
-         },
-         "slug": {
-          "en": "/documentation/agreements/tos/",
-          "pt-br": "/documentacao/agreements/tos/"
-         }
-        },
-        {
-         "key": "agreements/tos/10-november-2016",
-         "label": {
-          "en": "Terms of Service - November 10, 2016",
-          "pt-br": "Termos de serviço - 10 de novembro de 2016"
-         },
-         "slug": {
-          "en": "/documentation/agreements/tos/10-november-2016/",
-          "pt-br": "/documentacao/agreements/tos/10-november-2016/"
-         }
-        },
-        {
-         "key": "agreements/tos/10-november-2020",
-         "label": {
-          "en": "Terms of Service - November 10, 2020"
-         },
-         "slug": {
-          "en": "/documentation/agreements/tos/10-november-2020/"
-         }
-        },
-        {
-         "key": "agreements/tos/15-march-2024",
-         "label": {
-          "en": "Terms of Service - March 15, 2024",
-          "pt-br": "Termos de Serviço - 15 de março de 2024"
-         },
-         "slug": {
-          "en": "/documentation/agreements/tos/15-march-2024/",
-          "pt-br": "/documentacao/agreements/tos/15-march-2024/"
-         }
-        },
-        {
-         "key": "agreements/tos/15-may-2019",
-         "label": {
-          "en": "Terms of Service - May 15, 2019",
-          "pt-br": "Termos de serviço - 15 de Maio de 2019"
-         },
-         "slug": {
-          "en": "/documentation/agreements/tos/15-may-2019/",
-          "pt-br": "/documentacao/agreements/tos/15-may-2019/"
-         }
-        },
-        {
-         "key": "agreements/tos/18-september-2023",
-         "label": {
-          "en": "Terms of Service - September 18, 2023",
-          "pt-br": "Termos de Serviço - 18 de setembro de 2023"
-         },
-         "slug": {
-          "en": "/documentation/agreements/tos/18-september-2023/",
-          "pt-br": "/documentacao/agreements/tos/18-september-2023/"
-         }
-        },
-        {
-         "key": "agreements/tos/21-february-2024",
-         "label": {
-          "en": "Terms of Service - February 21, 2024",
-          "pt-br": "Termos de Serviço - 21 de fevereiro de 2024"
-         },
-         "slug": {
-          "en": "/documentation/agreements/tos/21-february-2024/",
-          "pt-br": "/documentacao/agreements/tos/21-february-2024/"
-         }
-        },
-        {
-         "key": "agreements/tos/23-september-2022",
-         "label": {
-          "en": "Terms of Service - September 23, 2022",
-          "pt-br": "Contratos e Termos"
-         },
-         "slug": {
-          "en": "/documentation/agreements/tos/23-september-2022/",
-          "pt-br": "/documentacao/agreements/tos/23-september-2022/"
-         }
-        },
-        {
-         "key": "agreements/tos/24-may-2024",
-         "label": {
-          "en": "Terms of Service - May 24, 2024",
-          "pt-br": "Termos de Serviço - 24 de maio de 2024"
-         },
-         "slug": {
-          "en": "/documentation/agreements/tos/24-may-2024/",
-          "pt-br": "/documentacao/agreements/tos/24-may-2024/"
-         }
-        },
-        {
-         "key": "agreements/tos/25-october-2017",
-         "label": {
-          "en": "Terms of Service - 25 de Outubro de 2017",
-          "pt-br": "Termos de serviço - 25 de Outubro de 2017"
-         },
-         "slug": {
-          "en": "/documentation/agreements/tos/25-october-2017/",
-          "pt-br": "/documentacao/agreements/tos/25-october-2017/"
-         }
-        },
-        {
-         "key": "agreements/tos/29-august-2024",
-         "label": {
-          "en": "Terms of Service - August 29, 2024",
-          "pt-br": "Termos de Serviço - 29 de agosto de 2024"
-         },
-         "slug": {
-          "en": "/documentation/agreements/tos/29-august-2024/",
-          "pt-br": "/documentacao/agreements/tos/29-august-2024/"
-         }
-        },
-        {
-         "key": "agreements/tos/29-august-2025",
-         "label": {
-          "en": "Terms of Service - August 29, 2025",
-          "pt-br": "Termos de Serviço - 29 de agosto de 2025"
-         },
-         "slug": {
-          "en": "/documentation/agreements/tos/29-august-2025/",
-          "pt-br": "/documentacao/agreements/tos/29-august-2025/"
-         }
-        },
-        {
-         "key": "agreements/tos/3-march-2023",
-         "label": {
-          "en": "Terms of Service - March 3, 2023",
-          "pt-br": "Termos de Serviço - 3 de março de 2023"
-         },
-         "slug": {
-          "en": "/documentation/agreements/tos/3-march-2023/",
-          "pt-br": "/documentacao/agreements/tos/3-march-2023/"
-         }
-        },
-        {
-         "key": "agreements/tos/30-march-2023",
-         "label": {
-          "en": "Terms of Service - March 30, 2023"
-         },
-         "slug": {
-          "en": "/documentation/agreements/tos/30-march-2023/"
-         }
-        },
-        {
-         "key": "agreements/tos/8-november-2024",
-         "label": {
-          "en": "Terms of Service - November 8, 2024",
-          "pt-br": "Termos de Serviço - 8 de novembro de 2024"
-         },
-         "slug": {
-          "en": "/documentation/agreements/tos/8-november-2024/",
-          "pt-br": "/documentacao/agreements/tos/8-november-2024/"
-         }
-        },
-        {
-         "key": "agreements/tos/9-july-2025",
-         "label": {
-          "en": "Terms of Service - July 9, 2025",
-          "pt-br": "Termos de Serviço - 9 de julho de 2025"
-         },
-         "slug": {
-          "en": "/documentation/agreements/tos/9-july-2025/",
-          "pt-br": "/documentacao/agreements/tos/9-july-2025/"
-         }
-        }
-       ]
-      }
-     ]
+     "slug": {
+      "en": "/documentation/agreements/",
+      "pt-br": "/documentacao/agreements/"
+     },
+     "menu": "agreementsMenu"
     },
     {
      "key": "systemStatus",

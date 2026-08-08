@@ -1,0 +1,93 @@
+{
+ "meta": {
+  "title": {
+   "en": "Workloads"
+  },
+  "root": {
+   "en": "/documentation/secure/workloads/",
+   "pt-br": "/documentacao/secure/workloads/"
+  }
+ },
+ "groups": [
+  {
+   "key": "wkl/grp",
+   "items": [
+    {
+     "key": "wkl/overview",
+     "label": {
+      "en": "Overview",
+      "pt-br": "Visão geral"
+     },
+     "slug": {
+      "en": "/documentation/secure/workloads/",
+      "pt-br": "/documentacao/secure/workloads/"
+     }
+    },
+    {
+     "key": "wkl/guides",
+     "label": {
+      "en": "Guides",
+      "pt-br": "Guias"
+     },
+     "items": [
+      {
+       "key": "wkl/gd/secure/workloads/guides/configure-a-domain",
+       "label": {
+        "en": "How to configure a domain",
+        "pt-br": "Como configurar um domínio"
+       },
+       "slug": {
+        "en": "/documentation/secure/workloads/guides/configure-a-domain/",
+        "pt-br": "/documentacao/secure/workloads/guides/configurar-dominio/"
+       }
+      },
+      {
+       "key": "wkl/gd/secure/workloads/guides/create-a-digital-certificate",
+       "label": {
+        "en": "How to create a digital certificate",
+        "pt-br": "Como criar um certificado digital"
+       },
+       "slug": {
+        "en": "/documentation/secure/workloads/guides/create-a-digital-certificate/",
+        "pt-br": "/documentacao/secure/workloads/guides/criar-certificado-digital/"
+       }
+      },
+      {
+       "key": "wkl/gd/secure/workloads/guides/create-azion-custom-domain",
+       "label": {
+        "en": "How to Create an Azion Custom Domain",
+        "pt-br": "Como criar um Azion Custom Domain"
+       },
+       "slug": {
+        "en": "/documentation/secure/workloads/guides/create-azion-custom-domain/",
+        "pt-br": "/documentacao/secure/workloads/guides/criar-dominio-personalizado-azion/"
+       }
+      },
+      {
+       "key": "wkl/gd/secure/workloads/guides/migrate-ns-to-azion",
+       "label": {
+        "en": "How to migrate nameservers to Azion",
+        "pt-br": "Como migrar nameservers para a Azion"
+       },
+       "slug": {
+        "en": "/documentation/secure/workloads/guides/migrate-ns-to-azion/",
+        "pt-br": "/documentacao/secure/workloads/guides/migrar-ns-para-a-azion/"
+       }
+      },
+      {
+       "key": "wkl/gd/secure/workloads/guides/point-domain-to-azion",
+       "label": {
+        "en": "How to point a domain to Azion",
+        "pt-br": "Como apontar um domínio para a Azion"
+       },
+       "slug": {
+        "en": "/documentation/secure/workloads/guides/point-domain-to-azion/",
+        "pt-br": "/documentacao/secure/workloads/guides/apontar-dominio-para-a-azion/"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,880 @@
+{
+ "meta": {
+  "title": {
+   "en": "Applications"
+  },
+  "root": {
+   "en": "/documentation/build/applications/",
+   "pt-br": "/documentacao/build/applications/"
+  }
+ },
+ "groups": [
+  {
+   "key": "app/grp",
+   "items": [
+    {
+     "key": "app/overview",
+     "label": {
+      "en": "Overview",
+      "pt-br": "Visão geral"
+     },
+     "slug": {
+      "en": "/documentation/build/applications/",
+      "pt-br": "/documentacao/build/applications/"
+     }
+    },
+    {
+     "key": "app/get-started/journeys/launch",
+     "label": {
+      "en": "Build an application",
+      "pt-br": "Criar uma aplicação"
+     },
+     "slug": {
+      "en": "/documentation/get-started/journeys/launch/",
+      "pt-br": "/documentacao/build/applications/guides/criar-uma-aplicacao/"
+     }
+    },
+    {
+     "key": "app/build/applications/modules",
+     "label": {
+      "en": "Modules",
+      "pt-br": "Módulos"
+     },
+     "items": [
+      {
+       "key": "app/build/applications/application-accelerator",
+       "label": {
+        "en": "Application Accelerator"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/application-accelerator/",
+        "pt-br": "/documentacao/build/applications/application-accelerator/"
+       }
+      },
+      {
+       "key": "app/build/applications/cache",
+       "label": {
+        "en": "Cache"
+       },
+       "items": [
+        {
+         "key": "app/build/applications/reference/cache-settings",
+         "label": {
+          "en": "Cache Settings"
+         },
+         "slug": {
+          "en": "/documentation/build/applications/reference/cache-settings/",
+          "pt-br": "/documentacao/build/applications/reference/cache-settings/"
+         }
+        },
+        {
+         "key": "app/build/applications/reference/real-time-purge",
+         "label": {
+          "en": "Real-Time Purge"
+         },
+         "slug": {
+          "en": "/documentation/build/applications/reference/real-time-purge/",
+          "pt-br": "/documentacao/build/applications/reference/real-time-purge/"
+         }
+        },
+        {
+         "key": "app/build/applications/cache/tiered-cache",
+         "label": {
+          "en": "Tiered Cache"
+         },
+         "slug": {
+          "en": "/documentation/build/applications/cache/tiered-cache/",
+          "pt-br": "/documentacao/build/applications/cache/tiered-cache/"
+         }
+        }
+       ],
+       "slug": {
+        "en": "/documentation/build/applications/cache/",
+        "pt-br": "/documentacao/build/applications/cache/"
+       }
+      },
+      {
+       "key": "app/build/functions",
+       "label": {
+        "en": "Functions"
+       },
+       "items": [
+        {
+         "key": "app/build/applications/reference/functions-instances",
+         "label": {
+          "en": "Functions Instances"
+         },
+         "slug": {
+          "en": "/documentation/build/applications/reference/functions-instances/",
+          "pt-br": "/documentacao/build/applications/reference/functions-instances/"
+         }
+        },
+        {
+         "key": "app/build/functions/azion-runtime",
+         "label": {
+          "en": "Azion Runtime"
+         },
+         "slug": {
+          "en": "/documentation/runtime/overview/",
+          "pt-br": "/documentacao/runtime/visao-geral/"
+         }
+        }
+       ],
+       "slug": {
+        "en": "/documentation/build/applications/functions/",
+        "pt-br": "/documentacao/build/applications/functions/"
+       }
+      },
+      {
+       "key": "app/build/applications/image-processor",
+       "label": {
+        "en": "Image Processor"
+       },
+       "items": [
+        {
+         "key": "app/build/applications/image-processor/first-steps",
+         "label": {
+          "en": "First steps",
+          "pt-br": "Primeiros passos"
+         },
+         "slug": {
+          "en": "/documentation/build/applications/image-processor/first-steps/",
+          "pt-br": "/documentacao/build/applications/image-processor/first-steps/"
+         }
+        }
+       ],
+       "slug": {
+        "en": "/documentation/build/applications/image-processor/",
+        "pt-br": "/documentacao/build/applications/image-processor/"
+       }
+      }
+     ]
+    },
+    {
+     "key": "app/build/applications/reference/device-groups",
+     "label": {
+      "en": "Device Groups"
+     },
+     "slug": {
+      "en": "/documentation/build/applications/reference/device-groups/",
+      "pt-br": "/documentacao/build/applications/reference/device-groups/"
+     }
+    },
+    {
+     "key": "app/build/applications/reference/domains/overview",
+     "label": {
+      "en": "Domains"
+     },
+     "slug": {
+      "en": "/documentation/build/applications/reference/domains/",
+      "pt-br": "/documentacao/build/applications/reference/domains/"
+     }
+    },
+    {
+     "key": "app/build/applications/reference/domains/mtls",
+     "label": {
+      "en": "Support for mTLS for Build",
+      "pt-br": "Suporte para mTLS para Build"
+     },
+     "slug": {
+      "en": "/documentation/build/applications/reference/domains/mtls/",
+      "pt-br": "/documentacao/build/applications/reference/domains/mtls/"
+     }
+    },
+    {
+     "key": "app/error-responses",
+     "label": {
+      "en": "Error Responses"
+     },
+     "slug": {
+      "en": "/documentation/build/applications/reference/error-responses/",
+      "pt-br": "/documentacao/build/applications/reference/error-responses/"
+     }
+    },
+    {
+     "key": "app/build/applications/reference/main-settings",
+     "label": {
+      "en": "Applications Main Settings",
+      "pt-br": "Main Settings"
+     },
+     "slug": {
+      "en": "/documentation/build/applications/reference/main-settings/",
+      "pt-br": "/documentacao/build/applications/reference/main-settings/"
+     }
+    },
+    {
+     "key": "app/build/applications/reference/origins",
+     "label": {
+      "en": "Origins"
+     },
+     "slug": {
+      "en": "/documentation/build/applications/reference/origins/",
+      "pt-br": "/documentacao/build/applications/reference/origins/"
+     }
+    },
+    {
+     "key": "app/build/applications/reference/rules-engine",
+     "label": {
+      "en": "Rules Engine for Applications",
+      "pt-br": "Rules Engine para Applications"
+     },
+     "slug": {
+      "en": "/documentation/build/applications/reference/rules-engine/",
+      "pt-br": "/documentacao/build/applications/reference/rules-engine/"
+     }
+    },
+    {
+     "key": "app/build/local-dev",
+     "label": {
+      "en": "Develop with Azion",
+      "pt-br": "Desenvolva com a Azion"
+     },
+     "items": [
+      {
+       "key": "app/get-started/frameworks/cli",
+       "label": {
+        "en": "Develop with Azion CLI",
+        "pt-br": "Desenvolva com a Azion CLI"
+       },
+       "slug": {
+        "en": "/documentation/get-started/frameworks/cli/",
+        "pt-br": "/documentacao/build/applications/guides/cli/"
+       }
+      },
+      {
+       "key": "app/get-started/frameworks/code-editor",
+       "label": {
+        "en": "Functions Code Editor Overview",
+        "pt-br": "Visão geral do Functions Code Editor"
+       },
+       "slug": {
+        "en": "/documentation/get-started/frameworks/code-editor/",
+        "pt-br": "/documentacao/build/applications/guides/code-editor/"
+       }
+      },
+      {
+       "key": "app/get-started/frameworks/environment-variables",
+       "label": {
+        "en": "Build with Environment Variables",
+        "pt-br": "Construa com Environment Variables"
+       },
+       "slug": {
+        "en": "/documentation/get-started/frameworks/environment-variables/",
+        "pt-br": "/documentacao/build/applications/guides/environment-variables/"
+       }
+      },
+      {
+       "key": "app/get-started/frameworks/go",
+       "label": {
+        "en": "Build with Azion Go SDK",
+        "pt-br": "Construa com o Azion Go SDK"
+       },
+       "slug": {
+        "en": "/documentation/get-started/frameworks/go/",
+        "pt-br": "/documentacao/build/applications/guides/go/"
+       }
+      },
+      {
+       "key": "app/get-started/frameworks/local-dev",
+       "label": {
+        "en": "Local development",
+        "pt-br": "Desenvolvimento local com a Azion CLI"
+       },
+       "slug": {
+        "en": "/documentation/get-started/frameworks/local-dev/",
+        "pt-br": "/documentacao/build/applications/guides/local-dev/"
+       }
+      },
+      {
+       "key": "app/get-started/frameworks/runtime-apis",
+       "label": {
+        "en": "Build with Azion Runtime",
+        "pt-br": "Construa com o Azion Runtime"
+       },
+       "slug": {
+        "en": "/documentation/get-started/frameworks/runtime-apis/",
+        "pt-br": "/documentacao/build/applications/guides/runtime/"
+       }
+      },
+      {
+       "key": "app/get-started/frameworks/terraform-provider",
+       "label": {
+        "en": "Build with Azion Terraform Provider",
+        "pt-br": "Construa com o Azion Terraform Provider"
+       },
+       "slug": {
+        "en": "/documentation/get-started/frameworks/terraform-provider/",
+        "pt-br": "/documentacao/build/applications/guides/terraform-provider/"
+       }
+      }
+     ],
+     "slug": {
+      "en": "/documentation/get-started/frameworks/overview/",
+      "pt-br": "/documentacao/get-started/frameworks/overview/"
+     }
+    },
+    {
+     "key": "app/guides",
+     "label": {
+      "en": "Guides",
+      "pt-br": "Guias"
+     },
+     "items": [
+      {
+       "key": "app/gd/build/applications/quickstart",
+       "label": {
+        "en": "Applications first steps",
+        "pt-br": "Applications primeiros passos"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/quickstart/",
+        "pt-br": "/documentacao/build/applications/quickstart/"
+       }
+      },
+      {
+       "key": "app/gd/build/applications/guides/configure-main-settings",
+       "label": {
+        "en": "How to configure main settings",
+        "pt-br": "Defina as configurações principais de uma app"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/configure-main-settings/",
+        "pt-br": "/documentacao/build/applications/guides/definir-configuracoes-principais/"
+       }
+      },
+      {
+       "key": "app/gd/build/applications/guides/create-device-groups",
+       "label": {
+        "en": "How to create device groups",
+        "pt-br": "Como criar device groups"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/create-device-groups/",
+        "pt-br": "/documentacao/build/applications/guides/criar-device-groups/"
+       }
+      },
+      {
+       "key": "app/gd/build/applications/guides/debug-rules",
+       "label": {
+        "en": "How to debug rules created with Rules Engine",
+        "pt-br": "Como fazer o debug de regras criadas com Rules Engine"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/debug-rules/",
+        "pt-br": "/documentacao/build/applications/guides/debug-regras/"
+       }
+      },
+      {
+       "key": "app/gd/build/applications/guides/gzip-compression",
+       "label": {
+        "en": "How to enable gzip compression for Applications",
+        "pt-br": "Como habilitar a compressão gzip para Applications"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/gzip-compression/",
+        "pt-br": "/documentacao/build/applications/guides/gzip-compression/"
+       }
+      },
+      {
+       "key": "app/gd/build/applications/guides/how-to-generate-a-lets-encrypt-certificate",
+       "label": {
+        "en": "Generate a Let's Encrypt Cert for Your Domain",
+        "pt-br": "Gere um certificado Let's Encrypt para o domínio"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate/",
+        "pt-br": "/documentacao/build/applications/guides/como-gerar-um-certificado-lets-encrypt/"
+       }
+      },
+      {
+       "key": "app/gd/build/applications/guides/stage-applications-through-hosts-file",
+       "label": {
+        "en": "How to stage an application through the hosts file",
+        "pt-br": "Faça staging de uma app pelo arquivo hosts"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/stage-applications-through-hosts-file/",
+        "pt-br": "/documentacao/build/applications/guides/testar-edge-application-atraves-do-arquivo-hosts/"
+       }
+      },
+      {
+       "key": "app/gd/build/applications/guides/work-with-origins",
+       "label": {
+        "en": "How to define a new origin for your application",
+        "pt-br": "Como definir uma nova origem para sua aplicação"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/work-with-origins/",
+        "pt-br": "/documentacao/build/applications/guides/definir-origens/"
+       }
+      },
+      {
+       "key": "app/gd/build/applications/guides/work-with-rules-engine",
+       "label": {
+        "en": "Automate Behaviors with Rules Engine",
+        "pt-br": "Automatize comportamentos com o Rules Engine"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/work-with-rules-engine/",
+        "pt-br": "/documentacao/build/applications/guides/trabalhar-com-rules-engine/"
+       }
+      },
+      {
+       "key": "app/gd/build/applications/guides/clone-applications",
+       "label": {
+        "en": "How to clone applications",
+        "pt-br": "Como clonar uma application"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/clone-applications/",
+        "pt-br": "/documentacao/build/applications/guides/clonar-applications/"
+       }
+      },
+      {
+       "key": "app/gd/build/applications/guides/configure-ports",
+       "label": {
+        "en": "Configure HTTP and HTTPS Ports",
+        "pt-br": "Configure portas HTTP e HTTPS"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/configure-ports/",
+        "pt-br": "/documentacao/build/applications/guides/configurar-portas/"
+       }
+      },
+      {
+       "key": "app/gd/build/applications/guides/cors-errors",
+       "label": {
+        "en": "How to Fix CORS Policy Errors",
+        "pt-br": "Corrija erros da política CORS na aplicação"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/cors-errors/",
+        "pt-br": "/documentacao/build/applications/guides/erros-cors/"
+       }
+      },
+      {
+       "key": "app/gd/build/applications/guides/cross-origin-resource-sharing-cors",
+       "label": {
+        "en": "Cross-Origin Resource Sharing (CORS)",
+        "pt-br": "Configure Cross-Origin Resource Sharing (CORS)"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/cross-origin-resource-sharing-cors/",
+        "pt-br": "/documentacao/build/applications/guides/cross-origin-resource-sharing-cors/"
+       }
+      },
+      {
+       "key": "app/gd/build/applications/guides/crossdomain-error-in-jw-player",
+       "label": {
+        "en": "Crossdomain error with JW PLayer",
+        "pt-br": "Erro de crossdomain no JW Player"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/crossdomain-error-in-jw-player/",
+        "pt-br": "/documentacao/build/applications/guides/erro-de-crossdomain-xml-no-jw-player/"
+       }
+      },
+      {
+       "key": "app/gd/build/applications/guides/customizing-error-response-page",
+       "label": {
+        "en": "How to customize an error response page",
+        "pt-br": "Como personalizar uma página de resposta de erro"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/customizing-error-response-page/",
+        "pt-br": "/documentacao/build/applications/guides/personalizar-pagina-resposta-erro/"
+       }
+      },
+      {
+       "key": "app/gd/build/applications/guides/delete-applications",
+       "label": {
+        "en": "How to delete an application",
+        "pt-br": "Como excluir uma application"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/delete-applications/",
+        "pt-br": "/documentacao/build/applications/guides/excluir-applications/"
+       }
+      },
+      {
+       "key": "app/gd/build/applications/guides/how-to-generate-a-lets-encrypt-certificate-via-api",
+       "label": {
+        "en": "Generate a Let's Encrypt Cert via API (HTTP-01)",
+        "pt-br": "Gere um certificado Let's Encrypt via API"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate-via-api/",
+        "pt-br": "/documentacao/build/applications/guides/como-gerar-um-certificado-lets-encrypt-via-api/"
+       }
+      },
+      {
+       "key": "app/gd/build/applications/guides/live-ingest-best-practices",
+       "label": {
+        "en": "Best practices for using Live Ingest",
+        "pt-br": "Boas práticas para uso do Live Ingest"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/live-ingest-best-practices/",
+        "pt-br": "/documentacao/build/applications/guides/live-ingest-boas-praticas/"
+       }
+      },
+      {
+       "key": "app/gd/build/applications/guides/mitigating-a-vulnerability-httpoxy",
+       "label": {
+        "en": "How to mitigate the HTTPOxy vulnerability",
+        "pt-br": "Como mitigar a vulnerabilidade HTTPoxy"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/mitigating-a-vulnerability-httpoxy/",
+        "pt-br": "/documentacao/build/applications/guides/como-mitigar-vulnerabilidade-httpoxy/"
+       }
+      },
+      {
+       "key": "app/gd/build/applications/guides/original-ip-header",
+       "label": {
+        "en": "Send Client IP via a Dedicated HTTP Header",
+        "pt-br": "Isole o IP do cliente em um cabeçalho HTTP"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/original-ip-header/",
+        "pt-br": "/documentacao/build/applications/guides/ip-original-header/"
+       }
+      },
+      {
+       "key": "app/gd/build/applications/guides/rules-engine",
+       "label": {
+        "en": "Create Request & Response Rules",
+        "pt-br": "Crie regras de Request e Response no Rules Engine"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/rules-engine/",
+        "pt-br": "/documentacao/build/applications/guides/rules-engine/"
+       }
+      },
+      {
+       "key": "app/gd/build/applications/guides/multiple-origins",
+       "label": {
+        "en": "Configure Multiple Origins with Load Balancing",
+        "pt-br": "Configure múltiplas origens com load balancing"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/multiple-origins/",
+        "pt-br": "/documentacao/build/applications/guides/configure-multiplas-origens/"
+       }
+      },
+      {
+       "key": "app/gd/build/applications/guides/set-error-pages",
+       "label": {
+        "en": "How to set error pages",
+        "pt-br": "Como configurar páginas de erro"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/set-error-pages/",
+        "pt-br": "/documentacao/build/applications/guides/configurar-paginas-de-erro/"
+       }
+      },
+      {
+       "key": "app/gd/build/applications/guides/troubleshooting/debug-applications",
+       "label": {
+        "en": "Debug applications",
+        "pt-br": "Debugar aplicações"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/troubleshooting/debug-applications/",
+        "pt-br": "/documentacao/build/applications/guides/troubleshooting/debug-aplicacoes/"
+       }
+      },
+      {
+       "key": "app/gd/build/applications/guides/troubleshooting/understand-metrics",
+       "label": {
+        "en": "Understand metrics",
+        "pt-br": "Monitorar métricas"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/guides/troubleshooting/understand-metrics/",
+        "pt-br": "/documentacao/build/applications/guides/troubleshooting/monitorar-metricas/"
+       }
+      },
+      {
+       "key": "app/gd/build/applications/cache",
+       "label": {
+        "en": "Cache"
+       },
+       "items": [
+        {
+         "key": "app/gd/build/applications/cache/guides/advanced-cache-key",
+         "label": {
+          "en": "How to configure Advanced Cache Key for Applications",
+          "pt-br": "Como configurar a Advanced Cache Key para Applications"
+         },
+         "slug": {
+          "en": "/documentation/build/applications/cache/guides/advanced-cache-key/",
+          "pt-br": "/documentacao/build/applications/cache/guides/advanced-cache-key/"
+         }
+        },
+        {
+         "key": "app/gd/build/applications/cache/guides/cache-settings",
+         "label": {
+          "en": "How to configure cache policies for Applications",
+          "pt-br": "Como configurar políticas de cache para Applications"
+         },
+         "slug": {
+          "en": "/documentation/build/applications/cache/guides/cache-settings/",
+          "pt-br": "/documentacao/build/applications/cache/guides/cache-settings/"
+         }
+        },
+        {
+         "key": "app/gd/build/applications/cache/guides/check-page-cache-time",
+         "label": {
+          "en": "Verify Cache Indicators with ModHeader",
+          "pt-br": "Verifique indicadores de cache com o ModHeader"
+         },
+         "slug": {
+          "en": "/documentation/build/applications/cache/guides/check-page-cache-time/",
+          "pt-br": "/documentacao/build/applications/cache/guides/verificar-tempo-de-cache-da-pagina/"
+         }
+        },
+        {
+         "key": "app/gd/build/applications/cache/guides/enforce-hls-cache",
+         "label": {
+          "en": "How to enforce HLS cache for live streaming delivery",
+          "pt-br": "Implemente cache HLS para streaming ao vivo"
+         },
+         "slug": {
+          "en": "/documentation/build/applications/cache/guides/enforce-hls-cache/",
+          "pt-br": "/documentacao/build/applications/cache/guides/implementar-cache-hls/"
+         }
+        },
+        {
+         "key": "app/gd/build/applications/cache/guides/tune-cache-settings",
+         "label": {
+          "en": "How to tune your cache settings",
+          "pt-br": "Como ajustar as configurações de cache"
+         },
+         "slug": {
+          "en": "/documentation/build/applications/cache/guides/tune-cache-settings/",
+          "pt-br": "/documentacao/build/applications/cache/guides/ajustar-cache-settings/"
+         }
+        }
+       ]
+      },
+      {
+       "key": "app/gd/build/functions",
+       "label": {
+        "en": "Functions"
+       },
+       "items": [
+        {
+         "key": "app/gd/get-started/frameworks/javascript",
+         "label": {
+          "en": "How to build functions",
+          "pt-br": "Como escrever functions"
+         },
+         "slug": {
+          "en": "/documentation/get-started/frameworks/javascript/",
+          "pt-br": "/documentacao/build/applications/guides/javascript/"
+         }
+        },
+        {
+         "key": "app/gd/build/functions/guides/altcha",
+         "label": {
+          "en": "How to Use the ALTCHA Function",
+          "pt-br": "Use a Function ALTCHA no Marketplace da Azion"
+         },
+         "slug": {
+          "en": "/documentation/build/functions/guides/altcha/",
+          "pt-br": "/documentacao/build/functions/guides/altcha/"
+         }
+        },
+        {
+         "key": "app/gd/build/functions/guides/api-builder",
+         "label": {
+          "en": "How to build an API with Functions and ChatGPT",
+          "pt-br": "Como criar uma API com Functions e ChatGPT"
+         },
+         "slug": {
+          "en": "/documentation/build/functions/guides/api-builder/",
+          "pt-br": "/documentacao/build/functions/guides/api-builder/"
+         }
+        },
+        {
+         "key": "app/gd/build/functions/guides/browserless-functions",
+         "label": {
+          "en": "How to build a browserless application with Functions",
+          "pt-br": "Como construir uma aplicação browserless com Functions"
+         },
+         "slug": {
+          "en": "/documentation/build/functions/guides/browserless-functions/",
+          "pt-br": "/documentacao/build/functions/guides/aplicacao-browserless-functions/"
+         }
+        },
+        {
+         "key": "app/gd/build/functions/guides/debugging-functions-graphql",
+         "label": {
+          "en": "How to debug functions using GraphQL API",
+          "pt-br": "Como fazer o debug de functions usando a GraphQL⁠ API"
+         },
+         "slug": {
+          "en": "/documentation/build/functions/guides/debugging-functions-graphql/",
+          "pt-br": "/documentacao/build/functions/guides/debugging-functions-graphql/"
+         }
+        },
+        {
+         "key": "app/gd/build/functions/guides/firewall",
+         "label": {
+          "en": "Create & Configure a Function on Firewall",
+          "pt-br": "Como criar e configurar uma function em seu Firewall"
+         },
+         "slug": {
+          "en": "/documentation/build/functions/guides/firewall/",
+          "pt-br": "/documentacao/build/functions/guides/firewall/"
+         }
+        },
+        {
+         "key": "app/gd/build/functions/guides/paywall-function-jwt",
+         "label": {
+          "en": "How to set up a paywall with Azion JWT solution",
+          "pt-br": "Configure um paywall com a integração JWT"
+         },
+         "slug": {
+          "en": "/documentation/build/functions/guides/paywall-function-jwt/",
+          "pt-br": "/documentacao/build/functions/guides/paywall-function-jwt/"
+         }
+        },
+        {
+         "key": "app/gd/build/functions/guides/serverless-functions",
+         "label": {
+          "en": "How to run serverless functions on Azion",
+          "pt-br": "Como executar funções serverless na Azion"
+         },
+         "slug": {
+          "en": "/documentation/build/functions/guides/serverless-functions/",
+          "pt-br": "/documentacao/build/functions/guides/funcoes-serverless/"
+         }
+        },
+        {
+         "key": "app/gd/build/functions/guides/file-upload-functions",
+         "label": {
+          "en": "Implement File Upload with Functions",
+          "pt-br": "Implemente upload de arquivos com Functions"
+         },
+         "slug": {
+          "en": "/documentation/build/functions/guides/file-upload-functions/",
+          "pt-br": "/documentacao/build/functions/guides/upload-arquivos-functions/"
+         }
+        },
+        {
+         "key": "app/gd/build/functions/guides/get-started",
+         "label": {
+          "en": "Get Started With OpenNext",
+          "pt-br": "Comece com o OpenNext"
+         },
+         "slug": {
+          "en": "/documentation/build/functions/guides/get-started/",
+          "pt-br": "/documentacao/build/functions/guides/como-comecar/"
+         }
+        },
+        {
+         "key": "app/gd/build/functions/guides/instantiate-functions",
+         "label": {
+          "en": "How to instantiate functions in your application",
+          "pt-br": "Como instanciar functions em sua aplicação"
+         },
+         "slug": {
+          "en": "/documentation/build/functions/guides/instantiate-functions/",
+          "pt-br": "/documentacao/build/functions/guides/instanciar-functions/"
+         }
+        },
+        {
+         "key": "app/gd/build/functions/guides/resend-email-functions",
+         "label": {
+          "en": "How to integrate Resend email service with Functions",
+          "pt-br": "Como integrar o serviço de email Resend com Functions"
+         },
+         "slug": {
+          "en": "/documentation/build/functions/guides/resend-email-functions/",
+          "pt-br": "/documentacao/build/functions/guides/integrar-resend-email-functions/"
+         }
+        },
+        {
+         "key": "app/gd/build/functions/guides/restful-tasks-api-functions",
+         "label": {
+          "en": "Build a RESTful API with Functions & SQL",
+          "pt-br": "Crie uma API RESTful com Functions e SQL"
+         },
+         "slug": {
+          "en": "/documentation/build/functions/guides/restful-tasks-api-functions/",
+          "pt-br": "/documentacao/build/functions/guides/api-restful-edge-functions-edge-sql/"
+         }
+        },
+        {
+         "key": "app/gd/build/functions/guides/stripe-webhooks-functions",
+         "label": {
+          "en": "How to handle Stripe webhooks with Functions",
+          "pt-br": "Como lidar com webhooks do Stripe com Functions"
+         },
+         "slug": {
+          "en": "/documentation/build/functions/guides/stripe-webhooks-functions/",
+          "pt-br": "/documentacao/build/functions/guides/webhooks-stripe-functions/"
+         }
+        },
+        {
+         "key": "app/gd/build/functions/guides/test-origin-with-functions",
+         "label": {
+          "en": "How to test an origin with Functions",
+          "pt-br": "Como testar uma origem com Functions"
+         },
+         "slug": {
+          "en": "/documentation/build/functions/guides/test-origin-with-functions/",
+          "pt-br": "/documentacao/build/functions/guides/test-origin-with-functions/"
+         }
+        },
+        {
+         "key": "app/gd/build/functions/guides/troubleshooting",
+         "label": {
+          "en": "Troubleshooting an OpenNext Application",
+          "pt-br": "Solução de problemas de uma aplicação OpenNext"
+         },
+         "slug": {
+          "en": "/documentation/build/functions/guides/troubleshooting/",
+          "pt-br": "/documentacao/build/functions/guides/troubleshooting/"
+         }
+        },
+        {
+         "key": "app/gd/build/functions/guides/webassembly-on-azion-platform",
+         "label": {
+          "en": "Create a Function with WebAssembly",
+          "pt-br": "Crie uma function com WebAssembly na Azion"
+         },
+         "slug": {
+          "en": "/documentation/build/functions/guides/webassembly-on-azion-platform/",
+          "pt-br": "/documentacao/build/functions/guides/webassembly-na-plataforma-azion/"
+         }
+        }
+       ]
+      },
+      {
+       "key": "app/gd/build/applications/image-processor",
+       "label": {
+        "en": "Image Processor"
+       },
+       "items": [
+        {
+         "key": "app/gd/build/applications/image-processor/guides/process-images",
+         "label": {
+          "en": "How to optimize image processing at the edge",
+          "pt-br": "Como otimizar o processamento de imagens no edge"
+         },
+         "slug": {
+          "en": "/documentation/build/applications/image-processor/guides/process-images/",
+          "pt-br": "/documentacao/build/applications/image-processor/guides/processar-imagens/"
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

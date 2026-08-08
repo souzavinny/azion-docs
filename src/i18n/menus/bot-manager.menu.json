@@ -1,0 +1,59 @@
+{
+ "meta": {
+  "title": {
+   "en": "Bot Manager"
+  },
+  "root": {
+   "en": "/documentation/secure/bot-manager/",
+   "pt-br": "/documentacao/secure/bot-manager/"
+  }
+ },
+ "groups": [
+  {
+   "key": "bot/grp",
+   "items": [
+    {
+     "key": "bot/overview",
+     "label": {
+      "en": "Overview",
+      "pt-br": "Visão geral"
+     },
+     "slug": {
+      "en": "/documentation/secure/bot-manager/",
+      "pt-br": "/documentacao/secure/bot-manager/"
+     }
+    },
+    {
+     "key": "bot/secure/bot-manager/reference/lite",
+     "label": {
+      "en": "Azion Bot Manager Lite"
+     },
+     "slug": {
+      "en": "/documentation/secure/bot-manager/reference/lite/",
+      "pt-br": "/documentacao/secure/bot-manager/reference/lite/"
+     }
+    },
+    {
+     "key": "bot/guides",
+     "label": {
+      "en": "Guides",
+      "pt-br": "Guias"
+     },
+     "items": [
+      {
+       "key": "bot/gd/secure/firewall/guides/manage-bots",
+       "label": {
+        "en": "How to manage bots",
+        "pt-br": "Como gerenciar bots"
+       },
+       "slug": {
+        "en": "/documentation/secure/firewall/guides/manage-bots/",
+        "pt-br": "/documentacao/secure/firewall/guides/gerenciar-bots/"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

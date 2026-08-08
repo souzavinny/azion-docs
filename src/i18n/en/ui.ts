@@ -11,6 +11,7 @@ export default {
 		'astro logo on a starry expanse of space, with a purple saturn-like planet floating in the right foreground',
 	// Left Sidebar
 	'leftSidebar.a11yTitle': 'Primary',
+	'leftSidebar.allProducts': 'All products',
 	'leftSidebar.learnTab': 'Documentation',
 	'leftSidebar.referenceTab': 'Reference',
 	'leftSidebar.viewInEnglish': 'View in English',
@@ -39,6 +40,8 @@ export default {
 	// Used in previous/next page links at the bottom of pages
 	'articleNav.nextPage': 'Next Page',
 	'articleNav.prevPage': 'Back',
+	'pageContent.agentSetup': 'Agent Setup',
+	'pageContent.agentSetupTooltip': 'Setup your agent',
 	// Used in `<Since>`: Added in: v0.24.0 [NEW]
 	'since.addedIn': 'Added in:',
 	'since.new': 'New',

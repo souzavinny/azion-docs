@@ -1,0 +1,163 @@
+{
+ "meta": {
+  "title": {
+   "en": "Support",
+   "pt-br": "Suporte"
+  },
+  "root": {
+   "en": "/documentation/support/",
+   "pt-br": "/documentacao/support/"
+  }
+ },
+ "groups": [
+  {
+   "key": "grp/support",
+   "items": [
+    {
+     "key": "sup/overview",
+     "label": {
+      "en": "Overview",
+      "pt-br": "Visão geral"
+     },
+     "slug": {
+      "en": "/documentation/support/",
+      "pt-br": "/documentacao/support/"
+     }
+    },
+    {
+     "key": "sup/contact",
+     "label": {
+      "en": "Contact support",
+      "pt-br": "Contato com o suporte"
+     },
+     "items": [
+      {
+       "key": "sup/technical-support",
+       "label": {
+        "en": "Technical Support",
+        "pt-br": "Suporte técnico"
+       },
+       "slug": {
+        "en": "/documentation/services/support/",
+        "pt-br": "/documentacao/services/support/"
+       }
+      },
+      {
+       "key": "sup/open-ticket",
+       "label": {
+        "en": "Open a support ticket",
+        "pt-br": "Abrir um ticket de suporte"
+       },
+       "slug": {
+        "en": "/documentation/services/support/guides/open-ticket/",
+        "pt-br": "/documentacao/services/support/guides/open-ticket/"
+       }
+      },
+      {
+       "key": "sup/get-help",
+       "label": {
+        "en": "Get help",
+        "pt-br": "Obtenha ajuda"
+       },
+       "slug": {
+        "en": "/documentation/services/support/get-help/",
+        "pt-br": "/documentacao/services/support/get-help/"
+       }
+      }
+     ]
+    },
+    {
+     "key": "sup/troubleshooting",
+     "label": {
+      "en": "Troubleshooting",
+      "pt-br": "Solução de problemas"
+     },
+     "items": [
+      {
+       "key": "sup/ts-diagnostics",
+       "label": {
+        "en": "Diagnostics",
+        "pt-br": "Diagnóstico"
+       },
+       "items": [
+        {
+         "key": "sup/ts-collect-data",
+         "label": {
+          "en": "Collect diagnostic data",
+          "pt-br": "Coletar dados de diagnóstico"
+         },
+         "slug": {
+          "en": "/documentation/support/troubleshooting/collect-diagnostic-data/",
+          "pt-br": "/documentacao/support/troubleshooting/collect-diagnostic-data/"
+         }
+        },
+        {
+         "key": "sup/ts-account-access",
+         "label": {
+          "en": "Cannot access your account",
+          "pt-br": "Não é possível acessar sua conta"
+         },
+         "slug": {
+          "en": "/documentation/support/troubleshooting/cannot-access-account/",
+          "pt-br": "/documentacao/support/troubleshooting/cannot-access-account/"
+         }
+        },
+        {
+         "key": "sup/ts-emails",
+         "label": {
+          "en": "Not receiving Azion emails",
+          "pt-br": "Não está recebendo emails da Azion"
+         },
+         "slug": {
+          "en": "/documentation/support/troubleshooting/not-receiving-emails/",
+          "pt-br": "/documentacao/support/troubleshooting/not-receiving-emails/"
+         }
+        }
+       ]
+      },
+      {
+       "key": "sup/ts-errors",
+       "label": {
+        "en": "Errors",
+        "pt-br": "Erros"
+       },
+       "items": [
+        {
+         "key": "sup/ts-status-codes",
+         "label": {
+          "en": "HTTP error status codes",
+          "pt-br": "Códigos de status de erro HTTP"
+         },
+         "slug": {
+          "en": "/documentation/services/support/http-error-status-codes/",
+          "pt-br": "/documentacao/services/support/http-error-status-codes/"
+         }
+        },
+        {
+         "key": "sup/ts-headers",
+         "label": {
+          "en": "Diagnostic headers",
+          "pt-br": "Headers de diagnóstico"
+         },
+         "slug": {
+          "en": "/documentation/support/troubleshooting/diagnostic-headers/",
+          "pt-br": "/documentacao/support/troubleshooting/diagnostic-headers/"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "key": "sup/status",
+     "label": {
+      "en": "System Status"
+     },
+     "slug": {
+      "en": "https://status.azion.com/"
+     }
+    }
+   ]
+  }
+ ]
+}

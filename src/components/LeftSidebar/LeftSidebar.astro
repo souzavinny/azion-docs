@@ -5,7 +5,7 @@ export interface Props {
 };
 
 import { removeLeadingSlash,  getLanguageFromURL} from '~/util';
-import { getNavigationMenu } from '~/util/getNav';
+import { getNavigationMenu, getSidebarMeta } from '~/util/getNav';
 import { useTranslations } from '~/i18n/util';
 import SidebarPanelMenu from '~/components/sidebarpanelmenu/SidebarPanelMenu.vue';
 
@@ -13,6 +13,9 @@ const t = useTranslations(Astro);
 const lang = getLanguageFromURL(Astro.url.pathname);
 const { currentPage, menuType = 'nav' } = Astro.props as Props;
 const currentPageMatch = removeLeadingSlash(currentPage);
+
+const meta = await getSidebarMeta(Astro, menuType);
+const allProductsHref = lang === 'pt-br' ? '/pt-br/documentacao/' : '/en/documentation/';
 
 const sidebarSections = (await getNavigationMenu(Astro, menuType)).reduce((collection, item) => {
 	collection.push({...item});
@@ -31,6 +34,23 @@ function recursiveTranslation(menuList) {
 ---
 <div class="wrap-nav">
 	<nav aria-label={t('leftSidebar.a11yTitle')} class="px-4">
+		{meta && (
+			<div class="flex items-center gap-2 pb-3 mb-2 border-bottom-1 surface-border">
+				<a
+					href={allProductsHref}
+					aria-label={t('leftSidebar.allProducts')}
+					title={t('leftSidebar.allProducts')}
+					class="flex h-10 w-10 shrink-0 items-center justify-center rounded no-underline text-[--text-color] hover:surface-hover"
+				>
+					<i class="pi pi-arrow-left text-lg"></i>
+				</a>
+				<span class="h-5 border-left-1 surface-border"></span>
+				<a
+					href={`/${lang}${meta.root}`}
+					class="min-w-0 truncate rounded px-2 py-1 text-sm font-semibold no-underline text-[--text-color] hover:surface-hover"
+				>{meta.title}</a>
+			</div>
+		)}
 		<SidebarPanelMenu
 			client:idle 
 			lang={lang}

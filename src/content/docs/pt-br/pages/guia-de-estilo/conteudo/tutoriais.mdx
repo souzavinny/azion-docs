@@ -1,0 +1,115 @@
+---
+title: Tutoriais
+description: >-
+  Como escrever um tutorial: o autor escolhe o objetivo, garante o resultado
+  e mantém todas as decisões longe do leitor.
+meta_tags: 'style guide, tutorials'
+namespace: documentation_style_guide_tutorials
+permalink: /documentacao/guia-de-estilo/conteudo/tutoriais/
+menu_namespace: styleGuideMenu
+---
+
+## Propósito
+
+Um tutorial ensina o produto ao levar o leitor a construir algo que funciona. O autor escolhe o objetivo, garante o resultado e mantém todas as decisões longe do leitor.
+
+## Quando usar
+
+- O leitor é novo e ainda não sabe o que quer. Você escolhe um objetivo por ele, e ele aprende o produto no caminho.
+- Não use um tutorial para o leitor que chegou com uma tarefa: essa página é um [guia how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/).
+- Na dúvida, [Escolher um tipo de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/) tem o roteiro.
+
+## Estrutura
+
+**Componentes obrigatórios**
+
+- **Parágrafo de abertura**: o que o leitor vai construir e aproximadamente quanto tempo leva.
+- **Antes de começar**: o conjunto mínimo real de pré-requisitos, cada um como link ou comando de uma linha.
+- **Passos numerados**: uma instrução cada, cada um terminando com um resultado visível.
+- **O que você construiu**: um parágrafo que retoma o resultado.
+- **Próximos passos**: dois ou três links, cada um com um motivo para clicar.
+
+**Componentes opcionais**
+
+- **Uma frase de conceito** com link para uma página de [explicação](/pt-br/documentacao/guia-de-estilo/conteudo/explicacao/), quando um conceito é genuinamente necessário.
+- **Uma imagem** como resultado visível de um passo, quando as palavras sozinhas não mostram.
+
+## Template
+
+Copie o template e substitua cada `<placeholder>`.
+
+```md
+[Um parágrafo: o que o leitor vai construir,
+e aproximadamente quanto tempo leva.]
+
+## Antes de começar
+
+- <Um pré-requisito que a página não pode suprir, como link ou comando de uma linha>
+
+## Passo 1: <frase verbal>
+
+<O que fazer. Depois, o que o leitor deve ver.>
+
+## Passo 2: <frase verbal>
+
+<...>
+
+## O que você construiu
+
+<Retome o resultado. Um parágrafo.>
+
+## Próximos passos
+
+- <Link>: <o motivo para clicar>
+- <Link>: <o motivo para clicar>
+```
+
+## Cumpra a promessa: todo passo funciona
+
+Um tutorial faz uma promessa: se o leitor segue todos os passos em ordem, o resultado funciona. Essa promessa cria quatro obrigações:
+
+- Você escolhe o objetivo. Não "construa uma aplicação", mas "faça o deploy de um site estático e veja o site no ar na sua própria URL".
+- Você escolhe cada opção. Nada de "dependendo das suas necessidades", nada de "você pode preferir". O leitor está aqui para aprender, não para escolher.
+- Todo passo produz um resultado visível, para o leitor saber que está no caminho certo.
+- Todo comando roda. Teste cada comando e cada trecho de código antes de publicar a página.
+
+Um tutorial que falha no passo 7 é pior do que nenhum tutorial. Ele ensina ao leitor que o produto está quebrado.
+
+## Não ramifique
+
+Um tutorial tem um caminho. Se um passo pode ir por dois caminhos, escolha um e não diga nada sobre o outro. Alternativas pertencem a um [guia how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/), onde o leitor tem uma situação real para compará-las.
+
+Tabs são uma ramificação, então tutoriais não usam tabs. Se a tarefa genuinamente precisa de três interfaces, a página é um guia how-to.
+
+As frases "você também pode" e "dependendo da sua configuração" são os sinais de alerta. Quando uma delas aparece no rascunho, você saiu do tutorial e começou um how-to.
+
+## Não explique
+
+O leitor de tutorial não retém explicações, e cada interrupção custa impulso. Se um conceito é genuinamente necessário, dê a ele uma frase e um link para uma página de [explicação](/pt-br/documentacao/guia-de-estilo/conteudo/explicacao/).
+
+Mantenha asides raros pelo mesmo motivo. Um tutorial cheio de blocos de nota é um tutorial tentando ser material de referência.
+
+## Mostre o resultado de cada passo
+
+Termine cada passo com o que o leitor vê: a saída de um comando, um screenshot, uma URL para abrir ou um valor que mudou. O leitor precisa saber que está no caminho certo sem perguntar a ninguém.
+
+Um passo com efeito invisível faz o leitor perder confiança, porque ele não distingue um estado correto de um estado quebrado.
+
+## Escreva os passos no registro procedural
+
+Tutoriais são procedurais, então usam o orçamento de frase mais apertado: 20 palavras por frase, uma instrução por passo, voz imperativa. [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/) tem as regras completas.
+
+O orçamento é apertado porque esse leitor paga o preço mais alto por um passo mal lido. Ele é novo, executa um passo por vez e não tem como se recuperar sozinho.
+
+- Incorreto: `Abra o arquivo e mude o TTL para 3600, depois salve e faça o purge do cache.`
+- Correto: quatro passos numerados, uma instrução cada.
+
+## Mantenha tutoriais escassos
+
+Escreva um tutorial por área de produto. Tutoriais são caros de manter, porque cada comando precisa continuar rodando depois de cada release. Um produto com cinco tutoriais tem cinco coisas para quebrar no próximo release.
+
+## Relacionados
+
+- [Páginas Get started](/pt-br/documentacao/guia-de-estilo/conteudo/get-started/): o tutorial cujo objetivo é a primeira ativação.
+- [Guias how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/): a página para o leitor que chegou com uma tarefa.
+- [Escolher um tipo de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/): o roteiro.

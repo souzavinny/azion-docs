@@ -7,6 +7,7 @@ description: >-
   orchestrate your services quickly and easily to meet your needs.
 meta_tags: 'Orchestrator, Edge Computing'
 namespace: documentation_products_edge_orchestrator
+menu_namespace: orchestratorMenu
 permalink: /documentation/deploy/orchestrator/
 ---
 
@@ -21,6 +22,8 @@ With Orchestrator, you can:
 - Use it with most network architecture, including local and public networks, and also behind NATs.
 
 - Simplify software installation and upgrading, since it's compiled with all core and library dependencies.
+
+Orchestrator deploys workloads on Azion's distributed network, on multi-cloud platforms, on-premises, or on remote devices. It can run natively on the operating system, within containers, or on top of the [Azion Runtime](/en/documentation/runtime/overview/).
 
 ---
 
@@ -42,7 +45,7 @@ It can be deployed through:
 1. Manual installation on each Node.
 2. Automatic installation along with the operating system: a Linux distro or the image of a client's OS or hardware supplier. For example: an SD-WAN router, a network switch, or a Linux server. Customers can use an automatic registration mode, which makes it simpler to deploy (for example: new node locations or using automatic node scaling), update, and manage a large number of scaling Nodes.
 
-All services linked to Nodes will be orchestrated and configured from the moment the device is authorized via the control panel.
+All services linked to Nodes will be orchestrated and configured from the moment the device is authorized via the control panel. A service can be linked to many Nodes: when a service is updated, it's automatically deployed to the Nodes it's related to.
 
 The orchestration is done sequentially and respects the dependencies between resources and triggers needed for its configuration.
 
@@ -60,7 +63,7 @@ Learn more about the [Azion Orchestrator agent installation](/en/documentation/d
 
 ## Services
 
-**Services** enables you to create your own services. You can use your customized services and ensure your device is managed and orchestrated by [Azion Console](https://console.azion.com).
+**Services** enables you to create your own services. You can use your customized services and ensure your device is managed and orchestrated by [Azion Console](https://console.azion.com). You can configure install, uninstall, and reload triggers and define resource dependencies for service execution.
 
 [Learn more about Services](/en/documentation/deploy/orchestrator/reference/edge-services/).
 

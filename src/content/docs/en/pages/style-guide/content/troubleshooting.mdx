@@ -1,0 +1,108 @@
+---
+title: Troubleshooting pages
+description: >-
+  How to write a troubleshooting page: name the symptom the reader sees,
+  order the causes by frequency, and put the fix before the ticket.
+meta_tags: 'style guide, troubleshooting'
+namespace: documentation_style_guide_troubleshooting
+permalink: /documentation/style-guide/content/troubleshooting/
+menu_namespace: styleGuideMenu
+---
+
+## Purpose
+
+A troubleshooting page takes a reader from a symptom to a fix. It is a [how-to guide](/en/documentation/style-guide/content/how-to-guides/) whose task is a fix: a pattern of the how-to type, not a new content type.
+
+## When to use
+
+- Write a troubleshooting page when a known failure has a fix the reader can apply alone.
+- Write one page for a group of related symptoms, with one section per symptom.
+- Do not write a troubleshooting page for a task the reader plans. A planned task needs a [how-to guide](/en/documentation/style-guide/content/how-to-guides/).
+- Do not write one when the product works as designed. The reasons behind a design belong in an [explanation](/en/documentation/style-guide/content/explanation/) page.
+- Do not write one when the only fix is a support ticket. A page whose only step is "open a ticket" is a link, not a page.
+
+## Structure
+
+**Required components**
+
+- **Symptom title or heading**: the symptom as the reader sees it, one per `##` section.
+- **Causes**: the likely causes of the symptom, most common first.
+- **Fixes**: numbered steps for each cause, written to the how-to step rules.
+- **Support escalation**: one closing aside that links the support path, after every fix.
+
+**Optional components**
+
+- **Context**: one opening paragraph, when the page covers several symptoms.
+- **Examples**: the error message or the screen that confirms the reader has this symptom.
+- **Next steps**: one or two links, when a fix leads to follow-up configuration.
+
+## Template
+
+```md
+[One paragraph: the symptoms this page covers. Optional
+when the page covers a single symptom.]
+
+## <Symptom as the reader sees it>
+
+<The likely causes, one line each, most common first.>
+
+### <Most common cause>
+
+1. <One imperative instruction.>
+2. <One imperative instruction.>
+
+### <Next cause>
+
+1. <One imperative instruction.>
+
+## <Next symptom in the same group>
+
+<...>
+
+---
+
+:::tip
+If these steps do not solve the problem, <link the support path>.
+:::
+```
+
+## Name the symptom, not the cause
+
+The title or heading states the symptom as the reader sees it. The reader searches with what they see, because what they see is all they have. A reader who knew the cause would not need the page.
+
+- Incorrect: `Authentication configuration problems`
+- Correct: `Cannot access your account`
+
+The symptom title matches the reader's own words in search and in the sidebar.
+
+## Order the causes by frequency
+
+Open the symptom section with the likely causes, then give the fix for each cause. Put the most common cause first. The reader tries the fixes top-down and stops at the first one that works. Frequency order gives most readers the shortest path.
+
+## Put self-service before support
+
+The page exists so the reader resolves the problem without a ticket. Every fix the reader can apply comes before any mention of the support team. Close the page with one aside that links [Open a support ticket](/en/documentation/services/support/guides/open-ticket/), for the reader whose fixes failed.
+
+## Group symptoms on one page
+
+Related symptoms share readers, and often share causes, so they share a page. Each symptom gets its own `##` section, with its own causes and fixes. Each section must read alone, because search lands the reader on the symptom, not on the page top. Split the page by logical grouping when it approaches the [size caps](/en/documentation/style-guide/content/page-size/).
+
+## Place troubleshooting by scope
+
+Platform-wide problems live in the Support section: account access, emails that do not arrive, diagnostic data. Product-specific problems live in that product's Guides group. [Information architecture](/en/documentation/style-guide/content/information-architecture/) covers both sections.
+
+## Follow the how-to step rules
+
+A fix is a procedure, so every rule on the [How-to guides](/en/documentation/style-guide/content/how-to-guides/) page applies. The rules that fail most often in drafts:
+
+- Write numbered, imperative steps: "Click", "Enter", "Select".
+- Write one instruction per step, at most 20 words per sentence.
+- Use one verb per action, on every mention across the page.
+- Do not teach. Give one sentence of context, then the fix.
+
+## Related
+
+- [How-to guides](/en/documentation/style-guide/content/how-to-guides/): the content type this pattern applies, with the full step rules.
+- [Information architecture](/en/documentation/style-guide/content/information-architecture/): where platform-wide and product-specific troubleshooting live.
+- [Choose a content type](/en/documentation/style-guide/content/choose-a-content-type/): the four content types and the tests that separate them.
+- [Page size and retrieval](/en/documentation/style-guide/content/page-size/): the size caps that decide when to split a page.

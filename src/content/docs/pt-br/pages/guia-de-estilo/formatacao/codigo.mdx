@@ -1,0 +1,35 @@
+---
+title: Código
+description: >-
+  Cada comando executa antes de publicar, placeholders que não se confundem com
+  valores reais e a proibição de credenciais em blocos de código.
+meta_tags: 'style guide, code blocks, placeholders'
+namespace: documentation_style_guide_code
+permalink: /documentacao/guia-de-estilo/formatacao/codigo/
+menu_namespace: styleGuideMenu
+---
+
+## Execute cada comando antes de publicar
+
+Um bloco de código não testado é um palpite com aparência de autoridade. A prosa sinaliza incerteza com palavras; um bloco de código não sinaliza nada, e o leitor o executa com confiança total. Na página, um comando inventado é idêntico a um comando testado. A diferença aparece quando o comando falha, na máquina do leitor.
+
+Execute cada comando e cada snippet antes de publicar a página. Quando não puder executar um, não publique um palpite. Deixe a lacuna visível e diga o que falta. Uma página que afirma menos, e acerta em tudo o que afirma, vale mais do que uma página que adivinha.
+
+## Torne os placeholders óbvios e consistentes
+
+Um placeholder tem um trabalho: o leitor precisa ver de imediato que deve substituir aquele valor. Dois formatos cumprem esse trabalho: colchetes com maiúsculas, `[TOKEN VALUE]`, e os sinais `<` e `>` com palavras minúsculas, `<your-bucket-name>`. Use um único formato para todos os placeholders de uma página; três convenções na mesma página não ensinam nenhuma.
+
+- Incorreto: `--token abc123`
+- Correto: `--token [TOKEN VALUE]`
+
+`abc123` parece um valor que pode funcionar, e um leitor com pressa o cola sem alterar. `[TOKEN VALUE]` não passa por um valor real. O pior placeholder é um valor falso realista, porque esconde que existe algo para substituir.
+
+## Introduza cada bloco de código
+
+Uma frase antes do bloco declara o que o código faz. Um bloco de código sem contexto é um trecho que o leitor precisa decifrar antes de decidir se executa.
+
+## Mantenha credenciais fora dos blocos de código
+
+Nenhuma credencial real aparece na documentação: nem uma ativa, nem uma expirada, nem uma revogada. Na página, uma credencial expirada é indistinguível de uma ativa, e por isso a proibição cobre todas por igual. Um valor inventado com formato realista é proibido pela mesma razão: nenhum leitor, e nenhum scanner, o distingue de um vazamento. Escreva o placeholder: `[TOKEN VALUE]`.
+
+Esta seção não mostra um exemplo incorreto. Uma credencial falsa realista em um guia de estilo ainda é uma credencial falsa realista em documentação pública.

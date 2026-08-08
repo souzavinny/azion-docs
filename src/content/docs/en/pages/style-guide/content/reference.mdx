@@ -1,0 +1,138 @@
+---
+title: Reference
+description: >-
+  The structure and rules for reference pages: what a reference describes, the
+  standard section order, tables with units and defaults, and the sentence budget.
+meta_tags: 'style guide, reference pages'
+namespace: documentation_style_guide_reference
+permalink: /documentation/style-guide/content/reference/
+menu_namespace: styleGuideMenu
+---
+
+## Purpose
+
+A reference page is look-up material. The reader consults it to find one value, one field, or one limit, and then leaves.
+
+## When to use
+
+Write a reference page when:
+
+- The reader needs to look up a field, a setting, a limit, or a flag.
+- The information is enumerable and fits in a table.
+
+Do not write a reference page when:
+
+- The reader needs steps for a task. Write a [how-to guide](/en/documentation/style-guide/content/how-to-guides/).
+- The reader needs the reasoning behind a design. Write an [explanation](/en/documentation/style-guide/content/explanation/).
+
+## Structure
+
+**Required components**
+
+- **Title**: a noun phrase that names the product or the resource.
+- **Lead paragraph**: the product name in bold, plus what the reader can do with the product.
+
+**Optional components**
+
+- **Link button**: one primary call to action near the top of the page, and only one.
+- **Management interfaces**: a list that names Azion Console, API, Azion CLI, and Terraform.
+- **Implementation**: a table with the available scopes and the resource that implements each one.
+- **Modules**: a table with each module and a one-line description.
+- **Advanced settings**: a table with each setting and a description.
+- **Limits**: a table with each limit, under a tip that support can raise limits.
+- **Asides**: a tip above the limits table, and a caution for a version or migration warning. Use no other aside, and use these two sparingly.
+
+Omit a section that has nothing to describe. The sections that remain keep this order.
+
+## Template
+
+Copy the template and replace each `<placeholder>`.
+
+```mdx
+import LinkButton from 'azion-webkit/linkbutton'
+
+**<Product name>** is <what the product is>. With <Product name>, you can <what the reader can do>.
+
+<LinkButton severity="secondary" label="<Call to action>" link="<destination URL>" />
+
+You can create and manage <product name> with:
+
+- [Azion Console](<guide URL>)
+- [API](<API reference URL>)
+- [Azion CLI](<CLI reference URL>)
+- [Terraform](<Terraform reference URL>)
+
+---
+
+## Implementation
+
+| Scope | Resource |
+| --- | --- |
+| <Scope> | <Resource that implements it> |
+
+---
+
+## Modules
+
+| Module | Description |
+| --- | --- |
+| <Module name> | <One-line description> |
+
+---
+
+## Advanced settings
+
+| Setting | Description |
+| --- | --- |
+| <Setting name> | <What it does, with the default value> |
+
+---
+
+## Limits
+
+:::tip
+Support can raise these limits. Contact <support link>.
+:::
+
+| Scope | Limit |
+| --- | --- |
+| <Scope> | <Value with the unit> |
+```
+
+A CLI command page takes a different shape. It opens with a one-line summary, then a `Usage` section with a shell block. An `Optional flags` section closes the page, with one heading per flag.
+
+## Describe, do not instruct
+
+A reference page states what a thing is and what values it accepts. It does not tell the reader what to click. A numbered click-through on a reference page is a how-to guide filed in the wrong place.
+
+When a reference page needs to show how to do something, it links to the [how-to guide](/en/documentation/style-guide/content/how-to-guides/). It does not inline the steps.
+
+## Put enumerable information in tables
+
+Anything the reader can count belongs in a table: fields, limits, modules, flags, status codes, defaults. Build tables in the plain Markdown pipe format; the site adds horizontal scrolling automatically. The prose between tables gives one or two sentences of orientation. A reader who scans skips prose, so a sentence a scanner would skip does not belong on the page.
+
+A good reference page is complete, consistent, and deliberately boring. A reference page that documents nine of twelve fields is broken. A reference page with dull descriptions of all twelve does its job.
+
+Phrase table rows consistently. If one row reads "Maximum number of buckets per account", the next reads "Maximum number of objects per bucket". A row that switches to "How many objects you can put in a bucket" forces the reader to stop and read.
+
+## State the units and the defaults
+
+A limit without a unit is not a fact. A setting without a default is a question the page leaves open. Write the unit next to every number, and write the default value of every setting.
+
+## Write descriptive sentences
+
+Reference is descriptive text, so its sentences cap at 25 words. Table cells and code are exempt; the prose between tables is not. Use the active voice, and use the passive only when the actor is unknown or is the platform itself.
+
+Keep noun clusters to three words at most, and count a product name as one unit. `Rules Engine request phase behavior configuration` leaves the reader to guess which word modifies which. `The behavior configuration for the Rules Engine request phase` does not. The full sentence rules are in [Sentence structure](/en/documentation/style-guide/writing/sentence-structure/).
+
+## Avoid marketing language
+
+A reference page states what a product does and what its limits are. The reader already chose the product, so no sentence needs to sell it. Replace "powerful caching capabilities" with the behavior and the numbers. The forbidden expressions are listed in [Terminology](/en/documentation/style-guide/writing/terminology/).
+
+## Related
+
+- [Choose a content type](/en/documentation/style-guide/content/choose-a-content-type/): the decision between the four content types.
+- [Tutorials](/en/documentation/style-guide/content/tutorials/): the content type that teaches through a first project.
+- [How-to guides](/en/documentation/style-guide/content/how-to-guides/): the content type that holds the steps.
+- [Explanation](/en/documentation/style-guide/content/explanation/): the content type that holds the reasoning.
+- [Voice](/en/documentation/style-guide/writing/voice/): the one register every page uses.

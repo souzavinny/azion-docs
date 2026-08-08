@@ -1,0 +1,119 @@
+---
+title: Escolha de palavras
+description: >-
+  O vocabulário a substituir, o teste que separa afirmação de qualidade de
+  comportamento, os padrões de enchimento a cortar e a regra de que todo
+  número e nome deve rastrear até uma fonte.
+meta_tags: 'style guide, word choice, vocabulary'
+namespace: documentation_style_guide_word_choice
+permalink: /documentacao/guia-de-estilo/escrita/escolha-de-palavras/
+menu_namespace: styleGuideMenu
+---
+
+## Substitua o vocabulário de enchimento
+
+Algumas palavras aparecem em rascunhos como decoração e não carregam significado técnico. Elas também aparecem com muito mais frequência em texto gerado por máquina do que em escrita humana. Substitua quando decoram; mantenha quando carregam significado técnico.
+
+A tabela lista os termos em inglês porque o texto em inglês é a fonte canônica da documentação. O mesmo princípio vale em português: prefira a palavra mais simples disponível e use a mesma palavra sempre.
+
+| Evite | Use |
+| --- | --- |
+| delve into | cover, explain |
+| leverage (no sentido de usar) | use |
+| utilize | use |
+| facilitate | let, allow |
+| in order to | to |
+| due to the fact that | because |
+| has the ability to | can |
+| it is important to note that | (apague a expressão, mantenha a frase) |
+| a wide range of | (nomeie o intervalo) |
+| various | (nomeie os itens ou diga quantos são) |
+| seamlessly | (apague, ou diga o que não quebra) |
+| robust | (diga o que ele suporta) |
+| powerful | (diga o que ele faz) |
+| comprehensive | complete, ou diga o que ele cobre |
+| cutting-edge, state-of-the-art | (apague) |
+| a testament to | (apague) |
+| plays a crucial role in | (diga o que ele faz) |
+| in today's landscape | (apague a frase) |
+
+## Separe qualidade de comportamento
+
+Uma palavra da lista é legítima quando descreve comportamento. O teste é se a palavra faz uma afirmação sobre qualidade ou uma afirmação sobre comportamento.
+
+- Afirmação de qualidade: `robust security`
+- Comportamento: `a robust retry with exponential backoff`
+
+"Robust security" pede que o leitor confie em um adjetivo. "A robust retry with exponential backoff" nomeia o mecanismo, e o adjetivo agora descreve algo testável. Mantenha uma palavra que passa nesse teste; substitua a que não passa.
+
+## Descreva o produto, não o promova
+
+A documentação descreve comportamento e limites. O leitor já escolheu o produto; um adjetivo que vende é desperdiçado e custa confiança.
+
+- Antes: `O Applications oferece capacidades de cache poderosas e flexíveis.`
+- Depois: `O Applications armazena conteúdo em cache no edge. O TTL padrão é de 60 segundos.`
+
+*Inflação de importância* é a mesma falha apontada para um conceito: uma frase sobre a importância de algo no lugar do que ele faz. "O cache desempenha um papel crucial na performance da web moderna" não dá ao leitor nada para fazer. Diga o que a coisa faz e quais são os limites.
+
+## Corte os padrões de enchimento
+
+Cinco padrões adicionam palavras sem adicionar informação.
+
+*Particípio de enchimento* é uma oração final com gerúndio: "…reduzindo a latência e melhorando a performance, garantindo uma experiência melhor." Corte a oração e mantenha a afirmação mensurável. A regra desse padrão no nível da frase está em [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/).
+
+*Paralelismo negativo* é a forma "Não é só X, é Y." Diga Y.
+
+*Falsos intervalos* conectam itens que não estão em uma escala: "da configuração ao deploy ao monitoramento". Liste o conjunto real.
+
+*"Você pode" sem conteúdo* promete sem entregar: "Você pode configurar várias opções." Nomeie as opções ou aponte para a página que as nomeia.
+
+*Conclusões genéricas* repetem a página sem adicionar nada. Termine no último fato concreto ou em um link que valha a pena seguir.
+
+## Nomeie as coisas nos títulos
+
+Um título nomeia uma coisa ou uma tarefa. Uma pergunta retórica não faz nenhuma das duas.
+
+- Antes: `O que é cache?`
+- Depois: `Cache`
+- Antes: `Por que usar o Tiered Cache?`
+- Depois: `Quando usar o Tiered Cache`
+
+## Evite estas palavras em qualquer página
+
+Um conjunto curto de palavras é proibido em qualquer contexto:
+
+- "Simplesmente", "basta", "é só", "fácil" e "óbvio": se a tarefa fosse fácil, o leitor não estaria aqui. Essas palavras dizem a um leitor travado que ele deveria se envergonhar.
+- "Por favor": a documentação instrui; ela não pede.
+- "Atualmente", "no momento da escrita" e "em breve": todas envelhecem mal, e ninguém volta para corrigir. Diga o que é verdade e deixe o changelog carregar a linha do tempo.
+- "Note que" e "é importante notar": apague a expressão e mantenha a frase.
+- Abreviações latinas: escreva "por exemplo" e "isto é", não "e.g." nem "i.e."
+
+## Use linguagem inclusiva
+
+A documentação trata o leitor por "você", e o leitor genérico nunca precisa de um pronome de gênero. No texto em inglês, um terceiro genérico — quem ataca, quem desenvolve — recebe "they", nunca "he" ou "she".
+
+Expressões com marca de gênero e expressões capacitistas seguem a mesma regra. Escreva `validate`, não `sanity check`.
+
+Substitua um termo técnico carregado quando a indústria aceita uma alternativa. Os termos ficam em inglês porque o texto em inglês é a fonte canônica:
+
+| Evite | Use |
+| --- | --- |
+| whitelist | allowlist |
+| blacklist | blocklist |
+| master/slave | primary/replica |
+
+Não use referências culturais nem expressões idiomáticas. Elas fazem sentido em um único lugar e não sobrevivem à tradução. Cada página aqui é publicada em dois idiomas, conforme [Páginas bilíngues](/pt-br/documentacao/guia-de-estilo/convencoes/paginas-bilingues/).
+
+## Expanda as siglas no primeiro uso
+
+O primeiro uso em cada página escreve o termo por extenso e coloca a sigla entre parênteses: `time to live (TTL)`. Depois disso, apenas a sigla. O leitor chega a qualquer página diretamente, por um resultado de busca, e uma definição em outra página não existe para ele.
+
+Nomes de produto não são siglas. Escreva o nome exatamente como [Terminologia](/pt-br/documentacao/guia-de-estilo/escrita/terminologia/) lista e não o expanda.
+
+## Rastreie cada dado até uma fonte
+
+Um dado inventado é a pior falha da documentação. Um limite, um valor padrão, um nome de campo, uma flag ou uma mensagem de erro inventados parecem iguais aos corretos. O leitor descobre a diferença só quando tenta usar e falha.
+
+Cada número, nome de campo e comando deve rastrear até uma fonte que você consegue nomear. Se você não consegue nomear a fonte, remova o valor ou marque o valor para verificação. Uma página com uma lacuna é recuperável. Uma página com um valor errado e confiante não é, porque ninguém sabe que precisa conferir.
+
+Os nomes de produto seguem regras próprias, em [Terminologia](/pt-br/documentacao/guia-de-estilo/escrita/terminologia/).

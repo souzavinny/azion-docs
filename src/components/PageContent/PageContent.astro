@@ -2,6 +2,7 @@
 import FallbackNotice from '../FallbackNotice.astro';
 
 import AuthorList from '~/components/AuthorList.astro';
+import ReadableColumn from '~/components/ReadableColumn.astro';
 
 import Breadcrumb from 'azion-webkit/breadcrumb';
 import ReadableContent from 'azion-webkit/readablecontent';
@@ -35,6 +36,7 @@ const t = useTranslations(Astro);
 ---
 
 
+<ReadableColumn />
 <div dir={isFallback ? 'ltr' : direction} lang={isFallback && 'en'}>
 	<!-- {
 		// For best cross-browser support of sticky or fixed elements, they must not be nested
@@ -55,7 +57,37 @@ const t = useTranslations(Astro);
 				<div class="mb-8 mt-2">
 					<div class="flex-col-reverse md:flex-row md:items-center md:justify-between gap-4 md:gap-0 hidden md:flex">
 						<Breadcrumb data={breadcrumbs} />
-						<AskAISplitButton lang={lang} client:load />
+						<div class="flex items-center gap-2">
+							{content.namespace !== 'documentation_agent_setup' && (
+							<a
+								class="agent-setup-button flex items-center gap-2 h-8 px-3 text-sm no-underline rounded-md border-1 bg-neutral-950 text-neutral-100 border-neutral-900 transition duration-300 ease-in-out hover:bg-neutral-900 hover:text-orange-500"
+								href={lang === 'pt-br' ? '/pt-br/documentacao/agent-setup/' : '/en/documentation/agent-setup/'}
+								data-tooltip={t('pageContent.agentSetupTooltip')}
+							>
+								<svg
+									width="16"
+									height="16"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="1.8"
+									stroke-linecap="round"
+									aria-hidden="true"
+								>
+									<line x1="12" y1="4" x2="12" y2="7" />
+									<circle cx="12" cy="2.8" r="1.2" fill="currentColor" stroke="none" />
+									<rect x="4" y="7" width="16" height="12" rx="3" />
+									<line x1="1.5" y1="11.5" x2="1.5" y2="14.5" />
+									<line x1="22.5" y1="11.5" x2="22.5" y2="14.5" />
+									<circle cx="9" cy="12.5" r="1.4" fill="currentColor" stroke="none" />
+									<circle cx="15" cy="12.5" r="1.4" fill="currentColor" stroke="none" />
+									<line x1="9.5" y1="16" x2="14.5" y2="16" />
+								</svg>
+								<span>{t('pageContent.agentSetup')}</span>
+							</a>
+							)}
+							<AskAISplitButton lang={lang} client:load />
+						</div>
 					  </div>
 				</div>
 				{/* the h1 sits outside the .prose article, so Tailwind's preflight reset
@@ -112,3 +144,31 @@ const t = useTranslations(Astro);
 		}
 	</article>
 </div>
+
+<style>
+	.agent-setup-button {
+		position: relative;
+	}
+	.agent-setup-button::after {
+		content: attr(data-tooltip);
+		position: absolute;
+		top: calc(100% + 0.5rem);
+		left: 50%;
+		transform: translateX(-50%);
+		padding: 0.5rem 0.625rem;
+		border-radius: 4px;
+		background: #1f1f23;
+		color: #ffffff;
+		font-size: 0.75rem;
+		line-height: 1;
+		white-space: nowrap;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.15s;
+		z-index: 20;
+	}
+	.agent-setup-button:hover::after,
+	.agent-setup-button:focus-visible::after {
+		opacity: 1;
+	}
+</style>

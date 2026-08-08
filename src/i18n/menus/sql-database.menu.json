@@ -1,0 +1,214 @@
+{
+ "meta": {
+  "title": {
+   "en": "SQL Database"
+  },
+  "root": {
+   "en": "/documentation/store/sql-database/",
+   "pt-br": "/documentacao/store/sql-database/"
+  }
+ },
+ "groups": [
+  {
+   "key": "sql/grp",
+   "items": [
+    {
+     "key": "sql/overview",
+     "label": {
+      "en": "Overview",
+      "pt-br": "Visão geral"
+     },
+     "slug": {
+      "en": "/documentation/store/sql-database/",
+      "pt-br": "/documentacao/store/sql-database/"
+     }
+    },
+    {
+     "key": "sql/store/sql-database/reference/vector-search",
+     "label": {
+      "en": "SQL Database Vector Search",
+      "pt-br": "Vector Search do SQL Database"
+     },
+     "slug": {
+      "en": "/documentation/store/sql-database/reference/vector-search/",
+      "pt-br": "/documentacao/store/sql-database/reference/vector-search/"
+     }
+    },
+    {
+     "key": "sql/guides",
+     "label": {
+      "en": "Guides",
+      "pt-br": "Guias"
+     },
+     "items": [
+      {
+       "key": "sql/gd/store/sql-database/guides/create-database",
+       "label": {
+        "en": "How to create an SQL Database database",
+        "pt-br": "Como criar um banco de dados do SQL Database"
+       },
+       "slug": {
+        "en": "/documentation/store/sql-database/guides/create-database/",
+        "pt-br": "/documentacao/store/sql-database/guides/criar-banco-de-dados/"
+       }
+      },
+      {
+       "key": "sql/gd/store/sql-database/guides/create-tables-sql-database",
+       "label": {
+        "en": "How to create and query data on SQL Database",
+        "pt-br": "Como criar e consultar dados no SQL Database"
+       },
+       "slug": {
+        "en": "/documentation/store/sql-database/guides/create-tables-sql-database/",
+        "pt-br": "/documentacao/store/sql-database/guides/criar-tabelas-edge-sql/"
+       }
+      },
+      {
+       "key": "sql/gd/store/sql-database/guides/import-data-sql-database",
+       "label": {
+        "en": "How to import data to SQL Database",
+        "pt-br": "Como importar dados para o SQL Database"
+       },
+       "slug": {
+        "en": "/documentation/store/sql-database/guides/import-data-sql-database/",
+        "pt-br": "/documentacao/store/sql-database/guides/importar-dados-edge-sql/"
+       }
+      },
+      {
+       "key": "sql/gd/store/sql-database/guides/install-edge-sql-shell",
+       "label": {
+        "en": "How to install SQL Database Shell",
+        "pt-br": "Como instalar o EdgeSQL Shell"
+       },
+       "slug": {
+        "en": "/documentation/store/sql-database/guides/install-edge-sql-shell/",
+        "pt-br": "/documentacao/store/sql-database/guides/install-edge-sql-shell/"
+       }
+      },
+      {
+       "key": "sql/gd/store/sql-database/guides/list-databases",
+       "label": {
+        "en": "How to list SQL Database databases",
+        "pt-br": "Como listar bancos de dados do SQL Database"
+       },
+       "slug": {
+        "en": "/documentation/store/sql-database/guides/list-databases/",
+        "pt-br": "/documentacao/store/sql-database/guides/listar-bancos-de-dados/"
+       }
+      },
+      {
+       "key": "sql/gd/store/sql-database/guides/sql-database-shell-commands",
+       "label": {
+        "en": "How to use SQL Database Shell commands",
+        "pt-br": "Como usar os comandos do EdgeSQL Shell"
+       },
+       "slug": {
+        "en": "/documentation/store/sql-database/guides/sql-database-shell-commands/",
+        "pt-br": "/documentacao/store/sql-database/guides/edge-sql-shell-commands/"
+       }
+      },
+      {
+       "key": "sql/gd/store/sql-database/guides/sql-database-vector-search",
+       "label": {
+        "en": "How to implement SQL Database Vector Search",
+        "pt-br": "Como implementar o Vector Search do SQL Database"
+       },
+       "slug": {
+        "en": "/documentation/store/sql-database/guides/sql-database-vector-search/",
+        "pt-br": "/documentacao/store/sql-database/guides/edge-sql-vector-search/"
+       }
+      },
+      {
+       "key": "sql/gd/store/sql-database/guides/manage-sql-database",
+       "label": {
+        "en": "How to manage an SQL Database database",
+        "pt-br": "Como gerenciar um banco de dados SQL Database"
+       },
+       "slug": {
+        "en": "/documentation/store/sql-database/guides/manage-sql-database/",
+        "pt-br": "/documentacao/store/sql-database/guides/gerenciar-bancos-dados-edge-sql/"
+       }
+      },
+      {
+       "key": "sql/gd/store/sql-database/guides/retrieve-data-sql-database",
+       "label": {
+        "en": "How to retrieve data from tables in SQL Database",
+        "pt-br": "Como recuperar dados de tabelas do SQL Database"
+       },
+       "slug": {
+        "en": "/documentation/store/sql-database/guides/retrieve-data-sql-database/",
+        "pt-br": "/documentacao/store/sql-database/guides/recuperar-dados-sql-database/"
+       }
+      },
+      {
+       "key": "sql/gd/store/sql-database/guides/retrieve-data-with-functions",
+       "label": {
+        "en": "Retrieve Data with SQL Database & Functions",
+        "pt-br": "Recupere dados com o SQL Database e Functions"
+       },
+       "slug": {
+        "en": "/documentation/store/sql-database/guides/retrieve-data-with-functions/",
+        "pt-br": "/documentacao/store/sql-database/guides/listando-dados-edge-functions-edge-sql/"
+       }
+      },
+      {
+       "key": "sql/gd/store/sql-database/guides/create-table",
+       "label": {
+        "en": "How to create a table in SQL Database",
+        "pt-br": "Como criar uma tabela no SQL Database"
+       },
+       "slug": {
+        "en": "/documentation/store/sql-database/guides/create-table/",
+        "pt-br": "/documentacao/store/sql-database/guides/criar-tabela/"
+       }
+      },
+      {
+       "key": "sql/gd/store/sql-database/guides/delete-database",
+       "label": {
+        "en": "How to delete an SQL Database database",
+        "pt-br": "Como excluir um banco de dados do SQL Database"
+       },
+       "slug": {
+        "en": "/documentation/store/sql-database/guides/delete-database/",
+        "pt-br": "/documentacao/store/sql-database/guides/deletar-database/"
+       }
+      },
+      {
+       "key": "sql/gd/store/sql-database/guides/delete-record",
+       "label": {
+        "en": "How to delete a record in an SQL Database database",
+        "pt-br": "Exclua um registro no SQL Database"
+       },
+       "slug": {
+        "en": "/documentation/store/sql-database/guides/delete-record/",
+        "pt-br": "/documentacao/store/sql-database/guides/deletar-registro/"
+       }
+      },
+      {
+       "key": "sql/gd/store/sql-database/guides/insert-into-table",
+       "label": {
+        "en": "How to insert data into an SQL Database table",
+        "pt-br": "Como inserir dados em uma tabela do SQL Database"
+       },
+       "slug": {
+        "en": "/documentation/store/sql-database/guides/insert-into-table/",
+        "pt-br": "/documentacao/store/sql-database/guides/inserir-dados-em-tabela/"
+       }
+      },
+      {
+       "key": "sql/gd/store/sql-database/guides/retrieve-db-info",
+       "label": {
+        "en": "How to retrieve an SQL Database database information",
+        "pt-br": "Recupere informações no SQL Database"
+       },
+       "slug": {
+        "en": "/documentation/store/sql-database/guides/retrieve-db-info/",
+        "pt-br": "/documentacao/store/sql-database/guides/recuperar-informacoes-do-banco/"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

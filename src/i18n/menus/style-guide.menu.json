@@ -1,0 +1,319 @@
+{
+ "meta": {
+  "title": {
+   "en": "Style Guide",
+   "pt-br": "Style Guide"
+  },
+  "root": {
+   "en": "/documentation/style-guide/",
+   "pt-br": "/documentacao/guia-de-estilo/"
+  }
+ },
+ "groups": [
+  {
+   "key": "grp/style-guide",
+   "items": [
+    {
+     "key": "sg/overview",
+     "label": {
+      "en": "Overview",
+      "pt-br": "Visão geral"
+     },
+     "slug": {
+      "en": "/documentation/style-guide/",
+      "pt-br": "/documentacao/guia-de-estilo/"
+     }
+    },
+    {
+     "key": "sg/writing",
+     "label": {
+      "en": "Writing",
+      "pt-br": "Escrita"
+     },
+     "items": [
+      {
+       "key": "sg/voice",
+       "label": {
+        "en": "Voice",
+        "pt-br": "Voz"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/writing/voice/",
+        "pt-br": "/documentacao/guia-de-estilo/escrita/voz/"
+       }
+      },
+      {
+       "key": "sg/sentence-structure",
+       "label": {
+        "en": "Sentence structure",
+        "pt-br": "Estrutura de frases"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/writing/sentence-structure/",
+        "pt-br": "/documentacao/guia-de-estilo/escrita/estrutura-de-frases/"
+       }
+      },
+      {
+       "key": "sg/word-choice",
+       "label": {
+        "en": "Word choice",
+        "pt-br": "Escolha de palavras"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/writing/word-choice/",
+        "pt-br": "/documentacao/guia-de-estilo/escrita/escolha-de-palavras/"
+       }
+      },
+      {
+       "key": "sg/terminology",
+       "label": {
+        "en": "Terminology",
+        "pt-br": "Terminologia"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/writing/terminology/",
+        "pt-br": "/documentacao/guia-de-estilo/escrita/terminologia/"
+       }
+      },
+      {
+       "key": "sg/accessibility",
+       "label": {
+        "en": "Accessibility",
+        "pt-br": "Acessibilidade"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/writing/accessibility/",
+        "pt-br": "/documentacao/guia-de-estilo/escrita/acessibilidade/"
+       }
+      }
+     ]
+    },
+    {
+     "key": "sg/formatting",
+     "label": {
+      "en": "Formatting",
+      "pt-br": "Formatação"
+     },
+     "items": [
+      {
+       "key": "sg/headings",
+       "label": {
+        "en": "Headings",
+        "pt-br": "Títulos"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/formatting/headings/",
+        "pt-br": "/documentacao/guia-de-estilo/formatacao/titulos/"
+       }
+      },
+      {
+       "key": "sg/text-formatting",
+       "label": {
+        "en": "Text formatting",
+        "pt-br": "Formatação de texto"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/formatting/text/",
+        "pt-br": "/documentacao/guia-de-estilo/formatacao/texto/"
+       }
+      },
+      {
+       "key": "sg/code",
+       "label": {
+        "en": "Code",
+        "pt-br": "Código"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/formatting/code/",
+        "pt-br": "/documentacao/guia-de-estilo/formatacao/codigo/"
+       }
+      },
+      {
+       "key": "sg/images",
+       "label": {
+        "en": "Images",
+        "pt-br": "Imagens"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/formatting/images/",
+        "pt-br": "/documentacao/guia-de-estilo/formatacao/imagens/"
+       }
+      }
+     ]
+    },
+    {
+     "key": "sg/content",
+     "label": {
+      "en": "Content strategy",
+      "pt-br": "Estratégia de conteúdo"
+     },
+     "items": [
+      {
+       "key": "sg/information-architecture",
+       "label": {
+        "en": "Information architecture",
+        "pt-br": "Arquitetura de informação"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/content/information-architecture/",
+        "pt-br": "/documentacao/guia-de-estilo/conteudo/arquitetura-de-informacao/"
+       }
+      },
+      {
+       "key": "sg/choose-type",
+       "label": {
+        "en": "Choose a content type",
+        "pt-br": "Escolher um tipo de conteúdo"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/content/choose-a-content-type/",
+        "pt-br": "/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/"
+       }
+      },
+      {
+       "key": "sg/tutorials",
+       "label": {
+        "en": "Tutorials",
+        "pt-br": "Tutoriais"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/content/tutorials/",
+        "pt-br": "/documentacao/guia-de-estilo/conteudo/tutoriais/"
+       }
+      },
+      {
+       "key": "sg/get-started",
+       "label": {
+        "en": "Get started pages",
+        "pt-br": "Páginas Get started"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/content/get-started/",
+        "pt-br": "/documentacao/guia-de-estilo/conteudo/get-started/"
+       }
+      },
+      {
+       "key": "sg/how-to",
+       "label": {
+        "en": "How-to guides",
+        "pt-br": "Guias how-to"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/content/how-to-guides/",
+        "pt-br": "/documentacao/guia-de-estilo/conteudo/guias-how-to/"
+       }
+      },
+      {
+       "key": "sg/troubleshooting",
+       "label": {
+        "en": "Troubleshooting pages",
+        "pt-br": "Páginas de troubleshooting"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/content/troubleshooting/",
+        "pt-br": "/documentacao/guia-de-estilo/conteudo/troubleshooting/"
+       }
+      },
+      {
+       "key": "sg/reference",
+       "label": {
+        "en": "Reference",
+        "pt-br": "Referência"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/content/reference/",
+        "pt-br": "/documentacao/guia-de-estilo/conteudo/referencia/"
+       }
+      },
+      {
+       "key": "sg/explanation",
+       "label": {
+        "en": "Explanation",
+        "pt-br": "Explicação"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/content/explanation/",
+        "pt-br": "/documentacao/guia-de-estilo/conteudo/explicacao/"
+       }
+      },
+      {
+       "key": "sg/page-size",
+       "label": {
+        "en": "Page size and retrieval",
+        "pt-br": "Tamanho de página e retrieval"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/content/page-size/",
+        "pt-br": "/documentacao/guia-de-estilo/conteudo/tamanho-de-pagina/"
+       }
+      }
+     ]
+    },
+    {
+     "key": "sg/conventions",
+     "label": {
+      "en": "File conventions",
+      "pt-br": "Convenções de arquivos"
+     },
+     "items": [
+      {
+       "key": "sg/frontmatter",
+       "label": {
+        "en": "Frontmatter",
+        "pt-br": "Frontmatter"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/conventions/frontmatter/",
+        "pt-br": "/documentacao/guia-de-estilo/convencoes/frontmatter/"
+       }
+      },
+      {
+       "key": "sg/bilingual",
+       "label": {
+        "en": "Bilingual pages",
+        "pt-br": "Páginas bilíngues"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/conventions/bilingual/",
+        "pt-br": "/documentacao/guia-de-estilo/convencoes/paginas-bilingues/"
+       }
+      }
+     ]
+    },
+    {
+     "key": "sg/components",
+     "label": {
+      "en": "Components",
+      "pt-br": "Componentes"
+     },
+     "slug": {
+      "en": "/documentation/style-guide/components/",
+      "pt-br": "/documentacao/guia-de-estilo/componentes/"
+     }
+    },
+    {
+     "key": "sg/api-docs",
+     "label": {
+      "en": "API docs",
+      "pt-br": "Documentação de API"
+     },
+     "slug": {
+      "en": "/documentation/style-guide/api-docs/",
+      "pt-br": "/documentacao/guia-de-estilo/api-docs/"
+     }
+    },
+    {
+     "key": "sg/how-we-docs",
+     "label": {
+      "en": "How we write the docs",
+      "pt-br": "Como escrevemos a documentação"
+     },
+     "slug": {
+      "en": "/documentation/style-guide/how-we-docs/",
+      "pt-br": "/documentacao/guia-de-estilo/como-documentamos/"
+     }
+    }
+   ]
+  }
+ ]
+}

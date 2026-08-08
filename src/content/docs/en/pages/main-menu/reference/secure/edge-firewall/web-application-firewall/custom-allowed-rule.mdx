@@ -7,6 +7,7 @@ meta_tags: 'waf, security, edge computing, exceptions, api'
 namespace: >-
   documentation_products_edge_firewall_web_application_firewall_custom_allowed_rules
 permalink: /documentation/secure/waf/reference/custom-allowed-rules/
+menu_namespace: firewallMenu
 ---
 
 **Web Application Firewall (WAF) Exceptions** are configurations that explicitly allow certain request patterns to bypass blocking, overriding the standard WAF security rules that would otherwise identify these requests as potentially malicious. They operate at a high level, analyzing specific components of HTTP requests, such as parameters (ARGS), request body contents (BODY), or the URL path (URL). Each exception is defined with a unique identifier, a match string, and an application zone, ensuring that the security filter remains effective while minimizing blocks on requests containing characteristics considered necessary or legitimate by the user, thus reducing false positives.

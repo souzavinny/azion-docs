@@ -1,11 +1,11 @@
 [
  {
   "from": "https://www.azion.com/pt-br/documentacao/produtos/conceitos-basicos/",
-  "moved": "https://www.azion.com/pt-br/documentacao/platform/overview/"
+  "moved": "https://www.azion.com/pt-br/documentacao/fundamentals/concepts/how-azion-works/"
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/produtos/ponto-de-partida/",
-  "moved": "https://www.azion.com/pt-br/documentacao/platform/overview/"
+  "moved": "https://www.azion.com/pt-br/documentacao/fundamentals/concepts/how-azion-works/"
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/produtos/changelog/",
@@ -137,7 +137,7 @@
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/produtos/deliver/",
-  "moved": "https://www.azion.com/pt-br/documentacao/deploy/overview/"
+  "moved": "https://www.azion.com/pt-br/documentacao/deploy/orchestrator/"
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/produtos/edge-firewall/botmanager/",
@@ -153,7 +153,7 @@
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/produtos/primeiros-passos/",
-  "moved": "https://www.azion.com/pt-br/documentacao/platform/overview/"
+  "moved": "https://www.azion.com/pt-br/documentacao/fundamentals/concepts/how-azion-works/"
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/produtos/edge-application/edge-functions/runtime-api/frameworks-suportados/flareact/",
@@ -641,7 +641,7 @@
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/produtos/getting-started/",
-  "moved": "https://www.azion.com/pt-br/documentacao/platform/overview/"
+  "moved": "https://www.azion.com/pt-br/documentacao/fundamentals/concepts/how-azion-works/"
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/produtos/accounts/creating-account/",
@@ -1457,19 +1457,19 @@
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/produtos/build/",
-  "moved": "https://www.azion.com/pt-br/documentacao/build/overview/"
+  "moved": "https://www.azion.com/pt-br/documentacao/build/applications/"
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/produtos/secure/",
-  "moved": "https://www.azion.com/pt-br/documentacao/secure/overview/"
+  "moved": "https://www.azion.com/pt-br/documentacao/secure/firewall/"
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/produtos/observe/",
-  "moved": "https://www.azion.com/pt-br/documentacao/observe/overview/"
+  "moved": "https://www.azion.com/pt-br/documentacao/"
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/produtos/deploy/",
-  "moved": "https://www.azion.com/pt-br/documentacao/deploy/overview/"
+  "moved": "https://www.azion.com/pt-br/documentacao/deploy/orchestrator/"
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/arquiteturas/api-gateways/implementar-seguranca-api-gateways/",
@@ -2789,7 +2789,7 @@
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/produtos/guias/build/visao-geral/",
-  "moved": "https://www.azion.com/pt-br/documentacao/build/overview/"
+  "moved": "https://www.azion.com/pt-br/documentacao/build/applications/"
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/produtos/deploy/automatizar/api/",
@@ -2809,7 +2809,7 @@
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/produtos/deploy/visao-geral/",
-  "moved": "https://www.azion.com/pt-br/documentacao/deploy/overview/"
+  "moved": "https://www.azion.com/pt-br/documentacao/deploy/orchestrator/"
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/produtos/guias/deploy/autorizar-edge-node/",
@@ -2973,7 +2973,7 @@
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/produtos/observe/visao-geral/",
-  "moved": "https://www.azion.com/pt-br/documentacao/observe/overview/"
+  "moved": "https://www.azion.com/pt-br/documentacao/"
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/produtos/guias/secure/acessar-root-domain/",
@@ -3089,7 +3089,7 @@
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/produtos/secure/visao-geral/",
-  "moved": "https://www.azion.com/pt-br/documentacao/secure/overview/"
+  "moved": "https://www.azion.com/pt-br/documentacao/secure/firewall/"
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/products/store/storage/deletar-objeto/",
@@ -3173,7 +3173,7 @@
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/produtos/store/visao-geral/",
-  "moved": "https://www.azion.com/pt-br/documentacao/store/overview/"
+  "moved": "https://www.azion.com/pt-br/documentacao/"
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/produtos/devtools/primeiros-passos-api/",
@@ -3209,7 +3209,7 @@
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/produtos/obter-ajuda/",
-  "moved": "https://www.azion.com/pt-br/documentacao/get-started/before-you-begin/"
+  "moved": "https://www.azion.com/pt-br/documentacao/services/support/get-help/"
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/compliance/pci-dss-certification/",
@@ -3229,7 +3229,7 @@
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/produtos/visao-geral-da-plataforma-da-azion/",
-  "moved": "https://www.azion.com/pt-br/documentacao/platform/overview/"
+  "moved": "https://www.azion.com/pt-br/documentacao/fundamentals/concepts/how-azion-works/"
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/produtos/contas/criar-uma-conta/",
@@ -3697,22 +3697,50 @@
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/build/",
-  "moved": "https://www.azion.com/pt-br/documentacao/build/overview/"
+  "moved": "https://www.azion.com/pt-br/documentacao/build/applications/"
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/deploy/",
-  "moved": "https://www.azion.com/pt-br/documentacao/deploy/overview/"
+  "moved": "https://www.azion.com/pt-br/documentacao/deploy/orchestrator/"
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/observe/",
-  "moved": "https://www.azion.com/pt-br/documentacao/observe/overview/"
+  "moved": "https://www.azion.com/pt-br/documentacao/"
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/secure/",
-  "moved": "https://www.azion.com/pt-br/documentacao/secure/overview/"
+  "moved": "https://www.azion.com/pt-br/documentacao/secure/firewall/"
  },
  {
   "from": "https://www.azion.com/pt-br/documentacao/store/",
-  "moved": "https://www.azion.com/pt-br/documentacao/store/overview/"
+  "moved": "https://www.azion.com/pt-br/documentacao/"
+ },
+ {
+  "from": "https://www.azion.com/pt-br/documentacao/build/overview/",
+  "moved": "https://www.azion.com/pt-br/documentacao/build/applications/"
+ },
+ {
+  "from": "https://www.azion.com/pt-br/documentacao/secure/overview/",
+  "moved": "https://www.azion.com/pt-br/documentacao/secure/firewall/"
+ },
+ {
+  "from": "https://www.azion.com/pt-br/documentacao/store/overview/",
+  "moved": "https://www.azion.com/pt-br/documentacao/"
+ },
+ {
+  "from": "https://www.azion.com/pt-br/documentacao/observe/overview/",
+  "moved": "https://www.azion.com/pt-br/documentacao/"
+ },
+ {
+  "from": "https://www.azion.com/pt-br/documentacao/platform/overview/",
+  "moved": "https://www.azion.com/pt-br/documentacao/fundamentals/concepts/how-azion-works/"
+ },
+ {
+  "from": "https://www.azion.com/pt-br/documentacao/deploy/overview/",
+  "moved": "https://www.azion.com/pt-br/documentacao/deploy/orchestrator/"
+ },
+ {
+  "from": "https://www.azion.com/pt-br/documentacao/get-started/before-you-begin/",
+  "moved": "https://www.azion.com/pt-br/documentacao/services/support/get-help/"
  }
 ]

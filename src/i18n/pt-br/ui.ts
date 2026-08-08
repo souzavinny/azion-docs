@@ -13,6 +13,7 @@ export default UIDictionary({
 		'a logo do astro em um estrelado pedaço do espaço, com um planeta roxo parecido com Saturno flutuando à direita',
 	// Left Sidebar
 	'leftSidebar.a11yTitle': 'Primária',
+	'leftSidebar.allProducts': 'Todos os produtos',
 	'leftSidebar.learnTab': 'Documentação',
 	'leftSidebar.referenceTab': 'Referência',
 	'leftSidebar.viewInEnglish': 'Veja em Inglês',
@@ -41,6 +42,8 @@ export default UIDictionary({
 	// Used in previous/next page links at the bottom of pages
 	'articleNav.nextPage': 'Próxima página',
 	'articleNav.prevPage': 'Página anterior',
+	'pageContent.agentSetup': 'Configuração de agentes',
+	'pageContent.agentSetupTooltip': 'Configure seu agente',
 	// Used in `<Since>`: Added in: v0.24.0 [NEW]
 	'since.addedIn': 'Adicionado em:',
 	'since.new': 'Novo',

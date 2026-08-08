@@ -1,0 +1,40 @@
+{
+ "meta": {
+  "title": {
+   "en": "Edge Pulse"
+  },
+  "root": {
+   "en": "/documentation/observe/edge-pulse/",
+   "pt-br": "/documentacao/observe/edge-pulse/"
+  }
+ },
+ "groups": [
+  {
+   "key": "pulse/grp",
+   "items": [
+    {
+     "key": "pulse/overview",
+     "label": {
+      "en": "Overview",
+      "pt-br": "Visão geral"
+     },
+     "slug": {
+      "en": "/documentation/observe/edge-pulse/",
+      "pt-br": "/documentacao/observe/edge-pulse/"
+     }
+    },
+    {
+     "key": "pulse/observe/edge-pulse/quickstart",
+     "label": {
+      "en": "Edge Pulse first steps",
+      "pt-br": "Primeiros passos do Edge Pulse"
+     },
+     "slug": {
+      "en": "/documentation/observe/edge-pulse/quickstart/",
+      "pt-br": "/documentacao/observe/edge-pulse/quickstart/"
+     }
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,122 @@
+---
+title: Explicação
+description: >-
+  Quando escrever uma página de explicação e o que pertence a ela: o problema, a
+  abordagem, as alternativas e o trade-off, com passos em links, não na página.
+meta_tags: 'style guide, explanation pages'
+namespace: documentation_style_guide_explanation
+permalink: /documentacao/guia-de-estilo/conteudo/explicacao/
+menu_namespace: styleGuideMenu
+---
+
+## Propósito
+
+Uma página de explicação constrói entendimento de um produto ou de um design. O leitor não está no meio de uma tarefa; ele quer entender o design antes de decidir usá-lo.
+
+## Quando usar
+
+Escreva uma página de explicação quando:
+
+- O leitor quer a razão de o produto funcionar assim, não os passos.
+- Um guia how-to ganha um longo preâmbulo, ou uma página de referência para o texto para justificar um design.
+- A página precisa comparar alternativas e nomear um trade-off.
+
+Não escreva uma página de explicação quando:
+
+- O leitor precisa consultar um valor, um campo ou um limite. Escreva uma [página de referência](/pt-br/documentacao/guia-de-estilo/conteudo/referencia/).
+- O leitor precisa de passos para uma tarefa. Escreva um [guia how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/) ou um [tutorial](/pt-br/documentacao/guia-de-estilo/conteudo/tutoriais/).
+
+Explicação é o tipo de conteúdo que mais falta na documentação. Quando outro tipo de conteúdo começa a explicar, escreva a página de explicação e mantenha o outro tipo limpo.
+
+## Estrutura
+
+**Componentes obrigatórios**
+
+- **Parágrafo de introdução**: o problema que o design resolve e uma frase que nomeia o público-alvo.
+- **A abordagem**: como o design resolve o problema.
+- **O trade-off**: o que o design custa e quando ele é a escolha errada.
+- **O que ler em seguida**: links para as páginas que implementam ou estendem o design.
+
+**Componentes opcionais**
+
+- **Diagrama de arquitetura**: o diagrama e, depois, um parágrafo que o interpreta.
+- **Dataflow**: um passo a passo numerado do que se move para onde.
+- **Componentes**: o que cada parte faz e por que ela está ali.
+- **Implementação**: links para os guias how-to; esta seção aponta, não instrui.
+
+Uma página de arquitetura usa todos os componentes opcionais, na ordem acima. Uma explicação que não descreve uma arquitetura tem uma forma mais solta; os componentes obrigatórios continuam valendo.
+
+## Template
+
+O template segue a forma das páginas de arquitetura. Copie-o e substitua cada `<placeholder>`.
+
+```md
+<O problema que este design resolve e o que ele enfrenta.> Este documento é para <o público-alvo> que quer <o que esse público quer fazer>.
+
+## Diagrama de arquitetura de <nome do design>
+
+![<O que o diagrama mostra>](/assets/docs/images/uploads/<arquivo-do-diagrama>.png)
+
+<Um parágrafo que interpreta o diagrama: o que olhar primeiro e o que depende do quê.>
+
+### Dataflow de <nome do design>
+
+1. <O que se move primeiro e para onde vai.>
+2. <O que a plataforma faz com isso.>
+3. <Onde o fluxo termina.>
+
+## Componentes
+
+- **<Nome do componente>**: <o que ele faz e por que está ali>.
+- **<Nome do componente>**: <o que ele faz e por que está ali>.
+
+## Implementação
+
+- [<Guia how-to que implementa este design>](<URL do guia>)
+
+## Documentação relacionada
+
+- [<Página relacionada>](<URL da página>)
+```
+
+Uma explicação que não descreve uma arquitetura dispensa o diagrama e o dataflow. Ela mantém o problema, a abordagem, o trade-off e os links.
+
+## Explique o porquê, não o como
+
+Os passos moram em [tutoriais](/pt-br/documentacao/guia-de-estilo/conteudo/tutoriais/) e em [guias how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/), e o leitor os encontra lá. O que o leitor não encontra em nenhum outro lugar é a razão de o produto funcionar assim. Diga que problema o design resolve, o que ele enfrenta e quando ele é a escolha errada.
+
+Não recrie material que está disponível livremente em outro lugar. Explique a perspectiva da Azion sobre o tema e aponte para fora para o contexto geral.
+
+Não inclua passos. No momento em que um passo a passo numerado aparece, dois tipos de conteúdo dividem a mesma página. Aponte para o guia no lugar dos passos.
+
+## Nomeie as alternativas e o trade-off
+
+Uma página de explicação é o único lugar da documentação onde as alternativas têm lugar. "Você também pode usar X, mas isso troca Y por Z" é a frase para a qual este tipo de conteúdo existe. A mesma frase dentro de um guia how-to significa que o guia perdeu o rumo.
+
+Toda escolha de arquitetura custa algo, então nomeie o custo. Uma explicação que apresenta só vantagens é marketing, não documentação.
+
+## Discuta, não enumere
+
+Uma explicação discute um design; ela não lista as configurações dele. Uma página que vira uma tabela de campos quer ser uma [página de referência](/pt-br/documentacao/guia-de-estilo/conteudo/referencia/). Mova a tabela para lá e mantenha o raciocínio.
+
+Evite afirmações que expiram. "Atualmente", "no momento da escrita" e "em breve" envelhecem mal, e ninguém volta para corrigi-las. Escreva o que o produto faz, sem prender o texto a uma data.
+
+## Escreva frases descritivas
+
+Explicação é texto descritivo, então as frases têm limite de 25 palavras. Este tipo estoura o limite com mais frequência, porque o raciocínio sobre trade-offs convida orações subordinadas. Divida a frase longa em vez de comprimi-la.
+
+A voz passiva é permitida aqui, de forma estreita. Use a passiva apenas quando o agente é desconhecido ou é a própria plataforma. "Uma política de cache é aplicada à requisição" esconde quem aplica a política. "O Rules Engine aplica uma política de cache à requisição" não esconde. As regras completas de frase estão em [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/).
+
+## Deixe os diagramas carregar a explicação
+
+Diagramas carregam a maior parte do peso em uma página de explicação. Um design que você não consegue desenhar é um design que você ainda não entende o bastante para explicar.
+
+Referencie cada imagem com um caminho absoluto e sem prefixo de idioma, como `/assets/docs/images/uploads/content-delivery-dataflow.png`. Escreva um texto alternativo que descreve o que o diagrama mostra. "Dataflow da entrega de conteúdo no edge" prepara o leitor; "diagrama de arquitetura" não prepara.
+
+## Documentação relacionada
+
+- [Escolher um tipo de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/): a decisão entre os quatro tipos de conteúdo.
+- [Tutoriais](/pt-br/documentacao/guia-de-estilo/conteudo/tutoriais/): o tipo de conteúdo que ensina por meio de um primeiro projeto.
+- [Guias how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/): o tipo de conteúdo que carrega os passos.
+- [Referência](/pt-br/documentacao/guia-de-estilo/conteudo/referencia/): o tipo de conteúdo para material de consulta.
+- [Voz](/pt-br/documentacao/guia-de-estilo/escrita/voz/): o único registro que todas as páginas usam.

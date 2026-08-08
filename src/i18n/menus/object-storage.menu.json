@@ -1,0 +1,201 @@
+{
+ "meta": {
+  "title": {
+   "en": "Object Storage"
+  },
+  "root": {
+   "en": "/documentation/store/object-storage/",
+   "pt-br": "/documentacao/store/object-storage/"
+  }
+ },
+ "groups": [
+  {
+   "key": "obj/grp",
+   "items": [
+    {
+     "key": "obj/overview",
+     "label": {
+      "en": "Overview",
+      "pt-br": "Visão geral"
+     },
+     "slug": {
+      "en": "/documentation/store/object-storage/",
+      "pt-br": "/documentacao/store/object-storage/"
+     }
+    },
+    {
+     "key": "obj/guides",
+     "label": {
+      "en": "Guides",
+      "pt-br": "Guias"
+     },
+     "items": [
+      {
+       "key": "obj/gd/store/object-storage/guides/create-bucket",
+       "label": {
+        "en": "How to create an Object Storage bucket",
+        "pt-br": "Como criar um bucket do Object Storage"
+       },
+       "slug": {
+        "en": "/documentation/store/object-storage/guides/create-bucket/",
+        "pt-br": "/documentacao/store/object-storage/guides/criar-bucket/"
+       }
+      },
+      {
+       "key": "obj/gd/store/object-storage/guides/delete-buckets",
+       "label": {
+        "en": "How to delete an Object Storage bucket",
+        "pt-br": "Como excluir um bucket do Object Storage"
+       },
+       "slug": {
+        "en": "/documentation/store/object-storage/guides/delete-buckets/",
+        "pt-br": "/documentacao/store/object-storage/guides/deletar-buckets/"
+       }
+      },
+      {
+       "key": "obj/gd/store/object-storage/guides/delete-object",
+       "label": {
+        "en": "How to delete an object from an Object Storage bucket",
+        "pt-br": "Como excluir um objeto de um bucket do Object Storage"
+       },
+       "slug": {
+        "en": "/documentation/store/object-storage/guides/delete-object/",
+        "pt-br": "/documentacao/store/object-storage/guides/deletar-objeto/"
+       }
+      },
+      {
+       "key": "obj/gd/store/object-storage/guides/list-buckets",
+       "label": {
+        "en": "How to list Object Storage buckets",
+        "pt-br": "Como listar buckets do Object Storage"
+       },
+       "slug": {
+        "en": "/documentation/store/object-storage/guides/list-buckets/",
+        "pt-br": "/documentacao/store/object-storage/guides/listar-buckets/"
+       }
+      },
+      {
+       "key": "obj/gd/store/object-storage/guides/s3-protocol-for-object-storage",
+       "label": {
+        "en": "Set up S3 credentials for Object Storage",
+        "pt-br": "Acesse o Object Storage com o protocolo S3"
+       },
+       "slug": {
+        "en": "/documentation/store/object-storage/guides/s3-protocol-for-object-storage/",
+        "pt-br": "/documentacao/store/object-storage/guides/s3-protocol-para-object-storage/"
+       }
+      },
+      {
+       "key": "obj/gd/store/object-storage/guides/use-bucket-as-origin",
+       "label": {
+        "en": "Use an Object Storage Bucket as Origin",
+        "pt-br": "Use um bucket do Object Storage como origem"
+       },
+       "slug": {
+        "en": "/documentation/store/object-storage/guides/use-bucket-as-origin/",
+        "pt-br": "/documentacao/store/object-storage/guides/bucket-como-connector/"
+       }
+      },
+      {
+       "key": "obj/gd/store/object-storage/guides/auth-layer-object-storage-functions",
+       "label": {
+        "en": "Implement an Authentication Layer for Object Storage with Functions",
+        "pt-br": "Implementar uma camada de autenticação para Object Storage com Functions"
+       },
+       "slug": {
+        "en": "/documentation/store/object-storage/guides/auth-layer-object-storage-functions/",
+        "pt-br": "/documentacao/store/object-storage/guides/camada-autenticacao-object-storage-functions/"
+       }
+      },
+      {
+       "key": "obj/gd/store/object-storage/guides/create-and-modify-bucket",
+       "label": {
+        "en": "How to create and modify an Object Storage bucket",
+        "pt-br": "Como criar e modificar um bucket do Object Storage"
+       },
+       "slug": {
+        "en": "/documentation/store/object-storage/guides/create-and-modify-bucket/",
+        "pt-br": "/documentacao/store/object-storage/guides/criar-e-modificar-um-bucket/"
+       }
+      },
+      {
+       "key": "obj/gd/store/object-storage/guides/download-object",
+       "label": {
+        "en": "How to download an object from an Object Storage bucket"
+       },
+       "slug": {
+        "en": "/documentation/store/object-storage/guides/download-object/"
+       }
+      },
+      {
+       "key": "obj/gd/store/object-storage/guides/use-s3-compatible-tools-with-object-storage",
+       "label": {
+        "en": "Use S3-compatible tools with Object Storage",
+        "pt-br": "Como acessar o Object Storage usando o protocolo S3"
+       },
+       "slug": {
+        "en": "/documentation/store/object-storage/guides/use-s3-compatible-tools-with-object-storage/",
+        "pt-br": "/documentacao/store/object-storage/guides/protocolo-s3-para-object-storage/"
+       }
+      },
+      {
+       "key": "obj/gd/store/object-storage/guides/bucket-actions",
+       "label": {
+        "en": "Upload & Download Objects from a Bucket",
+        "pt-br": "Upload e download de objetos no Object Storage"
+       },
+       "slug": {
+        "en": "/documentation/store/object-storage/guides/bucket-actions/",
+        "pt-br": "/documentacao/store/object-storage/guides/upload-e-download-de-objetos-do-bucket/"
+       }
+      },
+      {
+       "key": "obj/gd/store/object-storage/guides/list-objects",
+       "label": {
+        "en": "How to list objects in an Object Storage bucket",
+        "pt-br": "Como listar objetos em um bucket do Object Storage"
+       },
+       "slug": {
+        "en": "/documentation/store/object-storage/guides/list-objects/",
+        "pt-br": "/documentacao/store/object-storage/guides/listar-objetos/"
+       }
+      },
+      {
+       "key": "obj/gd/store/object-storage/guides/update-buckets",
+       "label": {
+        "en": "How to update an Object Storage bucket",
+        "pt-br": "Como atualizar um bucket do Object Storage"
+       },
+       "slug": {
+        "en": "/documentation/store/object-storage/guides/update-buckets/",
+        "pt-br": "/documentacao/store/object-storage/guides/atualizar-buckets/"
+       }
+      },
+      {
+       "key": "obj/gd/store/object-storage/guides/update-object",
+       "label": {
+        "en": "How to update an object from an Object Storage bucket",
+        "pt-br": "Atualize um objeto no Object Storage"
+       },
+       "slug": {
+        "en": "/documentation/store/object-storage/guides/update-object/",
+        "pt-br": "/documentacao/store/object-storage/guides/atualizar-objeto/"
+       }
+      },
+      {
+       "key": "obj/gd/store/object-storage/guides/upload-object",
+       "label": {
+        "en": "How to upload an object to an Object Storage bucket",
+        "pt-br": "Faça upload de um objeto no Object Storage"
+       },
+       "slug": {
+        "en": "/documentation/store/object-storage/guides/upload-object/",
+        "pt-br": "/documentacao/store/object-storage/guides/upload-de-objeto/"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,368 @@
+{
+ "meta": {
+  "title": {
+   "en": "Data Stream"
+  },
+  "root": {
+   "en": "/documentation/observe/data-stream/",
+   "pt-br": "/documentacao/observe/data-stream/"
+  }
+ },
+ "groups": [
+  {
+   "key": "ds/grp",
+   "items": [
+    {
+     "key": "ds/overview",
+     "label": {
+      "en": "Overview",
+      "pt-br": "Visão geral"
+     },
+     "slug": {
+      "en": "/documentation/observe/data-stream/",
+      "pt-br": "/documentacao/observe/data-stream/"
+     }
+    },
+    {
+     "key": "ds/observe/data-stream/quickstart",
+     "label": {
+      "en": "Data Stream quickstart",
+      "pt-br": "Quickstart do Data Stream"
+     },
+     "slug": {
+      "en": "/documentation/observe/data-stream/quickstart/",
+      "pt-br": "/documentacao/observe/data-stream/quickstart/"
+     }
+    },
+    {
+     "key": "ds/guides",
+     "label": {
+      "en": "Guides",
+      "pt-br": "Guias"
+     },
+     "items": [
+      {
+       "key": "ds/gd/observe/data-stream/guides/add-filters-metrics",
+       "label": {
+        "en": "How to add filters on Real-Time Metrics",
+        "pt-br": "Como adicionar filtros no Real-Time Metrics"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/add-filters-metrics/",
+        "pt-br": "/documentacao/observe/data-stream/guides/adicionar-filtros-metrics/"
+       }
+      },
+      {
+       "key": "ds/gd/observe/data-stream/guides/analyze-metrics",
+       "label": {
+        "en": "How to analyze metrics on Real-Time Metrics",
+        "pt-br": "Como analisar métricas no Real-Time Metrics"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/analyze-metrics/",
+        "pt-br": "/documentacao/observe/data-stream/guides/analisar-metricas/"
+       }
+      },
+      {
+       "key": "ds/gd/observe/data-stream/guides/configure-sampling",
+       "label": {
+        "en": "How to configure sampling on Data Stream",
+        "pt-br": "Como configurar sampling no Data Stream"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/configure-sampling/",
+        "pt-br": "/documentacao/observe/data-stream/guides/configurar-sampling/"
+       }
+      },
+      {
+       "key": "ds/gd/observe/data-stream/guides/data-stream-associate-domains",
+       "label": {
+        "en": "How to associate domains on Data Stream",
+        "pt-br": "Como associar domínios no Data Stream"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/data-stream-associate-domains/",
+        "pt-br": "/documentacao/observe/data-stream/guides/data-stream-associar-dominios/"
+       }
+      },
+      {
+       "key": "ds/gd/observe/data-stream/guides/data-stream-select-variables",
+       "label": {
+        "en": "How to select variables on Data Stream",
+        "pt-br": "Como selecionar variáveis no Data Stream"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/data-stream-select-variables/",
+        "pt-br": "/documentacao/observe/data-stream/guides/data-stream-selecionar-variaveis/"
+       }
+      },
+      {
+       "key": "ds/gd/observe/data-stream/guides/endpoint-amazon-s3",
+       "label": {
+        "en": "How to use Amazon S3 to receive data from Data Stream",
+        "pt-br": "Envie dados do Data Stream ao Amazon S3"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/endpoint-amazon-s3/",
+        "pt-br": "/documentacao/observe/data-stream/guides/amazon-s3-endpoint/"
+       }
+      },
+      {
+       "key": "ds/gd/observe/data-stream/guides/understand-logs",
+       "label": {
+        "en": "How to understand Real-Time Events logs",
+        "pt-br": "Como entender os logs do Real-Time Events"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/understand-logs/",
+        "pt-br": "/documentacao/observe/data-stream/guides/entender-logs/"
+       }
+      },
+      {
+       "key": "ds/gd/observe/data-stream/guides/use-data-stream",
+       "label": {
+        "en": "How to configure Data Stream main settings",
+        "pt-br": "Como configurar as main settings do Data Stream"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/use-data-stream/",
+        "pt-br": "/documentacao/observe/data-stream/guides/como-usar-data-stream/"
+       }
+      },
+      {
+       "key": "ds/gd/observe/data-stream/guides/connector-azion-object-storage",
+       "label": {
+        "en": "Send Data Stream Data to Object Storage",
+        "pt-br": "Envie dados do Data Stream ao Object Storage"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/connector-azion-object-storage/",
+        "pt-br": "/documentacao/observe/data-stream/guides/conector-azion-object-storage/"
+       }
+      },
+      {
+       "key": "ds/gd/observe/data-stream/guides/data-stream-associate-workloads",
+       "label": {
+        "en": "How to associate Workloads on Data Stream",
+        "pt-br": "Como associar Workloads no Data Stream"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/data-stream-associate-workloads/",
+        "pt-br": "/documentacao/observe/data-stream/guides/data-stream-associar-workloads/"
+       }
+      },
+      {
+       "key": "ds/gd/observe/data-stream/guides/data-stream-custom-template",
+       "label": {
+        "en": "How to create a custom template on Data Stream",
+        "pt-br": "Como criar um template personalizado no Data Stream"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/data-stream-custom-template/",
+        "pt-br": "/documentacao/observe/data-stream/guides/data-stream-template-personalizado/"
+       }
+      },
+      {
+       "key": "ds/gd/observe/data-stream/guides/debugging-functions-data-stream",
+       "label": {
+        "en": "How to debug functions on Data Stream",
+        "pt-br": "Como fazer o debug de functions no Data Stream"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/debugging-functions-data-stream/",
+        "pt-br": "/documentacao/observe/data-stream/guides/debugging-functions-data-stream/"
+       }
+      },
+      {
+       "key": "ds/gd/observe/data-stream/guides/investigate-requests-graphql-api",
+       "label": {
+        "en": "Investigate Requests with Real-Time Events API",
+        "pt-br": "Investigue requisições com Real-Time Events"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/investigate-requests-graphql-api/",
+        "pt-br": "/documentacao/observe/data-stream/guides/investigar-requisicoes-api-graphql/"
+       }
+      },
+      {
+       "key": "ds/gd/observe/data-stream/guides/add-filters-events",
+       "label": {
+        "en": "How to add filters on Real-Time Events",
+        "pt-br": "Como adicionar filtros no Real-Time Events"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/add-filters-events/",
+        "pt-br": "/documentacao/observe/data-stream/guides/adicionar-filtros-events/"
+       }
+      },
+      {
+       "key": "ds/gd/observe/data-stream/guides/analyze-logs",
+       "label": {
+        "en": "Analyze logs",
+        "pt-br": "Analise logs"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/analyze-logs/",
+        "pt-br": "/documentacao/observe/data-stream/guides/analisar-logs/"
+       }
+      },
+      {
+       "key": "ds/gd/observe/data-stream/guides/analyze-navigation-data",
+       "label": {
+        "en": "How to analyze navigation data from Edge Pulse",
+        "pt-br": "Como analisar dados de navegação do Edge Pulse"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/analyze-navigation-data/",
+        "pt-br": "/documentacao/observe/data-stream/guides/analisar-dados-navegacao/"
+       }
+      },
+      {
+       "key": "ds/gd/observe/data-stream/guides/connector-standard-https-post",
+       "label": {
+        "en": "Send Data Stream Data via HTTP POST Connector",
+        "pt-br": "Receba dados do Data Stream via HTTP POST"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/connector-standard-https-post/",
+        "pt-br": "/documentacao/observe/data-stream/guides/conector-standard-https-post/"
+       }
+      },
+      {
+       "key": "ds/gd/observe/data-stream/guides/data-stream-set-payload",
+       "label": {
+        "en": "How to set a payload on Data Stream",
+        "pt-br": "Como adicionar um payload no Data Stream"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/data-stream-set-payload/",
+        "pt-br": "/documentacao/observe/data-stream/guides/data-stream-adicionar-payload/"
+       }
+      },
+      {
+       "key": "ds/gd/observe/data-stream/guides/data-stream-understand-metrics",
+       "label": {
+        "en": "Understand Data Stream metrics",
+        "pt-br": "Monitorar métricas do Data Stream"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/data-stream-understand-metrics/",
+        "pt-br": "/documentacao/observe/data-stream/guides/data-stream-monitorar-metricas/"
+       }
+      },
+      {
+       "key": "ds/gd/observe/data-stream/guides/delete-data-stream",
+       "label": {
+        "en": "How to stop or delete a data stream",
+        "pt-br": "Como parar ou deletar um data stream"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/delete-data-stream/",
+        "pt-br": "/documentacao/observe/data-stream/guides/deletar-data-stream/"
+       }
+      },
+      {
+       "key": "ds/gd/observe/data-stream/guides/endpoint-amazon-kinesis",
+       "label": {
+        "en": "Send Data Stream Data to Amazon Kinesis",
+        "pt-br": "Envie dados do Data Stream ao Amazon Kinesis"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/endpoint-amazon-kinesis/",
+        "pt-br": "/documentacao/observe/data-stream/guides/amazon-kinesis-endpoint/"
+       }
+      },
+      {
+       "key": "ds/gd/observe/data-stream/guides/endpoint-azure-blob",
+       "label": {
+        "en": "Send Data Stream Data to Azure Blob Storage",
+        "pt-br": "Envie dados do Data Stream ao Azure Blob"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/endpoint-azure-blob/",
+        "pt-br": "/documentacao/observe/data-stream/guides/azure-blob-endpoint/"
+       }
+      },
+      {
+       "key": "ds/gd/observe/data-stream/guides/endpoint-azure-monitor",
+       "label": {
+        "en": "Send Data Stream Data to Azure Monitor",
+        "pt-br": "Envie dados do Data Stream ao Azure Monitor"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/endpoint-azure-monitor/",
+        "pt-br": "/documentacao/observe/data-stream/guides/azure-monitor-endpoint/"
+       }
+      },
+      {
+       "key": "ds/gd/observe/data-stream/guides/endpoint-datadog",
+       "label": {
+        "en": "How to use Datadog to receive data from Data Stream",
+        "pt-br": "Envie dados do Data Stream ao Datadog"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/endpoint-datadog/",
+        "pt-br": "/documentacao/observe/data-stream/guides/datadog-endpoint/"
+       }
+      },
+      {
+       "key": "ds/gd/observe/data-stream/guides/endpoint-elasticsearch",
+       "label": {
+        "en": "Send Data Stream Data to Elasticsearch",
+        "pt-br": "Envie dados do Data Stream ao Elasticsearch"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/endpoint-elasticsearch/",
+        "pt-br": "/documentacao/observe/data-stream/guides/elasticsearch-endpoint/"
+       }
+      },
+      {
+       "key": "ds/gd/observe/data-stream/guides/endpoint-google-bigquery",
+       "label": {
+        "en": "Send Data Stream Data to Google BigQuery",
+        "pt-br": "Envie dados do Data Stream ao Google BigQuery"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/endpoint-google-bigquery/",
+        "pt-br": "/documentacao/observe/data-stream/guides/google-bigquery-endpoint/"
+       }
+      },
+      {
+       "key": "ds/gd/observe/data-stream/guides/endpoint-splunk",
+       "label": {
+        "en": "How to use Splunk to receive data from Data Stream",
+        "pt-br": "Envie dados do Data Stream ao Splunk"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/endpoint-splunk/",
+        "pt-br": "/documentacao/observe/data-stream/guides/splunk-endpoint/"
+       }
+      },
+      {
+       "key": "ds/gd/observe/data-stream/guides/monitor-applications",
+       "label": {
+        "en": "Monitor applications",
+        "pt-br": "Monitore aplicações"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/monitor-applications/",
+        "pt-br": "/documentacao/observe/data-stream/guides/monitorar-aplicacoes/"
+       }
+      },
+      {
+       "key": "ds/gd/observe/data-stream/guides/stream-data",
+       "label": {
+        "en": "Stream data",
+        "pt-br": "Transmita logs"
+       },
+       "slug": {
+        "en": "/documentation/observe/data-stream/guides/stream-data/",
+        "pt-br": "/documentacao/observe/data-stream/guides/transmitir-dados/"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

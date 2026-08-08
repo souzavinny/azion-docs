@@ -1,0 +1,139 @@
+---
+title: Referência
+description: >-
+  A estrutura e as regras das páginas de referência: o que uma referência
+  descreve, a ordem padrão das seções, tabelas com unidades e valores padrão e o
+  limite de frase.
+meta_tags: 'style guide, reference pages'
+namespace: documentation_style_guide_reference
+permalink: /documentacao/guia-de-estilo/conteudo/referencia/
+menu_namespace: styleGuideMenu
+---
+
+## Propósito
+
+Uma página de referência é material de consulta. O leitor a consulta para encontrar um valor, um campo ou um limite, e depois sai.
+
+## Quando usar
+
+Escreva uma página de referência quando:
+
+- O leitor precisa consultar um campo, uma configuração, um limite ou uma flag.
+- A informação é enumerável e cabe em uma tabela.
+
+Não escreva uma página de referência quando:
+
+- O leitor precisa de passos para uma tarefa. Escreva um [guia how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/).
+- O leitor precisa do raciocínio por trás de um design. Escreva uma [explicação](/pt-br/documentacao/guia-de-estilo/conteudo/explicacao/).
+
+## Estrutura
+
+**Componentes obrigatórios**
+
+- **Título**: uma expressão nominal que nomeia o produto ou o recurso.
+- **Parágrafo de introdução**: o nome do produto em negrito e o que o leitor pode fazer com ele.
+
+**Componentes opcionais**
+
+- **Botão de link**: uma chamada principal para ação perto do topo da página, e apenas uma.
+- **Interfaces de gerenciamento**: uma lista com Azion Console, API, Azion CLI e Terraform.
+- **Implementação**: uma tabela com os escopos disponíveis e o recurso que implementa cada um.
+- **Soluções**: uma tabela com cada solução e uma descrição de uma linha.
+- **Configurações avançadas**: uma tabela com cada configuração e uma descrição.
+- **Limites**: uma tabela com cada limite, abaixo de uma dica de que o suporte pode aumentar limites.
+- **Asides**: uma dica acima da tabela de limites e um aviso de atenção para uma mudança de versão ou de migração. Não use outros asides, e use esses dois com moderação.
+
+Omita uma seção que não tem nada para descrever. As seções restantes mantêm essa ordem.
+
+## Template
+
+Copie o template e substitua cada `<placeholder>`.
+
+```mdx
+import LinkButton from 'azion-webkit/linkbutton'
+
+**<Nome do produto>** é <o que o produto é>. Com <Nome do produto>, você pode <o que o leitor pode fazer>.
+
+<LinkButton severity="secondary" label="<Chamada para ação>" link="<URL de destino>" />
+
+Você pode criar e gerenciar <nome do produto> por meio de:
+
+- [Azion Console](<URL do guia>)
+- [API](<URL da referência da API>)
+- [Azion CLI](<URL da referência da CLI>)
+- [Terraform](<URL da referência do Terraform>)
+
+---
+
+## Implementação
+
+| Escopo | Recurso |
+| --- | --- |
+| <Escopo> | <Recurso que o implementa> |
+
+---
+
+## Soluções
+
+| Solução | Descrição |
+| --- | --- |
+| <Nome da solução> | <Descrição de uma linha> |
+
+---
+
+## Configurações avançadas
+
+| Configuração | Descrição |
+| --- | --- |
+| <Nome da configuração> | <O que ela faz, com o valor padrão> |
+
+---
+
+## Limites
+
+:::tip
+O suporte pode aumentar esses limites. Entre em contato com o <link do suporte>.
+:::
+
+| Escopo | Limite |
+| --- | --- |
+| <Escopo> | <Valor com a unidade> |
+```
+
+Uma página de comando da CLI tem outra forma. Ela abre com um resumo de uma linha e depois uma seção `Uso` com um bloco de shell. Uma seção `Flags opcionais` fecha a página, com um título por flag.
+
+## Descreva, não instrua
+
+Uma página de referência diz o que uma coisa é e quais valores ela aceita. Ela não diz ao leitor onde clicar. Um passo a passo numerado em uma página de referência é um guia how-to arquivado no lugar errado.
+
+Quando uma página de referência precisa mostrar como fazer algo, ela aponta para o [guia how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/). Ela não copia os passos para dentro da página.
+
+## Coloque informação enumerável em tabelas
+
+Tudo o que o leitor pode contar pertence a uma tabela: campos, limites, soluções, flags, códigos de status, valores padrão. Monte as tabelas no formato pipe do Markdown; o site adiciona a rolagem horizontal automaticamente. A prosa entre as tabelas dá uma ou duas frases de orientação. O leitor corre os olhos pela página e pula a prosa, então uma frase que ele pularia não pertence à página.
+
+Uma boa página de referência é completa, consistente e deliberadamente sem graça. Uma página de referência que documenta nove de doze campos está quebrada. Uma página de referência com descrições sem graça dos doze cumpre o seu papel.
+
+Escreva as linhas da tabela com fraseado consistente. Se uma linha diz "Número máximo de buckets por conta", a seguinte diz "Número máximo de objetos por bucket". Uma linha que muda para "Quantos objetos você pode colocar em um bucket" obriga o leitor a parar e ler.
+
+## Declare as unidades e os valores padrão
+
+Um limite sem unidade não é um fato. Uma configuração sem valor padrão é uma pergunta que a página deixa aberta. Escreva a unidade ao lado de cada número e o valor padrão de cada configuração.
+
+## Escreva frases descritivas
+
+Referência é texto descritivo, então as frases têm limite de 25 palavras. Células de tabela e código estão isentos; a prosa entre as tabelas não está. Use a voz ativa; use a passiva apenas quando o agente é desconhecido ou é a própria plataforma.
+
+Limite os agrupamentos de substantivos a três palavras e conte um nome de produto como uma unidade. Em inglês, `Rules Engine request phase behavior configuration` deixa o leitor sem saber qual palavra modifica qual. `The behavior configuration for the Rules Engine request phase` não deixa. As regras completas de frase estão em [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/).
+
+## Evite linguagem de marketing
+
+Uma página de referência diz o que um produto faz e quais são os limites dele. O leitor já escolheu o produto, então nenhuma frase precisa vendê-lo. Substitua "recursos poderosos de cache" pelo comportamento e pelos números. As expressões proibidas estão em [Terminologia](/pt-br/documentacao/guia-de-estilo/escrita/terminologia/).
+
+## Documentação relacionada
+
+- [Escolher um tipo de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/): a decisão entre os quatro tipos de conteúdo.
+- [Tutoriais](/pt-br/documentacao/guia-de-estilo/conteudo/tutoriais/): o tipo de conteúdo que ensina por meio de um primeiro projeto.
+- [Guias how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/): o tipo de conteúdo que carrega os passos.
+- [Explicação](/pt-br/documentacao/guia-de-estilo/conteudo/explicacao/): o tipo de conteúdo que carrega o raciocínio.
+- [Voz](/pt-br/documentacao/guia-de-estilo/escrita/voz/): o único registro que todas as páginas usam.

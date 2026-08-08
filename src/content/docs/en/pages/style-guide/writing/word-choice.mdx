@@ -1,0 +1,117 @@
+---
+title: Word choice
+description: >-
+  The vocabulary to replace, the test that separates quality claims from
+  behavior, the padding patterns to cut, and the rule that every number and
+  name must trace to a source.
+meta_tags: 'style guide, word choice, vocabulary'
+namespace: documentation_style_guide_word_choice
+permalink: /documentation/style-guide/writing/word-choice/
+menu_namespace: styleGuideMenu
+---
+
+## Replace the filler vocabulary
+
+Some words appear in drafts as decoration and carry no technical meaning. They also appear far more often in machine-generated text than in human writing, so they make a page read as generated. Replace them when they decorate; keep them when they carry technical meaning.
+
+| Avoid | Use |
+| --- | --- |
+| delve into | cover, explain |
+| leverage (meaning use) | use |
+| utilize | use |
+| facilitate | let, allow |
+| in order to | to |
+| due to the fact that | because |
+| has the ability to | can |
+| it is important to note that | (delete, keep the sentence) |
+| a wide range of | (name the range) |
+| various | (name them, or say how many) |
+| seamlessly | (delete, or say what does not break) |
+| robust | (say what it withstands) |
+| powerful | (say what it does) |
+| comprehensive | complete, or say what it covers |
+| cutting-edge, state-of-the-art | (delete) |
+| a testament to | (delete) |
+| plays a crucial role in | (say what it does) |
+| in today's landscape | (delete the sentence) |
+
+## Distinguish quality claims from behavior
+
+A word from the avoid list is legitimate when it describes behavior. The test is whether the word makes a claim about quality or a claim about behavior.
+
+- Quality claim: `robust security`
+- Behavior: `a robust retry with exponential backoff`
+
+"Robust security" asks the reader to trust an adjective. "A robust retry with exponential backoff" names the mechanism, and the adjective now describes something testable. Keep a word that passes this test; replace one that does not.
+
+## Describe the product, do not promote it
+
+Documentation describes behavior and limits. The reader already chose the product, so an adjective that sells is wasted on them and costs trust.
+
+- Before: `Applications offers powerful, flexible caching capabilities.`
+- After: `Applications caches content at the edge. The default TTL is 60 seconds.`
+
+*Significance inflation* is the same failure aimed at a concept: a sentence about how important something is, in place of what it does. "Caching plays a crucial role in modern web performance" gives the reader nothing to act on. State what the thing does and what its limits are.
+
+## Cut the padding patterns
+
+Five patterns add words without adding information.
+
+*Participle padding* is a trailing `-ing` clause: "…reducing latency and improving performance, ensuring a better experience." Cut the clause and keep the claim that is measurable. The sentence-level rule against trailing participles is in [Sentence structure](/en/documentation/style-guide/writing/sentence-structure/).
+
+*Negative parallelism* is the shape "It's not just X, it's Y." Say Y.
+
+*False ranges* connect items that are not on a scale: "from configuration to deployment to monitoring". List the actual set instead.
+
+*Undefined "you can"* promises without content: "You can configure various options." Either name the options or link to the page that names them.
+
+*Generic conclusions* restate the page without adding anything. End on the last concrete fact, or on a link worth following.
+
+## Name things in headings
+
+A heading names a thing or a task. A rhetorical question does neither.
+
+- Before: `What is caching?`
+- After: `Caching`
+- Before: `Why use Tiered Cache?`
+- After: `When to use Tiered Cache`
+
+## Avoid these words on every page
+
+A short set of words is banned outright:
+
+- "Simply", "just", "easy", and "obvious": if the task were easy, the reader would not be here. These words tell a stuck reader to feel embarrassed.
+- "Please": documentation instructs; it does not ask.
+- "Currently", "at the time of writing", and "will soon": all age badly, and nobody returns to fix them. Say what is true and let the changelog carry the timeline.
+- "Note that" and "it is important to note": delete the phrase and keep the sentence.
+- Latin abbreviations: write "for example" and "that is", not "e.g." and "i.e."
+
+## Use inclusive language
+
+The documentation addresses the reader as "you", so the generic reader never needs a gendered pronoun. A generic third party — an attacker, a developer — takes "they", never "he" or "she".
+
+Gendered and ableist idioms follow the same rule. Write `validate`, not `sanity check`.
+
+Replace a loaded technical term when the industry accepts an alternative:
+
+| Avoid | Use |
+| --- | --- |
+| whitelist | allowlist |
+| blacklist | blocklist |
+| master/slave | primary/replica |
+
+Do not use culture-specific references or idioms. They make sense in one locale, and they do not survive translation. Every page here ships in two languages, per [Bilingual pages](/en/documentation/style-guide/conventions/bilingual/).
+
+## Expand acronyms on first use
+
+The first use on every page spells out the term and puts the acronym in parentheses: `time to live (TTL)`. After that, the acronym stands alone. A reader lands on any page directly, from a search result, so a definition on another page does not exist for them.
+
+Product names are not acronyms. Write the name exactly as [Terminology](/en/documentation/style-guide/writing/terminology/) lists it, and do not expand it.
+
+## Trace every specific to a source
+
+An invented specific is the worst failure in documentation. A wrong limit, default, field name, flag, or error string looks exactly like a correct one. The reader discovers the difference only when they try it and it fails.
+
+Every number, field name, and command must trace to a source you can name. If you cannot name the source, remove the value or mark it for verification. A page with a gap is recoverable. A page with a confident wrong value is not, because nobody knows to check it.
+
+Product names follow their own rules, in [Terminology](/en/documentation/style-guide/writing/terminology/).

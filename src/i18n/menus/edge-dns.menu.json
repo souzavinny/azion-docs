@@ -1,0 +1,104 @@
+{
+ "meta": {
+  "title": {
+   "en": "Edge DNS"
+  },
+  "root": {
+   "en": "/documentation/secure/edge-dns/",
+   "pt-br": "/documentacao/secure/edge-dns/"
+  }
+ },
+ "groups": [
+  {
+   "key": "dns/grp",
+   "items": [
+    {
+     "key": "dns/overview",
+     "label": {
+      "en": "Overview",
+      "pt-br": "Visão geral"
+     },
+     "slug": {
+      "en": "/documentation/secure/edge-dns/",
+      "pt-br": "/documentacao/secure/edge-dns/"
+     }
+    },
+    {
+     "key": "dns/secure/edge-dns/reference/dnssec-compatibility",
+     "label": {
+      "en": "DNSSEC Compatibility",
+      "pt-br": "Compatibilidade com DNSSEC"
+     },
+     "slug": {
+      "en": "/documentation/secure/edge-dns/reference/dnssec-compatibility/",
+      "pt-br": "/documentacao/secure/edge-dns/reference/compatibilidade-dnssec/"
+     }
+    },
+    {
+     "key": "dns/guides",
+     "label": {
+      "en": "Guides",
+      "pt-br": "Guias"
+     },
+     "items": [
+      {
+       "key": "dns/gd/secure/edge-dns/quickstart",
+       "label": {
+        "en": "Edge DNS quickstart",
+        "pt-br": "Quickstart do Edge DNS"
+       },
+       "slug": {
+        "en": "/documentation/secure/edge-dns/quickstart/",
+        "pt-br": "/documentacao/secure/edge-dns/quickstart/"
+       }
+      },
+      {
+       "key": "dns/gd/secure/firewall/guides/edge-dns-configure-main-settings",
+       "label": {
+        "en": "How to configure Edge DNS main settings",
+        "pt-br": "Como definir as main settings de uma zona"
+       },
+       "slug": {
+        "en": "/documentation/secure/firewall/guides/edge-dns-configure-main-settings/",
+        "pt-br": "/documentacao/secure/firewall/guides/edge-dns-definir-main-settings/"
+       }
+      },
+      {
+       "key": "dns/gd/secure/firewall/guides/add-records",
+       "label": {
+        "en": "How to add records",
+        "pt-br": "Como adicionar registros em uma zona de DNS"
+       },
+       "slug": {
+        "en": "/documentation/secure/firewall/guides/add-records/",
+        "pt-br": "/documentacao/secure/firewall/guides/adicionar-registros/"
+       }
+      },
+      {
+       "key": "dns/gd/secure/edge-dns/guides/run-the-dig-command",
+       "label": {
+        "en": "How to look up DNS servers with Dig command",
+        "pt-br": "Encontre servidores DNS com o comando DIG"
+       },
+       "slug": {
+        "en": "/documentation/secure/edge-dns/guides/run-the-dig-command/",
+        "pt-br": "/documentacao/secure/edge-dns/guides/executar-o-comando-dig/"
+       }
+      },
+      {
+       "key": "dns/gd/secure/edge-dns/guides/run-the-traceroute-command",
+       "label": {
+        "en": "Diagnose Issues with the Traceroute Command",
+        "pt-br": "Diagnostique problemas com o comando Traceroute"
+       },
+       "slug": {
+        "en": "/documentation/secure/edge-dns/guides/run-the-traceroute-command/",
+        "pt-br": "/documentacao/secure/edge-dns/guides/executar-o-comando-traceroute/"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

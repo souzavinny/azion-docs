@@ -6,6 +6,7 @@ permalink: /documentation/architectures/api-gateways/implement-api-gateways-secu
 meta_tags: >-
   API Gateway Security, security perimeter, API Gateways, Firewall, DDoS protection, WAF rules, security policies, Azion Web Platform, traffic encryption, malicious activity
 namespace: docs_arch_api_gateways_security
+menu_namespace: architecturesMenu
 ---
 
 [API Gateways](https://www.azion.com/en/solutions/api-gateway/) enable intelligent management and routing of API requests to the appropriate backend microservices across distributed networks. They act as a single entry point for all API requests. While an API Gateway facilitates efficient traffic flow and centralizes control, it also introduces the need for security measures and monitoring to prevent performance issues and security vulnerabilities.
@@ -58,7 +59,7 @@ Through this perimeter, you can implement solutions such as:
 ## Implementation
 
 1. Implement your API Gateway.
-2. [Create an application](/en/documentation/build/overview/).
+2. [Create an application](/en/documentation/build/applications/).
     - You can use [Azion Console](https://console.azion.com/), [Azion API](https://api.azion.com/), or [Azion CLI](/en/documentation/products/azion-cli/overview/) to create and deploy an application.
     - [Configure the application's main settings](/en/documentation/build/applications/guides/configure-main-settings/).
 3. Associate your API Gateway [custom domain](/en/documentation/secure/workloads/guides/configure-a-domain/) with the application.
@@ -66,7 +67,7 @@ Through this perimeter, you can implement solutions such as:
 5. [Create a firewall](/en/documentation/secure/firewall/guides/firewall-configure-main-settings/) and select the domain you want to protect.
     - Define any [WAF rules](/en/documentation/secure/firewall/guides/create-waf-rule-set/), [Rules Engine rules](/en/documentation/secure/firewall/reference/rules-engine/), or [Functions](/en/documentation/secure/firewall/reference/functions/) you want to implement and instantiate in the firewall.
     - Install and configure the [Azion Integrations](/en/documentation/marketplace/reference/integrations/) you want to use to enhance your security policies.
-6. [Monitor your API Gateway behavior](/en/documentation/observe/overview/) through the Observe products.
+6. [Monitor your API Gateway behavior](/en/documentation/) through the Observe products.
 
 ---
 

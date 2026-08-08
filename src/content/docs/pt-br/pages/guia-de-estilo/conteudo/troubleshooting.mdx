@@ -1,0 +1,108 @@
+---
+title: Páginas de troubleshooting
+description: >-
+  Como escrever uma página de troubleshooting: nomeie o sintoma que o leitor
+  vê, ordene as causas por frequência e coloque a correção antes do ticket.
+meta_tags: 'style guide, troubleshooting'
+namespace: documentation_style_guide_troubleshooting
+permalink: /documentacao/guia-de-estilo/conteudo/troubleshooting/
+menu_namespace: styleGuideMenu
+---
+
+## Propósito
+
+Uma página de troubleshooting leva o leitor de um sintoma até uma correção. Ela é um [guia how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/) cuja tarefa é uma correção: um padrão do tipo how-to, não um novo tipo de conteúdo.
+
+## Quando usar
+
+- Escreva uma página de troubleshooting quando uma falha conhecida tem uma correção que o leitor aplica sozinho.
+- Escreva uma página para um grupo de sintomas relacionados, com uma seção por sintoma.
+- Não escreva uma página de troubleshooting para uma tarefa que o leitor planeja. Uma tarefa planejada precisa de um [guia how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/).
+- Não escreva uma página quando o produto funciona como projetado. As razões de um design pertencem a uma página de [explicação](/pt-br/documentacao/guia-de-estilo/conteudo/explicacao/).
+- Não escreva uma página quando a única correção é um ticket de suporte. Uma página cujo único passo é "abra um ticket" é um link, não uma página.
+
+## Estrutura
+
+**Componentes obrigatórios**
+
+- **Título ou heading de sintoma**: o sintoma como o leitor o vê, um por seção `##`.
+- **Causas**: as causas prováveis do sintoma, da mais comum para a menos comum.
+- **Correções**: passos numerados para cada causa, escritos com as regras de passo do guia how-to.
+- **Contato com o suporte**: um aside de fechamento que aponta o caminho do suporte, depois de todas as correções.
+
+**Componentes opcionais**
+
+- **Contexto**: um parágrafo de abertura, quando a página cobre vários sintomas.
+- **Exemplos**: a mensagem de erro ou a tela que confirma que o leitor tem esse sintoma.
+- **Próximos passos**: um ou dois links, quando uma correção leva a uma configuração seguinte.
+
+## Template
+
+```md
+[Um parágrafo: os sintomas que esta página cobre. Opcional
+quando a página cobre um único sintoma.]
+
+## <Sintoma como o leitor o vê>
+
+<As causas prováveis, uma linha cada, da mais comum para a menos comum.>
+
+### <Causa mais comum>
+
+1. <Uma instrução imperativa.>
+2. <Uma instrução imperativa.>
+
+### <Próxima causa>
+
+1. <Uma instrução imperativa.>
+
+## <Próximo sintoma do mesmo grupo>
+
+<...>
+
+---
+
+:::tip
+Se estes passos não resolverem o problema, <link para o caminho do suporte>.
+:::
+```
+
+## Nomeie o sintoma, não a causa
+
+O título ou o heading declara o sintoma como o leitor o vê. O leitor busca com o que ele vê, porque o que ele vê é tudo o que ele tem. Um leitor que soubesse a causa não precisaria da página.
+
+- Incorreto: `Problemas de configuração de autenticação`
+- Correto: `Não é possível acessar sua conta`
+
+O título de sintoma corresponde às palavras do próprio leitor na busca e na barra lateral.
+
+## Ordene as causas por frequência
+
+Abra a seção do sintoma com as causas prováveis e depois dê a correção para cada causa. Coloque a causa mais comum primeiro. O leitor tenta as correções de cima para baixo e para na primeira que funciona. A ordem por frequência dá à maioria dos leitores o caminho mais curto.
+
+## Coloque a correção antes do suporte
+
+A página existe para o leitor resolver o problema sem um ticket. Toda correção que o leitor aplica sozinho vem antes de qualquer menção ao time de suporte. Feche a página com um aside que aponta para [Abrir um ticket de suporte](/pt-br/documentacao/services/support/guides/open-ticket/), para o leitor cujas correções falharam.
+
+## Agrupe sintomas em uma página
+
+Sintomas relacionados compartilham leitores e muitas vezes compartilham causas, então eles compartilham uma página. Cada sintoma ganha sua própria seção `##`, com suas próprias causas e correções. Cada seção precisa funcionar sozinha, porque a busca leva o leitor ao sintoma, não ao topo da página. Divida a página por agrupamento lógico quando ela se aproximar dos [limites de tamanho](/pt-br/documentacao/guia-de-estilo/conteudo/tamanho-de-pagina/).
+
+## Posicione o troubleshooting pelo escopo
+
+Problemas de toda a plataforma vivem na seção Suporte: acesso à conta, e-mails que não chegam, dados de diagnóstico. Problemas específicos de um produto vivem no grupo de Guias desse produto. [Arquitetura de informação](/pt-br/documentacao/guia-de-estilo/conteudo/arquitetura-de-informacao/) cobre as duas seções.
+
+## Siga as regras de passo do guia how-to
+
+Uma correção é um procedimento, então todas as regras da página [Guias how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/) se aplicam. As regras que mais falham em rascunhos:
+
+- Escreva passos numerados e imperativos: "Clique", "Insira", "Selecione".
+- Escreva uma instrução por passo, com no máximo 20 palavras por frase.
+- Use um verbo por ação, em todas as menções na página.
+- Não ensine. Dê uma frase de contexto e depois a correção.
+
+## Páginas relacionadas
+
+- [Guias how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/): o tipo de conteúdo que este padrão aplica, com as regras de passo completas.
+- [Arquitetura de informação](/pt-br/documentacao/guia-de-estilo/conteudo/arquitetura-de-informacao/): onde vivem o troubleshooting da plataforma e o de produto.
+- [Escolher um tipo de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/): os quatro tipos de conteúdo e os testes que os separam.
+- [Tamanho de página e retrieval](/pt-br/documentacao/guia-de-estilo/conteudo/tamanho-de-pagina/): os limites de tamanho que decidem quando dividir uma página.

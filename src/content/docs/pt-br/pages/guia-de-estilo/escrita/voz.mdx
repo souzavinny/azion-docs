@@ -1,0 +1,65 @@
+---
+title: Voz
+description: >-
+  Escreva em segunda pessoa, presente simples e voz ativa: passos no
+  imperativo, comportamento no lugar de afirmações de qualidade e frases
+  completas, com sujeito, verbo e artigos.
+meta_tags: 'style guide, voice, writing'
+namespace: documentation_style_guide_voice
+permalink: /documentacao/guia-de-estilo/escrita/voz/
+menu_namespace: styleGuideMenu
+---
+
+## Trate o leitor por "você"
+
+A documentação fala com a pessoa que executa o trabalho. A segunda pessoa mantém o leitor dentro da frase, como sujeito do verbo. "O usuário" transforma o leitor em um terceiro e empurra o verbo para o futuro.
+
+- Antes: `O usuário criará um bucket.`
+- Depois: `Você cria um bucket.`
+
+## Use o presente simples
+
+Descreva o comportamento do produto no presente simples. O presente afirma o que a plataforma faz todas as vezes, e é sobre essa afirmação que o leitor age. Tempos compostos, construídos com verbos auxiliares, adicionam palavras e desfocam o momento da ação.
+
+- Antes: `Você terá configurado a origem.`
+- Depois: `Você configurou a origem.`
+- Antes: `O Applications armazenará conteúdo em cache no edge.`
+- Depois: `O Applications armazena conteúdo em cache no edge.`
+
+O passado simples e o futuro simples continuam disponíveis quando o momento da ação é real.
+
+## Use a voz ativa
+
+A voz ativa nomeia o ator. A passiva esconde o ator, e o ator costuma ser a resposta que o leitor veio buscar.
+
+- Antes: `Uma política de cache é aplicada à requisição.`
+- Depois: `O Rules Engine aplica uma política de cache à requisição.`
+
+A versão passiva deixa em aberto quem aplica a política: a plataforma, o navegador ou o leitor. Em texto descritivo, a passiva é aceitável apenas quando o ator é desconhecido ou é a própria plataforma. Nunca use a passiva em um passo.
+
+## Escreva os passos no imperativo
+
+Um passo é uma instrução, então ele começa pelo verbo.
+
+- Antes: `Em seguida, o botão Save deve ser clicado.`
+- Depois: `Clique em **Save**.`
+
+"Você deve clicar", "você precisa clicar" e "o botão deve ser clicado" colocam distância entre o leitor e a ação. O imperativo remove a distância e mantém cada passo no mesmo registro do título acima dele.
+
+## Descreva comportamento, não qualidade
+
+A documentação descreve comportamento e limites. Ela não vende, porque o leitor já escolheu o produto. Um adjetivo que afirma qualidade não dá ao leitor nada para fazer; um comportamento e um limite dão.
+
+- Antes: `O Applications oferece capacidades de cache poderosas e flexíveis.`
+- Depois: `O Applications armazena conteúdo em cache no edge. O TTL padrão é de 60 segundos.`
+
+A reescrita troca dois adjetivos por fatos que o leitor pode testar. As expressões que nunca aparecem na documentação estão em [Terminologia](/pt-br/documentacao/guia-de-estilo/escrita/terminologia/).
+
+## Divida frases longas, não corte palavras
+
+Frases curtas carregam melhor o conteúdo técnico. Curto não é o mesmo que truncado. Nunca corte o sujeito, o verbo ou o artigo para encurtar uma frase. A palavra cortada é onde a ambiguidade entra.
+
+- Antes: `Objetos não armazenados em cache serão removidos.`
+- Depois: `A Azion remove os objetos que não estão armazenados em cache.`
+
+A versão truncada é mais curta, e o leitor precisa adivinhar quais objetos ela remove e quem os remove. Quando uma frase fica longa, divida a frase em duas. Os limites de tamanho e as regras para passos estão em [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/).

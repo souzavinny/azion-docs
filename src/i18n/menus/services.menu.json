@@ -1,0 +1,110 @@
+{
+ "meta": {
+  "title": {
+   "en": "Services",
+   "pt-br": "Serviços"
+  },
+  "root": {
+   "en": "/documentation/services/",
+   "pt-br": "/documentacao/services/"
+  }
+ },
+ "groups": [
+  {
+   "key": "svc/grp",
+   "items": [
+    {
+     "key": "svc/overview",
+     "label": {
+      "en": "Overview",
+      "pt-br": "Visão geral"
+     },
+     "slug": {
+      "en": "/documentation/services/",
+      "pt-br": "/documentacao/services/"
+     }
+    },
+    {
+     "key": "svc/services/best-practices-review",
+     "label": {
+      "en": "Best Practices Review"
+     },
+     "slug": {
+      "en": "/documentation/services/best-practices-review/",
+      "pt-br": "/documentacao/services/best-practices-review/"
+     }
+    },
+    {
+     "key": "svc/services/business-events-support",
+     "label": {
+      "en": "Business Events Support"
+     },
+     "slug": {
+      "en": "/documentation/services/business-events-support/",
+      "pt-br": "/documentacao/services/business-events-support/"
+     }
+    },
+    {
+     "key": "svc/services/instructor-led-training",
+     "label": {
+      "en": "Instructor-Led Training"
+     },
+     "slug": {
+      "en": "/documentation/services/instructor-led-training/",
+      "pt-br": "/documentacao/services/instructor-led-training/"
+     }
+    },
+    {
+     "key": "svc/services/integration-services",
+     "label": {
+      "en": "Integration Services"
+     },
+     "slug": {
+      "en": "/documentation/services/integration-services/",
+      "pt-br": "/documentacao/services/solutions-lab/integration-services/"
+     }
+    },
+    {
+     "key": "svc/services/managed-configurations",
+     "label": {
+      "en": "Managed Configurations"
+     },
+     "slug": {
+      "en": "/documentation/services/managed-configurations/",
+      "pt-br": "/documentacao/services/managed-configurations/"
+     }
+    },
+    {
+     "key": "svc/services/security-response-team",
+     "label": {
+      "en": "Security Response Team"
+     },
+     "slug": {
+      "en": "/documentation/services/security-response-team/",
+      "pt-br": "/documentacao/services/security-response-team/"
+     }
+    },
+    {
+     "key": "svc/services/slack-channel",
+     "label": {
+      "en": "Slack Channel"
+     },
+     "slug": {
+      "en": "/documentation/services/slack-channel/",
+      "pt-br": "/documentacao/services/slack-channel/"
+     }
+    },
+    {
+     "key": "svc/services/technical-account-manager",
+     "label": {
+      "en": "Technical Account Manager"
+     },
+     "slug": {
+      "en": "/documentation/services/technical-account-manager/",
+      "pt-br": "/documentacao/services/technical-account-manager/"
+     }
+    }
+   ]
+  }
+ ]
+}

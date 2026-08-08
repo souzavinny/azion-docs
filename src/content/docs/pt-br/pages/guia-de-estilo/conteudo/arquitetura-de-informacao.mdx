@@ -1,0 +1,75 @@
+---
+title: Arquitetura de informação
+description: >-
+  A estrutura alvo da documentação da Azion: o esqueleto de seção de produto,
+  a ordem da jornada do leitor e onde uma página nova entra.
+meta_tags: 'style guide, information architecture, navigation, sidebar'
+namespace: documentation_style_guide_information_architecture
+permalink: /documentacao/guia-de-estilo/conteudo/arquitetura-de-informacao/
+menu_namespace: styleGuideMenu
+---
+
+Esta página define a estrutura alvo da documentação da Azion. Seções novas seguem esta estrutura, e as seções existentes convergem para ela conforme são revisadas. Não copie a estrutura de uma seção existente: o padrão abaixo vence.
+
+Dois princípios organizam tudo. As seções seguem a ordem da jornada do leitor com o produto. Cada seção contém um [tipo de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/), então a jornada decide onde a seção fica e o tipo decide como as páginas dela são.
+
+## O esqueleto de seção de produto
+
+Toda seção de produto segue esta ordem. A tabela mostra o que cada seção contém e quando ela existe.
+
+| Ordem | Seção | Obrigatória | Contém |
+| --- | --- | --- | --- |
+| 1 | Overview | Sim | A página raiz do produto: o que o produto é, o que ele faz, quando usar |
+| 2 | Get started | Sim | Uma [página Get started](/pt-br/documentacao/guia-de-estilo/conteudo/get-started/): de não usar o produto ao menor resultado funcional |
+| 3 | Guias | Quando o produto tem tarefas | [Guias how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/), incluindo as [páginas de troubleshooting](/pt-br/documentacao/guia-de-estilo/conteudo/troubleshooting/) do produto |
+| 4 | Conceitos | Quando o produto precisa de explicação | [Páginas de explicação](/pt-br/documentacao/guia-de-estilo/conteudo/explicacao/): como funciona, como escolher entre opções |
+| 5 | Referência | Quando o produto tem configurações ou limites | [Páginas de referência](/pt-br/documentacao/guia-de-estilo/conteudo/referencia/): campos, valores, padrões — fechando com limites e disponibilidade por plano |
+
+Um produto com soluções repete o padrão um nível abaixo: uma solução com superfície própria ganha uma subseção com o mesmo esqueleto, reduzido às partes de que precisa.
+
+## Ordene as seções pela jornada do leitor
+
+A ordem espelha a adoção. O leitor aprende o que o produto é, ativa o produto, realiza tarefas, entende o produto a fundo e consulta fatos. Uma seção nunca fica à frente da sua etapa: uma página de fatos não vem antes da página de ativação que dá sentido a ela.
+
+A jornada decide somente a ordem. Como uma página é por dentro é decidido pelo tipo de conteúdo, nunca pela posição.
+
+## Toda seção precisa se justificar
+
+Overview e Get started são o mínimo obrigatório: uma seção de produto é publicada com os dois ou não é publicada. Toda outra seção existe somente quando conteúdo real a preenche. Não crie uma seção para completar o padrão, e não mantenha uma seção vazia como marcador.
+
+## Cresça dividindo, não adicionando tipos
+
+Uma seção de produto cresce de um jeito: Guias se divide em áreas de tarefa nomeadas quando tem páginas demais para percorrer. Os cinco tipos de seção nunca aumentam em número. Uma página que não cabe em nenhum deles é uma página cujo tipo de conteúdo ainda não foi decidido — volte a [Escolher um tipo de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/).
+
+## Uma página, uma seção
+
+Cada página pertence a exatamente uma seção, definida pelo campo `menu_namespace` no frontmatter. Uma seção pode listar uma página que outra seção possui: essa linha é um cross-link, e o leitor que clica nela vai para a seção dona. Mantenha a posse na seção onde os vizinhos da página vivem.
+
+Hubs de navegação reúnem links e carregam uma frase de orientação. Um hub não é um tipo de conteúdo, e precisa de um público real antes de existir.
+
+## Seções de plataforma
+
+Conteúdo que nenhum produto possui sozinho vive ao lado dos produtos, não dentro de um deles:
+
+- Conceitos de plataforma, contas e billing: a seção Fundamentals.
+- Ajuda, contato e troubleshooting de plataforma: a seção Suporte.
+- Designs que combinam produtos: a seção Architectures.
+- Guias orientados a objetivo que atravessam produtos: junto às seções de plataforma, nunca dentro de um produto.
+
+## URLs
+
+O campo `permalink` do frontmatter define a URL da página. O prefixo de idioma vem da árvore de diretórios: `/en/documentation/...` para inglês, `/pt-br/documentacao/...` para português.
+
+Mover um arquivo não muda a URL. Mudar um `permalink` muda, e a URL antiga passa a precisar de um redirect. Escolha a URL pelo assunto da página, não pela posição atual na navegação, e a URL sobrevive a toda reorganização futura.
+
+## Posicione uma página nova
+
+Decida pelo leitor que a página serve:
+
+- A página documenta um produto: entra na seção desse produto, no lugar do esqueleto que o tipo de conteúdo indica.
+- A página explica a plataforma, contas ou billing: entra em Fundamentals.
+- A página diagnostica problemas de plataforma ou leva ao time de suporte: entra em Suporte.
+- A página mostra como produtos se combinam em uma solução: entra em Architectures.
+- A página reúne links de uma área: é um hub, e precisa de um público real antes de existir.
+
+Quando nenhuma seção serve, pergunte antes de criar uma. Uma seção nova muda a navegação para todos os leitores.

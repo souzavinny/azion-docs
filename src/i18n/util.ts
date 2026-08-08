@@ -1,5 +1,6 @@
 import type { AstroGlobal } from 'astro';
 import { getLanguageFromURL } from '../util';
+import type { SidebarMeta } from './nav-transform';
 import type {
 	NavDict,
 	UIDict,
@@ -38,6 +39,13 @@ export async function mapNavigationMenuByName(menuName: string, lang: string) {
 		.catch(async () => await import(`../i18n/en/${menuName}.ts`))
 
 	return mapDefaultNavExports<NavDict>([translations], lang)
+}
+
+export async function getMenuMeta(menuName: string, lang: string): Promise<SidebarMeta | null> {
+	const module = await import(`../i18n/${lang}/${menuName}.ts`)
+		.catch(async () => await import(`../i18n/en/${menuName}.ts`))
+
+	return module.meta ?? null
 }
 
 export const translations = mapDefaultExports<UIDict>(import.meta.glob('./*/ui.ts', { eager: true }));

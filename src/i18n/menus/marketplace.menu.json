@@ -1,0 +1,156 @@
+{
+ "meta": {
+  "title": {
+   "en": "Marketplace"
+  },
+  "root": {
+   "en": "/documentation/marketplace/reference/marketplace/",
+   "pt-br": "/documentacao/marketplace/reference/marketplace/"
+  }
+ },
+ "groups": [
+  {
+   "key": "mkt/grp",
+   "items": [
+    {
+     "key": "mkt/overview",
+     "label": {
+      "en": "Overview",
+      "pt-br": "Visão geral"
+     },
+     "slug": {
+      "en": "/documentation/marketplace/reference/marketplace/",
+      "pt-br": "/documentacao/marketplace/reference/marketplace/"
+     }
+    },
+    {
+     "key": "mkt/marketplace/reference/first-steps",
+     "label": {
+      "en": "Azion Marketplace first steps",
+      "pt-br": "Primeiros passos no Marketplace da Azion"
+     },
+     "slug": {
+      "en": "/documentation/marketplace/reference/first-steps/",
+      "pt-br": "/documentacao/marketplace/reference/first-steps/"
+     }
+    },
+    {
+     "key": "mkt/marketplace/reference/integrations",
+     "label": {
+      "en": "Azion Integrations"
+     },
+     "slug": {
+      "en": "/documentation/marketplace/reference/integrations/",
+      "pt-br": "/documentacao/marketplace/reference/integracoes/"
+     }
+    },
+    {
+     "key": "mkt/marketplace/reference/isv-signup",
+     "label": {
+      "en": "Become an ISV on Azion Marketplace",
+      "pt-br": "Torne-se um ISV no Azion Marketplace"
+     },
+     "slug": {
+      "en": "/documentation/marketplace/reference/isv-signup/",
+      "pt-br": "/documentacao/marketplace/reference/isv-signup/"
+     }
+    },
+    {
+     "key": "mkt/marketplace/reference/marketplace-seller-guide",
+     "label": {
+      "en": "Marketplace Seller Guide"
+     },
+     "slug": {
+      "en": "/documentation/marketplace/reference/marketplace-seller-guide/",
+      "pt-br": "/documentacao/marketplace/reference/marketplace-seller-guide/"
+     }
+    },
+    {
+     "key": "mkt/marketplace/reference/permissions-marketplace",
+     "label": {
+      "en": "Azion Marketplace's permissions",
+      "pt-br": "Permissões do Marketplace da Azion"
+     },
+     "slug": {
+      "en": "/documentation/marketplace/reference/permissions-marketplace/",
+      "pt-br": "/documentacao/marketplace/reference/permissions-marketplace/"
+     }
+    },
+    {
+     "key": "mkt/marketplace/reference/templates",
+     "label": {
+      "en": "Azion Templates"
+     },
+     "slug": {
+      "en": "/documentation/marketplace/reference/templates/",
+      "pt-br": "/documentacao/marketplace/reference/templates/"
+     }
+    },
+    {
+     "key": "mkt/marketplace/reference/templates-and-integrations-overview",
+     "label": {
+      "en": "Templates and Integrations",
+      "pt-br": "Templates e integrações"
+     },
+     "slug": {
+      "en": "/documentation/marketplace/reference/templates-and-integrations-overview/",
+      "pt-br": "/documentacao/marketplace/reference/overview-templates-e-integracoes/"
+     }
+    },
+    {
+     "key": "mkt/guides",
+     "label": {
+      "en": "Guides",
+      "pt-br": "Guias"
+     },
+     "items": [
+      {
+       "key": "mkt/gd/marketplace/guides/install-an-integration",
+       "label": {
+        "en": "How to install an integration",
+        "pt-br": "Como instalar uma integração"
+       },
+       "slug": {
+        "en": "/documentation/marketplace/guides/install-an-integration/",
+        "pt-br": "/documentacao/marketplace/reference/instalar-uma-integracao/"
+       }
+      },
+      {
+       "key": "mkt/gd/marketplace/guides/update-an-integration",
+       "label": {
+        "en": "How to update an integration",
+        "pt-br": "Como atualizar uma integração"
+       },
+       "slug": {
+        "en": "/documentation/marketplace/guides/update-an-integration/",
+        "pt-br": "/documentacao/marketplace/reference/atualizar-uma-integracao/"
+       }
+      },
+      {
+       "key": "mkt/gd/marketplace/integrations/ai-inference-starter-kit",
+       "label": {
+        "en": "How to deploy the AI Inference Starter Kit template",
+        "pt-br": "Como implementar o template AI Inference Starter Kit"
+       },
+       "slug": {
+        "en": "/documentation/marketplace/integrations/ai-inference-starter-kit/",
+        "pt-br": "/documentacao/marketplace/integrations/ai-inference-starter-kit/"
+       }
+      },
+      {
+       "key": "mkt/gd/marketplace/integrations/bot-manager-lite",
+       "label": {
+        "en": "How to Install Azion Bot Manager Lite",
+        "pt-br": "Instale o Azion Bot Manager Lite"
+       },
+       "slug": {
+        "en": "/documentation/marketplace/integrations/bot-manager-lite/",
+        "pt-br": "/documentacao/marketplace/integrations/bot-manager-lite/"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

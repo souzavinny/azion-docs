@@ -1,0 +1,934 @@
+{
+ "meta": {
+  "title": {
+   "en": "Azion Fundamentals",
+   "pt-br": "Fundamentos da Azion"
+  },
+  "root": {
+   "en": "/documentation/fundamentals/",
+   "pt-br": "/documentacao/fundamentals/"
+  }
+ },
+ "groups": [
+  {
+   "key": "fund/grp",
+   "items": [
+    {
+     "key": "fund/overview",
+     "label": {
+      "en": "Overview",
+      "pt-br": "Visão geral"
+     },
+     "slug": {
+      "en": "/documentation/fundamentals/",
+      "pt-br": "/documentacao/fundamentals/"
+     }
+    },
+    {
+     "key": "fund/concepts",
+     "label": {
+      "en": "Concepts",
+      "pt-br": "Conceitos"
+     },
+     "items": [
+      {
+       "key": "fund/concepts-how-azion-works",
+       "label": {
+        "en": "How Azion works",
+        "pt-br": "Como a Azion funciona"
+       },
+       "slug": {
+        "en": "/documentation/fundamentals/concepts/how-azion-works/",
+        "pt-br": "/documentacao/fundamentals/concepts/how-azion-works/"
+       }
+      },
+      {
+       "key": "fund/account-reference-accounts",
+       "label": {
+        "en": "Accounts, teams, and permissions",
+        "pt-br": "Contas"
+       },
+       "slug": {
+        "en": "/documentation/account/reference/accounts/",
+        "pt-br": "/documentacao/account/reference/contas/"
+       }
+      },
+      {
+       "key": "fund/concepts-traffic-flow",
+       "label": {
+        "en": "How Azion delivers your application",
+        "pt-br": "Como a Azion entrega sua aplicação"
+       },
+       "slug": {
+        "en": "/documentation/fundamentals/concepts/traffic-flow/",
+        "pt-br": "/documentacao/fundamentals/concepts/traffic-flow/"
+       }
+      },
+      {
+       "key": "fund/concepts-how-dns-works",
+       "label": {
+        "en": "How DNS works",
+        "pt-br": "Como o DNS funciona"
+       },
+       "slug": {
+        "en": "/documentation/fundamentals/concepts/how-dns-works/",
+        "pt-br": "/documentacao/fundamentals/concepts/how-dns-works/"
+       }
+      },
+      {
+       "key": "fund/concepts-global-network",
+       "label": {
+        "en": "The Azion global network",
+        "pt-br": "A rede global da Azion"
+       },
+       "slug": {
+        "en": "/documentation/fundamentals/concepts/global-network/",
+        "pt-br": "/documentacao/fundamentals/concepts/global-network/"
+       }
+      }
+     ]
+    },
+    {
+     "key": "fund/get-started",
+     "label": {
+      "en": "Get started",
+      "pt-br": "Primeiros passos"
+     },
+     "slug": {
+      "en": "/documentation/get-started/",
+      "pt-br": "/documentacao/get-started/"
+     }
+    },
+    {
+     "key": "fund/accounts",
+     "label": {
+      "en": "Accounts",
+      "pt-br": "Contas"
+     },
+     "slug": {
+      "en": "/documentation/account/",
+      "pt-br": "/documentacao/account/"
+     },
+     "items": [
+      {
+       "key": "fund/account-reference-creating-account",
+       "label": {
+        "en": "Create an account",
+        "pt-br": "Como criar uma conta na Azion"
+       },
+       "slug": {
+        "en": "/documentation/account/reference/creating-account/",
+        "pt-br": "/documentacao/account/reference/criar-uma-conta/"
+       }
+      },
+      {
+       "key": "fund/account-guides-getting-to-know-azion-console",
+       "label": {
+        "en": "Getting to know Azion Console",
+        "pt-br": "Conhecendo o Azion Console"
+       },
+       "slug": {
+        "en": "/documentation/account/guides/getting-to-know-azion-console/",
+        "pt-br": "/documentacao/account/guides/getting-to-know-azion-console/"
+       }
+      },
+      {
+       "key": "fund/account-guides-how-to-access-azion-console",
+       "label": {
+        "en": "Access Azion Console",
+        "pt-br": "Como acessar o Azion Console"
+       },
+       "slug": {
+        "en": "/documentation/account/guides/how-to-access-azion-console/",
+        "pt-br": "/documentacao/account/guides/como-acessar-o-azion-console/"
+       }
+      },
+      {
+       "key": "fund/account-reference-account-settings",
+       "label": {
+        "en": "Account Settings",
+        "pt-br": "Configurações de conta"
+       },
+       "slug": {
+        "en": "/documentation/account/reference/account-settings/",
+        "pt-br": "/documentacao/account/reference/account-settings/"
+       }
+      },
+      {
+       "key": "fund/account-guides-account-settings",
+       "label": {
+        "en": "Configure your account",
+        "pt-br": "Como configurar sua conta"
+       },
+       "slug": {
+        "en": "/documentation/account/guides/account-settings/",
+        "pt-br": "/documentacao/account/guides/configuracoes-de-conta/"
+       }
+      },
+      {
+       "key": "fund/account-reference-activity-history",
+       "label": {
+        "en": "Activity History"
+       },
+       "slug": {
+        "en": "/documentation/account/reference/activity-history/",
+        "pt-br": "/documentacao/account/reference/activity-history/"
+       }
+      },
+      {
+       "key": "fund/account-guides-activity-history",
+       "label": {
+        "en": "Access Activity History",
+        "pt-br": "Como acessar o activity history"
+       },
+       "slug": {
+        "en": "/documentation/account/guides/activity-history/",
+        "pt-br": "/documentacao/account/guides/activity-history/"
+       }
+      },
+      {
+       "key": "fund/account-guides-create-button",
+       "label": {
+        "en": "Use the \"+ Create\" button",
+        "pt-br": "Como usar o botão \"+ Create"
+       },
+       "slug": {
+        "en": "/documentation/account/guides/create-button/",
+        "pt-br": "/documentacao/account/guides/create-button/"
+       }
+      },
+      {
+       "key": "fund/account-guides-verify-account-migration",
+       "label": {
+        "en": "Verify your account migration to API v4",
+        "pt-br": "Verifique a migração da sua conta para a API v4"
+       },
+       "slug": {
+        "en": "/documentation/account/guides/verify-account-migration/",
+        "pt-br": "/documentacao/account/guides/verificar-migracao-conta/"
+       }
+      },
+      {
+       "key": "fund/account-guides-delete-account",
+       "label": {
+        "en": "Delete your account",
+        "pt-br": "Como deletar uma conta"
+       },
+       "slug": {
+        "en": "/documentation/account/guides/delete-account/",
+        "pt-br": "/documentacao/account/guides/excluir-conta/"
+       }
+      },
+      {
+       "key": "fund/account-security",
+       "label": {
+        "en": "Account security",
+        "pt-br": "Segurança da conta"
+       },
+       "items": [
+        {
+         "key": "fund/account-reference-multi-factor-authentication",
+         "label": {
+          "en": "Multi-Factor Authentication"
+         },
+         "slug": {
+          "en": "/documentation/account/reference/multi-factor-authentication/",
+          "pt-br": "/documentacao/account/reference/multi-factor-authentication/"
+         }
+        },
+        {
+         "key": "fund/account-guides-multi-factor-authentication",
+         "label": {
+          "en": "Enable Multi-Factor Authentication",
+          "pt-br": "Como habilitar Multi-Factor Authentication"
+         },
+         "slug": {
+          "en": "/documentation/account/guides/multi-factor-authentication/",
+          "pt-br": "/documentacao/account/guides/multi-factor-authentication/"
+         }
+        },
+        {
+         "key": "fund/account-reference-account-lockout-policy",
+         "label": {
+          "en": "Account Lockout Policy"
+         },
+         "slug": {
+          "en": "/documentation/account/reference/account-lockout-policy/",
+          "pt-br": "/documentacao/account/reference/account-lockout-policy/"
+         }
+        },
+        {
+         "key": "fund/account-guides-configure-account-lockout-policy",
+         "label": {
+          "en": "Configure Account Lockout Policy",
+          "pt-br": "Como configurar a Account Lockout Policy"
+         },
+         "slug": {
+          "en": "/documentation/account/guides/configure-account-lockout-policy/",
+          "pt-br": "/documentacao/account/guides/configurar-account-lockout-policy/"
+         }
+        },
+        {
+         "key": "fund/account-guides-account-lockout-policy-logs",
+         "label": {
+          "en": "Check Account Lockout Policy logs",
+          "pt-br": "Verifique os logs da Account Lockout Policy"
+         },
+         "slug": {
+          "en": "/documentation/account/guides/account-lockout-policy-logs/",
+          "pt-br": "/documentacao/account/guides/account-lockout-policy-logs/"
+         }
+        },
+        {
+         "key": "fund/account-guides-unlock-account-lockout-policy",
+         "label": {
+          "en": "Unlock a user",
+          "pt-br": "Desbloqueie um usuário da Account Lockout Policy"
+         },
+         "slug": {
+          "en": "/documentation/account/guides/unlock-account-lockout-policy/",
+          "pt-br": "/documentacao/account/guides/desbloquear-account-lockout-policy/"
+         }
+        },
+        {
+         "key": "fund/account-reference-user-session-timeout",
+         "label": {
+          "en": "User Session Timeout"
+         },
+         "slug": {
+          "en": "/documentation/account/reference/user-session-timeout/",
+          "pt-br": "/documentacao/account/reference/user-session-timeout/"
+         }
+        },
+        {
+         "key": "fund/account-guides-configure-user-session-timeout",
+         "label": {
+          "en": "Configure User Session Timeout",
+          "pt-br": "Como configurar o User Session Timeout"
+         },
+         "slug": {
+          "en": "/documentation/account/guides/configure-user-session-timeout/",
+          "pt-br": "/documentacao/account/guides/configurar-user-session-timeout/"
+         }
+        },
+        {
+         "key": "fund/account-guides-conditional-access-by-ip-address",
+         "label": {
+          "en": "Conditional access by IP address",
+          "pt-br": "Gerencie acesso condicional por endereço IP"
+         },
+         "slug": {
+          "en": "/documentation/account/guides/conditional-access-by-ip-address/",
+          "pt-br": "/documentacao/account/guides/conditional-access-by-ip-address/"
+         }
+        },
+        {
+         "key": "fund/account-reference-personal-tokens",
+         "label": {
+          "en": "Personal Tokens"
+         },
+         "slug": {
+          "en": "/documentation/account/reference/personal-tokens/",
+          "pt-br": "/documentacao/account/reference/personal-tokens/"
+         }
+        },
+        {
+         "key": "fund/account-guides-personal-tokens",
+         "label": {
+          "en": "Manage personal tokens",
+          "pt-br": "Como criar um personal token"
+         },
+         "slug": {
+          "en": "/documentation/account/guides/personal-tokens/",
+          "pt-br": "/documentacao/account/guides/personal-tokens/"
+         }
+        },
+        {
+         "key": "fund/account-reference-social-login",
+         "label": {
+          "en": "Social Login"
+         },
+         "slug": {
+          "en": "/documentation/account/reference/social-login/",
+          "pt-br": "/documentacao/account/reference/social-login/"
+         }
+        }
+       ]
+      },
+      {
+       "key": "fund/sso",
+       "label": {
+        "en": "Single sign-on",
+        "pt-br": "Single sign-on"
+       },
+       "items": [
+        {
+         "key": "fund/account-reference-single-sign-on",
+         "label": {
+          "en": "Single Sign-On"
+         },
+         "slug": {
+          "en": "/documentation/account/reference/single-sign-on/",
+          "pt-br": "/documentacao/account/reference/single-sign-on/"
+         }
+        },
+        {
+         "key": "fund/account-guides-sso",
+         "label": {
+          "en": "Manage IdPs",
+          "pt-br": "Como configurar SSO"
+         },
+         "slug": {
+          "en": "/documentation/account/guides/sso/",
+          "pt-br": "/documentacao/account/guides/sso/"
+         }
+        },
+        {
+         "key": "fund/account-guides-sso-google-saml",
+         "label": {
+          "en": "Google SAML as IdP",
+          "pt-br": "Use o Google SAML como Identity Provider (IdP)"
+         },
+         "slug": {
+          "en": "/documentation/account/guides/sso-google-saml/",
+          "pt-br": "/documentacao/account/guides/sso-google-saml/"
+         }
+        },
+        {
+         "key": "fund/account-guides-sso-okta-saml",
+         "label": {
+          "en": "Okta SAML as IdP",
+          "pt-br": "Use o Okta SAML como Identity Provider (IdP)"
+         },
+         "slug": {
+          "en": "/documentation/account/guides/sso-okta-saml/",
+          "pt-br": "/documentacao/account/guides/sso-okta-saml/"
+         }
+        },
+        {
+         "key": "fund/account-guides-sso-microsoft-entra-saml",
+         "label": {
+          "en": "Microsoft Entra SAML as IdP",
+          "pt-br": "Use o Microsoft Entra SAML como IdP"
+         },
+         "slug": {
+          "en": "/documentation/account/guides/sso-microsoft-entra-saml/",
+          "pt-br": "/documentacao/account/guides/sso-microsoft-entra-saml/"
+         }
+        },
+        {
+         "key": "fund/account-guides-microsoft-entra-automated-user-provisioning",
+         "label": {
+          "en": "Microsoft Entra user provisioning (SCIM)",
+          "pt-br": "Provisione usuários do Microsoft Entra com SCIM"
+         },
+         "slug": {
+          "en": "/documentation/account/guides/microsoft-entra-automated-user-provisioning/",
+          "pt-br": "/documentacao/account/guides/microsoft-entra-provisionamento-automatizado-de-usuarios/"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "key": "fund/members",
+     "label": {
+      "en": "Members and permissions",
+      "pt-br": "Membros e permissões"
+     },
+     "items": [
+      {
+       "key": "fund/account-reference-teams-permissions",
+       "label": {
+        "en": "Teams Permissions"
+       },
+       "slug": {
+        "en": "/documentation/account/reference/teams-permissions/",
+        "pt-br": "/documentacao/account/reference/teams-permissions/"
+       }
+      },
+      {
+       "key": "fund/account-guides-teams-permissions",
+       "label": {
+        "en": "Manage teams",
+        "pt-br": "Como gerenciar permissões de times"
+       },
+       "slug": {
+        "en": "/documentation/account/guides/teams-permissions/",
+        "pt-br": "/documentacao/account/guides/teams-permissions/"
+       }
+      },
+      {
+       "key": "fund/account-reference-users-management",
+       "label": {
+        "en": "Users Management"
+       },
+       "slug": {
+        "en": "/documentation/account/reference/users-management/",
+        "pt-br": "/documentacao/account/reference/users-management/"
+       }
+      },
+      {
+       "key": "fund/account-guides-users-management",
+       "label": {
+        "en": "Manage users",
+        "pt-br": "Como gerenciar usuários"
+       },
+       "slug": {
+        "en": "/documentation/account/guides/users-management/",
+        "pt-br": "/documentacao/account/guides/users-management/"
+       }
+      }
+     ]
+    },
+    {
+     "key": "fund/user-profiles",
+     "label": {
+      "en": "User profiles",
+      "pt-br": "Perfis de usuário"
+     },
+     "items": [
+      {
+       "key": "fund/account-reference-your-settings",
+       "label": {
+        "en": "Your Settings"
+       },
+       "slug": {
+        "en": "/documentation/account/reference/your-settings/",
+        "pt-br": "/documentacao/account/reference/your-settings/"
+       }
+      }
+     ]
+    },
+    {
+     "key": "fund/domains",
+     "label": {
+      "en": "Domains",
+      "pt-br": "Domínios"
+     },
+     "items": [
+      {
+       "key": "fund/secure-workloads",
+       "label": {
+        "en": "Workloads"
+       },
+       "slug": {
+        "en": "/documentation/secure/workloads/",
+        "pt-br": "/documentacao/secure/workloads/"
+       },
+       "linkOnly": true
+      },
+      {
+       "key": "fund/build-applications-reference-domains",
+       "label": {
+        "en": "Domains"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/reference/domains/",
+        "pt-br": "/documentacao/build/applications/reference/domains/"
+       },
+       "linkOnly": true
+      }
+     ]
+    },
+    {
+     "key": "fund/performance",
+     "label": {
+      "en": "Performance",
+      "pt-br": "Performance"
+     },
+     "items": [
+      {
+       "key": "fund/build-applications-application-accelerator",
+       "label": {
+        "en": "Application Accelerator"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/application-accelerator/",
+        "pt-br": "/documentacao/build/applications/application-accelerator/"
+       },
+       "linkOnly": true
+      },
+      {
+       "key": "fund/build-applications-cache-tiered-cache",
+       "label": {
+        "en": "Tiered Cache"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/cache/tiered-cache/",
+        "pt-br": "/documentacao/build/applications/cache/tiered-cache/"
+       },
+       "linkOnly": true
+      },
+      {
+       "key": "fund/build-applications-image-processor",
+       "label": {
+        "en": "Image Processor"
+       },
+       "slug": {
+        "en": "/documentation/build/applications/image-processor/",
+        "pt-br": "/documentacao/build/applications/image-processor/"
+       },
+       "linkOnly": true
+      },
+      {
+       "key": "fund/observe-edge-pulse",
+       "label": {
+        "en": "Edge Pulse"
+       },
+       "slug": {
+        "en": "/documentation/observe/edge-pulse/",
+        "pt-br": "/documentacao/observe/edge-pulse/"
+       },
+       "linkOnly": true
+      }
+     ]
+    },
+    {
+     "key": "fund/security",
+     "label": {
+      "en": "Security",
+      "pt-br": "Segurança"
+     },
+     "items": [
+      {
+       "key": "fund/secure-overview",
+       "label": {
+        "en": "Secure your application",
+        "pt-br": "Secure"
+       },
+       "slug": {
+        "en": "/documentation/secure/firewall/",
+        "pt-br": "/documentacao/secure/firewall/"
+       },
+       "linkOnly": true
+      },
+      {
+       "key": "fund/secure-ddos-protection",
+       "label": {
+        "en": "DDoS Protection"
+       },
+       "slug": {
+        "en": "/documentation/secure/ddos-protection/",
+        "pt-br": "/documentacao/secure/ddos-protection/"
+       },
+       "linkOnly": true
+      },
+      {
+       "key": "fund/platform-shared-responsibility",
+       "label": {
+        "en": "Shared Responsibility Model",
+        "pt-br": "Modelo de Responsabilidade Compartilhada"
+       },
+       "slug": {
+        "en": "/documentation/platform/shared-responsibility/",
+        "pt-br": "/documentacao/platform/shared-responsibility/"
+       }
+      },
+      {
+       "key": "fund/compliance",
+       "label": {
+        "en": "Compliance",
+        "pt-br": "Compliance"
+       },
+       "items": [
+        {
+         "key": "fund/platform-compliance-governance-risk-compliance",
+         "label": {
+          "en": "Governance, Risk & Compliance",
+          "pt-br": "Fortaleça Governança, Risco e Conformidade"
+         },
+         "slug": {
+          "en": "/documentation/platform/compliance/governance-risk-compliance/",
+          "pt-br": "/documentacao/platform/compliance/governanca-risco-conformidade/"
+         }
+        },
+        {
+         "key": "fund/platform-compliance-pci-dss-certification",
+         "label": {
+          "en": "PCI Compliance",
+          "pt-br": "Compliance PCI"
+         },
+         "slug": {
+          "en": "/documentation/platform/compliance/pci-dss-certification/",
+          "pt-br": "/documentacao/platform/compliance/pci-dss-certification/"
+         }
+        },
+        {
+         "key": "fund/platform-compliance-soc",
+         "label": {
+          "en": "SOC Compliance",
+          "pt-br": "Compliance SOC"
+         },
+         "slug": {
+          "en": "/documentation/platform/compliance/soc/",
+          "pt-br": "/documentacao/platform/compliance/soc/"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "key": "fund/billing",
+     "label": {
+      "en": "Billing",
+      "pt-br": "Billing"
+     },
+     "items": [
+      {
+       "key": "fund/platform-pricing",
+       "label": {
+        "en": "Pricing",
+        "pt-br": "Preços"
+       },
+       "slug": {
+        "en": "/documentation/platform/pricing/",
+        "pt-br": "/documentacao/platform/pricing/"
+       }
+      },
+      {
+       "key": "fund/account-reference-billing-and-subscriptions",
+       "label": {
+        "en": "Billing",
+        "pt-br": "Faturamento"
+       },
+       "slug": {
+        "en": "/documentation/account/reference/billing-and-subscriptions/",
+        "pt-br": "/documentacao/account/reference/billing-and-subscriptions/"
+       }
+      },
+      {
+       "key": "fund/account-guides-billing-and-subscriptions",
+       "label": {
+        "en": "Access Billing",
+        "pt-br": "Como acessar o faturamento"
+       },
+       "slug": {
+        "en": "/documentation/account/guides/billing-and-subscriptions/",
+        "pt-br": "/documentacao/account/guides/billing-and-subscriptions/"
+       }
+      }
+     ]
+    },
+    {
+     "key": "fund/api",
+     "label": {
+      "en": "Azion's API",
+      "pt-br": "API da Azion"
+     },
+     "items": [
+      {
+       "key": "fund/devtools-api",
+       "label": {
+        "en": "Get started with Azion API",
+        "pt-br": "Primeiros passos com a API da Azion"
+       },
+       "slug": {
+        "en": "/documentation/devtools/api/",
+        "pt-br": "/documentacao/devtools/api/quickstart/"
+       }
+      },
+      {
+       "key": "fund/devtools-api-v4-migration",
+       "label": {
+        "en": "API v4 Migration",
+        "pt-br": "Migração para API v4"
+       },
+       "slug": {
+        "en": "/documentation/devtools/api/v4-migration/",
+        "pt-br": "/documentacao/devtools/api/v4-migration/"
+       }
+      },
+      {
+       "key": "fund/devtools-graphql-api",
+       "label": {
+        "en": "GraphQL API"
+       },
+       "slug": {
+        "en": "/documentation/devtools/graphql-api/",
+        "pt-br": "/documentacao/devtools/graphql-api/"
+       },
+       "linkOnly": true
+      }
+     ]
+    },
+    {
+     "key": "fund/reference",
+     "label": {
+      "en": "Reference",
+      "pt-br": "Referência"
+     },
+     "items": [
+      {
+       "key": "fund/migration-guides",
+       "label": {
+        "en": "Migration guides",
+        "pt-br": "Guias de migração"
+       },
+       "slug": {
+        "en": "/documentation/get-started/migrate/",
+        "pt-br": "/documentacao/get-started/migrate/"
+       },
+       "items": [
+        {
+         "key": "fund/gd/get-started/migrate/akamai",
+         "label": {
+          "en": "Migrate from Akamai to Azion",
+          "pt-br": "Migre da Akamai para a Azion"
+         },
+         "slug": {
+          "en": "/documentation/get-started/migrate/akamai/",
+          "pt-br": "/documentacao/get-started/migrate/akamai/"
+         }
+        },
+        {
+         "key": "fund/gd/get-started/migrate/aws",
+         "label": {
+          "en": "Migrate from AWS to Azion",
+          "pt-br": "Migre da AWS para a Azion"
+         },
+         "slug": {
+          "en": "/documentation/get-started/migrate/aws/",
+          "pt-br": "/documentacao/get-started/migrate/aws/"
+         }
+        },
+        {
+         "key": "fund/gd/get-started/migrate/cloudflare",
+         "label": {
+          "en": "Migrate from Cloudflare to Azion",
+          "pt-br": "Migre da Cloudflare para a Azion"
+         },
+         "slug": {
+          "en": "/documentation/get-started/migrate/cloudflare/",
+          "pt-br": "/documentacao/get-started/migrate/cloudflare/"
+         }
+        },
+        {
+         "key": "fund/gd/get-started/migrate/fastly",
+         "label": {
+          "en": "Migrate from Fastly to Azion",
+          "pt-br": "Migre da Fastly para a Azion"
+         },
+         "slug": {
+          "en": "/documentation/get-started/migrate/fastly/",
+          "pt-br": "/documentacao/get-started/migrate/fastly/"
+         }
+        },
+        {
+         "key": "fund/gd/get-started/migrate/vercel",
+         "label": {
+          "en": "Migrate from Vercel to Azion",
+          "pt-br": "Migre da Vercel para a Azion"
+         },
+         "slug": {
+          "en": "/documentation/get-started/migrate/vercel/",
+          "pt-br": "/documentacao/get-started/migrate/vercel/"
+         }
+        }
+       ]
+      },
+      {
+       "key": "fund/reference-glossary",
+       "label": {
+        "en": "Glossary",
+        "pt-br": "Glossário"
+       },
+       "slug": {
+        "en": "/documentation/fundamentals/reference/glossary/",
+        "pt-br": "/documentacao/fundamentals/reference/glossary/"
+       }
+      },
+      {
+       "key": "fund/services-support-http-error-status-codes",
+       "label": {
+        "en": "HTTP error status codes",
+        "pt-br": "Códigos de Status de Erro HTTP da Azion"
+       },
+       "slug": {
+        "en": "/documentation/services/support/http-error-status-codes/",
+        "pt-br": "/documentacao/services/support/http-error-status-codes/"
+       },
+       "linkOnly": true
+      },
+      {
+       "key": "fund/agreements",
+       "label": {
+        "en": "Agreements & Policies",
+        "pt-br": "Contratos"
+       },
+       "slug": {
+        "en": "/documentation/agreements/",
+        "pt-br": "/documentacao/agreements/"
+       },
+       "linkOnly": true
+      },
+      {
+       "key": "fund/agreements-privacy-policy",
+       "label": {
+        "en": "Privacy Policy",
+        "pt-br": "Política de Privacidade"
+       },
+       "slug": {
+        "en": "/documentation/agreements/privacy-policy/",
+        "pt-br": "/documentacao/agreements/politica-de-privacidade/"
+       },
+       "linkOnly": true
+      },
+      {
+       "key": "fund/ext-system-status",
+       "label": {
+        "en": "System Status"
+       },
+       "slug": {
+        "en": "https://status.azion.com/"
+       }
+      }
+     ]
+    },
+    {
+     "key": "fund/agent-resources",
+     "label": {
+      "en": "Agent resources",
+      "pt-br": "Recursos para agentes"
+     },
+     "items": [
+      {
+       "key": "fund/devtools-for-ai-agents",
+       "label": {
+        "en": "For AI Agents",
+        "pt-br": "Para agentes de IA"
+       },
+       "slug": {
+        "en": "/documentation/devtools/for-ai-agents/",
+        "pt-br": "/documentacao/devtools/for-ai-agents/"
+       }
+      },
+      {
+       "key": "fund/devtools-mcp",
+       "label": {
+        "en": "MCP Server",
+        "pt-br": "Model Context Protocol (MCP)"
+       },
+       "slug": {
+        "en": "/documentation/devtools/mcp/",
+        "pt-br": "/documentacao/devtools/mcp/"
+       },
+       "linkOnly": true
+      },
+      {
+       "key": "fund/ext-llms-txt",
+       "label": {
+        "en": "llms.txt"
+       },
+       "slug": {
+        "en": "https://www.azion.com/llms.txt"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

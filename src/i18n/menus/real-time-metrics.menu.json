@@ -1,0 +1,148 @@
+{
+ "meta": {
+  "title": {
+   "en": "Real Time Metrics"
+  },
+  "root": {
+   "en": "/documentation/observe/real-time-metrics/",
+   "pt-br": "/documentacao/observe/real-time-metrics/"
+  }
+ },
+ "groups": [
+  {
+   "key": "rtm/grp",
+   "items": [
+    {
+     "key": "rtm/overview",
+     "label": {
+      "en": "Overview",
+      "pt-br": "Visão geral"
+     },
+     "slug": {
+      "en": "/documentation/observe/real-time-metrics/",
+      "pt-br": "/documentacao/observe/real-time-metrics/"
+     }
+    },
+    {
+     "key": "rtm/observe/real-time-metrics/quickstart",
+     "label": {
+      "en": "Real-Time Metrics first steps",
+      "pt-br": "Primeiros passos do Real-Time Metrics"
+     },
+     "slug": {
+      "en": "/documentation/observe/real-time-metrics/quickstart/",
+      "pt-br": "/documentacao/observe/real-time-metrics/quickstart/"
+     }
+    },
+    {
+     "key": "rtm/observe/real-time-metrics/reference/historical-real-time-metrics",
+     "label": {
+      "en": "Historical Real-Time Metrics",
+      "pt-br": "Real-Time Metrics Histórico"
+     },
+     "slug": {
+      "en": "/documentation/observe/real-time-metrics/reference/historical-real-time-metrics/",
+      "pt-br": "/documentacao/observe/real-time-metrics-historico/"
+     }
+    },
+    {
+     "key": "rtm/guides",
+     "label": {
+      "en": "Guides",
+      "pt-br": "Guias"
+     },
+     "items": [
+      {
+       "key": "rtm/gd/observe/real-time-metrics/guides/azion-plugin-grafana-custom-dash",
+       "label": {
+        "en": "Customize a Grafana Dashboard with Azion Plugin",
+        "pt-br": "Personalize um dashboard no Grafana com a Azion"
+       },
+       "slug": {
+        "en": "/documentation/observe/real-time-metrics/guides/azion-plugin-grafana-custom-dash/",
+        "pt-br": "/documentacao/observe/real-time-metrics/guides/azion-plugin-grafana/"
+       }
+      },
+      {
+       "key": "rtm/gd/observe/real-time-metrics/guides/azion-plugin-grafana-customize-log-table",
+       "label": {
+        "en": "Customize a Log Table with Azion Plugin",
+        "pt-br": "Personalize uma tabela de logs no Grafana"
+       },
+       "slug": {
+        "en": "/documentation/observe/real-time-metrics/guides/azion-plugin-grafana-customize-log-table/",
+        "pt-br": "/documentacao/observe/real-time-metrics/guides/azion-plugin-grafana-personalizar-tabela-logs/"
+       }
+      },
+      {
+       "key": "rtm/gd/observe/real-time-metrics/guides/azion-plugin-grafana-pre-built-dash",
+       "label": {
+        "en": "Use a Pre-Built Grafana Dashboard with Azion",
+        "pt-br": "Use um dashboard pré-configurado no Grafana"
+       },
+       "slug": {
+        "en": "/documentation/observe/real-time-metrics/guides/azion-plugin-grafana-pre-built-dash/",
+        "pt-br": "/documentacao/observe/real-time-metrics/guides/azion-plugin-grafana-dash-pre-configurado/"
+       }
+      },
+      {
+       "key": "rtm/gd/observe/real-time-metrics/guides/best-practices-grafana",
+       "label": {
+        "en": "How to use Grafana with best practices",
+        "pt-br": "Como usar o Grafana com boas práticas"
+       },
+       "slug": {
+        "en": "/documentation/observe/real-time-metrics/guides/best-practices-grafana/",
+        "pt-br": "/documentacao/observe/real-time-metrics/guides/boas-praticas-grafana/"
+       }
+      },
+      {
+       "key": "rtm/gd/observe/real-time-metrics/guides/data-transferred-dash",
+       "label": {
+        "en": "Data Transferred dashboard on Grafana JSON example",
+        "pt-br": "Dashboard JSON de Data Transferred no Grafana"
+       },
+       "slug": {
+        "en": "/documentation/observe/real-time-metrics/guides/data-transferred-dash/",
+        "pt-br": "/documentacao/observe/real-time-metrics/guides/data-transferred-dash/"
+       }
+      },
+      {
+       "key": "rtm/gd/observe/real-time-metrics/guides/integrate-grafana",
+       "label": {
+        "en": "How to integrate Azion with Grafana",
+        "pt-br": "Como integrar a Azion com o Grafana"
+       },
+       "slug": {
+        "en": "/documentation/observe/real-time-metrics/guides/integrate-grafana/",
+        "pt-br": "/documentacao/observe/real-time-metrics/guides/integrar-grafana/"
+       }
+      },
+      {
+       "key": "rtm/gd/observe/real-time-metrics/guides/metrics-dash",
+       "label": {
+        "en": "Real-Time Metrics GraphQL Dashboard for Grafana",
+        "pt-br": "Dashboard JSON do Real-Time Metrics no Grafana"
+       },
+       "slug": {
+        "en": "/documentation/observe/real-time-metrics/guides/metrics-dash/",
+        "pt-br": "/documentacao/observe/real-time-metrics/guides/metrics-dash/"
+       }
+      },
+      {
+       "key": "rtm/gd/observe/real-time-metrics/guides/use-real-time-metrics",
+       "label": {
+        "en": "How to use Real-Time Metrics",
+        "pt-br": "Como utilizar o Real-Time Metrics"
+       },
+       "slug": {
+        "en": "/documentation/observe/real-time-metrics/guides/use-real-time-metrics/",
+        "pt-br": "/documentacao/observe/real-time-metrics/guides/usar-real-time-metrics/"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

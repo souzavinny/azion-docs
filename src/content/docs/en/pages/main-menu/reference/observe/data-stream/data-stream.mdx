@@ -6,12 +6,13 @@ description: >-
   data in real time, adding even more intelligence to your business.
 meta_tags: 'data, stream, edge computing, observe, observability, logs, events'
 namespace: documentation_products_data_streaming
+menu_namespace: dataStreamMenu
 permalink: /documentation/observe/data-stream/
 ---
 
 **Data Stream** feeds your stream processing, SIEM, and big data platforms with the event logs from your applications on Azion in real time, so you can understand user behavior, analyze performance, identify security threats, and make informed decisions.
 
-Data Stream is an [Observe](/en/documentation/observe/overview/) product responsible for collecting, grouping, and transmitting raw logs to the destination you choose. You select a *data source* (the Azion product that generates the event logs), a *template* with the variables you want to collect, the *domains* whose events you want to capture, and an *endpoint* (the stream processing platform or analysis tool that receives the data). To keep an enhanced performance, it uses ASCII encoding to avoid parser issues and problems in data interpretation.
+Data Stream is an [Observe](/en/documentation/) product responsible for collecting, grouping, and transmitting raw logs to the destination you choose. You select a *data source* (the Azion product that generates the event logs), a *template* with the variables you want to collect, the *domains* whose events you want to capture, and an *endpoint* (the stream processing platform or analysis tool that receives the data). To keep an enhanced performance, it uses ASCII encoding to avoid parser issues and problems in data interpretation.
 
 By default, logs are sent in batches when the block reaches 2,000 records or every 60 seconds, whichever occurs first, and the data reaches your infrastructure in up to 3 minutes. After configuring your stream, you can check your logs successfully being sent through [Real-Time Events](/en/documentation/observe/real-time-events/).
 
@@ -34,7 +35,7 @@ You can manage your streams through [Azion Console](https://console.azion.com/da
 | Concepts | [How Data Stream works: batching, delivery, and error handling](/en/documentation/observe/data-stream/concepts/) |
 
 :::tip
-Visit the [Guides page](/en/documentation/guides/#observe) and the [Observe section](/en/documentation/observe/overview/) to explore more options for managing your data streams.
+Visit the [Guides page](/en/documentation/guides/#observe) and the [Observe section](/en/documentation/) to explore more options for managing your data streams.
 :::
 
 ---

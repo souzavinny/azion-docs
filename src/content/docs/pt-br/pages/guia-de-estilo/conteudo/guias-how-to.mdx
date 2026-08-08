@@ -1,0 +1,120 @@
+---
+title: Guias how-to
+description: >-
+  Como escrever um guia how-to: comece pelo resultado, remova obstáculos em
+  vez de ensinar e mantenha cada passo com uma instrução imperativa.
+meta_tags: 'style guide, how-to'
+namespace: documentation_style_guide_how_to_guides
+permalink: /documentacao/guia-de-estilo/conteudo/guias-how-to/
+menu_namespace: styleGuideMenu
+---
+
+## Propósito
+
+Um guia how-to leva um leitor com um problema até o problema resolvido. O leitor já sabe o que quer. A página remove os obstáculos entre ele e o resultado; ela não ensina.
+
+## Quando usar
+
+- O leitor chegou com uma tarefa específica e uma situação real.
+- Não use um how-to para o leitor que está aprendendo o produto: essa página é um [tutorial](/pt-br/documentacao/guia-de-estilo/conteudo/tutoriais/).
+- Um how-to cuja tarefa é um conserto é uma [página de troubleshooting](/pt-br/documentacao/guia-de-estilo/conteudo/troubleshooting/).
+- Na dúvida, [Escolher um tipo de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/) tem o roteiro.
+
+## Estrutura
+
+**Componentes obrigatórios**
+
+- **Parágrafo de resultado**: a primeira frase declara o que o leitor tem ao terminar.
+- **Pré-requisitos**: um aside de dica perto do topo, nunca uma seção.
+- **Seções de tarefa**: títulos com frase verbal no imperativo e passos numerados, uma instrução cada.
+- **Estado final**: o último passo ou o fechamento declara o que o leitor vê quando a tarefa funcionou.
+- **Dica de fechamento**: um ou dois links para onde o leitor vai em seguida.
+
+**Componentes opcionais**
+
+- **Tabs por interface**, quando a tarefa roda em mais de uma interface.
+- **Um aside** com o caminho alternativo, quando a tarefa genuinamente ramifica.
+
+## Template
+
+Copie o template e substitua cada `<placeholder>`.
+
+```md
+[Um parágrafo: o resultado. Comece pelo resultado,
+não pelo contexto.]
+
+:::tip[dica]
+Pré-requisitos, se houver. Um aside, não uma seção.
+:::
+
+## <Frase verbal no imperativo que nomeia a tarefa>
+
+Passos. Em tabs por interface se a tarefa tem mais
+de uma. O último passo declara o que o leitor vê.
+
+## <Próxima tarefa, se a página cobre uma sequência>
+
+---
+
+:::tip[dica]
+Para onde ir em seguida. Um ou dois links.
+:::
+```
+
+Separe as seções principais da página com uma régua `---`, e nunca coloque uma logo depois do frontmatter.
+
+## Nomeie a tarefa no título e nos headings
+
+Títulos começam com "Como": `Como criar um bucket do Object Storage`. Os headings de seção são frases verbais no imperativo que nomeiam a tarefa.
+
+- Correto: `Crie um bucket`
+- Incorreto: `Criando um bucket`, `Criação de bucket`, `Passo 1`
+
+O heading imperativo combina com os passos abaixo dele e sobrevive à tradução. Um gerúndio na primeira posição não faz nenhum dos dois.
+
+## Escreva cada passo como uma instrução imperativa
+
+Os passos são numerados e imperativos: "Clique", "Digite", "Selecione". Cada passo tem exatamente uma instrução, em até 20 palavras. [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/) tem as regras completas.
+
+- Incorreto: `Clique em **Save**, depois faça o purge do cache e confirme que o TTL mudou.`
+- Correto: três passos numerados, uma ação cada.
+
+Três regras adicionais moldam um passo:
+
+- Declare onde o leitor age antes da ação: `No **Azion Console**, clique em **Save**.`
+- Um passo opcional começa com "(Opcional)".
+- Quando a ação corresponde a um controle do Console, use a palavra do próprio controle, em negrito, em todas as menções.
+
+## Declare o estado final
+
+O leitor precisa saber que a tarefa funcionou sem perguntar a ninguém. O último passo, ou a frase de fechamento, declara o que ele vê: um status, um valor, uma URL que responde.
+
+## Ramifique onde a tarefa ramifica
+
+Um guia how-to pode ramificar, porque a situação do leitor é real e varia. Ramifique somente onde a realidade ramifica: uma diferença genuína de interface ou configuração.
+
+A maioria das tarefas na Azion roda pelo Console, pela Azion CLI ou pela API. Quando uma tarefa tem mais de uma interface, apresente as interfaces como tabs em uma página, com a interface que a maioria usa primeiro — normalmente o Console. A resposta principal vive no fluxo da página, nunca somente dentro de uma tab.
+
+## Escreva guias que atravessam produtos
+
+Alguns guias levam o leitor a um objetivo que cruza produtos. Para esses:
+
+- Nomeie o objetivo em linguagem simples, não com um nome de produto.
+- Assuma um caminho recomendado. Alternativas vão em um único aside, nunca como bifurcações nos passos.
+- Organize por etapa do fluxo de trabalho, não por produto.
+
+Esses guias vivem fora de uma seção de produto. [Arquitetura de informação](/pt-br/documentacao/guia-de-estilo/conteudo/arquitetura-de-informacao/) cobre onde eles entram.
+
+## Aponte para fora em produtos de terceiros
+
+Quando uma tarefa passa por uma interface de terceiros, aponte para a documentação do fornecedor para esses passos em vez de reproduzi-los. Nunca faça screenshot de uma interface de terceiros. Interfaces de terceiros mudam sem aviso, e a página fica desatualizada em silêncio.
+
+## Não ensine
+
+O leitor tem um problema, não uma curiosidade. Uma frase de contexto está bem. Um parágrafo de contexto é sinal de que o material pertence a uma página de [explicação](/pt-br/documentacao/guia-de-estilo/conteudo/explicacao/), com um link a partir do how-to.
+
+## Relacionados
+
+- [Tutoriais](/pt-br/documentacao/guia-de-estilo/conteudo/tutoriais/): a página para o leitor que está aprendendo.
+- [Páginas de troubleshooting](/pt-br/documentacao/guia-de-estilo/conteudo/troubleshooting/): o how-to cuja tarefa é um conserto.
+- [Referência](/pt-br/documentacao/guia-de-estilo/conteudo/referencia/): onde cada configuração que um guia toca está documentada.

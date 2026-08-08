@@ -1,0 +1,387 @@
+{
+ "meta": {
+  "title": {
+   "en": "Agreements & Policies",
+   "pt-br": "Acordos e Políticas"
+  },
+  "root": {
+   "en": "/documentation/agreements/",
+   "pt-br": "/documentacao/agreements/"
+  }
+ },
+ "groups": [
+  {
+   "key": "agr/grp",
+   "items": [
+    {
+     "key": "agr/overview",
+     "label": {
+      "en": "Overview",
+      "pt-br": "Visão geral"
+     },
+     "slug": {
+      "en": "/documentation/agreements/",
+      "pt-br": "/documentacao/agreements/"
+     }
+    },
+    {
+     "key": "agr/agreements/acceptable-use-policy",
+     "label": {
+      "en": "Acceptable Use Policy",
+      "pt-br": "Política de Uso Aceitável"
+     },
+     "slug": {
+      "en": "/documentation/agreements/acceptable-use-policy/",
+      "pt-br": "/documentacao/agreements/politica-de-uso-aceitavel/"
+     }
+    },
+    {
+     "key": "agr/agreements/azion-affiliate-program-terms",
+     "label": {
+      "en": "Azion Affiliate Program Terms",
+      "pt-br": "Termos dos Programas de Affiliates da Azion"
+     },
+     "slug": {
+      "en": "/documentation/agreements/azion-affiliate-program-terms/",
+      "pt-br": "/documentacao/agreements/termos-programas-affiliates-azion/"
+     }
+    },
+    {
+     "key": "agr/agreements/azion-incentive-credits-terms-and-conditions",
+     "label": {
+      "en": "Terms and Conditions of Azion Incentive Credits",
+      "pt-br": "Termos e Condições de Créditos de Incentivo"
+     },
+     "slug": {
+      "en": "/documentation/agreements/azion-incentive-credits-terms-and-conditions/",
+      "pt-br": "/documentacao/agreements/termos-e-condicoes-azion-creditos-incentivo/"
+     }
+    },
+    {
+     "key": "agr/agreements/azion-plans-terms-and-conditions",
+     "label": {
+      "en": "Terms and Conditions of Azion Plans",
+      "pt-br": "Termos e Condições do Azion Plans"
+     },
+     "slug": {
+      "en": "/documentation/agreements/azion-plans-terms-and-conditions/",
+      "pt-br": "/documentacao/agreements/termos-e-condicoes-azion-plan/"
+     }
+    },
+    {
+     "key": "agr/agreements/customer-agreement",
+     "label": {
+      "en": "Customer Agreement"
+     },
+     "items": [
+      {
+       "key": "agr/agreements/customer-agreement/overview",
+       "label": {
+        "en": "Current version",
+        "pt-br": "Versão atual"
+       },
+       "slug": {
+        "en": "/documentation/agreements/customer-agreement/",
+        "pt-br": "/documentacao/agreements/contrato-de-cliente/"
+       }
+      }
+     ]
+    },
+    {
+     "key": "agr/agreements/faq-azion-customers",
+     "label": {
+      "en": "Data Privacy FAQ – Customers",
+      "pt-br": "FAQ sobre Privacidade de Dados - Clientes"
+     },
+     "slug": {
+      "en": "/documentation/agreements/faq-azion-customers/",
+      "pt-br": "/documentacao/agreements/faq-clientes-azion/"
+     }
+    },
+    {
+     "key": "agr/agreements/faq-end-users",
+     "label": {
+      "en": "Data Privacy FAQ – End Users",
+      "pt-br": "FAQ sobre Privacidade de Dados - Usuários Finais"
+     },
+     "slug": {
+      "en": "/documentation/agreements/faq-end-users/",
+      "pt-br": "/documentacao/agreements/faq-usuarios-finais/"
+     }
+    },
+    {
+     "key": "agr/agreements/faqs",
+     "label": {
+      "en": "Data Privacy FAQs",
+      "pt-br": "FAQs sobre privacidade de dados"
+     },
+     "slug": {
+      "en": "/documentation/agreements/faqs/",
+      "pt-br": "/documentacao/agreements/faqs/"
+     }
+    },
+    {
+     "key": "agr/agreements/marketplace",
+     "label": {
+      "en": "Marketplace"
+     },
+     "items": [
+      {
+       "key": "agr/agreements/marketplace/marketplace-agreement",
+       "label": {
+        "en": "Azion Marketplace Agreement"
+       },
+       "slug": {
+        "en": "/documentation/agreements/marketplace/marketplace-agreement/"
+       }
+      }
+     ]
+    },
+    {
+     "key": "agr/agreements/privacy-policy",
+     "label": {
+      "en": "Privacy Policy",
+      "pt-br": "Política de Privacidade"
+     },
+     "slug": {
+      "en": "/documentation/agreements/privacy-policy/",
+      "pt-br": "/documentacao/agreements/politica-de-privacidade/"
+     }
+    },
+    {
+     "key": "agr/agreements/savings-plan-terms-and-conditions",
+     "label": {
+      "en": "Savings Plan Terms and Conditions",
+      "pt-br": "Termos e Condições do Savings Plan"
+     },
+     "slug": {
+      "en": "/documentation/agreements/savings-plan-terms-and-conditions/",
+      "pt-br": "/documentacao/agreements/termos-e-condicoes-savings-plan/"
+     }
+    },
+    {
+     "key": "agr/agreements/savings-plan-terms-and-conditions-10-july-2025",
+     "label": {
+      "en": "Savings Plan Terms and Conditions - July 10, 2025",
+      "pt-br": "Termos e Condições do Savings Plan - 10/07/2025"
+     },
+     "slug": {
+      "en": "/documentation/agreements/savings-plan-terms-and-conditions-10-july-2025/",
+      "pt-br": "/documentacao/agreements/termos-e-condicoes-savings-plan-10-7-2025/"
+     }
+    },
+    {
+     "key": "agr/agreements/sla",
+     "label": {
+      "en": "SLA"
+     },
+     "items": [
+      {
+       "key": "agr/agreements/sla/overview",
+       "label": {
+        "en": "Current version",
+        "pt-br": "Versão atual"
+       },
+       "slug": {
+        "en": "/documentation/agreements/sla/",
+        "pt-br": "/documentacao/agreements/sla/"
+       }
+      }
+     ]
+    },
+    {
+     "key": "agr/agreements/terms-and-conditions-of-reserved-capacity",
+     "label": {
+      "en": "Terms and Conditions of Reserved Capacity",
+      "pt-br": "Termos e Condições da Reserva de Capacidade"
+     },
+     "slug": {
+      "en": "/documentation/agreements/terms-and-conditions-of-reserved-capacity/",
+      "pt-br": "/documentacao/agreements/termos-e-condicoes-reserva-de-capacidade/"
+     }
+    },
+    {
+     "key": "agr/agreements/tos",
+     "label": {
+      "en": "Terms of Service",
+      "pt-br": "Termos de Serviço"
+     },
+     "items": [
+      {
+       "key": "agr/agreements/tos/overview",
+       "label": {
+        "en": "Current version",
+        "pt-br": "Versão atual"
+       },
+       "slug": {
+        "en": "/documentation/agreements/tos/",
+        "pt-br": "/documentacao/agreements/tos/"
+       }
+      },
+      {
+       "key": "agr/agreements/tos/10-november-2016",
+       "label": {
+        "en": "Terms of Service - November 10, 2016",
+        "pt-br": "Termos de serviço - 10 de novembro de 2016"
+       },
+       "slug": {
+        "en": "/documentation/agreements/tos/10-november-2016/",
+        "pt-br": "/documentacao/agreements/tos/10-november-2016/"
+       }
+      },
+      {
+       "key": "agr/agreements/tos/10-november-2020",
+       "label": {
+        "en": "Terms of Service - November 10, 2020"
+       },
+       "slug": {
+        "en": "/documentation/agreements/tos/10-november-2020/"
+       }
+      },
+      {
+       "key": "agr/agreements/tos/15-march-2024",
+       "label": {
+        "en": "Terms of Service - March 15, 2024",
+        "pt-br": "Termos de Serviço - 15 de março de 2024"
+       },
+       "slug": {
+        "en": "/documentation/agreements/tos/15-march-2024/",
+        "pt-br": "/documentacao/agreements/tos/15-march-2024/"
+       }
+      },
+      {
+       "key": "agr/agreements/tos/15-may-2019",
+       "label": {
+        "en": "Terms of Service - May 15, 2019",
+        "pt-br": "Termos de serviço - 15 de Maio de 2019"
+       },
+       "slug": {
+        "en": "/documentation/agreements/tos/15-may-2019/",
+        "pt-br": "/documentacao/agreements/tos/15-may-2019/"
+       }
+      },
+      {
+       "key": "agr/agreements/tos/18-september-2023",
+       "label": {
+        "en": "Terms of Service - September 18, 2023",
+        "pt-br": "Termos de Serviço - 18 de setembro de 2023"
+       },
+       "slug": {
+        "en": "/documentation/agreements/tos/18-september-2023/",
+        "pt-br": "/documentacao/agreements/tos/18-september-2023/"
+       }
+      },
+      {
+       "key": "agr/agreements/tos/21-february-2024",
+       "label": {
+        "en": "Terms of Service - February 21, 2024",
+        "pt-br": "Termos de Serviço - 21 de fevereiro de 2024"
+       },
+       "slug": {
+        "en": "/documentation/agreements/tos/21-february-2024/",
+        "pt-br": "/documentacao/agreements/tos/21-february-2024/"
+       }
+      },
+      {
+       "key": "agr/agreements/tos/23-september-2022",
+       "label": {
+        "en": "Terms of Service - September 23, 2022",
+        "pt-br": "Contratos e Termos"
+       },
+       "slug": {
+        "en": "/documentation/agreements/tos/23-september-2022/",
+        "pt-br": "/documentacao/agreements/tos/23-september-2022/"
+       }
+      },
+      {
+       "key": "agr/agreements/tos/24-may-2024",
+       "label": {
+        "en": "Terms of Service - May 24, 2024",
+        "pt-br": "Termos de Serviço - 24 de maio de 2024"
+       },
+       "slug": {
+        "en": "/documentation/agreements/tos/24-may-2024/",
+        "pt-br": "/documentacao/agreements/tos/24-may-2024/"
+       }
+      },
+      {
+       "key": "agr/agreements/tos/25-october-2017",
+       "label": {
+        "en": "Terms of Service - 25 de Outubro de 2017",
+        "pt-br": "Termos de serviço - 25 de Outubro de 2017"
+       },
+       "slug": {
+        "en": "/documentation/agreements/tos/25-october-2017/",
+        "pt-br": "/documentacao/agreements/tos/25-october-2017/"
+       }
+      },
+      {
+       "key": "agr/agreements/tos/29-august-2024",
+       "label": {
+        "en": "Terms of Service - August 29, 2024",
+        "pt-br": "Termos de Serviço - 29 de agosto de 2024"
+       },
+       "slug": {
+        "en": "/documentation/agreements/tos/29-august-2024/",
+        "pt-br": "/documentacao/agreements/tos/29-august-2024/"
+       }
+      },
+      {
+       "key": "agr/agreements/tos/29-august-2025",
+       "label": {
+        "en": "Terms of Service - August 29, 2025",
+        "pt-br": "Termos de Serviço - 29 de agosto de 2025"
+       },
+       "slug": {
+        "en": "/documentation/agreements/tos/29-august-2025/",
+        "pt-br": "/documentacao/agreements/tos/29-august-2025/"
+       }
+      },
+      {
+       "key": "agr/agreements/tos/3-march-2023",
+       "label": {
+        "en": "Terms of Service - March 3, 2023",
+        "pt-br": "Termos de Serviço - 3 de março de 2023"
+       },
+       "slug": {
+        "en": "/documentation/agreements/tos/3-march-2023/",
+        "pt-br": "/documentacao/agreements/tos/3-march-2023/"
+       }
+      },
+      {
+       "key": "agr/agreements/tos/30-march-2023",
+       "label": {
+        "en": "Terms of Service - March 30, 2023"
+       },
+       "slug": {
+        "en": "/documentation/agreements/tos/30-march-2023/"
+       }
+      },
+      {
+       "key": "agr/agreements/tos/8-november-2024",
+       "label": {
+        "en": "Terms of Service - November 8, 2024",
+        "pt-br": "Termos de Serviço - 8 de novembro de 2024"
+       },
+       "slug": {
+        "en": "/documentation/agreements/tos/8-november-2024/",
+        "pt-br": "/documentacao/agreements/tos/8-november-2024/"
+       }
+      },
+      {
+       "key": "agr/agreements/tos/9-july-2025",
+       "label": {
+        "en": "Terms of Service - July 9, 2025",
+        "pt-br": "Termos de Serviço - 9 de julho de 2025"
+       },
+       "slug": {
+        "en": "/documentation/agreements/tos/9-july-2025/",
+        "pt-br": "/documentacao/agreements/tos/9-july-2025/"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

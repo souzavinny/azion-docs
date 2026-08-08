@@ -2,6 +2,8 @@ import { allPages } from '~/content';
 import { getLangFromSlug, stripLangFromSlug, getSlugFromPermalink } from '~/util';
 import firstDeploySkillEn from '~/data/agent-skills/first-deploy.en.md?raw';
 import firstDeploySkillPtBr from '~/data/agent-skills/first-deploy.pt-br.md?raw';
+import getStartedSkillEn from '~/data/agent-skills/get-started.en.md?raw';
+import getStartedSkillPtBr from '~/data/agent-skills/get-started.pt-br.md?raw';
 
 // Curated Agent Skill renderings served as a page's .md twin, keyed by
 // namespace and language. Edit the sidecar files under src/data/agent-skills.
@@ -9,6 +11,10 @@ const AGENT_SKILL_OVERRIDES = {
 	documentation_get_started_first_deploy: {
 		en: firstDeploySkillEn,
 		'pt-br': firstDeploySkillPtBr,
+	},
+	documentation_get_started: {
+		en: getStartedSkillEn,
+		'pt-br': getStartedSkillPtBr,
 	},
 };
 
@@ -74,7 +80,6 @@ function getAgentReadableMarkdown(title, body) {
 		if (/^<h1\b/.test(trimmed)) return null;
 		if (/^<span\b/.test(trimmed)) return null;
 		if (/^<AgentToolFilter\b/.test(trimmed)) return null;
-		if (/^<ReadableColumn\b/.test(trimmed)) return null;
 		if (numberNextLine && trimmed) {
 			numberNextLine = false;
 			return `${stepNumber}. ${trimmed}`;

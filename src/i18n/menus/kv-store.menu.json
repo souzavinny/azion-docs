@@ -1,0 +1,60 @@
+{
+ "meta": {
+  "title": {
+   "en": "KV Store"
+  },
+  "root": {
+   "en": "/documentation/store/kv-store/",
+   "pt-br": "/documentacao/store/kv-store/"
+  }
+ },
+ "groups": [
+  {
+   "key": "kv/grp",
+   "items": [
+    {
+     "key": "kv/overview",
+     "label": {
+      "en": "Overview",
+      "pt-br": "Visão geral"
+     },
+     "slug": {
+      "en": "/documentation/store/kv-store/",
+      "pt-br": "/documentacao/store/kv-store/"
+     }
+    },
+    {
+     "key": "kv/guides",
+     "label": {
+      "en": "Guides",
+      "pt-br": "Guias"
+     },
+     "items": [
+      {
+       "key": "kv/gd/store/kv-store/guides/manage-with-functions",
+       "label": {
+        "en": "How to manage KV Store with Functions",
+        "pt-br": "Como gerenciar KV Store com Functions"
+       },
+       "slug": {
+        "en": "/documentation/store/kv-store/guides/manage-with-functions/",
+        "pt-br": "/documentacao/store/kv-store/guides/gerenciar-com-funcoes/"
+       }
+      },
+      {
+       "key": "kv/gd/store/kv-store/guides/redis-compatibility",
+       "label": {
+        "en": "How to use KV Store with Redis-compatible SDK",
+        "pt-br": "Como usar KV Store com SDK compatível com Redis"
+       },
+       "slug": {
+        "en": "/documentation/store/kv-store/guides/redis-compatibility/",
+        "pt-br": "/documentacao/store/kv-store/guides/compatibilidade-redis/"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

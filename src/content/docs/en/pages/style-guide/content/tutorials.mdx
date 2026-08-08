@@ -1,0 +1,115 @@
+---
+title: Tutorials
+description: >-
+  How to write a tutorial: the author picks the goal, guarantees the result,
+  and keeps every decision away from the reader.
+meta_tags: 'style guide, tutorials'
+namespace: documentation_style_guide_tutorials
+permalink: /documentation/style-guide/content/tutorials/
+menu_namespace: styleGuideMenu
+---
+
+## Purpose
+
+A tutorial teaches the product by having the reader build something that works. The author chooses the goal, guarantees the result, and keeps every decision away from the reader.
+
+## When to use
+
+- The reader is new and does not yet know what they want. You pick a goal for them, and they learn the product on the way to it.
+- Do not use a tutorial for a reader who arrived with a task: that page is a [how-to guide](/en/documentation/style-guide/content/how-to-guides/).
+- When in doubt, [Choose a content type](/en/documentation/style-guide/content/choose-a-content-type/) has the router.
+
+## Structure
+
+**Required components**
+
+- **Opening paragraph**: what the reader will build and roughly how long it takes.
+- **Before you start**: the minimum real prerequisites, each a link or a one-line command.
+- **Numbered steps**: one instruction each, each ending with a visible result.
+- **What you built**: one paragraph that restates the result.
+- **Next steps**: two or three links, each with a reason to click it.
+
+**Optional components**
+
+- **One concept sentence** with a link to an [explanation](/en/documentation/style-guide/content/explanation/) page, when a concept is genuinely required.
+- **An image** as the visible result of a step, when words alone cannot show it.
+
+## Template
+
+Copy the template and replace each `<placeholder>`.
+
+```md
+[One paragraph: what the reader will build,
+and roughly how long it takes.]
+
+## Before you start
+
+- <A prerequisite the page cannot supply, as a link or a one-line command>
+
+## Step 1: <verb phrase>
+
+<What to do. Then what the reader should see.>
+
+## Step 2: <verb phrase>
+
+<...>
+
+## What you built
+
+<Restate the result. One paragraph.>
+
+## Next steps
+
+- <Link>: <the reason to click it>
+- <Link>: <the reason to click it>
+```
+
+## Keep the promise: every step works
+
+A tutorial makes one promise: if the reader follows every step in order, the result works. That promise creates four obligations:
+
+- You choose the goal. Not "build an application", but "deploy a static site and see it live on your own URL".
+- You choose every option. No "depending on your needs", no "you may prefer". The reader is here to learn, not to choose.
+- Every step produces a visible result, so the reader knows they are on track.
+- Every command runs. Test every command and every snippet before the page ships.
+
+A tutorial that fails at step 7 is worse than no tutorial. It teaches the reader that the product is broken.
+
+## Do not branch
+
+A tutorial has one path. If a step can go two ways, pick one way and say nothing about the other. Alternatives belong in a [how-to guide](/en/documentation/style-guide/content/how-to-guides/), where the reader has a real situation to match them against.
+
+Tabs are a branch, so tutorials do not use tabs. If the task genuinely needs three interfaces, the page is a how-to.
+
+The phrases "you can also" and "depending on your setup" are the warning signs. When one of them appears in your draft, you left the tutorial and started a how-to.
+
+## Do not explain
+
+The tutorial reader does not retain explanations, and each interruption costs momentum. If a concept is genuinely required, give it one sentence and link to an [explanation](/en/documentation/style-guide/content/explanation/) page.
+
+Keep asides rare for the same reason. A tutorial full of note blocks is a tutorial that tries to be reference material.
+
+## Show the result of every step
+
+End each step with what the reader sees: command output, a screenshot, a URL to open, or a value that changed. The reader must know they are on track without asking anyone.
+
+A step with an invisible effect makes the reader lose confidence, because they cannot tell a correct state from a broken one.
+
+## Write steps in the procedural register
+
+Tutorials are procedural, so they take the tighter sentence budget: 20 words per sentence, one instruction per step, imperative voice. [Sentence structure](/en/documentation/style-guide/writing/sentence-structure/) holds the full rules.
+
+The budget is tight because this reader pays the highest price for a misread step. They are new, they execute one step at a time, and they have no way to recover alone.
+
+- Incorrect: `Open the file and change the TTL to 3600, then save and purge the cache.`
+- Correct: four numbered steps, one instruction each.
+
+## Keep tutorials scarce
+
+Write one tutorial per product area. Tutorials are expensive to maintain, because every command must still run after every release. A product with five tutorials has five things to break on the next release.
+
+## Related
+
+- [Get started pages](/en/documentation/style-guide/content/get-started/): the tutorial whose goal is first activation.
+- [How-to guides](/en/documentation/style-guide/content/how-to-guides/): the page for the reader who arrived with a task.
+- [Choose a content type](/en/documentation/style-guide/content/choose-a-content-type/): the router.

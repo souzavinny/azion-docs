@@ -1,0 +1,39 @@
+{
+ "meta": {
+  "title": {
+   "en": "AI Inference"
+  },
+  "root": {
+   "en": "/documentation/build/ai-inference/",
+   "pt-br": "/documentacao/build/ai-inference/"
+  }
+ },
+ "groups": [
+  {
+   "key": "ai/grp",
+   "items": [
+    {
+     "key": "ai/overview",
+     "label": {
+      "en": "Overview",
+      "pt-br": "Visão geral"
+     },
+     "slug": {
+      "en": "/documentation/build/ai-inference/",
+      "pt-br": "/documentacao/build/ai-inference/"
+     }
+    },
+    {
+     "key": "ai/build/ai-inference/reference/models",
+     "label": {
+      "en": "Models"
+     },
+     "slug": {
+      "en": "/documentation/build/ai-inference/reference/models/",
+      "pt-br": "/documentacao/build/ai-inference/reference/modelos/"
+     }
+    }
+   ]
+  }
+ ]
+}

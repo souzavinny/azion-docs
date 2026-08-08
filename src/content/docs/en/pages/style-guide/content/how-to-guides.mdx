@@ -1,0 +1,120 @@
+---
+title: How-to guides
+description: >-
+  How to write a how-to guide: start with the outcome, remove obstacles
+  instead of teaching, and keep each step to one imperative instruction.
+meta_tags: 'style guide, how-to'
+namespace: documentation_style_guide_how_to_guides
+permalink: /documentation/style-guide/content/how-to-guides/
+menu_namespace: styleGuideMenu
+---
+
+## Purpose
+
+A how-to guide takes a reader who has a problem to a solved problem. The reader already knows what they want. The page removes the obstacles between them and the result; it does not teach.
+
+## When to use
+
+- The reader arrived with a specific task and a real situation.
+- Do not use a how-to for a reader who is learning the product: that page is a [tutorial](/en/documentation/style-guide/content/tutorials/).
+- A how-to whose task is a fix is a [troubleshooting page](/en/documentation/style-guide/content/troubleshooting/).
+- When in doubt, [Choose a content type](/en/documentation/style-guide/content/choose-a-content-type/) has the router.
+
+## Structure
+
+**Required components**
+
+- **Outcome paragraph**: the first sentence states what the reader has when they finish.
+- **Prerequisites**: one tip aside near the top, never a section.
+- **Task sections**: imperative verb-phrase headings with numbered steps, one instruction each.
+- **End state**: the last step or the closing states what the reader sees when the task worked.
+- **Closing tip**: one or two links to where the reader goes next.
+
+**Optional components**
+
+- **Tabs by interface**, when the task runs through more than one interface.
+- **One aside** holding the alternative path, when the task genuinely branches.
+
+## Template
+
+Copy the template and replace each `<placeholder>`.
+
+```md
+[One paragraph: the outcome. Start with the result,
+not the background.]
+
+:::tip
+Prerequisites, if any. One aside, not a section.
+:::
+
+## <Imperative verb phrase that names the task>
+
+Steps. Tabbed by interface if the task has more
+than one. The last step states what the reader sees.
+
+## <Next task, if the page covers a sequence>
+
+---
+
+:::tip
+Where to go next. One or two links.
+:::
+```
+
+Separate the major sections of the page with a `---` rule, and never place one directly after the frontmatter.
+
+## Name the task in the title and headings
+
+Titles start with "How to": `How to create an Object Storage bucket`. Section headings are imperative verb phrases that name the task.
+
+- Correct: `Create a bucket`
+- Incorrect: `Creating a bucket`, `Bucket creation`, `Step 1`
+
+The imperative heading matches the steps under it, and it survives translation. A gerund in first position does neither.
+
+## Write each step as one imperative instruction
+
+Steps are numbered and imperative: "Click", "Enter", "Select". Each step holds exactly one instruction, in at most 20 words. [Sentence structure](/en/documentation/style-guide/writing/sentence-structure/) holds the full rules.
+
+- Incorrect: `Click **Save**, then purge the cache and confirm the TTL changed.`
+- Correct: three numbered steps, one action each.
+
+Three more rules shape a step:
+
+- State where the reader acts before the action: `In **Azion Console**, click **Save**.`
+- An optional step starts with "(Optional)".
+- When the action maps to a Console control, use the control's own word, in bold, on every mention.
+
+## State the end state
+
+The reader must know the task worked without asking anyone. The last step, or the closing sentence, states what they see: a status, a value, a URL that responds.
+
+## Branch where the task branches
+
+A how-to guide may branch, because the reader's situation is real and varies. Branch only where reality branches: a genuine difference in interface or configuration.
+
+Most Azion tasks run through the Console, the Azion CLI, or the API. When a task has more than one interface, present the interfaces as tabs on one page, with the interface most readers use first — usually the Console. The primary answer lives in the page flow, never only inside a tab.
+
+## Write guides that span products
+
+Some guides take the reader to a goal that crosses products. For those:
+
+- Title the goal in plain language, not a product name.
+- Commit to one recommended path. Alternatives go in a single aside, never as forks in the steps.
+- Organize by workflow stage, not by product.
+
+These guides live outside a single product section. [Information architecture](/en/documentation/style-guide/content/information-architecture/) covers where they go.
+
+## Link out for third-party products
+
+When a task passes through a third-party interface, link to the vendor's documentation for those steps instead of reproducing them. Never screenshot a third-party interface. Third-party interfaces change without notice, and the page goes stale silently.
+
+## Do not teach
+
+The reader has a problem, not a curiosity. One sentence of context is fine. A paragraph of context is a sign that the material belongs in an [explanation](/en/documentation/style-guide/content/explanation/) page, with a link from the how-to.
+
+## Related
+
+- [Tutorials](/en/documentation/style-guide/content/tutorials/): the page for the reader who is learning.
+- [Troubleshooting pages](/en/documentation/style-guide/content/troubleshooting/): the how-to whose task is a fix.
+- [Reference](/en/documentation/style-guide/content/reference/): where every setting a guide touches is documented.

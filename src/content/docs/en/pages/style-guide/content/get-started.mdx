@@ -1,0 +1,108 @@
+---
+title: Get started pages
+description: >-
+  How to write a Get started page: a tutorial whose goal is the first
+  activation of one product, with one path and minimal prerequisites.
+meta_tags: 'style guide, get started'
+namespace: documentation_style_guide_get_started
+permalink: /documentation/style-guide/content/get-started/
+menu_namespace: styleGuideMenu
+---
+
+## Purpose
+
+A Get started page is a tutorial whose goal is the first activation of one product: from not using it to the smallest working result. It is a pattern of the [tutorial](/en/documentation/style-guide/content/tutorials/) type, not a new content type.
+
+## When to use
+
+- Write a Get started page when a product needs a documented path to its first working result.
+- Write one Get started page per product, as the entry point directly after the product Overview.
+- Do not write a Get started page for a task the reader already has in mind. That task needs a [how-to guide](/en/documentation/style-guide/content/how-to-guides/).
+- Do not write a Get started page to present options or compare interfaces. The pattern has one path.
+- Do not write a separate Get started page for a module or a feature. The pattern covers one whole product.
+
+## Structure
+
+A Get started page follows the tutorial skeleton. [Tutorials](/en/documentation/style-guide/content/tutorials/) argues each part; the list below names what the pattern requires.
+
+**Required components**
+
+- **Opening paragraph**: what the reader will have at the end, and roughly how long the page takes.
+- **Before you start**: the minimum real set of prerequisites, each a link or a one-line command.
+- **Steps**: numbered step sections along one path, up to the smallest working result.
+- **What you built**: one paragraph that restates the working result.
+- **Next steps**: two or three links into the product's guides, each with a reason to click.
+
+**Optional components**
+
+- **Screenshots**: for a step whose visible result is a screen, not command output.
+- **Asides**: rare. A tutorial full of note blocks tries to be reference material.
+
+## Template
+
+```md
+[One paragraph: what the reader will have at the end,
+and roughly how long it takes.]
+
+## Before you start
+
+- <A prerequisite the page cannot supply, as a link or a one-line command>
+
+## Step 1: <verb phrase>
+
+<What to do. One instruction per sentence.>
+
+<What the reader sees: command output, a screenshot, or a URL to open.>
+
+## Step 2: <verb phrase>
+
+<...>
+
+## What you built
+
+<One paragraph. Restate the working result.>
+
+## Next steps
+
+- <A how-to guide from this product's Guides, with a reason to click it>
+- <A second guide, or the product's reference>
+```
+
+## Keep prerequisites to the minimum real set
+
+Every item under "Before you start" is a reason a reader abandons the page. List only what the page cannot supply, such as an Azion account. Supply everything else inside the steps, and link each item that remains.
+
+## Document the bare-minimum path
+
+A Get started page shows one path and no options. The author picks the interface, picks every value, and says nothing about alternatives. Options belong in [how-to guides](/en/documentation/style-guide/content/how-to-guides/), where the reader has a real situation to match them against.
+
+- Incorrect: `Create the function through the Console, the Azion CLI, or the API.`
+- Correct: `Create the function through the Console.`
+
+The phrases "you can also" and "depending on your setup" mark the exit from the pattern. Content behind either phrase belongs in a how-to guide.
+
+## End with the working result
+
+After the last step, the product works, and the reader can see that it works. "What you built" restates the result in one paragraph. "Next steps" then links two or three of the product's guides, each with a reason to click. The reader who finishes activation becomes a how-to reader, and the product's guides serve that reader.
+
+## Place the page at the top of the product section
+
+Every product section opens with an Overview and its Get started entry point. The Get started page sits directly after the Overview, before the reference pages and the guides. [Information architecture](/en/documentation/style-guide/content/information-architecture/) covers the full product section structure.
+
+## Apply every tutorial rule
+
+A Get started page is a tutorial, so every rule on the [Tutorials](/en/documentation/style-guide/content/tutorials/) page applies. The rules that fail most often in drafts:
+
+- Write one instruction per step, at most 20 words per sentence, in the imperative.
+- End every step with a visible result.
+- Test every command and every snippet before the page ships.
+- Do not branch, and do not explain. Give a required concept one sentence and one link.
+
+Tutorials are expensive to maintain, so keep them scarce. For most products, the Get started page is the only tutorial the product needs.
+
+## Related
+
+- [Tutorials](/en/documentation/style-guide/content/tutorials/): the content type this pattern applies, with the full rules.
+- [How-to guides](/en/documentation/style-guide/content/how-to-guides/): where the options and the alternatives go.
+- [Information architecture](/en/documentation/style-guide/content/information-architecture/): where the page sits in a product section.
+- [Choose a content type](/en/documentation/style-guide/content/choose-a-content-type/): the four content types and the tests that separate them.

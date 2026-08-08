@@ -1,0 +1,93 @@
+{
+ "meta": {
+  "title": {
+   "en": "Certificate Manager"
+  },
+  "root": {
+   "en": "/documentation/secure/certificate-manager/",
+   "pt-br": "/documentacao/secure/certificate-manager/"
+  }
+ },
+ "groups": [
+  {
+   "key": "cert/grp",
+   "items": [
+    {
+     "key": "cert/overview",
+     "label": {
+      "en": "Overview",
+      "pt-br": "Visão geral"
+     },
+     "slug": {
+      "en": "/documentation/secure/certificate-manager/",
+      "pt-br": "/documentacao/secure/certificate-manager/"
+     }
+    },
+    {
+     "key": "cert/secure/certificate-manager/reference/mtls",
+     "label": {
+      "en": "Support for mTLS for Secure",
+      "pt-br": "Suporte para mTLS para Secure"
+     },
+     "slug": {
+      "en": "/documentation/secure/certificate-manager/reference/mtls/",
+      "pt-br": "/documentacao/secure/certificate-manager/reference/mtls/"
+     }
+    },
+    {
+     "key": "cert/guides",
+     "label": {
+      "en": "Guides",
+      "pt-br": "Guias"
+     },
+     "items": [
+      {
+       "key": "cert/gd/secure/certificate-manager/quickstart",
+       "label": {
+        "en": "Certificate Manager quickstart",
+        "pt-br": "Quickstart do Certificate Manager"
+       },
+       "slug": {
+        "en": "/documentation/secure/certificate-manager/quickstart/",
+        "pt-br": "/documentacao/secure/certificate-manager/quickstart/"
+       }
+      },
+      {
+       "key": "cert/gd/secure/firewall/guides/certificate-manager",
+       "label": {
+        "en": "Acquire & Register a Digital Certificate",
+        "pt-br": "Obtenha e registre um Digital Certificate"
+       },
+       "slug": {
+        "en": "/documentation/secure/firewall/guides/certificate-manager/",
+        "pt-br": "/documentacao/secure/firewall/guides/certificado-digital/"
+       }
+      },
+      {
+       "key": "cert/gd/secure/certificate-manager/guides/mtls",
+       "label": {
+        "en": "How to configure mTLS",
+        "pt-br": "Como configurar mTLS"
+       },
+       "slug": {
+        "en": "/documentation/secure/certificate-manager/guides/mtls/",
+        "pt-br": "/documentacao/secure/certificate-manager/guides/mtls/"
+       }
+      },
+      {
+       "key": "cert/gd/secure/certificate-manager/guides/wildcard-lets-encrypt",
+       "label": {
+        "en": "Let's Encrypt Wildcard Certificates on Azion Platform",
+        "pt-br": "Certificados Wildcard Let's Encrypt na Plataforma Azion"
+       },
+       "slug": {
+        "en": "/documentation/secure/certificate-manager/guides/wildcard-lets-encrypt/",
+        "pt-br": "/documentacao/secure/firewall/reference/certificados-wildcard-lets-encrypt/"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
