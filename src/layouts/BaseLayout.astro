@@ -230,12 +230,17 @@ const translatedPages = await (async (c) => {
 		</script>
 		<Header {menuSecondary}>
 			<Fragment slot="visualid">
+				<div class="flex items-center gap-2">
 					<AzionLogo
 						target="_self"
 						href={`/${lang}/`}
 						hrefTitle="Home | Azion Technologies"
 						version="default"
 					/>
+					<span class="hidden rounded-md border border-[var(--surface-border)] px-1.5 py-px text-[10px] uppercase tracking-widest text-[var(--text-color-secondary)] sm:inline-block">
+						Docs
+					</span>
+				</div>
 			</Fragment>
 			
 			<Fragment slot="navigation">
