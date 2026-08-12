@@ -3506,5 +3506,9 @@
  {
   "from": "https://www.azion.com/en/documentation/deploy/overview/",
   "moved": "https://www.azion.com/en/documentation/deploy/orchestrator/"
+ },
+ {
+  "from": "https://www.azion.com/en/documentation/style-guide/content/explanation/",
+  "moved": "https://www.azion.com/en/documentation/style-guide/content/concept/"
  }
 ]

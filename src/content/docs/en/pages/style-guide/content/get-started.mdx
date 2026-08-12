@@ -21,6 +21,10 @@ A Get started page is a tutorial whose goal is the first activation of one produ
 - Do not write a Get started page to present options or compare interfaces. The pattern has one path.
 - Do not write a separate Get started page for a module or a feature. The pattern covers one whole product.
 
+## Register
+
+Procedural: 20 words per sentence, one instruction per step, imperative and active. [Sentence structure](/en/documentation/style-guide/writing/sentence-structure/) holds the rules.
+
 ## Structure
 
 A Get started page follows the tutorial skeleton. [Tutorials](/en/documentation/style-guide/content/tutorials/) argues each part; the list below names what the pattern requires.
@@ -68,41 +72,21 @@ and roughly how long it takes.]
 - <A second guide, or the product's reference>
 ```
 
-## Keep prerequisites to the minimum real set
+## Rules
 
-Every item under "Before you start" is a reason a reader abandons the page. List only what the page cannot supply, such as an Azion account. Supply everything else inside the steps, and link each item that remains.
+- **Keep prerequisites to the minimum real set.** Every item is a reason to abandon the page.
+- **Document one bare-minimum path.** No options, no interface comparison.
+- **End with the working result.** Restate it, then link two or three guides.
+- **Place it directly after the product Overview.**
+- **Test every command before the page ships.** One instruction per step, and a visible result at each one.
 
-## Document the bare-minimum path
+## Examples
 
-A Get started page shows one path and no options. The author picks the interface, picks every value, and says nothing about alternatives. Options belong in [how-to guides](/en/documentation/style-guide/content/how-to-guides/), where the reader has a real situation to match them against.
-
-- Incorrect: `Create the function through the Console, the Azion CLI, or the API.`
-- Correct: `Create the function through the Console.`
-
-The phrases "you can also" and "depending on your setup" mark the exit from the pattern. Content behind either phrase belongs in a how-to guide.
-
-## End with the working result
-
-After the last step, the product works, and the reader can see that it works. "What you built" restates the result in one paragraph. "Next steps" then links two or three of the product's guides, each with a reason to click. The reader who finishes activation becomes a how-to reader, and the product's guides serve that reader.
-
-## Place the page at the top of the product section
-
-Every product section opens with an Overview and its Get started entry point. The Get started page sits directly after the Overview, before the reference pages and the guides. [Information architecture](/en/documentation/style-guide/content/information-architecture/) covers the full product section structure.
-
-## Apply every tutorial rule
-
-A Get started page is a tutorial, so every rule on the [Tutorials](/en/documentation/style-guide/content/tutorials/) page applies. The rules that fail most often in drafts:
-
-- Write one instruction per step, at most 20 words per sentence, in the imperative.
-- End every step with a visible result.
-- Test every command and every snippet before the page ships.
-- Do not branch, and do not explain. Give a required concept one sentence and one link.
-
-Tutorials are expensive to maintain, so keep them scarce. For most products, the Get started page is the only tutorial the product needs.
+Content coming soon.
 
 ## Related
 
-- [Tutorials](/en/documentation/style-guide/content/tutorials/): the content type this pattern applies, with the full rules.
+- [Tutorials](/en/documentation/style-guide/content/tutorials/): the base form this pattern applies.
 - [How-to guides](/en/documentation/style-guide/content/how-to-guides/): where the options and the alternatives go.
 - [Information architecture](/en/documentation/style-guide/content/information-architecture/): where the page sits in a product section.
-- [Choose a content type](/en/documentation/style-guide/content/choose-a-content-type/): the four content types and the tests that separate them.
+- [Choose a content type](/en/documentation/style-guide/content/choose-a-content-type/): the full catalogue of page kinds.

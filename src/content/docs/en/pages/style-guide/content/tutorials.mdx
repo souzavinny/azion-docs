@@ -19,6 +19,10 @@ A tutorial teaches the product by having the reader build something that works. 
 - Do not use a tutorial for a reader who arrived with a task: that page is a [how-to guide](/en/documentation/style-guide/content/how-to-guides/).
 - When in doubt, [Choose a content type](/en/documentation/style-guide/content/choose-a-content-type/) has the router.
 
+## Register
+
+Procedural: 20 words per sentence, one instruction per step, imperative and active. [Sentence structure](/en/documentation/style-guide/writing/sentence-structure/) holds the rules.
+
 ## Structure
 
 **Required components**
@@ -31,7 +35,7 @@ A tutorial teaches the product by having the reader build something that works. 
 
 **Optional components**
 
-- **One concept sentence** with a link to an [explanation](/en/documentation/style-guide/content/explanation/) page, when a concept is genuinely required.
+- **One concept sentence** with a link to a [concept](/en/documentation/style-guide/content/concept/) page, when a concept is genuinely required.
 - **An image** as the visible result of a step, when words alone cannot show it.
 
 ## Template
@@ -64,49 +68,18 @@ and roughly how long it takes.]
 - <Link>: <the reason to click it>
 ```
 
-## Keep the promise: every step works
+## Rules
 
-A tutorial makes one promise: if the reader follows every step in order, the result works. That promise creates four obligations:
+- **Keep the promise.** Every step works and every command was run before the page shipped.
+- **Choose everything.** The goal, the interface, and every value. The reader is here to learn, not to choose.
+- **Do not branch.** One path. Alternatives belong in a how-to guide, and tabs are a branch.
+- **Do not explain.** One sentence and a link when a concept is genuinely required.
+- **Show the result of every step.** Command output, a screenshot, a URL, or a value that changed.
+- **Keep tutorials scarce.** One per product area. Each one breaks on some future release.
 
-- You choose the goal. Not "build an application", but "deploy a static site and see it live on your own URL".
-- You choose every option. No "depending on your needs", no "you may prefer". The reader is here to learn, not to choose.
-- Every step produces a visible result, so the reader knows they are on track.
-- Every command runs. Test every command and every snippet before the page ships.
+## Examples
 
-A tutorial that fails at step 7 is worse than no tutorial. It teaches the reader that the product is broken.
-
-## Do not branch
-
-A tutorial has one path. If a step can go two ways, pick one way and say nothing about the other. Alternatives belong in a [how-to guide](/en/documentation/style-guide/content/how-to-guides/), where the reader has a real situation to match them against.
-
-Tabs are a branch, so tutorials do not use tabs. If the task genuinely needs three interfaces, the page is a how-to.
-
-The phrases "you can also" and "depending on your setup" are the warning signs. When one of them appears in your draft, you left the tutorial and started a how-to.
-
-## Do not explain
-
-The tutorial reader does not retain explanations, and each interruption costs momentum. If a concept is genuinely required, give it one sentence and link to an [explanation](/en/documentation/style-guide/content/explanation/) page.
-
-Keep asides rare for the same reason. A tutorial full of note blocks is a tutorial that tries to be reference material.
-
-## Show the result of every step
-
-End each step with what the reader sees: command output, a screenshot, a URL to open, or a value that changed. The reader must know they are on track without asking anyone.
-
-A step with an invisible effect makes the reader lose confidence, because they cannot tell a correct state from a broken one.
-
-## Write steps in the procedural register
-
-Tutorials are procedural, so they take the tighter sentence budget: 20 words per sentence, one instruction per step, imperative voice. [Sentence structure](/en/documentation/style-guide/writing/sentence-structure/) holds the full rules.
-
-The budget is tight because this reader pays the highest price for a misread step. They are new, they execute one step at a time, and they have no way to recover alone.
-
-- Incorrect: `Open the file and change the TTL to 3600, then save and purge the cache.`
-- Correct: four numbered steps, one instruction each.
-
-## Keep tutorials scarce
-
-Write one tutorial per product area. Tutorials are expensive to maintain, because every command must still run after every release. A product with five tutorials has five things to break on the next release.
+Content coming soon.
 
 ## Related
 

@@ -25,7 +25,7 @@ src/
         changelog/            historical
     pt-br/                    Portuguese, mirrored with translated paths
   components/                 mostly dead fork legacy, see .agents/references/components.md
-  i18n/{en,pt-br}/            sidebar menus, hand-maintained TypeScript arrays
+  i18n/*.menu.json            sidebar menus, JSON, both languages per file
   includes/snippets/          shared MDX snippets, en/ and pt/ variants
   pages/[lang]/               routes, including [...slug].md.js for markdown twins
   content/config.ts           the Zod schema
@@ -41,14 +41,27 @@ test-frontmatter.js           the real frontmatter gate
 
 Repo-specific agent config lives in `.agents/`. All of it is committed. Tool-specific paths are symlinks into it: `.claude/CLAUDE.md`, `.claude/agents`, `.claude/skills`. **Add files to `.agents/`, never to `.claude/`** — that directory carries a deny-all `.gitignore`, so anything dropped there is invisible to git.
 
+### Where the rules live
+
+**The writing rules live in one place: the published style guide**, at `src/content/docs/en/pages/style-guide/` (served at `/en/documentation/style-guide/`). It is written terse, so an agent reads the page rather than a second copy of it. `.agents/skills/contributing/references/content-types.md` maps each page kind to its style-guide page.
+
+`.agents/` holds the lookup tables an agent needs on every draft — product names, the vocabulary table, the sentence caps — each naming its canonical page, plus the topics the style guide does not cover, which `.agents` owns outright:
+
+- MDX components (`style-guide/components.mdx` is a placeholder; design owns it)
+- Sidebar registration and the JSON menu format
+- Build gates and validator behaviour
+- The markdown twin
+- Review calibration: which findings to suppress, and the corpus measurements behind them
+
 ### Skills
 
 | Skill | Use it for |
 | --- | --- |
 | `contributing` | Writing, rewriting, splitting, or translating a page |
 | `reviewing-a-page` | Auditing a page and reporting problems, ranked |
+| `writing-a-use-case` | Turning a commercial scenario into a guide with a verifiable setup |
 
-Both are thin routers. The detail lives in their `references/`, loaded only when the task needs it.
+All three are thin routers. The detail lives in their `references/`, loaded only when the task needs it.
 
 ### Agents
 
@@ -63,7 +76,7 @@ Use these when fanning work out to subagents, which do not inherit the skills lo
 
 | File | Contents |
 | --- | --- |
-| `.agents/references/house-style.md` | Voice, headings, links, lists, code |
+| `.agents/references/house-style.md` | Voice, headings, titles, links, lists, code, accessibility |
 | `.agents/references/simplified-technical-english.md` | Sentence construction, adapted from ASD-STE100 Issue 9 |
 | `.agents/references/writing-quality.md` | Patterns that read as machine-generated |
 | `.agents/references/components.md` | The MDX components that are actually live |
@@ -107,7 +120,9 @@ The Zod schema marks nearly everything optional; `test-frontmatter.js` disagrees
 
 ### Writing and style rules
 
-In `.agents/references/house-style.md` and the content-type references under `.agents/skills/contributing/references/`. Four Diátaxis types: tutorial, how-to, reference, explanation. One per page.
+In the published style guide, under `src/content/docs/en/pages/style-guide/`. Four Diátaxis base forms: tutorial, how-to, reference, explanation. One per page.
+
+Eleven page kinds apply those four forms and add rules of their own: Overview, Get started, Tutorial, How-to guide, Multi-product guide, Troubleshooting, Reference, Concept, Architecture, Changelog, and Navigation hub. A **use case** is a twelfth, a how-to with a commercial frame, with its own skill. Explanation is a base form with no page of its own; Concept and Architecture apply it.
 
 Sentence construction follows **ASD-STE100 Issue 9**, adapted in `.agents/references/simplified-technical-english.md`. The standard splits its rules between procedures and descriptions, and that split maps onto Diátaxis: tutorials and how-tos are procedural, capped at 20 words per sentence with one instruction each; reference and explanation are descriptive, capped at 25. Simple tenses, active voice, and noun clusters of at most three words apply throughout. We do not use ASD's approved dictionary — `terminology.md` fills that role, under the standard's own allowance for project-specific technical vocabulary.
 
@@ -207,9 +222,11 @@ Pages pair by `namespace`, not by path. `src/util/getPageTranslations.ts` matche
 
 ## Sidebars
 
-Nothing scans the content directory. A new page is reachable from nowhere until it is registered by hand in `src/i18n/en/<menu>.ts` **and** `src/i18n/pt-br/<menu>.ts`.
+Nothing scans the content directory. A new page is reachable from nowhere until it is registered by hand.
 
-Entries need `text` and `key`; link entries need `slug`, which equals the page's `permalink` exactly and excludes the language code. Valid `menu_namespace` values are in `src/data/availableMenu.ts`; an unrecognized value silently falls back to `nav`.
+Menus are JSON, one file per sidebar, with both languages inside it: `src/i18n/nav.menu.json` for the main sidebar and `src/i18n/menus/<name>.menu.json` for each product sidebar. An entry needs a `key`, a `label` keyed by language, and a `slug` keyed by language, where each slug equals that language's `permalink` exactly and excludes the language code.
+
+Valid `menu_namespace` values are in `src/data/availableMenu.ts`. `npm run lint:navcheck` runs inside `build:local` and fails on an unregistered value, a slug that resolves to no page, or a duplicate key. Full format in `.agents/skills/contributing/references/sidebar-registration.md`.
 
 ## Page size and retrieval
 

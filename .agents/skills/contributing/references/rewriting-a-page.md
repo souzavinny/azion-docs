@@ -16,7 +16,7 @@ If the rewrite genuinely requires a new URL, that is not a rewrite. It is a move
 
 Run the `reviewing-a-page` skill first, or work through the same questions:
 
-**What content type is this page trying to be?** Read it as each of the four readers in `choosing-a-content-type.md`. Usually one answer is obvious and the page is only partly delivering it.
+**What content type is this page trying to be?** Read it as each of the readers in `content-types.md`. Usually one answer is obvious and the page is only partly delivering it.
 
 **Is it two pages?** If two different readers each want a different half, stop. Read `splitting-a-page.md` instead.
 
@@ -64,4 +64,4 @@ Do not rewrite the Portuguese page by translating the new English one from scrat
 - [ ] Specifics kept: error strings, exact values, real caveats
 - [ ] Sentences brought within the caps in `.agents/references/simplified-technical-english.md`, without dropping articles or subjects to get there
 - [ ] Portuguese page rewritten too, or a linked follow-up issue exists
-- [ ] `pnpm build:local` passes
+- [ ] `npm run build:local` passes

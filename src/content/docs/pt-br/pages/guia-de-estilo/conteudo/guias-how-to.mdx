@@ -20,6 +20,10 @@ Um guia how-to leva um leitor com um problema até o problema resolvido. O leito
 - Um how-to cuja tarefa é um conserto é uma [página de troubleshooting](/pt-br/documentacao/guia-de-estilo/conteudo/troubleshooting/).
 - Na dúvida, [Escolher um tipo de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/) tem o roteiro.
 
+## Registro
+
+Procedural: 20 palavras por frase, uma instrução por passo, imperativo e ativo. [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/) tem as regras.
+
 ## Estrutura
 
 **Componentes obrigatórios**
@@ -63,55 +67,20 @@ Para onde ir em seguida. Um ou dois links.
 
 Separe as seções principais da página com uma régua `---`, e nunca coloque uma logo depois do frontmatter.
 
-## Nomeie a tarefa no título e nos headings
+## Regras
 
-Títulos começam com "Como": `Como criar um bucket do Object Storage`. Os headings de seção são frases verbais no imperativo que nomeiam a tarefa.
+- **Nomeie a tarefa no título e nos headings.** Uma frase verbal imperativa, nunca um gerúndio.
+- **Uma instrução imperativa por passo.** Um passo com duas ações é um passo onde a segunda é pulada.
+- **Declare o estado final primeiro.** A frase de abertura diz o que o leitor vai ter.
+- **Ramifique onde a tarefa ramifica.** Tabs para Console, CLI e API, nunca três seções em sequência.
+- **Use um verbo por ação**, em todas as menções da página.
+- **Mande um objetivo que cruza produtos** para um [guia multiproduto](/pt-br/documentacao/guia-de-estilo/conteudo/guias-multiproduto/).
+- **Aponte para fora em produtos de terceiros.** Nomeie o passo do fornecedor; não documente a interface dele.
+- **Não ensine.** Uma frase de contexto, depois os passos.
 
-- Correto: `Crie um bucket`
-- Incorreto: `Criando um bucket`, `Criação de bucket`, `Passo 1`
+## Exemplos
 
-O heading imperativo combina com os passos abaixo dele e sobrevive à tradução. Um gerúndio na primeira posição não faz nenhum dos dois.
-
-## Escreva cada passo como uma instrução imperativa
-
-Os passos são numerados e imperativos: "Clique", "Digite", "Selecione". Cada passo tem exatamente uma instrução, em até 20 palavras. [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/) tem as regras completas.
-
-- Incorreto: `Clique em **Save**, depois faça o purge do cache e confirme que o TTL mudou.`
-- Correto: três passos numerados, uma ação cada.
-
-Três regras adicionais moldam um passo:
-
-- Declare onde o leitor age antes da ação: `No **Azion Console**, clique em **Save**.`
-- Um passo opcional começa com "(Opcional)".
-- Quando a ação corresponde a um controle do Console, use a palavra do próprio controle, em negrito, em todas as menções.
-
-## Declare o estado final
-
-O leitor precisa saber que a tarefa funcionou sem perguntar a ninguém. O último passo, ou a frase de fechamento, declara o que ele vê: um status, um valor, uma URL que responde.
-
-## Ramifique onde a tarefa ramifica
-
-Um guia how-to pode ramificar, porque a situação do leitor é real e varia. Ramifique somente onde a realidade ramifica: uma diferença genuína de interface ou configuração.
-
-A maioria das tarefas na Azion roda pelo Console, pela Azion CLI ou pela API. Quando uma tarefa tem mais de uma interface, apresente as interfaces como tabs em uma página, com a interface que a maioria usa primeiro — normalmente o Console. A resposta principal vive no fluxo da página, nunca somente dentro de uma tab.
-
-## Escreva guias que atravessam produtos
-
-Alguns guias levam o leitor a um objetivo que cruza produtos. Para esses:
-
-- Nomeie o objetivo em linguagem simples, não com um nome de produto.
-- Assuma um caminho recomendado. Alternativas vão em um único aside, nunca como bifurcações nos passos.
-- Organize por etapa do fluxo de trabalho, não por produto.
-
-Esses guias vivem fora de uma seção de produto. [Arquitetura de informação](/pt-br/documentacao/guia-de-estilo/conteudo/arquitetura-de-informacao/) cobre onde eles entram.
-
-## Aponte para fora em produtos de terceiros
-
-Quando uma tarefa passa por uma interface de terceiros, aponte para a documentação do fornecedor para esses passos em vez de reproduzi-los. Nunca faça screenshot de uma interface de terceiros. Interfaces de terceiros mudam sem aviso, e a página fica desatualizada em silêncio.
-
-## Não ensine
-
-O leitor tem um problema, não uma curiosidade. Uma frase de contexto está bem. Um parágrafo de contexto é sinal de que o material pertence a uma página de [explicação](/pt-br/documentacao/guia-de-estilo/conteudo/explicacao/), com um link a partir do how-to.
+- [Crie regras de request e response](/pt-br/documentacao/build/applications/guides/rules-engine/): duas tarefas em uma página, cada uma com passos numerados e imperativos.
 
 ## Relacionados
 

@@ -21,6 +21,8 @@ A file path, a directory, or a diff. If given a directory, review each page and 
 
 **3. Decide which content type the page is.** Several checks depend on it. Tutorials and how-tos are procedural and take the 20-word sentence cap; reference and explanation are descriptive and take 25. A step holding two instructions is a P1 finding on a procedural page and not a finding at all on a descriptive one.
 
+Eleven page kinds apply those four forms, and several add rules of their own: a **get-started** page is a tutorial, **troubleshooting** and **multi-product guides** are how-tos, **concept** and **architecture** are explanations. `.agents/skills/contributing/references/content-types.md` maps each kind to its style-guide page. A **use case** has its own skill.
+
 **4. Run the three check sets in order.** Stop reporting a category once you have found it three times on one page; say "and N more" instead of listing every instance.
 
 | Check set | Read |

@@ -1,0 +1,100 @@
+---
+title: Overview pages
+description: >-
+  How to write a product Overview: the product root that says what the product
+  is, what it does, and when to use it.
+meta_tags: 'style guide, overview'
+namespace: documentation_style_guide_overview_pages
+permalink: /documentation/style-guide/content/overview/
+menu_namespace: styleGuideMenu
+---
+
+## Purpose
+
+An Overview page is the root of a product section. It states what the product is, what it does, and when a reader would use it. It applies the [reference](/en/documentation/style-guide/content/reference/) base form.
+
+Every product has one. It is the page a reader lands on from search, from the sidebar, and from another product that links to this one.
+
+## When to use
+
+- Write one Overview for every product, as the first page of its section.
+- Write it before any other page in that section. The Overview decides what the section is about.
+
+Do not write an Overview when:
+
+- The subject is a module or a feature. That belongs in a [reference page](/en/documentation/style-guide/content/reference/) inside the product section.
+- The page would walk the reader through a task. That is a [how-to guide](/en/documentation/style-guide/content/how-to-guides/), linked from here.
+- The page would only list links. That is a [navigation hub](/en/documentation/style-guide/content/navigation-hubs/).
+
+## Register
+
+Descriptive: 25 words per sentence, active voice, passive only when the actor is unknown. [Sentence structure](/en/documentation/style-guide/writing/sentence-structure/) holds the rules.
+
+## Structure
+
+**Required components**
+
+- **Lead paragraph**: the product name in the first sentence, what it does, and the problem it solves.
+- **Interfaces**: the ways a reader can use the product, as links to the Console, API, CLI, and Terraform.
+- **Implementation**: a table naming the scope and the resources the product exposes.
+- **Next step**: a link to the product's [Get started](/en/documentation/style-guide/content/get-started/) page.
+
+**Optional components**
+
+- **When to use it**: the cases the product fits, and the cases it does not.
+- **Key concepts**: the terms a reader meets in the rest of the section, one line each.
+- **Limits**: a pointer to the reference page that holds them.
+
+## Template
+
+```md
+**<Product>** is <what it is>. It <what it does>, so you can <the problem it solves>.
+
+<LinkButton link="<get started URL>" label="Get started with <Product>" severity="secondary" />
+
+You can create and manage <Product> using:
+
+- [Azion Console](<url>)
+- [API](<url>)
+- [Azion CLI](<url>)
+
+---
+
+## Implementation
+
+| Scope | Resource |
+| --- | --- |
+| <scope> | <resource> |
+
+---
+
+## When to use <Product>
+
+<The cases it fits. Then the cases it does not, and what to use instead.>
+
+---
+
+## Related
+
+- [<The Get started page>](<url>)
+- [<The reference page for the product>](<url>)
+```
+
+## Rules
+
+- **Name the product in the first sentence.** Not the problem space.
+- **Say when the product is the wrong choice**, and name the product that fits instead.
+- **Send the reader to [Get started](/en/documentation/style-guide/content/get-started/)**, near the top and again at the end.
+- **Do not inline steps.** A click-through here means the section is missing a guide.
+- **Keep it scannable.** Tables for anything enumerable, one or two sentences between them.
+
+## Examples
+
+- [Object Storage](/en/documentation/store/object-storage/): opens with the product and what it does, then the interfaces and the implementation scope.
+
+## Related
+
+- [Reference](/en/documentation/style-guide/content/reference/): the base form an Overview applies, and the source of its template.
+- [Get started pages](/en/documentation/style-guide/content/get-started/): the page an Overview sends the reader to.
+- [Information architecture](/en/documentation/style-guide/content/information-architecture/): where the Overview sits in a product section.
+- [Choose a content type](/en/documentation/style-guide/content/choose-a-content-type/): the full catalogue of page kinds.

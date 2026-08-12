@@ -6,7 +6,7 @@ The page works but is wrong. Fix before publishing.
 
 The most common defect in this corpus, and the reason most of it needs restructuring.
 
-Read the page as each of the four readers in `.agents/skills/contributing/references/choosing-a-content-type.md`. If two of them each want a different half, it is two pages.
+Read the page as each of the readers in `.agents/skills/contributing/references/content-types.md`. If two of them each want a different half, it is two pages.
 
 Concrete signals:
 
@@ -118,9 +118,13 @@ Beyond the namespace check in P0:
 
 ## Sidebar
 
-If the page sets `menu_namespace`, confirm the value appears in `src/data/availableMenu.ts`. An unregistered value silently falls back to `nav`, which looks like the field being ignored.
+`npm run lint:navcheck` catches most of this, so do not hand-report what it already prints. Run it first.
 
-If the page is new, check that an entry exists in both `src/i18n/en/<menu>.ts` and `src/i18n/pt-br/<menu>.ts`, and that its `slug` matches the page's `permalink` exactly.
+If the page sets `menu_namespace`, confirm the value appears in `src/data/availableMenu.ts`. An unregistered value is a navcheck error.
+
+If the page is new, check that an entry exists in the JSON menu it selects — `src/i18n/nav.menu.json` or `src/i18n/menus/<name>.menu.json` — carrying both an `en` and a `pt-br` slug, each matching that language's `permalink` exactly. Both languages live in one file. See `.agents/skills/contributing/references/sidebar-registration.md`.
+
+A page with no `menu_namespace` at all is skipped by navcheck and appears only in its orphan report. That is informational, not a finding, unless the page was meant to be in a sidebar.
 
 ## Code samples
 

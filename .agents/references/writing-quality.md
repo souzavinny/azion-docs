@@ -1,14 +1,16 @@
 # Writing quality
 
-Patterns that make a draft read as machine-generated, calibrated for technical documentation. Used by both the `contributing` and `reviewing-a-page` skills, so there is one source of truth.
+Word choice and framing, calibrated for technical documentation. Used by both the `contributing` and `reviewing-a-page` skills.
 
-Adapted from Wikipedia's "Signs of AI writing" and Azion's `ai-writing-detector`. Neither is used unmodified: both are tuned for prose, and documentation has different tolerances.
+**Canonical source:** `src/content/docs/en/pages/style-guide/writing/word-choice.mdx`. When a rule changes, change both.
 
-This file is about **word choice and framing**. `simplified-technical-english.md` is about **sentence construction** — length, tense, voice, noun clusters, one instruction per step. They are complements, and a draft needs both.
+This file is about **word choice and framing**. `simplified-technical-english.md` is about **sentence construction**. A draft needs both.
 
 ## Calibration first
 
-**Documentation legitimately does things a blog post should not.** Applying a general prose linter here produces mostly noise and buries the findings that matter.
+Agent-only. The style guide writes for a person, who does not need to be told which findings to suppress. A reviewer does.
+
+**Documentation legitimately does things a blog post should not.** A general prose linter applied here produces mostly noise and buries the findings that matter.
 
 | Pattern | Blog | Docs | Why |
 | --- | --- | --- | --- |
@@ -27,13 +29,13 @@ This file is about **word choice and framing**. `simplified-technical-english.md
 
 **Invented specifics.** A limit, a default, a field name, a flag, or an error string that came from pattern-matching a similar product rather than from this one.
 
-This is worse in documentation than anywhere else, because it is indistinguishable from correct documentation until a reader tries it and it fails. Everything else on this page is cosmetic by comparison.
+It is indistinguishable from correct documentation until a reader tries it and it fails. Everything else on this page is cosmetic by comparison.
 
-Every number, field name, and command in a draft must trace to a source you can name. If you cannot name it, remove it or mark it as needing verification. A page with a gap is recoverable; a page with a confident wrong value is not, because nobody knows to check it.
+Every number, field name, and command must trace to a source you can name. A page with a gap is recoverable. A page with a confident wrong value is not, because nobody knows to check it.
 
 ## Vocabulary
 
-Words that appear far more often in generated text than in human writing. In documentation, replace them when they are decoration; keep them when they carry technical meaning.
+Replace when the word is decoration. Keep when it carries technical meaning.
 
 | Avoid | Use |
 | --- | --- |
@@ -57,53 +59,39 @@ Words that appear far more often in generated text than in human writing. In doc
 | plays a crucial role in | (say what it does) |
 | in today's landscape | (delete the sentence) |
 
-**Legitimate in technical context, do not flag:** `robust` describing a retry policy or an error path, `leverage` describing actual platform APIs, `ecosystem` describing a package ecosystem, `comprehensive` describing coverage that genuinely is, `streamline`, `facilitate`, `underpin`, `seamless` describing an actual technical seam.
+**Legitimate in technical context, do not flag:** `robust` describing a retry policy, `leverage` describing actual platform APIs, `ecosystem` describing a package ecosystem, `comprehensive` describing coverage that genuinely is, `streamline`, `facilitate`, `underpin`, `seamless` describing an actual technical seam.
 
-The test is whether the word makes a claim about *quality* or about *behaviour*. "Robust security" is a claim about quality. "A robust retry with exponential backoff" describes behaviour.
+The test is whether the word claims *quality* or describes *behaviour*. "Robust security" is a quality claim. "A robust retry with exponential backoff" describes behaviour.
 
 ## Structural patterns
 
-**Promotional framing.** Adjectives selling an Azion product. Documentation describes behaviour and limits; the reader already chose the product.
-
-- Not: "Applications offers powerful, flexible caching capabilities."
-- Yes: "Applications caches content at the edge. Default TTL is 60 seconds."
-
-**Significance inflation.** Sentences about how important something is, in place of what it does. "Caching plays a crucial role in modern web performance" tells the reader nothing they can act on.
-
-**Rhetorical questions**, especially as headings. `What is caching?` becomes `Caching`. `Why use Tiered Cache?` becomes `When to use Tiered Cache`.
-
-**Participle padding.** Trailing `-ing` clauses that add words and no information: "…reducing latency and improving performance, ensuring a better experience." Cut to the claim that is actually measurable.
-
-ASD-STE100 bans the same construction for a second reason worth knowing: `the valve controlling the flow` reads as either an action or a name, and the reader cannot tell which. So a trailing participle is both padding and an ambiguity. See `simplified-technical-english.md`.
-
-**Generic conclusions.** A closing paragraph that restates the page without adding anything. End on the last concrete fact, or on a link worth following.
-
-**Negative parallelism.** "It's not just X, it's Y." Say Y.
-
-**False ranges.** "From configuration to deployment to monitoring" where the items are not on a scale. List them, or name the actual set.
-
-**Undefined "you can".** "You can configure various options" is a sentence with no content. Either name the options or link to where they are named.
+- **Promotional framing.** Adjectives selling a product. The reader already chose it.
+- **Significance inflation.** Sentences about how important something is, in place of what it does.
+- **Rhetorical questions**, especially as headings. `What is caching?` becomes `Caching`.
+- **Participle padding.** Trailing `-ing` clauses that add words and no information.
+- **Generic conclusions.** A closing paragraph restating the page. End on the last concrete fact or a link worth following.
+- **Negative parallelism.** "It's not just X, it's Y." Say Y.
+- **False ranges.** "From configuration to deployment to monitoring" where the items are not on a scale.
+- **Undefined "you can".** Name the options or link to where they are named.
 
 ## Sentence-level
 
-**Passive voice where the actor matters.** "A bucket is created" hides who creates it. "You create a bucket" does not. Passive is fine when the actor is genuinely the system or genuinely irrelevant.
-
-**Copula avoidance.** "X serves as the mechanism for Y" is "X does Y". "Applications provides the ability to cache" is "Applications caches".
-
-**Uniform sentence length.** A paragraph where every sentence is the same mid-length reads as generated. Vary it, and prefer short.
+- **Passive voice where the actor matters.** "A bucket is created" hides who creates it.
+- **Copula avoidance.** "X serves as the mechanism for Y" is "X does Y".
+- **Uniform sentence length.** Vary it, and prefer short.
 
 ## Do not flag
 
 - Prose you would have written differently. Voice is not a defect.
-- Repetition across sibling reference pages. They repeat on purpose so each stands alone.
+- Repetition across sibling reference pages. They repeat so each stands alone.
 - Sentence fragments in table cells.
-- Contractions.
+- Contractions in existing pages. New prose avoids them; an existing one is not a finding.
 - Short paragraphs, or long ones, absent another problem.
-- Lists that are genuinely long because the thing being listed is long.
+- Lists that are long because the thing being listed is long.
 
 ## Self-reference escape hatch
 
-Files that quote bad examples in order to ban them are not violating their own rules. When checking anything under `.agents/`, judge what the page *asserts*, not what strings it contains.
+Files that quote bad examples in order to ban them are not violating their own rules. When checking anything under `.agents/` or under `style-guide/`, judge what the page *asserts*, not what strings it contains.
 
 ## Before handing over a draft
 
@@ -111,5 +99,4 @@ Files that quote bad examples in order to ban them are not violating their own r
 - [ ] No adjective makes a quality claim about an Azion product
 - [ ] Headings name things and are in sentence case
 - [ ] No sentence would survive being deleted without loss
-- [ ] Read one paragraph aloud; if you run out of breath, split it
-- [ ] The sentence-construction checklist in `simplified-technical-english.md` also passes
+- [ ] The checklist in `simplified-technical-english.md` also passes

@@ -24,7 +24,11 @@ Escreva uma página de referência quando:
 Não escreva uma página de referência quando:
 
 - O leitor precisa de passos para uma tarefa. Escreva um [guia how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/).
-- O leitor precisa do raciocínio por trás de um design. Escreva uma [explicação](/pt-br/documentacao/guia-de-estilo/conteudo/explicacao/).
+- O leitor precisa do raciocínio por trás de um design. Escreva uma [página de conceito](/pt-br/documentacao/guia-de-estilo/conteudo/conceito/).
+
+## Registro
+
+Descritivo: 25 palavras por frase, voz ativa, passiva apenas quando o agente é desconhecido. [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/) tem as regras.
 
 ## Estrutura
 
@@ -102,38 +106,23 @@ O suporte pode aumentar esses limites. Entre em contato com o <link do suporte>.
 
 Uma página de comando da CLI tem outra forma. Ela abre com um resumo de uma linha e depois uma seção `Uso` com um bloco de shell. Uma seção `Flags opcionais` fecha a página, com um título por flag.
 
-## Descreva, não instrua
+## Regras
 
-Uma página de referência diz o que uma coisa é e quais valores ela aceita. Ela não diz ao leitor onde clicar. Um passo a passo numerado em uma página de referência é um guia how-to arquivado no lugar errado.
+- **Descreva, não instrua.** Um passo a passo numerado pertence a um [guia how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/).
+- **Coloque informação enumerável em tabelas.** Campos, limites, flags, padrões, códigos de status.
+- **Mantenha o fraseado consistente na coluna.** O leitor escaneia; fraseado variado obriga a ler.
+- **Declare as unidades e os valores padrão.** Um limite sem unidade não é um fato.
+- **Seja completo antes de ser interessante.** Uma página sem três de doze campos está quebrada.
+- **Sem marketing.** Diga o que faz e onde para.
 
-Quando uma página de referência precisa mostrar como fazer algo, ela aponta para o [guia how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/). Ela não copia os passos para dentro da página.
+## Exemplos
 
-## Coloque informação enumerável em tabelas
+- [Referência do Rules Engine](/pt-br/documentacao/build/applications/reference/rules-engine/): descreve criteria e behaviors em tabelas, e não instrui em nenhum ponto.
 
-Tudo o que o leitor pode contar pertence a uma tabela: campos, limites, soluções, flags, códigos de status, valores padrão. Monte as tabelas no formato pipe do Markdown; o site adiciona a rolagem horizontal automaticamente. A prosa entre as tabelas dá uma ou duas frases de orientação. O leitor corre os olhos pela página e pula a prosa, então uma frase que ele pularia não pertence à página.
+## Relacionados
 
-Uma boa página de referência é completa, consistente e deliberadamente sem graça. Uma página de referência que documenta nove de doze campos está quebrada. Uma página de referência com descrições sem graça dos doze cumpre o seu papel.
-
-Escreva as linhas da tabela com fraseado consistente. Se uma linha diz "Número máximo de buckets por conta", a seguinte diz "Número máximo de objetos por bucket". Uma linha que muda para "Quantos objetos você pode colocar em um bucket" obriga o leitor a parar e ler.
-
-## Declare as unidades e os valores padrão
-
-Um limite sem unidade não é um fato. Uma configuração sem valor padrão é uma pergunta que a página deixa aberta. Escreva a unidade ao lado de cada número e o valor padrão de cada configuração.
-
-## Escreva frases descritivas
-
-Referência é texto descritivo, então as frases têm limite de 25 palavras. Células de tabela e código estão isentos; a prosa entre as tabelas não está. Use a voz ativa; use a passiva apenas quando o agente é desconhecido ou é a própria plataforma.
-
-Limite os agrupamentos de substantivos a três palavras e conte um nome de produto como uma unidade. Em inglês, `Rules Engine request phase behavior configuration` deixa o leitor sem saber qual palavra modifica qual. `The behavior configuration for the Rules Engine request phase` não deixa. As regras completas de frase estão em [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/).
-
-## Evite linguagem de marketing
-
-Uma página de referência diz o que um produto faz e quais são os limites dele. O leitor já escolheu o produto, então nenhuma frase precisa vendê-lo. Substitua "recursos poderosos de cache" pelo comportamento e pelos números. As expressões proibidas estão em [Terminologia](/pt-br/documentacao/guia-de-estilo/escrita/terminologia/).
-
-## Documentação relacionada
-
-- [Escolher um tipo de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/): a decisão entre os quatro tipos de conteúdo.
+- [Escolher um tipo de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/): o catálogo completo de tipos de página.
 - [Tutoriais](/pt-br/documentacao/guia-de-estilo/conteudo/tutoriais/): o tipo de conteúdo que ensina por meio de um primeiro projeto.
 - [Guias how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/): o tipo de conteúdo que carrega os passos.
-- [Explicação](/pt-br/documentacao/guia-de-estilo/conteudo/explicacao/): o tipo de conteúdo que carrega o raciocínio.
+- [Conceito](/pt-br/documentacao/guia-de-estilo/conteudo/conceito/): o tipo de página que carrega o raciocínio.
 - [Voz](/pt-br/documentacao/guia-de-estilo/escrita/voz/): o único registro que todas as páginas usam.

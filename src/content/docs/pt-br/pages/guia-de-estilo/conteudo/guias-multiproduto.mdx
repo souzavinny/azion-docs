@@ -1,0 +1,103 @@
+---
+title: Guias multiproduto
+description: >-
+  Como escrever um guia para um objetivo que atravessa produtos: um caminho
+  recomendado, organizado por etapa do fluxo e não por produto.
+meta_tags: 'style guide, multi-product guide, solution guide'
+namespace: documentation_style_guide_multi_product_guides
+permalink: /documentacao/guia-de-estilo/conteudo/guias-multiproduto/
+menu_namespace: styleGuideMenu
+---
+
+## Propósito
+
+Um guia multiproduto leva o leitor a um objetivo que nenhum produto sozinho alcança. Ele aplica a forma base de [how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/).
+
+Outros conjuntos de documentação dividem esse tipo em guias de solução, guias de design e guias de implementação. Esta documentação usa um nome e um conjunto de regras, porque os três descrevem a mesma página.
+
+## Quando usar
+
+Escreva um guia multiproduto quando:
+
+- O objetivo precisa de dois ou mais produtos, e nenhuma seção de produto é dona dele.
+- O leitor pensa em resultados, como proteger um checkout, e não em nomes de produto.
+- Um guia de produto único fica mandando o leitor para outro produto no meio da tarefa.
+
+Não escreva um guia multiproduto quando:
+
+- Um produto alcança o objetivo. Escreva um [guia how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/) na seção daquele produto.
+- O leitor quer entender o design em vez de construí-lo. Escreva uma [página de arquitetura](/pt-br/documentacao/guia-de-estilo/conteudo/arquitetura/).
+- O objetivo é um cenário comercial com enquadramento de negócio. Isso é um caso de uso, e usa a mesma forma base com um cenário e uma tabela de requisitos.
+
+## Registro
+
+Procedural: 20 palavras por frase, uma instrução por passo, imperativo e ativo. [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/) tem as regras.
+
+## Estrutura
+
+**Componentes obrigatórios**
+
+- **Parágrafo de abertura**: o resultado, declarado primeiro, nas palavras do leitor.
+- **Pré-requisitos**: um aside com o que o leitor precisa antes da primeira etapa.
+- **Etapas**: uma seção por etapa do fluxo, cada uma com um heading imperativo que a nomeia.
+- **Verificação**: como o leitor confirma que todo o caminho funcionou, não apenas o último passo.
+
+**Componentes opcionais**
+
+- **Uma tabela de produtos**: o que cada produto contribui, quando há mais de três envolvidos.
+- **Um diagrama**: quando a ordem das peças é difícil de segurar em texto. Aponte para a [página de arquitetura](/pt-br/documentacao/guia-de-estilo/conteudo/arquitetura/) quando existir uma.
+- **Próximos passos**: um ou dois links que estendem o resultado.
+
+## Template
+
+```md
+<O resultado, em uma frase, nas palavras do leitor.>
+
+:::tip
+<O que o leitor precisa antes de começar, cada item como link ou comando de uma linha.>
+:::
+
+---
+
+## <Heading imperativo que nomeia a primeira etapa>
+
+1. <Uma instrução imperativa.>
+2. <Uma instrução imperativa.>
+
+---
+
+## <Heading imperativo que nomeia a segunda etapa>
+
+1. <Uma instrução imperativa.>
+
+---
+
+## Verifique o resultado
+
+<Uma checagem que testa o resultado, com o que o leitor deve ver.>
+
+---
+
+:::tip
+<Um ou dois links que estendem o resultado, cada um com um motivo para seguir.>
+:::
+```
+
+## Regras
+
+- **Nomeie o objetivo, não os produtos.** O leitor busca pelo resultado.
+- **Comprometa-se com um caminho recomendado.** Alternativas vão em um aside, nunca como bifurcações nos passos.
+- **Organize por etapa do fluxo, não por produto.**
+- **Nomeie o produto em cada etapa.** Um nome de interface sem qualificação fica ambíguo quando a página cruza produtos.
+- **Verifique o caminho inteiro.** Esses guias falham nas emendas, então cheque o resultado e não o último clique.
+
+## Exemplos
+
+Conteúdo em breve.
+
+## Relacionados
+
+- [Guias how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/): a forma base que este tipo aplica.
+- [Páginas de arquitetura](/pt-br/documentacao/guia-de-estilo/conteudo/arquitetura/): a página que descreve o design que este guia constrói.
+- [Arquitetura de informação](/pt-br/documentacao/guia-de-estilo/conteudo/arquitetura-de-informacao/): onde fica um guia que não pertence a nenhuma seção de produto.
+- [Escolher um tipo de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/): o catálogo completo de tipos de página.

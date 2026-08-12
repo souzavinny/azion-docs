@@ -18,7 +18,7 @@ This guide describes how Azion writes its documentation. Use it when you write a
 - [Word choice](/en/documentation/style-guide/writing/word-choice/): vocabulary to avoid and the patterns that read as machine-generated.
 - [Terminology](/en/documentation/style-guide/writing/terminology/): product names and translation rules.
 - [Headings](/en/documentation/style-guide/formatting/headings/), [text formatting](/en/documentation/style-guide/formatting/text/), and [code](/en/documentation/style-guide/formatting/code/): how content is formatted.
-- [Content strategy](/en/documentation/style-guide/content/choose-a-content-type/): the [information architecture](/en/documentation/style-guide/content/information-architecture/), the four content types, and how to pick one.
+- [Content strategy](/en/documentation/style-guide/content/choose-a-content-type/): the [information architecture](/en/documentation/style-guide/content/information-architecture/), the page kinds, and how to pick one.
 - [File conventions](/en/documentation/style-guide/conventions/frontmatter/): frontmatter and [bilingual pages](/en/documentation/style-guide/conventions/bilingual/).
 - [Components](/en/documentation/style-guide/components/), [API docs](/en/documentation/style-guide/api-docs/), and [How we write the docs](/en/documentation/style-guide/how-we-docs/): sections reserved for content that is not written yet.
 
@@ -28,7 +28,7 @@ This guide covers writing and information architecture. Components, visual desig
 
 ## The agent-facing rules
 
-The documentation repository also carries these rules in a machine-readable form, in the `.agents` directory of [aziontech/docs](https://github.com/aziontech/docs). Coding agents load those files as context. The two renderings share one set of rules: this guide explains them for people, with reasons and examples; the agent files state them tersely. When you change a rule, change both.
+This guide is the single source for the writing rules, and coding agents read these pages directly. The `.agents` directory of [aziontech/docs](https://github.com/aziontech/docs) routes an agent to the right page here and adds what this guide does not cover: the MDX components, the sidebar files, the build validators, and the markdown version of each page. A rule changes in one place, here.
 
 ## The guide follows its own rules
 

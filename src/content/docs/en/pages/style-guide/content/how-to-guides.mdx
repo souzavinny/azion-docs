@@ -20,6 +20,10 @@ A how-to guide takes a reader who has a problem to a solved problem. The reader 
 - A how-to whose task is a fix is a [troubleshooting page](/en/documentation/style-guide/content/troubleshooting/).
 - When in doubt, [Choose a content type](/en/documentation/style-guide/content/choose-a-content-type/) has the router.
 
+## Register
+
+Procedural: 20 words per sentence, one instruction per step, imperative and active. [Sentence structure](/en/documentation/style-guide/writing/sentence-structure/) holds the rules.
+
 ## Structure
 
 **Required components**
@@ -63,55 +67,20 @@ Where to go next. One or two links.
 
 Separate the major sections of the page with a `---` rule, and never place one directly after the frontmatter.
 
-## Name the task in the title and headings
+## Rules
 
-Titles start with "How to": `How to create an Object Storage bucket`. Section headings are imperative verb phrases that name the task.
+- **Name the task in the title and the headings.** An imperative verb phrase, never a gerund.
+- **One imperative instruction per step.** A step with two actions is a step where the second is skipped.
+- **State the end state first.** The opening sentence says what the reader will have.
+- **Branch where the task branches.** Tabs for Console, CLI, and API, never three sequential sections.
+- **Use one verb per action**, on every mention across the page.
+- **Send a goal that crosses products** to a [multi-product guide](/en/documentation/style-guide/content/multi-product-guides/).
+- **Link out for third-party products.** Name the vendor's step; do not document their interface.
+- **Do not teach.** One sentence of context, then the steps.
 
-- Correct: `Create a bucket`
-- Incorrect: `Creating a bucket`, `Bucket creation`, `Step 1`
+## Examples
 
-The imperative heading matches the steps under it, and it survives translation. A gerund in first position does neither.
-
-## Write each step as one imperative instruction
-
-Steps are numbered and imperative: "Click", "Enter", "Select". Each step holds exactly one instruction, in at most 20 words. [Sentence structure](/en/documentation/style-guide/writing/sentence-structure/) holds the full rules.
-
-- Incorrect: `Click **Save**, then purge the cache and confirm the TTL changed.`
-- Correct: three numbered steps, one action each.
-
-Three more rules shape a step:
-
-- State where the reader acts before the action: `In **Azion Console**, click **Save**.`
-- An optional step starts with "(Optional)".
-- When the action maps to a Console control, use the control's own word, in bold, on every mention.
-
-## State the end state
-
-The reader must know the task worked without asking anyone. The last step, or the closing sentence, states what they see: a status, a value, a URL that responds.
-
-## Branch where the task branches
-
-A how-to guide may branch, because the reader's situation is real and varies. Branch only where reality branches: a genuine difference in interface or configuration.
-
-Most Azion tasks run through the Console, the Azion CLI, or the API. When a task has more than one interface, present the interfaces as tabs on one page, with the interface most readers use first — usually the Console. The primary answer lives in the page flow, never only inside a tab.
-
-## Write guides that span products
-
-Some guides take the reader to a goal that crosses products. For those:
-
-- Title the goal in plain language, not a product name.
-- Commit to one recommended path. Alternatives go in a single aside, never as forks in the steps.
-- Organize by workflow stage, not by product.
-
-These guides live outside a single product section. [Information architecture](/en/documentation/style-guide/content/information-architecture/) covers where they go.
-
-## Link out for third-party products
-
-When a task passes through a third-party interface, link to the vendor's documentation for those steps instead of reproducing them. Never screenshot a third-party interface. Third-party interfaces change without notice, and the page goes stale silently.
-
-## Do not teach
-
-The reader has a problem, not a curiosity. One sentence of context is fine. A paragraph of context is a sign that the material belongs in an [explanation](/en/documentation/style-guide/content/explanation/) page, with a link from the how-to.
+- [Create request and response rules](/en/documentation/build/applications/guides/rules-engine/): two tasks on one page, each a named procedure with numbered imperative steps.
 
 ## Related
 

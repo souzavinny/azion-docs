@@ -171,14 +171,14 @@
        }
       },
       {
-       "key": "sg/tutorials",
+       "key": "sg/overview-pages",
        "label": {
-        "en": "Tutorials",
-        "pt-br": "Tutoriais"
+        "en": "Overview pages",
+        "pt-br": "Páginas de visão geral"
        },
        "slug": {
-        "en": "/documentation/style-guide/content/tutorials/",
-        "pt-br": "/documentacao/guia-de-estilo/conteudo/tutoriais/"
+        "en": "/documentation/style-guide/content/overview/",
+        "pt-br": "/documentacao/guia-de-estilo/conteudo/visao-geral/"
        }
       },
       {
@@ -193,6 +193,17 @@
        }
       },
       {
+       "key": "sg/tutorials",
+       "label": {
+        "en": "Tutorials",
+        "pt-br": "Tutoriais"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/content/tutorials/",
+        "pt-br": "/documentacao/guia-de-estilo/conteudo/tutoriais/"
+       }
+      },
+      {
        "key": "sg/how-to",
        "label": {
         "en": "How-to guides",
@@ -201,6 +212,17 @@
        "slug": {
         "en": "/documentation/style-guide/content/how-to-guides/",
         "pt-br": "/documentacao/guia-de-estilo/conteudo/guias-how-to/"
+       }
+      },
+      {
+       "key": "sg/multi-product",
+       "label": {
+        "en": "Multi-product guides",
+        "pt-br": "Guias multiproduto"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/content/multi-product-guides/",
+        "pt-br": "/documentacao/guia-de-estilo/conteudo/guias-multiproduto/"
        }
       },
       {
@@ -226,14 +248,47 @@
        }
       },
       {
-       "key": "sg/explanation",
+       "key": "sg/concept",
        "label": {
-        "en": "Explanation",
-        "pt-br": "Explicação"
+        "en": "Concept pages",
+        "pt-br": "Páginas de conceito"
        },
        "slug": {
-        "en": "/documentation/style-guide/content/explanation/",
-        "pt-br": "/documentacao/guia-de-estilo/conteudo/explicacao/"
+        "en": "/documentation/style-guide/content/concept/",
+        "pt-br": "/documentacao/guia-de-estilo/conteudo/conceito/"
+       }
+      },
+      {
+       "key": "sg/architecture",
+       "label": {
+        "en": "Architecture pages",
+        "pt-br": "Páginas de arquitetura"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/content/architecture/",
+        "pt-br": "/documentacao/guia-de-estilo/conteudo/arquitetura/"
+       }
+      },
+      {
+       "key": "sg/changelog",
+       "label": {
+        "en": "Changelog pages",
+        "pt-br": "Páginas de changelog"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/content/changelog/",
+        "pt-br": "/documentacao/guia-de-estilo/conteudo/changelog/"
+       }
+      },
+      {
+       "key": "sg/navigation-hubs",
+       "label": {
+        "en": "Navigation hubs",
+        "pt-br": "Hubs de navegação"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/content/navigation-hubs/",
+        "pt-br": "/documentacao/guia-de-estilo/conteudo/hubs-de-navegacao/"
        }
       },
       {

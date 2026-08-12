@@ -67,4 +67,4 @@ Pass two: execute, one child per commit if the page is large.
 - [ ] Redirects listed for every URL that no longer resolves
 - [ ] Sidebar entries added for every child, in both languages
 - [ ] No content was lost, only relocated
-- [ ] `pnpm build:local` passes
+- [ ] `npm run build:local` passes

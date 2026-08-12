@@ -1,0 +1,100 @@
+---
+title: Páginas de arquitetura
+description: >-
+  Como escrever uma página de arquitetura: o diagrama, o dataflow, os
+  componentes e os links para os guias que implementam o design.
+meta_tags: 'style guide, architecture, explanation'
+namespace: documentation_style_guide_architecture
+permalink: /documentacao/guia-de-estilo/conteudo/arquitetura/
+menu_namespace: styleGuideMenu
+---
+
+## Propósito
+
+Uma página de arquitetura mostra como vários produtos formam um design. O leitor quer entender o formato de uma solução antes de construí-la.
+
+Ela aplica a forma base de **explicação**, a mesma de uma [página de conceito](/pt-br/documentacao/guia-de-estilo/conteudo/conceito/). A diferença é o assunto: uma página de conceito explica uma coisa, uma página de arquitetura explica como muitas coisas se encaixam.
+
+## Quando usar
+
+Escreva uma página de arquitetura quando:
+
+- Uma solução precisa de mais de um produto, e a relação entre eles é o ponto.
+- O leitor precisa ver a ordem de uma requisição ou de um dataflow para entender o design.
+- Um guia fica redesenhando o mesmo sistema em texto corrido.
+
+Não escreva uma página de arquitetura quando:
+
+- O assunto é um produto ou uma ideia. Escreva uma [página de conceito](/pt-br/documentacao/guia-de-estilo/conteudo/conceito/).
+- O leitor quer construir a coisa. Escreva um [guia multiproduto](/pt-br/documentacao/guia-de-estilo/conteudo/guias-multiproduto/) e aponte para ele daqui.
+- O design não pode ser desenhado. Um design que você não consegue desenhar é um design que você ainda não entende bem o suficiente para publicar.
+
+## Registro
+
+Descritivo: 25 palavras por frase, voz ativa, passiva apenas quando o agente é desconhecido. [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/) tem as regras.
+
+## Estrutura
+
+**Componentes obrigatórios**
+
+- **Parágrafo de abertura**: o problema que este design resolve, e para quem ele é.
+- **Diagrama de arquitetura**: o diagrama, e depois um parágrafo que o lê.
+- **Dataflow**: um passo a passo numerado do que vai para onde.
+- **Componentes**: o que cada parte faz e por que ela está ali.
+- **Implementação**: links para os guias que constroem o design. Esta seção aponta; ela não instrui.
+
+**Componentes opcionais**
+
+- **O trade-off**: o que o design custa, e quando um mais simples já basta.
+- **Variantes**: o mesmo design com um componente trocado.
+
+## Template
+
+```md
+<O problema que este design resolve, e contra o que ele trabalha.> Este documento é para <o público pretendido> que quer <o que esse público quer fazer>.
+
+## Diagrama de arquitetura de <nome do design>
+
+![<O que o diagrama mostra>](/assets/docs/images/uploads/<arquivo-do-diagrama>.png)
+
+<Um parágrafo que lê o diagrama: o que olhar primeiro, e o que depende do quê.>
+
+### Dataflow de <nome do design>
+
+1. <O que se move primeiro, e para onde vai.>
+2. <O que a plataforma faz com isso.>
+3. <Onde o fluxo termina.>
+
+## Componentes
+
+- **<Nome do componente>**: <o que faz e por que está ali>.
+- **<Nome do componente>**: <o que faz e por que está ali>.
+
+## Implementação
+
+- [<Guia que implementa este design>](<URL do guia>)
+
+## Documentação relacionada
+
+- [<Página relacionada>](<URL da página>)
+```
+
+## Regras
+
+- **Deixe o diagrama carregar a explicação.** Desenhe primeiro, depois escreva o parágrafo que o lê.
+- **Escreva o dataflow para sobreviver sem a imagem.** O gêmeo em markdown carrega a lista, não o diagrama.
+- **Escreva texto alternativo que descreve o que o diagrama mostra**, e nunca dependa apenas de cor.
+- **Nomeie cada componente e diga por que ele está ali.** Uma lista de nomes de produto é uma lista de peças.
+- **Aponte para a implementação, não a coloque aqui.** Os passos vão em um [guia multiproduto](/pt-br/documentacao/guia-de-estilo/conteudo/guias-multiproduto/).
+- **Date um design que pertence a um momento**, em vez de deixar a página envelhecer em silêncio.
+
+## Exemplos
+
+- [Implante sites Jamstack no edge](/pt-br/documentacao/architectures/jamstack/implantacao-aplicacoes-jamstack/): um diagrama, um dataflow numerado, os componentes envolvidos e links para a implementação.
+
+## Relacionados
+
+- [Páginas de conceito](/pt-br/documentacao/guia-de-estilo/conteudo/conceito/): a mesma forma base, para uma ideia em vez de um sistema.
+- [Guias multiproduto](/pt-br/documentacao/guia-de-estilo/conteudo/guias-multiproduto/): a página que constrói o que esta descreve.
+- [Imagens](/pt-br/documentacao/guia-de-estilo/formatacao/imagens/): texto alternativo e caminhos de assets.
+- [Escolher um tipo de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/): o catálogo completo de tipos de página.

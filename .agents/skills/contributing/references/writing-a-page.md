@@ -16,7 +16,7 @@ grep -rl "<the feature>" src/content/docs/en --include='*.mdx'
 
 ## 3. Pick the content type
 
-Read `choosing-a-content-type.md`. Pick one. A page that is two types is the most common structural defect here, and it is why so much of this corpus needs restructuring.
+Read `content-types.md`, then open the style-guide page for the kind. Pick one. A page that is two types is the most common structural defect here, and it is why so much of this corpus needs restructuring.
 
 ## 4. Find where it belongs
 
@@ -61,7 +61,7 @@ Read `sidebar-registration.md`. This is a separate manual edit in two files, and
 ## 10. Build
 
 ```bash
-pnpm build:local
+npm run build:local
 ```
 
 Both the build and the frontmatter validator must pass. Then look at the rendered page, not just the build output.
@@ -78,5 +78,5 @@ Both the build and the frontmatter validator must pass. Then look at the rendere
 - [ ] Portuguese version present, sharing the same `namespace`
 - [ ] Sidebar entries added in both languages
 - [ ] Only live components used
-- [ ] `pnpm build:local` passes
+- [ ] `npm run build:local` passes
 - [ ] Every code sample was actually run

@@ -1,0 +1,78 @@
+---
+title: Páginas de changelog
+description: >-
+  Como escrever uma entrada de changelog: registros somente por acréscimo, que
+  mantêm os nomes de produto da época e dizem o que mudou para o leitor.
+meta_tags: 'style guide, changelog, release notes'
+namespace: documentation_style_guide_changelog
+permalink: /documentacao/guia-de-estilo/conteudo/changelog/
+menu_namespace: styleGuideMenu
+---
+
+## Propósito
+
+Um changelog registra mudanças notáveis na plataforma, das mais novas para as mais antigas. Ele é um **registro**, não uma das quatro formas do Diátaxis: não ensina, não instrui e não explica. O leitor o consulta para responder uma pergunta, que é o que mudou e quando.
+
+## Quando usar
+
+- Adicione uma entrada quando uma mudança altera o que o leitor pode fazer, ver ou configurar.
+- Adicione quando um valor padrão muda, um limite se move ou uma funcionalidade é removida.
+
+Não adicione uma entrada quando:
+
+- Nada mudou para o leitor. Uma refatoração interna não é entrada de changelog.
+- A mudança precisa de instruções. Escreva o [guia how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/) e aponte para ele na entrada.
+- A mudança merece raciocínio. Escreva a [página de conceito](/pt-br/documentacao/guia-de-estilo/conteudo/conceito/) e aponte para ela.
+
+## Registro
+
+Descritivo: 25 palavras por frase, voz ativa, passiva apenas quando o agente é desconhecido. [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/) tem as regras.
+
+## Estrutura
+
+**Componentes obrigatórios**
+
+- **Um heading de data**: a data da release, das mais novas para as mais antigas.
+- **A mudança**: o que mudou, em uma ou duas frases, do lado do leitor.
+
+**Componentes opcionais**
+
+- **Uma categoria**: `Novo`, `Atualizado`, `Corrigido` ou `Removido`, quando a lista fica longa.
+- **Um link**: para o guia ou a página de referência que documenta o novo comportamento.
+- **Uma nota de migração**: quando o leitor precisa agir, com link para os passos.
+
+## Template
+
+```md
+## <AAAA-MM-DD>
+
+### Novo
+
+- **<Produto>**: <o que o leitor agora pode fazer>. Veja [<a página que documenta isso>](<url>).
+
+### Atualizado
+
+- **<Produto>**: <o que mudou, e qual era o comportamento anterior>.
+
+### Removido
+
+- **<Produto>**: <o que foi removido, e o que substitui>.
+```
+
+## Regras
+
+- **Escreva do lado do leitor.** O que mudou para ele, não o que o time fez.
+- **Mantenha os nomes de produto da época.** Um registro datado mantém os nomes com que foi escrito.
+- **Nunca reescreva uma entrada.** Corrija com uma nova entrada datada; o log é somente por acréscimo.
+- **Nomeie o comportamento anterior quando ele muda.** O leitor veio pela diferença.
+- **Aponte, não instrua.** Passos dentro de um changelog desatualizam onde ninguém os procura.
+
+## Exemplos
+
+- [Arquivo do changelog](/en/documentation/changelog/archive/): entradas agrupadas por ano, cada uma nomeando o produto e a mudança. Ainda sem versão em português.
+
+## Relacionados
+
+- [Terminologia](/pt-br/documentacao/guia-de-estilo/escrita/terminologia/): a isenção de nomes históricos que vale aqui.
+- [Tamanho de página e recuperação](/pt-br/documentacao/guia-de-estilo/conteudo/tamanho-de-pagina/): changelogs são isentos dos limites de tamanho, porque são somente por acréscimo.
+- [Escolher um tipo de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/): o catálogo completo de tipos de página.

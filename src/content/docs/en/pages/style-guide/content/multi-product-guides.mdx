@@ -1,0 +1,103 @@
+---
+title: Multi-product guides
+description: >-
+  How to write a guide for a goal that crosses products: one recommended path,
+  organized by workflow stage rather than by product.
+meta_tags: 'style guide, multi-product guide, solution guide'
+namespace: documentation_style_guide_multi_product_guides
+permalink: /documentation/style-guide/content/multi-product-guides/
+menu_namespace: styleGuideMenu
+---
+
+## Purpose
+
+A multi-product guide takes the reader to a goal that no single product reaches. It applies the [how-to](/en/documentation/style-guide/content/how-to-guides/) base form.
+
+Other documentation sets split this kind into solution guides, design guides, and implementation guides. This documentation uses one name and one set of rules, because the three describe the same page.
+
+## When to use
+
+Write a multi-product guide when:
+
+- The goal needs two or more products, and no product section owns it.
+- The reader thinks in outcomes, such as protecting a checkout, rather than in product names.
+- A single-product guide keeps sending the reader to another product mid-task.
+
+Do not write a multi-product guide when:
+
+- One product reaches the goal. Write a [how-to guide](/en/documentation/style-guide/content/how-to-guides/) in that product's section.
+- The reader wants to understand the design rather than build it. Write an [architecture page](/en/documentation/style-guide/content/architecture/).
+- The goal is a commercial scenario with a business frame. That is a use case, and it takes the same base form with an added scenario and a requirements table.
+
+## Register
+
+Procedural: 20 words per sentence, one instruction per step, imperative and active. [Sentence structure](/en/documentation/style-guide/writing/sentence-structure/) holds the rules.
+
+## Structure
+
+**Required components**
+
+- **Lead paragraph**: the outcome, stated first, in the reader's words.
+- **Prerequisites**: one aside listing what the reader needs before stage one.
+- **Stages**: one section per workflow stage, each an imperative heading naming the stage.
+- **Verification**: how the reader confirms the whole path worked, not just the last step.
+
+**Optional components**
+
+- **A products table**: what each product contributes, when more than three are involved.
+- **A diagram**: when the order of the pieces is hard to hold in prose. Link the [architecture page](/en/documentation/style-guide/content/architecture/) instead when one exists.
+- **Next steps**: one or two links that extend the result.
+
+## Template
+
+```md
+<The outcome, in one sentence, in the reader's words.>
+
+:::tip
+<What the reader needs before starting, each as a link or a one-line command.>
+:::
+
+---
+
+## <Imperative heading naming the first stage>
+
+1. <One imperative instruction.>
+2. <One imperative instruction.>
+
+---
+
+## <Imperative heading naming the second stage>
+
+1. <One imperative instruction.>
+
+---
+
+## Verify the result
+
+<A check that tests the outcome, with what the reader should see.>
+
+---
+
+:::tip
+<One or two links that extend the result, each with a reason to follow it.>
+:::
+```
+
+## Rules
+
+- **Title the goal, not the products.** The reader searches for the outcome.
+- **Commit to one recommended path.** Alternatives go in one aside, never as forks in the steps.
+- **Organize by workflow stage, not by product.**
+- **Name the product at each stage.** An unqualified interface name is ambiguous once the page crosses products.
+- **Verify the whole path.** These guides fail in the seams, so check the outcome and not the last click.
+
+## Examples
+
+Content coming soon.
+
+## Related
+
+- [How-to guides](/en/documentation/style-guide/content/how-to-guides/): the base form this kind applies.
+- [Architecture pages](/en/documentation/style-guide/content/architecture/): the page that describes the design this guide builds.
+- [Information architecture](/en/documentation/style-guide/content/information-architecture/): where a guide that belongs to no product section lives.
+- [Choose a content type](/en/documentation/style-guide/content/choose-a-content-type/): the full catalogue of page kinds.

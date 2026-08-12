@@ -1,0 +1,78 @@
+---
+title: Changelog pages
+description: >-
+  How to write a changelog entry: append-only records that keep the product
+  names of their period and state what changed for the reader.
+meta_tags: 'style guide, changelog, release notes'
+namespace: documentation_style_guide_changelog
+permalink: /documentation/style-guide/content/changelog/
+menu_namespace: styleGuideMenu
+---
+
+## Purpose
+
+A changelog records notable changes to the platform, newest first. It is a **record**, not one of the four Diátaxis forms: it does not teach, instruct, or explain, and a reader consults it to answer one question, which is what changed and when.
+
+## When to use
+
+- Add an entry when a change alters what a reader can do, see, or configure.
+- Add it when a default changes, a limit moves, or a feature is removed.
+
+Do not add an entry when:
+
+- Nothing changed for the reader. An internal refactor is not a changelog entry.
+- The change needs instructions. Write the [how-to guide](/en/documentation/style-guide/content/how-to-guides/) and link it from the entry.
+- The change deserves reasoning. Write the [concept page](/en/documentation/style-guide/content/concept/) and link it.
+
+## Register
+
+Descriptive: 25 words per sentence, active voice, passive only when the actor is unknown. [Sentence structure](/en/documentation/style-guide/writing/sentence-structure/) holds the rules.
+
+## Structure
+
+**Required components**
+
+- **A date heading**: the release date, newest first.
+- **The change**: what changed, in one or two sentences, from the reader's side.
+
+**Optional components**
+
+- **A category**: `New`, `Updated`, `Fixed`, or `Removed`, when the entry list is long.
+- **A link**: to the guide or reference page that documents the new behaviour.
+- **A migration note**: when the reader must act, with a link to the steps.
+
+## Template
+
+```md
+## <YYYY-MM-DD>
+
+### New
+
+- **<Product>**: <what a reader can now do>. See [<the page that documents it>](<url>).
+
+### Updated
+
+- **<Product>**: <what changed, and what the previous behaviour was>.
+
+### Removed
+
+- **<Product>**: <what was removed, and what replaces it>.
+```
+
+## Rules
+
+- **Write from the reader's side.** What changed for them, not what the team did.
+- **Keep the product names of the period.** A dated record keeps the names it was written with.
+- **Never rewrite an entry.** Correct it with a new dated entry; the log is append-only.
+- **Name the previous behaviour when it changed.** The reader came for the delta.
+- **Link, do not instruct.** Steps inside a changelog go stale where nobody looks for them.
+
+## Examples
+
+- [Changelog archive](/en/documentation/changelog/archive/): entries grouped by year, each naming the product and the change.
+
+## Related
+
+- [Terminology](/en/documentation/style-guide/writing/terminology/): the historical-name exemption that applies here.
+- [Page size and retrieval](/en/documentation/style-guide/content/page-size/): changelogs are exempt from the size caps, because they are append-only.
+- [Choose a content type](/en/documentation/style-guide/content/choose-a-content-type/): the full catalogue of page kinds.

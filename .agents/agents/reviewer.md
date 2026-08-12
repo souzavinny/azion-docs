@@ -15,6 +15,10 @@ Find its translation by matching `namespace` across the other language tree. Sev
 
 Decide which content type the page is before you check anything sentence-level. Tutorials and how-tos are procedural and take the 20-word cap; reference and explanation are descriptive and take 25. A step holding two instructions is P1 on a procedural page and not a finding on a descriptive one.
 
+Eleven page kinds apply those four forms, and several add rules: get-started is a tutorial; troubleshooting and multi-product guides are how-tos; concept and architecture are explanations. `.agents/skills/contributing/references/content-types.md` maps each kind to its style-guide page. A use case opens with a business scenario and a requirements table before its first step; that is the pattern working, not preamble to flag.
+
+The published style guide at `src/content/docs/en/pages/style-guide/` holds the writing rules. Cite the page when a finding needs a source.
+
 Then run the three check sets:
 
 | Tier | Read |

@@ -1,0 +1,78 @@
+---
+title: Hubs de navegação
+description: >-
+  Como escrever um hub de navegação: links mais uma frase de orientação, com
+  cada link justificando o seu lugar.
+meta_tags: 'style guide, navigation, hub, landing page'
+namespace: documentation_style_guide_navigation_hubs
+permalink: /documentacao/guia-de-estilo/conteudo/hubs-de-navegacao/
+menu_namespace: styleGuideMenu
+---
+
+## Propósito
+
+Um hub de navegação leva o leitor para dentro da documentação. Ele carrega links e uma frase de orientação, e nada mais.
+
+Ele **não** aplica nenhuma forma base do Diátaxis. Um hub não ensina, não instrui, não descreve e não explica: ele direciona. Por isso ele não tem orçamento de frase para um texto que não deveria estar ali.
+
+## Quando usar
+
+- Escreva um hub quando uma seção tem mais páginas do que o menu lateral consegue mostrar de forma legível.
+- Escreva um para uma seção que reúne páginas de vários produtos, como um índice de soluções ou de arquiteturas.
+
+Não escreva um hub quando:
+
+- A seção é um produto. Um produto abre com uma [visão geral](/pt-br/documentacao/guia-de-estilo/conteudo/visao-geral/), que orienta e aponta.
+- A página explicaria longamente do que a seção trata. Isso é uma [página de conceito](/pt-br/documentacao/guia-de-estilo/conteudo/conceito/).
+- O menu lateral já torna as páginas encontráveis. Um hub que duplica o menu é mais uma coisa para manter e mais uma coisa para desatualizar.
+
+## Registro
+
+Descritivo: 25 palavras por frase, voz ativa, passiva apenas quando o agente é desconhecido. [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/) tem as regras.
+
+## Estrutura
+
+**Componentes obrigatórios**
+
+- **Uma frase de orientação**: o que esta seção cobre e para quem ela é.
+- **Os links**: agrupados, cada um com uma descrição de uma linha dizendo o que o leitor ganha.
+
+**Componentes opcionais**
+
+- **Grupos**: quando o conjunto de links tem mais de um tema, cada grupo ganha um heading.
+
+Um hub em grade de cards é o único lugar em que uma página de documentação define `type: homepage` no frontmatter. Todas as outras páginas omitem o campo. Veja [Frontmatter](/pt-br/documentacao/guia-de-estilo/convencoes/frontmatter/).
+
+## Template
+
+```md
+<Uma frase: o que esta seção cobre e para quem ela é.>
+
+## <Nome do grupo>
+
+- [<Título da página>](<url>): <o que o leitor ganha, em uma linha>.
+- [<Título da página>](<url>): <o que o leitor ganha, em uma linha>.
+
+## <Nome do próximo grupo>
+
+- [<Título da página>](<url>): <o que o leitor ganha, em uma linha>.
+```
+
+## Regras
+
+- **Faça cada link justificar o seu lugar.** Um hub que lista tudo não hierarquiza nada.
+- **Escreva descrições que diferenciam.** Diga o que esta página dá que as vizinhas não dão.
+- **Não explique aqui.** Uma frase de orientação; o resto vai em uma [página de conceito](/pt-br/documentacao/guia-de-estilo/conteudo/conceito/).
+- **Agrupe quando a lista passa de sete**, pelo que o leitor está tentando fazer.
+- **Mantenha o hub em dia com a seção.** Atualize o hub na mesma mudança que adiciona uma página.
+
+## Exemplos
+
+- [Arquiteturas](/pt-br/documentacao/architectures/): uma linha de orientação, e depois os designs agrupados pelo problema que resolvem.
+
+## Relacionados
+
+- [Páginas de visão geral](/pt-br/documentacao/guia-de-estilo/conteudo/visao-geral/): a raiz do produto, que orienta e aponta, mas também descreve.
+- [Arquitetura de informação](/pt-br/documentacao/guia-de-estilo/conteudo/arquitetura-de-informacao/): onde os hubs ficam e quais seções precisam de um.
+- [Frontmatter](/pt-br/documentacao/guia-de-estilo/convencoes/frontmatter/): o campo `type: homepage` que um hub em grade de cards define.
+- [Escolher um tipo de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/): o catálogo completo de tipos de página.

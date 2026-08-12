@@ -1,0 +1,100 @@
+---
+title: Páginas de visão geral
+description: >-
+  Como escrever a visão geral de um produto: a raiz da seção, que diz o que o
+  produto é, o que ele faz e quando usá-lo.
+meta_tags: 'style guide, overview'
+namespace: documentation_style_guide_overview_pages
+permalink: /documentacao/guia-de-estilo/conteudo/visao-geral/
+menu_namespace: styleGuideMenu
+---
+
+## Propósito
+
+Uma página de visão geral é a raiz da seção de um produto. Ela diz o que o produto é, o que ele faz e quando o leitor o usaria. Ela aplica a forma base de [referência](/pt-br/documentacao/guia-de-estilo/conteudo/referencia/).
+
+Todo produto tem uma. É a página onde o leitor chega pela busca, pelo menu lateral e por outro produto que aponta para este.
+
+## Quando usar
+
+- Escreva uma visão geral para cada produto, como a primeira página da seção.
+- Escreva-a antes de qualquer outra página da seção. A visão geral define do que a seção trata.
+
+Não escreva uma visão geral quando:
+
+- O assunto é um módulo ou uma funcionalidade. Isso vai em uma [página de referência](/pt-br/documentacao/guia-de-estilo/conteudo/referencia/) dentro da seção.
+- A página levaria o leitor por uma tarefa. Isso é um [guia how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/), com link a partir daqui.
+- A página só listaria links. Isso é um [hub de navegação](/pt-br/documentacao/guia-de-estilo/conteudo/hubs-de-navegacao/).
+
+## Registro
+
+Descritivo: 25 palavras por frase, voz ativa, passiva apenas quando o agente é desconhecido. [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/) tem as regras.
+
+## Estrutura
+
+**Componentes obrigatórios**
+
+- **Parágrafo de abertura**: o nome do produto na primeira frase, o que ele faz e o problema que resolve.
+- **Interfaces**: as formas de usar o produto, como links para Console, API, CLI e Terraform.
+- **Implementação**: uma tabela com o escopo e os recursos que o produto expõe.
+- **Próximo passo**: um link para a página [Get started](/pt-br/documentacao/guia-de-estilo/conteudo/get-started/) do produto.
+
+**Componentes opcionais**
+
+- **Quando usar**: os casos em que o produto serve, e os casos em que não serve.
+- **Conceitos principais**: os termos que o leitor encontra no resto da seção, uma linha cada.
+- **Limites**: um ponteiro para a página de referência que os contém.
+
+## Template
+
+```md
+**<Produto>** é <o que é>. Ele <o que faz>, então você pode <o problema que resolve>.
+
+<LinkButton link="<URL do get started>" label="Comece com <Produto>" severity="secondary" />
+
+Você pode criar e gerenciar <Produto> usando:
+
+- [Azion Console](<url>)
+- [API](<url>)
+- [Azion CLI](<url>)
+
+---
+
+## Implementação
+
+| Escopo | Recurso |
+| --- | --- |
+| <escopo> | <recurso> |
+
+---
+
+## Quando usar <Produto>
+
+<Os casos em que serve. Depois os casos em que não serve, e o que usar no lugar.>
+
+---
+
+## Relacionados
+
+- [<A página Get started>](<url>)
+- [<A página de referência do produto>](<url>)
+```
+
+## Regras
+
+- **Nomeie o produto na primeira frase.** Não o contexto do problema.
+- **Diga quando o produto é a escolha errada**, e nomeie o produto que serve no lugar.
+- **Envie o leitor para o [Get started](/pt-br/documentacao/guia-de-estilo/conteudo/get-started/)**, perto do topo e de novo no fim.
+- **Não coloque passos.** Um passo a passo aqui significa que falta um guia na seção.
+- **Mantenha a página escaneável.** Tabelas para o que é enumerável, uma ou duas frases entre elas.
+
+## Exemplos
+
+- [Object Storage](/pt-br/documentacao/store/object-storage/): abre com o produto e o que ele faz, depois as interfaces e o escopo de implementação.
+
+## Relacionados
+
+- [Referência](/pt-br/documentacao/guia-de-estilo/conteudo/referencia/): a forma base que a visão geral aplica, e a origem do template.
+- [Páginas Get started](/pt-br/documentacao/guia-de-estilo/conteudo/get-started/): a página para onde a visão geral envia o leitor.
+- [Arquitetura de informação](/pt-br/documentacao/guia-de-estilo/conteudo/arquitetura-de-informacao/): onde a visão geral fica na seção do produto.
+- [Escolher um tipo de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/): o catálogo completo de tipos de página.

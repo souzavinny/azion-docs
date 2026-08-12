@@ -3742,5 +3742,9 @@
  {
   "from": "https://www.azion.com/pt-br/documentacao/get-started/before-you-begin/",
   "moved": "https://www.azion.com/pt-br/documentacao/services/support/get-help/"
+ },
+ {
+  "from": "https://www.azion.com/pt-br/documentacao/guia-de-estilo/conteudo/explicacao/",
+  "moved": "https://www.azion.com/pt-br/documentacao/guia-de-estilo/conteudo/conceito/"
  }
 ]

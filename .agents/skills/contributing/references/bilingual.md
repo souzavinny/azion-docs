@@ -2,6 +2,8 @@
 
 Every page exists twice: English in `src/content/docs/en/`, Brazilian Portuguese in `src/content/docs/pt-br/`. English is the source of truth.
 
+**Canonical source:** `src/content/docs/en/pages/style-guide/conventions/bilingual.mdx`.
+
 ## The pairing
 
 Pages are paired by `namespace`, not by file path. `getPageTranslations.ts` finds a page's translation by matching that field, and it is what makes the language switcher work.

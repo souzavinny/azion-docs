@@ -2,6 +2,8 @@
 
 The build gates. Get these wrong and the page either fails CI or ships broken.
 
+**Canonical source:** `src/content/docs/en/pages/style-guide/conventions/frontmatter.mdx`. The validator behaviour and the field-by-field verdict table below are agent-only; the style guide states the rules without the gate mechanics.
+
 ## The template
 
 ```yaml
@@ -92,4 +94,4 @@ Azion's wider terminology guidance lists `permalink` as do-not-translate. That i
 - [ ] Namespace does not collide within the language
 - [ ] If this is a translation, namespace matches the English page exactly
 - [ ] No `type:` field unless this is a card-grid home
-- [ ] `pnpm build:local` passes
+- [ ] `npm run build:local` passes

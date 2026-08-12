@@ -2,6 +2,8 @@
 
 Only what is live in this repository. Usage counts are from the content directory.
 
+**No canonical style-guide page.** `style-guide/components.mdx` is a placeholder: components and visual design belong to another team and that section holds their place. Until it lands, this file is authoritative.
+
 **`src/components/` contains a lot of dead code.** This site began as a fork of the Astro docs, and most of the inherited components have never been used in an Azion page. Emitting one produces a page that looks plausible in review and fails at build.
 
 ## Do not use
@@ -69,7 +71,7 @@ Language tags in use: `bash`, `sh`, `json`, `javascript`, `js`, `typescript`, `t
 
 ## Tabs and Fragment — 328 uses
 
-The multi-interface pattern. Full example and rules in `.agents/skills/contributing/references/how-to.md`.
+The multi-interface pattern. The rule for when a task may branch is in `src/content/docs/en/pages/style-guide/content/how-to-guides.mdx`.
 
 ```mdx
 import Tabs from '~/components/tabs/Tabs'
@@ -155,3 +157,13 @@ Tables are plain GFM pipe tables. Horizontal scrolling is added automatically; d
 - Every tag must be closed or self-closing.
 - No H1 in the body; `title` renders it.
 - `---` between major sections is house style, roughly three per page. Never immediately after the frontmatter block.
+
+## Images
+
+Markdown image syntax, with a root-absolute path and no language prefix:
+
+```mdx
+![Dataflow for content delivery at the edge](/assets/docs/images/uploads/content-delivery-dataflow.png)
+```
+
+Use a raw `<img>` with `width` only when you genuinely need to constrain the size inside a component slot. Alt text rules are in `house-style.md`, canonically `style-guide/formatting/images.mdx`.

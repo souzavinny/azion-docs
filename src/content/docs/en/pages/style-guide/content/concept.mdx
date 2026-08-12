@@ -1,0 +1,93 @@
+---
+title: Concept pages
+description: >-
+  How to write a concept page: explain why something works the way it does,
+  name the alternatives, and state the tradeoff.
+meta_tags: 'style guide, concept, explanation'
+namespace: documentation_style_guide_concept
+permalink: /documentation/style-guide/content/concept/
+menu_namespace: styleGuideMenu
+---
+
+## Purpose
+
+A concept page builds understanding. The reader is not in the middle of a task; they want to understand how something works and why it is built that way, usually before deciding to use it.
+
+It applies the **explanation** base form, one of the four Diátaxis forms. When a design combines several products, write an [architecture page](/en/documentation/style-guide/content/architecture/) instead: it is the same base form with a diagram and a dataflow.
+
+## When to use
+
+Write a concept page when:
+
+- The reader wants the reason the product works this way, not the steps.
+- A how-to guide grows a long preamble, or a reference page stops to justify a design.
+- The page must compare alternatives and name a tradeoff.
+
+Do not write a concept page when:
+
+- The reader needs to look up a value, a field, or a limit. Write a [reference page](/en/documentation/style-guide/content/reference/).
+- The reader needs steps for a task. Write a [how-to guide](/en/documentation/style-guide/content/how-to-guides/) or a [tutorial](/en/documentation/style-guide/content/tutorials/).
+- The subject is how several products combine into a design. Write an [architecture page](/en/documentation/style-guide/content/architecture/).
+
+This is the page kind most often missing. When another kind starts to explain, write the concept page and keep that kind clean.
+
+## Register
+
+Descriptive: 25 words per sentence, active voice, passive only when the actor is unknown. [Sentence structure](/en/documentation/style-guide/writing/sentence-structure/) holds the rules.
+
+## Structure
+
+**Required components**
+
+- **Lead paragraph**: the problem the design solves, plus one sentence naming the intended reader.
+- **The approach**: how the design solves the problem.
+- **The tradeoff**: what the design costs, and when it is the wrong choice.
+- **What to read next**: links to the pages that implement or extend the design.
+
+**Optional components**
+
+- **Key terms**: the vocabulary the reader needs, defined once each.
+- **Alternatives**: the other ways to solve the problem, and what each trades away.
+- **A diagram**: when the relationship is easier to draw than to describe.
+
+## Template
+
+```md
+<The problem this design solves, and what it works against.> This page is for <the intended reader> who wants to <what that reader wants to do>.
+
+## How <the thing> works
+
+<The approach. What happens, in what order, and what decides each step.>
+
+## Why it works this way
+
+<The reasoning. What the design was built against, and what it rejected.>
+
+## The tradeoff
+
+<What the design costs. When it is the wrong choice, and what to use instead.>
+
+## Related
+
+- [<The reference page for the settings>](<url>)
+- [<The how-to guide that implements it>](<url>)
+```
+
+## Rules
+
+- **Explain the why, not the how.** Steps live in guides, and the reader can find them there.
+- **Name the alternatives and the tradeoff.** This is the only page kind where alternatives belong.
+- **Discuss, do not enumerate.** A page that becomes a table of fields wants to be [reference](/en/documentation/style-guide/content/reference/).
+- **Define each term once**, where the reader first meets it, then link to it.
+- **Avoid claims that expire.** "Currently" and "will soon" age badly and nobody returns.
+
+## Examples
+
+- [How Azion works](/en/documentation/fundamentals/concepts/how-azion-works/): the platform explained for a reader deciding how the pieces fit together.
+
+## Related
+
+- [Architecture pages](/en/documentation/style-guide/content/architecture/): the same base form, for a design that spans products.
+- [Reference](/en/documentation/style-guide/content/reference/): where the settings and the limits belong.
+- [How-to guides](/en/documentation/style-guide/content/how-to-guides/): where the steps belong.
+- [Choose a content type](/en/documentation/style-guide/content/choose-a-content-type/): the full catalogue of page kinds.

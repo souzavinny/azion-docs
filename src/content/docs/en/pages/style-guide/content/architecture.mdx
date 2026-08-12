@@ -1,0 +1,100 @@
+---
+title: Architecture pages
+description: >-
+  How to write an architecture page: the diagram, the dataflow, the components,
+  and the links to the guides that implement the design.
+meta_tags: 'style guide, architecture, explanation'
+namespace: documentation_style_guide_architecture
+permalink: /documentation/style-guide/content/architecture/
+menu_namespace: styleGuideMenu
+---
+
+## Purpose
+
+An architecture page shows how several products combine into one design. The reader wants to understand the shape of a solution before building it.
+
+It applies the **explanation** base form, the same form as a [concept page](/en/documentation/style-guide/content/concept/). The difference is the subject: a concept page explains one thing, an architecture page explains how many things fit together.
+
+## When to use
+
+Write an architecture page when:
+
+- A solution needs more than one product, and the relationship between them is the point.
+- The reader must see the order of a request or a dataflow to understand the design.
+- A guide keeps redrawing the same system in prose.
+
+Do not write an architecture page when:
+
+- The subject is one product or one idea. Write a [concept page](/en/documentation/style-guide/content/concept/).
+- The reader wants to build the thing. Write a [multi-product guide](/en/documentation/style-guide/content/multi-product-guides/) and link it from here.
+- The design cannot be drawn. A design you cannot draw is one you do not yet understand well enough to publish.
+
+## Register
+
+Descriptive: 25 words per sentence, active voice, passive only when the actor is unknown. [Sentence structure](/en/documentation/style-guide/writing/sentence-structure/) holds the rules.
+
+## Structure
+
+**Required components**
+
+- **Lead paragraph**: the problem this design solves, and who it is for.
+- **Architecture diagram**: the diagram, then a paragraph that reads it.
+- **Dataflow**: a numbered walkthrough of what moves where.
+- **Components**: what each part does and why it is there.
+- **Implementation**: links to the guides that build it. This section links; it does not instruct.
+
+**Optional components**
+
+- **The tradeoff**: what the design costs, and when a simpler one is enough.
+- **Variants**: the same design with one component swapped.
+
+## Template
+
+```md
+<The problem this design solves, and what it works against.> This document is for <the intended audience> who want to <what that audience wants to do>.
+
+## <Design name> architecture diagram
+
+![<What the diagram shows>](/assets/docs/images/uploads/<diagram-file>.png)
+
+<A paragraph that reads the diagram: what to look at first, and what depends on what.>
+
+### <Design name> dataflow
+
+1. <What moves first, and where it goes.>
+2. <What the platform does with it.>
+3. <Where the flow ends.>
+
+## Components
+
+- **<Component name>**: <what it does and why it is there>.
+- **<Component name>**: <what it does and why it is there>.
+
+## Implementation
+
+- [<Guide that implements this design>](<guide URL>)
+
+## Related docs
+
+- [<Related page>](<page URL>)
+```
+
+## Rules
+
+- **Let the diagram carry the explanation.** Draw it first, then write the paragraph that reads it.
+- **Write the dataflow so it survives without the image.** The markdown twin carries the list, not the diagram.
+- **Write alt text that describes what the diagram shows**, and never rely on colour alone.
+- **Name every component and say why it is there.** A list of product names is a parts list.
+- **Link the implementation, do not inline it.** Steps belong in a [multi-product guide](/en/documentation/style-guide/content/multi-product-guides/).
+- **Date a design that belongs to a moment**, rather than letting the page age in silence.
+
+## Examples
+
+- [Deploy Jamstack websites at the edge](/en/documentation/architectures/jamstack/deploy-jamstack-applications/): a diagram, a numbered dataflow, the components involved, and links out to the implementation.
+
+## Related
+
+- [Concept pages](/en/documentation/style-guide/content/concept/): the same base form, for one idea rather than a system.
+- [Multi-product guides](/en/documentation/style-guide/content/multi-product-guides/): the page that builds what this one describes.
+- [Images](/en/documentation/style-guide/formatting/images/): alt text and asset paths.
+- [Choose a content type](/en/documentation/style-guide/content/choose-a-content-type/): the full catalogue of page kinds.

@@ -1,0 +1,93 @@
+---
+title: Páginas de conceito
+description: >-
+  Como escrever uma página de conceito: explique por que algo funciona assim,
+  nomeie as alternativas e declare o trade-off.
+meta_tags: 'style guide, concept, explanation'
+namespace: documentation_style_guide_concept
+permalink: /documentacao/guia-de-estilo/conteudo/conceito/
+menu_namespace: styleGuideMenu
+---
+
+## Propósito
+
+Uma página de conceito constrói entendimento. O leitor não está no meio de uma tarefa; ele quer entender como algo funciona e por que é construído assim, normalmente antes de decidir usar.
+
+Ela aplica a forma base de **explicação**, uma das quatro formas do Diátaxis. Quando um design combina vários produtos, escreva uma [página de arquitetura](/pt-br/documentacao/guia-de-estilo/conteudo/arquitetura/): é a mesma forma base, com diagrama e dataflow.
+
+## Quando usar
+
+Escreva uma página de conceito quando:
+
+- O leitor quer a razão de o produto funcionar assim, e não os passos.
+- Um guia how-to ganha um preâmbulo longo, ou uma página de referência para para justificar um design.
+- A página precisa comparar alternativas e nomear um trade-off.
+
+Não escreva uma página de conceito quando:
+
+- O leitor precisa consultar um valor, um campo ou um limite. Escreva uma [página de referência](/pt-br/documentacao/guia-de-estilo/conteudo/referencia/).
+- O leitor precisa de passos para uma tarefa. Escreva um [guia how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/) ou um [tutorial](/pt-br/documentacao/guia-de-estilo/conteudo/tutoriais/).
+- O assunto é como vários produtos formam um design. Escreva uma [página de arquitetura](/pt-br/documentacao/guia-de-estilo/conteudo/arquitetura/).
+
+Este é o tipo de página que mais falta. Quando outro tipo começa a explicar, escreva a página de conceito e mantenha aquele tipo limpo.
+
+## Registro
+
+Descritivo: 25 palavras por frase, voz ativa, passiva apenas quando o agente é desconhecido. [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/) tem as regras.
+
+## Estrutura
+
+**Componentes obrigatórios**
+
+- **Parágrafo de abertura**: o problema que o design resolve, mais uma frase nomeando o leitor pretendido.
+- **A abordagem**: como o design resolve o problema.
+- **O trade-off**: o que o design custa, e quando ele é a escolha errada.
+- **O que ler em seguida**: links para as páginas que implementam ou estendem o design.
+
+**Componentes opcionais**
+
+- **Termos principais**: o vocabulário que o leitor precisa, definido uma vez cada.
+- **Alternativas**: as outras formas de resolver o problema, e o que cada uma abre mão.
+- **Um diagrama**: quando a relação é mais fácil de desenhar do que de descrever.
+
+## Template
+
+```md
+<O problema que este design resolve, e contra o que ele trabalha.> Esta página é para <o leitor pretendido> que quer <o que esse leitor quer fazer>.
+
+## Como <a coisa> funciona
+
+<A abordagem. O que acontece, em que ordem, e o que decide cada passo.>
+
+## Por que funciona assim
+
+<O raciocínio. Contra o que o design foi construído, e o que ele rejeitou.>
+
+## O trade-off
+
+<O que o design custa. Quando ele é a escolha errada, e o que usar no lugar.>
+
+## Relacionados
+
+- [<A página de referência das configurações>](<url>)
+- [<O guia how-to que implementa isso>](<url>)
+```
+
+## Regras
+
+- **Explique o porquê, não o como.** Os passos ficam nos guias, e o leitor os encontra lá.
+- **Nomeie as alternativas e o trade-off.** Este é o único tipo de página onde alternativas pertencem.
+- **Discuta, não enumere.** Uma página que vira tabela de campos quer ser [referência](/pt-br/documentacao/guia-de-estilo/conteudo/referencia/).
+- **Defina cada termo uma vez**, onde o leitor o encontra primeiro, e depois aponte para ele.
+- **Evite afirmações que expiram.** "Atualmente" e "em breve" envelhecem mal e ninguém volta.
+
+## Exemplos
+
+- [Como a Azion funciona](/pt-br/documentacao/fundamentals/concepts/how-azion-works/): a plataforma explicada para quem está decidindo como as peças se encaixam.
+
+## Relacionados
+
+- [Páginas de arquitetura](/pt-br/documentacao/guia-de-estilo/conteudo/arquitetura/): a mesma forma base, para um design que atravessa produtos.
+- [Referência](/pt-br/documentacao/guia-de-estilo/conteudo/referencia/): onde as configurações e os limites pertencem.
+- [Guias how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/): onde os passos pertencem.
+- [Escolher um tipo de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/): o catálogo completo de tipos de página.

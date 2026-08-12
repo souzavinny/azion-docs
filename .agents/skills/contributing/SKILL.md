@@ -1,6 +1,6 @@
 ---
 name: contributing
-description: Use when writing, rewriting, or splitting a page in the Azion documentation repository — choosing a content type, drafting a tutorial, how-to, reference, or explanation, setting frontmatter and permalinks, adding the Portuguese version, or registering a page in a sidebar.
+description: Use when writing, rewriting, or splitting a page in the Azion documentation repository — choosing a page kind, drafting an overview, get-started, tutorial, how-to, multi-product guide, troubleshooting, reference, concept, architecture, changelog, or navigation hub, setting frontmatter and permalinks, adding the Portuguese version, or registering a page in a sidebar.
 ---
 
 # Contributing to Azion Docs
@@ -8,6 +8,12 @@ description: Use when writing, rewriting, or splitting a page in the Azion docum
 This is the skill to load for any content change in this repository. It holds no detail itself. It routes you to the reference that matches your task. Read that reference, then follow it.
 
 Paths are relative to this skill directory unless they start with `.agents/`, which means repo root.
+
+## Where the rules live
+
+The published style guide at `src/content/docs/en/pages/style-guide/` is where the writing rules live. It is terse and it is canonical. Read the page; do not work from memory.
+
+**The style guide holds the writing rules. `.agents` does not repeat them.** The content-type rules live only in the style guide, and `references/content-types.md` maps each kind to its page. What `.agents` owns outright, because the style guide does not cover it: components, sidebar registration, build gates, the markdown twin, and review calibration.
 
 ## Ground rules
 
@@ -22,7 +28,7 @@ Paths are relative to this skill directory unless they start with `.agents/`, wh
 Answer these before writing. If the request already covers them, skip ahead.
 
 - **What is the source of truth?** A spec, an existing page, an engineer, a product brief. Documentation invented from nothing is documentation nobody can verify.
-- **What does the reader want to do?** This decides the content type. See `references/choosing-a-content-type.md`.
+- **What does the reader want to do?** This decides the page kind. See `references/content-types.md`.
 - **Does a page already cover this?** Check before adding. Extending a page usually beats creating a neighbour.
 - **English or both languages?** English is the source of truth. See `references/bilingual.md`.
 
@@ -33,16 +39,13 @@ Answer these before writing. If the request already covers them, skip ahead.
 | Write a new page from scratch | `references/writing-a-page.md` |
 | Fix or restructure an existing page | `references/rewriting-a-page.md` |
 | Break a large page into several | `references/splitting-a-page.md` |
-| Decide which content type to write | `references/choosing-a-content-type.md` |
-| Write a tutorial (learning by doing) | `references/tutorial.md` |
-| Write a how-to (a task with a goal) | `references/how-to.md` |
+| Decide which kind of page to write, and find its rules | `references/content-types.md` |
+| Write a commercial use case | Load the `writing-a-use-case` skill instead |
 | Write the agent-facing `.md` twin of a how-to or tutorial | `references/agent-twin.md` |
-| Write reference (look-up material) | `references/reference.md` |
-| Write explanation (understanding) | `references/explanation.md` |
 | Set frontmatter, namespace, permalink | `references/frontmatter-and-permalinks.md` |
 | Add or update the Portuguese version | `references/bilingual.md` |
 | Make a page appear in a sidebar | `references/sidebar-registration.md` |
-| Look up voice and formatting rules | `.agents/references/house-style.md` |
+| Look up voice, formatting, and accessibility rules | `.agents/references/house-style.md` |
 | Check sentence length, tense, voice, noun clusters | `.agents/references/simplified-technical-english.md` |
 | Check a draft for machine-generated patterns | `.agents/references/writing-quality.md` |
 | Check page length and retrieval chunking | `.agents/references/page-size.md` |
@@ -53,10 +56,10 @@ Answer these before writing. If the request already covers them, skip ahead.
 ## Validate before you finish
 
 ```bash
-pnpm build:local
+npm run build:local
 ```
 
-This runs the build and the frontmatter validator. Both must pass. A missing `namespace` or a malformed `permalink` exits non-zero, and the message names the file.
+On this branch that runs the build, the frontmatter validator, and `lint:navcheck`. All three must pass. A missing `namespace` or a malformed `permalink` exits non-zero, and the message names the file.
 
 Then check by hand what the build cannot:
 

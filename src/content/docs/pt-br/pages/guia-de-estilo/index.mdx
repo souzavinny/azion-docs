@@ -18,7 +18,7 @@ Este guia descreve como a Azion escreve sua documentação. Use este guia quando
 - [Escolha de palavras](/pt-br/documentacao/guia-de-estilo/escrita/escolha-de-palavras/): vocabulário a evitar e os padrões que parecem gerados por máquina.
 - [Terminologia](/pt-br/documentacao/guia-de-estilo/escrita/terminologia/): nomes de produtos e regras de tradução.
 - [Títulos](/pt-br/documentacao/guia-de-estilo/formatacao/titulos/), [formatação de texto](/pt-br/documentacao/guia-de-estilo/formatacao/texto/) e [código](/pt-br/documentacao/guia-de-estilo/formatacao/codigo/): como o conteúdo é formatado.
-- [Estratégia de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/): a [arquitetura de informação](/pt-br/documentacao/guia-de-estilo/conteudo/arquitetura-de-informacao/), os quatro tipos de conteúdo e como escolher um.
+- [Estratégia de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/): a [arquitetura de informação](/pt-br/documentacao/guia-de-estilo/conteudo/arquitetura-de-informacao/), os tipos de página e como escolher um.
 - [Convenções de arquivos](/pt-br/documentacao/guia-de-estilo/convencoes/frontmatter/): frontmatter e [páginas bilíngues](/pt-br/documentacao/guia-de-estilo/convencoes/paginas-bilingues/).
 - [Componentes](/pt-br/documentacao/guia-de-estilo/componentes/), [Documentação de API](/pt-br/documentacao/guia-de-estilo/api-docs/) e [Como escrevemos a documentação](/pt-br/documentacao/guia-de-estilo/como-documentamos/): seções reservadas para conteúdo que ainda não foi escrito.
 
@@ -28,7 +28,7 @@ Este guia cobre escrita e arquitetura de informação. Componentes, design visua
 
 ## As regras para agentes
 
-O repositório da documentação também carrega estas regras em formato legível por máquina, no diretório `.agents` de [aziontech/docs](https://github.com/aziontech/docs). Agentes de código carregam esses arquivos como contexto. As duas versões compartilham um só conjunto de regras. Este guia as explica para pessoas, com razões e exemplos; os arquivos para agentes as declaram de forma resumida. Quando você mudar uma regra, mude as duas versões.
+Este guia é a fonte única das regras de escrita, e agentes de código leem estas páginas diretamente. O diretório `.agents` de [aziontech/docs](https://github.com/aziontech/docs) direciona o agente para a página certa aqui e acrescenta o que este guia não cobre: os componentes MDX, os arquivos de menu, os validadores de build e a versão em markdown de cada página. Uma regra muda em um lugar só, aqui.
 
 ## O guia segue as próprias regras
 
