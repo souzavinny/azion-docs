@@ -210,7 +210,7 @@ Targets: 2,000 characters per `##` section, 8,000 per page body. Hard caps 4,000
 
 ## Terminology
 
-`Applications` not `Edge Application`. `Functions` not `Edge Functions`. `Firewall` not `Edge Firewall`. `Azion Web Platform` not `Azion Edge Platform`.
+`Applications` not `Edge Application`. `Functions` not `Edge Functions`. `Firewall` not `Edge Firewall`. `Azion Platform` (or `Azion Web Platform`) not `Azion Edge Platform`.
 
 Changelogs, release notes, and dated agreements are exempt: they record what was true when written.
 

@@ -11,19 +11,38 @@ menu_namespace: styleGuideMenu
 
 ## Use current product names
 
-Azion renamed several products. The current names below are the only correct forms in new text, in both languages.
+Azion renamed its products and platform resources. The current names below are the only correct forms in new text, in both languages.
 
 | Use | Not |
 | --- | --- |
 | Applications | Edge Application, Edge Applications |
 | Functions | Edge Functions |
 | Firewall | Edge Firewall |
-| Azion Web Platform | Azion Edge Platform |
+| Connectors | Edge Connector |
+| Console | Real-Time Manager |
+| Cache | Edge Cache |
+| Application Accelerator | Application Acceleration |
+| AI Inference | Edge AI |
+| Image Processor | Image Processing |
+| Orchestrator | Edge Orchestrator |
+| KV Store | Edge KV |
+| Object Storage | Edge Storage |
+| SQL Database | Edge SQL |
+| Network Shield | Network Layer Protection |
+| Data Stream | Data Streaming |
+| Azion Platform | Azion Edge Platform |
 | Azion Marketplace | Marketplace da Azion |
 
-**Azion Platform** is an accepted short form of **Azion Web Platform**.
+**Azion Platform** is the canonical platform name, and **Azion Web Platform** is an accepted alternative. Prefer **Azion Platform** in security content. Never write **Azion Edge Platform**, in any language.
 
 The old names are legacy because the rename retired them. They still appear in old pages, URLs, and directory names, so they can look current. Treat these names as history, not as synonyms.
+
+## Name a module as a product
+
+**Applications**, **Firewall**, **Connectors**, and **Console** are platform resources: capabilities of the platform itself. The modules of a resource are products. Name the product first, with the resource as context.
+
+- Correct: `Web Application Firewall (WAF) is a Firewall module that inspects HTTP and HTTPS requests.`
+- Incorrect: `Firewall is a product that includes WAF.`
 
 ## Keep historical names in historical documents
 
@@ -52,9 +71,10 @@ On Portuguese pages, use the terms in the right column:
 | computação na borda | edge computing |
 | Plataforma na Borda da Azion | Plataforma da Azion |
 | Plataforma Edge da Azion | Plataforma da Azion |
-| módulo | solução |
 | nodo | node |
 | centro de dados | data center |
+
+Do not replace `módulo`. It is the correct word for a module of a product or a resource: `WAF é um módulo do Firewall`. Avoid `módulo` only when it stands loosely for a whole product.
 
 These substitutions cover the choices that go wrong most often in translation. The full set of translation rules is in [Bilingual pages](/en/documentation/style-guide/conventions/bilingual/).
 
@@ -70,8 +90,8 @@ These expressions promote; they do not describe. Documentation states behavior a
 
 Capitalize the first word and proper nouns only. The rule applies to titles and headings in both languages.
 
-- Correct: `How to configure cache policies`
-- Incorrect: `How To Configure Cache Policies`
+- Correct: `Configure cache policies`
+- Incorrect: `Configure Cache Policies`
 
 A product name keeps its capitals in any position, because it is a proper noun.
 

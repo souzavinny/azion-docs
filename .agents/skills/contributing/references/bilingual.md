@@ -54,7 +54,7 @@ The vocabulary rules do not. The Portuguese side is the substitution table in `.
 
 Full rules in `.agents/references/terminology.md`. The ones that come up constantly:
 
-**Do not translate** generic technical terms — `edge computing`, `edge`, `edge location`, `data center`, `serverless`, `template`, `compliance`, `on-premise` — or product names: `Applications`, `Functions`, `Firewall`, `Azion Web Platform`, `Azion Marketplace`.
+**Do not translate** generic technical terms — `edge computing`, `edge`, `edge location`, `data center`, `serverless`, `template`, `compliance`, `on-premise` — or product names: `Applications`, `Functions`, `Firewall`, `Azion Platform`, `Azion Marketplace`.
 
 **Substitutions** that are easy to get wrong:
 
@@ -66,7 +66,8 @@ Full rules in `.agents/references/terminology.md`. The ones that come up constan
 | centro de dados | data center |
 | desempenho | performance |
 | cacheado | armazenado em cache |
-| módulo | solução |
+
+`módulo` is not on the list. It is the correct word for a module of a product or a resource: "WAF é um módulo do Firewall".
 
 **Titles are sentence case** in Portuguese: capitalize the first word and proper nouns only.
 
