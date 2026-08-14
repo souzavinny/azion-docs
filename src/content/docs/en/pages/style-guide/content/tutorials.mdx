@@ -25,13 +25,14 @@ Procedural: 20 words per sentence, one instruction per step, imperative and acti
 
 ## Structure
 
+The title is an imperative verb phrase naming the artifact: `Build a comments API`, `Deploy a static site with Functions`.
+
 **Required components**
 
-- **Opening paragraph**: what the reader will build and roughly how long it takes.
-- **Before you start**: the minimum real prerequisites, each a link or a one-line command.
-- **Numbered steps**: one instruction each, each ending with a visible result.
-- **What you built**: one paragraph that restates the result.
-- **Next steps**: two or three links, each with a reason to click it.
+- **Opening move**: `In this tutorial, you will <verb> <the artifact and its goal>.` Then one sentence enumerating the sub-goals: "You will create ..., configure ..., and deploy ...".
+- **Prerequisites**: a `## Prerequisites` section, always first, each item a link or a one-line command where one exists, otherwise a noun phrase.
+- **Stages**: numbered stage headings, `## 1. <Imperative verb phrase>`, in build order. `(Optional)` may follow the number: `## 8. (Optional) Add a custom domain`. The final stage deploys or verifies.
+- **Next steps**: a `## Next steps` closing with bulleted links shaped `[Title](/path/) - one sentence on why the reader would follow it.`
 
 **Optional components**
 
@@ -40,46 +41,82 @@ Procedural: 20 words per sentence, one instruction per step, imperative and acti
 
 ## Template
 
-Copy the template and replace each `<placeholder>`.
+Copy the template and replace each `<placeholder>`:
 
 ```md
-[One paragraph: what the reader will build,
-and roughly how long it takes.]
+In this tutorial, you will <verb> <the artifact and its goal>.
+You will create <...>, configure <...>, and deploy <...>.
 
-## Before you start
+## Prerequisites
 
-- <A prerequisite the page cannot supply, as a link or a one-line command>
+- <A link or a one-line command where one exists, otherwise a noun phrase>
 
-## Step 1: <verb phrase>
+## 1. <Imperative verb phrase>
 
-<What to do. Then what the reader should see.>
+<A procedure. Every step shows a visible result.>
 
-## Step 2: <verb phrase>
+<The outcome sentence: what the reader now has or sees.>
+
+## 2. <Imperative verb phrase>
 
 <...>
 
-## What you built
+## 3. (Optional) <Imperative verb phrase>
 
-<Restate the result. One paragraph.>
+<An optional stage. `(Optional)` follows the number.>
+
+## 4. <Imperative verb phrase that deploys or verifies>
+
+<...>
 
 ## Next steps
 
-- <Link>: <the reason to click it>
-- <Link>: <the reason to click it>
+- [Title](/path/) - one sentence on why the reader would follow it.
+- [Title](/path/) - one sentence on why the reader would follow it.
 ```
 
 ## Rules
 
-- **Keep the promise.** Every step works and every command was run before the page shipped.
-- **Choose everything.** The goal, the interface, and every value. The reader is here to learn, not to choose.
-- **Do not branch.** One path. Alternatives belong in a how-to guide, and tabs are a branch.
-- **Do not explain.** One sentence and a link when a concept is genuinely required.
-- **Show the result of every step.** Command output, a screenshot, a URL, or a value that changed.
-- **Keep tutorials scarce.** One per product area. Each one breaks on some future release.
+- **Keep the contract.** You choose every option: no branching, no "depending on your needs". Every step shows a visible result, and every command was run.
+- **No `<Tabs>`.** Tabs are a branch, and tutorials do not branch. A task that genuinely needs three interfaces is a [how-to guide](/en/documentation/style-guide/content/how-to-guides/).
+- **Do not explain.** One sentence and a link when a concept is genuinely required. Keep asides rare.
+- **Give every code block a colon lead-in.** "Install the CLI:" then the command. Use `<Code>` for anything the reader copies.
+- **Keep tutorials scarce.** One per product area. Tutorials are expensive to keep working.
+- **Mark gaps, never fill them.** A mandated slot the input does not supply gets a `[GAP: ...]` marker, never silent omission, never invention.
+- **Link the how-tos and concepts the tutorial touched in `## Next steps`.** Give each link its reason.
 
 ## Examples
 
-Content coming soon.
+This excerpt of a tutorial that builds a user list API shows the opening move, the prerequisites, and the first stage:
+
+```mdx
+In this tutorial, you will build a user list API with **Functions** and **SQL Database**. You will create a database, seed a `users` table, create a function, and route requests to it.
+
+## Prerequisites
+
+- An Azion account with a configured personal token
+- An application with a domain in the format `xxxxxxxxxx.map.azionedge.net`
+
+---
+
+## 1. Create the database
+
+To create the database, send a `POST` request to the databases endpoint:
+
+<Code lang="bash" code={`curl --location 'https://api.azion.com/v4/edge_sql/databases' \\
+--header 'Authorization: Token [TOKEN VALUE]' \\
+--header 'Content-Type: application/json' \\
+--data '{"name": "mydatabase"}'`} />
+
+The response returns `"state": "pending"` and `"status": "creating"`. Database creation is asynchronous.
+
+To check the creation status, send `GET` requests to the same endpoint until `status` is `created`:
+
+<Code lang="bash" code={`curl --location 'https://api.azion.com/v4/edge_sql/databases' \\
+--header 'Authorization: Token [TOKEN VALUE]'`} />
+
+The database is ready when `status` is `created`.
+```
 
 ## Related
 

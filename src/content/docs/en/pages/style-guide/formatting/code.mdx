@@ -15,9 +15,26 @@ An untested code block is a guess that looks authoritative. Prose signals uncert
 
 Run every command and every snippet before the page ships. When you cannot run one, do not publish a guess. Leave the gap visible and say what is missing. A page that states less, and is right about all of it, beats a page that guesses.
 
+## Compose, do not invent
+
+A code block mixes two kinds of content: the facts it carries and the syntax that expresses them. Tool syntax needed to express a sourced fact — `curl` flags, a `Content-Type` header carrying a given JSON body, shell quoting — is composition, not invention. A new product value, field, endpoint, or default is invention.
+
+For the rule that every specific traces to a source, refer to [Word choice](/en/documentation/style-guide/writing/word-choice/).
+
 ## Make placeholders obvious and consistent
 
 A placeholder has one job: the reader must see at a glance that the value is theirs to replace. Two formats do that job: brackets with capitals, `[TOKEN VALUE]`, and angle brackets with lowercase words, `<your-bucket-name>`. Use one format for every placeholder on a page; three conventions on one page teach the reader none.
+
+Each kind of value has a reserved form:
+
+| Kind of value | Form |
+| --- | --- |
+| Secret or token | `[TOKEN VALUE]` |
+| Reader-supplied name or value | `<your-bucket-name>`, `<your-azion-domain>` |
+| Example domain | `example.com`, `example.org` |
+| Example IP range | `192.0.2.0/24`, `198.51.100.0/24`, `203.0.113.0/24` |
+
+The IP ranges are reserved for documentation and route nowhere.
 
 - Incorrect: `--token abc123`
 - Correct: `--token [TOKEN VALUE]`

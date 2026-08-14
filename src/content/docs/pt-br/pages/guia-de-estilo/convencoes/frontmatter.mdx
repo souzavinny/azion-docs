@@ -11,17 +11,17 @@ menu_namespace: styleGuideMenu
 
 ## Comece pelo template
 
-Toda página da documentação abre com um bloco de frontmatter. Quem escreve define cinco campos:
+Toda página da documentação abre com um bloco de frontmatter. Quem escreve define cinco campos. O exemplo mostra a página em inglês do par, que é a fonte da verdade:
 
 ```yaml
 ---
-title: Como criar um bucket do Object Storage
+title: Create an Object Storage bucket
 description: >-
-  Aprenda a criar um novo bucket somente leitura e a atribuir permissões
-  de leitura e gravação a ele usando a API da Azion.
-meta_tags: 'Object Storage, bucket, S3, API'
-namespace: docs_store_journey_storage_create_bucket
-permalink: /documentacao/produtos/store/storage/criar-bucket/
+  Create a read-only Object Storage bucket and grant read-write
+  permissions from the Azion API, the CLI, or Azion Console.
+meta_tags: 'Object Storage, bucket, permissions, edge storage, create bucket'
+namespace: docs_store_storage_create_bucket
+permalink: /documentation/products/store/storage/create-bucket/
 ---
 ```
 
@@ -40,7 +40,7 @@ Duas regras se aplicam:
 
 A segunda regra não tem rede de proteção. O seletor perde a conexão entre as duas páginas em silêncio; confira o valor manualmente.
 
-Escreva o valor em palavras minúsculas unidas por underscore. Construa o valor a partir do produto e da funcionalidade: `docs_store_journey_storage_create_bucket`.
+Escreva o valor em palavras minúsculas unidas por underscore. Construa o valor a partir do produto e da funcionalidade: `docs_store_storage_create_bucket`.
 
 ## Defina o permalink
 
@@ -55,9 +55,11 @@ O `permalink` é a URL da página sem o segmento de idioma. Só o permalink defi
 
 A `description` vira a meta description da página. O valor de `meta_tags` vira as keywords, em uma lista separada por vírgulas entre aspas.
 
-Nenhuma verificação valida esses dois campos, então um campo vazio publica em silêncio. Escreva os dois em toda página. Escreva a description como uma ou duas frases completas que dizem o que o leitor realiza ou encontra na página; as regras de [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/) valem para ela.
+Nenhuma verificação valida esses dois campos, então um campo vazio publica em silêncio. Escreva os dois em toda página.
 
-Não abra com uma frase genérica que serve para qualquer página, como "Saiba mais sobre..." ou "Esta página descreve...". Uma abertura genérica gasta a description sem acrescentar informação.
+Escreva a description como uma ou duas frases que se sustentam sozinhas, com 50 a 160 caracteres. Comece com um verbo no imperativo e diga o que o leitor realiza na página. Não repita o título palavra por palavra. As regras de [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/) valem para a description.
+
+Quatro aberturas são proibidas: `Esta página descreve...`, `Este documento explica...`, `Saiba mais sobre...` e `Aprenda a...`. Comece direto com o verbo. Uma abertura genérica gasta a description sem acrescentar informação.
 
 ## Posicione a página em um menu lateral
 

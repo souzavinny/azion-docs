@@ -33,62 +33,36 @@ Descriptive: 25 words per sentence, active voice, passive only when the actor is
 
 **Required components**
 
-- **Title**: a noun phrase that names the product or the resource.
-- **Lead paragraph**: the product name in bold, plus what the reader can do with the product.
+- **Title**: a noun phrase naming the thing: `Object Storage`, `Cache settings`, `azion create bucket`.
+- **Opening move**: one to three definitional sentences about the artifact, then straight to the data. No procedure framing.
+- **Sections**: noun-phrase `##`s naming the actual object, field group, or level. Tables carry the information — fields, values, defaults, limits — with consistent phrasing down every column and units on every number. Prose between tables is one or two sentences of orientation.
+- **Limits**: a `## Limits` section when the product has them.
+- **Closing**: `## Related resources`, with links shaped `[Title](/path/) - reason`, covering the concept page and the main how-tos.
 
 **Optional components**
 
-- **Link button**: one primary call to action near the top of the page, and only one.
-- **Management interfaces**: a list that names Azion Console, API, Azion CLI, and Terraform.
-- **Implementation**: a table with the available scopes and the resource that implements each one.
-- **Modules**: a table with each module and a one-line description.
-- **Advanced settings**: a table with each setting and a description.
-- **Limits**: a table with each limit, under a tip that support can raise limits.
-- **Asides**: a tip above the limits table, and a caution for a version or migration warning. Use no other aside, and use these two sparingly.
+- **Asides**: a tip above the limits table when support can raise the limits, and a caution for a version or migration warning. Use no other aside.
 
-Omit a section that has nothing to describe. The sections that remain keep this order.
+The sections keep this order.
 
 ## Template
 
-Copy the template and replace each `<placeholder>`.
+Copy the template and replace each `<placeholder>`:
 
-```mdx
-import LinkButton from 'azion-webkit/linkbutton'
+```md
+**<Product or resource>** is <one to three definitional sentences about the artifact>.
 
-**<Product name>** is <what the product is>. With <Product name>, you can <what the reader can do>.
+## <Object, field group, or level, as a noun phrase>
 
-<LinkButton severity="secondary" label="<Call to action>" link="<destination URL>" />
+<One or two sentences of orientation.>
 
-You can create and manage <product name> with:
-
-- [Azion Console](<guide URL>)
-- [API](<API reference URL>)
-- [Azion CLI](<CLI reference URL>)
-- [Terraform](<Terraform reference URL>)
-
----
-
-## Implementation
-
-| Scope | Resource |
+| Field | Description |
 | --- | --- |
-| <Scope> | <Resource that implements it> |
+| <Field name> | <What it holds, with the default value> |
 
----
+## <Object, field group, or level, as a noun phrase>
 
-## Modules
-
-| Module | Description |
-| --- | --- |
-| <Module name> | <One-line description> |
-
----
-
-## Advanced settings
-
-| Setting | Description |
-| --- | --- |
-| <Setting name> | <What it does, with the default value> |
+<...>
 
 ---
 
@@ -101,22 +75,51 @@ Support can raise these limits. Contact <support link>.
 | Scope | Limit |
 | --- | --- |
 | <Scope> | <Value with the unit> |
-```
 
-A CLI command page takes a different shape. It opens with a one-line summary, then a `Usage` section with a shell block. An `Optional flags` section closes the page, with one heading per flag.
+---
+
+## Related resources
+
+- [<The concept page>](<url>) - <why the reader would follow it>
+- [<A main how-to>](<url>) - <why the reader would follow it>
+```
 
 ## Rules
 
-- **Describe, do not instruct.** A numbered click-through belongs in a [how-to guide](/en/documentation/style-guide/content/how-to-guides/).
+- **Never a numbered click-through.** The moment one appears, the page is a [how-to guide](/en/documentation/style-guide/content/how-to-guides/) filed wrong. Link the how-to instead.
+- **Be complete before you are interesting.** A reference missing three of twelve fields is broken; one with dull descriptions of all twelve is doing its job.
 - **Put enumerable information in tables.** Fields, limits, flags, defaults, status codes.
 - **Keep phrasing consistent down a column.** Readers scan; varied phrasing forces them to read.
 - **State the units and the defaults.** A limit without a unit is not a fact.
-- **Be complete before you are interesting.** A page missing three of twelve fields is broken.
 - **No marketing.** Say what it does and where it stops.
+- **Mark gaps, never fill them.** A mandated slot the input does not supply gets a `[GAP: ...]` marker, never silent omission, never invention.
+- **A CLI command page has its own shape.** A one-line summary, then `## Usage` with the command, then `## Optional flags` with one entry per flag.
 
 ## Examples
 
-- [Rules Engine reference](/en/documentation/build/applications/reference/rules-engine/): describes criteria and behaviors in tables, and instructs nowhere.
+This excerpt of a reference page for **Object Storage** shows the definitional opening, one object section with its table, and the closing:
+
+```mdx
+**Object Storage** is a Store product that stores objects in buckets. A bucket is the container; an object is the stored item plus its metadata. Azion stores all buckets in the _us-east_ cloud region and bills storage per GB/hour, with no minimum retention.
+
+## Buckets
+
+Bucket names follow these rules:
+
+| Rule | Value |
+| --- | --- |
+| Length | 6 to 63 characters |
+| Characters | Alphanumeric characters and hyphen |
+| Reserved prefix | Must not start with `azion` |
+| Uniqueness | Exclusive across all Azion accounts |
+
+You cannot rename a bucket. You can delete a bucket only when it is empty, 24 hours after the removal of the final object.
+
+## Related resources
+
+- [Create an Object Storage bucket](/en/documentation/products/store/storage/create-bucket/) - create a bucket and set its `workloads_access` permission.
+- [Use a bucket as origin](/en/documentation/products/store/storage/use-bucket-as-origin/) - serve content from a bucket through Connectors.
+```
 
 ## Related
 

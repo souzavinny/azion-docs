@@ -37,63 +37,93 @@ Procedural: 20 words per sentence, one instruction per step, imperative and acti
 
 **Required components**
 
-- **Lead paragraph**: the outcome, stated first, in the reader's words.
-- **Prerequisites**: one aside listing what the reader needs before stage one.
-- **Stages**: one section per workflow stage, each an imperative heading naming the stage.
-- **Verification**: how the reader confirms the whole path worked, not just the last step.
+- **Problem opening**: one or two sentences stating the problem, before any product name. The products enter after the problem, by role: "You configure caching with **Applications** and request filtering with **Firewall**."
+- **Prerequisites**: a `## Prerequisites` section, bulleted; each item is a link or a one-line command. A single prerequisite is a sentence, not a list.
+- **Stages**: one `##` per workflow stage, never per product, each an imperative heading naming the stage. Each stage names its product on entry, holds an ordinary procedure, and stands alone.
+- **Outcome sentence**: every procedure ends by stating what the reader now has or sees.
+- **Next steps**: a closing `## Next steps` section with bulleted links, each shaped `[Title](/path/) - reason`.
 
 **Optional components**
 
 - **A products table**: what each product contributes, when more than three are involved.
 - **A diagram**: when the order of the pieces is hard to hold in prose. Link the [architecture page](/en/documentation/style-guide/content/architecture/) instead when one exists.
-- **Next steps**: one or two links that extend the result.
 
 ## Template
 
-```md
-<The outcome, in one sentence, in the reader's words.>
+Copy the template and replace each `<placeholder>`.
 
-:::tip
-<What the reader needs before starting, each as a link or a one-line command.>
-:::
+```md
+[One or two sentences: the problem first, then the
+products, by role.]
+
+## Prerequisites
+
+- <A link or a one-line command per item>
 
 ---
 
-## <Imperative heading naming the first stage>
+## <Imperative heading naming the first workflow stage>
+
+<One sentence naming the product this stage runs in.>
+
+To <reach the result of the stage>:
 
 1. <One imperative instruction.>
 2. <One imperative instruction.>
 
----
-
-## <Imperative heading naming the second stage>
-
-1. <One imperative instruction.>
+<The outcome: what the reader now has or sees.>
 
 ---
 
-## Verify the result
-
-<A check that tests the outcome, with what the reader should see.>
+## <Imperative heading naming the next stage>
 
 ---
 
-:::tip
-<One or two links that extend the result, each with a reason to follow it.>
-:::
+## Next steps
+
+- [<Title>](/path/) - <why the reader would follow it>
 ```
+
+Separate the major sections of the page with a `---` rule, and never place one directly after the frontmatter.
 
 ## Rules
 
-- **Title the goal, not the products.** The reader searches for the outcome.
-- **Commit to one recommended path.** Alternatives go in one aside, never as forks in the steps.
-- **Organize by workflow stage, not by product.**
+- **Title the goal, not the products.** The title states the goal in plain language, with no product names: `Serve a site with cached content and a protected checkout`. The reader searches for the outcome.
+- **State the problem first.** One or two sentences, then the products by role: "You configure caching with **Applications** and request filtering with **Firewall**."
+- **Order by the workflow, never by the product catalog.** A page organized product-by-product is a bundle of how-tos wearing one title.
 - **Name the product at each stage.** An unqualified interface name is ambiguous once the page crosses products.
-- **Verify the whole path.** These guides fail in the seams, so check the outcome and not the last click.
+- **Stay a how-to.** The products are the route, not the subject. A paragraph of product background belongs to a concept page; link it.
+- **Follow the step rules.** Steps follow [Procedures](/en/documentation/style-guide/writing/procedures/), and every procedure ends with its outcome sentence.
+- **Commit to one recommended path.** Alternatives go in one aside, never as forks in the steps.
+- **Verify the whole path.** These guides fail in the seams, so check the outcome and not the last step.
+- **Mark gaps instead of inventing.** A mandated slot the input does not fill gets a gap marker, never silent omission and never invention.
+- **Link the neighbors.** Each product's how-tos and reference page, from the body or from `## Next steps`.
 
 ## Examples
 
-Content coming soon.
+This excerpt shows the problem opening, the prerequisites, and the first workflow stage:
+
+```mdx
+Each route of a storefront needs a different rule. The catalogue can answer from cache, the cart must not, and the checkout needs a rate limit. You configure caching with **Applications** and request filtering with **Firewall**.
+
+## Prerequisites
+
+- An application that serves the store
+- A firewall
+
+## Turn on Application Accelerator
+
+The **Bypass Cache** behavior requires the **Application Accelerator** module of **Applications**.
+
+To turn on the module:
+
+1. Access [Azion Console](https://console.azion.com/) > **Applications** > **your application**.
+2. In the **Main Settings** tab, go to the **Modules** section.
+3. Turn on the **Application Accelerator** switch.
+4. Select **Save**.
+
+The Application Accelerator module is enabled for the application.
+```
 
 ## Related
 

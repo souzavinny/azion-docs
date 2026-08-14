@@ -15,9 +15,26 @@ Um bloco de código não testado é um palpite com aparência de autoridade. A p
 
 Execute cada comando e cada snippet antes de publicar a página. Quando não puder executar um, não publique um palpite. Deixe a lacuna visível e diga o que falta. Uma página que afirma menos, e acerta em tudo o que afirma, vale mais do que uma página que adivinha.
 
+## Componha, não invente
+
+Um bloco de código mistura dois tipos de conteúdo: os fatos que ele carrega e a sintaxe que os expressa. A sintaxe de ferramenta necessária para expressar um fato com fonte é composição, não invenção. Flags de `curl`, um cabeçalho `Content-Type` para um dado corpo JSON e as aspas do shell entram nessa categoria. Um novo valor de produto, campo, endpoint ou valor padrão é invenção.
+
+Para a regra de que cada dado rastreia até uma fonte, consulte [Escolha de palavras](/pt-br/documentacao/guia-de-estilo/escrita/escolha-de-palavras/).
+
 ## Torne os placeholders óbvios e consistentes
 
 Um placeholder tem um trabalho: o leitor precisa ver de imediato que deve substituir aquele valor. Dois formatos cumprem esse trabalho: colchetes com maiúsculas, `[TOKEN VALUE]`, e os sinais `<` e `>` com palavras minúsculas, `<your-bucket-name>`. Use um único formato para todos os placeholders de uma página; três convenções na mesma página não ensinam nenhuma.
+
+Cada tipo de valor tem uma forma reservada:
+
+| Tipo de valor | Forma |
+| --- | --- |
+| Segredo ou token | `[TOKEN VALUE]` |
+| Nome ou valor fornecido pelo leitor | `<your-bucket-name>`, `<your-azion-domain>` |
+| Domínio de exemplo | `example.com`, `example.org` |
+| Faixa de IP de exemplo | `192.0.2.0/24`, `198.51.100.0/24`, `203.0.113.0/24` |
+
+As faixas de IP são reservadas para documentação e não roteiam para nenhum destino.
 
 - Incorreto: `--token abc123`
 - Correto: `--token [TOKEN VALUE]`

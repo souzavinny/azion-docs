@@ -34,67 +34,106 @@ Descritivo: 25 palavras por frase, voz ativa, passiva apenas quando o agente é 
 
 **Componentes obrigatórios**
 
-- **Parágrafo de abertura**: o nome do produto na primeira frase, o que ele faz e o problema que resolve.
-- **Interfaces**: as formas de usar o produto, como links para Console, API, CLI e Terraform.
-- **Implementação**: uma tabela com o escopo e os recursos que o produto expõe.
-- **Próximo passo**: um link para a página [Get started](/pt-br/documentacao/guia-de-estilo/conteudo/get-started/) do produto.
+- **Bloco de definição**: `**<Produto>** é <uma definição de capacidade de cerca de 10 a 15 palavras>.` Depois os problemas que o produto resolve, como uma lista curta de benefícios em termos de comportamento.
+- **CTAs**: um `LinkButton` primário com o label **Primeiros passos** e um secundário com o label `Referência de <Produto>`.
+- **Seções de capacidade**: um `##` por capacidade ou solução principal. Títulos como expressões nominais; cada seção tem um parágrafo curto ou uma tabela.
+- **Interfaces**: a lista `Você pode criar e gerenciar <Produto> usando:`, com Azion Console, API, Azion CLI e Terraform como links.
+- **Fechamento**: `## Recursos relacionados`, com links no formato `[Título](/caminho/) - motivo`, cobrindo o get started e os conceitos principais.
 
-**Componentes opcionais**
-
-- **Quando usar**: os casos em que o produto serve, e os casos em que não serve.
-- **Conceitos principais**: os termos que o leitor encontra no resto da seção, uma linha cada.
-- **Limites**: um ponteiro para a página de referência que os contém.
+As seções mantêm essa ordem.
 
 ## Template
 
-```md
-**<Produto>** é <o que é>. Ele <o que faz>, então você pode <o problema que resolve>.
+Copie o template e substitua cada `<placeholder>`:
 
-<LinkButton link="<URL do get started>" label="Comece com <Produto>" severity="secondary" />
+```mdx
+import LinkButton from 'azion-webkit/linkbutton'
+
+**<Produto>** é <uma definição de capacidade de cerca de 10 a 15 palavras>.
+
+Use <Produto> para:
+
+- <Um problema que ele resolve, em termos de comportamento>
+- <...>
+
+<LinkButton label="Primeiros passos" link="<URL do get started>" />
+<LinkButton severity="secondary" label="Referência de <Produto>" link="<URL da referência>" />
+
+---
+
+## <Capacidade ou solução, como expressão nominal>
+
+<Um parágrafo curto ou uma tabela.>
+
+## <Capacidade ou solução, como expressão nominal>
+
+<...>
+
+---
+
+## Interfaces
 
 Você pode criar e gerenciar <Produto> usando:
 
 - [Azion Console](<url>)
 - [API](<url>)
 - [Azion CLI](<url>)
+- [Terraform](<url>)
 
 ---
 
-## Implementação
+## Recursos relacionados
 
-| Escopo | Recurso |
-| --- | --- |
-| <escopo> | <recurso> |
-
----
-
-## Quando usar <Produto>
-
-<Os casos em que serve. Depois os casos em que não serve, e o que usar no lugar.>
-
----
-
-## Relacionados
-
-- [<A página Get started>](<url>)
-- [<A página de referência do produto>](<url>)
+- [Primeiros passos de <Produto>](<url>) - <por que o leitor seguiria o link>
+- [<Conceito principal>](<url>) - <por que o leitor seguiria o link>
 ```
 
 ## Regras
 
+- **Nunca instrua.** Sem passos numerados, sem procedimentos, sem walkthrough de código. Uma visão geral que instrui é uma página [Get started](/pt-br/documentacao/guia-de-estilo/conteudo/get-started/) arquivada no lugar errado.
+- **Sem adjetivos de qualidade.** Diga o que o produto faz e onde para.
+- **O título é o nome do produto, um substantivo.** Não "documentação", não um gerúndio.
 - **Nomeie o produto na primeira frase.** Não o contexto do problema.
-- **Diga quando o produto é a escolha errada**, e nomeie o produto que serve no lugar.
 - **Envie o leitor para o [Get started](/pt-br/documentacao/guia-de-estilo/conteudo/get-started/)**, perto do topo e de novo no fim.
-- **Não coloque passos.** Um passo a passo aqui significa que falta um guia na seção.
+- **Marque lacunas, nunca as preencha.** Um componente obrigatório cujo conteúdo a fonte não fornece — um CTA, a lista de interfaces — recebe um marcador `[GAP: ...]`, nunca omissão silenciosa, nunca invenção.
 - **Mantenha a página escaneável.** Tabelas para o que é enumerável, uma ou duas frases entre elas.
 
 ## Exemplos
 
-- [Object Storage](/pt-br/documentacao/store/object-storage/): abre com o produto e o que ele faz, depois as interfaces e o escopo de implementação.
+O exemplo abaixo, em inglês, mostra o bloco de definição com os CTAs, a lista de interfaces e o fechamento de uma visão geral de **Data Stream**. Os componentes sem conteúdo na fonte carregam marcadores `[GAP: ...]`:
+
+```mdx
+**Data Stream** is an Observe product that feeds stream processing, SIEM, and big data platforms with your event logs in real time.
+
+Use Data Stream to:
+
+- Collect, group, and transmit raw logs to a destination that you choose.
+- Choose the Azion products and domains to collect logs from.
+- Choose the variables that the stream uses.
+
+<LinkButton label="Get started" link="/en/documentation/products/observe/data-stream/first-steps/" />
+
+[GAP: secondary CTA — permalink for a Data Stream reference page]
+
+---
+
+## Interfaces
+
+You can create and manage Data Stream using:
+
+- [GAP: management interfaces and their links — Console, API, CLI, Terraform availability not given]
+
+---
+
+## Related resources
+
+- [Data Stream first steps](/en/documentation/products/observe/data-stream/first-steps/) - Begin to use Data Stream.
+- [Configure Data Stream main settings](/en/documentation/products/guides/use-data-stream/) - Configure the main settings of a stream.
+```
 
 ## Relacionados
 
-- [Referência](/pt-br/documentacao/guia-de-estilo/conteudo/referencia/): a forma base que a visão geral aplica, e a origem do template.
+- [Referência](/pt-br/documentacao/guia-de-estilo/conteudo/referencia/): a forma base que a visão geral aplica.
 - [Páginas Get started](/pt-br/documentacao/guia-de-estilo/conteudo/get-started/): a página para onde a visão geral envia o leitor.
 - [Arquitetura de informação](/pt-br/documentacao/guia-de-estilo/conteudo/arquitetura-de-informacao/): onde a visão geral fica na seção do produto.
 - [Escolher um tipo de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/): o catálogo completo de tipos de página.

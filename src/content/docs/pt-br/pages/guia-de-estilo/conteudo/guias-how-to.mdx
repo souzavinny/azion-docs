@@ -28,15 +28,16 @@ Procedural: 20 palavras por frase, uma instrução por passo, imperativo e ativo
 
 **Componentes obrigatórios**
 
-- **Parágrafo de resultado**: a primeira frase declara o que o leitor tem ao terminar.
-- **Pré-requisitos**: um aside de dica perto do topo, nunca uma seção.
-- **Seções de tarefa**: títulos com frase verbal no imperativo e passos numerados, uma instrução cada.
-- **Estado final**: o último passo ou o fechamento declara o que o leitor vê quando a tarefa funcionou.
-- **Dica de fechamento**: um ou dois links para onde o leitor vai em seguida.
+- **Frase de escopo**: a abertura declara, em uma frase, o que a página permite ao leitor fazer e a partir de onde. Nunca `Neste guia`.
+- **Pré-requisitos**: uma seção `## Pré-requisitos` quando a página tem algum, em lista; cada item é um link ou um comando de uma linha. Um único pré-requisito é uma frase, não uma lista.
+- **Seções de tarefa**: um `##` por tarefa, cada um uma frase verbal no imperativo.
+- **Lead-in**: logo antes de cada procedimento, uma frase terminada em dois-pontos, como `Para criar o bucket:`.
+- **Frase de resultado**: todo procedimento termina declarando o que o leitor agora tem ou vê.
+- **Próximos passos**: uma seção final `## Próximos passos` com um ou dois links em lista, cada um no formato `[Título](/caminho/) - motivo`.
 
 **Componentes opcionais**
 
-- **Tabs por interface**, quando a tarefa roda em mais de uma interface.
+- **Tabs por interface**: um bloco `<Tabs>` quando uma tarefa roda em mais de uma interface, painel do Console primeiro, um procedimento completo por painel.
 - **Um aside** com o caminho alternativo, quando a tarefa genuinamente ramifica.
 
 ## Template
@@ -44,41 +45,88 @@ Procedural: 20 palavras por frase, uma instrução por passo, imperativo e ativo
 Copie o template e substitua cada `<placeholder>`.
 
 ```md
-[Um parágrafo: o resultado. Comece pelo resultado,
-não pelo contexto.]
+[Uma frase de escopo: o que a página permite ao leitor
+fazer, e a partir de onde.]
 
-:::tip[dica]
-Pré-requisitos, se houver. Um aside, não uma seção.
-:::
+## Pré-requisitos
+
+- <Um link ou um comando de uma linha por item>
+
+---
 
 ## <Frase verbal no imperativo que nomeia a tarefa>
 
-Passos. Em tabs por interface se a tarefa tem mais
-de uma. O último passo declara o que o leitor vê.
+Para <alcançar o resultado da tarefa>:
+
+1. <Uma instrução imperativa.>
+2. <Uma instrução imperativa.>
+
+<O resultado: o que o leitor agora tem ou vê.>
+
+---
 
 ## <Próxima tarefa, se a página cobre uma sequência>
 
 ---
 
-:::tip[dica]
-Para onde ir em seguida. Um ou dois links.
-:::
+## Próximos passos
+
+- [<Título>](/caminho/) - <por que o leitor seguiria o link>
 ```
 
 Separe as seções principais da página com uma régua `---`, e nunca coloque uma logo depois do frontmatter.
 
 ## Regras
 
-- **Nomeie a tarefa no título e nos headings.** Uma frase verbal imperativa, nunca um gerúndio.
-- **Uma instrução imperativa por passo.** Um passo com duas ações é um passo onde a segunda é pulada.
-- **Declare o estado final primeiro.** A frase de abertura diz o que o leitor vai ter.
-- **Ramifique onde a tarefa ramifica.** Tabs para Console, CLI e API, nunca três seções em sequência.
+- **Nomeie a tarefa no título.** Uma frase verbal curta no imperativo: `Criar um bucket`, `Alterar as permissões de um bucket`. Não um gerúndio, não uma pergunta, não um prefixo `Como ...` — o verbo carrega o título. O prefixo está aposentado em páginas novas e reescritas.
+- **Abra com uma frase de escopo.** Declare o que a página permite ao leitor fazer e a partir de onde: `Você pode criar um bucket pelo Azion Console, pela Azion CLI ou pela API.`
+- **Uma tarefa por heading.** Um heading que cobre duas tarefas vira dois headings.
+- **Acrescente informação depois de cada heading.** A primeira frase de uma seção de tarefa deve acrescentar informação que o heading não dá; o lead-in carrega a seção.
+- **Siga as regras de passos.** Os passos seguem [Procedimentos](/pt-br/documentacao/guia-de-estilo/escrita/procedimentos/), e todo procedimento termina com sua frase de resultado.
+- **Ramifique onde a tarefa ramifica.** Tarefas com mais de uma interface usam um bloco `<Tabs>`, painel do Console primeiro — nunca seções sequenciais por interface.
+- **Não ensine.** Uma frase de contexto, depois os passos. Um parágrafo de contexto pertence a uma página de conceito; aponte para ela.
 - **Use um verbo por ação**, em todas as menções da página.
+- **Marque lacunas em vez de inventar.** Um slot obrigatório que o insumo não preenche recebe um marcador de lacuna, nunca omissão silenciosa e nunca invenção.
+- **Aponte para os vizinhos.** Guias how-to irmãos e a página de referência do produto, no corpo ou em `## Próximos passos`.
 - **Mande um objetivo que cruza produtos** para um [guia multiproduto](/pt-br/documentacao/guia-de-estilo/conteudo/guias-multiproduto/).
 - **Aponte para fora em produtos de terceiros.** Nomeie o passo do fornecedor; não documente a interface dele.
-- **Não ensine.** Uma frase de contexto, depois os passos.
 
 ## Exemplos
+
+O trecho a seguir mostra a frase de escopo, os pré-requisitos e o painel do Console da primeira tarefa:
+
+```mdx
+Você pode criar um bucket do [Object Storage](/pt-br/documentacao/produtos/store/object-storage/) e alterar as permissões pelo Azion Console, pela CLI ou pela API.
+
+## Pré-requisitos
+
+Para usar os procedimentos da CLI, você precisa da Azion CLI instalada e de um personal token configurado.
+
+---
+
+## Criar um bucket
+
+<Tabs client:visible>
+    <Fragment slot="tab.console">Console</Fragment>
+    <Fragment slot="tab.cli">CLI</Fragment>
+    <Fragment slot="tab.api">API</Fragment>
+
+<Fragment slot="panel.console">
+
+Para criar o bucket pelo Azion Console:
+
+1. Acesse o [Azion Console](https://console.azion.com/) > **Object Storage**.
+2. Selecione **+ Bucket**.
+3. Digite um **Bucket Name** de 6 a 63 caracteres.
+4. Defina **Workloads Access** como _Read Only_, _Read-Write_ ou _Restricted_.
+5. Selecione **Save**.
+
+O bucket aparece na lista de buckets.
+
+</Fragment>
+
+</Tabs>
+```
 
 - [Crie regras de request e response](/pt-br/documentacao/build/applications/guides/rules-engine/): duas tarefas em uma página, cada uma com passos numerados e imperativos.
 

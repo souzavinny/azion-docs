@@ -33,57 +33,77 @@ This is the page kind most often missing. When another kind starts to explain, w
 
 ## Register
 
-Descriptive: 25 words per sentence, active voice, passive only when the actor is unknown. [Sentence structure](/en/documentation/style-guide/writing/sentence-structure/) holds the rules.
+Descriptive: 25 words per sentence, active voice, passive only where the actor is genuinely unknown or is the platform itself. [Sentence structure](/en/documentation/style-guide/writing/sentence-structure/) holds the rules.
 
 ## Structure
 
+The title is `How <X> works`, `About <X>`, or a short noun phrase: `How Tiered Cache works`.
+
 **Required components**
 
-- **Lead paragraph**: the problem the design solves, plus one sentence naming the intended reader.
-- **The approach**: how the design solves the problem.
-- **The tradeoff**: what the design costs, and when it is the wrong choice.
-- **What to read next**: links to the pages that implement or extend the design.
+- **Opening move**: a declarative statement of how the system behaves. Never `This page explains`.
+- **Roadmap sentence**: the intro closes with one sentence naming the mechanisms the `##` sections cover, in order.
+- **Mechanism sections**: one noun-phrase `##` per mechanism, mirroring the roadmap sentence.
+- **The problem, the mechanism, and the tradeoff**: each section covers all three. An explanation that presents only upsides is marketing.
+- **Related resources**: a closing `## Related resources` section linking the reference page and the how-tos that apply the concept.
 
 **Optional components**
 
 - **Key terms**: the vocabulary the reader needs, defined once each.
 - **Alternatives**: the other ways to solve the problem, and what each trades away.
-- **A diagram**: when the relationship is easier to draw than to describe.
+- **A diagram**: when the relationship is easier to draw than to describe. Alt text describes what the diagram shows.
 
 ## Template
 
+Copy the template and replace each `<placeholder>`:
+
 ```md
-<The problem this design solves, and what it works against.> This page is for <the intended reader> who wants to <what that reader wants to do>.
+<A declarative statement of how the system behaves.>
+<A roadmap sentence naming the mechanisms the sections
+cover, in order.>
 
-## How <the thing> works
+## <Noun phrase naming the first mechanism>
 
-<The approach. What happens, in what order, and what decides each step.>
+<The problem this mechanism works against, how it
+behaves, and what it costs.>
 
-## Why it works this way
+## <Noun phrase naming the next mechanism>
 
-<The reasoning. What the design was built against, and what it rejected.>
+<...>
 
-## The tradeoff
+## Related resources
 
-<What the design costs. When it is the wrong choice, and what to use instead.>
-
-## Related
-
-- [<The reference page for the settings>](<url>)
-- [<The how-to guide that implements it>](<url>)
+- [<The reference page>](/path/) - <what the reader gets there>
+- [<The how-to that applies the concept>](/path/) - <why the reader would follow it>
 ```
 
 ## Rules
 
-- **Explain the why, not the how.** Steps live in guides, and the reader can find them there.
-- **Name the alternatives and the tradeoff.** This is the only page kind where alternatives belong.
+- **Open with behavior, not framing.** State how the system behaves; never `This page explains`.
+- **Mirror the roadmap.** One noun-phrase `##` per mechanism, in the order the roadmap sentence names them.
+- **State the tradeoff.** Every design choice costs something, so say what. An explanation that presents only upsides is marketing.
+- **No procedures.** Link the [how-to guide](/en/documentation/style-guide/content/how-to-guides/) that applies the concept.
+- **Keep alternatives here.** Alternatives and "instead of" live on concept pages and nowhere else.
+- **Use passive voice narrowly.** Only where the actor is genuinely unknown or is the platform itself.
+- **Make diagrams carry load.** Alt text describes what the diagram shows; assets are root-absolute with no language prefix.
 - **Discuss, do not enumerate.** A page that becomes a table of fields wants to be [reference](/en/documentation/style-guide/content/reference/).
 - **Define each term once**, where the reader first meets it, then link to it.
-- **Avoid claims that expire.** "Currently" and "will soon" age badly and nobody returns.
+- **Avoid claims that expire.** `Currently` and `will soon` age badly and nobody returns.
+- **Mark gaps instead of inventing.** A mandated slot the input does not fill gets a `[GAP: ...]` marker, never silent omission and never invention.
 
 ## Examples
 
-- [How Azion works](/en/documentation/fundamentals/concepts/how-azion-works/): the platform explained for a reader deciding how the pieces fit together.
+This excerpt of a concept page for Tiered Cache shows the opening move, the roadmap sentence, and the first mechanism section:
+
+```mdx
+**Tiered Cache** is a Cache module that creates an additional cache layer between the edge and the origin servers. With the module active, content stays cached for longer periods and the origin receives fewer requests. Tiered Cache is designed for objects that can remain in cache for a long period of time. The module is available on request: activation goes through the Sales team.
+
+Its behavior depends on five mechanisms: the cache layers, the second-layer region, the TTL requirements, the Bypass Cache limitation, and the purge order.
+
+## Cache layers
+
+End users send requests to the edge network, where content is cached. Without Tiered Cache, a request that misses the edge layer goes to the origin. Tiered Cache adds a second cache layer between that edge layer and the origin servers. The tiered layer can answer a request that misses the edge layer, so the request does not reach the origin. Content stays cached for longer periods, and the origin receives fewer requests.
+```
 
 ## Related
 

@@ -17,16 +17,14 @@ The documentation publishes every page in English and in Brazilian Portuguese. E
 
 The site pairs the two versions of a page by their `namespace` field, not by file path. The language switcher depends on this pairing. Both files carry the same value, character for character:
 
-```yaml
-# en/pages/store-journey/storage/create-bucket.mdx
-title: How to create an Object Storage bucket
-permalink: /documentation/products/store/storage/create-bucket/
-namespace: docs_store_journey_storage_create_bucket
+```
+en:     title:     Create an Object Storage bucket
+        permalink: /documentation/products/store/storage/create-bucket/
+        namespace: docs_store_storage_create_bucket
 
-# pt-br/pages/store-jornada/storage/criar-bucket.mdx
-title: Como criar um bucket do Object Storage
-permalink: /documentacao/produtos/store/storage/criar-bucket/
-namespace: docs_store_journey_storage_create_bucket
+pt-br:  title:     Criar um bucket do Object Storage
+        permalink: /documentacao/produtos/store/storage/criar-bucket/
+        namespace: docs_store_storage_create_bucket
 ```
 
 Each frontmatter field follows one of three rules on the Portuguese page:
@@ -76,6 +74,23 @@ Five rules cover most of the work on a Portuguese page:
 - Localize aside labels: `:::note[nota]`, `:::tip[dica]`, `:::caution[Atenção]`. An English label on a Portuguese page is a visible defect.
 
 The full lists are in [Terminology](/en/documentation/style-guide/writing/terminology/).
+
+## Use the fixed Portuguese forms
+
+Three recurring elements translate the same way on every page. Do not improvise a new form for them.
+
+Three section names have fixed Portuguese forms:
+
+- `## Prerequisites` becomes `## Pré-requisitos`.
+- `## Next steps` becomes `## Próximos passos`.
+- `## Related resources` becomes `## Recursos relacionados`.
+
+The standard link sentences have fixed forms, and the verb is `consulte`:
+
+- `Para mais informações, consulte [Título](/pt-br/.../).`
+- `Para <fazer algo>, consulte [Título](/pt-br/.../).`
+
+Console UI labels stay as the interface shows them. Do not translate button or field names the Console renders in English: **Save**, **Workloads Access**, **+ Bucket**.
 
 ## Review every translation
 

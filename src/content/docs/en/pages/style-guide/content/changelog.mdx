@@ -30,46 +30,70 @@ Descriptive: 25 words per sentence, active voice, passive only when the actor is
 
 ## Structure
 
+An entry sits under a date heading and runs three to six short paragraphs, with no headings of its own. When a release groups entries by area, the product heading nests one level deeper under the area heading.
+
 **Required components**
 
-- **A date heading**: the release date, newest first.
-- **The change**: what changed, in one or two sentences, from the reader's side.
+- **A date heading**: `## <Month> <day>, <year>`, newest first. Dates are allowed in changelogs and only in changelogs.
+- **The opening sentence**: `**<Product>** now <verb>s <capability>.`, plus the concrete detail: the flag, the field, or the default.
+- **What it means concretely**: what works without configuration now, or what behaves differently.
+- **Who is not affected**: existing configurations, earlier versions, accounts that did not opt in.
+- **The closing link**: `For more information, refer to [<the documenting page>](/en/documentation/.../).`
 
 **Optional components**
 
-- **A category**: `New`, `Updated`, `Fixed`, or `Removed`, when the entry list is long.
-- **A link**: to the guide or reference page that documents the new behaviour.
-- **A migration note**: when the reader must act, with a link to the steps.
+- **A product heading**: `### <Product> <version>`, under the date heading, when the release names a product or a version.
+- **Migration or opt-in steps**: with a code sample, when an API, CLI, or configuration changed.
 
 ## Template
 
 ```md
-## <YYYY-MM-DD>
+## <Month> <day>, <year>
 
-### New
+### <Product> <version, when there is one>
 
-- **<Product>**: <what a reader can now do>. See [<the page that documents it>](<url>).
+**<Product>** now <verb>s <capability>, <the concrete detail: the flag, field, or default>.
 
-### Updated
+<What this means in practice: what works without configuration now, or what behaves differently.>
 
-- **<Product>**: <what changed, and what the previous behaviour was>.
+<Who is not affected: existing configurations, earlier versions, accounts that did not opt in — and how they can opt in.>
 
-### Removed
+<When an API, CLI, or configuration changed: the migration or opt-in, with a code sample.>
 
-- **<Product>**: <what was removed, and what replaces it>.
+For more information, refer to [<the documenting page>](/en/documentation/.../).
 ```
 
 ## Rules
 
-- **Write from the reader's side.** What changed for them, not what the team did.
-- **Keep the product names of the period.** A dated record keeps the names it was written with.
+- **Open with the product as the subject.** `**<Product>** now <verb>s <capability>.` Present tense, never `we`, never `Azion is excited to`.
+- **State who is not affected.** A reader's first question about any change is whether it breaks them; answer it before they ask.
+- **Show migration or opt-in steps when the surface changed.** An API, CLI, or configuration change gets a code sample; two lines is enough.
+- **Close every entry with the documentation link.** An entry that documents the feature in full is a page filed in the wrong place.
 - **Never rewrite an entry.** Correct it with a new dated entry; the log is append-only.
-- **Name the previous behaviour when it changed.** The reader came for the delta.
-- **Link, do not instruct.** Steps inside a changelog go stale where nobody looks for them.
+- **Keep the product names of the period.** A dated record keeps the names it was written with; only new entries use current names.
+- **End the page with its oldest entry.** A changelog has no closing section: no Next steps and no Related resources.
 
 ## Examples
 
 - [Changelog archive](/en/documentation/changelog/archive/): entries grouped by year, each naming the product and the change.
+
+This trimmed entry shows the date heading, the area heading, and the entry shape:
+
+```mdx
+## July 10, 2026
+
+### Marketplace
+
+#### Bot Manager 1.3.0 and Bot Manager Lite 0.2.0
+
+**Bot Manager** now has new versions for both plans: Bot Manager Lite 0.2.0 and Bot Manager 1.3.0 for the standard plan. The standard plan was formerly named Advanced.
+
+The release adds nine new static rules and two new arguments. The `good_fingerprint_list` argument allows listed fingerprints to bypass Bot Manager validation. The `block_ai_bots` argument blocks known AI user agents automatically.
+
+This release does not upgrade existing installations. To get the new Lite version, launch [Bot Manager Lite](https://console.azion.com/marketplace/solution/azion/bot-manager-lite) through Azion Marketplace. The standard version of [Azion Bot Manager](/en/documentation/products/secure/firewall/bot-manager/) remains available on demand, upon request to the Service Delivery team.
+
+For more information, refer to [Azion Bot Manager Lite](/en/documentation/products/secure/firewall/bot-manager-lite/).
+```
 
 ## Related
 

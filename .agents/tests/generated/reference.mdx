@@ -1,0 +1,97 @@
+---
+title: Object Storage
+description: >-
+  Look up bucket name rules, object attributes, permission levels, API
+  operations, and limits for Object Storage.
+meta_tags: 'Object Storage, bucket, object key, workloads_access, permissions, limits, API'
+namespace: docs_store_object_storage
+permalink: /documentation/products/store/object-storage/
+---
+
+**Object Storage** is a Store product that stores objects in buckets. A bucket is the container; an object is the stored item plus its metadata. Azion stores all buckets in the _us-east_ cloud region and bills storage per GB/hour, with no minimum retention.
+
+## Buckets
+
+Bucket names follow these rules:
+
+| Rule | Value |
+| --- | --- |
+| Length | 6 to 63 characters |
+| Characters | Alphanumeric characters and hyphen |
+| Reserved prefix | Must not start with `azion` |
+| Uniqueness | Exclusive across all Azion accounts |
+
+You cannot rename a bucket. You can delete a bucket only when it is empty, 24 hours after the removal of the final object.
+
+## Objects
+
+An object has these attributes:
+
+| Attribute | Description |
+| --- | --- |
+| Object key | The unique identifier string of the object. You cannot change the key. An upload with an existing key replaces the object, with no way to retrieve earlier versions |
+| Prefix | Paths that simulate a folder hierarchy with forward slashes. Example keys: `README.md`, `src/index.js`, `src/assets/images/image.png` |
+| MIME type | The `Content-Type` header sets the MIME type. When the header is absent, Object Storage infers the type from the file extension. `application/octet-stream` marks raw binary |
+
+A bucket can serve as an origin in **Connectors**, from the root or from a prefix. To use a bucket as an origin, refer to [Use a bucket as origin](/en/documentation/products/store/storage/use-bucket-as-origin/).
+
+---
+
+## Permissions
+
+The `workloads_access` attribute sets the bucket permission level:
+
+| Value | Behavior |
+| --- | --- |
+| `read_only` | The Azion Web Platform can read objects but cannot modify them |
+| `read_write` | The Azion Web Platform can modify objects |
+| `restricted` | Only the API can read and modify objects. Azion Runtime cannot modify the bucket, and the bucket cannot serve as an origin |
+
+**Teams Permissions** governs account-level operations separately. For more information, refer to [Teams Permissions](/en/documentation/products/accounts/teams-permissions/).
+
+---
+
+## Operations
+
+All Object Storage operations use the base URL `https://api.azion.com/v4/workspace/storage/buckets`. The API groups operations into three classes:
+
+| Class | Covers |
+| --- | --- |
+| A | Control, listing, and management |
+| B | Object reads |
+| C | Writes and upload management |
+
+Each class contains these operations:
+
+| Class | Operation | Method and path |
+| --- | --- | --- |
+| A | CreateBucket | `POST /` with `{"name": "...", "workloads_access": "read_only"}` |
+| A | ListBuckets | `GET /` |
+| A | UpdateBucket | `PATCH /{bucket_name}` with `{"workloads_access": "..."}` |
+| A | ListObjects | `GET /{bucket_name}/objects` |
+| B | GetObject | `GET /{bucket_name}/objects/{object_key}` |
+| C | PutObject, PostObject | `PUT` / `POST /{bucket_name}/objects/{object_key}` |
+| C | DeleteObject | `DELETE /{bucket_name}/objects/{object_key}` |
+| C | DeleteBucket | `DELETE /{bucket_name}` |
+
+---
+
+## Limits
+
+Object Storage applies these limits:
+
+| Scope | Limit |
+| --- | --- |
+| Buckets per account | 100 |
+| Region | _us-east_ |
+| Maximum object size via `PostObject` | 20 MB |
+| Bucket deletion | Empty bucket, 24 hours after the removal of the last object |
+
+You can request higher limits from technical support.
+
+## Related resources
+
+- [Create an Object Storage bucket](/en/documentation/products/store/storage/create-bucket/) - create a bucket and set its `workloads_access` permission.
+- [Update an Object Storage bucket](/en/documentation/products/store/storage/update-buckets/) - change the permission of an existing bucket.
+- [Use a bucket as origin](/en/documentation/products/store/storage/use-bucket-as-origin/) - serve content from a bucket through Connectors.
+- [Teams Permissions](/en/documentation/products/accounts/teams-permissions/) - govern account-level operations for Object Storage.

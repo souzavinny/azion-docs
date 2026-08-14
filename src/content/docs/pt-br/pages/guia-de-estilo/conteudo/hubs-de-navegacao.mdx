@@ -34,45 +34,59 @@ Descritivo: 25 palavras por frase, voz ativa, passiva apenas quando o agente é 
 
 **Componentes obrigatórios**
 
-- **Uma frase de orientação**: o que esta seção cobre e para quem ela é.
-- **Os links**: agrupados, cada um com uma descrição de uma linha dizendo o que o leitor ganha.
-
-**Componentes opcionais**
-
-- **Grupos**: quando o conjunto de links tem mais de um tema, cada grupo ganha um heading.
-
-Um hub em grade de cards é o único lugar em que uma página de documentação define `type: homepage` no frontmatter. Todas as outras páginas omitem o campo. Veja [Frontmatter](/pt-br/documentacao/guia-de-estilo/convencoes/frontmatter/).
+- **Abertura**: uma frase de orientação dizendo o que a seção contém.
+- **Corpo**: grupos de links sob headings `##` em frase nominal.
+- **Forma do link**: `[Título](/caminho/) - uma frase sobre o que o leitor encontra lá.`
+- **Fechamento**: nenhum. O último link encerra a página.
 
 ## Template
 
+Copie o template e substitua cada `<placeholder>`:
+
 ```md
-<Uma frase: o que esta seção cobre e para quem ela é.>
+<Uma frase: o que a seção contém.>
 
 ## <Nome do grupo>
 
-- [<Título da página>](<url>): <o que o leitor ganha, em uma linha>.
-- [<Título da página>](<url>): <o que o leitor ganha, em uma linha>.
+- [<Título da página>](<url>) - <o que o leitor encontra lá, em uma frase>.
+- [<Título da página>](<url>) - <o que o leitor encontra lá, em uma frase>.
 
 ## <Nome do próximo grupo>
 
-- [<Título da página>](<url>): <o que o leitor ganha, em uma linha>.
+- [<Título da página>](<url>) - <o que o leitor encontra lá, em uma frase>.
 ```
 
 ## Regras
 
-- **Faça cada link justificar o seu lugar.** Um hub que lista tudo não hierarquiza nada.
+- **Nenhum fechamento e nenhum outro texto.** Uma frase de orientação; a explicação vai em uma [página de conceito](/pt-br/documentacao/guia-de-estilo/conteudo/conceito/).
+- **Faça cada link justificar o seu lugar.** Um hub é julgado pelo que ele deixa de fora; um hub que lista tudo não hierarquiza nada.
 - **Escreva descrições que diferenciam.** Diga o que esta página dá que as vizinhas não dão.
-- **Não explique aqui.** Uma frase de orientação; o resto vai em uma [página de conceito](/pt-br/documentacao/guia-de-estilo/conteudo/conceito/).
 - **Agrupe quando a lista passa de sete**, pelo que o leitor está tentando fazer.
 - **Mantenha o hub em dia com a seção.** Atualize o hub na mesma mudança que adiciona uma página.
+- **Defina `type: homepage` somente em um hub em grade de cards.** Todas as outras páginas omitem o campo. Para mais informações, consulte [Frontmatter](/pt-br/documentacao/guia-de-estilo/convencoes/frontmatter/).
+- **Marque lacunas, nunca as preencha.** Um componente obrigatório cujo conteúdo a fonte não fornece recebe um marcador `[GAP: ...]`, nunca omissão silenciosa, nunca invenção.
 
 ## Exemplos
 
-- [Arquiteturas](/pt-br/documentacao/architectures/): uma linha de orientação, e depois os designs agrupados pelo problema que resolvem.
+- [Arquiteturas](/pt-br/documentacao/architectures/) - Uma linha de orientação, e depois os designs agrupados pelo problema que resolvem.
+
+Um hub de Object Storage, cortado até a frase de orientação e o primeiro grupo. O exemplo está em inglês; a versão em português segue a mesma forma:
+
+```mdx
+This section holds the guides to manage Object Storage buckets and objects, and the product reference.
+
+## Buckets
+
+- [Create an Object Storage bucket](/en/documentation/products/store/storage/create-bucket/) - Create a bucket to store your objects.
+- [Update an Object Storage bucket](/en/documentation/products/store/storage/update-buckets/) - Update a bucket after you create it.
+- [Delete an Object Storage bucket](/en/documentation/products/store/storage/delete-buckets/) - Delete a bucket that you no longer need.
+- [List Object Storage buckets](/en/documentation/products/store/storage/list-buckets/) - List all of your buckets.
+- [Use a bucket as origin](/en/documentation/products/store/storage/use-bucket-as-origin/) - Use a bucket as the origin for your content.
+```
 
 ## Relacionados
 
-- [Páginas de visão geral](/pt-br/documentacao/guia-de-estilo/conteudo/visao-geral/): a raiz do produto, que orienta e aponta, mas também descreve.
-- [Arquitetura de informação](/pt-br/documentacao/guia-de-estilo/conteudo/arquitetura-de-informacao/): onde os hubs ficam e quais seções precisam de um.
-- [Frontmatter](/pt-br/documentacao/guia-de-estilo/convencoes/frontmatter/): o campo `type: homepage` que um hub em grade de cards define.
-- [Escolher um tipo de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/): o catálogo completo de tipos de página.
+- [Páginas de visão geral](/pt-br/documentacao/guia-de-estilo/conteudo/visao-geral/) - A raiz do produto, que orienta e aponta, mas também descreve.
+- [Arquitetura de informação](/pt-br/documentacao/guia-de-estilo/conteudo/arquitetura-de-informacao/) - Onde os hubs ficam e quais seções precisam de um.
+- [Frontmatter](/pt-br/documentacao/guia-de-estilo/convencoes/frontmatter/) - O campo `type: homepage` que um hub em grade de cards define.
+- [Escolher um tipo de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/) - O catálogo completo de tipos de página.

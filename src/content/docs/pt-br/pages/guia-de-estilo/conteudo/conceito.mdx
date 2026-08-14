@@ -33,57 +33,77 @@ Este é o tipo de página que mais falta. Quando outro tipo começa a explicar, 
 
 ## Registro
 
-Descritivo: 25 palavras por frase, voz ativa, passiva apenas quando o agente é desconhecido. [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/) tem as regras.
+Descritivo: 25 palavras por frase, voz ativa, passiva apenas quando o agente é genuinamente desconhecido ou é a própria plataforma. [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/) tem as regras.
 
 ## Estrutura
 
+O título é `Como <X> funciona`, `Sobre <X>` ou uma frase nominal curta: `Como o Tiered Cache funciona`.
+
 **Componentes obrigatórios**
 
-- **Parágrafo de abertura**: o problema que o design resolve, mais uma frase nomeando o leitor pretendido.
-- **A abordagem**: como o design resolve o problema.
-- **O trade-off**: o que o design custa, e quando ele é a escolha errada.
-- **O que ler em seguida**: links para as páginas que implementam ou estendem o design.
+- **Abertura**: uma declaração de como o sistema se comporta. Nunca `Esta página explica`.
+- **Frase-roteiro**: a introdução termina com uma frase que nomeia os mecanismos que as seções `##` cobrem, na ordem.
+- **Seções de mecanismo**: uma seção `##` em frase nominal por mecanismo, espelhando a frase-roteiro.
+- **O problema, o mecanismo e o trade-off**: cada seção cobre os três. Uma explicação que apresenta só vantagens é marketing.
+- **Recursos relacionados**: um fechamento `## Recursos relacionados` com a página de referência e os guias how-to que aplicam o conceito.
 
 **Componentes opcionais**
 
 - **Termos principais**: o vocabulário que o leitor precisa, definido uma vez cada.
 - **Alternativas**: as outras formas de resolver o problema, e o que cada uma abre mão.
-- **Um diagrama**: quando a relação é mais fácil de desenhar do que de descrever.
+- **Um diagrama**: quando a relação é mais fácil de desenhar do que de descrever. O texto alternativo descreve o que o diagrama mostra.
 
 ## Template
 
+Copie o template e substitua cada `<placeholder>`:
+
 ```md
-<O problema que este design resolve, e contra o que ele trabalha.> Esta página é para <o leitor pretendido> que quer <o que esse leitor quer fazer>.
+<Uma declaração de como o sistema se comporta.>
+<Uma frase-roteiro que nomeia os mecanismos que as
+seções cobrem, na ordem.>
 
-## Como <a coisa> funciona
+## <Frase nominal que nomeia o primeiro mecanismo>
 
-<A abordagem. O que acontece, em que ordem, e o que decide cada passo.>
+<O problema contra o qual este mecanismo trabalha, como
+ele se comporta e o que ele custa.>
 
-## Por que funciona assim
+## <Frase nominal que nomeia o próximo mecanismo>
 
-<O raciocínio. Contra o que o design foi construído, e o que ele rejeitou.>
+<...>
 
-## O trade-off
+## Recursos relacionados
 
-<O que o design custa. Quando ele é a escolha errada, e o que usar no lugar.>
-
-## Relacionados
-
-- [<A página de referência das configurações>](<url>)
-- [<O guia how-to que implementa isso>](<url>)
+- [<A página de referência>](/caminho/) - <o que o leitor encontra lá>
+- [<O guia how-to que aplica o conceito>](/caminho/) - <por que o leitor seguiria o link>
 ```
 
 ## Regras
 
-- **Explique o porquê, não o como.** Os passos ficam nos guias, e o leitor os encontra lá.
-- **Nomeie as alternativas e o trade-off.** Este é o único tipo de página onde alternativas pertencem.
+- **Abra com comportamento, não com moldura.** Declare como o sistema se comporta; nunca `Esta página explica`.
+- **Espelhe a frase-roteiro.** Uma seção `##` em frase nominal por mecanismo, na ordem em que a frase-roteiro os nomeia.
+- **Declare o trade-off.** Toda escolha de design custa algo, então diga o quê. Uma explicação que apresenta só vantagens é marketing.
+- **Sem procedimentos.** Aponte o [guia how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/) que aplica o conceito.
+- **Mantenha as alternativas aqui.** Alternativas e "em vez de" vivem nas páginas de conceito e em nenhum outro lugar.
+- **Use a voz passiva de forma restrita.** Apenas quando o agente é genuinamente desconhecido ou é a própria plataforma.
+- **Faça os diagramas carregarem significado.** O texto alternativo descreve o que o diagrama mostra; os assets são absolutos a partir da raiz, sem prefixo de idioma.
 - **Discuta, não enumere.** Uma página que vira tabela de campos quer ser [referência](/pt-br/documentacao/guia-de-estilo/conteudo/referencia/).
 - **Defina cada termo uma vez**, onde o leitor o encontra primeiro, e depois aponte para ele.
-- **Evite afirmações que expiram.** "Atualmente" e "em breve" envelhecem mal e ninguém volta.
+- **Evite afirmações que expiram.** `Atualmente` e `em breve` envelhecem mal e ninguém volta.
+- **Marque lacunas em vez de inventar.** Um componente obrigatório cujo conteúdo a fonte não fornece recebe um marcador `[GAP: ...]`, nunca omissão silenciosa, nunca invenção.
 
 ## Exemplos
 
-- [Como a Azion funciona](/pt-br/documentacao/fundamentals/concepts/how-azion-works/): a plataforma explicada para quem está decidindo como as peças se encaixam.
+O exemplo abaixo, em inglês, mostra a abertura, a frase-roteiro e a primeira seção de mecanismo de uma página de conceito sobre o Tiered Cache:
+
+```mdx
+**Tiered Cache** is a Cache module that creates an additional cache layer between the edge and the origin servers. With the module active, content stays cached for longer periods and the origin receives fewer requests. Tiered Cache is designed for objects that can remain in cache for a long period of time. The module is available on request: activation goes through the Sales team.
+
+Its behavior depends on five mechanisms: the cache layers, the second-layer region, the TTL requirements, the Bypass Cache limitation, and the purge order.
+
+## Cache layers
+
+End users send requests to the edge network, where content is cached. Without Tiered Cache, a request that misses the edge layer goes to the origin. Tiered Cache adds a second cache layer between that edge layer and the origin servers. The tiered layer can answer a request that misses the edge layer, so the request does not reach the origin. Content stays cached for longer periods, and the origin receives fewer requests.
+```
 
 ## Relacionados
 

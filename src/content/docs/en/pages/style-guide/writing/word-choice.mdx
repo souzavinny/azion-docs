@@ -16,33 +16,42 @@ Some words appear in drafts as decoration and carry no technical meaning. They a
 
 | Avoid | Use |
 | --- | --- |
-| delve into | cover, explain |
-| leverage (meaning use) | use |
-| utilize | use |
-| facilitate | let, allow |
+| it is important to note that | (delete, keep the sentence) |
+| note that | (delete, keep the sentence) |
 | in order to | to |
 | due to the fact that | because |
 | has the ability to | can |
-| it is important to note that | (delete, keep the sentence) |
+| at this point in time | now |
+| utilize | use |
+| leverage (as decoration) | use |
+| delve into, dive into | cover, explain |
+| facilitate | let, allow |
+| straightforward | (delete, or say what the steps are) |
 | a wide range of | (name the range) |
 | various | (name them, or say how many) |
-| seamlessly | (delete, or say what does not break) |
-| robust | (say what it withstands) |
-| powerful | (say what it does) |
-| comprehensive | complete, or say what it covers |
+| seamless, seamlessly | (delete, or say what does not break) |
 | cutting-edge, state-of-the-art | (delete) |
 | a testament to | (delete) |
 | plays a crucial role in | (say what it does) |
 | in today's landscape | (delete the sentence) |
 
+## Replace marketing framing
+
+Marketing framing has a direct substitution. These phrases sell instead of describing:
+
+| Avoid | Use |
+| --- | --- |
+| Perfect for, Essential for, Critical for | Use for |
+| Best for | Use when |
+| empowers you to, enables you to | (state the action directly) |
+| powerful, robust, comprehensive (about an Azion product) | (say what it does, what it withstands, what it covers) |
+| modern `<thing>` | `<thing>` |
+
+The test is whether the word claims *quality* or describes *behavior*. "Robust security" is a quality claim. "A robust retry with exponential backoff" describes behavior and stays.
+
 ## Distinguish quality claims from behavior
 
-A word from the avoid list is legitimate when it describes behavior. The test is whether the word makes a claim about quality or a claim about behavior.
-
-- Quality claim: `robust security`
-- Behavior: `a robust retry with exponential backoff`
-
-"Robust security" asks the reader to trust an adjective. "A robust retry with exponential backoff" names the mechanism, and the adjective now describes something testable. Keep a word that passes this test; replace one that does not.
+A word from the replacement tables is legitimate when it describes behavior. "Robust security" asks the reader to trust an adjective. "A robust retry with exponential backoff" names the mechanism, and the adjective now describes something testable. Keep a word that passes this test; replace one that does not.
 
 ## Describe the product, do not promote it
 
@@ -82,9 +91,27 @@ A short set of words is banned outright:
 
 - "Simply", "just", "easy", and "obvious": if the task were easy, the reader would not be here. These words tell a stuck reader to feel embarrassed.
 - "Please": documentation instructs; it does not ask.
-- "Currently", "at the time of writing", and "will soon": all age badly, and nobody returns to fix them. Say what is true and let the changelog carry the timeline.
+- "Currently", "at the time of writing", "will soon", "now available", "recently", and "new" as a modifier: all age badly, and nobody returns to fix them. No month or year appears outside a changelog. Say what is true and let the changelog carry the timeline.
 - "Note that" and "it is important to note": delete the phrase and keep the sentence.
 - Latin abbreviations: write "for example" and "that is", not "e.g." and "i.e."
+
+## Use the interface verbs
+
+Each interface action takes one verb, the same verb on every page:
+
+| Use | Not |
+| --- | --- |
+| select | click, hit, tap |
+| go to | navigate to |
+| turn on, turn off | enable, disable (for switches and toggles) |
+| enter | type in, input |
+| refer to | see, check out |
+
+"Enable" and "disable" stay legitimate for describing state in prose: "When the module is enabled, requests pass through it."
+
+Do not use directional language: "on the left", "above", "below". Name the element instead: "In the **Rules Engine** tab, select **Add Rule**." Directions break on mobile, in translation, and for screen readers.
+
+The step grammar that uses these verbs is in [Procedures](/en/documentation/style-guide/writing/procedures/).
 
 ## Use inclusive language
 

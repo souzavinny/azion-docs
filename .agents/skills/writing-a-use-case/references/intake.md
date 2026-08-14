@@ -1,6 +1,6 @@
 # Intake
 
-Two things happen before a word of the page gets written. You narrow the scenario until it names one setup, and you find out what the corpus can actually support. Both produce an artifact you keep.
+Two things happen before a word of the page gets written. You narrow the scenario until it names one setup, and you find out what your sources can actually support. Both produce an artifact you keep.
 
 ## Part 1: Narrow the scenario
 
@@ -41,7 +41,7 @@ The prompt gives you a scenario. It gives you no facts. Everything the page asse
 
 Build it before drafting. It is not part of the page.
 
-| Requirement | Technical need | Product | Source page | Permalink | Verified |
+| Requirement | Technical need | Product | Source | Link | Verified |
 | --- | --- | --- | --- | --- | --- |
 | Catalogue loads fast | Cache static product pages | ? | ? | ? | ? |
 | Cart is never shared | Bypass cache on a path | ? | ? | ? | ? |
@@ -51,34 +51,16 @@ One row per requirement. A row is finished when every column has a value and `Ve
 
 ### Filling it in
 
-Find what exists before assuming a product:
+Evidence comes from two places, and only two:
 
-```bash
-# products with reference documentation
-ls src/content/docs/en/pages/main-menu/reference/*/
-
-# tasks that already have a guide
-ls src/content/docs/en/pages/guides/
-
-# patterns already explained
-ls src/content/docs/en/pages/architectures/*/
-
-# the page that documents a feature
-grep -rl "<the feature>" src/content/docs/en --include='*.mdx'
-
-# whether this scenario already has a page
-grep -ril "<the scenario>" src/content/docs/en --include='*.mdx'
-```
-
-Read the pages you find. Do not fill a row from the filename.
+- **Your input.** A brief, a spec, a page the requester supplied. Facts labeled as given are evidence.
+- **The documentation itself, when it is available to you.** Find the reference page, guide, or architecture page that covers each requirement, and read it. Do not fill a row from a filename or a memory of a similar platform.
 
 ### Links come from the permalink field
 
-```bash
-grep -m1 "^permalink:" <file>
-```
+A link is built from the target page's `permalink` frontmatter field, with the language prefix added. Never from the page's file path — the path is cosmetic, does not determine the URL, and a link built from it renders as a working link and 404s.
 
-Prefix `/en` and use it exactly. The directory a file sits in is cosmetic and does not determine its URL, so a link built from a path is a guess that renders as a working link and 404s.
+When you cannot read the target page, the link is unverified. Say so in the table.
 
 ### A row you cannot fill
 

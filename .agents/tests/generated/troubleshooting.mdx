@@ -1,0 +1,106 @@
+---
+title: Troubleshoot WAF blocking legitimate requests
+description: >-
+  Identify the WAF rules that block legitimate requests and create allowed
+  rules to let the traffic pass.
+meta_tags: 'Web Application Firewall, WAF, false positives, allowed rules, 403 Forbidden, WAF Tuning'
+namespace: docs_secure_troubleshoot_waf_false_positives
+permalink: /documentation/products/secure/troubleshoot-waf-false-positives/
+---
+
+import Tabs from '~/components/tabs/Tabs'
+import Code from '~/components/Code/Code.astro'
+
+The **Web Application Firewall (WAF)** can block legitimate requests when an internal rule matches them. This page covers these false positives and the allowed rules that fix them.
+
+To see the requests that the WAF blocks, use [Real-Time Events](/en/documentation/products/observe/real-time-events/) with the `HTTP Requests` data source. The `Waf Block` field is `1` when the WAF blocks a request. The data source also includes the `Waf Score` and `Waf Ev Headers` fields. Real-Time Events stores events for the last 168 hours.
+
+---
+
+## `403 Forbidden` on legitimate requests
+
+After you turn on the WAF in blocking mode, legitimate requests receive a `403 Forbidden` response.
+
+The cause is a WAF internal rule that matches the request. Common examples include:
+
+| Rule ID | Matches |
+| --- | --- |
+| `1000` | SQL keywords |
+| `1013` | Apostrophe (`'`) |
+| `1302` | HTML open tag (`<`) |
+
+To find the rule and allow the legitimate requests with WAF Tuning:
+
+1. Access [Azion Console](https://console.azion.com/) > **WAF Rules** > **your rule set**.
+2. Go to the **Tuning** tab.
+3. Set a **Time Range**, for example _Last 12 hours_. WAF Tuning queries cover up to 3 days.
+4. In the **Workloads** dropdown, select the domains to analyze. Results only appear with at least one domain selected.
+5. Select **Apply**. The **Possible Attacks** list shows **Rule ID**, **Description**, **Hits**, **Paths**, **IPs**, and **Countries**.
+6. (Optional) To see more details for a record, select **More Details**.
+7. Use the **Field** checkbox to select the legitimate records.
+8. Select **Allow Rules**.
+
+The new allowed rule appears in the **Allowed Rules** tab of the **WAF Rules** page. The WAF no longer blocks the requests that match the allowed rule.
+
+---
+
+## Blocked form posts or uploads
+
+The WAF blocks requests that submit forms or upload files, even when the content is legitimate.
+
+Two internal rules cause this block:
+
+| Rule ID | Matches |
+| --- | --- |
+| `2` | Request body larger than 128 kilobytes |
+| `13` | Invalid `POST` format |
+
+Rule ID `13` blocks requests in some cases even in _Learning_ mode.
+
+To fix the block, create a rule that allows the legitimate requests. Azion Console calls these rules **Allowed Rules**, and the API calls them **Exceptions**.
+
+<Tabs client:visible>
+    <Fragment slot="tab.console">Console</Fragment>
+    <Fragment slot="tab.api">API</Fragment>
+
+<Fragment slot="panel.console">
+
+To create the allowed rule in Azion Console:
+
+1. Access [Azion Console](https://console.azion.com/) > **WAF Rules** > **your rule set**.
+2. Go to the **Allowed Rules** tab.
+3. Select **+ Allowed Rule**.
+4. Fill in **Rule ID**, **Path** (for example `/api/v1/data`), **Match Zone**, **Regex**, and **Status**. The **Match Zone** options include _Specific Query String Value_, _Body Form Field Value_, _Raw Body_, and _File Extension_.
+5. To save the rule, select [GAP: name of the control that saves the allowed rule].
+
+The rule appears in the **Allowed Rules** list and the requests pass.
+
+</Fragment>
+
+<Fragment slot="panel.api">
+
+To create the exception with the API, send a `POST` request to `https://api.azion.com/v4/edge_firewall/wafs/{waf_id}/exceptions`. This example allows rule ID `1000` for a path and a query string pattern:
+
+<Code lang="json" code={`{
+  "rule_id": 1000,
+  "reason": "<your-reason>",
+  "match_zone": "query_string",
+  "match_pattern": "^[a-zA-Z0-9\\\\s]+$",
+  "path": "/api/v1/search",
+  "active": true
+}`} />
+
+The WAF no longer blocks the requests that match the exception.
+
+</Fragment>
+
+</Tabs>
+
+---
+
+## Related resources
+
+- [Tune the WAF](/en/documentation/products/guides/secure/tune-waf/) - the complete tuning procedure that the `403 Forbidden` fix summarizes.
+- [WAF allowed rules](/en/documentation/products/secure/firewall/web-application-firewall/custom-allowed-rules/) - the reference for allowed rules and their fields.
+- [Web Application Firewall](/en/documentation/products/secure/firewall/web-application-firewall/) - the main documentation for the WAF.
+- [Real-Time Events](/en/documentation/products/observe/real-time-events/) - where to query the requests that the WAF blocks.

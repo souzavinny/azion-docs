@@ -54,6 +54,17 @@
        }
       },
       {
+       "key": "sg/procedures",
+       "label": {
+        "en": "Procedures",
+        "pt-br": "Procedimentos"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/writing/procedures/",
+        "pt-br": "/documentacao/guia-de-estilo/escrita/procedimentos/"
+       }
+      },
+      {
        "key": "sg/word-choice",
        "label": {
         "en": "Word choice",

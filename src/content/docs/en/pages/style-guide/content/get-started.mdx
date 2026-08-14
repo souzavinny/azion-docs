@@ -11,7 +11,7 @@ menu_namespace: styleGuideMenu
 
 ## Purpose
 
-A Get started page is a tutorial whose goal is the first activation of one product: from not using it to the smallest working result. It is a pattern of the [tutorial](/en/documentation/style-guide/content/tutorials/) type, not a new content type.
+A Get started page is a tutorial whose goal is the first activation of one product: from not using it to the smallest working result. It follows the [tutorial](/en/documentation/style-guide/content/tutorials/) base form.
 
 ## When to use
 
@@ -27,15 +27,14 @@ Procedural: 20 words per sentence, one instruction per step, imperative and acti
 
 ## Structure
 
-A Get started page follows the tutorial skeleton. [Tutorials](/en/documentation/style-guide/content/tutorials/) argues each part; the list below names what the pattern requires.
+A Get started page follows the tutorial skeleton. [Tutorials](/en/documentation/style-guide/content/tutorials/) argues each part; the list below names what the pattern requires. The title takes the form `Get started with <Product>`.
 
 **Required components**
 
-- **Opening paragraph**: what the reader will have at the end, and roughly how long the page takes.
-- **Before you start**: the minimum real set of prerequisites, each a link or a one-line command.
-- **Steps**: numbered step sections along one path, up to the smallest working result.
-- **What you built**: one paragraph that restates the working result.
-- **Next steps**: two or three links into the product's guides, each with a reason to click.
+- **Opening move**: `This guide instructs you through <outcome>.` followed by a short bullet list of what the reader will have done. Frame the outcome as a first: "your first bucket", "your first deployment".
+- **Prerequisites**: a `## Prerequisites` section with bulleted items, each a link or a one-line command where one exists, otherwise a noun phrase naming the requirement. A single prerequisite is a sentence, not a list.
+- **Stages**: numbered stage headings, `## 1. <Imperative verb phrase>` through `## N.`, ending in a stage that activates or verifies. Each stage holds one procedure and ends with its outcome sentence.
+- **Next steps**: a `## Next steps` closing with bulleted links shaped `[Title](/path/) - one sentence on why the reader would follow it.`
 
 **Optional components**
 
@@ -44,45 +43,80 @@ A Get started page follows the tutorial skeleton. [Tutorials](/en/documentation/
 
 ## Template
 
+Copy the template and replace each `<placeholder>`:
+
 ```md
-[One paragraph: what the reader will have at the end,
-and roughly how long it takes.]
+This guide instructs you through <outcome, framed as a first:
+your first bucket, your first deployment>.
 
-## Before you start
+- <What the reader will have done, as a short bullet list>
+- <...>
 
-- <A prerequisite the page cannot supply, as a link or a one-line command>
+## Prerequisites
 
-## Step 1: <verb phrase>
+- <A link or a one-line command where one exists, otherwise a noun phrase>
 
-<What to do. One instruction per sentence.>
+## 1. <Imperative verb phrase>
 
-<What the reader sees: command output, a screenshot, or a URL to open.>
+<A procedure, numbered when it has two or more actions.>
 
-## Step 2: <verb phrase>
+<The outcome sentence: what the reader now has or sees.>
+
+## 2. <Imperative verb phrase>
 
 <...>
 
-## What you built
+## N. <Imperative verb phrase that activates or verifies>
 
-<One paragraph. Restate the working result.>
+<...>
 
 ## Next steps
 
-- <A how-to guide from this product's Guides, with a reason to click it>
-- <A second guide, or the product's reference>
+- [Title](/path/) - one sentence on why the reader would follow it.
+- [Title](/path/) - one sentence on why the reader would follow it.
 ```
 
 ## Rules
 
+- **Document one linear path on the primary interface.** Alternatives are one link each, not parallel tracks. No `<Tabs>`.
+- **Write each stage as a procedure.** Steps follow [Procedures](/en/documentation/style-guide/writing/procedures/), and every stage ends with its outcome sentence.
 - **Keep prerequisites to the minimum real set.** Every item is a reason to abandon the page.
-- **Document one bare-minimum path.** No options, no interface comparison.
-- **End with the working result.** Restate it, then link two or three guides.
-- **Place it directly after the product Overview.**
+- **End in a stage that activates or verifies.** The reader leaves with proof of the working result.
+- **Mark gaps, never fill them.** A mandated slot the input does not supply gets a `[GAP: ...]` marker, never silent omission, never invention.
+- **Link tutorials and the main how-tos in `## Next steps`.** Give each link its reason.
 - **Test every command before the page ships.** One instruction per step, and a visible result at each one.
+- **Place it directly after the product Overview.**
 
 ## Examples
 
-Content coming soon.
+This excerpt of a Get started page for **Applications** shows the opening move, the prerequisites, and the first stage:
+
+```mdx
+This guide instructs you through the deployment of your first application from a template. The guide has three stages:
+
+- Choose a template in Azion Console.
+- Configure and deploy the application.
+- Verify that the application answers on its Azion domain.
+
+---
+
+## Prerequisites
+
+- An [Azion account](https://console.azion.com/).
+- A GitHub account, for templates that integrate with GitHub.
+
+---
+
+## 1. Choose a template
+
+To choose a template:
+
+1. Access [Azion Console](https://console.azion.com/) > **+ Create**.
+2. In the modal, select the **Templates** option.
+3. Browse the templates and choose one.
+
+The configuration page for the template opens.
+```
 
 ## Related
 

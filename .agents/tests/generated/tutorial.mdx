@@ -1,0 +1,151 @@
+---
+title: Build a user list API with Functions and SQL Database
+description: >-
+  Create a SQL database, seed a users table, and serve the results
+  from a function on your application's domain.
+meta_tags: 'SQL Database, Functions, Applications, Rules Engine, user list API'
+namespace: docs_guides_build_user_list_api
+permalink: /documentation/products/guides/build-a-user-list-api/
+---
+
+import Code from '~/components/Code/Code.astro'
+
+In this tutorial, you will build a user list API with **Functions** and **SQL Database**. You will create a database, seed a `users` table, create a function, and route requests to it.
+
+## Prerequisites
+
+- An Azion account with a configured personal token
+- An application with a domain in the format `xxxxxxxxxx.map.azionedge.net`
+
+---
+
+## 1. Create the database
+
+To create the database, send a `POST` request to the databases endpoint:
+
+<Code lang="bash" code={`curl --location 'https://api.azion.com/v4/edge_sql/databases' \\
+--header 'Authorization: Token [TOKEN VALUE]' \\
+--header 'Content-Type: application/json' \\
+--data '{"name": "mydatabase"}'`} />
+
+The response returns `"state": "pending"` and `"status": "creating"`. Database creation is asynchronous.
+
+To check the creation status, send `GET` requests to the same endpoint until `status` is `created`:
+
+<Code lang="bash" code={`curl --location 'https://api.azion.com/v4/edge_sql/databases' \\
+--header 'Authorization: Token [TOKEN VALUE]'`} />
+
+The database is ready when `status` is `created`.
+
+## 2. Create and seed the users table
+
+To create and seed the `users` table, send a `POST` request to the query endpoint. Replace `{id_database}` with your database ID [GAP: how to obtain the database ID]:
+
+<Code lang="bash" code={`curl --location 'https://api.azion.com/v4/edge_sql/databases/{id_database}/query' \\
+--header 'Authorization: Token [TOKEN VALUE]' \\
+--header 'Content-Type: application/json' \\
+--data '{"statements": ["CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL);", "INSERT INTO users (id, name) VALUES (1, '\\''Ana'\\''), (2, '\\''Bruno'\\'');"]}'`} />
+
+The database now contains a `users` table with two rows.
+
+:::note
+A table supports a maximum of 100 columns. A SQL query has a maximum duration of 30 seconds.
+:::
+
+## 3. Query the users table
+
+To query the table, send a `POST` request with a `SELECT` statement to the query endpoint. Replace `{id_database}` with your database ID:
+
+<Code lang="bash" code={`curl --location 'https://api.azion.com/v4/edge_sql/databases/{id_database}/query' \\
+--header 'Authorization: Token [TOKEN VALUE]' \\
+--header 'Content-Type: application/json' \\
+--data '{"statements": ["SELECT * FROM users;"]}'`} />
+
+The response returns the query result in this shape:
+
+```json
+{
+  "state": "executed",
+  "data": [
+    {
+      "results": {
+        "columns": [...],
+        "rows": [...]
+      }
+    }
+  ]
+}
+```
+
+The `state` field returns `executed`, and `rows` contains the table data.
+
+---
+
+## 4. Create the function
+
+To create the function:
+
+1. Access [Azion Console](https://console.azion.com/) > **Edge Libraries** > **Functions**.
+2. Select **+ Function**.
+3. Enter a name for the function.
+4. Delete the placeholder code and paste the following code:
+
+    <Code lang="javascript" code={`import { Database } from "azion:sql";
+
+async function db_query() {
+  let connection = await Database.open("mydatabase");
+  let rows = await connection.query("select * from users");
+  return rows;
+}
+
+// [GAP: handle_request(request) code - wraps db_query(), returns 405 for non-GET requests and 500 on error]
+
+addEventListener("fetch", (event) => event.respondWith(handle_request(event.request)));`} />
+
+5. Select **Save**.
+
+You now have a function that queries the `users` table. `Database.open` opens a connection to the read replica, and `connection.query` returns the rows. For more information, refer to [Azion SQL library](/en/documentation/products/azion-lib/sql/).
+
+## 5. Instantiate the function in your application
+
+To instantiate the function:
+
+1. Access [Azion Console](https://console.azion.com/) > **Applications** > **your application**.
+2. Activate the **Functions** module. Activating the module can generate usage-related costs.
+3. Select **Save**.
+4. Go to the **Functions Instances** tab.
+5. Select **+ Function Instance**.
+6. Enter a name for the instance and select the function you created.
+7. Select **Save**.
+
+The application now has an instance of the function.
+
+## 6. Create a rule to run the function
+
+To create a rule that runs the function on the `/users` path:
+
+1. Access [Azion Console](https://console.azion.com/) > **Applications** > **your application**.
+2. In the **Rules Engine** tab, select **+ Rule**.
+3. Enter a name for the rule.
+4. Select **Request Phase**.
+5. Set the criteria to the variable `${uri}` with the _is equal_ operator and the argument `/users`.
+6. In the **Behaviors** section, select _Run Function_ and select the function you created.
+7. Select **Save**.
+
+Requests to the `/users` path now run the function.
+
+---
+
+## 7. Verify the API
+
+To verify the API, send a request to the `/users` path on your application domain:
+
+<Code lang="bash" code={`curl https://<your-azion-domain>/users`} />
+
+The response returns HTTP `200` with the query result. New rules can take a few minutes to propagate. On an unexpected response, wait and retry before diagnosing.
+
+## Next steps
+
+- [SQL Database](/en/documentation/products/store/sql-database/) - read the product documentation for the database you created.
+- [SQL Database API](/en/documentation/runtime/api-reference/sql-database/) - consult the reference for the runtime API that the function uses.
+- [Instantiate functions in an application](/en/documentation/products/guides/build/instantiate-functions/) - repeat the instantiation steps with other functions.

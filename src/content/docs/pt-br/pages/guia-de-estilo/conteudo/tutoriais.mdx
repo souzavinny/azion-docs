@@ -25,13 +25,14 @@ Procedural: 20 palavras por frase, uma instrução por passo, imperativo e ativo
 
 ## Estrutura
 
+O título é uma frase verbal no imperativo que nomeia o artefato: `Construa uma API de comentários`, `Faça o deploy de um site estático com Functions`.
+
 **Componentes obrigatórios**
 
-- **Parágrafo de abertura**: o que o leitor vai construir e aproximadamente quanto tempo leva.
-- **Antes de começar**: o conjunto mínimo real de pré-requisitos, cada um como link ou comando de uma linha.
-- **Passos numerados**: uma instrução cada, cada um terminando com um resultado visível.
-- **O que você construiu**: um parágrafo que retoma o resultado.
-- **Próximos passos**: dois ou três links, cada um com um motivo para clicar.
+- **Abertura**: `Neste tutorial, você vai <verbo> <o artefato e seu objetivo>.` Depois, uma frase que enumera os subobjetivos: "Você vai criar ..., configurar ... e fazer o deploy de ...".
+- **Pré-requisitos**: uma seção `## Pré-requisitos`, sempre primeiro, cada item um link ou um comando de uma linha quando existe um, senão uma frase nominal.
+- **Etapas**: títulos de etapa numerados, `## 1. <Frase verbal no imperativo>`, na ordem de construção. `(Opcional)` pode vir depois do número: `## 8. (Opcional) Adicione um domínio personalizado`. A etapa final faz o deploy ou verifica.
+- **Próximos passos**: um fechamento `## Próximos passos` com links em marcadores na forma `[Título](/caminho/) - uma frase sobre por que o leitor seguiria o link.`
 
 **Componentes opcionais**
 
@@ -40,46 +41,82 @@ Procedural: 20 palavras por frase, uma instrução por passo, imperativo e ativo
 
 ## Template
 
-Copie o template e substitua cada `<placeholder>`.
+Copie o template e substitua cada `<placeholder>`:
 
 ```md
-[Um parágrafo: o que o leitor vai construir,
-e aproximadamente quanto tempo leva.]
+Neste tutorial, você vai <verbo> <o artefato e seu objetivo>.
+Você vai criar <...>, configurar <...> e fazer o deploy de <...>.
 
-## Antes de começar
+## Pré-requisitos
 
-- <Um pré-requisito que a página não pode suprir, como link ou comando de uma linha>
+- <Um link ou um comando de uma linha quando existe um, senão uma frase nominal>
 
-## Passo 1: <frase verbal>
+## 1. <Frase verbal no imperativo>
 
-<O que fazer. Depois, o que o leitor deve ver.>
+<Um procedimento. Cada passo mostra um resultado visível.>
 
-## Passo 2: <frase verbal>
+<A frase de resultado: o que o leitor agora tem ou vê.>
+
+## 2. <Frase verbal no imperativo>
 
 <...>
 
-## O que você construiu
+## 3. (Opcional) <Frase verbal no imperativo>
 
-<Retome o resultado. Um parágrafo.>
+<Uma etapa opcional. `(Opcional)` vem depois do número.>
+
+## 4. <Frase verbal no imperativo que faz o deploy ou verifica>
+
+<...>
 
 ## Próximos passos
 
-- <Link>: <o motivo para clicar>
-- <Link>: <o motivo para clicar>
+- [Título](/caminho/) - uma frase sobre por que o leitor seguiria o link.
+- [Título](/caminho/) - uma frase sobre por que o leitor seguiria o link.
 ```
 
 ## Regras
 
-- **Cumpra a promessa.** Todo passo funciona e todo comando foi rodado antes de publicar.
-- **Escolha tudo.** O objetivo, a interface e cada valor. O leitor está aqui para aprender, não para escolher.
-- **Não ramifique.** Um caminho. Alternativas vão em um guia how-to, e tabs são uma ramificação.
-- **Não explique.** Uma frase e um link quando o conceito é genuinamente necessário.
-- **Mostre o resultado de cada passo.** Saída de comando, screenshot, URL ou um valor que mudou.
-- **Mantenha tutoriais escassos.** Um por área de produto. Cada um quebra em alguma release futura.
+- **Cumpra o contrato.** Você escolhe cada opção: sem ramificação, sem "dependendo das suas necessidades". Cada passo mostra um resultado visível, e todo comando foi rodado.
+- **Sem `<Tabs>`.** Tabs são uma ramificação, e tutoriais não ramificam. Uma tarefa que genuinamente precisa de três interfaces é um [guia how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/).
+- **Não explique.** Uma frase e um link quando o conceito é genuinamente necessário. Mantenha os asides raros.
+- **Dê a cada bloco de código uma introdução com dois-pontos.** "Instale a CLI:" e depois o comando. Use `<Code>` para tudo que o leitor copia.
+- **Mantenha tutoriais escassos.** Um por área de produto. Tutoriais são caros de manter funcionando.
+- **Marque lacunas, nunca as preencha.** Um componente obrigatório cujo conteúdo a fonte não fornece recebe um marcador `[GAP: ...]`, nunca omissão silenciosa, nunca invenção.
+- **Aponte os how-tos e conceitos que o tutorial tocou em `## Próximos passos`.** Dê a cada link seu motivo.
 
 ## Exemplos
 
-Conteúdo em breve.
+O exemplo abaixo, em inglês, mostra a abertura, os pré-requisitos e a primeira etapa de um tutorial que constrói uma API de lista de usuários:
+
+```mdx
+In this tutorial, you will build a user list API with **Functions** and **SQL Database**. You will create a database, seed a `users` table, create a function, and route requests to it.
+
+## Prerequisites
+
+- An Azion account with a configured personal token
+- An application with a domain in the format `xxxxxxxxxx.map.azionedge.net`
+
+---
+
+## 1. Create the database
+
+To create the database, send a `POST` request to the databases endpoint:
+
+<Code lang="bash" code={`curl --location 'https://api.azion.com/v4/edge_sql/databases' \\
+--header 'Authorization: Token [TOKEN VALUE]' \\
+--header 'Content-Type: application/json' \\
+--data '{"name": "mydatabase"}'`} />
+
+The response returns `"state": "pending"` and `"status": "creating"`. Database creation is asynchronous.
+
+To check the creation status, send `GET` requests to the same endpoint until `status` is `created`:
+
+<Code lang="bash" code={`curl --location 'https://api.azion.com/v4/edge_sql/databases' \\
+--header 'Authorization: Token [TOKEN VALUE]'`} />
+
+The database is ready when `status` is `created`.
+```
 
 ## Relacionados
 

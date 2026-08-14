@@ -1,0 +1,133 @@
+---
+title: Create an Object Storage bucket
+description: >-
+  Create a bucket in Object Storage and change its permissions from Azion
+  Console, the Azion CLI, or the API.
+meta_tags: 'Object Storage, bucket, create bucket, bucket permissions, edge storage'
+namespace: docs_store_journey_storage_create_bucket
+permalink: /documentation/products/store/storage/create-bucket/
+---
+
+import Tabs from '~/components/tabs/Tabs'
+import Code from '~/components/Code/Code.astro'
+
+You can create an [Object Storage](/en/documentation/products/store/object-storage/) bucket and change its permissions from Azion Console, the Azion CLI, or the API.
+
+## Prerequisites
+
+To use the CLI procedures, you need the Azion CLI installed and a configured personal token.
+
+---
+
+## Create a bucket
+
+:::note
+Bucket names are exclusive across all Azion accounts. A name must have 6 to 63 characters and must not start with `azion`. A name can have alphanumeric characters and hyphens.
+:::
+
+<Tabs client:visible>
+    <Fragment slot="tab.console">Console</Fragment>
+    <Fragment slot="tab.cli">CLI</Fragment>
+    <Fragment slot="tab.api">API</Fragment>
+
+<Fragment slot="panel.console">
+
+To create the bucket from Azion Console:
+
+1. Access [Azion Console](https://console.azion.com/) > **Object Storage**.
+2. Select **+ Bucket**.
+3. Enter a **Bucket Name** between 6 and 63 characters.
+4. Set **Workloads Access** to _Read Only_, _Read-Write_, or _Restricted_.
+5. Select **Save**.
+
+The bucket appears in the bucket list.
+
+</Fragment>
+
+<Fragment slot="panel.cli">
+
+To create the bucket with the Azion CLI:
+
+<Code lang="bash" code={`azion create edge-storage bucket --name '<your-bucket-name>' --edge-access 'read_only'`} />
+
+The `--edge-access` flag accepts `read_only`, `read_write`, or `restricted`.
+
+You now have a bucket with the access level from the `--edge-access` flag.
+
+</Fragment>
+
+<Fragment slot="panel.api">
+
+To create the bucket, send a `POST` request to the buckets endpoint:
+
+<Code lang="bash" code={`curl --location 'https://api.azion.com/v4/storage/buckets' \\
+--header 'Accept: application/json' --header 'Content-Type: application/json' \\
+--header 'Authorization: Token [TOKEN VALUE]' \\
+--data '{"name": "<your-bucket-name>", "edge_access": "read_only"}'`} />
+
+The response returns `"state": "executed"` with the bucket name and access level:
+
+```json
+{
+  "state": "executed",
+  "data": {
+    "name": "...",
+    "edge_access": "read_only"
+  }
+}
+```
+
+</Fragment>
+
+</Tabs>
+
+---
+
+## Change the permissions of a bucket
+
+<Tabs client:visible>
+    <Fragment slot="tab.console">Console</Fragment>
+    <Fragment slot="tab.cli">CLI</Fragment>
+    <Fragment slot="tab.api">API</Fragment>
+
+<Fragment slot="panel.console">
+
+To change the permissions from Azion Console:
+
+1. Access [Azion Console](https://console.azion.com/) > **Object Storage**.
+2. In the bucket list, select the name of the bucket.
+3. Change the **Workloads Access** level.
+4. Select **Save**.
+
+The bucket has the new access level.
+
+</Fragment>
+
+<Fragment slot="panel.cli">
+
+To change the permissions with the Azion CLI, use the `azion update edge-storage bucket` command. [GAP: flags and full syntax for `azion update edge-storage bucket`]
+
+</Fragment>
+
+<Fragment slot="panel.api">
+
+To change the permissions, send a `PATCH` request to `https://api.azion.com/v4/storage/buckets/<your-bucket-name>` with this body:
+
+<Code lang="json" code={`{"edge_access": "read_write"}`} />
+
+[GAP: headers for the `PATCH` request]
+
+The bucket has the new `edge_access` value.
+
+</Fragment>
+
+</Tabs>
+
+For more information, refer to [Update an Object Storage bucket](/en/documentation/products/store/storage/update-buckets/).
+
+---
+
+## Next steps
+
+- [Upload an object to a bucket](/en/documentation/products/store/storage/upload-object/) - Add objects to the bucket you created.
+- [Use a bucket as origin](/en/documentation/products/store/storage/use-bucket-as-origin/) - Serve content from the bucket.

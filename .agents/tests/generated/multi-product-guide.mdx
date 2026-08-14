@@ -1,0 +1,108 @@
+---
+title: Serve a store with cached content and a protected checkout
+description: >-
+  Cache a store catalogue, bypass cache for the cart, and rate-limit the
+  checkout with Applications and Firewall.
+meta_tags: >-
+  cache, bypass cache, rate limit, checkout, storefront, Rules Engine,
+  Application Accelerator, Firewall
+namespace: docs_guides_store_caching_checkout_protection
+permalink: /documentation/products/guides/store-caching-and-checkout-protection/
+---
+
+Each route of a storefront needs a different rule. The catalogue can answer from cache, the cart must not, and the checkout needs a rate limit. You configure caching with **Applications** and request filtering with **Firewall**.
+
+## Prerequisites
+
+- An application that serves the store
+- A firewall
+
+## Turn on Application Accelerator
+
+The **Bypass Cache** behavior requires the **Application Accelerator** module of **Applications**.
+
+To turn on the module:
+
+1. Access [Azion Console](https://console.azion.com/) > **Applications** > **your application**.
+2. In the **Main Settings** tab, go to the **Modules** section.
+3. Turn on the **Application Accelerator** switch.
+4. Select **Save**.
+
+The Application Accelerator module is enabled for the application.
+
+---
+
+## Cache the catalogue
+
+In **Applications**, a cache setting defines the TTL, and a Rules Engine rule applies it to the catalogue.
+
+To create the cache setting:
+
+1. Access [Azion Console](https://console.azion.com/) > **Applications** > **your application**.
+2. In the **Cache Settings** tab, select **+ Cache Setting**.
+3. Enter a name for the cache setting.
+4. In **Cache Expiration Policies**, set **CDN Cache Settings** to _Override Cache Settings_.
+5. In **Maximum TTL**, enter `3600` seconds, because the catalogue changes hourly.
+6. Select **Save**.
+
+The application has a cache setting with a maximum TTL of `3600` seconds.
+
+The `${uri}` variable is the normalized, URL-decoded URI, with no query string. To apply the cache setting to the catalogue:
+
+1. In the **Rules Engine** tab, select **+ Rule**.
+2. Enter a name for the rule.
+3. Select **Request Phase**.
+4. Set the criteria to `if ${uri} starts with /catalog`.
+5. Set the behavior to **Set Cache Policy**, with the cache setting as its argument.
+6. Select **Save**.
+
+Requests with a URI that starts with `/catalog` answer from cache for up to `3600` seconds.
+
+---
+
+## Bypass cache for the cart
+
+In **Applications**, the **Bypass Cache** behavior runs in the Request Phase only and requires the **Application Accelerator** module. It affects origin cache policies, not browser cache policies.
+
+To exclude the cart from the cache:
+
+1. Access [Azion Console](https://console.azion.com/) > **Applications** > **your application**.
+2. In the **Rules Engine** tab, select **+ Rule**.
+3. Enter a name for the rule.
+4. Select **Request Phase**.
+5. Set the criteria to `if ${uri} starts with /cart`.
+6. Set the behavior to **Bypass Cache**.
+7. Select **Save**.
+
+Requests with a URI that starts with `/cart` do not answer from cache.
+
+:::note
+An application accepts up to 200 request or response rules. Each rule accepts up to 5 criteria and 10 behaviors.
+:::
+
+---
+
+## Rate-limit the checkout
+
+**Firewall** filters requests through its own Rules Engine. A rate limit applies per _Client IP address_ or _Global_, in _Req/s_ or _Req/min_. For the _Req/s_ type, you can also set a **Maximum burst size**.
+
+To create the rate limit rule:
+
+1. Access [Azion Console](https://console.azion.com/) > **Firewall** > **your firewall**.
+2. In the **Rules Engine** tab, select **+ Rule**.
+3. Enter a name for the rule.
+4. In **Criteria**, select the **Request URI** variable with the _starts with_ operator and enter `/checkout`.
+5. In **Behaviors**, select **Set Rate Limit**.
+6. Set **Type** to _Req/s_.
+7. In **Average Rate Limit**, enter `10`.
+8. Set the limit to apply per _Client IP address_.
+9. Select **Save**.
+
+Requests to `/checkout` over 10 per second from one client IP address receive HTTP `429 Too Many Requests`. The value `10` is a starting point. Adjust it from observed traffic.
+
+## Next steps
+
+- [Configure cache policies](/en/documentation/products/guides/cache-settings/) - Adjust cache expiration policies for other routes of the store.
+- [Cache Settings](/en/documentation/products/build/applications/cache-settings/) - Review the fields of a cache setting, such as **Maximum TTL**.
+- [Rules Engine](/en/documentation/products/build/applications/rules-engine/) - Review the criteria and behaviors for application rules.
+- [Rules Engine for Firewall](/en/documentation/products/secure/firewall/rules-engine/) - Review the variables and behaviors for firewall rules.

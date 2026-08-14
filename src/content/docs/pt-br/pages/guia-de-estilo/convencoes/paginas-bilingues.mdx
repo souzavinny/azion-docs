@@ -18,16 +18,14 @@ A documentação publica toda página em inglês e em português do Brasil. O in
 
 O site vincula as duas versões de uma página pelo campo `namespace`, não pelo caminho do arquivo. O seletor de idioma depende desse vínculo. Os dois arquivos carregam o mesmo valor, caractere por caractere:
 
-```yaml
-# en/pages/store-journey/storage/create-bucket.mdx
-title: How to create an Object Storage bucket
-permalink: /documentation/products/store/storage/create-bucket/
-namespace: docs_store_journey_storage_create_bucket
+```
+en:     title:     Create an Object Storage bucket
+        permalink: /documentation/products/store/storage/create-bucket/
+        namespace: docs_store_storage_create_bucket
 
-# pt-br/pages/store-jornada/storage/criar-bucket.mdx
-title: Como criar um bucket do Object Storage
-permalink: /documentacao/produtos/store/storage/criar-bucket/
-namespace: docs_store_journey_storage_create_bucket
+pt-br:  title:     Criar um bucket do Object Storage
+        permalink: /documentacao/produtos/store/storage/criar-bucket/
+        namespace: docs_store_storage_create_bucket
 ```
 
 Cada campo do frontmatter segue uma de três regras na página em português:
@@ -77,6 +75,23 @@ Cinco regras cobrem a maior parte do trabalho em uma página em português:
 - Localize os rótulos dos asides: `:::note[nota]`, `:::tip[dica]`, `:::caution[Atenção]`. Um rótulo em inglês em uma página em português é um defeito visível.
 
 As listas completas estão em [Terminologia](/pt-br/documentacao/guia-de-estilo/escrita/terminologia/).
+
+## Use as formas fixas em português
+
+Três elementos recorrentes se traduzem sempre da mesma forma. Não improvise uma forma nova para eles.
+
+Três nomes de seção têm forma fixa em português:
+
+- `## Prerequisites` vira `## Pré-requisitos`.
+- `## Next steps` vira `## Próximos passos`.
+- `## Related resources` vira `## Recursos relacionados`.
+
+As frases padrão de link têm forma fixa, e o verbo é `consulte`:
+
+- `Para mais informações, consulte [Título](/pt-br/.../).`
+- `Para <fazer algo>, consulte [Título](/pt-br/.../).`
+
+Os rótulos da interface do Console ficam como a interface mostra. Não traduza nomes de botões e campos que o Console exibe em inglês: **Save**, **Workloads Access**, **+ Bucket**.
 
 ## Revise toda tradução
 

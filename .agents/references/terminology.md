@@ -1,12 +1,10 @@
 # Terminology
 
-Product names, translation rules, and banned expressions.
-
-**Canonical source:** `src/content/docs/en/pages/style-guide/writing/terminology.mdx`. When a rule changes, change both.
-
-The tables stay here because an agent looks them up on every draft. The reconciliation notes at the end are agent-only: they resolve conflicts with the wider Azion terminology guidance, which is maintained outside this repository and covers the marketing site as well.
+Naming rules for Azion documentation: current product names, translation rules, and banned expressions. This file is self-contained and authoritative for documentation.
 
 ## Product names
+
+Use these exactly. The products were renamed; the old names are legacy.
 
 | Use | Not |
 | --- | --- |
@@ -17,19 +15,23 @@ The tables stay here because an agent looks them up on every draft. The reconcil
 | Azion Platform | (short form, acceptable) |
 | Azion Marketplace | Marketplace da Azion |
 
-**Historical documents are exempt.** Changelogs, release notes, and dated agreements record what was true when written:
+**Historical documents are exempt.** Changelogs, release notes, and dated agreements record what was true when they were written. A 2020 Terms of Service keeps the names it was signed with. Do not rename products inside them.
 
-- `pages/changelog/**`
-- `pages/main-menu/release-notes/**`
-- `pages/agreements/**`
+**A URL or directory name is not evidence of a name.** Paths still carry legacy terms (`edge-application/`, `edge-firewall/`) that the prose has moved away from.
 
-A 2020 Terms of Service keeps the names it was signed with. Directory names are also exempt: `edge-application/` as a path is not prose, and renaming it would change permalinks.
+## When a name is not here
+
+Ask, or take it from the input you were given. Do not infer a product name from a URL, an older page, or a similar platform. An invented name is the naming version of an invented fact.
 
 ## Never translate
 
+These stay in English in every language. They are generic technical vocabulary, not product names.
+
 `edge computing` · `edge` · `edge location` · `data center` · `serverless` · `on-premise` · `template` · `compliance` · `e-commerce` · `e-mail` · `keywords` · `meta description`
 
-The strings `edge application`, `edge function`, and `edge firewall` also sit on the upstream do-not-translate list. That is guidance for **translation**, not permission to use them as product names in new English text.
+Product names are never translated either: `Applications`, `Functions`, `Firewall`, `Azion Web Platform`, `Azion Marketplace` stay as they are in Portuguese text.
+
+The strings `edge application`, `edge function`, and `edge firewall` also stay untranslated when they appear in existing text. That is guidance for **translation**, not permission to use them as product names. New English text uses the current names above.
 
 ## Portuguese substitutions
 
@@ -49,31 +51,24 @@ The strings `edge application`, `edge function`, and `edge firewall` also sit on
 
 ## Forbidden expressions, all languages
 
+Never use, in any language:
+
 `digital landscape` / `paisagem digital` · `digital transformation` / `transformação digital` · `empower` / `capacitar` · `plethora` / `plétora` · `shed light` / `esclarecer` · `realm` / `reino` · `beacon` / `farol`
 
 ## Titles
 
 Sentence case in both languages. Capitalize the first word and proper nouns only.
 
-## Two upstream rules that do not carry over
+- `Configure cache policies`
+- Not `Configure Cache Policies`
 
-Agent-only. Both look authoritative enough to be applied by mistake.
+## Two rules that trip translators
 
-**Permalinks are translated here.** The upstream guidance lists `permalink` under do-not-translate. On the docs site permalinks are localized:
+**Permalinks are translated.** The Portuguese permalink is localized and ASCII-folded:
 
 ```
 en:    /documentation/products/store/storage/create-bucket/
 pt-br: /documentacao/produtos/store/storage/criar-bucket/
 ```
 
-Applying that rule literally produces Portuguese pages sitting at English URLs.
-
-**The upstream frontmatter field list does not apply.** It names roughly fifteen fields absent from this repo's schema: `_schema`, `cluster`, `draft`, `noindex`, `ogImage`, `imageDark`, `imageLight`, `lang`, `pillar`, `topics`, `buttons`, `position`, `logos`, `icon`, `target`. It also writes `Namespace` capitalized; the field here is lowercase `namespace`.
-
-This repository's contract is in `.agents/skills/contributing/references/frontmatter-and-permalinks.md`. The one rule that carries over: **`namespace` is never translated**, because it pairs the two language versions.
-
-**Not applicable.** The upstream Spanish section and `/es/` URL rules have no target here. This site publishes English and Brazilian Portuguese only.
-
-## When a name is not here
-
-Ask. Do not infer a product name from a URL, a directory name, or an older page.
+**`namespace` is never translated.** It is the key that pairs the two language versions, and it must be identical, character for character. The frontmatter contract is in `style-guide.md`.

@@ -1,0 +1,56 @@
+---
+title: Content delivery at the edge
+description: >-
+  Deliver a site's content from locations close to users and reduce
+  latency and the load on your origin infrastructure.
+meta_tags: >-
+  content delivery, edge, cache, Applications, Rules Engine,
+  Application Accelerator, Image Processor
+namespace: docs_architectures_content_delivery
+permalink: /documentation/architectures/content-delivery/
+---
+
+This design delivers a site's content from locations close to users. It reduces latency and the load on the origin infrastructure. Use it when your team delivers static-heavy sites and applications.
+
+## Architecture diagram
+
+![Overview of a request/response through Applications](/assets/docs/images/uploads/content-delivery-arch.png)
+
+The diagram shows the path of a request and its response through an application at the edge. A client request reaches an edge node, where Rules Engine and the cache layer process it. Content that is not in the cache comes from the origin server, and the response returns to the client through the same edge node.
+
+### Dataflow
+
+A request moves through the design in this order:
+
+1. A client sends an HTTP or HTTPS request to a domain associated with an application.
+2. At the edge node, Rules Engine processes the request. It applies cache policies and image optimization behaviors in the request phase.
+3. The cache layer evaluates the request. On a cache-key match, the edge node delivers the object from the cache.
+4. If you configure Image Processor, it retrieves the image from the origin and processes it. The edge node then caches the optimized image.
+5. On a cache miss, the edge node forwards the request to the origin server. The origin responds, and the edge node caches the content. A cache key is generated and included in the `X-Cache-Key` response header.
+6. Before the response returns to the client, Rules Engine processes the response-phase policies. The edge node then delivers the content to the user.
+
+---
+
+## Components
+
+Each component has one role in the design:
+
+- **Applications**: the application at the edge.
+- **Cache**: caches content at the edge.
+- **Application Accelerator**: customizes cache rules, cache keys, and cookie handling.
+- **Rules Engine**: configures which cache policy applies in which scenario.
+- **Image Processor**: manipulates images through the request line.
+
+---
+
+## Implementation
+
+- [Configure cache policies](/en/documentation/products/guides/cache-settings/) - create the cache policies this design recommends: static files cached for at most 15 days (432000 seconds) and images for 1 year (31536000 seconds).
+- [Rules Engine](/en/documentation/products/build/applications/rules-engine/) - create the two rules that enforce the policies: one rule for static files and one rule for images.
+
+---
+
+## Related resources
+
+- [Cache](/en/documentation/products/build/applications/cache/) - the reference for the layer that caches content at the edge.
+- [Application Accelerator](/en/documentation/products/build/applications/application-accelerator/) - the reference for custom cache rules, cache keys, and cookie handling.

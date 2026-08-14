@@ -18,33 +18,42 @@ A tabela lista os termos em inglês porque o texto em inglês é a fonte canôni
 
 | Evite | Use |
 | --- | --- |
-| delve into | cover, explain |
-| leverage (no sentido de usar) | use |
-| utilize | use |
-| facilitate | let, allow |
+| it is important to note that | (apague a expressão, mantenha a frase) |
+| note that | (apague a expressão, mantenha a frase) |
 | in order to | to |
 | due to the fact that | because |
 | has the ability to | can |
-| it is important to note that | (apague a expressão, mantenha a frase) |
+| at this point in time | now |
+| utilize | use |
+| leverage (como decoração) | use |
+| delve into, dive into | cover, explain |
+| facilitate | let, allow |
+| straightforward | (apague, ou diga quais são os passos) |
 | a wide range of | (nomeie o intervalo) |
 | various | (nomeie os itens ou diga quantos são) |
-| seamlessly | (apague, ou diga o que não quebra) |
-| robust | (diga o que ele suporta) |
-| powerful | (diga o que ele faz) |
-| comprehensive | complete, ou diga o que ele cobre |
+| seamless, seamlessly | (apague, ou diga o que não quebra) |
 | cutting-edge, state-of-the-art | (apague) |
 | a testament to | (apague) |
 | plays a crucial role in | (diga o que ele faz) |
 | in today's landscape | (apague a frase) |
 
+## Substitua a moldura de marketing
+
+A moldura de marketing tem substituição direta. As expressões e as substituições ficam em inglês porque o texto em inglês é a fonte canônica. Estas expressões vendem em vez de descrever:
+
+| Evite | Use |
+| --- | --- |
+| Perfect for, Essential for, Critical for | Use for |
+| Best for | Use when |
+| empowers you to, enables you to | (diga a ação diretamente) |
+| powerful, robust, comprehensive (sobre um produto Azion) | (diga o que ele faz, o que ele suporta, o que ele cobre) |
+| modern `<thing>` | `<thing>` |
+
+O teste é se a palavra afirma *qualidade* ou descreve *comportamento*. "Robust security" é uma afirmação de qualidade. "A robust retry with exponential backoff" descreve comportamento e permanece.
+
 ## Separe qualidade de comportamento
 
-Uma palavra da lista é legítima quando descreve comportamento. O teste é se a palavra faz uma afirmação sobre qualidade ou uma afirmação sobre comportamento.
-
-- Afirmação de qualidade: `robust security`
-- Comportamento: `a robust retry with exponential backoff`
-
-"Robust security" pede que o leitor confie em um adjetivo. "A robust retry with exponential backoff" nomeia o mecanismo, e o adjetivo agora descreve algo testável. Mantenha uma palavra que passa nesse teste; substitua a que não passa.
+Uma palavra das tabelas de substituição é legítima quando descreve comportamento. "Robust security" pede que o leitor confie em um adjetivo. "A robust retry with exponential backoff" nomeia o mecanismo, e o adjetivo agora descreve algo testável. Mantenha uma palavra que passa nesse teste; substitua a que não passa.
 
 ## Descreva o produto, não o promova
 
@@ -84,9 +93,29 @@ Um conjunto curto de palavras é proibido em qualquer contexto:
 
 - "Simplesmente", "basta", "é só", "fácil" e "óbvio": se a tarefa fosse fácil, o leitor não estaria aqui. Essas palavras dizem a um leitor travado que ele deveria se envergonhar.
 - "Por favor": a documentação instrui; ela não pede.
-- "Atualmente", "no momento da escrita" e "em breve": todas envelhecem mal, e ninguém volta para corrigir. Diga o que é verdade e deixe o changelog carregar a linha do tempo.
+- "Atualmente", "no momento da escrita", "em breve", "agora disponível", "recentemente" e "novo" como modificador: todas envelhecem mal, e ninguém volta para corrigir. Nenhum mês ou ano aparece fora de um changelog. Diga o que é verdade e deixe o changelog carregar a linha do tempo.
 - "Note que" e "é importante notar": apague a expressão e mantenha a frase.
 - Abreviações latinas: escreva "por exemplo" e "isto é", não "e.g." nem "i.e."
+
+## Use os verbos da interface
+
+Cada ação de interface recebe um verbo, o mesmo em todas as páginas. A tabela registra a regra do texto em inglês, a fonte canônica:
+
+| Use | Not |
+| --- | --- |
+| select | click, hit, tap |
+| go to | navigate to |
+| turn on, turn off | enable, disable (for switches and toggles) |
+| enter | type in, input |
+| refer to | see, check out |
+
+Em inglês, "enable" e "disable" continuam legítimos para descrever estado em prosa: "When the module is enabled, requests pass through it."
+
+Os procedimentos publicados em português usam "acesse", "selecione", "digite" e "defina"; nunca "clique".
+
+Não use linguagem direcional: "à esquerda", "acima", "abaixo". Nomeie o elemento: "Na aba **Rules Engine**, selecione **Add Rule**." Direções quebram no mobile, na tradução e para leitores de tela.
+
+A gramática de passos que usa esses verbos está em [Procedimentos](/pt-br/documentacao/guia-de-estilo/escrita/procedimentos/).
 
 ## Use linguagem inclusiva
 

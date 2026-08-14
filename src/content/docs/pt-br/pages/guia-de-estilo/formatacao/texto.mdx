@@ -16,11 +16,21 @@ O negrito marca um label que o leitor precisa encontrar na tela e marca um nome 
 - Incorreto: `Você **precisa** limpar o cache **antes** do deploy da **nova versão**.`
 - Correto: `Limpe o cache antes do deploy da nova versão.`
 
-O negrito cumpre o seu papel quando aponta para a interface: `Clique em **Salvar** para aplicar a alteração.` O leitor sabe qual palavra procurar na tela.
+O negrito cumpre o seu papel quando aponta para a interface: `Selecione **Save** para aplicar a alteração.` O leitor sabe qual palavra procurar na tela.
 
-## Use itálico apenas para definir um termo
+## Use itálico para valores da interface e termos definidos
 
-O itálico marca um termo no momento em que a página o define: `Uma *cache key* identifica um objeto no cache.` Depois da definição, o termo aparece em texto simples. Itálico em qualquer outro lugar dilui esse sinal, e por isso a documentação o usa raramente.
+O itálico marca um valor ou opção que o leitor escolhe na interface: `Defina a permissão como _Read-only_.` O label fica em negrito; o valor fica em itálico.
+
+O itálico também marca um termo no momento em que a página o define: `Uma *cache key* identifica um objeto no cache.` Depois da definição, o termo aparece em texto simples. Itálico em qualquer outro lugar dilui os dois sinais, e por isso a documentação o usa raramente.
+
+## Use monoespaçado para código e valores digitados
+
+O monoespaçado marca código e tudo o que o leitor digita: comandos, caminhos, nomes de campo, flags, headers, códigos de status e nomes de arquivo.
+
+Nomes de ferramenta ficam em monoespaçado, nunca em negrito: `azion`, `npm`, `curl`. O negrito nomeia um produto; o monoespaçado nomeia o comando que o leitor executa.
+
+Os três estilos dividem o trabalho: negrito para o label, itálico para o valor, monoespaçado para o texto digitado.
 
 ## Formate os links internos
 
@@ -40,6 +50,15 @@ O leitor decide se segue um link apenas pelo texto do link. "Clique aqui" nomeia
 - Incorreto: `Para saber mais sobre as regras de frase, [clique aqui](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/).`
 - Correto: `Os limites de frase estão definidos em [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/).`
 
+Duas formas padrão cobrem quase toda frase de link, sempre com o verbo `consulte`:
+
+- `Para mais informações, consulte [Título](/pt-br/documentacao/.../).`
+- `Para <fazer algo>, consulte [Título](/pt-br/documentacao/.../).`
+
+Não escreva `Saiba mais sobre...`, `Para ler mais...`, `clique aqui`, `esta página` nem uma URL solta no texto. O texto do link nomeia o destino.
+
+Um link em seção de encerramento carrega o seu motivo: `[Título](/caminho/) - uma frase sobre o que o leitor encontra lá.`
+
 O texto de link é único na página. Dois links com o mesmo texto precisam ir para o mesmo lugar, porque o leitor que vê as mesmas palavras espera o mesmo destino.
 
 Links dentro de um parágrafo apontam para páginas da documentação. Links externos ficam reunidos no fim da página ou da seção, para o fluxo de leitura nunca sair da documentação no meio de uma tarefa.
@@ -52,7 +71,7 @@ Um aside carrega informação útil que não cabe no fluxo. As quatro variantes 
 | --- | --- |
 | `:::note[nota]` | Informação útil que não cabe no fluxo |
 | `:::tip[dica]` | Um atalho ou uma recomendação |
-| `:::caution[atenção]` | Uma ação com consequências que o leitor precisa pesar |
+| `:::caution[Atenção]` | Uma ação com consequências que o leitor precisa pesar |
 | `:::danger[perigo]` | Uma ação que quebra algo ou expõe dados |
 
 Três limites mantêm os asides legíveis. Use no máximo um aside de cada tipo por seção. Mantenha um aside em até três parágrafos curtos. Nunca coloque um título dentro de um aside.

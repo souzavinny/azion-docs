@@ -35,31 +35,28 @@ Descriptive: 25 words per sentence, active voice, passive only when the actor is
 
 ## Structure
 
-**Required components**
+The title names the design as a noun phrase: `Content delivery at the edge`. The opening paragraph states what problem the design solves and for whom.
 
-- **Lead paragraph**: the problem this design solves, and who it is for.
-- **Architecture diagram**: the diagram, then a paragraph that reads it.
-- **Dataflow**: a numbered walkthrough of what moves where.
-- **Components**: what each part does and why it is there.
-- **Implementation**: links to the guides that build it. This section links; it does not instruct.
+**Required sections, in order**
 
-**Optional components**
-
-- **The tradeoff**: what the design costs, and when a simpler one is enough.
-- **Variants**: the same design with one component swapped.
+- **`## Architecture diagram`**: the diagram, then a paragraph that reads it.
+- **`### Dataflow`**: a numbered walkthrough of what moves where, with six items at most.
+- **`## Components`**: what each part does and why it is there.
+- **`## Implementation`**: links to the how-tos, and only links.
+- **`## Related resources`**: the closing section, as bulleted links, each with its reason.
 
 ## Template
 
 ```md
-<The problem this design solves, and what it works against.> This document is for <the intended audience> who want to <what that audience wants to do>.
+<What problem this design solves, and for whom.>
 
-## <Design name> architecture diagram
+## Architecture diagram
 
 ![<What the diagram shows>](/assets/docs/images/uploads/<diagram-file>.png)
 
 <A paragraph that reads the diagram: what to look at first, and what depends on what.>
 
-### <Design name> dataflow
+### Dataflow
 
 1. <What moves first, and where it goes.>
 2. <What the platform does with it.>
@@ -72,25 +69,46 @@ Descriptive: 25 words per sentence, active voice, passive only when the actor is
 
 ## Implementation
 
-- [<Guide that implements this design>](<guide URL>)
+- [<How-to that implements this design>](<guide URL>) - <why the reader follows it>.
 
-## Related docs
+## Related resources
 
-- [<Related page>](<page URL>)
+- [<Related page>](<page URL>) - <what the reader gets there>.
 ```
 
 ## Rules
 
-- **Let the diagram carry the explanation.** Draw it first, then write the paragraph that reads it.
-- **Write the dataflow so it survives without the image.** The markdown twin carries the list, not the diagram.
-- **Write alt text that describes what the diagram shows**, and never rely on colour alone.
+- **The diagram never stands alone.** The numbered dataflow carries the meaning, because an agent fetching the markdown twin gets the list, not the image.
+- **Write alt text that describes what the diagram shows**, and never rely on color alone.
 - **Name every component and say why it is there.** A list of product names is a parts list.
 - **Link the implementation, do not inline it.** Steps belong in a [multi-product guide](/en/documentation/style-guide/content/multi-product-guides/).
-- **Date a design that belongs to a moment**, rather than letting the page age in silence.
+- **Mark a gap instead of inventing.** A required section whose content you do not have gets a gap marker, never an invented fill.
 
 ## Examples
 
 - [Deploy Jamstack websites at the edge](/en/documentation/architectures/jamstack/deploy-jamstack-applications/): a diagram, a numbered dataflow, the components involved, and links out to the implementation.
+
+This trimmed excerpt shows the opening, the diagram section, and the dataflow:
+
+```mdx
+This design delivers a site's content from locations close to users. It reduces latency and the load on the origin infrastructure. Use it when your team delivers static-heavy sites and applications.
+
+## Architecture diagram
+
+![Overview of a request/response through Applications](/assets/docs/images/uploads/content-delivery-arch.png)
+
+The diagram shows the path of a request and its response through an application at the edge. A client request reaches an edge node, where Rules Engine and the cache layer process it. Content that is not in the cache comes from the origin server, and the response returns to the client through the same edge node.
+
+### Dataflow
+
+A request moves through the design in this order:
+
+1. A client sends an HTTP or HTTPS request to a domain associated with an application.
+2. At the edge node, Rules Engine processes the request. It applies cache policies and image optimization behaviors in the request phase.
+3. The cache layer evaluates the request. On a cache-key match, the edge node delivers the object from the cache.
+4. On a cache miss, the edge node forwards the request to the origin server. The origin responds, and the edge node caches the content.
+5. Before the response returns to the client, Rules Engine processes the response-phase policies. The edge node then delivers the content to the user.
+```
 
 ## Related
 

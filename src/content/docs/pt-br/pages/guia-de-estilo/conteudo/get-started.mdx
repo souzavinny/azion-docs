@@ -11,7 +11,7 @@ menu_namespace: styleGuideMenu
 
 ## Propósito
 
-Uma página Get started é um tutorial cujo objetivo é a primeira ativação de um produto: de não usar o produto até o menor resultado que funciona. Ela é um padrão do tipo [tutorial](/pt-br/documentacao/guia-de-estilo/conteudo/tutoriais/), não um novo tipo de conteúdo.
+Uma página Get started é um tutorial cujo objetivo é a primeira ativação de um produto: de não usar o produto até o menor resultado que funciona. Ela segue a forma base do [tutorial](/pt-br/documentacao/guia-de-estilo/conteudo/tutoriais/).
 
 ## Quando usar
 
@@ -19,7 +19,7 @@ Uma página Get started é um tutorial cujo objetivo é a primeira ativação de
 - Escreva uma página Get started por produto, como ponto de entrada logo depois do Overview do produto.
 - Não escreva uma página Get started para uma tarefa que o leitor já tem em mente. Essa tarefa precisa de um [guia how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/).
 - Não escreva uma página Get started para apresentar opções ou comparar interfaces. O padrão tem um único caminho.
-- Não escreva uma página Get started separada para uma solução ou um recurso. O padrão cobre um produto inteiro.
+- Não escreva uma página Get started separada para um módulo ou um recurso. O padrão cobre um produto inteiro.
 
 ## Registro
 
@@ -27,15 +27,14 @@ Procedural: 20 palavras por frase, uma instrução por passo, imperativo e ativo
 
 ## Estrutura
 
-Uma página Get started segue o esqueleto do tutorial. [Tutoriais](/pt-br/documentacao/guia-de-estilo/conteudo/tutoriais/) argumenta cada parte; a lista abaixo nomeia o que o padrão exige.
+Uma página Get started segue o esqueleto do tutorial. [Tutoriais](/pt-br/documentacao/guia-de-estilo/conteudo/tutoriais/) argumenta cada parte; a lista abaixo nomeia o que o padrão exige. O título tem a forma `Get started with <Product>`.
 
 **Componentes obrigatórios**
 
-- **Parágrafo de abertura**: o que o leitor terá ao final e aproximadamente quanto tempo a página leva.
-- **Antes de começar**: o conjunto mínimo real de pré-requisitos, cada um como link ou comando de uma linha.
-- **Passos**: seções de passos numerados em um único caminho, até o menor resultado que funciona.
-- **O que você construiu**: um parágrafo que reafirma o resultado que funciona.
-- **Próximos passos**: dois ou três links para os guias do produto, cada um com uma razão para o clique.
+- **Abertura**: `Este guia conduz você por <resultado>.` seguido de uma lista curta com marcadores do que o leitor terá feito. Enquadre o resultado como um primeiro: "seu primeiro bucket", "seu primeiro deploy".
+- **Pré-requisitos**: uma seção `## Pré-requisitos` com itens em marcadores, cada item um link ou um comando de uma linha quando existe um, senão uma frase nominal que nomeia o requisito. Um único pré-requisito é uma frase, não uma lista.
+- **Etapas**: títulos de etapa numerados, `## 1. <Frase verbal no imperativo>` até `## N.`, terminando em uma etapa que ativa ou verifica. Cada etapa contém um procedimento e termina com sua frase de resultado.
+- **Próximos passos**: um fechamento `## Próximos passos` com links em marcadores na forma `[Título](/caminho/) - uma frase sobre por que o leitor seguiria o link.`
 
 **Componentes opcionais**
 
@@ -44,45 +43,80 @@ Uma página Get started segue o esqueleto do tutorial. [Tutoriais](/pt-br/docume
 
 ## Template
 
+Copie o template e substitua cada `<placeholder>`:
+
 ```md
-[Um parágrafo: o que o leitor terá ao final e
-aproximadamente quanto tempo leva.]
+Este guia conduz você por <resultado, enquadrado como um primeiro:
+seu primeiro bucket, seu primeiro deploy>.
 
-## Antes de começar
+- <O que o leitor terá feito, como uma lista curta>
+- <...>
 
-- <Pré-requisito que a página não pode fornecer, como link ou comando de uma linha>
+## Pré-requisitos
 
-## Passo 1: <frase verbal>
+- <Um link ou um comando de uma linha quando existe um, senão uma frase nominal>
 
-<O que fazer. Uma instrução por frase.>
+## 1. <Frase verbal no imperativo>
 
-<O que o leitor vê: saída de comando, captura de tela ou uma URL para abrir.>
+<Um procedimento, numerado quando tem duas ou mais ações.>
 
-## Passo 2: <frase verbal>
+<A frase de resultado: o que o leitor agora tem ou vê.>
+
+## 2. <Frase verbal no imperativo>
 
 <...>
 
-## O que você construiu
+## N. <Frase verbal no imperativo que ativa ou verifica>
 
-<Um parágrafo. Reafirme o resultado que funciona.>
+<...>
 
 ## Próximos passos
 
-- <Guia how-to dos Guias deste produto, com uma razão para o clique>
-- <Um segundo guia, ou a referência do produto>
+- [Título](/caminho/) - uma frase sobre por que o leitor seguiria o link.
+- [Título](/caminho/) - uma frase sobre por que o leitor seguiria o link.
 ```
 
 ## Regras
 
+- **Documente um único caminho linear na interface primária.** Alternativas são um link cada, não trilhas paralelas. Sem `<Tabs>`.
+- **Escreva cada etapa como um procedimento.** Os passos seguem [Procedimentos](/pt-br/documentacao/guia-de-estilo/escrita/procedimentos/), e cada etapa termina com sua frase de resultado.
 - **Mantenha os pré-requisitos no mínimo real.** Cada item é um motivo para abandonar a página.
-- **Documente um único caminho mínimo.** Sem opções, sem comparação de interfaces.
-- **Termine com o resultado funcionando.** Retome o resultado e aponte dois ou três guias.
-- **Coloque a página logo depois da visão geral do produto.**
+- **Termine em uma etapa que ativa ou verifica.** O leitor sai com a prova do resultado que funciona.
+- **Marque lacunas, nunca as preencha.** Um componente obrigatório cujo conteúdo a fonte não fornece recebe um marcador `[GAP: ...]`, nunca omissão silenciosa, nunca invenção.
+- **Aponte tutoriais e os principais how-tos em `## Próximos passos`.** Dê a cada link seu motivo.
 - **Teste todo comando antes de publicar.** Uma instrução por passo, e um resultado visível em cada um.
+- **Coloque a página logo depois do Overview do produto.**
 
 ## Exemplos
 
-Conteúdo em breve.
+O exemplo abaixo, em inglês, mostra a abertura, os pré-requisitos e a primeira etapa de uma página Get started de **Applications**:
+
+```mdx
+This guide instructs you through the deployment of your first application from a template. The guide has three stages:
+
+- Choose a template in Azion Console.
+- Configure and deploy the application.
+- Verify that the application answers on its Azion domain.
+
+---
+
+## Prerequisites
+
+- An [Azion account](https://console.azion.com/).
+- A GitHub account, for templates that integrate with GitHub.
+
+---
+
+## 1. Choose a template
+
+To choose a template:
+
+1. Access [Azion Console](https://console.azion.com/) > **+ Create**.
+2. In the modal, select the **Templates** option.
+3. Browse the templates and choose one.
+
+The configuration page for the template opens.
+```
 
 ## Relacionados
 

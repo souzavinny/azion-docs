@@ -5,13 +5,13 @@ The skeleton, section by section. It is a how-to skeleton with three additions: 
 ## Skeleton
 
 ```mdx
-[Scenario paragraph. What the team has, what it needs, what this page sets up.]
+[Scenario paragraph. Three to five sentences: what the team has, what it needs, what this page sets up.]
 
 [One line naming what the use case does not cover.]
 
-:::tip
-Prerequisites. One aside, not a section. Each item is a link or a one-line command.
-:::
+## Prerequisites
+
+[Bulleted. Each item is a link or a one-line command where one exists, otherwise a noun phrase naming the requirement.]
 
 ---
 
@@ -41,9 +41,9 @@ Prerequisites. One aside, not a section. Each item is a link or a one-line comma
 
 ---
 
-:::tip
-Next steps. Two or three links, each with a reason to click it.
-:::
+## Next steps
+
+[Two or three bulleted links, each with a reason to follow it.]
 ```
 
 ## Section rules
@@ -75,13 +75,13 @@ What talks to what, in order, numbered. Six items at most.
 
 A diagram is optional and it never stands alone. Diagrams are assets at `/assets/docs/images/uploads/<name>.png`, root-absolute with no language prefix. An agent fetching the markdown twin gets the numbered list and not the image, so the list carries the meaning.
 
-Every diagram needs alt text describing what it conveys, and it must not rely on colour alone to distinguish paths. Both are requirements, not preferences: `.agents/references/house-style.md`, canonically `style-guide/writing/accessibility.mdx` and `style-guide/formatting/images.mdx`.
+Every diagram needs alt text describing what it conveys, and it must not rely on color alone to distinguish paths.
 
 Cut this section when the setup has one product and one path. Three sentences of dataflow is not an architecture.
 
 ### Configure sections
 
-These are ordinary how-to sections, so `src/content/docs/en/pages/style-guide/content/how-to-guides.mdx` applies: imperative heading, numbered steps, one instruction per step, bold for UI labels. The `<Tabs>` mechanics are in `.agents/references/components.md`.
+These are ordinary how-to sections, so the How-to entry in `.agents/skills/contributing/references/content-types.md` applies: imperative heading, a colon lead-in, numbered steps per `.agents/references/procedures.md`, an outcome sentence. The `<Tabs>` mechanics are in `.agents/references/components.md`.
 
 Two rules on top of those:
 
@@ -103,13 +103,13 @@ One check per requirement, each with the result the reader should see:
 The response includes a cache hit header. The catalogue page is served from cache.
 ```
 
-Write the check against the outcome. `The rule appears in the list` proves the reader clicked **Save**. It does not prove the setup works.
+Write the check against the outcome. `The rule appears in the list` proves the reader selected **Save**. It does not prove the setup works.
 
 When a result takes time to propagate, say so and say what to do about it. Without that line a reader debugs a working configuration.
 
 ### Next steps
 
-Two or three links. Each one says why the reader would follow it. Not a summary of the page.
+Two or three bulleted links, shaped `[Title](/path/) - one sentence on why the reader would follow it.` Not a summary of the page.
 
 ## Size budget
 
@@ -126,7 +126,7 @@ Caps are in `.agents/references/page-size.md`: 2,000 characters per `##` section
 
 That totals about 7,800. A `<Tabs>` block legitimately pushes its own section between 2,000 and 4,000 characters, which `page-size.md` exempts. Nothing else on the page is exempt.
 
-**Budget for the translation, not for the English.** Portuguese runs longer than the same page in English, by roughly 9% on a measured pair. An English page that lands just under 8,000 produces a Portuguese page just over it. Aim the English at 7,000 so the pair fits.
+**Budget for the translation, not for the English.** Portuguese runs longer than the same page in English. Aim the English at 7,000 so the pair fits.
 
 Over the total, the fix is not compression. It is a narrower use case or a step that becomes a link.
 
@@ -140,9 +140,9 @@ Live components only, listed in `.agents/references/components.md`. A use case t
 
 | For | Use |
 | --- | --- |
-| Anything the reader copies | `<Code lang="bash" code={`...`} />` |
+| Anything the reader copies | `<Code lang="bash" code={...} />` |
 | A task with a Console, CLI, and API path | `<Tabs client:visible>` with paired `tab.` and `panel.` slots |
-| Prerequisites, next steps | `:::tip` |
+| A constraint or caveat | `:::note` or `:::caution` |
 | A pointer to the reference page for a product | `<LinkButton>` |
 
-Valid asides are `note`, `tip`, `caution`, and `danger`. `:::warning` is not one, whatever the pages already using it suggest.
+Valid asides are `note`, `tip`, `caution`, and `danger`. `:::warning` is not one.

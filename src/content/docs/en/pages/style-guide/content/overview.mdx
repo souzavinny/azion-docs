@@ -34,67 +34,106 @@ Descriptive: 25 words per sentence, active voice, passive only when the actor is
 
 **Required components**
 
-- **Lead paragraph**: the product name in the first sentence, what it does, and the problem it solves.
-- **Interfaces**: the ways a reader can use the product, as links to the Console, API, CLI, and Terraform.
-- **Implementation**: a table naming the scope and the resources the product exposes.
-- **Next step**: a link to the product's [Get started](/en/documentation/style-guide/content/get-started/) page.
+- **Definition block**: `**<Product>** is a <capability definition of roughly 10 to 15 words>.` Then the problems it solves, as a short benefit list in behavior terms.
+- **CTAs**: a primary `LinkButton` labeled **Get started** and a secondary one labeled `<Product> reference`.
+- **Capability sections**: one `##` per major capability or module. Noun-phrase headings; each section holds a short paragraph or a table.
+- **Interfaces**: the list `You can create and manage <Product> using:`, with Azion Console, API, Azion CLI, and Terraform as links.
+- **Closing**: `## Related resources`, with links shaped `[Title](/path/) - reason`, covering get started and the key concepts.
 
-**Optional components**
-
-- **When to use it**: the cases the product fits, and the cases it does not.
-- **Key concepts**: the terms a reader meets in the rest of the section, one line each.
-- **Limits**: a pointer to the reference page that holds them.
+The sections keep this order.
 
 ## Template
 
-```md
-**<Product>** is <what it is>. It <what it does>, so you can <the problem it solves>.
+Copy the template and replace each `<placeholder>`:
 
-<LinkButton link="<get started URL>" label="Get started with <Product>" severity="secondary" />
+```mdx
+import LinkButton from 'azion-webkit/linkbutton'
+
+**<Product>** is a <capability definition of roughly 10 to 15 words>.
+
+Use <Product> to:
+
+- <A problem it solves, in behavior terms>
+- <...>
+
+<LinkButton label="Get started" link="<get started URL>" />
+<LinkButton severity="secondary" label="<Product> reference" link="<reference URL>" />
+
+---
+
+## <Capability or module, as a noun phrase>
+
+<A short paragraph or a table.>
+
+## <Capability or module, as a noun phrase>
+
+<...>
+
+---
+
+## Interfaces
 
 You can create and manage <Product> using:
 
 - [Azion Console](<url>)
 - [API](<url>)
 - [Azion CLI](<url>)
+- [Terraform](<url>)
 
 ---
 
-## Implementation
+## Related resources
 
-| Scope | Resource |
-| --- | --- |
-| <scope> | <resource> |
-
----
-
-## When to use <Product>
-
-<The cases it fits. Then the cases it does not, and what to use instead.>
-
----
-
-## Related
-
-- [<The Get started page>](<url>)
-- [<The reference page for the product>](<url>)
+- [Get started with <Product>](<url>) - <why the reader would follow it>
+- [<Key concept>](<url>) - <why the reader would follow it>
 ```
 
 ## Rules
 
+- **Never instruct.** No numbered steps, no procedures, no code walkthroughs. An overview that instructs is a [get started page](/en/documentation/style-guide/content/get-started/) filed wrong.
+- **No quality adjectives.** Say what the product does and where it stops.
+- **The title is the product name, a noun.** Not "documentation", not a gerund.
 - **Name the product in the first sentence.** Not the problem space.
-- **Say when the product is the wrong choice**, and name the product that fits instead.
 - **Send the reader to [Get started](/en/documentation/style-guide/content/get-started/)**, near the top and again at the end.
-- **Do not inline steps.** A click-through here means the section is missing a guide.
+- **Mark gaps, never fill them.** A mandated slot the input does not supply — a CTA, the interfaces list — gets a `[GAP: ...]` marker, never silent omission, never invention.
 - **Keep it scannable.** Tables for anything enumerable, one or two sentences between them.
 
 ## Examples
 
-- [Object Storage](/en/documentation/store/object-storage/): opens with the product and what it does, then the interfaces and the implementation scope.
+This excerpt of an Overview page for **Data Stream** shows the definition block with its CTAs, the interfaces list, and the closing. The slots the input did not supply carry `[GAP: ...]` markers:
+
+```mdx
+**Data Stream** is an Observe product that feeds stream processing, SIEM, and big data platforms with your event logs in real time.
+
+Use Data Stream to:
+
+- Collect, group, and transmit raw logs to a destination that you choose.
+- Choose the Azion products and domains to collect logs from.
+- Choose the variables that the stream uses.
+
+<LinkButton label="Get started" link="/en/documentation/products/observe/data-stream/first-steps/" />
+
+[GAP: secondary CTA — permalink for a Data Stream reference page]
+
+---
+
+## Interfaces
+
+You can create and manage Data Stream using:
+
+- [GAP: management interfaces and their links — Console, API, CLI, Terraform availability not given]
+
+---
+
+## Related resources
+
+- [Data Stream first steps](/en/documentation/products/observe/data-stream/first-steps/) - Begin to use Data Stream.
+- [Configure Data Stream main settings](/en/documentation/products/guides/use-data-stream/) - Configure the main settings of a stream.
+```
 
 ## Related
 
-- [Reference](/en/documentation/style-guide/content/reference/): the base form an Overview applies, and the source of its template.
+- [Reference](/en/documentation/style-guide/content/reference/): the base form an Overview applies.
 - [Get started pages](/en/documentation/style-guide/content/get-started/): the page an Overview sends the reader to.
 - [Information architecture](/en/documentation/style-guide/content/information-architecture/): where the Overview sits in a product section.
 - [Choose a content type](/en/documentation/style-guide/content/choose-a-content-type/): the full catalogue of page kinds.

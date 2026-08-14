@@ -15,6 +15,7 @@ Este guia descreve como a Azion escreve sua documentação. Use este guia quando
 
 - [Voz](/pt-br/documentacao/guia-de-estilo/escrita/voz/): o registro que todas as páginas usam.
 - [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/): as regras de frase, adaptadas do ASD-STE100.
+- [Procedimentos](/pt-br/documentacao/guia-de-estilo/escrita/procedimentos/): a gramática de passo que todo procedimento numerado segue.
 - [Escolha de palavras](/pt-br/documentacao/guia-de-estilo/escrita/escolha-de-palavras/): vocabulário a evitar e os padrões que parecem gerados por máquina.
 - [Terminologia](/pt-br/documentacao/guia-de-estilo/escrita/terminologia/): nomes de produtos e regras de tradução.
 - [Títulos](/pt-br/documentacao/guia-de-estilo/formatacao/titulos/), [formatação de texto](/pt-br/documentacao/guia-de-estilo/formatacao/texto/) e [código](/pt-br/documentacao/guia-de-estilo/formatacao/codigo/): como o conteúdo é formatado.
@@ -26,9 +27,9 @@ Este guia descreve como a Azion escreve sua documentação. Use este guia quando
 
 Este guia cobre escrita e arquitetura de informação. Componentes, design visual e layout de página estão fora das regras de escrita: a seção [Componentes](/pt-br/documentacao/guia-de-estilo/componentes/) guarda o lugar até esse conteúdo chegar.
 
-## As regras para agentes
+## Onde as regras vivem
 
-Este guia é a fonte única das regras de escrita, e agentes de código leem estas páginas diretamente. O diretório `.agents` de [aziontech/docs](https://github.com/aziontech/docs) direciona o agente para a página certa aqui e acrescenta o que este guia não cobre: os componentes MDX, os arquivos de menu, os validadores de build e a versão em markdown de cada página. Uma regra muda em um lugar só, aqui.
+A fonte canônica das regras de escrita é o diretório `.agents` de [aziontech/docs](https://github.com/aziontech/docs): um sistema autossuficiente que gera e revisa páginas sem consultar o repositório. Este guia é a versão legível para humanos dessas regras. Uma regra muda primeiro em `.agents`, e estas páginas são regeneradas a partir dele. O diretório `.agents` também carrega o que este guia não cobre: os componentes MDX, os arquivos de menu, os validadores de build e os testes de conformidade.
 
 ## O guia segue as próprias regras
 

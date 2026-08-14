@@ -34,90 +34,93 @@ Descritivo: 25 palavras por frase, voz ativa, passiva apenas quando o agente é 
 
 **Componentes obrigatórios**
 
-- **Título**: uma expressão nominal que nomeia o produto ou o recurso.
-- **Parágrafo de introdução**: o nome do produto em negrito e o que o leitor pode fazer com ele.
+- **Título**: uma expressão nominal que nomeia a coisa: `Object Storage`, `Configurações de cache`, `azion create bucket`.
+- **Abertura**: uma a três frases definicionais sobre o artefato, e depois direto para os dados. Sem enquadramento de procedimento.
+- **Seções**: `##`s como expressões nominais que nomeiam o objeto, o grupo de campos ou o nível real. As tabelas carregam a informação — campos, valores, padrões, limites — com fraseado consistente em cada coluna e unidade em cada número. A prosa entre as tabelas é uma ou duas frases de orientação.
+- **Limites**: uma seção `## Limites` quando o produto os tem.
+- **Fechamento**: `## Recursos relacionados`, com links no formato `[Título](/caminho/) - motivo`, cobrindo a página de conceito e os principais how-tos.
 
 **Componentes opcionais**
 
-- **Botão de link**: uma chamada principal para ação perto do topo da página, e apenas uma.
-- **Interfaces de gerenciamento**: uma lista com Azion Console, API, Azion CLI e Terraform.
-- **Implementação**: uma tabela com os escopos disponíveis e o recurso que implementa cada um.
-- **Soluções**: uma tabela com cada solução e uma descrição de uma linha.
-- **Configurações avançadas**: uma tabela com cada configuração e uma descrição.
-- **Limites**: uma tabela com cada limite, abaixo de uma dica de que o suporte pode aumentar limites.
-- **Asides**: uma dica acima da tabela de limites e um aviso de atenção para uma mudança de versão ou de migração. Não use outros asides, e use esses dois com moderação.
+- **Asides**: uma dica acima da tabela de limites quando o suporte pode aumentar os limites, e um aviso de atenção para uma mudança de versão ou de migração. Não use outros asides.
 
-Omita uma seção que não tem nada para descrever. As seções restantes mantêm essa ordem.
+As seções mantêm essa ordem.
 
 ## Template
 
-Copie o template e substitua cada `<placeholder>`.
+Copie o template e substitua cada `<placeholder>`:
 
-```mdx
-import LinkButton from 'azion-webkit/linkbutton'
+```md
+**<Produto ou recurso>** é <uma a três frases definicionais sobre o artefato>.
 
-**<Nome do produto>** é <o que o produto é>. Com <Nome do produto>, você pode <o que o leitor pode fazer>.
+## <Objeto, grupo de campos ou nível, como expressão nominal>
 
-<LinkButton severity="secondary" label="<Chamada para ação>" link="<URL de destino>" />
+<Uma ou duas frases de orientação.>
 
-Você pode criar e gerenciar <nome do produto> por meio de:
-
-- [Azion Console](<URL do guia>)
-- [API](<URL da referência da API>)
-- [Azion CLI](<URL da referência da CLI>)
-- [Terraform](<URL da referência do Terraform>)
-
----
-
-## Implementação
-
-| Escopo | Recurso |
+| Campo | Descrição |
 | --- | --- |
-| <Escopo> | <Recurso que o implementa> |
+| <Nome do campo> | <O que ele contém, com o valor padrão> |
 
----
+## <Objeto, grupo de campos ou nível, como expressão nominal>
 
-## Soluções
-
-| Solução | Descrição |
-| --- | --- |
-| <Nome da solução> | <Descrição de uma linha> |
-
----
-
-## Configurações avançadas
-
-| Configuração | Descrição |
-| --- | --- |
-| <Nome da configuração> | <O que ela faz, com o valor padrão> |
+<...>
 
 ---
 
 ## Limites
 
-:::tip
+:::tip[dica]
 O suporte pode aumentar esses limites. Entre em contato com o <link do suporte>.
 :::
 
 | Escopo | Limite |
 | --- | --- |
 | <Escopo> | <Valor com a unidade> |
-```
 
-Uma página de comando da CLI tem outra forma. Ela abre com um resumo de uma linha e depois uma seção `Uso` com um bloco de shell. Uma seção `Flags opcionais` fecha a página, com um título por flag.
+---
+
+## Recursos relacionados
+
+- [<A página de conceito>](<url>) - <por que o leitor seguiria o link>
+- [<Um how-to principal>](<url>) - <por que o leitor seguiria o link>
+```
 
 ## Regras
 
-- **Descreva, não instrua.** Um passo a passo numerado pertence a um [guia how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/).
+- **Nunca um passo a passo numerado.** No momento em que um aparece, a página é um [guia how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/) arquivado no lugar errado. Aponte para o how-to.
+- **Seja completo antes de ser interessante.** Uma referência sem três de doze campos está quebrada; uma com descrições sem graça dos doze cumpre o papel.
 - **Coloque informação enumerável em tabelas.** Campos, limites, flags, padrões, códigos de status.
 - **Mantenha o fraseado consistente na coluna.** O leitor escaneia; fraseado variado obriga a ler.
 - **Declare as unidades e os valores padrão.** Um limite sem unidade não é um fato.
-- **Seja completo antes de ser interessante.** Uma página sem três de doze campos está quebrada.
 - **Sem marketing.** Diga o que faz e onde para.
+- **Marque lacunas, nunca as preencha.** Um componente obrigatório cujo conteúdo a fonte não fornece recebe um marcador `[GAP: ...]`, nunca omissão silenciosa, nunca invenção.
+- **Uma página de comando da CLI tem sua própria forma.** Um resumo de uma linha, depois `## Uso` com o comando, depois `## Flags opcionais` com uma entrada por flag.
 
 ## Exemplos
 
-- [Referência do Rules Engine](/pt-br/documentacao/build/applications/reference/rules-engine/): descreve criteria e behaviors em tabelas, e não instrui em nenhum ponto.
+O exemplo abaixo, em inglês, mostra a abertura definicional, uma seção de objeto com sua tabela e o fechamento de uma referência de **Object Storage**:
+
+```mdx
+**Object Storage** is a Store product that stores objects in buckets. A bucket is the container; an object is the stored item plus its metadata. Azion stores all buckets in the _us-east_ cloud region and bills storage per GB/hour, with no minimum retention.
+
+## Buckets
+
+Bucket names follow these rules:
+
+| Rule | Value |
+| --- | --- |
+| Length | 6 to 63 characters |
+| Characters | Alphanumeric characters and hyphen |
+| Reserved prefix | Must not start with `azion` |
+| Uniqueness | Exclusive across all Azion accounts |
+
+You cannot rename a bucket. You can delete a bucket only when it is empty, 24 hours after the removal of the final object.
+
+## Related resources
+
+- [Create an Object Storage bucket](/en/documentation/products/store/storage/create-bucket/) - create a bucket and set its `workloads_access` permission.
+- [Use a bucket as origin](/en/documentation/products/store/storage/use-bucket-as-origin/) - serve content from a bucket through Connectors.
+```
 
 ## Relacionados
 

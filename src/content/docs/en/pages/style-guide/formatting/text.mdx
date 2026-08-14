@@ -16,11 +16,21 @@ Bold marks a label the reader must find on screen, and it marks a product name. 
 - Incorrect: `You **must** purge the cache **before** you deploy the **new version**.`
 - Correct: `Purge the cache before you deploy the new version.`
 
-Bold does its job when it points at the interface: `Click **Save** to apply the change.` The reader knows which word to look for.
+Bold does its job when it points at the interface: `Select **Save** to apply the change.` The reader knows which word to look for.
 
-## Use italics only to define a term
+## Use italics for UI values and defined terms
 
-Italics mark a term at the moment the page defines it: `A *cache key* identifies one object in the cache.` After the definition, the term appears in plain text. Italics anywhere else dilute that signal, so the documentation uses them rarely.
+Italics mark a value or option the reader picks in the interface: `Set the permission to _Read-only_.` The label is bold; the value is italic.
+
+Italics also mark a term at the moment the page defines it: `A *cache key* identifies one object in the cache.` After the definition, the term appears in plain text. Italics anywhere else dilute both signals, so the documentation uses them rarely.
+
+## Use monospace for code and typed values
+
+Monospace marks code and anything the reader types: commands, paths, field names, flags, headers, status codes, and filenames.
+
+Tool names take monospace, never bold: `azion`, `npm`, `curl`. Bold names a product; monospace names the command the reader runs.
+
+The three styles divide the work: bold for the label, italics for the value, monospace for the typed text.
 
 ## Format internal links
 
@@ -39,6 +49,15 @@ The reader decides from the link text alone whether to follow the link. "Click h
 
 - Incorrect: `To learn about sentence rules, [click here](/en/documentation/style-guide/writing/sentence-structure/).`
 - Correct: `The sentence caps are defined in [Sentence structure](/en/documentation/style-guide/writing/sentence-structure/).`
+
+Two standard forms cover almost every link sentence:
+
+- `For more information, refer to [Page Title](/en/documentation/.../).`
+- `To <do something>, refer to [Section Title](/en/documentation/.../).`
+
+Do not write `Learn more about...`, `To read more...`, `click here`, `this page`, or a bare URL in prose. Link text names the destination.
+
+A closing-section link carries its reason: `[Title](/path/) - one sentence on what the reader gets there.`
 
 Link text is unique on the page. Two links with the same text must go to the same place, because a reader who sees the same words expects the same destination.
 

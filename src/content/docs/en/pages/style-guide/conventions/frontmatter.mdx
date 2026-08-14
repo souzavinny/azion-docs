@@ -15,12 +15,12 @@ Every documentation page opens with a frontmatter block. The writer sets five fi
 
 ```yaml
 ---
-title: How to create an Object Storage bucket
+title: Create an Object Storage bucket
 description: >-
-  Learn how to create a new read-only bucket and attribute read-write
-  permissions to it using the Azion API.
-meta_tags: 'Object Storage, bucket, S3, API'
-namespace: docs_store_journey_storage_create_bucket
+  Create a read-only Object Storage bucket and grant read-write
+  permissions from the Azion API, the CLI, or Azion Console.
+meta_tags: 'Object Storage, bucket, permissions, edge storage, create bucket'
+namespace: docs_store_storage_create_bucket
 permalink: /documentation/products/store/storage/create-bucket/
 ---
 ```
@@ -40,7 +40,7 @@ Two rules apply:
 
 The second rule has no safety net. The switcher silently loses the connection between the two pages, so check the value by hand.
 
-Write the value in lowercase words joined by underscores. Build it from the product and the feature: `docs_store_journey_storage_create_bucket`.
+Write the value in lowercase words joined by underscores. Build it from the product and the feature: `docs_store_storage_create_bucket`.
 
 ## Set the permalink
 
@@ -55,9 +55,11 @@ The `permalink` is the page URL without the language segment. The permalink alon
 
 The `description` becomes the page's meta description. The `meta_tags` value becomes its keywords, as a comma-separated list inside quotes.
 
-No check validates either field, so an empty one ships silently. Write both on every page. Write the description as one or two full sentences that state what the reader accomplishes or finds on the page; the rules in [Sentence structure](/en/documentation/style-guide/writing/sentence-structure/) apply to it.
+No check validates either field, so an empty one ships silently. Write both on every page.
 
-Do not open with a generic phrase that fits any page, such as "Learn more about..." or "This page describes...". A generic opener spends the description on framing instead of information.
+Write the description as one or two self-contained sentences, 50 to 160 characters long. Start with an imperative verb and state what the reader accomplishes on the page. Do not restate the title word for word. The rules in [Sentence structure](/en/documentation/style-guide/writing/sentence-structure/) apply to the description.
+
+Four openers are banned: `This page describes...`, `This document explains...`, `Learn more about...`, and `Learn how to...`. Start with the bare verb instead. A generic opener spends the description on framing instead of information.
 
 ## Place the page in a sidebar
 
