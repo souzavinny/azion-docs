@@ -10,7 +10,7 @@ STE writes different rules for **procedures** than for **descriptions**. The bas
 
 | Base form | Kinds | Register | Sentence cap | Voice |
 | --- | --- | --- | --- | --- |
-| Tutorial | Get started, Tutorial | procedural | 20 words | Imperative, active |
+| Tutorial | Quickstart, Tutorial | procedural | 20 words | Imperative, active |
 | How-to | How-to, Multi-product guide, Troubleshooting, Use case | procedural | 20 words | Imperative, active |
 | Reference | Overview, Reference | descriptive | 25 words | Active; passive only when the actor is unknown |
 | Explanation | Concept, Architecture | descriptive | 25 words | Active; passive only when the actor is unknown |

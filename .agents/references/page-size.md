@@ -49,5 +49,6 @@ These legitimately exceed the caps and should not be split to satisfy them:
 - **A `<Tabs>` block.** The Console, CLI, and API paths for one task are a single section by construction, and the panels retrieve better together than apart. Expect these sections to land between 2,000 and 4,000 characters and let them.
 - **Changelogs and release notes.** Append-only by nature.
 - **Legal agreements.** Single documents; splitting them changes their meaning.
+- **Use-case pages.** This kind carries a fixed ten-section skeleton and targets 11,000 characters instead of 8,000. The 16,000 hard cap still applies. The bound that keeps it there is the four-section cap on `## Configure`, in the `writing-a-use-case` skill.
 
 Everything else over the cap is over the cap because it is doing too much.

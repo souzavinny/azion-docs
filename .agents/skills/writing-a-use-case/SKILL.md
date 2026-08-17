@@ -5,7 +5,9 @@ description: Use when creating a use-case page for the Azion documentation — t
 
 # Writing a use case
 
-A use case is a guide with a commercial frame. The reader arrives with a business problem rather than a task, so the page opens with the scenario and closes with a setup they can verify. Everything between those two is an ordinary guide.
+A use case is a guide with a commercial frame. The reader arrives with a business problem rather than a task, so the page opens with the scenario and closes with a setup they can verify.
+
+**A use case is a specification, not an article.** It carries everything an implementer needs in one page: the products the scenario requires, the reference architecture, the configuration, the checks, the metrics, and the reasoning. That implementer is often an agent, so the page is written to be executed rather than read. Every value is concrete, every command runs, and no step says "depending on your setup" — an agent cannot resolve an ambiguity by asking.
 
 This skill routes. The detail lives in `references/`. Paths are relative to this skill directory unless they start with `.agents/`, which means the folder root.
 

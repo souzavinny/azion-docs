@@ -124,7 +124,9 @@ Do not write "Learn more about...", "To read more...", "click here", "this page"
 
 **A closing-section link carries its reason.** `[Title](/path/) - one sentence on what the reader gets there.`
 
-**Assets are root-absolute with no language prefix:** `/assets/docs/images/uploads/diagram.png`.
+**Assets are root-absolute with no language prefix:** `/assets/docs/images/uploads/screenshot.png`.
+
+**Diagrams are `mermaid` fences, not images.** An image reference is invisible to an agent reading the markdown twin. Screenshots stay images.
 
 ## Lists
 

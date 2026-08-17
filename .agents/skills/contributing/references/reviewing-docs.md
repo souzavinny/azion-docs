@@ -62,7 +62,7 @@ Report which kind the page mostly is, which content does not belong, and where i
 
 **Plain markdown where a component is the convention.** A `> ` blockquote used as a callout (should be an aside); three sequential sections for Console, CLI, and API (should be one `<Tabs>` block); a bare link styled as a call to action (should be `<LinkButton>`).
 
-**Over the size caps.** From `.agents/references/page-size.md`: a `##` section over 4,000 characters or a page over 16,000 is P1; over the 2,000/8,000 targets is P2. Exempt: complete reference tables, `<Tabs>` sections, changelogs, legal agreements. Also flag, regardless of size, any section that cannot be read alone: an opening pronoun with no referent in the section, "as mentioned above", a heading too generic to match a search.
+**Over the size caps.** From `.agents/references/page-size.md`: a `##` section over 4,000 characters or a page over 16,000 is P1; over the 2,000/8,000 targets is P2. Exempt: complete reference tables, `<Tabs>` sections, changelogs, legal agreements, and use-case pages, which target 11,000 instead of 8,000. Also flag, regardless of size, any section that cannot be read alone: an opening pronoun with no referent in the section, "as mentioned above", a heading too generic to match a search.
 
 **Links.** Relative instead of absolute; missing the language prefix; missing the trailing slash; a Portuguese page linking to English when a Portuguese page exists; an asset path carrying a language prefix.
 

@@ -129,6 +129,20 @@ Emits the iframe plus schema.org `VideoObject` metadata.
 
 `src` must be a YouTube **embed** URL. `src` and `title` are required.
 
+## Mermaid diagrams
+
+A diagram is a `mermaid` code fence, not an image. The text reaches an agent fetching the markdown twin; an image reference does not.
+
+````md
+```mermaid
+flowchart LR
+  Client --> Edge[Edge node]
+  Edge --> Origin[Origin server]
+```
+````
+
+Label every node and edge in words, and never rely on color alone to carry a distinction. A diagram never stands alone: architecture and use-case pages keep the numbered dataflow beneath it.
+
 ## Shared snippets
 
 Reusable blocks under `~/includes/snippets/`, each with an `en/` and a `pt/` variant. Note the Portuguese folder is `pt/`, not `pt-br/`.

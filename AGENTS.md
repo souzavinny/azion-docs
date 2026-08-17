@@ -25,7 +25,8 @@ src/
         changelog/            historical
     pt-br/                    Portuguese, mirrored with translated paths
   components/                 mostly dead fork legacy, see .agents/references/components.md
-  i18n/{en,pt-br}/            sidebar menus, hand-maintained TypeScript arrays
+  i18n/menus/                 sidebar menus, one bilingual JSON per menu (the source)
+  i18n/{en,pt-br}/            generated shims over i18n/menus/, plus a few hand-written TS menus
   includes/snippets/          shared MDX snippets, en/ and pt/ variants
   pages/[lang]/               routes, including [...slug].md.js for markdown twins
   content/config.ts           the Zod schema
@@ -67,7 +68,7 @@ Start at `.agents/README.md`. The layout:
 
 ### Content types
 
-Twelve page kinds, defined with their skeletons in `.agents/skills/contributing/references/content-types.md`: Overview, Get started, Tutorial, How-to, Multi-product guide, Troubleshooting, Reference, Concept, Architecture, Changelog, Navigation hub, and Use case. Each kind mandates its opening move, section order, and closing. The kind's base form sets the sentence budget: procedural kinds 20 words per sentence with one instruction per step, descriptive kinds 25.
+Twelve page kinds, defined with their skeletons in `.agents/skills/contributing/references/content-types.md`: Overview, Quickstart, Tutorial, How-to, Multi-product guide, Troubleshooting, Reference, Concept, Architecture, Changelog, Navigation hub, and Use case. Each kind mandates its opening move, section order, and closing. The kind's base form sets the sentence budget: procedural kinds 20 words per sentence with one instruction per step, descriptive kinds 25.
 
 When fanning work out to subagents, use the `docs` persona in `.agents/agents/docs.md` — subagents do not inherit the skills loaded in your session.
 
@@ -198,9 +199,9 @@ Pages pair by `namespace`, not by path. `src/util/getPageTranslations.ts` matche
 
 ## Sidebars
 
-Nothing scans the content directory. A new page is reachable from nowhere until it is registered by hand in `src/i18n/en/<menu>.ts` **and** `src/i18n/pt-br/<menu>.ts`.
+Nothing scans the content directory. A new page is reachable from nowhere until it is registered by hand in `src/i18n/menus/<menu>.menu.json`, one bilingual JSON per menu. The `src/i18n/{en,pt-br}/<menu>.ts` files are generated shims: edit the JSON, not the shim.
 
-Entries need `text` and `key`; link entries need `slug`, which equals the page's `permalink` exactly and excludes the language code. Valid `menu_namespace` values are in `src/data/availableMenu.ts`; an unrecognized value silently falls back to `nav`. The full registration procedure is in `.agents/skills/contributing/references/information-architecture.md`.
+Entries need `key` and a `label` per language; link entries need a `slug` per language, which equals that language's `permalink` exactly and excludes the language code. Valid `menu_namespace` values are in `src/data/availableMenu.ts`; an unrecognized value silently falls back to `nav`. The full registration procedure is in `.agents/skills/contributing/references/information-architecture.md`.
 
 ## Page size and retrieval
 

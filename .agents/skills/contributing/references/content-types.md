@@ -9,7 +9,7 @@ Four base forms, from Diátaxis, plus a fifth for records. The base form sets th
 | The reader wants to | Kind | Base form |
 | --- | --- | --- |
 | Meet a product and decide whether it fits | [Overview](#overview) | Reference |
-| Use a product for the first time | [Get started](#get-started) | Tutorial |
+| Use a product for the first time | [Quickstart](#quickstart) | Tutorial |
 | Learn by building something the author chose | [Tutorial](#tutorial) | Tutorial |
 | Complete one task they arrived with | [How-to](#how-to) | How-to |
 | Reach a goal that crosses products | [Multi-product guide](#multi-product-guide) | How-to |
@@ -37,35 +37,39 @@ A use case has its own skill: `.agents/skills/writing-a-use-case/`.
 
 The product's front door. The reader is deciding whether it fits.
 
+- **Tone**: inviting, factual, direct.
 - **Title**: the product name, a noun. Not "documentation", not a gerund.
 - **Opening move**: `**<Product>** is a <capability definition of roughly 10 to 15 words>.` Then what problems it solves, as a short benefit list in behavior terms. Then two CTAs:
 
 ```mdx
-<LinkButton label="Get started" link="/en/documentation/.../get-started/" />
+<LinkButton label="Quickstart" link="/en/documentation/.../quickstart/" />
 <LinkButton severity="secondary" label="<Product> reference" link="/en/documentation/.../" />
 ```
 
 - **Sections, in order**: the definition block with CTAs; one `##` per major capability or module, noun phrases, each a short paragraph or a table; the interfaces list ("You can create and manage <Product> using:" Console, API, CLI, Terraform, as links).
-- **Closing**: `## Related resources` — get started, key concepts.
-- **Never**: numbered steps, procedures, code walkthroughs, quality adjectives. An overview that instructs is a get-started filed wrong.
+- **Closing**: `## Related resources` — the quickstart, key concepts.
+- **Never**: numbered steps, procedures, code walkthroughs, quality adjectives. An overview that instructs is a quickstart filed wrong.
 
-## Get started
+## Quickstart
 
 The product's first success, linearly. Not a hub — a hub of paths is a [Navigation hub](#navigation-hub).
 
-- **Title**: `Get started with <Product>` for a single page. `Get started with <Product> using <interface>` for an interface variant: `using Azion Console`, `using the Azion CLI`, `using the API`, `using an AI agent`.
+- **Tone**: directive, plain, brisk, certain.
+- **Title**: `<Product> quickstart` for a single page. `<Product> quickstart using <interface>` for an interface variant: `using Azion Console`, `using the Azion CLI`, `using the API`, `using an AI agent`.
 - **Opening move**: `This guide instructs you through <outcome>.` followed by a short bullet list of what the reader will have done. Frame the outcome as a first: "your first bucket", "your first deployment".
+- **State the object chain before the first step.** After the opening move, name every object the reader creates and what each must be linked to, in order. A quickstart that lists clicks without the composition model leaves the reader unable to repeat the result with different objects.
 - **Sections, in order**: `## Prerequisites` (bulleted; each item a link or a one-line command where one exists, otherwise a noun phrase naming the requirement); then numbered stage headings `## 1. <Imperative verb phrase>` through `## N.`, ending in a step that activates or verifies. Each stage holds a procedure per `.agents/references/procedures.md` — numbered when it has two or more actions — and ends with its outcome sentence.
 - **Closing**: `## Next steps` — bulleted links, each with its reason.
 - **One linear path per page.** Inside a page, pick one interface and stay on it. No `<Tabs>`, and no comparison of interfaces or options: that is a how-to.
-- **Split by interface when the interface changes the path.** One page is the floor. A product adds a variant when an interface has its own first-run audience and its own steps: Azion Console, the Azion CLI, the API, or an AI agent connected through the Azion MCP server. The variants sit under one Get started group in the sidebar, Console first. The group is a menu parent, not a page.
-- **A variant names its siblings in one line**, under the opening move: `Prefer the CLI? Refer to [Get started with <Product> using the Azion CLI](/path/).` The reader who lands on the wrong path leaves it in one step.
+- **Split by interface when the interface changes the path.** One page is the floor. A product adds a variant when an interface has its own first-run audience and its own steps: Azion Console, the Azion CLI, the API, or an AI agent connected through the Azion MCP server. The variants sit under one Quickstart group in the sidebar, Console first. The group is a menu parent, not a page.
+- **A variant names its siblings in one line**, under the opening move: `Prefer the CLI? Refer to [<Product> quickstart using the Azion CLI](/path/).` The reader who lands on the wrong path leaves it in one step.
 - **Delete a variant you cannot keep true.** Every command in every variant runs before a release. A stale first-run page is worse than an absent one, because it fails the reader at first contact.
 
 ## Tutorial
 
 Teaches by building something that works. The reader is new; you choose the goal and guarantee the path.
 
+- **Tone**: directive, plain, instructive, certain.
 - **Title**: an imperative verb phrase naming the artifact: `Build a comments API`, `Deploy a static site with Functions`.
 - **Opening move**: `In this tutorial, you will <verb> <the artifact and its goal>.` Then one sentence enumerating the sub-goals: "You will create ..., configure ..., and deploy ...".
 - **Sections, in order**: `## Prerequisites` first, always. Then numbered stage headings `## 1. <Imperative verb phrase>` in build order. `(Optional)` may follow the number: `## 8. (Optional) Add a custom domain`. The final stage deploys or verifies.
@@ -80,6 +84,7 @@ Teaches by building something that works. The reader is new; you choose the goal
 
 Gets a reader who arrived with a task to a completed task.
 
+- **Tone**: directive, plain, efficient.
 - **Title**: a short imperative verb phrase naming the task: `Create a bucket`, `Bypass origin cache`. Not a gerund, not a question, not "How to ..." — the verb carries it.
 - **Opening move**: one scope sentence stating what the page lets the reader do and from where: `You can create a bucket from Azion Console, the Azion CLI, or the API.` Never "In this guide".
 - **Sections, in order**: `## Prerequisites` if any (bulleted; each item a link or a one-line command where one exists, otherwise a noun phrase naming the requirement); then one `##` per task, imperative verb phrases. Directly before each procedure, a lead-in ending in a colon: `To create the bucket:`. Steps follow `.agents/references/procedures.md`, and every procedure ends with its outcome sentence.
@@ -94,6 +99,7 @@ Gets a reader who arrived with a task to a completed task.
 
 One goal that crosses products. Still a how-to; the products are the route, not the subject.
 
+- **Tone**: directive, plain, decisive.
 - **Title**: the goal, in plain language, with no product names: `Serve a site with cached content and a protected checkout`.
 - **Opening move**: state the problem first, in one or two sentences. Introduce the products only after the problem, by role: "You configure caching with **Applications** and request filtering with **Firewall**."
 - **Sections, in order**: `## Prerequisites`; then one `##` per **workflow stage**, not per product. Each stage names its product on entry and holds an ordinary procedure. Each stage's section stands alone.
@@ -104,6 +110,7 @@ One goal that crosses products. Still a how-to; the products are the route, not 
 
 Fixes a symptom the reader is looking at right now.
 
+- **Tone**: calm, plain, directive, remedial.
 - **Title**: `Troubleshoot <feature or symptom class>`.
 - **Opening move**: one scope sentence naming the product and the class of symptoms the page covers.
 - **Sections**: one `##` per symptom, each fully self-contained and readable in any order. The heading is a noun phrase stating the observable behavior, quoting error strings verbatim in monospace: `` ## `403 Forbidden` on legitimate requests ``.
@@ -115,6 +122,7 @@ Fixes a symptom the reader is looking at right now.
 
 Look-up material. Consulted, never read; complete, consistent, deliberately boring.
 
+- **Tone**: plain, neutral, exhaustive.
 - **Title**: a noun phrase naming the thing: `Object Storage`, `Cache settings`, `azion create bucket`.
 - **Opening move**: one to three definitional sentences about the artifact, then straight to the data. No procedure framing.
 - **Sections**: noun-phrase `##`s naming the actual object, field group, or level. Tables carry the information — fields, values, defaults, limits — with consistent phrasing down every column and units on every number. Prose between tables is one or two sentences of orientation. Include a `## Limits` section when the product has them.
@@ -127,28 +135,32 @@ Look-up material. Consulted, never read; complete, consistent, deliberately bori
 
 Builds understanding of one mechanism. The reader is deciding or reasoning, not doing.
 
+- **Tone**: explanatory, descriptive, even-handed, patient.
 - **Title**: `How <X> works`, `About <X>`, or a short noun phrase.
 - **Opening move**: a declarative statement of how the system behaves — never "This page explains". Close the intro with a roadmap sentence that names the mechanisms the `##`s cover, in order.
 - **Sections**: one noun-phrase `##` per mechanism, mirroring the roadmap sentence. Cover the problem, the mechanism, and the tradeoff. An explanation that presents only upsides is marketing; every design choice costs something, so say what.
 - **Closing**: `## Related resources` — the reference page and the how-tos that apply the concept.
 - **No procedures.** Link the how-to. Alternatives and "instead of" live here and nowhere else.
-- **Diagrams carry load here.** Alt text describes what the diagram shows. Assets are root-absolute with no language prefix.
+- **Diagrams carry load here, and they are `mermaid` fences.** Say in prose what the diagram shows, and never rely on color alone.
 - **Passive voice is allowed narrowly**: only where the actor is genuinely unknown or is the platform itself.
 
 ## Architecture
 
 How products combine into a design. A concept at system scale.
 
+- **Tone**: explanatory, plain, systematic.
 - **Title**: the design, as a noun phrase: `Content delivery at the edge`.
 - **Opening move**: what problem this design solves and for whom, in the first paragraph.
-- **Sections, in order**: `## Architecture diagram` — the diagram, then a paragraph reading it; `### Dataflow` — a numbered walkthrough of what moves where, six items at most; `## Components` — what each part does and why it is there; `## Implementation` — links to the how-tos, and only links.
+- **Sections, in order**: `## Architecture diagram` — the diagram as a `mermaid` fence, then a paragraph reading it; `### Dataflow` — a numbered walkthrough of what moves where, six items at most; `## Components` — what each part does and why it is there; `## Implementation` — links to the how-tos, and only links.
 - **Closing**: `## Related resources`.
-- **The diagram never stands alone.** The numbered dataflow carries the meaning; an agent fetching the markdown twin gets the list, not the image.
+- **Draw the diagram in `mermaid`.** The diagram is text, so an agent fetching the markdown twin reads the design itself. Do not use an image for an architecture diagram.
+- **The diagram never stands alone.** The numbered dataflow carries the meaning, and it stays even when the diagram renders.
 
 ## Changelog
 
 The record of what changed and when. Full entry rules in `changelog.md`.
 
+- **Tone**: factual, plain, impersonal.
 - **Entry opening move**: `**<Product>** now <verb>s <capability>.` — present tense, the product as the subject, never "we".
 - **Then, in order**: what it means concretely; who is not affected; migration or opt-in steps with a code sample when an API or configuration changed.
 - **Entry closing**: `For more information, refer to [<the documenting page>](/en/documentation/.../).`
@@ -158,13 +170,23 @@ The record of what changed and when. Full entry rules in `changelog.md`.
 
 Routes readers deeper. Not a content kind — a junction.
 
+- **Tone**: brief, plain, orienting.
 - **Opening move**: one orientation sentence saying what the section holds.
 - **Body**: link groups under noun-phrase `##`s. Every link is shaped `[Title](/path/) - one sentence on what the reader gets there.`
 - **No closing section, no other prose.** Every link earns its place; a hub is judged by what it leaves out.
 
 ## Use case
 
-A how-to with a commercial frame: the reader arrives with a business scenario, not a task. Load the `writing-a-use-case` skill — it carries the intake, the skeleton, and the framing rules.
+A how-to with a commercial frame: the reader arrives with a business scenario, not a task. A use case is a specification, not an article — the implementer is often an agent, so the page is written to be executed rather than read.
+
+- **Tone**: precise, plain, businesslike, sober.
+- **Title**: the scenario in plain language, no product names.
+- **Sections, in order**: the scenario paragraph and the not-covered line; `## Prerequisites`; `## Required products` (the requirements table); `## Reference architecture` (a `mermaid` diagram, then a numbered `### Dataflow`); one `## Configure <thing>` per requirement, four at most; `## Verify the setup`; `## Demo` (optional); `## Measuring results`; `## Best practices`.
+- **Closing**: `## Next steps`.
+- **Separate verification from measurement.** Verification checks the setup once; measurement is the ongoing signal that it still works.
+- **Cap the configuration at four sections.** More than four means the use case is too wide, so split it.
+- **Page budget**: this kind targets 11,000 characters, above the 8,000 general target, with the 16,000 hard cap unchanged.
+- Load the `writing-a-use-case` skill — it carries the intake, the full skeleton, and the framing rules.
 
 ---
 
@@ -172,7 +194,7 @@ A how-to with a commercial frame: the reader arrives with a business scenario, n
 
 | Kinds | Closing section |
 | --- | --- |
-| Get started, Tutorial, How-to, Multi-product guide, Use case | `## Next steps` |
+| Quickstart, Tutorial, How-to, Multi-product guide, Use case | `## Next steps` |
 | Overview, Troubleshooting, Reference, Concept, Architecture | `## Related resources` |
 | Changelog, Navigation hub | none |
 
@@ -186,14 +208,14 @@ Every page links to its neighbors, so a reader — or a retriever — can move b
 
 | Kind | Links to |
 | --- | --- |
-| Overview | Get started, the main concepts |
-| Get started | Tutorials, the main how-tos |
+| Overview | The quickstart, the main concepts |
+| Quickstart | Tutorials, the main how-tos |
 | Tutorial | The how-tos and concepts it touched |
 | How-to | Sibling how-tos, the reference page |
 | Multi-product guide | Each product's how-tos and reference |
 | Troubleshooting | The how-tos and reference the fixes lean on |
 | Reference | The concept page, the main how-tos |
-| Concept | The reference page, get started |
+| Concept | The reference page, the quickstart |
 | Changelog entry | The page documenting the change |
 | Navigation hub | Its section's children |
 

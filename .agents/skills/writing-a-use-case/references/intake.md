@@ -77,7 +77,7 @@ A use case with three verified requirements is publishable. One with five requir
 
 ### The table decides the page
 
-- Each row becomes one line of the `## What you build` table.
+- Each row becomes one line of the `## Required products` table.
 - Each row that needs use-case-specific configuration becomes one `## Configure ...` section.
 - Each row becomes one check in `## Verify the setup`.
 - Rows whose steps are true for every use case become links, not sections.

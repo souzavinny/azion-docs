@@ -1,10 +1,12 @@
 # Page shape
 
-The skeleton, section by section. It is a how-to skeleton with three additions: the scenario, the requirements table, and a verification section that checks outcomes rather than steps.
+The skeleton, section by section. It is a how-to skeleton with additions: the scenario, the requirements table, a reference architecture, a verification section that checks outcomes rather than steps, the metrics that prove it keeps working, and the best practices behind the design.
+
+A use case is a specification, not an article. The implementer is often an agent, so every value is concrete, every command runs, and no step says "depending on your setup".
 
 ## Skeleton
 
-```mdx
+````mdx
 [Scenario paragraph. Three to five sentences: what the team has, what it needs, what this page sets up.]
 
 [One line naming what the use case does not cover.]
@@ -15,15 +17,22 @@ The skeleton, section by section. It is a how-to skeleton with three additions: 
 
 ---
 
-## What you build
+## Required products
 
-[The requirements table. Requirement, what it needs, where it is documented.]
+[The requirements table. Requirement, technical need, product, where it is documented.]
 
 ---
 
-## Architecture
+## Reference architecture
 
-[Numbered dataflow, or a diagram with a numbered dataflow under it.]
+```mermaid
+flowchart LR
+  <the design, as text an agent can read>
+```
+
+### Dataflow
+
+[Numbered. What arrives, what the platform does with it, where the flow ends.]
 
 ---
 
@@ -41,10 +50,28 @@ The skeleton, section by section. It is a how-to skeleton with three additions: 
 
 ---
 
+## Demo
+
+[Optional. A link to a running example or a template. Omit it when none exists.]
+
+---
+
+## Measuring results
+
+[The metrics that show the setup working, and where to read each one.]
+
+---
+
+## Best practices
+
+[The recommendations and the reasoning behind each one.]
+
+---
+
 ## Next steps
 
 [Two or three bulleted links, each with a reason to follow it.]
-```
+````
 
 ## Section rules
 
@@ -56,14 +83,14 @@ The last sentence says what the page sets up, in platform terms. The reader has 
 
 No heading. The `title` field renders the H1 and the body starts at `##`.
 
-### What you build
+### Required products
 
 A table, one row per requirement, straight out of the evidence table in `intake.md`.
 
-| The storefront needs | Which means | Documented in |
-| --- | --- | --- |
-| Catalogue pages that load from cache | A cache rule matched on the catalogue path | [link] |
-| A cart that is never shared between users | A rule that bypasses cache on the cart path | [link] |
+| The storefront needs | Which means | Product | Documented in |
+| --- | --- | --- | --- |
+| Catalogue pages that load from cache | A cache rule matched on the catalogue path | Applications | [link] |
+| A cart that is never shared between users | A rule that bypasses cache on the cart path | Applications | [link] |
 
 This is the section a technical lead reads before deciding to read the rest. Keep the left column in the reader's words and the middle column in platform words.
 
@@ -73,7 +100,7 @@ Consistent phrasing down each column. A column where every cell is shaped differ
 
 What talks to what, in order, numbered. Six items at most.
 
-A diagram is optional and it never stands alone. Diagrams are assets at `/assets/docs/images/uploads/<name>.png`, root-absolute with no language prefix. An agent fetching the markdown twin gets the numbered list and not the image, so the list carries the meaning.
+A diagram is optional and it never stands alone. Diagrams are `mermaid` fences, never images. The numbered dataflow stays beneath the diagram. An agent fetching the markdown twin gets the numbered list and not the image, so the list carries the meaning.
 
 Every diagram needs alt text describing what it conveys, and it must not rely on color alone to distinguish paths.
 
@@ -93,7 +120,7 @@ At most four of these sections. Five means the use case is two use cases.
 
 ### Verify the setup
 
-The section that separates a use case from a list of tasks. It checks the requirements from `## What you build`, not the steps.
+The section that separates a use case from a list of tasks. It checks the requirements from `## Required products`, not the steps.
 
 One check per requirement, each with the result the reader should see:
 
@@ -113,20 +140,24 @@ Two or three bulleted links, shaped `[Title](/path/) - one sentence on why the r
 
 ## Size budget
 
-Caps are in `.agents/references/page-size.md`: 2,000 characters per `##` section, 8,000 per page body. A use case reaches them faster than most pages, so budget up front.
+Caps are in `.agents/references/page-size.md`: 2,000 characters per `##` section. A use case runs longer than other kinds by design, so budget up front.
 
 | Section | Target characters |
 | --- | --- |
 | Scenario | 500 |
-| What you build | 900 |
-| Architecture | 700 |
+| Prerequisites | 300 |
+| Required products | 900 |
+| Reference architecture | 1,200 |
 | Each `## Configure` section, four at most | 1,200 |
 | Verify the setup | 700 |
+| Demo | 300 |
+| Measuring results | 700 |
+| Best practices | 800 |
 | Next steps | 200 |
 
-That totals about 7,800. A `<Tabs>` block legitimately pushes its own section between 2,000 and 4,000 characters, which `page-size.md` exempts. Nothing else on the page is exempt.
+That totals about 10,400. This kind targets 11,000 rather than the general 8,000, and `page-size.md` carries the exemption. The 16,000 hard cap is unchanged. A `<Tabs>` block legitimately pushes its own section between 2,000 and 4,000 characters, which `page-size.md` exempts. Nothing else on the page is exempt.
 
-**Budget for the translation, not for the English.** Portuguese runs longer than the same page in English. Aim the English at 7,000 so the pair fits.
+**Budget for the translation, not for the English.** Portuguese runs longer than the same page in English. Aim the English at 10,000 so the pair fits.
 
 Over the total, the fix is not compression. It is a narrower use case or a step that becomes a link.
 

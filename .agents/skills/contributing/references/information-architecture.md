@@ -17,6 +17,33 @@ Pages are `.mdx` files under `src/content/docs/{en,pt-br}/`. Portuguese paths ar
 
 **The directory decides nothing about the URL; `permalink` does.** Breadcrumbs derive from permalink segments. Keep path and permalink aligned anyway, because the directory decides who finds the file later.
 
+## The product section skeleton
+
+Where a page sits inside a product section. Thirteen slots, in this order:
+
+| # | Slot | Required | Kind |
+| --- | --- | --- | --- |
+| 1 | Overview | Yes | Overview |
+| 2 | Quickstart | Yes | Quickstart |
+| 3 | How it works | When the product needs explaining | Concept |
+| 4 | Features and capabilities | When the product has feature surfaces | Reference or Overview, one level down |
+| 5 | Guides | When the product has tasks | How-to |
+| 6 | Tutorials | Optional | Tutorial |
+| 7 | Examples | Optional | Reference |
+| 8 | Reference | When the product has settings | Reference |
+| 9 | Limits | When the product has limits | Reference, dimensioned by plan |
+| 10 | Best practices | Optional | Concept |
+| 11 | Troubleshooting | When the product has known symptoms | Troubleshooting |
+| 12 | Pricing | Yes | A link, never a page |
+| 13 | Changelog | Yes | A link |
+
+- **Slots are not kinds.** Thirteen slots, twelve kinds. Limits, Examples, and Features and capabilities all hold reference pages; Best practices and How it works both hold concept pages. Adding a slot never adds a kind.
+- **The Required column decides what ships.** Every other slot exists only when real content fills it.
+- **Grow by splitting a slot the section already has**: Guides into named task areas, Quickstart by interface, Features and capabilities by surface. The thirteen never grow in number.
+- **A product with modules repeats the pattern one level down**, reduced to the parts the module needs.
+- **Pricing is a link to `/documentation/platform/pricing/#<product>`.** Never author a per-product pricing page, and never restate a price, a quota, or a billing metric on a product page.
+- Content that no single product owns goes beside the products: Fundamentals, Support, Architectures, or Guides for use cases.
+
 ## Search before adding
 
 ```bash
@@ -61,23 +88,29 @@ Two hits, one per language, is correct. One hit means the language switcher is b
 
 **A new page is reachable from nowhere until it is registered by hand.** Nothing scans the content directory. Two edits:
 
-**1. Point the page at a menu** with `menu_namespace` in its frontmatter. Omit the field and the page falls back to `nav`, the main sidebar. An unregistered value also falls back silently. Registered values live in `src/data/availableMenu.ts`:
+**1. Point the page at a menu** with `menu_namespace` in its frontmatter. Omit the field and the page falls back to `nav`, the main sidebar. An unregistered value also falls back silently. Registered values live in `src/data/availableMenu.ts`, which on this branch holds one entry per product menu plus `nav`, `fundamentalsMenu`, `supportMenu`, `architecturesMenu`, `agreementsMenu`, and `styleGuideMenu`.
 
-`nav`, `buildMenu`, `secureMenu`, `observeMenu`, `deployMenu`, `storeMenu`, `cliMenu`, `cliMenuAlpha`, `runtimeMenu`, `graphqlMenu`, `devtoolsMenu`, `libMenu`, `mcpMenu`
+**2. Add the entry to the menu JSON.** On this branch the menus are **one bilingual JSON per menu** under `src/i18n/menus/<menu>.menu.json`. The `src/i18n/{en,pt-br}/<menu>.ts` files are generated shims that carry the line "edit the JSON, not this file". Both languages sit in the same node:
 
-**2. Add the entry to the menu file, in both languages** — `src/i18n/en/<menu>.ts` and `src/i18n/pt-br/<menu>.ts`:
-
-```ts
-// src/i18n/en/storeMenu.ts
-{ text: 'Create a bucket', slug: '/documentation/products/store/storage/create-bucket/', key: 'createBucket' },
-
-// src/i18n/pt-br/storeMenu.ts
-{ text: 'Criar um bucket', slug: '/documentacao/produtos/store/storage/criar-bucket/', key: 'createBucket' },
+```json
+{
+ "key": "store/create-bucket",
+ "label": {
+  "en": "Create a bucket",
+  "pt-br": "Criar um bucket"
+ },
+ "slug": {
+  "en": "/documentation/products/store/storage/create-bucket/",
+  "pt-br": "/documentacao/produtos/store/storage/criar-bucket/"
+ }
+}
 ```
 
-`slug` equals the page's `permalink` exactly — no language prefix, trailing slash — or the sidebar link 404s. `key` is camelCase, unique within the menu, identical across the two languages. `text` is translated. Heading entries additionally carry `header: true` and `type`.
+`slug` equals the page's `permalink` exactly — no language prefix, trailing slash — or the sidebar link 404s. `key` is unique within the menu and shared by both languages. `label` is translated. A node with `items` and no `slug` is a toggle-only parent. `meta.title` and `meta.root` turn a menu into a child sidebar with a back-header.
 
-Adding the English entry alone gives Portuguese readers a page with no way to reach it. Both languages, or neither.
+Because the two languages live in one node, a missing `pt-br` label or slug is the failure to watch for, not a missing file.
+
+Hand-written TS menus still exist for `runtimeMenu`, `graphqlMenu`, `cliMenuAlpha`, `libMenu`, `mcpMenu`, and `devtoolsMenu`. Those take the older two-array shape.
 
 ## Redirects
 
