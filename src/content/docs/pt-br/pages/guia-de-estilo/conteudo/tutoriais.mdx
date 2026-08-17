@@ -15,13 +15,33 @@ Um tutorial ensina o produto ao levar o leitor a construir algo que funciona. O 
 
 ## Quando usar
 
-- O leitor é novo e ainda não sabe o que quer. Você escolhe um objetivo por ele, e ele aprende o produto no caminho.
-- Não use um tutorial para o leitor que chegou com uma tarefa: essa página é um [guia how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/).
-- Na dúvida, [Escolher um tipo de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/) tem o roteiro.
+**Reconheça um tutorial por:**
+
+- Um leitor que já escolheu o produto e ainda não construiu nada com ele.
+- Um artefato que funciona quando a última etapa termina.
+- Um caminho único que o autor escolheu e garante, do primeiro comando até um resultado verificado.
+- Aprendizado que chega como efeito de construir, nunca como aula.
+
+**Continua sendo um tutorial quando:**
+
+- Usa mais de um produto, porque o artefato precisa deles. O autor escolheu o objetivo, e é isso que decide o tipo.
+- Constrói sobre um serviço de terceiro que faz parte do artefato. Nomeie o passo do fornecedor e aponte para fora; nunca documente a interface dele.
+- Roda inteiramente no Azion Console, porque esse é o caminho honesto até o resultado.
+- Deixa de fora uma capacidade que o artefato não precisa. Completude é assunto de [referência](/pt-br/documentacao/guia-de-estilo/conteudo/referencia/).
+
+**Escreva outra coisa quando:**
+
+- O leitor chegou com a tarefa já em mente. Isso é um [guia how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/).
+- A página ativa um produto pela primeira vez. Isso é um [quickstart](/pt-br/documentacao/guia-de-estilo/conteudo/quickstart/).
+- A página implementa um cenário de negócio do início ao fim. Isso é um [caso de uso](/pt-br/documentacao/guia-de-estilo/conteudo/casos-de-uso/).
+- O assunto é campos, valores e padrões. Isso é [referência](/pt-br/documentacao/guia-de-estilo/conteudo/referencia/).
+- Nada fica pronto no fim. Passos que não terminam em nada não ensinam nada, então encontre o artefato ou descarte a página.
+
+Quando dois tipos ainda parecem possíveis, [Escolher um tipo de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/) tem o roteiro.
 
 ## Registro
 
-Procedural: 20 palavras por frase, uma instrução por passo, imperativo e ativo. [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/) tem as regras.
+Procedural: 20 palavras por frase, uma instrução por passo, imperativo e ativo. Tom: diretivo, claro, didático, seguro. [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/) tem as regras.
 
 ## Estrutura
 
@@ -80,6 +100,8 @@ Você vai criar <...>, configurar <...> e fazer o deploy de <...>.
 - **Cumpra o contrato.** Você escolhe cada opção: sem ramificação, sem "dependendo das suas necessidades". Cada passo mostra um resultado visível, e todo comando foi rodado.
 - **Sem `<Tabs>`.** Tabs são uma ramificação, e tutoriais não ramificam. Uma tarefa que genuinamente precisa de três interfaces é um [guia how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/).
 - **Não explique.** Uma frase e um link quando o conceito é genuinamente necessário. Mantenha os asides raros.
+- **Toda captura de tela precisa se justificar.** Uma imagem para um resultado que as palavras não mostram, nunca um print de cada tela pela qual o leitor passa.
+- **Aponte para fora nos produtos de terceiros.** Nomeie o passo do fornecedor; não documente a interface dele.
 - **Dê a cada bloco de código uma introdução com dois-pontos.** "Instale a CLI:" e depois o comando. Use `<Code>` para tudo que o leitor copia.
 - **Mantenha tutoriais escassos.** Um por área de produto. Tutoriais são caros de manter funcionando.
 - **Marque lacunas, nunca as preencha.** Um componente obrigatório cujo conteúdo a fonte não fornece recebe um marcador `[GAP: ...]`, nunca omissão silenciosa, nunca invenção.
@@ -120,6 +142,6 @@ The database is ready when `status` is `created`.
 
 ## Relacionados
 
-- [Páginas Get started](/pt-br/documentacao/guia-de-estilo/conteudo/get-started/): o tutorial cujo objetivo é a primeira ativação.
+- [Páginas de quickstart](/pt-br/documentacao/guia-de-estilo/conteudo/quickstart/): o tutorial cujo objetivo é a primeira ativação.
 - [Guias how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/): a página para o leitor que chegou com uma tarefa.
 - [Escolher um tipo de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/): o roteiro.

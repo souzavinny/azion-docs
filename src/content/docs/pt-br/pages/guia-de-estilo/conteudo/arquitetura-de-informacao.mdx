@@ -15,63 +15,57 @@ Dois princípios organizam tudo. As seções seguem a ordem da jornada do leitor
 
 ## O esqueleto de seção de produto
 
-Toda seção de produto segue esta ordem. A tabela mostra o que cada seção contém e quando ela existe.
+Toda seção de produto segue esta ordem. A tabela mostra o que cada slot contém e quando ele existe.
 
-| Ordem | Seção | Obrigatória | Contém |
+| Ordem | Slot | Obrigatório | Contém |
 | --- | --- | --- | --- |
 | 1 | Overview | Sim | A página raiz do produto: o que o produto é, o que ele faz, quando usar |
-| 2 | Get started | Sim | [Páginas Get started](/pt-br/documentacao/guia-de-estilo/conteudo/get-started/): de não usar o produto ao menor resultado funcional. Uma página, ou uma por interface |
-| 3 | Guias | Quando o produto tem tarefas | [Guias how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/), incluindo as [páginas de troubleshooting](/pt-br/documentacao/guia-de-estilo/conteudo/troubleshooting/) do produto |
-| 4 | Conceitos | Quando o produto precisa de explicação | [Páginas de conceito](/pt-br/documentacao/guia-de-estilo/conteudo/conceito/): como funciona, como escolher entre opções |
-| 5 | Referência | Quando o produto tem configurações ou limites | [Páginas de referência](/pt-br/documentacao/guia-de-estilo/conteudo/referencia/): campos, valores, padrões — fechando com limites e disponibilidade por plano |
+| 2 | Quickstart | Sim | [Páginas de quickstart](/pt-br/documentacao/guia-de-estilo/conteudo/quickstart/): de não usar o produto ao menor resultado funcional |
+| 3 | Como funciona | Quando o produto precisa de explicação | [Páginas de conceito](/pt-br/documentacao/guia-de-estilo/conteudo/conceito/): o mecanismo, o custo, como escolher entre opções |
+| 4 | Features e capacidades | Quando o produto tem superfícies próprias | As superfícies do próprio produto, como um rules engine, um cache ou uma API de runtime |
+| 5 | Guias | Quando o produto tem tarefas | [Guias how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/) para as tarefas com que o leitor chega |
+| 6 | Tutoriais | Opcional | [Tutoriais](/pt-br/documentacao/guia-de-estilo/conteudo/tutoriais/): um objetivo escolhido pelo autor, construído do início ao fim |
+| 7 | Exemplos | Opcional | Código funcional que o leitor copia, agrupado por linguagem ou por tarefa |
+| 8 | Referência | Quando o produto tem configurações | [Páginas de referência](/pt-br/documentacao/guia-de-estilo/conteudo/referencia/): campos, valores, padrões |
+| 9 | Limites | Quando o produto tem limites | A tabela de limites, dimensionada por plano |
+| 10 | Best practices | Opcional | Como operar bem o produto, e o raciocínio por trás de cada recomendação |
+| 11 | Troubleshooting | Quando o produto tem sintomas conhecidos | [Páginas de troubleshooting](/pt-br/documentacao/guia-de-estilo/conteudo/troubleshooting/): sintoma, causa, correção |
+| 12 | Pricing | Sim | Um link para a seção do produto na página de pricing |
+| 13 | Changelog | Sim | Um link para as entradas de changelog do produto |
 
-Um produto com módulos repete o padrão um nível abaixo: um módulo com superfície própria ganha uma subseção com o mesmo esqueleto, reduzido às partes de que precisa.
+Um produto com módulos repete o padrão um nível abaixo. Um módulo com superfície própria ganha uma subseção com o mesmo esqueleto, reduzido às partes de que precisa.
 
-Get started é a única seção que se divide por interface. Um produto cujo primeiro uso muda entre o Azion Console, a Azion CLI, a API ou um agente de IA dá a cada interface a própria página, agrupadas sob Get started com o Console primeiro. O grupo é um pai da barra lateral, não uma página, e cada página documenta uma interface do início ao fim. Uma página continua sendo o piso: divida quando uma interface tem público próprio de primeiro uso e passos próprios, não para completar o conjunto.
+Quickstart é o único slot que se divide por interface. Um produto cujo primeiro uso muda entre o Azion Console, a Azion CLI, a API ou um agente de IA dá a cada interface a própria página. As páginas ficam agrupadas sob Quickstart, com o Console primeiro. O grupo é um pai da barra lateral, não uma página, e cada página documenta uma interface do início ao fim. Uma página continua sendo o piso: divida quando uma interface tem público próprio de primeiro uso e passos próprios, não para completar o conjunto.
 
-## Ordene as seções pela jornada do leitor
+A seção de onboarding de plataforma em `/documentation/get-started/` é outra coisa com nome parecido. Quickstart é o slot por produto. Get started é a porta de entrada da plataforma, e não pertence a nenhum produto.
 
-A ordem espelha a adoção. O leitor aprende o que o produto é, ativa o produto, realiza tarefas, entende o produto a fundo e consulta fatos. Uma seção nunca fica à frente da sua etapa: uma página de fatos não vem antes da página de ativação que dá sentido a ela.
+## A ordem, e o que justifica um slot
 
-A jornada decide somente a ordem. Como uma página é por dentro é decidido pelo tipo de conteúdo, nunca pela posição.
+- **A ordem espelha a adoção.** Um slot nunca fica à frente da sua etapa.
+- **Pricing e Changelog fecham a seção.** O leitor os consulta em vez de passar por eles.
+- **A coluna Obrigatório decide o que é publicado.** Todo outro slot existe somente quando conteúdo real o preenche.
+- **Nunca adicione um slot para completar o padrão**, e nunca mantenha um vazio como marcador.
+- **Cresça dividindo um slot que a seção já tem:** Guias em áreas de tarefa nomeadas, Quickstart por interface, Features e capacidades por superfície.
+- **Os treze nunca aumentam em número.**
 
-## Toda seção precisa se justificar
+## Pricing e limites
 
-Overview e Get started são o mínimo obrigatório: uma seção de produto é publicada com os dois ou não é publicada. Toda outra seção existe somente quando conteúdo real a preenche. Não crie uma seção para completar o padrão, e não mantenha uma seção vazia como marcador.
-
-## Cresça dividindo, não adicionando tipos
-
-Uma seção de produto cresce dividindo uma seção que ela já tem: Guias se divide em áreas de tarefa nomeadas quando tem páginas demais para percorrer, e Get started se divide por interface. Os cinco tipos de seção nunca aumentam em número. Uma página que não cabe em nenhum deles é uma página cujo tipo de conteúdo ainda não foi decidido — volte a [Escolher um tipo de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/).
-
-## Uma página, uma seção
-
-Cada página pertence a exatamente uma seção, definida pelo campo `menu_namespace` no frontmatter. Uma seção pode listar uma página que outra seção possui: essa linha é um cross-link, e o leitor que clica nela vai para a seção dona. Mantenha a posse na seção onde os vizinhos da página vivem.
-
-Hubs de navegação reúnem links e carregam uma frase de orientação. Um hub não é um tipo de conteúdo, e precisa de um público real antes de existir.
-
-## Seções de plataforma
-
-Conteúdo que nenhum produto possui sozinho vive ao lado dos produtos, não dentro de um deles:
-
-- Conceitos de plataforma, contas e billing: a seção Fundamentals.
-- Ajuda, contato e troubleshooting de plataforma: a seção Suporte.
-- Designs que combinam produtos: a seção Architectures.
-- Guias orientados a objetivo que atravessam produtos: junto às seções de plataforma, nunca dentro de um produto.
-
-## URLs
-
-O campo `permalink` do frontmatter define a URL da página. O prefixo de idioma vem da árvore de diretórios: `/en/documentation/...` para inglês, `/pt-br/documentacao/...` para português.
-
-Mover um arquivo não muda a URL. Mudar um `permalink` muda, e a URL antiga passa a precisar de um redirect. Escolha a URL pelo assunto da página, não pela posição atual na navegação, e a URL sobrevive a toda reorganização futura.
+- **Pricing é um link, nunca uma página.** O slot 12 aponta para `/documentation/platform/pricing/#<produto>`. Confirme que a âncora resolve antes de publicar.
+- **Nunca repita um preço, uma cota ou uma métrica de cobrança** em uma página de produto. Um preço duplicado fica errado no dia em que muda.
+- **Nomeie o plano quando a disponibilidade faz parte do comportamento**, e use o link de pricing para os números.
+- **Limites são dimensionados por plano.** Um número único esconde a diferença de todo leitor que está em outro plano.
+- **O contrato da tabela de limites fica em [Referência](/pt-br/documentacao/guia-de-estilo/conteudo/referencia/):** unidades, padrões e limites ajustáveis.
+- **Limites ocupam o slot 9 quando o conjunto vale ser consultado sozinho.** Uma seção `## Limites` na página de referência cobre um conjunto curto.
 
 ## Posicione uma página nova
 
-Decida pelo leitor que a página serve:
+Conteúdo que nenhum produto possui sozinho vive ao lado dos produtos, não dentro de um deles. Decida pelo leitor que a página serve:
 
-- A página documenta um produto: entra na seção desse produto, no lugar do esqueleto que o tipo de conteúdo indica.
+- A página documenta um produto: entra na seção desse produto, no slot que o tipo de conteúdo indica.
 - A página explica a plataforma, contas ou billing: entra em Fundamentals.
 - A página diagnostica problemas de plataforma ou leva ao time de suporte: entra em Suporte.
-- A página mostra como produtos se combinam em uma solução: entra em Architectures.
-- A página reúne links de uma área: é um hub, e precisa de um público real antes de existir.
+- A página resolve um cenário de negócio do início ao fim: é um [caso de uso](/pt-br/documentacao/guia-de-estilo/conteudo/casos-de-uso/), e entra em Guias.
+- A página mostra como produtos se combinam em um design: entra em Architectures.
+- A página reúne links de uma área: é um [hub de navegação](/pt-br/documentacao/guia-de-estilo/conteudo/hubs-de-navegacao/), e precisa de um público real antes de existir.
 
 Quando nenhuma seção serve, pergunte antes de criar uma. Uma seção nova muda a navegação para todos os leitores.

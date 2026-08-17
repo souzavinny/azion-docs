@@ -193,14 +193,14 @@
        }
       },
       {
-       "key": "sg/get-started",
+       "key": "sg/quickstart",
        "label": {
-        "en": "Get started pages",
-        "pt-br": "Páginas Get started"
+        "en": "Quickstart pages",
+        "pt-br": "Páginas de quickstart"
        },
        "slug": {
-        "en": "/documentation/style-guide/content/get-started/",
-        "pt-br": "/documentacao/guia-de-estilo/conteudo/get-started/"
+        "en": "/documentation/style-guide/content/quickstart/",
+        "pt-br": "/documentacao/guia-de-estilo/conteudo/quickstart/"
        }
       },
       {
@@ -234,6 +234,17 @@
        "slug": {
         "en": "/documentation/style-guide/content/multi-product-guides/",
         "pt-br": "/documentacao/guia-de-estilo/conteudo/guias-multiproduto/"
+       }
+      },
+      {
+       "key": "sg/use-cases",
+       "label": {
+        "en": "Use cases",
+        "pt-br": "Casos de uso"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/content/use-cases/",
+        "pt-br": "/documentacao/guia-de-estilo/conteudo/casos-de-uso/"
        }
       },
       {

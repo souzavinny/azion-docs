@@ -28,17 +28,17 @@ Não escreva uma visão geral quando:
 
 ## Registro
 
-Descritivo: 25 palavras por frase, voz ativa, passiva apenas quando o agente é desconhecido. [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/) tem as regras.
+Descritivo: 25 palavras por frase, voz ativa, passiva apenas quando o agente é desconhecido. Tom: acolhedor, factual, direto. [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/) tem as regras.
 
 ## Estrutura
 
 **Componentes obrigatórios**
 
 - **Bloco de definição**: `**<Produto>** é <uma definição de capacidade de cerca de 10 a 15 palavras>.` Depois os problemas que o produto resolve, como uma lista curta de benefícios em termos de comportamento.
-- **CTAs**: um `LinkButton` primário com o label **Primeiros passos** e um secundário com o label `Referência de <Produto>`.
+- **CTAs**: um `LinkButton` primário com o label **Quickstart** e um secundário com o label `Referência de <Produto>`.
 - **Seções de capacidade**: um `##` por capacidade ou módulo principal. Títulos como expressões nominais; cada seção tem um parágrafo curto ou uma tabela.
 - **Interfaces**: a lista `Você pode criar e gerenciar <Produto> usando:`, com Azion Console, API, Azion CLI e Terraform como links.
-- **Fechamento**: `## Recursos relacionados`, com links no formato `[Título](/caminho/) - motivo`, cobrindo o get started e os conceitos principais.
+- **Fechamento**: `## Recursos relacionados`, com links no formato `[Título](/caminho/) - motivo`, cobrindo o quickstart e os conceitos principais.
 
 As seções mantêm essa ordem.
 
@@ -56,7 +56,7 @@ Use <Produto> para:
 - <Um problema que ele resolve, em termos de comportamento>
 - <...>
 
-<LinkButton label="Primeiros passos" link="<URL do get started>" />
+<LinkButton label="Quickstart" link="<URL do quickstart>" />
 <LinkButton severity="secondary" label="Referência de <Produto>" link="<URL da referência>" />
 
 ---
@@ -84,17 +84,17 @@ Você pode criar e gerenciar <Produto> usando:
 
 ## Recursos relacionados
 
-- [Primeiros passos de <Produto>](<url>) - <por que o leitor seguiria o link>
+- [Quickstart de <Produto>](<url>) - <por que o leitor seguiria o link>
 - [<Conceito principal>](<url>) - <por que o leitor seguiria o link>
 ```
 
 ## Regras
 
-- **Nunca instrua.** Sem passos numerados, sem procedimentos, sem walkthrough de código. Uma visão geral que instrui é uma página [Get started](/pt-br/documentacao/guia-de-estilo/conteudo/get-started/) arquivada no lugar errado.
+- **Nunca instrua.** Sem passos numerados, sem procedimentos, sem walkthrough de código. Uma visão geral que instrui é uma página de [quickstart](/pt-br/documentacao/guia-de-estilo/conteudo/quickstart/) arquivada no lugar errado.
 - **Sem adjetivos de qualidade.** Diga o que o produto faz e onde para.
 - **O título é o nome do produto, um substantivo.** Não "documentação", não um gerúndio.
 - **Nomeie o produto na primeira frase.** Não o contexto do problema.
-- **Envie o leitor para o [Get started](/pt-br/documentacao/guia-de-estilo/conteudo/get-started/)**, perto do topo e de novo no fim.
+- **Envie o leitor para o [Quickstart](/pt-br/documentacao/guia-de-estilo/conteudo/quickstart/)**, perto do topo e de novo no fim.
 - **Marque lacunas, nunca as preencha.** Um componente obrigatório cujo conteúdo a fonte não fornece — um CTA, a lista de interfaces — recebe um marcador `[GAP: ...]`, nunca omissão silenciosa, nunca invenção.
 - **Mantenha a página escaneável.** Tabelas para o que é enumerável, uma ou duas frases entre elas.
 
@@ -111,7 +111,7 @@ Use Data Stream to:
 - Choose the Azion products and domains to collect logs from.
 - Choose the variables that the stream uses.
 
-<LinkButton label="Get started" link="/en/documentation/products/observe/data-stream/first-steps/" />
+<LinkButton label="Quickstart" link="/en/documentation/products/observe/data-stream/first-steps/" />
 
 [GAP: secondary CTA — permalink for a Data Stream reference page]
 
@@ -134,6 +134,6 @@ You can create and manage Data Stream using:
 ## Relacionados
 
 - [Referência](/pt-br/documentacao/guia-de-estilo/conteudo/referencia/): a forma base que a visão geral aplica.
-- [Páginas Get started](/pt-br/documentacao/guia-de-estilo/conteudo/get-started/): a página para onde a visão geral envia o leitor.
+- [Páginas de quickstart](/pt-br/documentacao/guia-de-estilo/conteudo/quickstart/): a página para onde a visão geral envia o leitor.
 - [Arquitetura de informação](/pt-br/documentacao/guia-de-estilo/conteudo/arquitetura-de-informacao/): onde a visão geral fica na seção do produto.
 - [Escolher um tipo de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/): o catálogo completo de tipos de página.

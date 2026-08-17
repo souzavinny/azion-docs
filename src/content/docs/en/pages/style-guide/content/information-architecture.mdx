@@ -15,63 +15,57 @@ Two principles organize everything. Sections follow the order of the reader's jo
 
 ## The product section skeleton
 
-Every product section follows this order. The table shows what each section holds and when it exists.
+Every product section follows this order. The table shows what each slot holds and when it exists.
 
-| Order | Section | Required | Holds |
+| Order | Slot | Required | Holds |
 | --- | --- | --- | --- |
 | 1 | Overview | Yes | The product root page: what the product is, what it does, when to use it |
-| 2 | Get started | Yes | [Get started pages](/en/documentation/style-guide/content/get-started/): from not using the product to the smallest working result. One page, or one per interface |
-| 3 | Guides | When the product has tasks | [How-to guides](/en/documentation/style-guide/content/how-to-guides/), including the product's [troubleshooting pages](/en/documentation/style-guide/content/troubleshooting/) |
-| 4 | Concepts | When the product needs explaining | [Concept pages](/en/documentation/style-guide/content/concept/): how it works, how to choose between options |
-| 5 | Reference | When the product has settings or limits | [Reference pages](/en/documentation/style-guide/content/reference/): fields, values, defaults — closing with limits and plan availability |
+| 2 | Quickstart | Yes | [Quickstart pages](/en/documentation/style-guide/content/quickstart/): from not using the product to the smallest working result |
+| 3 | How it works | When the product needs explaining | [Concept pages](/en/documentation/style-guide/content/concept/): the mechanism, the tradeoff, how to choose between options |
+| 4 | Features and capabilities | When the product has feature surfaces | The product's own sub-surfaces, such as a rules engine, a cache, or a runtime API |
+| 5 | Guides | When the product has tasks | [How-to guides](/en/documentation/style-guide/content/how-to-guides/) for the tasks readers arrive with |
+| 6 | Tutorials | Optional | [Tutorials](/en/documentation/style-guide/content/tutorials/): one goal the author chose, built end to end |
+| 7 | Examples | Optional | Working code the reader copies, grouped by language or by task |
+| 8 | Reference | When the product has settings | [Reference pages](/en/documentation/style-guide/content/reference/): fields, values, defaults |
+| 9 | Limits | When the product has limits | The limits table, dimensioned by plan |
+| 10 | Best practices | Optional | How to run the product well, and the reasoning behind each recommendation |
+| 11 | Troubleshooting | When the product has known symptoms | [Troubleshooting pages](/en/documentation/style-guide/content/troubleshooting/): symptom, cause, fix |
+| 12 | Pricing | Yes | A link to the product's section of the pricing page |
+| 13 | Changelog | Yes | A link to the product's changelog entries |
 
-A product with modules repeats the pattern one level down: a module with its own surface gets a subsection with the same skeleton, reduced to the parts it needs.
+A product with modules repeats the pattern one level down. A module with its own surface gets a subsection with the same skeleton, reduced to the parts it needs.
 
-Get started is the one section that splits by interface. A product whose first run differs across Azion Console, the Azion CLI, the API, or an AI agent gives each interface its own page, grouped under Get started with Console first. The group is a sidebar parent, not a page, and each page documents one interface end to end. One page remains the floor: split when an interface has its own first-run audience and its own steps, not to complete the set.
+Quickstart is the one slot that splits by interface. A product whose first run differs across Azion Console, the Azion CLI, the API, or an AI agent gives each interface its own page. The pages group under Quickstart, with Console first. The group is a sidebar parent, not a page, and each page documents one interface end to end. One page remains the floor: split when an interface has its own first-run audience and its own steps, not to complete the set.
 
-## Order sections by the reader's journey
+The platform onboarding section at `/documentation/get-started/` is a different thing with a similar name. Quickstart is the per-product slot. Get started is the platform entry point, and it belongs to no product.
 
-The order mirrors adoption. The reader learns what the product is, activates it, accomplishes tasks, understands it deeply, and looks up facts. A section never moves ahead of its stage: a fact page does not sit before the activation page that makes it meaningful.
+## Order, and what earns a slot
 
-The journey decides only the order. What a page looks like inside a section is decided by its content type, never by its position.
+- **The order mirrors adoption.** A slot never moves ahead of its stage.
+- **Pricing and Changelog close the section.** The reader consults them rather than passing through them.
+- **The Required column decides what ships.** Every other slot exists only when real content fills it.
+- **Never add a slot to complete the pattern**, and never keep an empty one as a placeholder.
+- **Grow by splitting a slot the section already has:** Guides into named task areas, Quickstart by interface, Features and capabilities by surface.
+- **The thirteen never grow in number.**
 
-## Earn every section
+## Pricing and limits
 
-Overview and Get started are the required minimum: a product section ships with both or it does not ship. Every other section exists only when real content fills it. Do not create a section to complete the pattern, and do not keep an empty section as a placeholder.
-
-## Grow by splitting, not by adding kinds
-
-A product section grows by splitting a section it already has: Guides splits into named task areas when it holds too many pages to scan, and Get started splits by interface. The five section kinds never grow in number. A page that fits none of them is a page whose content type is still undecided — return to [Choose a content type](/en/documentation/style-guide/content/choose-a-content-type/).
-
-## One page, one section
-
-Every page belongs to exactly one section, set by the `menu_namespace` field in its frontmatter. A section can list a page that another section owns: that row is a cross-link, and the reader who clicks it moves to the owning section. Keep ownership with the section where the page's neighbors live.
-
-Navigation hubs collect links and carry one sentence of orientation. A hub is not a content type, and it needs a real audience before it exists.
-
-## Platform-level sections
-
-Content that no single product owns lives beside the products, not inside one of them:
-
-- Platform concepts, accounts, and billing: the Fundamentals section.
-- Help, contact, and platform-wide troubleshooting: the Support section.
-- Designs that combine products: the Architectures section.
-- Goal-first guides that span products: with the platform sections, never inside one product.
-
-## URLs
-
-The `permalink` frontmatter field defines the page URL. The language prefix comes from the directory tree: `/en/documentation/...` for English, `/pt-br/documentacao/...` for Portuguese.
-
-Moving a file does not change its URL. Changing a `permalink` does, and the old URL then needs a redirect entry. Pick the URL for the page's subject, not for its current sidebar position, and the URL survives every future reorganization.
+- **Pricing is a link, never a page.** Slot 12 points at `/documentation/platform/pricing/#<product>`. Confirm the anchor resolves before you ship it.
+- **Never restate a price, a quota, or a billing metric** in a product page. A duplicated price is wrong the day it changes.
+- **Name the plan when availability is part of behavior**, and link pricing for the numbers.
+- **Limits are dimensioned by plan.** A single number hides the difference from every reader on another plan.
+- **The limits table contract lives in [Reference](/en/documentation/style-guide/content/reference/):** units, defaults, and raisable limits.
+- **Limits take slot 9 when the set is worth consulting alone.** A `## Limits` section in the reference page covers a short set.
 
 ## Place a new page
 
-Decide by the reader the page serves:
+Content that no single product owns lives beside the products, not inside one of them. Decide by the reader the page serves:
 
-- The page documents one product: place it in that product's section, in the skeleton slot its content type indicates.
+- The page documents one product: place it in that product's section, in the slot its content type indicates.
 - The page explains the platform, accounts, or billing: it goes in Fundamentals.
 - The page diagnoses platform problems or reaches the support team: it goes in Support.
-- The page shows how products combine into a solution: it goes in Architectures.
-- The page collects links for an area: it is a hub, and it needs a real audience before it exists.
+- The page solves a business scenario end to end: it is a [use case](/en/documentation/style-guide/content/use-cases/), and it goes in Guides.
+- The page shows how products combine into a design: it goes in Architectures.
+- The page collects links for an area: it is a [navigation hub](/en/documentation/style-guide/content/navigation-hubs/), and it needs a real audience before it exists.
 
 When no section fits, ask before you create one. A new section changes navigation for every reader.

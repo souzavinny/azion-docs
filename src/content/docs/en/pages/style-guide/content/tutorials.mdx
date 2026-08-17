@@ -15,13 +15,33 @@ A tutorial teaches the product by having the reader build something that works. 
 
 ## When to use
 
-- The reader is new and does not yet know what they want. You pick a goal for them, and they learn the product on the way to it.
-- Do not use a tutorial for a reader who arrived with a task: that page is a [how-to guide](/en/documentation/style-guide/content/how-to-guides/).
-- When in doubt, [Choose a content type](/en/documentation/style-guide/content/choose-a-content-type/) has the router.
+**Recognize a tutorial by:**
+
+- A reader who has chosen the product and has not yet built anything with it.
+- One artifact that works when the last stage ends.
+- A single path the author chose and guarantees, from the first command to a verified result.
+- Learning that arrives as a side effect of building, never as a lecture.
+
+**It is still a tutorial when:**
+
+- It uses more than one product, because the artifact needs them. The author chose the goal, and that is what decides the kind.
+- It builds against a third-party service that belongs to the artifact. Name the vendor's step and link out; never document their interface.
+- It runs entirely in Azion Console, because that is the honest path to the result.
+- It leaves out a capability the artifact does not need. Completeness belongs to [reference](/en/documentation/style-guide/content/reference/).
+
+**Write something else when:**
+
+- The reader arrived with the task already in mind. That is a [how-to guide](/en/documentation/style-guide/content/how-to-guides/).
+- The page activates a product for the first time. That is a [quickstart](/en/documentation/style-guide/content/quickstart/).
+- The page implements a business scenario end to end. That is a [use case](/en/documentation/style-guide/content/use-cases/).
+- The subject is fields, values, and defaults. That is [reference](/en/documentation/style-guide/content/reference/).
+- Nothing is finished at the end. Steps that end nowhere teach nothing, so find the artifact or drop the page.
+
+When two kinds still look possible, [Choose a content type](/en/documentation/style-guide/content/choose-a-content-type/) has the router.
 
 ## Register
 
-Procedural: 20 words per sentence, one instruction per step, imperative and active. [Sentence structure](/en/documentation/style-guide/writing/sentence-structure/) holds the rules.
+Procedural: 20 words per sentence, one instruction per step, imperative and active. Tone: directive, plain, instructive, certain. [Sentence structure](/en/documentation/style-guide/writing/sentence-structure/) holds the rules.
 
 ## Structure
 
@@ -80,6 +100,8 @@ You will create <...>, configure <...>, and deploy <...>.
 - **Keep the contract.** You choose every option: no branching, no "depending on your needs". Every step shows a visible result, and every command was run.
 - **No `<Tabs>`.** Tabs are a branch, and tutorials do not branch. A task that genuinely needs three interfaces is a [how-to guide](/en/documentation/style-guide/content/how-to-guides/).
 - **Do not explain.** One sentence and a link when a concept is genuinely required. Keep asides rare.
+- **Make every screenshot earn its place.** One image for a result words cannot show, never a shot of every screen the reader passes.
+- **Link out for third-party products.** Name the vendor's step; do not document their interface.
 - **Give every code block a colon lead-in.** "Install the CLI:" then the command. Use `<Code>` for anything the reader copies.
 - **Keep tutorials scarce.** One per product area. Tutorials are expensive to keep working.
 - **Mark gaps, never fill them.** A mandated slot the input does not supply gets a `[GAP: ...]` marker, never silent omission, never invention.
@@ -87,7 +109,7 @@ You will create <...>, configure <...>, and deploy <...>.
 
 ## Examples
 
-This excerpt of a tutorial that builds a user list API shows the opening move, the prerequisites, and the first stage:
+This excerpt builds a user list API. It shows the opening move, the prerequisites, and the first stage:
 
 ```mdx
 In this tutorial, you will build a user list API with **Functions** and **SQL Database**. You will create a database, seed a `users` table, create a function, and route requests to it.
@@ -120,6 +142,6 @@ The database is ready when `status` is `created`.
 
 ## Related
 
-- [Get started pages](/en/documentation/style-guide/content/get-started/): the tutorial whose goal is first activation.
+- [Quickstart pages](/en/documentation/style-guide/content/quickstart/): the tutorial whose goal is first activation.
 - [How-to guides](/en/documentation/style-guide/content/how-to-guides/): the page for the reader who arrived with a task.
 - [Choose a content type](/en/documentation/style-guide/content/choose-a-content-type/): the router.

@@ -28,7 +28,7 @@ Não escreva uma página de referência quando:
 
 ## Registro
 
-Descritivo: 25 palavras por frase, voz ativa, passiva apenas quando o agente é desconhecido. [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/) tem as regras.
+Descritivo: 25 palavras por frase, voz ativa, passiva apenas quando o agente é desconhecido. Tom: claro, neutro, exaustivo. [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/) tem as regras.
 
 ## Estrutura
 
@@ -37,7 +37,7 @@ Descritivo: 25 palavras por frase, voz ativa, passiva apenas quando o agente é 
 - **Título**: uma expressão nominal que nomeia a coisa: `Object Storage`, `Configurações de cache`, `azion create bucket`.
 - **Abertura**: uma a três frases definicionais sobre o artefato, e depois direto para os dados. Sem enquadramento de procedimento.
 - **Seções**: `##`s como expressões nominais que nomeiam o objeto, o grupo de campos ou o nível real. As tabelas carregam a informação — campos, valores, padrões, limites — com fraseado consistente em cada coluna e unidade em cada número. A prosa entre as tabelas é uma ou duas frases de orientação.
-- **Limites**: uma seção `## Limites` quando o produto os tem.
+- **Limites**: uma seção `## Limites` quando o produto os tem, **dimensionada por plano**. Use `| Escopo | Plano | Limite |` quando um escopo se repete entre planos, ou uma coluna por plano quando o conjunto é curto o bastante para ler na horizontal. Cada linha carrega sua unidade e diz se o limite é rígido ou ajustável.
 - **Fechamento**: `## Recursos relacionados`, com links no formato `[Título](/caminho/) - motivo`, cobrindo a página de conceito e os principais how-tos.
 
 **Componentes opcionais**
@@ -45,6 +45,8 @@ Descritivo: 25 palavras por frase, voz ativa, passiva apenas quando o agente é 
 - **Asides**: uma dica acima da tabela de limites quando o suporte pode aumentar os limites, e um aviso de atenção para uma mudança de versão ou de migração. Não use outros asides.
 
 As seções mantêm essa ordem.
+
+Quando o conjunto de limites cresce o bastante para ser consultado sozinho, ele vai para o slot Limites da seção de produto. As regras abaixo não mudam: só o lugar muda. [Arquitetura de informação](/pt-br/documentacao/guia-de-estilo/conteudo/arquitetura-de-informacao/) tem a lista de slots.
 
 ## Template
 
@@ -70,12 +72,12 @@ Copie o template e substitua cada `<placeholder>`:
 ## Limites
 
 :::tip[dica]
-O suporte pode aumentar esses limites. Entre em contato com o <link do suporte>.
+O suporte pode aumentar os limites marcados como ajustáveis. Entre em contato com o <link do suporte>.
 :::
 
-| Escopo | Limite |
-| --- | --- |
-| <Escopo> | <Valor com a unidade> |
+| Escopo | Plano | Limite | Ajustável |
+| --- | --- | --- | --- |
+| <Escopo> | <Nome do plano> | <Valor com a unidade> | Sim / Não |
 
 ---
 
@@ -92,6 +94,11 @@ O suporte pode aumentar esses limites. Entre em contato com o <link do suporte>.
 - **Coloque informação enumerável em tabelas.** Campos, limites, flags, padrões, códigos de status.
 - **Mantenha o fraseado consistente na coluna.** O leitor escaneia; fraseado variado obriga a ler.
 - **Declare as unidades e os valores padrão.** Um limite sem unidade não é um fato.
+- **Dimensione todo limite por plano.** Um limite que muda entre planos não é um fato só. Um número publicado sem o plano a que pertence está errado para todo leitor que está em outro plano.
+- **Separe limite de valor padrão.** Um valor padrão é um campo e fica na tabela de campos. Um limite é um teto e fica em `## Limites`.
+- **Diga se cada limite é rígido ou ajustável.** A próxima ação do leitor depende disso: um limite ajustável é um chamado no suporte, um limite rígido é uma restrição de design.
+- **Nunca invente um limite nem um nome de plano.** Os dois vêm de uma fonte nomeada: a página de pricing, o contrato de planos ou o time de produto. Uma célula não confirmada recebe um marcador `[GAP: ...]` e é publicada como lacuna.
+- **Nunca repita um preço.** Valores, cotas vendidas por unidade e métricas de cobrança vivem só na página de pricing. Aponte para ela; não copie.
 - **Sem marketing.** Diga o que faz e onde para.
 - **Marque lacunas, nunca as preencha.** Um componente obrigatório cujo conteúdo a fonte não fornece recebe um marcador `[GAP: ...]`, nunca omissão silenciosa, nunca invenção.
 - **Uma página de comando da CLI tem sua própria forma.** Um resumo de uma linha, depois `## Uso` com o comando, depois `## Flags opcionais` com uma entrada por flag.
@@ -121,6 +128,23 @@ You cannot rename a bucket. You can delete a bucket only when it is empty, 24 ho
 - [Create an Object Storage bucket](/en/documentation/products/store/storage/create-bucket/) - create a bucket and set its `workloads_access` permission.
 - [Use a bucket as origin](/en/documentation/products/store/storage/use-bucket-as-origin/) - serve content from a bucket through Connectors.
 ```
+
+Este exemplo mostra uma tabela de limites dimensionada por plano, e como fica um valor não confirmado:
+
+```mdx
+## Limits
+
+:::tip
+Support can raise the limits marked raisable. Contact the [technical support team](/en/documentation/services/support/).
+:::
+
+| Scope | Plan | Limit | Raisable |
+| --- | --- | --- | --- |
+| Buckets | [GAP: plan breakdown not confirmed] | 100 per account | Yes |
+| S3 credential access keys | [GAP: plan breakdown not confirmed] | 100,000 per account | Yes |
+```
+
+Os marcadores de lacuna são o ponto. A fonte desses números declara um padrão único, sem separação por plano. A coluna de plano é publicada como lacuna, nunca como valor inventado. Quem revisa vê exatamente o que falta.
 
 ## Relacionados
 

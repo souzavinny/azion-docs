@@ -27,7 +27,7 @@ Do not write a reference page when:
 
 ## Register
 
-Descriptive: 25 words per sentence, active voice, passive only when the actor is unknown. [Sentence structure](/en/documentation/style-guide/writing/sentence-structure/) holds the rules.
+Descriptive: 25 words per sentence, active voice, passive only when the actor is unknown. Tone: plain, neutral, exhaustive. [Sentence structure](/en/documentation/style-guide/writing/sentence-structure/) holds the rules.
 
 ## Structure
 
@@ -36,7 +36,7 @@ Descriptive: 25 words per sentence, active voice, passive only when the actor is
 - **Title**: a noun phrase naming the thing: `Object Storage`, `Cache settings`, `azion create bucket`.
 - **Opening move**: one to three definitional sentences about the artifact, then straight to the data. No procedure framing.
 - **Sections**: noun-phrase `##`s naming the actual object, field group, or level. Tables carry the information — fields, values, defaults, limits — with consistent phrasing down every column and units on every number. Prose between tables is one or two sentences of orientation.
-- **Limits**: a `## Limits` section when the product has them.
+- **Limits**: a `## Limits` section when the product has them, **dimensioned by plan**. Use `| Scope | Plan | Limit |` when a scope repeats across plans, or one column per plan when the set is short enough to read across. Every row carries its unit and says whether the limit is hard or raisable.
 - **Closing**: `## Related resources`, with links shaped `[Title](/path/) - reason`, covering the concept page and the main how-tos.
 
 **Optional components**
@@ -44,6 +44,8 @@ Descriptive: 25 words per sentence, active voice, passive only when the actor is
 - **Asides**: a tip above the limits table when support can raise the limits, and a caution for a version or migration warning. Use no other aside.
 
 The sections keep this order.
+
+When the limits set grows large enough to consult on its own, it moves into its own Limits slot in the product section. The rules below do not change: only the location does. [Information architecture](/en/documentation/style-guide/content/information-architecture/) holds the slot list.
 
 ## Template
 
@@ -69,12 +71,12 @@ Copy the template and replace each `<placeholder>`:
 ## Limits
 
 :::tip
-Support can raise these limits. Contact <support link>.
+Support can raise the limits marked raisable. Contact <support link>.
 :::
 
-| Scope | Limit |
-| --- | --- |
-| <Scope> | <Value with the unit> |
+| Scope | Plan | Limit | Raisable |
+| --- | --- | --- | --- |
+| <Scope> | <Plan name> | <Value with the unit> | Yes / No |
 
 ---
 
@@ -91,6 +93,11 @@ Support can raise these limits. Contact <support link>.
 - **Put enumerable information in tables.** Fields, limits, flags, defaults, status codes.
 - **Keep phrasing consistent down a column.** Readers scan; varied phrasing forces them to read.
 - **State the units and the defaults.** A limit without a unit is not a fact.
+- **Dimension every limit by plan.** A limit that differs across plans is not one fact. A number published without the plan it belongs to is wrong for every reader on a different plan.
+- **Distinguish a limit from a default.** A default is a field value and belongs in the field table. A limit is a ceiling and belongs under `## Limits`.
+- **Say whether each limit is hard or raisable.** The reader's next action depends on it: a raisable limit is a support request, a hard limit is a design constraint.
+- **Never invent a limit or a plan name.** Both trace to a named source: the pricing page, the plans agreement, or the product team. An unconfirmed cell gets a `[GAP: ...]` marker and ships as a gap.
+- **Never restate a price.** Amounts, quotas sold by the unit, and billing metrics live on the pricing page alone. Link it; do not copy it.
 - **No marketing.** Say what it does and where it stops.
 - **Mark gaps, never fill them.** A mandated slot the input does not supply gets a `[GAP: ...]` marker, never silent omission, never invention.
 - **A CLI command page has its own shape.** A one-line summary, then `## Usage` with the command, then `## Optional flags` with one entry per flag.
@@ -120,6 +127,23 @@ You cannot rename a bucket. You can delete a bucket only when it is empty, 24 ho
 - [Create an Object Storage bucket](/en/documentation/products/store/storage/create-bucket/) - create a bucket and set its `workloads_access` permission.
 - [Use a bucket as origin](/en/documentation/products/store/storage/use-bucket-as-origin/) - serve content from a bucket through Connectors.
 ```
+
+This excerpt shows a limits table dimensioned by plan, and what an unconfirmed value looks like:
+
+```mdx
+## Limits
+
+:::tip
+Support can raise the limits marked raisable. Contact the [technical support team](/en/documentation/services/support/).
+:::
+
+| Scope | Plan | Limit | Raisable |
+| --- | --- | --- | --- |
+| Buckets | [GAP: plan breakdown not confirmed] | 100 per account | Yes |
+| S3 credential access keys | [GAP: plan breakdown not confirmed] | 100,000 per account | Yes |
+```
+
+The gap markers are the point. The source for these numbers states a single default, with no breakdown by plan. The plan column therefore ships as a gap, never as an invented value. A reviewer sees exactly what is missing.
 
 ## Related
 

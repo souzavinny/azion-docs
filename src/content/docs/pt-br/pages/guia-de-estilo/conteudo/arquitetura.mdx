@@ -31,7 +31,7 @@ Não escreva uma página de arquitetura quando:
 
 ## Registro
 
-Descritivo: 25 palavras por frase, voz ativa, passiva apenas quando o agente é desconhecido. [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/) tem as regras.
+Descritivo: 25 palavras por frase, voz ativa, passiva apenas quando o agente é desconhecido. Tom: explicativo, claro, sistemático. [Estrutura de frases](/pt-br/documentacao/guia-de-estilo/escrita/estrutura-de-frases/) tem as regras.
 
 ## Estrutura
 
@@ -39,7 +39,7 @@ O título nomeia o design como um sintagma nominal: `Content delivery at the edg
 
 **Seções obrigatórias, nesta ordem**
 
-- **`## Diagrama de arquitetura`**: o diagrama, e depois um parágrafo que o lê.
+- **`## Diagrama de arquitetura`**: o diagrama como um bloco de código `mermaid`, e depois um parágrafo que o lê.
 - **`### Dataflow`**: um passo a passo numerado do que vai para onde, com no máximo seis itens.
 - **`## Componentes`**: o que cada parte faz e por que está ali.
 - **`## Implementação`**: links para os guias how-to, e apenas links.
@@ -47,12 +47,15 @@ O título nomeia o design como um sintagma nominal: `Content delivery at the edg
 
 ## Template
 
-```md
+````md
 <Qual problema este design resolve, e para quem.>
 
 ## Diagrama de arquitetura
 
-![<O que o diagrama mostra>](/assets/docs/images/uploads/<arquivo-do-diagrama>.png)
+```mermaid
+flowchart LR
+  <o design, como texto que um agente consegue ler>
+```
 
 <Um parágrafo que lê o diagrama: o que olhar primeiro, e o que depende do quê.>
 
@@ -74,12 +77,13 @@ O título nomeia o design como um sintagma nominal: `Content delivery at the edg
 ## Recursos relacionados
 
 - [<Página relacionada>](<URL da página>) - <o que o leitor encontra ali>.
-```
+````
 
 ## Regras
 
-- **O diagrama nunca fica sozinho.** O dataflow numerado carrega o significado, porque um agente que busca o gêmeo em markdown recebe a lista, não a imagem.
-- **Escreva texto alternativo que descreve o que o diagrama mostra**, e nunca dependa apenas de cor.
+- **Desenhe o diagrama em `mermaid`.** O diagrama é texto, então um agente que busca o gêmeo em markdown lê o próprio design em vez de uma referência de imagem. Não use imagem para um diagrama de arquitetura.
+- **O diagrama nunca fica sozinho.** O dataflow numerado carrega o significado, e ele permanece mesmo quando o diagrama é renderizado.
+- **Rotule cada nó e cada aresta com palavras**, e nunca dependa apenas de cor para carregar uma distinção.
 - **Nomeie cada componente e diga por que ele está ali.** Uma lista de nomes de produto é uma lista de peças.
 - **Aponte para a implementação, não a coloque aqui.** Os passos vão em um [guia multiproduto](/pt-br/documentacao/guia-de-estilo/conteudo/guias-multiproduto/).
 - **Marque uma lacuna em vez de inventar.** Uma seção obrigatória cujo conteúdo você não tem recebe um marcador de lacuna, nunca um preenchimento inventado.
@@ -90,12 +94,20 @@ O título nomeia o design como um sintagma nominal: `Content delivery at the edg
 
 O trecho abaixo, de uma página em inglês, mostra a abertura, a seção do diagrama e o dataflow:
 
-```mdx
+````mdx
 This design delivers a site's content from locations close to users. It reduces latency and the load on the origin infrastructure. Use it when your team delivers static-heavy sites and applications.
 
 ## Architecture diagram
 
-![Overview of a request/response through Applications](/assets/docs/images/uploads/content-delivery-arch.png)
+```mermaid
+flowchart LR
+  Client -->|HTTP request| Edge[Edge node]
+  Edge --> Rules[Rules Engine]
+  Rules --> Cache[Cache layer]
+  Cache -->|Cache hit| Client
+  Cache -->|Cache miss| Origin[Origin server]
+  Origin --> Cache
+```
 
 The diagram shows the path of a request and its response through an application at the edge. A client request reaches an edge node, where Rules Engine and the cache layer process it. Content that is not in the cache comes from the origin server, and the response returns to the client through the same edge node.
 
@@ -108,7 +120,7 @@ A request moves through the design in this order:
 3. The cache layer evaluates the request. On a cache-key match, the edge node delivers the object from the cache.
 4. On a cache miss, the edge node forwards the request to the origin server. The origin responds, and the edge node caches the content.
 5. Before the response returns to the client, Rules Engine processes the response-phase policies. The edge node then delivers the content to the user.
-```
+````
 
 ## Relacionados
 
