@@ -140,6 +140,28 @@
        }
       },
       {
+       "key": "sg/punctuation",
+       "label": {
+        "en": "Punctuation",
+        "pt-br": "Pontuação"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/formatting/punctuation/",
+        "pt-br": "/documentacao/guia-de-estilo/formatacao/pontuacao/"
+       }
+      },
+      {
+       "key": "sg/numbers",
+       "label": {
+        "en": "Numbers and units",
+        "pt-br": "Números e unidades"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/formatting/numbers/",
+        "pt-br": "/documentacao/guia-de-estilo/formatacao/numeros/"
+       }
+      },
+      {
        "key": "sg/images",
        "label": {
         "en": "Images",

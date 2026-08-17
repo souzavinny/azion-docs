@@ -44,3 +44,5 @@ CLAUDE.md
 /migration
 azion*
 handover.md
+
+.agents/tests/*

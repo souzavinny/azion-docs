@@ -32,6 +32,15 @@ Tool names take monospace, never bold: `azion`, `npm`, `curl`. Bold names a prod
 
 The three styles divide the work: bold for the label, italics for the value, monospace for the typed text.
 
+## Never underline, and never bold a link
+
+Underlining belongs to links alone. An underlined word that is not a link reads as a broken link, and the reader clicks it.
+
+Do not bold the text inside a link either. The link already carries its own styling, and bold on top of it competes with the bold that marks UI labels.
+
+- Incorrect: `Refer to [**Cache settings**](/en/documentation/build/applications/reference/cache-settings/).`
+- Correct: `Refer to [Cache settings](/en/documentation/build/applications/reference/cache-settings/).`
+
 ## Format internal links
 
 An internal link is absolute, starts with the language prefix, and ends with a trailing slash.
