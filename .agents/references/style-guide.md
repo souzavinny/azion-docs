@@ -61,6 +61,12 @@ The test is whether the word claims *quality* or describes *behavior*. "Robust s
 
 **No Latin abbreviations.** "For example" and "that is", not "e.g." and "i.e.". Never "etc." — list the items or rewrite.
 
+**No article before a product name.** `Access Azion Console`, not `Access the Azion Console`. The article returns when a common noun follows the name and takes it: `The Application Accelerator module speeds up dynamic content`.
+
+**American English spelling.** `organize`, `behavior`, `license`. British spellings arrive with text copied from vendor documentation.
+
+**Neutral role nouns.** `camera operator`, not a gender-marked form.
+
 **Same word, same meaning, every time.** One verb per action, across the page and its neighbors. Rotating "check", "verify", and "confirm" for one action reads as three actions. Full rule in `simplified-technical-english.md`.
 
 Banned expressions in any language — `digital landscape`, `digital transformation`, `empower`, `plethora`, and the rest — are in `terminology.md`.
@@ -103,6 +109,8 @@ Banned expressions in any language — `digital landscape`, `digital transformat
 
 **Headings name the thing, not the position.** `Create a bucket`, not `Step 1`. A heading is also a search query, and `Step 2` never matches one.
 
+**An acronym in a heading needs its expansion in the first line below.** `Configure WAF rule sets` is valid when the paragraph under it writes `Web Application Firewall (WAF)`.
+
 Title grammar per page kind — imperative for tasks, noun for overviews and reference — is in the kind's entry in `content-types.md`.
 
 ## Links
@@ -121,6 +129,8 @@ Not relative, not missing the language prefix, not missing the slash. Anchors ke
 - `To <do something>, refer to [Section Title](/en/documentation/.../).`
 
 Do not write "Learn more about...", "To read more...", "click here", "this page", or a bare URL in prose. Link text names the destination.
+
+**Never bold the text inside a link, and never underline anything.** The link carries its own styling, and bold on top competes with the bold that marks UI labels. Underlining belongs to links alone, so an underlined non-link reads as broken.
 
 **A closing-section link carries its reason.** `[Title](/path/) - one sentence on what the reader gets there.`
 
@@ -145,6 +155,46 @@ The right tool for anything enumerable: fields, limits, flags, defaults, status 
 **State units and defaults.** A limit without a unit is not a fact. A setting without a default is a question.
 
 **Do not use a table to lay out a page.** Tables hold data, not design.
+
+## Punctuation
+
+**Oxford comma.** `Applications, Firewall, and Edge DNS`. Portuguese takes the opposite convention: no comma before `e` in a simple enumeration.
+
+**Prefer a period to an em dash.** A dash replaces a period, a colon, or a comma, and one of those three is almost always clearer. When a dash is genuinely right, English writes it with no space either side; Portuguese writes it with a space each side. A dash used for emphasis is a machine-generated tell, so reach for it last. This is a writing rule, not a review defect: a single em dash is never flagged, per `Calibration`.
+
+**En dash for a range**, no spaces: `50–70%`. Never mix it with a preposition: `from 50% to 70%`, not `from 50–70%`.
+
+**Hyphen for a compound modifier**, no spaces: `real-time logging`, `read-only bucket`. The hyphen goes when the words stop modifying a noun: `the bucket is read only`. Do not hyphenate `auto` words such as `autoscale` unless the plain form is unclear.
+
+**No ellipses and no exclamation points.** The exception is quoted output: when the Console or a command prints either mark, quote it exactly.
+
+**No end punctuation and no colon in a heading.** `Cache settings: an overview` is `Cache settings`.
+
+**No period at the end of a URL.** Readers copy the trailing character.
+
+**List items punctuate by length.** Four words or more takes a period; three or fewer takes none; one list uses one choice throughout. A table cell follows the same rule.
+
+**A colon introduces; a semicolon does not join.** Capitalize after a colon only when a list follows. A semicolon between two clauses is two sentences, and a semicolon between a step and its result is the outcome sentence that `procedures.md` already requires.
+
+**Spacing and symbols.** One space after a period, question mark, or colon. No space around a slash: `100 km/h`. The percent sign attaches to its number: `100%`. Write `and`, never `&`.
+
+## Numbers and units
+
+**Spell out zero through nine; numerals from 10 up.** Three cases always take a numeral: a measurement, a version, and anything the reader types or reads on screen. `Set the TTL to 5 seconds`.
+
+**Separators invert across the pair.** English writes `10,000` and `9.5`. Portuguese writes `10.000` and `9,5`. A number copied between a pair without conversion is wrong in one language. Always a leading zero below one: `0.5`.
+
+**A unit sits beside its number**, with a space: `20 MB`, `60 seconds`. Hyphenate when the measurement modifies a noun: `a 60-second TTL`. Abbreviate only next to a number and never with a trailing period.
+
+**En dash for a negative number:** `–40`, not a hyphen.
+
+**Ordinals take no suffix beyond the number.** `first`, `1st`, never `firstly`.
+
+**Dates belong to changelogs and nowhere else.** Where allowed, spell the month: English `July 10, 2026`, Portuguese `10 de julho de 2026`. A numeric date means two different things depending on the reader's locale.
+
+**Times.** Portuguese uses the 24-hour clock. English uses `AM` and `PM`, capitalized, with a space before. Never `24/7`.
+
+**Currency belongs to the pricing page.** Where an amount is allowed, the symbol precedes the number with no space: `$1,000`.
 
 ## Code and examples
 
@@ -257,6 +307,10 @@ A mismatched `namespace` breaks the language switcher and no build step warns yo
 ## Calibration
 
 Documentation legitimately does things a blog post should not. Bullets, tables, dense bold on UI labels, hedging for accuracy, and repeated parallel structure across sibling pages are the medium here, not defects. What documentation never tolerates: promotional language, rhetorical questions, title-case headings, and invented specifics.
+
+## When this guide is silent
+
+No external style guide is a fallback. These rules are deliberately stricter than the common ones: no contractions, tighter sentence caps, and a plain rather than conversational register. A general-purpose guide reverses all three. When a question has no answer here, ask; do not import a rule from elsewhere and do not invent one.
 
 ## Self-reference escape hatch
 

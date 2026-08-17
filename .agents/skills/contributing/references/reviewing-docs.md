@@ -64,6 +64,8 @@ Report which kind the page mostly is, which content does not belong, and where i
 
 **Over the size caps.** From `.agents/references/page-size.md`: a `##` section over 4,000 characters or a page over 16,000 is P1; over the 2,000/8,000 targets is P2. Exempt: complete reference tables, `<Tabs>` sections, changelogs, legal agreements, and use-case pages, which target 11,000 instead of 8,000. Also flag, regardless of size, any section that cannot be read alone: an opening pronoun with no referent in the section, "as mentioned above", a heading too generic to match a search.
 
+**Punctuation and numbers.** From the Punctuation and Numbers sections of `.agents/references/style-guide.md`: a missing Oxford comma in English; an em dash used for emphasis; end punctuation or a colon in a heading; `&` in prose; a number carrying the other language's separators (`10,000` on a Portuguese page); a value with no unit; a numeric date. Do not flag a single em dash that is doing a dash's job, per `Calibration`.
+
 **Links.** Relative instead of absolute; missing the language prefix; missing the trailing slash; a Portuguese page linking to English when a Portuguese page exists; an asset path carrying a language prefix.
 
 **Translation drift.** Untranslated aside labels on a Portuguese page (`:::note[nota]`, `:::tip[dica]`, `:::caution[Atenção]`); a `menu_namespace` differing from the English page; accented characters in a permalink; a term from the substitution table in `.agents/references/terminology.md` (`borda`, `aplicativo`, `desempenho`).

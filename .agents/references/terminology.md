@@ -34,6 +34,16 @@ Use these exactly. Azion renamed its products and platform resources; the old na
 
 **A URL or directory name is not evidence of a name.** Paths still carry legacy terms (`edge-application/`, `edge-firewall/`) that the prose has moved away from.
 
+## Lowercase what the customer builds
+
+The product name is capitalized; the thing a customer creates with it is a common noun and stays lowercase.
+
+- `Use **Applications** to build your own applications.`
+- `**Functions** runs your functions at the edge.`
+- Not `Deploy your first Application.`
+
+Capitalizing both leaves the reader unable to tell the product from the object.
+
 ## When a name is not here
 
 Ask, or take it from the input you were given. Do not infer a product name from a URL, an older page, or a similar platform. An invented name is the naming version of an invented fact.
