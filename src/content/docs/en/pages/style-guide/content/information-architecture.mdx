@@ -20,12 +20,14 @@ Every product section follows this order. The table shows what each section hold
 | Order | Section | Required | Holds |
 | --- | --- | --- | --- |
 | 1 | Overview | Yes | The product root page: what the product is, what it does, when to use it |
-| 2 | Get started | Yes | One [Get started page](/en/documentation/style-guide/content/get-started/): from not using the product to the smallest working result |
+| 2 | Get started | Yes | [Get started pages](/en/documentation/style-guide/content/get-started/): from not using the product to the smallest working result. One page, or one per interface |
 | 3 | Guides | When the product has tasks | [How-to guides](/en/documentation/style-guide/content/how-to-guides/), including the product's [troubleshooting pages](/en/documentation/style-guide/content/troubleshooting/) |
 | 4 | Concepts | When the product needs explaining | [Concept pages](/en/documentation/style-guide/content/concept/): how it works, how to choose between options |
 | 5 | Reference | When the product has settings or limits | [Reference pages](/en/documentation/style-guide/content/reference/): fields, values, defaults — closing with limits and plan availability |
 
 A product with modules repeats the pattern one level down: a module with its own surface gets a subsection with the same skeleton, reduced to the parts it needs.
+
+Get started is the one section that splits by interface. A product whose first run differs across Azion Console, the Azion CLI, the API, or an AI agent gives each interface its own page, grouped under Get started with Console first. The group is a sidebar parent, not a page, and each page documents one interface end to end. One page remains the floor: split when an interface has its own first-run audience and its own steps, not to complete the set.
 
 ## Order sections by the reader's journey
 
@@ -39,7 +41,7 @@ Overview and Get started are the required minimum: a product section ships with 
 
 ## Grow by splitting, not by adding kinds
 
-A product section grows in one way: Guides splits into named task areas when it holds too many pages to scan. The five section kinds never grow in number. A page that fits none of them is a page whose content type is still undecided — return to [Choose a content type](/en/documentation/style-guide/content/choose-a-content-type/).
+A product section grows by splitting a section it already has: Guides splits into named task areas when it holds too many pages to scan, and Get started splits by interface. The five section kinds never grow in number. A page that fits none of them is a page whose content type is still undecided — return to [Choose a content type](/en/documentation/style-guide/content/choose-a-content-type/).
 
 ## One page, one section
 

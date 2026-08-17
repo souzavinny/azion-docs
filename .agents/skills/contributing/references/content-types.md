@@ -51,13 +51,16 @@ The product's front door. The reader is deciding whether it fits.
 
 ## Get started
 
-The product's first success, once, linearly. Not a hub — a hub of paths is a [Navigation hub](#navigation-hub).
+The product's first success, linearly. Not a hub — a hub of paths is a [Navigation hub](#navigation-hub).
 
-- **Title**: `Get started with <Product>`.
+- **Title**: `Get started with <Product>` for a single page. `Get started with <Product> using <interface>` for an interface variant: `using Azion Console`, `using the Azion CLI`, `using the API`, `using an AI agent`.
 - **Opening move**: `This guide instructs you through <outcome>.` followed by a short bullet list of what the reader will have done. Frame the outcome as a first: "your first bucket", "your first deployment".
 - **Sections, in order**: `## Prerequisites` (bulleted; each item a link or a one-line command where one exists, otherwise a noun phrase naming the requirement); then numbered stage headings `## 1. <Imperative verb phrase>` through `## N.`, ending in a step that activates or verifies. Each stage holds a procedure per `.agents/references/procedures.md` — numbered when it has two or more actions — and ends with its outcome sentence.
 - **Closing**: `## Next steps` — bulleted links, each with its reason.
-- **One linear path.** Pick the primary interface and stay on it; alternatives are one link each, not parallel tracks. No `<Tabs>`.
+- **One linear path per page.** Inside a page, pick one interface and stay on it. No `<Tabs>`, and no comparison of interfaces or options: that is a how-to.
+- **Split by interface when the interface changes the path.** One page is the floor. A product adds a variant when an interface has its own first-run audience and its own steps: Azion Console, the Azion CLI, the API, or an AI agent connected through the Azion MCP server. The variants sit under one Get started group in the sidebar, Console first. The group is a menu parent, not a page.
+- **A variant names its siblings in one line**, under the opening move: `Prefer the CLI? Refer to [Get started with <Product> using the Azion CLI](/path/).` The reader who lands on the wrong path leaves it in one step.
+- **Delete a variant you cannot keep true.** Every command in every variant runs before a release. A stale first-run page is worse than an absent one, because it fails the reader at first contact.
 
 ## Tutorial
 

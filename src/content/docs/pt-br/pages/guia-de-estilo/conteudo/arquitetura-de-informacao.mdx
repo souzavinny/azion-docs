@@ -20,12 +20,14 @@ Toda seção de produto segue esta ordem. A tabela mostra o que cada seção con
 | Ordem | Seção | Obrigatória | Contém |
 | --- | --- | --- | --- |
 | 1 | Overview | Sim | A página raiz do produto: o que o produto é, o que ele faz, quando usar |
-| 2 | Get started | Sim | Uma [página Get started](/pt-br/documentacao/guia-de-estilo/conteudo/get-started/): de não usar o produto ao menor resultado funcional |
+| 2 | Get started | Sim | [Páginas Get started](/pt-br/documentacao/guia-de-estilo/conteudo/get-started/): de não usar o produto ao menor resultado funcional. Uma página, ou uma por interface |
 | 3 | Guias | Quando o produto tem tarefas | [Guias how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/), incluindo as [páginas de troubleshooting](/pt-br/documentacao/guia-de-estilo/conteudo/troubleshooting/) do produto |
 | 4 | Conceitos | Quando o produto precisa de explicação | [Páginas de conceito](/pt-br/documentacao/guia-de-estilo/conteudo/conceito/): como funciona, como escolher entre opções |
 | 5 | Referência | Quando o produto tem configurações ou limites | [Páginas de referência](/pt-br/documentacao/guia-de-estilo/conteudo/referencia/): campos, valores, padrões — fechando com limites e disponibilidade por plano |
 
 Um produto com módulos repete o padrão um nível abaixo: um módulo com superfície própria ganha uma subseção com o mesmo esqueleto, reduzido às partes de que precisa.
+
+Get started é a única seção que se divide por interface. Um produto cujo primeiro uso muda entre o Azion Console, a Azion CLI, a API ou um agente de IA dá a cada interface a própria página, agrupadas sob Get started com o Console primeiro. O grupo é um pai da barra lateral, não uma página, e cada página documenta uma interface do início ao fim. Uma página continua sendo o piso: divida quando uma interface tem público próprio de primeiro uso e passos próprios, não para completar o conjunto.
 
 ## Ordene as seções pela jornada do leitor
 
@@ -39,7 +41,7 @@ Overview e Get started são o mínimo obrigatório: uma seção de produto é pu
 
 ## Cresça dividindo, não adicionando tipos
 
-Uma seção de produto cresce de um jeito: Guias se divide em áreas de tarefa nomeadas quando tem páginas demais para percorrer. Os cinco tipos de seção nunca aumentam em número. Uma página que não cabe em nenhum deles é uma página cujo tipo de conteúdo ainda não foi decidido — volte a [Escolher um tipo de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/).
+Uma seção de produto cresce dividindo uma seção que ela já tem: Guias se divide em áreas de tarefa nomeadas quando tem páginas demais para percorrer, e Get started se divide por interface. Os cinco tipos de seção nunca aumentam em número. Uma página que não cabe em nenhum deles é uma página cujo tipo de conteúdo ainda não foi decidido — volte a [Escolher um tipo de conteúdo](/pt-br/documentacao/guia-de-estilo/conteudo/escolher-um-tipo-de-conteudo/).
 
 ## Uma página, uma seção
 

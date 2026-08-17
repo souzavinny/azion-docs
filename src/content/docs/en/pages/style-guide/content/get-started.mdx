@@ -16,9 +16,10 @@ A Get started page is a tutorial whose goal is the first activation of one produ
 ## When to use
 
 - Write a Get started page when a product needs a documented path to its first working result.
-- Write one Get started page per product, as the entry point directly after the product Overview.
+- Write at least one Get started page per product, as the entry point directly after the product Overview.
+- Write a per-interface variant when an interface has its own first-run audience and its own steps.
 - Do not write a Get started page for a task the reader already has in mind. That task needs a [how-to guide](/en/documentation/style-guide/content/how-to-guides/).
-- Do not write a Get started page to present options or compare interfaces. The pattern has one path.
+- Do not present options or compare interfaces inside a page. Each page documents one interface, end to end.
 - Do not write a separate Get started page for a module or a feature. The pattern covers one whole product.
 
 ## Register
@@ -27,7 +28,7 @@ Procedural: 20 words per sentence, one instruction per step, imperative and acti
 
 ## Structure
 
-A Get started page follows the tutorial skeleton. [Tutorials](/en/documentation/style-guide/content/tutorials/) argues each part; the list below names what the pattern requires. The title takes the form `Get started with <Product>`.
+A Get started page follows the tutorial skeleton. [Tutorials](/en/documentation/style-guide/content/tutorials/) argues each part; the list below names what the pattern requires. A single page takes the title `Get started with <Product>`. An interface variant takes `Get started with <Product> using <interface>`: `using Azion Console`, `using the Azion CLI`, `using the API`, or `using an AI agent`.
 
 **Required components**
 
@@ -78,7 +79,10 @@ your first bucket, your first deployment>.
 
 ## Rules
 
-- **Document one linear path on the primary interface.** Alternatives are one link each, not parallel tracks. No `<Tabs>`.
+- **Document one linear path per page.** Inside a page, pick one interface and stay on it. No `<Tabs>`, and no comparison of interfaces or options.
+- **Split by interface when the interface changes the path.** One page is the floor. Add a variant when an interface has its own first-run audience and its own steps: Azion Console, the Azion CLI, the API, or an AI agent connected through the [Azion MCP server](/en/documentation/agent-setup/). The variants sit under one Get started group in the sidebar, Console first, and the group is a menu parent, not a page.
+- **Name the sibling paths in one line**, under the opening move: `Prefer the CLI? Refer to [Get started with <Product> using the Azion CLI](/path/).` The reader who lands on the wrong path leaves it in one step.
+- **Delete a variant you cannot keep true.** Every variant multiplies the commands that run before a release, and a stale first-run page fails the reader at first contact.
 - **Write each stage as a procedure.** Steps follow [Procedures](/en/documentation/style-guide/writing/procedures/), and every stage ends with its outcome sentence.
 - **Keep prerequisites to the minimum real set.** Every item is a reason to abandon the page.
 - **End in a stage that activates or verifies.** The reader leaves with proof of the working result.

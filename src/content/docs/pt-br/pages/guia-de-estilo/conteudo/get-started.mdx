@@ -16,9 +16,10 @@ Uma página Get started é um tutorial cujo objetivo é a primeira ativação de
 ## Quando usar
 
 - Escreva uma página Get started quando um produto precisa de um caminho documentado até o primeiro resultado que funciona.
-- Escreva uma página Get started por produto, como ponto de entrada logo depois do Overview do produto.
+- Escreva pelo menos uma página Get started por produto, como ponto de entrada logo depois do Overview do produto.
+- Escreva uma variante por interface quando a interface tem público próprio de primeiro uso e passos próprios.
 - Não escreva uma página Get started para uma tarefa que o leitor já tem em mente. Essa tarefa precisa de um [guia how-to](/pt-br/documentacao/guia-de-estilo/conteudo/guias-how-to/).
-- Não escreva uma página Get started para apresentar opções ou comparar interfaces. O padrão tem um único caminho.
+- Não apresente opções nem compare interfaces dentro de uma página. Cada página documenta uma interface, do início ao fim.
 - Não escreva uma página Get started separada para um módulo ou um recurso. O padrão cobre um produto inteiro.
 
 ## Registro
@@ -27,7 +28,7 @@ Procedural: 20 palavras por frase, uma instrução por passo, imperativo e ativo
 
 ## Estrutura
 
-Uma página Get started segue o esqueleto do tutorial. [Tutoriais](/pt-br/documentacao/guia-de-estilo/conteudo/tutoriais/) argumenta cada parte; a lista abaixo nomeia o que o padrão exige. O título tem a forma `Get started with <Product>`.
+Uma página Get started segue o esqueleto do tutorial. [Tutoriais](/pt-br/documentacao/guia-de-estilo/conteudo/tutoriais/) argumenta cada parte; a lista abaixo nomeia o que o padrão exige. Uma página única leva o título `Get started with <Product>`. Uma variante por interface leva `Get started with <Product> using <interface>`: `using Azion Console`, `using the Azion CLI`, `using the API` ou `using an AI agent`.
 
 **Componentes obrigatórios**
 
@@ -78,7 +79,10 @@ seu primeiro bucket, seu primeiro deploy>.
 
 ## Regras
 
-- **Documente um único caminho linear na interface primária.** Alternativas são um link cada, não trilhas paralelas. Sem `<Tabs>`.
+- **Documente um único caminho linear por página.** Dentro de uma página, escolha uma interface e permaneça nela. Sem `<Tabs>` e sem comparação de interfaces ou opções.
+- **Divida por interface quando a interface muda o caminho.** Uma página é o piso. Adicione uma variante quando uma interface tem público próprio de primeiro uso e passos próprios: Azion Console, Azion CLI, API ou um agente de IA conectado pelo [servidor MCP da Azion](/pt-br/documentacao/agent-setup/). As variantes ficam sob um único grupo Get started na barra lateral, com o Console primeiro, e o grupo é um pai de menu, não uma página.
+- **Nomeie os caminhos irmãos em uma linha**, logo abaixo da abertura: `Prefere a CLI? Consulte [Get started with <Product> using the Azion CLI](/caminho/).` O leitor que cai no caminho errado sai dele em um passo.
+- **Apague a variante que você não consegue manter verdadeira.** Cada variante multiplica os comandos que rodam antes de um release, e uma página de primeiro uso desatualizada falha com o leitor no primeiro contato.
 - **Escreva cada etapa como um procedimento.** Os passos seguem [Procedimentos](/pt-br/documentacao/guia-de-estilo/escrita/procedimentos/), e cada etapa termina com sua frase de resultado.
 - **Mantenha os pré-requisitos no mínimo real.** Cada item é um motivo para abandonar a página.
 - **Termine em uma etapa que ativa ou verifica.** O leitor sai com a prova do resultado que funciona.
