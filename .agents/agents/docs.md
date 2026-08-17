@@ -9,6 +9,8 @@ Act as an editor: preserve the existing voice and structure of a page, and keep 
 
 This file restates the essentials so you can work from it alone. The full rules live in `.agents/`, one file per concern, and on any conflict the reference file wins. Load `.agents/skills/contributing/SKILL.md` for the workflow.
 
+Style-guide links use the published path, `/en/documentation/style-guide/...`. That section is not live yet, so the paths resolve only once it ships. Until then, read the matching file under `src/content/docs/en/pages/style-guide/` in this repository.
+
 ## Voice essentials
 
 - Second person, present tense, active voice. **No contractions.**
@@ -19,6 +21,8 @@ This file restates the essentials so you can work from it alone. The full rules 
 - No "please", no "simply" or "just", no "e.g."/"i.e.", no "etc.".
 - Timeless: no "currently", "will soon", "now available", "recently"; no dates outside changelogs.
 
+Refer to /en/documentation/style-guide/writing/voice/ for voice and /en/documentation/style-guide/writing/word-choice/ for the full vocabulary rules.
+
 ## Structure essentials
 
 - The kind of page decides its shape. Twelve kinds, each with a mandated opening, section order, and closing, in `.agents/skills/contributing/references/content-types.md`. A tutorial opens "In this tutorial, you will..."; an overview opens with a one-sentence product definition; a changelog entry opens "**<Product>** now <verb>s...". Follow the kind's formula exactly.
@@ -26,6 +30,8 @@ This file restates the essentials so you can work from it alone. The full rules 
 - Headings: sentence case; imperative verb for tasks (`Create a bucket`, never `Creating a bucket`); short noun phrase otherwise; never a question.
 - Procedural pages close with `## Next steps`; descriptive pages close with `## Related resources`.
 - Every `##` section must make sense read alone — these pages are chunked for retrieval.
+
+Refer to /en/documentation/style-guide/content/choose-a-content-type/ for the twelve kinds and /en/documentation/style-guide/content/information-architecture/ for where a page sits.
 
 ## Step essentials
 
@@ -36,13 +42,15 @@ This file restates the essentials so you can work from it alone. The full rules 
 - Bold UI labels, italicize UI values: `Set **Edge Access** to _Read-only_.`
 - `(Optional)` is the literal first word of an optional step.
 - One outcome sentence after every procedure: what the reader now has or sees.
-- Full spec in `.agents/references/procedures.md`.
+- Full spec in `.agents/references/procedures.md`. Refer to /en/documentation/style-guide/writing/procedures/ for the published step grammar.
 
 ## Link essentials
 
 - Absolute, language-prefixed, trailing slash: `[Applications](/en/documentation/products/build/applications/)`.
 - Standard phrasing: `For more information, refer to [Page Title](/path/).` or `To <do something>, refer to [Title](/path/).`
 - Never "Learn more about...", "click here", or a bare URL in prose.
+
+Refer to /en/documentation/style-guide/formatting/text/ for link formatting, bold, italics, and monospace.
 
 ## Frontmatter essentials
 
@@ -52,7 +60,7 @@ Five fields on every page: `title`, `description`, `meta_tags`, `namespace`, `pe
 - `permalink`: lowercase ASCII, trailing slash, **no language prefix**.
 - `namespace`: identical across a translation pair — it is the key that pairs the languages, and a mismatch breaks the language switcher silently.
 
-Full contract in `.agents/references/style-guide.md`.
+Full contract in `.agents/references/style-guide.md`. Refer to /en/documentation/style-guide/conventions/frontmatter/ for the published version.
 
 ## Components essentials
 
@@ -64,6 +72,8 @@ Use only the live set in `.agents/references/components.md`. The ones that carry
 - `<Tag>` needs `client:only="vue"`.
 
 Never emit a component that is not in that file. Plausible-looking components fail the build.
+
+The published components page is a stub, so `.agents/references/components.md` is the source for now.
 
 ## Four rules you never break
 
@@ -77,7 +87,7 @@ Never emit a component that is not in that file. Plausible-looking components fa
 
 ## Bilingual
 
-English is the source of truth and every page pairs with a Brazilian Portuguese version: translated `title`, `description`, and `permalink` (`/documentacao/produtos/...`, ASCII-folded), identical `namespace`, localized aside labels (`:::note[nota]`), and the substitution table in `.agents/references/terminology.md`. Full rules in `.agents/skills/contributing/references/bilingual.md`.
+English is the source of truth and every page pairs with a Brazilian Portuguese version: translated `title`, `description`, and `permalink` (`/documentacao/produtos/...`, ASCII-folded), identical `namespace`, localized aside labels (`:::note[nota]`), and the substitution table in `.agents/references/terminology.md`. Full rules in `.agents/skills/contributing/references/bilingual.md`. Refer to /en/documentation/style-guide/conventions/bilingual/ for the published version.
 
 ## When reviewing
 

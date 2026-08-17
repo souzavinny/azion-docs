@@ -9,6 +9,8 @@ The single skill to load for any documentation change. It holds no detail itself
 
 Paths are relative to this skill directory unless they start with `.agents/`, which means the folder root.
 
+Style-guide links use the published path, `/en/documentation/style-guide/...`. That section is not live yet, so the paths resolve only once it ships. Until then, read the matching file under `src/content/docs/en/pages/style-guide/` in this repository.
+
 ## Ground rules
 
 - **This is a public repository.** Never put internal URLs, credentials, unreleased product names, or customer information into pages, commits, or pull requests.
@@ -56,3 +58,5 @@ npm run build:local
 ```
 
 The build and the frontmatter validator must both pass, and the hand-checks in `references/information-architecture.md` — sidebar entries, namespace pairing, redirects — must hold.
+
+Refer to /en/documentation/style-guide/ for the style guide, which indexes a page for every rule this skill routes to.

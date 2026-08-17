@@ -222,3 +222,5 @@ Every page links to its neighbors, so a reader — or a retriever — can move b
 Links are bidirectional: if a concept links a how-to, the how-to's closing links the concept back.
 
 The matrix applies where the target exists. Never invent a link to satisfy it; link what your input gives you.
+
+This file is the condensed skeleton set. Refer to /en/documentation/style-guide/content/choose-a-content-type/ for the router, which links a full page for each of the twelve kinds.

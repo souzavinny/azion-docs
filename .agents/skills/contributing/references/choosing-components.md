@@ -2,6 +2,8 @@
 
 The data you have, mapped to the component that carries it. Mechanics and props are in `.agents/references/components.md`; this file decides *which*.
 
+The published components page is still a stub, so those two files are the source until it is written.
+
 ## The table
 
 | You have | Use | Mandatory? |

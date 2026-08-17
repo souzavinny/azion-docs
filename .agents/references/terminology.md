@@ -98,3 +98,5 @@ pt-br: /documentacao/produtos/store/storage/criar-bucket/
 ```
 
 **`namespace` is never translated.** It is the key that pairs the two language versions, and it must be identical, character for character. The frontmatter contract is in `style-guide.md`.
+
+Refer to /en/documentation/style-guide/writing/terminology/ for the full product catalog and the translation rules.

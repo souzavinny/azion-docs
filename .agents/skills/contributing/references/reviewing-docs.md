@@ -2,6 +2,8 @@
 
 Audit a page, a set of pages, or a docs PR, and report what is wrong, ranked. A review does not rewrite; it names the defect, the line, and the fix.
 
+Its subject belongs to the *How we write the docs* page. That page is still a stub, so this file is the source until it is written.
+
 ## Process
 
 1. **Read the page in full, including frontmatter.** Do not review from a diff alone when the file is available; a diff hides the frontmatter that most severe findings depend on.

@@ -42,6 +42,8 @@ test-frontmatter.js           the real frontmatter gate
 
 **`.agents/` is self-contained and canonical.** With the folder and a factual input, an agent produces a finished Azion documentation page — no repository required, no URLs fetched. All writing rules live inside it; this file adds only what is specific to this repository. On any conflict about a writing rule, `.agents/` wins.
 
+Style-guide links use the published path, `/en/documentation/style-guide/...`. That section is not live yet, so the paths resolve only once it ships. Until then, read the matching file under `src/content/docs/en/pages/style-guide/` in this repository.
+
 Tool-specific paths are symlinks into it: `.claude/CLAUDE.md`, `.claude/agents`, `.claude/skills`. **Add files to `.agents/`, never to `.claude/`** — that directory carries a deny-all `.gitignore`, so anything dropped there is invisible to git.
 
 Start at `.agents/README.md`. The layout:

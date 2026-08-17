@@ -52,3 +52,5 @@ These legitimately exceed the caps and should not be split to satisfy them:
 - **Use-case pages.** This kind carries a fixed ten-section skeleton and targets 11,000 characters instead of 8,000. The 16,000 hard cap still applies. The bound that keeps it there is the four-section cap on `## Configure`, in the `writing-a-use-case` skill.
 
 Everything else over the cap is over the cap because it is doing too much.
+
+Refer to /en/documentation/style-guide/content/page-size/ for the full rules, including the corpus statistics behind these numbers.

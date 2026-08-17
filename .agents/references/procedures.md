@@ -85,3 +85,5 @@ Follow-on tasks go in the page's `## Next steps` section, never in a "post-requi
 When a task has a Console, CLI, and API path, the paths go in a `<Tabs>` block — one procedure per panel, Console first. Each panel opens with its own lead-in naming the interface — "To create the bucket with the Azion CLI:" — and the steps or command follow directly; do not restate the lead-in as a step. Mechanics in `components.md`; when to reach for tabs in the contributing skill's `choosing-components.md`. Never interleave two interfaces in one numbered list.
 
 A panel whose procedure the source cannot complete keeps the facts it has and a gap marker for the rest. Do not omit a documented interface silently, and do not fill its steps from memory.
+
+Refer to /en/documentation/style-guide/writing/procedures/ for the full step grammar with worked examples.

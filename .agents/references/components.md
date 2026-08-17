@@ -4,6 +4,8 @@ The live component set. This is the whole vocabulary: a component that is not on
 
 Which component fits which data is in the contributing skill's `choosing-components.md`.
 
+The published components page is still a stub, so this file is the source until that page is written.
+
 ## Do not use
 
 These exist in the codebase and are not part of this site's vocabulary. Importing one fails the build or renders nothing:

@@ -96,3 +96,5 @@ Do not machine-translate and ship without review. A wrong translation is harder 
 - [ ] Product names and generic technical terms left in English
 - [ ] Substitution table applied
 - [ ] Sidebar entries exist in both languages, per `information-architecture.md`
+
+Refer to /en/documentation/style-guide/conventions/bilingual/ for the full pairing rules and the translation checklist.

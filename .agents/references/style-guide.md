@@ -315,3 +315,7 @@ No external style guide is a fallback. These rules are deliberately stricter tha
 ## Self-reference escape hatch
 
 Files that quote bad examples in order to ban them are not violating their own rules. When checking anything under `.agents/`, judge what a page *asserts*, not what strings it contains.
+
+---
+
+This file is the condensed law. The same rules are written out for people across the style guide, which indexes every page: /en/documentation/style-guide/

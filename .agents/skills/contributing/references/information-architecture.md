@@ -151,3 +151,5 @@ Then check by hand what the build cannot:
 - The page appears in the sidebar you intended, in both languages.
 - A translation's `namespace` matches its English page exactly.
 - A changed permalink has its redirect in the same change.
+
+This file covers the repository mechanics. Refer to /en/documentation/style-guide/content/information-architecture/ for the reader-facing structure: the thirteen product slots and where a new page goes.

@@ -11,6 +11,8 @@ A use case is a guide with a commercial frame. The reader arrives with a busines
 
 This skill routes. The detail lives in `references/`. Paths are relative to this skill directory unless they start with `.agents/`, which means the folder root.
 
+Style-guide links use the published path, `/en/documentation/style-guide/...`. That section is not live yet, so the paths resolve only once it ships. Until then, read the matching file under `src/content/docs/en/pages/style-guide/` in this repository.
+
 ## Input
 
 A scenario, usually one or two words: `e-commerce`, `live streaming`, `online banking`, `SaaS onboarding`.
@@ -73,3 +75,5 @@ Stop and write something else when:
 - The Portuguese version carries the same `namespace`, character for character.
 - No sentence on the page makes a claim the page does not check.
 - The conformance checklist for the how-to kind passes: opening scope sentence, section order, `## Next steps`, step grammar, voice sweep.
+
+Refer to /en/documentation/style-guide/content/use-cases/ for the published version of this kind.

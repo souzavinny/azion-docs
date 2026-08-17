@@ -2,6 +2,8 @@
 
 Every page on this site is also served as markdown at the same URL with `.md` appended:
 
+This subject belongs to the *How we write the docs* page. That page is still a stub, so this file is the source until it is written.
+
 ```
 /en/documentation/get-started/first-deploy/      the page a person reads
 /en/documentation/get-started/first-deploy.md    what an agent fetches
