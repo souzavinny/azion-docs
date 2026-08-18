@@ -33,7 +33,7 @@ Azion also supports **Certificate Revocation List (CRL)** via [Azion API](https:
 
 | Scope | Resource |
 | --- | --- |
-| About Domains | [Domains](/en/documentation/build/applications/reference/domains/) |
+| About Domains | [Domains](/en/documentation/secure/workloads/reference/domains/) |
 | About mTLS | [mTLS](/en/documentation/secure/certificate-manager/reference/mtls/) |
 
 ---
@@ -113,7 +113,7 @@ The old certificate entry remains in Certificate Manager after the switch. You c
 
 Once you [create a domain with Azion](/en/documentation/secure/workloads/guides/configure-a-domain/), you can choose the option **Let's Encrypt** to automatically generate a Let's Encrypt certificate. An entry for this certificate will be listed in the **Certificate Manager** page in [Azion Console](https://console.azion.com). After the certificate undergoes DNS validation, issuance, and storage, it'll become active.
 
-> See [How to generate a Let's Encrypt for your domain](/en/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate/) to know how to validate this type of certificate.
+> See [How to generate a Let's Encrypt for your domain](/en/documentation/secure/certificate-manager/guides/lets-encrypt/) to know how to validate this type of certificate.
 
 Active Let's Encrypt certificates *will be renewed automatically before the expiration date* of 90 days, provided that you don't bind a custom certificate to the domain or delete the associated domain. Certificates that were unbound from a domain can be rebound if they remain valid.
 
@@ -139,7 +139,7 @@ When you modify the CNAME list on the domain settings, Azion will create a new c
 
 #### Status
 
-If any of the CNAMEs hosted in external providers fail the [DNS-01 challenge](/en/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate/#option-2-preparing-dns-entry-with-an-external-dns-provider), the certificate won't be generated and will remain with the *Pending* status.
+If any of the CNAMEs hosted in external providers fail the [DNS-01 challenge](/en/documentation/secure/certificate-manager/guides/lets-encrypt/#option-2-preparing-dns-entry-with-an-external-dns-provider), the certificate won't be generated and will remain with the *Pending* status.
 
 ##### Certificate status table
 
@@ -219,7 +219,7 @@ For more information about the API parameters, see the [Certificates API referen
 :::note[Note]
 Let's Encrypt certificates cross-signed by IdenTrust expired on September 30th, 2024. Devices and applications using the [Let's Encrypt certificate that used IdenTrust are now invalid](https://letsencrypt.org/2023/07/10/cross-sign-expiration.html). This could impact the functionality of devices and applications utilizing these certificates, mainly users of older Android devices (pre-7.1). It'll be necessary to take the following actions:
 
-- **For users of Let's Encrypt Certificates with IdenTrust**: you must migrate to the new Let's Encrypt signing technology or an [Azion edge certificate](/en/documentation/build/applications/reference/domains/mtls/#edge-certificate).
+- **For users of Let's Encrypt Certificates with IdenTrust**: you must migrate to the new Let's Encrypt signing technology or an [Azion edge certificate](/en/documentation/secure/certificate-manager/reference/mtls-for-build/#edge-certificate).
 - **For users of other types of Let's Encrypt**: no immediate action is necessary, considering other certificates remain unaffected with this update, since the problem is caused by outdated certificate chains on the device.
 - **For user with applications using Let's Encrypt on Azion**: no action needed. Certificates are automatically updated, although an affected device must have its CAs updated as well.
 :::

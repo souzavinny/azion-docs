@@ -222,7 +222,7 @@ curl -X POST 'https://api.azionapi.net/variables' \
 }'
 `} />
 :::note
-Azion manages environment variables at the Function instance level, not through a standalone variables API. Variables are configured as key-value pairs in the `vars` field when creating or updating a function instance. See the [Functions Instances documentation](https://www.azion.com/en/documentation/build/applications/reference/functions-instances/) for details.
+Azion manages environment variables at the Function instance level, not through a standalone variables API. Variables are configured as key-value pairs in the `vars` field when creating or updating a function instance. See the [Functions Instances documentation](https://www.azion.com/en/documentation/build/functions/reference/functions-instances/) for details.
 :::
 </Fragment>
 </Tabs>
@@ -244,7 +244,7 @@ Avoid copying secrets into local notes, tickets, chat messages, or temporary doc
 #### Reference documentation
 
 * [Environment Variables](https://www.azion.com/en/documentation/get-started/frameworks/environment-variables/)
-* [Working with variables](https://www.azion.com/en/documentation/deploy/orchestrator/guides/work-with-variables/)
+* [Working with variables](https://www.azion.com/en/documentation/build/orchestrator/guides/work-with-variables/)
 * [Azion runtime environment variables reference](https://www.azion.com/en/documentation/products/functions/environment-variables/)
 
 ### 4. Migrating Rewrite and Redirect URLs
@@ -416,8 +416,8 @@ while (row) {
 
 #### Reference documentation
 
-* [Functions](https://www.azion.com/en/documentation/build/applications/functions/)
-* [Functions Instances](https://www.azion.com/en/documentation/build/applications/reference/functions-instances/)
+* [Functions](https://www.azion.com/en/documentation/build/functions/)
+* [Functions Instances](https://www.azion.com/en/documentation/build/functions/reference/functions-instances/)
 * [Runtime APIs](https://www.azion.com/en/documentation/get-started/frameworks/runtime-apis/)
 * [JavaScript Runtime APIs reference](https://www.azion.com/en/documentation/runtime-apis/javascript/)
 * [SQL Database API (Runtime)](https://www.azion.com/en/documentation/runtime/api-reference/sql-database.md)
@@ -630,11 +630,11 @@ Purge is a separate top-level API, not nested under applications. The `layer` pa
 
 #### Reference documentation
 
-* [Cache](https://www.azion.com/en/documentation/build/applications/cache/)
-* [Cache Settings](https://www.azion.com/en/documentation/build/applications/reference/cache-settings/)
-* [Tiered Cache](https://www.azion.com/en/documentation/build/applications/cache/tiered-cache/)
-* [Real-Time Purge](https://www.azion.com/en/documentation/build/applications/reference/real-time-purge/)
-* [Application Accelerator](https://www.azion.com/en/documentation/build/applications/application-accelerator/)
+* [Cache](https://www.azion.com/en/documentation/build/cache/)
+* [Cache Settings](https://www.azion.com/en/documentation/build/cache/reference/cache-settings/)
+* [Tiered Cache](https://www.azion.com/en/documentation/build/cache/tiered-cache/)
+* [Real-Time Purge](https://www.azion.com/en/documentation/build/cache/reference/real-time-purge/)
+* [Application Accelerator](https://www.azion.com/en/documentation/build/application-accelerator/)
 
 ### 9. Migrating Image Optimization
 
@@ -715,8 +715,8 @@ Azion Image Processor automatically optimizes image format based on the client's
 
 #### Reference documentation
 
-* [Image Processor](https://www.azion.com/en/documentation/build/applications/image-processor/)
-* [How to process images](https://www.azion.com/en/documentation/build/applications/image-processor/guides/process-images/)
+* [Image Processor](https://www.azion.com/en/documentation/build/image-processor/)
+* [How to process images](https://www.azion.com/en/documentation/build/image-processor/guides/process-images/)
 * [Object Storage](https://www.azion.com/en/documentation/store/object-storage/)
 
 ### 10. Migrating AI Workloads (Workers AI to AI Inference)
@@ -1404,7 +1404,7 @@ Export existing KV data through Cloudflare's API. Before importing, review:
 #### Reference documentation
 
 * [KV Store (azion:kv module)](https://www.azion.com/en/documentation/products/azion-lib/kv/)
-* [Functions](https://www.azion.com/en/documentation/build/applications/functions/)
+* [Functions](https://www.azion.com/en/documentation/build/functions/)
 * [Runtime APIs](https://www.azion.com/en/documentation/get-started/frameworks/runtime-apis/)
 
 ### 2. Migrating R2 with Object Storage

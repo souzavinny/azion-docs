@@ -35,7 +35,7 @@ O armazenamento e processamento dos certificados é feito seguindo recomendaçõ
 
 | Escopo | Recurso |
 | --- | --- |
-| Sobre Domains | [Domains](/pt-br/documentacao/build/applications/reference/domains/) |
+| Sobre Domains | [Domains](/pt-br/documentacao/secure/workloads/reference/domains/) |
 | Sobre mTLS | [mTLS](/pt-br/documentacao/secure/certificate-manager/reference/mtls/) |
 
 ---
@@ -212,7 +212,7 @@ A entrada do certificado antigo permanece no Certificate Manager após a troca. 
 
 Quando você [cria um domínio com a Azion](/pt-br/documentacao/secure/workloads/guides/configurar-dominio/), você pode escolher a opção **Let's Encrypt** para gerar automaticamente um certificado Let's Encrypt. Uma entrada para esse certificado será listada na página **Certificate Manager** [no Azion Console](https://console.azion.com). Depois que o certificado for submetido à validação, emissão e armazenamento do DNS, ele se tornará ativo.
 
-> Consulte o guia [Como gerar um certificado Let's Encrypt para o seu domínio](/pt-br/documentacao/build/applications/guides/como-gerar-um-certificado-lets-encrypt/) para saber como validar esse tipo de certificado.
+> Consulte o guia [Como gerar um certificado Let's Encrypt para o seu domínio](/pt-br/documentacao/secure/certificate-manager/guides/como-gerar-um-certificado-lets-encrypt/) para saber como validar esse tipo de certificado.
 
 Os certificados Let's Encrypt ativos *serão renovados automaticamente antes da data de expiração* de 90 dias a partir de sua emissão, desde que você não vincule outro certificado ao domínio ou exclua o domínio associado. Certificados que foram desvinculados podem ser vinculados ao domínio se ainda forem válidos.
 
@@ -238,7 +238,7 @@ Se você modificar a lista de CNAMEs nas configurações do domínio, a Azion ir
 
 #### Status
 
-Se algum dos CNAMEs falhar no [desafio DNS-01](/pt-br/documentacao/build/applications/guides/como-gerar-um-certificado-lets-encrypt/#opcao-2-preparar-a-entrada-de-dns-com-um-provedor-de-dns-externo), o certificado não será gerado e permanecerá com o status *Pending*.
+Se algum dos CNAMEs falhar no [desafio DNS-01](/pt-br/documentacao/secure/certificate-manager/guides/como-gerar-um-certificado-lets-encrypt/#opcao-2-preparar-a-entrada-de-dns-com-um-provedor-de-dns-externo), o certificado não será gerado e permanecerá com o status *Pending*.
 
 ##### Tabela de status de certificados
 

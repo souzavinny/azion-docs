@@ -4,8 +4,8 @@
    "en": "Orchestrator"
   },
   "root": {
-   "en": "/documentation/deploy/orchestrator/",
-   "pt-br": "/documentacao/deploy/orchestrator/"
+   "en": "/documentation/build/orchestrator/",
+   "pt-br": "/documentacao/build/orchestrator/"
   }
  },
  "groups": [
@@ -19,8 +19,8 @@
       "pt-br": "Visão geral"
      },
      "slug": {
-      "en": "/documentation/deploy/orchestrator/",
-      "pt-br": "/documentacao/deploy/orchestrator/"
+      "en": "/documentation/build/orchestrator/",
+      "pt-br": "/documentacao/build/orchestrator/"
      }
     },
     {
@@ -29,8 +29,8 @@
       "en": "Azion Edge Node"
      },
      "slug": {
-      "en": "/documentation/deploy/orchestrator/reference/edge-node/",
-      "pt-br": "/documentacao/deploy/orchestrator/reference/edge-node/"
+      "en": "/documentation/build/orchestrator/reference/edge-node/",
+      "pt-br": "/documentacao/build/orchestrator/reference/edge-node/"
      }
     },
     {
@@ -40,8 +40,8 @@
       "pt-br": "Edge Services"
      },
      "slug": {
-      "en": "/documentation/deploy/orchestrator/reference/edge-services/",
-      "pt-br": "/documentacao/deploy/orchestrator/reference/edge-services/"
+      "en": "/documentation/build/orchestrator/reference/edge-services/",
+      "pt-br": "/documentacao/build/orchestrator/reference/edge-services/"
      }
     },
     {
@@ -58,8 +58,8 @@
         "pt-br": "Como autorizar um edge node"
        },
        "slug": {
-        "en": "/documentation/deploy/orchestrator/guides/authorize-an-edge-node/",
-        "pt-br": "/documentacao/deploy/orchestrator/guides/autorizar-edge-node/"
+        "en": "/documentation/build/orchestrator/guides/authorize-an-edge-node/",
+        "pt-br": "/documentacao/build/orchestrator/guides/autorizar-edge-node/"
        }
       },
       {
@@ -69,8 +69,8 @@
         "pt-br": "Como vincular um edge service a um edge node"
        },
        "slug": {
-        "en": "/documentation/deploy/orchestrator/guides/bind-service-node/",
-        "pt-br": "/documentacao/deploy/orchestrator/guides/vincular-servico/"
+        "en": "/documentation/build/orchestrator/guides/bind-service-node/",
+        "pt-br": "/documentacao/build/orchestrator/guides/vincular-servico/"
        }
       },
       {
@@ -80,8 +80,8 @@
         "pt-br": "Como criar um edge service"
        },
        "slug": {
-        "en": "/documentation/deploy/orchestrator/guides/create-edge-service/",
-        "pt-br": "/documentacao/deploy/orchestrator/guides/criar-edge-service/"
+        "en": "/documentation/build/orchestrator/guides/create-edge-service/",
+        "pt-br": "/documentacao/build/orchestrator/guides/criar-edge-service/"
        }
       },
       {
@@ -91,8 +91,8 @@
         "pt-br": "Primeiros passos no Edge Node"
        },
        "slug": {
-        "en": "/documentation/deploy/orchestrator/guides/edge-node-first-steps/",
-        "pt-br": "/documentacao/deploy/orchestrator/guides/edge-node-primeiros-passos/"
+        "en": "/documentation/build/orchestrator/guides/edge-node-first-steps/",
+        "pt-br": "/documentacao/build/orchestrator/guides/edge-node-primeiros-passos/"
        }
       },
       {
@@ -102,8 +102,8 @@
         "pt-br": "Criando um edge service"
        },
        "slug": {
-        "en": "/documentation/deploy/orchestrator/guides/edge-services-first-steps/",
-        "pt-br": "/documentacao/deploy/orchestrator/guides/criando-edge-service/"
+        "en": "/documentation/build/orchestrator/guides/edge-services-first-steps/",
+        "pt-br": "/documentacao/build/orchestrator/guides/criando-edge-service/"
        }
       },
       {
@@ -113,8 +113,8 @@
         "pt-br": "Como instalar o Orchestrator Agent"
        },
        "slug": {
-        "en": "/documentation/deploy/orchestrator/guides/install-orchestrator-agent/",
-        "pt-br": "/documentacao/deploy/orchestrator/guides/instalar-orchestrator-agent/"
+        "en": "/documentation/build/orchestrator/guides/install-orchestrator-agent/",
+        "pt-br": "/documentacao/build/orchestrator/guides/instalar-orchestrator-agent/"
        }
       },
       {
@@ -124,8 +124,8 @@
         "pt-br": "Como verificar os logs do Orchestrator"
        },
        "slug": {
-        "en": "/documentation/deploy/orchestrator/guides/watch-logs/",
-        "pt-br": "/documentacao/deploy/orchestrator/guides/verificar-logs/"
+        "en": "/documentation/build/orchestrator/guides/watch-logs/",
+        "pt-br": "/documentacao/build/orchestrator/guides/verificar-logs/"
        }
       },
       {
@@ -135,8 +135,8 @@
         "pt-br": "Como trabalhar com variáveis no Orchestrator"
        },
        "slug": {
-        "en": "/documentation/deploy/orchestrator/guides/work-with-variables/",
-        "pt-br": "/documentacao/deploy/orchestrator/guides/trabalhar-com-variaveis/"
+        "en": "/documentation/build/orchestrator/guides/work-with-variables/",
+        "pt-br": "/documentacao/build/orchestrator/guides/trabalhar-com-variaveis/"
        }
       },
       {
@@ -146,8 +146,8 @@
         "pt-br": "Automatize sua infraestrutura com a API da Azion"
        },
        "slug": {
-        "en": "/documentation/deploy/orchestrator/guides/api/",
-        "pt-br": "/documentacao/deploy/orchestrator/guides/api/"
+        "en": "/documentation/build/orchestrator/guides/api/",
+        "pt-br": "/documentacao/build/orchestrator/guides/api/"
        }
       },
       {
@@ -157,8 +157,8 @@
         "pt-br": "Como implantar um serviço"
        },
        "slug": {
-        "en": "/documentation/deploy/orchestrator/guides/deploy-a-service/",
-        "pt-br": "/documentacao/deploy/orchestrator/guides/implantar-servico/"
+        "en": "/documentation/build/orchestrator/guides/deploy-a-service/",
+        "pt-br": "/documentacao/build/orchestrator/guides/implantar-servico/"
        }
       },
       {
@@ -168,8 +168,8 @@
         "pt-br": "Explore o uso do Orchestrator"
        },
        "slug": {
-        "en": "/documentation/deploy/orchestrator/guides/explore-usage/",
-        "pt-br": "/documentacao/deploy/orchestrator/guides/explore-uso/"
+        "en": "/documentation/build/orchestrator/guides/explore-usage/",
+        "pt-br": "/documentacao/build/orchestrator/guides/explore-uso/"
        }
       },
       {
@@ -179,8 +179,8 @@
         "pt-br": "Como provisionar arquivos"
        },
        "slug": {
-        "en": "/documentation/deploy/orchestrator/guides/provision-files/",
-        "pt-br": "/documentacao/deploy/orchestrator/guides/provisionar-arquivos/"
+        "en": "/documentation/build/orchestrator/guides/provision-files/",
+        "pt-br": "/documentacao/build/orchestrator/guides/provisionar-arquivos/"
        }
       },
       {
@@ -190,8 +190,8 @@
         "pt-br": "Como rodar scripts nos edge nodes"
        },
        "slug": {
-        "en": "/documentation/deploy/orchestrator/guides/run-scripts/",
-        "pt-br": "/documentacao/deploy/orchestrator/guides/rodar-scripts/"
+        "en": "/documentation/build/orchestrator/guides/run-scripts/",
+        "pt-br": "/documentacao/build/orchestrator/guides/rodar-scripts/"
        }
       },
       {
@@ -201,8 +201,8 @@
         "pt-br": "Como desvincular um edge service"
        },
        "slug": {
-        "en": "/documentation/deploy/orchestrator/guides/unbind-service/",
-        "pt-br": "/documentacao/deploy/orchestrator/guides/desvincular-servico/"
+        "en": "/documentation/build/orchestrator/guides/unbind-service/",
+        "pt-br": "/documentacao/build/orchestrator/guides/desvincular-servico/"
        }
       },
       {
@@ -212,8 +212,8 @@
         "pt-br": "Como desinstalar o Orchestrator Agent"
        },
        "slug": {
-        "en": "/documentation/deploy/orchestrator/guides/uninstall-agent/",
-        "pt-br": "/documentacao/deploy/orchestrator/guides/desinstalar-agent/"
+        "en": "/documentation/build/orchestrator/guides/uninstall-agent/",
+        "pt-br": "/documentacao/build/orchestrator/guides/desinstalar-agent/"
        }
       },
       {
@@ -223,8 +223,8 @@
         "pt-br": "Automatize arquivos com zero-touch provisioning"
        },
        "slug": {
-        "en": "/documentation/deploy/orchestrator/guides/zero-touch-provisioning/",
-        "pt-br": "/documentacao/deploy/orchestrator/guides/zero-touch-provisioning/"
+        "en": "/documentation/build/orchestrator/guides/zero-touch-provisioning/",
+        "pt-br": "/documentacao/build/orchestrator/guides/zero-touch-provisioning/"
        }
       }
      ]

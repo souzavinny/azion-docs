@@ -14,12 +14,12 @@ import Code from '~/components/Code/Code.astro'
 
 Implementar regras em sua aplicação usando o [Rules Engine](/pt-br/documentacao/build/applications/reference/rules-engine/) permite que você determine as tarefas que ela deve executar em cenários específicos sem modificar o código-fonte da sua aplicação.
 
-Este guia demonstra o processo de criação de regras com um exemplo prático, mas a maioria das regras será única para cada aplicação e suas necessidades. Além de ativar variáveis como [device groups](/pt-br/documentacao/build/applications/guides/criar-device-groups/), [configurações de cache](/pt-br/documentacao/build/applications/cache/guides/ajustar-cache-settings/) e [origens](/pt-br/documentacao/build/applications/guides/definir-origens/), você pode criar uma grande variedade de regras nas fases de solicitação e resposta.
+Este guia demonstra o processo de criação de regras com um exemplo prático, mas a maioria das regras será única para cada aplicação e suas necessidades. Além de ativar variáveis como [device groups](/pt-br/documentacao/build/applications/guides/criar-device-groups/), [configurações de cache](/pt-br/documentacao/build/cache/guides/ajustar-cache-settings/) e [origens](/pt-br/documentacao/secure/connectors/guides/definir-origens/), você pode criar uma grande variedade de regras nas fases de solicitação e resposta.
 
 Com esse guia, você irá criar uma regra na fase de resposta para remover um cabeçalho HTTP usando o comportamento **Filter Response Header**.
 
 :::caution[Atenção]
-Para desbloquear todas as funcionalidades do Rules Engine, você deve ativar o módulo [Application Accelerator](/pt-br/documentacao/build/applications/application-accelerator/). Se o **Application Accelerator** estiver ativado, a transferência de dados pode gerar custos relacionados ao uso. Consulte a [página de preços](/pt-br/documentacao/platform/pricing/) para mais informações.
+Para desbloquear todas as funcionalidades do Rules Engine, você deve ativar o módulo [Application Accelerator](/pt-br/documentacao/build/application-accelerator/). Se o **Application Accelerator** estiver ativado, a transferência de dados pode gerar custos relacionados ao uso. Consulte a [página de preços](/pt-br/documentacao/platform/pricing/) para mais informações.
 :::
 
 ---
@@ -57,7 +57,7 @@ Para remover o cabeçalho `Server`:
 </Fragment>
 
 <Fragment slot="panel.api">
-1. Execute a seguinte requisição `PATCH` em seu terminal, substituindo `[TOKEN VALUE]` por seu [personal token](/pt-br/documentacao/account/guides/personal-tokens/) e a variável `<application_id>` por [seu ID de application](/pt-br/documentacao/build/applications/guides/definir-configuracoes-principais/) para ativar o módulo [Application Accelerator](/pt-br/documentacao/build/applications/application-accelerator/):
+1. Execute a seguinte requisição `PATCH` em seu terminal, substituindo `[TOKEN VALUE]` por seu [personal token](/pt-br/documentacao/account/guides/personal-tokens/) e a variável `<application_id>` por [seu ID de application](/pt-br/documentacao/build/applications/guides/definir-configuracoes-principais/) para ativar o módulo [Application Accelerator](/pt-br/documentacao/build/application-accelerator/):
 
 <Code lang="bash" code={` 
 curl --request PATCH \

@@ -4,7 +4,7 @@ description: >-
   Descubra como utilizar variáveis em Edge Services e Edge Nodes com Azion
   Console, Real-Time Manager e API Azion, otimizando o deployment no Edge
   Orchestrator.
-permalink: /documentacao/deploy/orchestrator/guides/trabalhar-com-variaveis/
+permalink: /documentacao/build/orchestrator/guides/trabalhar-com-variaveis/
 menu_namespace: orchestratorMenu
 meta_tags: >-
   Azion, Edge Nodes, Edge Services, Orchestrator, variáveis, Real-Time
@@ -15,7 +15,7 @@ namespace: docs_deploy_work_with_variables
 import Tabs from '~/components/tabs/Tabs'
 import Code from '~/components/Code/Code.astro'
 
-Durante o processo de implantação no [Orchestrator](/pt-br/documentacao/deploy/orchestrator/), você pode trabalhar com variáveis. Uma variável pode ser definida em [edge services](#variaveis-em-edge-services) e [edge nodes](#variaveis-em-edge-nodes).
+Durante o processo de implantação no [Orchestrator](/pt-br/documentacao/build/orchestrator/), você pode trabalhar com variáveis. Uma variável pode ser definida em [edge services](#variaveis-em-edge-services) e [edge nodes](#variaveis-em-edge-nodes).
 
 Você pode criar variáveis de edge node e de edge services usando:
 
@@ -37,7 +37,7 @@ A prioridade é sempre a variável do edge node. Portanto, se você tiver uma va
 <Fragment slot="panel.console">
 1. Acesse o [Azion Console](/pt-br/documentacao/account/guides/como-acessar-o-azion-console/).
 2. No canto superior esquerdo da página, abra o **Products menu**, identificado pelas três linhas horizontais; abaixo do item **Edge Libraries**, selecione **Edge Services**.
-3. Selecione o [edge service](/pt-br/documentacao/deploy/orchestrator/guides/criar-edge-service/) ao qual você deseja adicionar uma variável.
+3. Selecione o [edge service](/pt-br/documentacao/build/orchestrator/guides/criar-edge-service/) ao qual você deseja adicionar uma variável.
 4. Na seção **Variables**, adicione a seguinte variável:
 
 <Code lang="bash" code={`
@@ -133,7 +133,7 @@ Confira a [documentação da API da Azion](https://api.azion.com/) e a [especifi
 2. No canto superior esquerdo da página, abra o **Products menu**, identificado pelas três linhas horizontais e selecione **Edge Nodes**.
 3. Selecione o edge node ao qual você deseja adicionar uma variável.
 4. Vá para a aba **Services**.
-5. Escolha o [serviço](/pt-br/documentacao/deploy/orchestrator/guides/criar-edge-service/) ao qual você deseja aplicar a variável.
+5. Escolha o [serviço](/pt-br/documentacao/build/orchestrator/guides/criar-edge-service/) ao qual você deseja aplicar a variável.
 6. Adicione o seguinte conteúdo ao bloco de variáveis:
 
 <Code lang="bash" code={`

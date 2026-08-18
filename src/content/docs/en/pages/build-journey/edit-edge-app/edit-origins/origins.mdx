@@ -5,8 +5,8 @@ description: >-
   be an application, a web server, or storage.
 meta_tags: 'origin, server, application, storage, bucket'
 namespace: docs_guides_build_work_with_origins
-permalink: /documentation/build/applications/guides/work-with-origins/
-menu_namespace: applicationsMenu
+permalink: /documentation/secure/connectors/guides/work-with-origins/
+menu_namespace: connectorsMenu
 ---
 
 import Tabs from '~/components/tabs/Tabs'
@@ -18,7 +18,7 @@ import Apiv4Rollout from '~/includes/snippets/apiv4Rollout/en/snippet.mdx'
 
 This guide explains how to configure an origin. An origin, also known as a backend, is the server from which Azion retrieves your content. Origins can include object storage services, cloud servers, or other infrastructure that hosts your application assets or data.
 
-There are separate instructions for API v3 using [legacy Origin](/en/documentation/build/applications/reference/domains/) settings and API v4 using the new [Connectors](/en/documentation/secure/connectors/) product.
+There are separate instructions for API v3 using [legacy Origin](/en/documentation/secure/workloads/reference/domains/) settings and API v4 using the new [Connectors](/en/documentation/secure/connectors/) product.
 
 :::tip
 In this guide, there are separate instructions for API v3 and API v4. If you're not sure which steps apply to your account, see [the Verify Your Account Migration guide](/en/documentation/account/guides/verify-account-migration/) to determine if your account has already been migrated.
@@ -40,7 +40,7 @@ In this guide, there are separate instructions for API v3 and API v4. If you're 
 4. In the **Connector Type** section, select **HTTP**.
 
 :::tip
-To implement the load balancing algorithm for multiple origins, see the [guide on multiple origins with Load Balancer](/en/documentation/build/applications/guides/multiple-origins/).
+To implement the load balancing algorithm for multiple origins, see the [guide on multiple origins with Load Balancer](/en/documentation/secure/connectors/guides/multiple-origins/).
 :::
 
 5. In the **Connection Options** section, locate the **Transport Protocol Policy** field and select **Force HTTPS**.
@@ -80,7 +80,7 @@ When you [create an application](/en/documentation/get-started/start-with-a-temp
 6. Under **Type**, keep the option **Single Origin** selected.
 
 :::tip
-To implement load balancing algorithm for multiple origins, see the [guide on multiple origins with Load Balancer](/en/documentation/build/applications/guides/multiple-origins/).
+To implement load balancing algorithm for multiple origins, see the [guide on multiple origins with Load Balancer](/en/documentation/secure/connectors/guides/multiple-origins/).
 :::
 
 7. Under **Protocol Policy**, select **Enforce HTTPS**.
@@ -179,7 +179,7 @@ curl --request POST \
   | Key | Description |
   | --- | --- |
   | `name` | Sets the string in value as a name of the origin. |
-  | `type` | Sets the new Connector type to `http`. For more information on load balancing, check [Work with multiple origins](/en/documentation/build/applications/guides/multiple-origins/). |
+  | `type` | Sets the new Connector type to `http`. For more information on load balancing, check [Work with multiple origins](/en/documentation/secure/connectors/guides/multiple-origins/). |
   | `addresses` | Takes a list of objects for each address of the origin. Since this is an entry of the single origin type, you may only send one object with the `address` value in the array. |
   | `transport_policy` | When `https`, enforces an HTTPS connection with the origin, not affecting the protocol from user requests. |
   | `host` | Sets the value of the `Host` header sent to the origin. Use a specific FQDN (e.g., `customhost.com`) when your origin serves a single virtualhost. Use `${host}` to forward the `Host` header received from the user's request, which is useful when your origin serves multiple virtualhosts. If your origin enforces Host-based access controls, ensure this value matches what the origin expects. |
@@ -296,7 +296,7 @@ curl --location 'https://api.azionapi.net/edge_applications/<application_id>/ori
   | Key | Description |
   | --- | --- |
   | `name` | Sets the string in value as a name of the origin. |
-  | `origin_type` | Sets the new origin type to `single_origin`. For more information on load balancing, check [Work with multiple origins](/en/documentation/build/applications/guides/multiple-origins/). |
+  | `origin_type` | Sets the new origin type to `single_origin`. For more information on load balancing, check [Work with multiple origins](/en/documentation/secure/connectors/guides/multiple-origins/). |
   | `addresses` | Takes a list of objects for each address of the origin. Since this is an entry of the single origin type, you may only send one object with the `address` value in the array. |
   | `origin_protocol_policy` | When `https`, enforces an HTTPS connection with the origin, not affecting the protocol from user requests. |
   | `host_header` | Sets the value of the `Host` header sent to the origin. Use a specific FQDN (e.g., `customhost.com`) when your origin serves a single virtualhost. Use `${host}` to forward the `Host` header received from the user's request, which is useful when your origin serves multiple virtualhosts. If your origin enforces Host-based access controls, ensure this value matches what the origin expects. |

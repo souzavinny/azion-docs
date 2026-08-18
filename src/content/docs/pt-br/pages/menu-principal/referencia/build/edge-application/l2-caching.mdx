@@ -8,8 +8,8 @@ meta_tags: >-
   caching, edge, cache, edge computing, l2, layer 2, cache layer, purge
   cache
 namespace: documentation_products_edge_application_l2_caching
-menu_namespace: applicationsMenu
-permalink: /documentacao/build/applications/cache/tiered-cache/
+menu_namespace: cacheMenu
+permalink: /documentacao/build/cache/tiered-cache/
 ---
 import LinkButton from 'azion-webkit/linkbutton'
 
@@ -29,8 +29,8 @@ Tiered Cache só estará disponível se o serviço for ativado para a sua conta.
 
 | Escopo | Recursos |
 | --- | --- |
-| Módulo Cache | [Cache](/pt-br/documentacao/build/applications/cache/) |
-| Criar uma configuração de cache | [Como configurar políticas de cache para Applications](/pt-br/documentacao/build/applications/cache/guides/cache-settings/) |
+| Módulo Cache | [Cache](/pt-br/documentacao/build/cache/) |
+| Criar uma configuração de cache | [Como configurar políticas de cache para Applications](/pt-br/documentacao/build/cache/guides/cache-settings/) |
 
 ---
 
@@ -38,7 +38,7 @@ Tiered Cache só estará disponível se o serviço for ativado para a sua conta.
 
 **Tiered ⁠Cache** é especialmente projetado para objetos que podem permanecer no cache por um longo período de tempo. Por isso, você só pode ativá-lo em políticas de cache com um TTL igual ou superior a *3 segundos*, sendo o TTL padrão de *60 segundos*.
 
-<LinkButton link="/pt-br/documentacao/build/applications/reference/cache-settings/#browser-cache-settings" label="Saiba mais sobre expiration settings" />
+<LinkButton link="/pt-br/documentacao/build/cache/reference/cache-settings/#browser-cache-settings" label="Saiba mais sobre expiration settings" />
 
 ---
 
@@ -54,7 +54,7 @@ A Azion também oferece a opção de hospedar os servidores de Tiered Cache no B
 
 Sempre que necessário, você pode usar o **Real-Time Purge** para expirar seu conteúdo do **Tiered Cache** antes do TTL esperado. Lembre de fazer o purge primeiro da camada de tiered cache e somente depois do **Cache**. Isso evita edge feedback com conteúdo desatualizado na camada tiered cache.
 
-<LinkButton link="/pt-br/documentacao/build/applications/reference/real-time-purge/" label="Saiba mais sobre Real-Time Purge" />
+<LinkButton link="/pt-br/documentacao/build/cache/reference/real-time-purge/" label="Saiba mais sobre Real-Time Purge" />
 
 ---
 

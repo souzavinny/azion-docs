@@ -42,6 +42,47 @@
       "en": "/documentation/secure/connectors/reference/origin-shield/",
       "pt-br": "/documentacao/secure/connectors/reference/origin-shield/"
      }
+    },
+    {
+     "key": "conn/reference/origins",
+     "label": {
+      "en": "Origins"
+     },
+     "slug": {
+      "en": "/documentation/secure/connectors/reference/origins/",
+      "pt-br": "/documentacao/secure/connectors/reference/origins/"
+     }
+    },
+    {
+     "key": "conn/guides",
+     "label": {
+      "en": "Guides",
+      "pt-br": "Guias"
+     },
+     "items": [
+      {
+       "key": "conn/gd/work-with-origins",
+       "label": {
+        "en": "How to define a new origin for your application",
+        "pt-br": "Como definir uma nova origem para sua aplicação"
+       },
+       "slug": {
+        "en": "/documentation/secure/connectors/guides/work-with-origins/",
+        "pt-br": "/documentacao/secure/connectors/guides/definir-origens/"
+       }
+      },
+      {
+       "key": "conn/gd/multiple-origins",
+       "label": {
+        "en": "Configure Multiple Origins with Load Balancing",
+        "pt-br": "Configure múltiplas origens com load balancing"
+       },
+       "slug": {
+        "en": "/documentation/secure/connectors/guides/multiple-origins/",
+        "pt-br": "/documentacao/secure/connectors/guides/configure-multiplas-origens/"
+       }
+      }
+     ]
     }
    ]
   }

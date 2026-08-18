@@ -1201,7 +1201,7 @@ Azion introduces several new Artificial Intelligence capabilities, including **A
 - **LangGraph AI Agent Boilerplate**: Template to create an agent that can query and interact with data stored in EdgeSQL databases.
 - **Compatibility**: Integrates with OpenAI-compatible APIs and LangChain/LangGraph for workflow automation.
 
-For more details, visit the documentation for [AI Inference](/en/documentation/build/ai-inference/), [Edge Functions](/en/documentation/build/applications/functions/), and [Edge SQL](/en/documentation/store/sql-database/).
+For more details, visit the documentation for [AI Inference](/en/documentation/build/ai-inference/), [Edge Functions](/en/documentation/build/functions/), and [Edge SQL](/en/documentation/store/sql-database/).
 
 ## March 26, 2025
 
@@ -1375,7 +1375,7 @@ Check on [Metrics' monitoring charts](/en/documentation/observe/real-time-metric
 
 **Azion Copilot** is an AI-powered assistant integrated directly into Azion Console. Customers can use it to resolve issues or get answers to queries, with immediate, context-driven responses based on Azion’s knowledge base. This new capability simplifies tasks for users of all skill levels, making it easier to use Azion's products and improving their workflow.
 
-Additionally, Copilot runs directly on Azion's distributed edge platform, ensuring fast processing and leveraging edge-native products, such as [Edge Application](/en/documentation/build/applications/), [Edge Functions](/en/documentation/build/applications/functions/), and [EdgeSQL](/en/documentation/store/sql-database/), for optimal performance.
+Additionally, Copilot runs directly on Azion's distributed edge platform, ensuring fast processing and leveraging edge-native products, such as [Edge Application](/en/documentation/build/applications/), [Edge Functions](/en/documentation/build/functions/), and [EdgeSQL](/en/documentation/store/sql-database/), for optimal performance.
 
 To test the new Azion Copilot, access [Azion Console](https://console.azion.com/).
 
@@ -1478,7 +1478,7 @@ Read more on this topic in the [documentation](/en/documentation/account/guides/
 
 The **Image Processor** module can now process images in the `AVIF` format, which provides superior compression and quality compared to other formats like WEPB, JPEG or PNG.
 
-Read more about [Image Processor](/en/documentation/build/applications/image-processor/).
+Read more about [Image Processor](/en/documentation/build/image-processor/).
 
 ---
 
@@ -1540,7 +1540,7 @@ Read more about [Azion CLI and its commands](/en/documentation/products/azion-cl
 
 ### Azion CLI
 
-You can now generate and manage [Let's Encrypt digital certificates](/en/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate/) within your domain via CLI. To do so, check the [digital-certificate-id command](/en/documentation/devtools/cli/create/#digital-certificate-id) documentation. 
+You can now generate and manage [Let's Encrypt digital certificates](/en/documentation/secure/certificate-manager/guides/lets-encrypt/) within your domain via CLI. To do so, check the [digital-certificate-id command](/en/documentation/devtools/cli/create/#digital-certificate-id) documentation. 
 
 Additionally, you can now schedule the deletion of an Object Storage bucket with objects inside by using the `--force` flag:
     - If you try to delete a bucket with objects inside, the platform will delete everything and schedule the bucket to be deleted after 24 hours (the time needed to delete a bucket after it's emptied).
@@ -2008,9 +2008,9 @@ For more details, check the documentation on [How to integrate Azion with Grafan
 - [Rules Engine](/en/documentation/build/applications/reference/rules-engine/) now provides a **description** field for you to describe your rule.
   - You can customize the description via [Real-Time Manager](https://console.azion.com) or [Azion API](https://api.azion.com/).
 
-- For Azion [Domains](/en/documentation/build/applications/reference/domains/), you can request the issuance of a [Let's Encrypt certificate](/en/documentation/secure/certificate-manager/#lets-encrypt-certificate) through Azion.
+- For Azion [Domains](/en/documentation/secure/workloads/reference/domains/), you can request the issuance of a [Let's Encrypt certificate](/en/documentation/secure/certificate-manager/#lets-encrypt-certificate) through Azion.
   - This TLS certificate will be automatically managed and renewed by Azion before the expiration date of 90 days.
-  - See the guide on [How to generate a Let's Encrypt certificate](/en/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate/) for more information.
+  - See the guide on [How to generate a Let's Encrypt certificate](/en/documentation/secure/certificate-manager/guides/lets-encrypt/) for more information.
   - Available in [Real-Time Manager](https://console.azion.com) or [Azion API](https://api.azion.com/).
 
 **Edge Functions**

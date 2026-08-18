@@ -7,8 +7,8 @@ meta_tags: >-
   caching, edge, cache, edge computing, performance, status, bypass, hit,
   miss
 namespace: documentation_products_edge_caching
-menu_namespace: applicationsMenu
-permalink: /documentacao/build/applications/cache/
+menu_namespace: cacheMenu
+permalink: /documentacao/build/cache/
 ---
 import LinkButton from 'azion-webkit/linkbutton'
 
@@ -22,9 +22,9 @@ Se os servidores de origem estiverem inativos ou ficarem indisponíveis, o Cache
 
 | Escopo | Recursos |
 | --- | --- |
-| Configurações de cache disponíveis | [Cache Settings](/pt-br/documentacao/build/applications/reference/cache-settings/) |
-| Módulo Tiered Cache | [Tiered Cache](/pt-br/documentacao/build/applications/cache/tiered-cache/) |
-| Configurar uma política de cache | [Como configurar políticas de cache para Applications](/pt-br/documentacao/build/applications/cache/guides/cache-settings/) |
+| Configurações de cache disponíveis | [Cache Settings](/pt-br/documentacao/build/cache/reference/cache-settings/) |
+| Módulo Tiered Cache | [Tiered Cache](/pt-br/documentacao/build/cache/tiered-cache/) |
+| Configurar uma política de cache | [Como configurar políticas de cache para Applications](/pt-br/documentacao/build/cache/guides/cache-settings/) |
 
 ---
 
@@ -43,7 +43,7 @@ X-Cache: HIT from 200.000.000.00 with HTTP/2.0
 ```
 
 :::note
-Saiba mais sobre como automatizar seu navegador para obter outros dados de cache no guia [Como verificar indicadores de cache usando Modheader para Google Chrome](/pt-br/documentacao/build/applications/cache/guides/verificar-tempo-de-cache-da-pagina/).
+Saiba mais sobre como automatizar seu navegador para obter outros dados de cache no guia [Como verificar indicadores de cache usando Modheader para Google Chrome](/pt-br/documentacao/build/cache/guides/verificar-tempo-de-cache-da-pagina/).
 :::
 
 ### Definições de status
@@ -57,7 +57,7 @@ Saiba mais sobre como automatizar seu navegador para obter outros dados de cache
 | **UPDATING** | O conteúdo em cache expirou e o stale cache está sendo servido, mas o conteúdo será atualizado para futuras requisições |
 | **REVALIDATED** | O conteúdo em cache é verificado contra o da origem usando cabeçalhos condicionais. Se ainda estiver atualizado, o recurso não é retransmitido pela origem |
 | **BYPASS** | O edge solicita o conteúdo diretamente da origem em vez de usar uma versão em cache devido ao comportamento [Bypass Cache](/pt-br/documentacao/build/applications/reference/rules-engine/#bypass-cache) |
-| **-** | Se nenhum status for recebido, o conteúdo do request está restrito de permanecer em cache. Por exemplo, se o conteúdo é uma requisição `POST` e [Caching for POST](/pt-br/documentacao/build/applications/reference/cache-settings/#cache-de-metodos-http) está desabilitado, o status não é recebido |
+| **-** | Se nenhum status for recebido, o conteúdo do request está restrito de permanecer em cache. Por exemplo, se o conteúdo é uma requisição `POST` e [Caching for POST](/pt-br/documentacao/build/cache/reference/cache-settings/#cache-de-metodos-http) está desabilitado, o status não é recebido |
 
 ---
 
@@ -72,7 +72,7 @@ X-Cache-Key: httpsseudominio.com/caminho-do-recurso/imagem.jpeg@@
 ```
 
 :::note
-Saiba mais sobre como automatizar seu navegador para obter outros dados de cache no guia [Como verificar indicadores de cache usando Modheader para Google Chrome](/pt-br/documentacao/build/applications/cache/guides/verificar-tempo-de-cache-da-pagina/).
+Saiba mais sobre como automatizar seu navegador para obter outros dados de cache no guia [Como verificar indicadores de cache usando Modheader para Google Chrome](/pt-br/documentacao/build/cache/guides/verificar-tempo-de-cache-da-pagina/).
 :::
 
 ### Formato da cache key
@@ -99,7 +99,7 @@ Por exemplo, para uma requisição `OPTIONS`, a cache key gerada para um objeto 
 
 #### Image Processor
 
-Quando o [Image Processor](/pt-br/documentacao/build/applications/image-processor/) está ativado, além da query string `ims`, variações com formato convertido contêm o formato do arquivo após o separador.
+Quando o [Image Processor](/pt-br/documentacao/build/image-processor/) está ativado, além da query string `ims`, variações com formato convertido contêm o formato do arquivo após o separador.
 
 Por exemplo, para uma imagem redimensionada e convertida no formato `webp`, a cache key gerada será `httpsstatic.seudominio.com/static/imagens/imagem_1.jpg?ims=880x@@webp`.
 
@@ -111,7 +111,7 @@ Por exemplo, para uma aplicação que implementa variação pelo grupo `Mobile`,
 
 #### Advanced Cache Key
 
-Quando a funcionalidade [Advanced Cache Key](/pt-br/documentacao/build/applications/application-accelerator/#advanced-cache-key) estiver configurada, a formação das cache keys também é afetada.
+Quando a funcionalidade [Advanced Cache Key](/pt-br/documentacao/build/application-accelerator/#advanced-cache-key) estiver configurada, a formação das cache keys também é afetada.
 
 **Cache by Cookie** gera uma variação de cache key com os nomes e valores do cookie determinados seguidos por `;`. 
 
@@ -162,7 +162,7 @@ Encontrar o equilíbrio certo para os tempos de expiração de cache é crucial 
 
 A capacidade de personalizar o TTL de cache do navegador e o TTL de cache do edge permite que você ajuste sua estratégia de cache com base na frequência de atualização do seu conteúdo, nos padrões de tráfego do usuário e nos objetivos gerais de desempenho.
 
-<LinkButton link="/pt-br/documentacao/build/applications/reference/cache-settings/#browser-cache-settings" label="Saiba mais sobre expiration settings" />
+<LinkButton link="/pt-br/documentacao/build/cache/reference/cache-settings/#browser-cache-settings" label="Saiba mais sobre expiration settings" />
 
 ---
 
@@ -189,7 +189,7 @@ A capacidade de personalizar o TTL de cache do navegador e o TTL de cache do edg
 
 **Adaptive Delivery** detecta os grupos de dispositivos que você criou usando o [Device Groups](/pt-br/documentacao/build/applications/reference/device-groups/), permitindo que você configure como a Azion entrega seu conteúdo. Você pode optar por fornecer a mesma versão do conteúdo, independentemente da detecção do dispositivo, ou manter variações de objetos baseadas no dispositivo em cache.
 
-<LinkButton link="/pt-br/documentacao/build/applications/reference/cache-settings/#adaptive-delivery" label="Saiba mais sobre adaptive delivery" />
+<LinkButton link="/pt-br/documentacao/build/cache/reference/cache-settings/#adaptive-delivery" label="Saiba mais sobre adaptive delivery" />
 
 ---
 
@@ -201,7 +201,7 @@ Ao habilitar essa funcionalidade, arquivos grandes são fragmentados em arquivos
 
 
 
-<LinkButton link="/pt-br/documentacao/build/applications/reference/cache-settings/#large-file-optimization" label="Saiba mais sobre configurações de large file optimization" />
+<LinkButton link="/pt-br/documentacao/build/cache/reference/cache-settings/#large-file-optimization" label="Saiba mais sobre configurações de large file optimization" />
 
 ---
 

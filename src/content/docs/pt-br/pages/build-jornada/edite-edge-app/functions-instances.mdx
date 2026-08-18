@@ -4,7 +4,7 @@ description: >-
   Aprenda como instanciar e configurar Functions na Azion para otimizar sua
   application usando o Console ou Real-Time Manager.
 permalink: /documentacao/build/functions/guides/instanciar-functions/
-menu_namespace: applicationsMenu
+menu_namespace: functionsMenu
 meta_tags: >-
   Azion, Functions, serverless, Applications, Real-Time Manager,
   Console, instanciar função, Edge Computing, API Azion, Azion Marketplace
@@ -14,12 +14,12 @@ namespace: docs_guides_build_instantiate_edge_functions
 import Tabs from '~/components/tabs/Tabs'
 import Code from '~/components/Code/Code.astro'
 
-Instancie [funções serverless](/pt-br/documentacao/build/applications/reference/functions-instances/) diretamente dentro de sua application.
+Instancie [funções serverless](/pt-br/documentacao/build/functions/reference/functions-instances/) diretamente dentro de sua application.
 
 Este guia descreve como você pode instanciar a função *Azion - Hello World*, pré-configurada em sua conta. Você pode repetir este processo usando qualquer função já disponível no [Azion Marketplace](/pt-br/documentacao/marketplace/reference/marketplace/) ou [desenvolver sua própria função](/pt-br/documentacao/build/functions/guides/api-builder/).
 
 :::caution[Atenção]
-Você deve ativar o módulo [Functions](/pt-br/documentacao/build/applications/functions/) para implementar funções em sua aplicação. Se **Functions** estiver ativado, o tempo de computação e as invocações podem gerar custos relacionados ao uso. Consulte a [página de preços](/pt-br/documentacao/platform/pricing/) para mais informações.
+Você deve ativar o módulo [Functions](/pt-br/documentacao/build/functions/) para implementar funções em sua aplicação. Se **Functions** estiver ativado, o tempo de computação e as invocações podem gerar custos relacionados ao uso. Consulte a [página de preços](/pt-br/documentacao/platform/pricing/) para mais informações.
 :::
 
 ---
@@ -48,7 +48,7 @@ A página de funções agora lista a nova instância criada. No entanto, esta no
 14. Na seção **Criteria**, selecione a variável `${uri}`.
 
 :::note
-A variável `${uri}` pode já estar selecionada por padrão se você não ativou o módulo [Application Accelerator](/pt-br/documentacao/build/applications/application-accelerator/).
+A variável `${uri}` pode já estar selecionada por padrão se você não ativou o módulo [Application Accelerator](/pt-br/documentacao/build/application-accelerator/).
 :::
 
 15. Como operador de comparação, selecione **is equal**.
@@ -61,7 +61,7 @@ Para ver sua função em execução, acesse sua aplicação [usando seu domínio
 </Fragment>
 
 <Fragment slot="panel.api">
-1. Execute a seguinte requisição `PATCH` em seu terminal, substituindo `[TOKEN VALUE]` por seu [personal token](/pt-br/documentacao/account/guides/personal-tokens/) e a variável `<application_id>` por [seu ID de application](/pt-br/documentacao/build/applications/guides/definir-configuracoes-principais/) para ativar o módulo [Functions](/pt-br/documentacao/build/applications/functions/):
+1. Execute a seguinte requisição `PATCH` em seu terminal, substituindo `[TOKEN VALUE]` por seu [personal token](/pt-br/documentacao/account/guides/personal-tokens/) e a variável `<application_id>` por [seu ID de application](/pt-br/documentacao/build/applications/guides/definir-configuracoes-principais/) para ativar o módulo [Functions](/pt-br/documentacao/build/functions/):
 
 <Code lang="bash" code={` 
 curl --request PATCH \

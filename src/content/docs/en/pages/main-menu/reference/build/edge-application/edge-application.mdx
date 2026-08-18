@@ -47,12 +47,12 @@ You can create and manage applications using:
 | Clone an application | [How to clone an application](/en/documentation/build/applications/guides/clone-applications/) |
 | Delete an application | [How to delete an application](/en/documentation/build/applications/guides/delete-applications/) |
 | Applications Main Settings | [Main Settings](/en/documentation/build/applications/reference/main-settings/) |
-| Applications Cache Settings | [Cache Settings](/en/documentation/build/applications/reference/cache-settings/) |
-| Get to know Functions | [Functions Instances](/en/documentation/build/applications/reference/functions-instances/) |
+| Applications Cache Settings | [Cache Settings](/en/documentation/build/cache/reference/cache-settings/) |
+| Get to know Functions | [Functions Instances](/en/documentation/build/functions/reference/functions-instances/) |
 | Get to know Device Groups | [Device Groups](/en/documentation/build/applications/reference/device-groups/) |
 | Get to know Workloads | [Workloads](/en/documentation/secure/workloads/) |
 | Get to know Connectors | [Connectors](/en/documentation/secure/connectors/) |
-| Get to know Real-Time Purge | [Real-Time Purge](/en/documentation/build/applications/reference/real-time-purge/) |
+| Get to know Real-Time Purge | [Real-Time Purge](/en/documentation/build/cache/reference/real-time-purge/) |
 | Rules Engine for Applications | [Rules Engine](/en/documentation/build/applications/reference/rules-engine/) |
 
 ---
@@ -65,11 +65,11 @@ See the documentation for each module:
 
 | Module | Description |
 | --- | --- |
-| [Application Accelerator](/en/documentation/build/applications/application-accelerator/) | Optimize API protocols and manage dynamic content delivery to accelerate applications and APIs. |
-| [Cache](/en/documentation/build/applications/cache/) | Configure cache settings to speed up the delivery of static and dynamic content. |
-| [Functions](/en/documentation/build/applications/functions/) | Build ultra-low latency applications and customize content delivery. |
-| [Image Processor](/en/documentation/build/applications/image-processor/) | Optimize image processing for various devices, browsers, and screen resolutions. |
-| [Tiered Cache](/en/documentation/build/applications/cache/tiered-cache/) | Add a cache layer between your users and the edge to keep objects in cache for longer periods of time. |
+| [Application Accelerator](/en/documentation/build/application-accelerator/) | Optimize API protocols and manage dynamic content delivery to accelerate applications and APIs. |
+| [Cache](/en/documentation/build/cache/) | Configure cache settings to speed up the delivery of static and dynamic content. |
+| [Functions](/en/documentation/build/functions/) | Build ultra-low latency applications and customize content delivery. |
+| [Image Processor](/en/documentation/build/image-processor/) | Optimize image processing for various devices, browsers, and screen resolutions. |
+| [Tiered Cache](/en/documentation/build/cache/tiered-cache/) | Add a cache layer between your users and the edge to keep objects in cache for longer periods of time. |
 
 ---
 
@@ -83,17 +83,17 @@ See the documentation for each available setting:
 | --- | --- |
 | [Main Settings](/en/documentation/build/applications/reference/main-settings/) | Manage modules like Application Accelerator and Image Processor |
 | [Device Groups](/en/documentation/build/applications/reference/device-groups/) | Create groups to change your application's cache and delivery behavior according to end-user devices. |
-| [Cache Settings](/en/documentation/build/applications/reference/cache-settings/) | Configure your application's browser and cache expiration time, large file optimization, and advanced cache behavior based on cookies or query strings. |
-| [Functions](/en/documentation/build/applications/reference/functions-instances/) | Instantiate functions created with **Functions**. |
+| [Cache Settings](/en/documentation/build/cache/reference/cache-settings/) | Configure your application's browser and cache expiration time, large file optimization, and advanced cache behavior based on cookies or query strings. |
+| [Functions](/en/documentation/build/functions/reference/functions-instances/) | Instantiate functions created with **Functions**. |
 | [Rules Engine](/en/documentation/build/applications/reference/rules-engine/) | Automate the execution of behaviors based on specific parameters for your application. |
 
 ---
 
 ## Real-Time Purge
 
-Use **Real-Time Purge** to clear cached content from Azion's edge or from the [tiered cache layer]](/en/documentation/build/applications/cache/tiered-cache/) to maintain content accuracy, reduce outdated content delivery, and deliver an optimal user experience on your application. 
+Use **Real-Time Purge** to clear cached content from Azion's edge or from the [tiered cache layer]](/en/documentation/build/cache/tiered-cache/) to maintain content accuracy, reduce outdated content delivery, and deliver an optimal user experience on your application. 
 
-<LinkButton severity="secondary" label="Learn more about Real-Time Purge" link="/en/documentation/build/applications/reference/real-time-purge/" />
+<LinkButton severity="secondary" label="Learn more about Real-Time Purge" link="/en/documentation/build/cache/reference/real-time-purge/" />
 
 ---
 
@@ -108,12 +108,12 @@ These are the **default limits**:
 
 | Scope | Limit |
 | ----- | ----- |
-| Minimum CDN cache TTL | 60 seconds<br /><br />For the [Application Accelerator](/en/documentation/build/applications/application-accelerator/) module: 0 seconds |
+| Minimum CDN cache TTL | 60 seconds<br /><br />For the [Application Accelerator](/en/documentation/build/application-accelerator/) module: 0 seconds |
 | Debug Rules log size | 1.5 kB |
 | Edge-client keepalive connection¹ | 10 to 15 minutes |
 | Single object size in cache | 10 GB |
 
-> ¹ Azion enforces a keepalive connection duration limit between users and applications. To avoid the termination of active connections that require more time to complete, consider implementing [file slicing](/en/documentation/build/applications/reference/cache-settings/#slice-settings) or [file compression](/en/documentation/build/applications/guides/gzip-compression/) for large files to improve data transfer speeds.
+> ¹ Azion enforces a keepalive connection duration limit between users and applications. To avoid the termination of active connections that require more time to complete, consider implementing [file slicing](/en/documentation/build/cache/reference/cache-settings/#slice-settings) or [file compression](/en/documentation/build/applications/guides/gzip-compression/) for large files to improve data transfer speeds.
 
 These are the **default limits** for each Support service:
 

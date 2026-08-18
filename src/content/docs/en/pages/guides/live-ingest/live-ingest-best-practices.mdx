@@ -19,7 +19,7 @@ This guide presents the main recommendations for configuring and operating Live 
 
 - An active Azion account with Live Ingest service enabled.
 - An encoder compatible with the RTMP protocol.
-- Basic knowledge of [Applications](/en/documentation/build/applications/) and [Cache Settings](/en/documentation/build/applications/reference/cache-settings/).
+- Basic knowledge of [Applications](/en/documentation/build/applications/) and [Cache Settings](/en/documentation/build/cache/reference/cache-settings/).
 - Familiarity with the [Rules Engine](/en/documentation/build/applications/reference/rules-engine/) for Applications.
 
 ---
@@ -192,7 +192,7 @@ Create rules in the Rules Engine to automatically apply the correct cache polici
 - Criteria: `if ${uri} matches "\.m3u8$"`
 - Behavior: `Set Cache Policy` for playlists policy.
 
-See the guide [Implement HLS cache](/en/documentation/build/applications/cache/guides/enforce-hls-cache/) for detailed instructions.
+See the guide [Implement HLS cache](/en/documentation/build/cache/guides/enforce-hls-cache/) for detailed instructions.
 
 ---
 
@@ -228,9 +228,9 @@ Prepare a documented plan with:
 ## Related documentation
 
 - [Live Streaming Delivery with HLS](/en/documentation/architectures/live-streaming-delivery/live-streaming-delivery-with-hls/)
-- [Implement HLS cache](/en/documentation/build/applications/cache/guides/enforce-hls-cache/)
+- [Implement HLS cache](/en/documentation/build/cache/guides/enforce-hls-cache/)
 - [Applications](/en/documentation/build/applications/)
-- [Cache Settings](/en/documentation/build/applications/reference/cache-settings/)
+- [Cache Settings](/en/documentation/build/cache/reference/cache-settings/)
 - [Rules Engine](/en/documentation/build/applications/reference/rules-engine/)
 - [Real-Time Metrics](/en/documentation/observe/real-time-metrics/)
 - [Query connected users data with GraphQL API](/en/documentation/products/guides/query-connected-users-data-with-graphql/)

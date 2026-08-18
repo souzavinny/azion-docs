@@ -3,8 +3,8 @@ title: "Gere um certificado Let's Encrypt via API"
 description: Descubra como você pode gerar um certificado TLS gratuito assinado pela Let's Encrypt e gerenciado automaticamente pela Azion para garantir segurança para sua aplicação.
 meta_tags: "certificate, ssl, tls, let's encrypt, API"
 namespace: documentation_guides_lets_encrypt_via_api
-permalink: /documentacao/build/applications/guides/como-gerar-um-certificado-lets-encrypt-via-api/
-menu_namespace: applicationsMenu
+permalink: /documentacao/secure/certificate-manager/guides/como-gerar-um-certificado-lets-encrypt-via-api/
+menu_namespace: certificateManagerMenu
 ---
 
 import Tabs from '~/components/tabs/Tabs'
@@ -39,7 +39,7 @@ O desafio DNS-01 requer a adição de um registro TXT no DNS do domínio para co
 
 1. Defina o hostname que será usado no certificado digital (por exemplo, `meusite.azion.com`) como `common_name`.
 
-2. Configure o registro CNAME `_acme-challenge` no seu provedor de DNS conforme descrito no guia [Como gerar um certificado Let's Encrypt para o seu domínio](/pt-br/documentacao/build/applications/guides/como-gerar-um-certificado-lets-encrypt/#opcao-2-preparar-a-entrada-de-dns-com-um-provedor-de-dns-externo).
+2. Configure o registro CNAME `_acme-challenge` no seu provedor de DNS conforme descrito no guia [Como gerar um certificado Let's Encrypt para o seu domínio](/pt-br/documentacao/secure/certificate-manager/guides/como-gerar-um-certificado-lets-encrypt/#opcao-2-preparar-a-entrada-de-dns-com-um-provedor-de-dns-externo).
 
 3. Crie ou use um Token existente de API (ver [Primeiros passos com a API da Azion](https://www.azion.com/pt-br/documentacao/devtools/api/quickstart/)).
 

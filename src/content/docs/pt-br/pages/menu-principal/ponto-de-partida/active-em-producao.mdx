@@ -30,8 +30,8 @@ Acesse o [Azion Console](https://console.azion.com) e clique no card **Manage yo
 Clique em **Add Domain** e preencha os campos:
 
 - **Add Configuration Name**: digite um nome para o seu domínio. Você pode usar o mesmo nome do seu nome de domínio.
-- [Digital Certificate](/pt-br/documentacao/secure/certificate-manager/): selecione o certificado padrão da Azion (SAN), um [certificado Let's Encrypt](/pt-br/documentacao/build/applications/guides/como-gerar-um-certificado-lets-encrypt/) ou qualquer [certificado digital de terceiros](/pt-br/documentacao/secure/workloads/guides/criar-certificado-digital/).
-- [Canonical Names (CNAMES)](/pt-br/documentacao/build/applications/reference/domains/#cname): escreva todos os CNAMES que seu domínio possui, um por linha, sem pontuação.
+- [Digital Certificate](/pt-br/documentacao/secure/certificate-manager/): selecione o certificado padrão da Azion (SAN), um [certificado Let's Encrypt](/pt-br/documentacao/secure/certificate-manager/guides/como-gerar-um-certificado-lets-encrypt/) ou qualquer [certificado digital de terceiros](/pt-br/documentacao/secure/workloads/guides/criar-certificado-digital/).
+- [Canonical Names (CNAMES)](/pt-br/documentacao/secure/workloads/reference/domains/#cname): escreva todos os CNAMES que seu domínio possui, um por linha, sem pontuação.
 - O switch **CNAME Access Only**: ative se você quiser que seus usuários acessem sua aplicação apenas pelo CNAME.
 - **Application**: selecione a aplicação à qual seu domínio será conectado.
 - O switch **Active**: deve estar habilitado.
@@ -42,7 +42,7 @@ Clique em **Save**. Seu domínio personalizado está conectado à aplicação.
 Seu domínio raiz (exemplo: `myapp.com`) e cada um dos seus subdomínios (exemplo: `user.myapp.com`) devem ser configurados como um domínio autônomo. Para outras maneiras de configurar domínios e subdomínios, visite a [documentação de Domínios](/pt-br/documentacao/secure/workloads/guides/configurar-dominio/).
 :::
 
-Se você selecionou um certificado Let's Encrypt, precisa concluir um processo específico para definir as configurações de DNS. Consulte [Como gerar um certificado Let's Encrypt](/pt-br/documentacao/build/applications/guides/como-gerar-um-certificado-lets-encrypt/) para os detalhes.
+Se você selecionou um certificado Let's Encrypt, precisa concluir um processo específico para definir as configurações de DNS. Consulte [Como gerar um certificado Let's Encrypt](/pt-br/documentacao/secure/certificate-manager/guides/como-gerar-um-certificado-lets-encrypt/) para os detalhes.
 
 ---
 

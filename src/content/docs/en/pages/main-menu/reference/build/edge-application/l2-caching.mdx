@@ -7,8 +7,8 @@ meta_tags: >-
   caching, edge, cache, edge computing, l2, layer 2, cache layer, purge
   cache, tiered cache
 namespace: documentation_products_edge_application_l2_caching
-menu_namespace: applicationsMenu
-permalink: /documentation/build/applications/cache/tiered-cache/
+menu_namespace: cacheMenu
+permalink: /documentation/build/cache/tiered-cache/
 ---
 
 import LinkButton from 'azion-webkit/linkbutton'
@@ -29,8 +29,8 @@ Tiered Cache is only available if the service has been activated for your accoun
 
 | Scope | Resource |
 | --- | --- |
-| Cache module | [Cache](/en/documentation/build/applications/cache/)  |
-| Creating a cache setting | [How to configure cache policies for Applications](/en/documentation/build/applications/cache/guides/cache-settings/) |
+| Cache module | [Cache](/en/documentation/build/cache/)  |
+| Creating a cache setting | [How to configure cache policies for Applications](/en/documentation/build/cache/guides/cache-settings/) |
 
 ---
 
@@ -38,7 +38,7 @@ Tiered Cache is only available if the service has been activated for your accoun
 
 **Tiered Cache** is specially designed for objects that can remain in cache for a long period of time. Thus, you can only activate it on cache policies with a TTL equal to or greater than *3 seconds*, with the default TTL being *60 seconds*.
 
-<LinkButton link="/en/documentation/build/applications/reference/cache-settings/#browser-cache-settings" label="Learn more about expiration settings" />
+<LinkButton link="/en/documentation/build/cache/reference/cache-settings/#browser-cache-settings" label="Learn more about expiration settings" />
 
 ---
 
@@ -54,7 +54,7 @@ Azion also offers the option of hosting the Tiered Cache servers in Brazil (`sa-
 
 Whenever necessary, you can use **Real-Time Purge** to expire your **Tiered Cache** content before the expected TTL time. Remember to purge first from the tiered cache layer and only later from **Cache**. This avoids edge feedback with outdated Tiered Cache content.
 
-<LinkButton link="/en/documentation/build/applications/reference/real-time-purge/" label="Learn more about Real-Time Purge" />
+<LinkButton link="/en/documentation/build/cache/reference/real-time-purge/" label="Learn more about Real-Time Purge" />
 
 ---
 

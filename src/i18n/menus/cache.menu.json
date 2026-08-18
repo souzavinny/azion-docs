@@ -1,0 +1,112 @@
+{
+ "meta": {
+  "title": {
+   "en": "Cache"
+  },
+  "root": {
+   "en": "/documentation/build/cache/",
+   "pt-br": "/documentacao/build/cache/"
+  }
+ },
+ "groups": [
+  {
+   "key": "cache/grp",
+   "items": [
+    {
+     "key": "cache/overview",
+     "label": {
+      "en": "Overview",
+      "pt-br": "Visão geral"
+     },
+     "slug": {
+      "en": "/documentation/build/cache/",
+      "pt-br": "/documentacao/build/cache/"
+     }
+    },
+    {
+     "key": "cache/reference/cache-settings",
+     "label": {
+      "en": "Cache Settings"
+     },
+     "slug": {
+      "en": "/documentation/build/cache/reference/cache-settings/",
+      "pt-br": "/documentacao/build/cache/reference/cache-settings/"
+     }
+    },
+    {
+     "key": "cache/reference/real-time-purge",
+     "label": {
+      "en": "Real-Time Purge"
+     },
+     "slug": {
+      "en": "/documentation/build/cache/reference/real-time-purge/",
+      "pt-br": "/documentacao/build/cache/reference/real-time-purge/"
+     }
+    },
+    {
+     "key": "cache/tiered-cache",
+     "label": {
+      "en": "Tiered Cache"
+     },
+     "slug": {
+      "en": "/documentation/build/cache/tiered-cache/",
+      "pt-br": "/documentacao/build/cache/tiered-cache/"
+     }
+    },
+    {
+     "key": "cache/guides",
+     "label": {
+      "en": "Guides",
+      "pt-br": "Guias"
+     },
+     "items": [
+      {
+       "key": "cache/gd/cache-settings",
+       "label": {
+        "en": "How to configure cache policies for Applications",
+        "pt-br": "Como configurar políticas de cache para Applications"
+       },
+       "slug": {
+        "en": "/documentation/build/cache/guides/cache-settings/",
+        "pt-br": "/documentacao/build/cache/guides/cache-settings/"
+       }
+      },
+      {
+       "key": "cache/gd/check-page-cache-time",
+       "label": {
+        "en": "Verify Cache Indicators with ModHeader",
+        "pt-br": "Verifique indicadores de cache com o ModHeader"
+       },
+       "slug": {
+        "en": "/documentation/build/cache/guides/check-page-cache-time/",
+        "pt-br": "/documentacao/build/cache/guides/verificar-tempo-de-cache-da-pagina/"
+       }
+      },
+      {
+       "key": "cache/gd/enforce-hls-cache",
+       "label": {
+        "en": "How to enforce HLS cache for live streaming delivery",
+        "pt-br": "Implemente cache HLS para streaming ao vivo"
+       },
+       "slug": {
+        "en": "/documentation/build/cache/guides/enforce-hls-cache/",
+        "pt-br": "/documentacao/build/cache/guides/implementar-cache-hls/"
+       }
+      },
+      {
+       "key": "cache/gd/tune-cache-settings",
+       "label": {
+        "en": "How to tune your cache settings",
+        "pt-br": "Como ajustar as configurações de cache"
+       },
+       "slug": {
+        "en": "/documentation/build/cache/guides/tune-cache-settings/",
+        "pt-br": "/documentacao/build/cache/guides/ajustar-cache-settings/"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

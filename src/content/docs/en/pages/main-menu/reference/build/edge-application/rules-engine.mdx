@@ -28,7 +28,7 @@ Rules are designed to follow a conditional *if-then* logic. Every rule is compos
 To trigger the intended behaviors for your application, you may employ variables, comparison operators, and logical operators. If the given conditions are met, the behaviors associated with each rule are executed sequentially until all the rules have been processed.
 
 :::caution
-Before you create a rule, you should enable the [Application Accelerator](/en/documentation/build/applications/application-accelerator/) module, which extends the usability of **Rules Engine** by applying serverless computing features to **Applications**. If the module is disabled, only some variables and behaviors will be available for your rule.
+Before you create a rule, you should enable the [Application Accelerator](/en/documentation/build/application-accelerator/) module, which extends the usability of **Rules Engine** by applying serverless computing features to **Applications**. If the module is disabled, only some variables and behaviors will be available for your rule.
 :::
 
 ## Implementation
@@ -37,7 +37,7 @@ Before you create a rule, you should enable the [Application Accelerator](/en/do
 | --- | --- |
 | Applications first steps | [First steps](/en/documentation/build/applications/quickstart/) |
 | Creating a rule | [Creating rules using Rules Engine for Applications](/en/documentation/build/applications/guides/rules-engine/) |
-| Creating a cache setting | [How to configure cache policies for Applications](/en/documentation/build/applications/cache/guides/cache-settings/) |
+| Creating a cache setting | [How to configure cache policies for Applications](/en/documentation/build/cache/guides/cache-settings/) |
 | Mitigating HTTPoxy using rules | [How to mitigate the HTTPOxy vulnerability](/en/documentation/build/applications/guides/mitigating-a-vulnerability-httpoxy/) |
 
 ---
@@ -152,7 +152,7 @@ Add these variables inside the **Rules Engine** of your application to configure
 Most mTLS services rely on receiving the user certificate. By using [Azion Console](https://console.azion.com), you can send the `${ssl_client_escaped_cert}` variable in the `X-Forward-Client-Cert` (XFCC) header in the request to the origin, and then configure your application to use this header with the certificate data.
 :::
 
-<LinkButton link="/en/documentation/build/applications/reference/domains/mtls/" label="Learn more about support for mTLS" severity="secondary" />
+<LinkButton link="/en/documentation/secure/certificate-manager/reference/mtls-for-build/" label="Learn more about support for mTLS" severity="secondary" />
 
 ### Variables as arguments
 
@@ -218,7 +218,7 @@ For example, this behavior redirects the user to an English version of an FAQ lo
 
 ### Add Cookie
 <Tag severity="info" client:only="vue">Request Phase</Tag> <Tag severity="info" client:only="vue">Response Phase</Tag>
-[<Tag severity="info" client:only="vue">Requires Application Accelerator</Tag>](/en/documentation/build/applications/application-accelerator/)
+[<Tag severity="info" client:only="vue">Requires Application Accelerator</Tag>](/en/documentation/build/application-accelerator/)
 
 Allows you to add a cookie in the `Set-Cookie` HTTP header. The cookie must be inputted as an argument in the format `cookie-name=cookie-value`. You may use a variable as a cookie value in the format `cookie-name=${arg_cookie}`. 
 
@@ -263,14 +263,14 @@ example-field: example-value!
 
 ### Bypass Cache
 <Tag severity="info" client:only="vue">Request Phase</Tag>
-[<Tag severity="info" client:only="vue">Requires Application Accelerator</Tag>](/en/documentation/build/applications/application-accelerator/)
+[<Tag severity="info" client:only="vue">Requires Application Accelerator</Tag>](/en/documentation/build/application-accelerator/)
 
 Defines that Azion shouldn't cache the response from its origin. The execution of this rule has no impact on the cache in the users' browser, which must be defined using the [Set Cache Policy](#set-cache-policy) behavior.
 
 By using **Bypass Cache**, you'll configure Azion's service to forward all requests to a path directly to their origin. However, you'll count on important protocol optimizations to speed up your application and a keepalive connection between Azion edge nodes and their origin whenever possible.
 
 :::tip
-See the guide on [How to configure cache policies for Applications](/en/documentation/build/applications/cache/guides/cache-settings/#bypass-cache) for more information on Bypass Cache.
+See the guide on [How to configure cache policies for Applications](/en/documentation/build/cache/guides/cache-settings/#bypass-cache) for more information on Bypass Cache.
 :::
 
 #### Difference between Bypass Cache and TTL 0
@@ -287,7 +287,7 @@ You can set TTL to zero if the dynamic content, which varies from time to time, 
 
 ### Capture Match Groups
 <Tag severity="info" client:only="vue">Request Phase</Tag> <Tag severity="info" client:only="vue">Response Phase</Tag>
-[<Tag severity="info" client:only="vue">Requires Application Accelerator</Tag>](/en/documentation/build/applications/application-accelerator/)
+[<Tag severity="info" client:only="vue">Requires Application Accelerator</Tag>](/en/documentation/build/application-accelerator/)
 
 Support behavior for handling strings. Stores in a temporary variable the result of capturing correspondence groups defined by a regex applied to one of the available HTTP request fields. This temporary variable can be referenced later in the behavior *Rewrite Request* to assemble the rewrite string.
 
@@ -338,11 +338,11 @@ This behavior is automatically included by Azion every time you select a Live In
 
 Azion's cache policy for live HLS streams is 5 seconds of cache for playlists (`.m3u8`) and 60 seconds of cache for chunks (`.ts`).
 
-<LinkButton link="/en/documentation/build/applications/cache/guides/enforce-hls-cache/" label="go to enforce HLS cache guide" severity="secondary" />
+<LinkButton link="/en/documentation/build/cache/guides/enforce-hls-cache/" label="go to enforce HLS cache guide" severity="secondary" />
 
 ### Filter Cookie
 <Tag severity="info" client:only="vue">Request Phase</Tag> <Tag severity="info" client:only="vue">Response Phase</Tag>
-[<Tag severity="info" client:only="vue">Requires Application Accelerator</Tag>](/en/documentation/build/applications/application-accelerator/)
+[<Tag severity="info" client:only="vue">Requires Application Accelerator</Tag>](/en/documentation/build/application-accelerator/)
 
 Removes a cookie from the request header that would be sent to the origin or from the response header that would be sent to the user. As an argument, add the name of the cookie you want to remove as `cookie-name`.
 
@@ -369,11 +369,11 @@ Finishes the request phase. Any behavior or other rules under this behavior won'
 
 ### Forward Cookies 
 <Tag severity="info" client:only="vue">Request Phase</Tag>
-[<Tag severity="info" client:only="vue">Requires Application Accelerator</Tag>](/en/documentation/build/applications/application-accelerator/)
+[<Tag severity="info" client:only="vue">Requires Application Accelerator</Tag>](/en/documentation/build/application-accelerator/)
 
 By using the Forward Cookies behavior, you're determining that Azion forwards to its users the `Set-Cookie` header received from its origin, even when cached content is identified (HIT).
 
-To prevent a user from receiving the `Set-Cookie` header from another user's session, see the [guide on cache policies](/en/documentation/build/applications/cache/guides/cache-settings/#creating-a-rule-to-forward-cookies-from-the-origin-to-the-user).
+To prevent a user from receiving the `Set-Cookie` header from another user's session, see the [guide on cache policies](/en/documentation/build/cache/guides/cache-settings/#creating-a-rule-to-forward-cookies-from-the-origin-to-the-user).
 
 #### JavaScript Cookies
 
@@ -394,9 +394,9 @@ Returns a `204` code when accessing the application instead of the code received
 
 ### Optimize Images
 <Tag severity="info" client:only="vue">Request Phase</Tag>
-[<Tag severity="info" client:only="vue">Requires Image Processor</Tag>](/en/documentation/build/applications/image-processor/)
+[<Tag severity="info" client:only="vue">Requires Image Processor</Tag>](/en/documentation/build/image-processor/)
 
-Enables [Image Processor](/en/documentation/build/applications/image-processor/).
+Enables [Image Processor](/en/documentation/build/image-processor/).
 
 ### Redirect HTTP to HTTPS
 <Tag severity="info" client:only="vue">Request Phase</Tag>
@@ -419,7 +419,7 @@ In the Response Phase, **Redirect To** behaviors are only executed when the orig
 
 ### Rewrite Request
 <Tag severity="info" client:only="vue">Request Phase</Tag>
-[<Tag severity="info" client:only="vue">Requires Application Accelerator</Tag>](/en/documentation/build/applications/application-accelerator/)
+[<Tag severity="info" client:only="vue">Requires Application Accelerator</Tag>](/en/documentation/build/application-accelerator/)
 
 Modifies the resource path that will be requested for the origin. You can rewrite the resource path using:
 
@@ -438,24 +438,24 @@ For example, to rewrite a user request for the `/original/image.jpg` resource to
 
 ### Run Function
 <Tag severity="info" client:only="vue">Request Phase</Tag> <Tag severity="info" client:only="vue">Response Phase</Tag>
-[<Tag severity="info" client:only="vue">Requires Application Accelerator</Tag>](/en/documentation/build/applications/application-accelerator/)
-[<Tag severity="info" client:only="vue">Requires Functions</Tag>](/en/documentation/build/applications/functions/)
+[<Tag severity="info" client:only="vue">Requires Application Accelerator</Tag>](/en/documentation/build/application-accelerator/)
+[<Tag severity="info" client:only="vue">Requires Functions</Tag>](/en/documentation/build/functions/)
 
 Runs a function created using **Functions** and instantiated in the **Functions** tab for the application. See the guide on [How to run serverless functions](/en/documentation/build/functions/guides/serverless-functions/) for more information.
 
 ### Set Cache Policy 
 <Tag severity="info" client:only="vue">Request Phase</Tag>
 
-Assigns the cache policy that should be used for the request. You must first set up the cache policies in [Cache Settings](/en/documentation/build/applications/reference/cache-settings/).
+Assigns the cache policy that should be used for the request. You must first set up the cache policies in [Cache Settings](/en/documentation/build/cache/reference/cache-settings/).
 
-You can set up the time that an object will be stored in cache and the rules for the variation of objects in cache with the [Advanced Cache Key](/en/documentation/build/applications/reference/cache-settings/#advanced-cache-key). 
+You can set up the time that an object will be stored in cache and the rules for the variation of objects in cache with the [Advanced Cache Key](/en/documentation/build/cache/reference/cache-settings/#advanced-cache-key). 
 
 ### Set Origin
 <Tag severity="info" client:only="vue">Request Phase</Tag>
 
 Assigns an origin that must be consulted by the edge node for the request.
 
-Before configuring this behavior, you must set up your origins using [Origins](/en/documentation/build/applications/reference/origins/).
+Before configuring this behavior, you must set up your origins using [Origins](/en/documentation/secure/connectors/reference/origins/).
 
 ---
 

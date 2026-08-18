@@ -7,8 +7,8 @@ description: >-
   Applications.
 meta_tags: 'cache, edge computing, ttl, bypass cache, forward cookies'
 namespace: docs_use_case_edge_caching
-permalink: /documentation/build/applications/cache/guides/cache-settings/
-menu_namespace: applicationsMenu
+permalink: /documentation/build/cache/guides/cache-settings/
+menu_namespace: cacheMenu
 og_image: /assets/docs/images/uploads/02-09-edge-caching-1.png
 ---
 
@@ -19,7 +19,7 @@ Azion **Applications** can keep your content cached at the edge to support high-
 You can optimize processing times by defining the time-to-live (TTL) for cached content at the origin and at the browser, bypass origin cache settings, and forward cookies with [Rules Engine](/en/documentation/build/applications/reference/rules-engine/).
 
 :::tip
-To configure cache settings for dynamic content, see the guide on [How to configure Advanced Cache Key for Applications](/en/documentation/build/applications/cache/guides/advanced-cache-key/).
+To configure cache settings for dynamic content, see the guide on [How to configure Advanced Cache Key for Applications](/en/documentation/build/application-accelerator/guides/advanced-cache-key/).
 :::
 
 ---
@@ -46,7 +46,7 @@ To create a new cache setting, follow the steps:
    - Under **Browser Cache Settings**, select **Override Cache Settings** to define how long your content can be cached in browsers.
    - Under **Cache Settings**, select **Override Cache Settings** to define how long your content can be cached at the edge.
 5. If you've chosen to override cache settings, add the desired **Maximum TTL** in seconds.
-   - At this point, you may also customize other cache settings for dynamic content provided by the [Advanced Cache Key](/en/documentation/build/applications/reference/cache-settings/#advanced-cache-key) feature.
+   - At this point, you may also customize other cache settings for dynamic content provided by the [Advanced Cache Key](/en/documentation/build/cache/reference/cache-settings/#advanced-cache-key) feature.
 6. Click the **Save** button.
 
 Next, you must create a rule to apply the cache settings you've created. To do so, follow the steps:

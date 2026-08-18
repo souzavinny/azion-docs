@@ -110,7 +110,7 @@
 
 ## Deploy
 
-- [Orchestrator](https://www.azion.com/en/documentation/deploy/orchestrator/): Azion Orchestrator is an end-to-end encrypted orchestration service with cloud management and zero-touch provisioning, created for large-scale Edge networks. Manage and control resources on the edge in real time and orchestrate your services quickly and easily to meet your needs.
+- [Orchestrator](https://www.azion.com/en/documentation/build/orchestrator/): Azion Orchestrator is an end-to-end encrypted orchestration service with cloud management and zero-touch provisioning, created for large-scale Edge networks. Manage and control resources on the edge in real time and orchestrate your services quickly and easily to meet your needs.
 - [Deploy](https://www.azion.com/en/documentation/deploy/overview/): Run your applications anywhere and manage edge resources in real time with Azion Deploy products.
 - Full section index: https://www.azion.com/en/documentation/deploy/llms.txt (20 pages)
 

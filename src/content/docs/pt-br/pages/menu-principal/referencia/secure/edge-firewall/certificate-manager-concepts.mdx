@@ -65,7 +65,7 @@ Os certificados gratuitos, gerados internamente pela Azion (Azion SAN), não tê
 
 ## Certificados Let's Encrypt
 
-[Let's Encrypt](https://letsencrypt.org/)™ é uma CA que permite que indivíduos e empresas obtenham, renovem e gerenciem certificados TLS gratuitamente. Quando você [cria um Domínio](/pt-br/documentacao/build/applications/reference/domains/) com a Azion, você pode escolher obter um certificado TLS assinado pela Let's Encrypt. Você pode requisitar a criação de certificados Let's Encrypt para domínios hospedados no [Edge DNS](/pt-br/documentacao/secure/edge-dns/) ou em um provedor de DNS externo.
+[Let's Encrypt](https://letsencrypt.org/)™ é uma CA que permite que indivíduos e empresas obtenham, renovem e gerenciem certificados TLS gratuitamente. Quando você [cria um Domínio](/pt-br/documentacao/secure/workloads/reference/domains/) com a Azion, você pode escolher obter um certificado TLS assinado pela Let's Encrypt. Você pode requisitar a criação de certificados Let's Encrypt para domínios hospedados no [Edge DNS](/pt-br/documentacao/secure/edge-dns/) ou em um provedor de DNS externo.
 
 Quando você [cria um domínio com a Azion](/pt-br/documentacao/secure/workloads/guides/configurar-dominio/), você pode escolher a opção **Let's Encrypt** para gerar automaticamente um certificado Let's Encrypt. Uma entrada para esse certificado será listada na página **Certificate Manager** no [Azion Console](https://console.azion.com). Depois que o certificado for submetido à validação de DNS, emissão e armazenamento, ele se tornará ativo.
 
@@ -76,7 +76,7 @@ Os certificados Let's Encrypt ativos *serão renovados automaticamente antes da 
 A Azion oferece suporte tanto para os desafios DNS-01 quanto para o HTTP-01 como métodos alternativos de validação de certificados Let's Encrypt. Enquanto o DNS-01 envolve a modificação das configurações DNS com um registro TXT para confirmar o controle do domínio, o HTTP-01 oferece uma solução simplificada ao simplesmente colocar um arquivo na raiz do documento do servidor. Essa abordagem é particularmente benéfica para ambientes onde o acesso direto ao servidor está disponível, permitindo uma integração simples através de múltiplos domínios e nomes de host sem alterações na configuração DNS.
 
 :::tip
-Veja [como criar um registro TXT para um certificado Let's Encrypt](/pt-br/documentacao/secure/firewall/guides/registro-lets-encrypt/) e [como gerar um certificado Let's Encrypt para o seu domínio](/pt-br/documentacao/build/applications/guides/como-gerar-um-certificado-lets-encrypt/).
+Veja [como criar um registro TXT para um certificado Let's Encrypt](/pt-br/documentacao/secure/firewall/guides/registro-lets-encrypt/) e [como gerar um certificado Let's Encrypt para o seu domínio](/pt-br/documentacao/secure/certificate-manager/guides/como-gerar-um-certificado-lets-encrypt/).
 :::
 
 ### Configuração de CNAMEs
@@ -85,7 +85,7 @@ Ao criar um domínio com **Workloads** da Azion e selecionar a opção **Let's E
 
 Se você modificar a lista de CNAMEs nas configurações do domínio, a Azion irá criar um novo certificado com base no conjunto de CNAMEs modificados, e a entrada antiga não será renovada pelo gerenciador de certificados.
 
-Se algum dos CNAMEs hospedados em provedores externos falhar no [desafio DNS-01](/pt-br/documentacao/build/applications/guides/como-gerar-um-certificado-lets-encrypt/#opcao-2-prepare-a-entrada-de-dns-com-um-provedor-de-dns-externo), o certificado não será gerado e permanecerá com o status *Pending*.
+Se algum dos CNAMEs hospedados em provedores externos falhar no [desafio DNS-01](/pt-br/documentacao/secure/certificate-manager/guides/como-gerar-um-certificado-lets-encrypt/#opcao-2-prepare-a-entrada-de-dns-com-um-provedor-de-dns-externo), o certificado não será gerado e permanecerá com o status *Pending*.
 
 ### Uso de wildcard
 

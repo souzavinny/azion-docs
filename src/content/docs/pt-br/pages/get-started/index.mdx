@@ -24,7 +24,7 @@ Se a sua empresa já usa a Azion, peça a um administrador para convidar você e
 
 ### Build
 
-Uma [Application](/pt-br/documentacao/build/applications/) é a unidade que você implanta. Ela roda em todos os pontos da rede ao mesmo tempo, então o código que responde a uma requisição já está perto de quem fez o pedido, sem região para escolher nem servidor para dimensionar. [Functions](/pt-br/documentacao/build/applications/functions/) rodam seu JavaScript ou WebAssembly dentro dessa mesma requisição, e [AI Inference](/pt-br/documentacao/build/ai-inference/) coloca modelos hospedados atrás de um endpoint compatível com OpenAI, sem GPU para gerenciar.
+Uma [Application](/pt-br/documentacao/build/applications/) é a unidade que você implanta. Ela roda em todos os pontos da rede ao mesmo tempo, então o código que responde a uma requisição já está perto de quem fez o pedido, sem região para escolher nem servidor para dimensionar. [Functions](/pt-br/documentacao/build/functions/) rodam seu JavaScript ou WebAssembly dentro dessa mesma requisição, e [AI Inference](/pt-br/documentacao/build/ai-inference/) coloca modelos hospedados atrás de um endpoint compatível com OpenAI, sem GPU para gerenciar.
 
 Código que precisa de estado recorre a [SQL Database](/pt-br/documentacao/store/sql-database/), [KV Store](/pt-br/documentacao/store/kv-store/) ou [Object Storage](/pt-br/documentacao/store/object-storage/). Eles ficam onde o código roda, e esse é justamente o ponto: uma leitura não precisa voltar até um banco parado em uma única região.
 
@@ -40,6 +40,6 @@ As peças que levam o tráfego até a sua aplicação ficam por perto: [Certific
 
 [Real-Time Metrics](/pt-br/documentacao/observe/real-time-metrics/) e [Real-Time Events](/pt-br/documentacao/observe/real-time-events/) respondem o que está acontecendo agora, que costuma ser a pergunta durante um incidente. Para tudo depois disso, o [Data Stream](/pt-br/documentacao/observe/data-stream/) envia logs para as ferramentas que seu time já acompanha.
 
-Quando o formato da sua configuração parar de mudar, pare de clicar nele: a [CLI](/pt-br/documentacao/produtos/azion-cli/visao-geral/), a [API](/pt-br/documentacao/devtools/api/quickstart/), o [Terraform provider](/pt-br/documentacao/produtos/terraform-provider/) e o [Orchestrator](/pt-br/documentacao/deploy/orchestrator/) descrevem a mesma plataforma como código.
+Quando o formato da sua configuração parar de mudar, pare de clicar nele: a [CLI](/pt-br/documentacao/produtos/azion-cli/visao-geral/), a [API](/pt-br/documentacao/devtools/api/quickstart/), o [Terraform provider](/pt-br/documentacao/produtos/terraform-provider/) e o [Orchestrator](/pt-br/documentacao/build/orchestrator/) descrevem a mesma plataforma como código.
 
 Procura uma tarefa específica em vez do tour? Os [guias](/pt-br/documentacao/guides/) são indexados pelo que você quer fazer. Se algo não funcionar como esta página descreve, a [comunidade no Discord](https://discord.com/invite/Yp9N7RMVZy) e o [suporte da Azion](/pt-br/documentacao/services/support/) valem uma mensagem.

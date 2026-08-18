@@ -22,7 +22,7 @@ If your company already uses Azion, ask an administrator to invite you rather th
 
 ### Build
 
-An [Application](/en/documentation/build/applications/) is the unit you deploy. It runs on every point of the network at once, so the code answering a request is already near the person making it, and there is no region to pick and no server to size. [Functions](/en/documentation/build/applications/functions/) run your JavaScript or WebAssembly inside that same request, and [AI Inference](/en/documentation/build/ai-inference/) puts hosted models behind an OpenAI-compatible endpoint without any GPU to manage.
+An [Application](/en/documentation/build/applications/) is the unit you deploy. It runs on every point of the network at once, so the code answering a request is already near the person making it, and there is no region to pick and no server to size. [Functions](/en/documentation/build/functions/) run your JavaScript or WebAssembly inside that same request, and [AI Inference](/en/documentation/build/ai-inference/) puts hosted models behind an OpenAI-compatible endpoint without any GPU to manage.
 
 Code that needs state reaches for [SQL Database](/en/documentation/store/sql-database/), [KV Store](/en/documentation/store/kv-store/), or [Object Storage](/en/documentation/store/object-storage/). These sit where the code runs, which is the point: a read doesn't travel back to a database parked in one region.
 
@@ -38,6 +38,6 @@ The pieces that get traffic to your application live nearby: [Certificate Manage
 
 [Real-Time Metrics](/en/documentation/observe/real-time-metrics/) and [Real-Time Events](/en/documentation/observe/real-time-events/) answer what is happening now, which is usually the question you have during an incident. For everything after that, [Data Stream](/en/documentation/observe/data-stream/) ships logs to the tools your team already watches.
 
-Once the shape of your setup stops changing, stop clicking it: the [CLI](/en/documentation/products/azion-cli/overview/), the [API](/en/documentation/devtools/api/), the [Terraform provider](/en/documentation/products/terraform-provider/), and [Orchestrator](/en/documentation/deploy/orchestrator/) all describe the same platform as code.
+Once the shape of your setup stops changing, stop clicking it: the [CLI](/en/documentation/products/azion-cli/overview/), the [API](/en/documentation/devtools/api/), the [Terraform provider](/en/documentation/products/terraform-provider/), and [Orchestrator](/en/documentation/build/orchestrator/) all describe the same platform as code.
 
 Looking for a specific task rather than the tour? The [guides](/en/documentation/guides/) are indexed by what you're trying to do. If something doesn't work the way this page describes, the [Discord community](https://discord.com/invite/Yp9N7RMVZy) and [Azion support](/en/documentation/services/support/) are both worth a message.

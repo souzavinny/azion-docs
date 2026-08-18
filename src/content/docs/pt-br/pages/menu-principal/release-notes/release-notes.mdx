@@ -1185,7 +1185,7 @@ A Azion apresenta vários novos recursos de Inteligência Artificial, incluindo 
 - **LangGraph AI Agent Boilerplate**: Template para criar um agente que pode consultar e interagir com dados armazenados em bancos de dados EdgeSQL.
 - **Compatibilidade**: Integração com APIs compatíveis com OpenAI e LangChain/LangGraph para automação de workflows.
 
-Para mais detalhes, visite a documentação do [AI Inference](/pt-br/documentacao/build/ai-inference/), [Edge Functions](/pt-br/documentacao/build/applications/functions/) e [Edge SQL](/pt-br/documentacao/store/sql-database/).
+Para mais detalhes, visite a documentação do [AI Inference](/pt-br/documentacao/build/ai-inference/), [Edge Functions](/pt-br/documentacao/build/functions/) e [Edge SQL](/pt-br/documentacao/store/sql-database/).
 
 ## 26 de março, 2025
 
@@ -1361,7 +1361,7 @@ Consulte sobre os [gráficos de monitoramento do Real-Time Metrics](/pt-br/docum
 
 O **Azion Copilot** é um assistente com tecnologia de IA integrado diretamente ao Azion Console. Os clientes podem usá-lo para resolver problemas ou obter respostas para dúvidas, com respostas imediatas e orientadas por contexto, baseadas na base de conhecimento da Azion. Essa nova funcionalidade simplifica as tarefas para usuários de todos os níveis de habilidade, facilitando o uso dos produtos e aumentando a eficiência.
 
-Além disso, o Copilot roda diretamente na plataforma de edge distribuída da Azion, garantindo processamento rápido e aproveitando produtos nativos de edge, como [Edge Application](/pt-br/documentacao/build/applications/), [Edge Functions](/pt-br/documentacao/build/applications/functions/) e [EdgeSQL](/pt-br/documentacao/store/sql-database/), para um alto desempenho.
+Além disso, o Copilot roda diretamente na plataforma de edge distribuída da Azion, garantindo processamento rápido e aproveitando produtos nativos de edge, como [Edge Application](/pt-br/documentacao/build/applications/), [Edge Functions](/pt-br/documentacao/build/functions/) e [EdgeSQL](/pt-br/documentacao/store/sql-database/), para um alto desempenho.
 
 Para testar o novo Azion Copilot, acesse o [Azion Console](https://console.azion.com/).
 
@@ -1463,7 +1463,7 @@ Leia mais sobre este tópico na [documentação](/pt-br/documentacao/account/gui
 
 O módulo **Image Processor** agora pode processar imagens no formato `AVIF`, que oferece compressão e qualidade superiores em comparação com outros formatos como WEBP, JPEG ou PNG.
 
-Saiba mais sobre o [Image Processor](/pt-br/documentacao/build/applications/image-processor/).
+Saiba mais sobre o [Image Processor](/pt-br/documentacao/build/image-processor/).
 
 ---
 
@@ -1525,7 +1525,7 @@ Leia mais sobre [Azion CLI e seus comandos](/pt-br/documentacao/produtos/azion-c
 
 ### Azion CLI
 
-Agora você pode gerar e gerenciar [certificados digitais Let's Encrypt](/pt-br/documentacao/build/applications/guides/como-gerar-um-certificado-lets-encrypt/) no seu domínio via CLI. Para fazer isso, consulte a documentação do comando [digital-certificate-id](/pt-br/documentacao/devtools/cli/create/#digital-certificate-id).
+Agora você pode gerar e gerenciar [certificados digitais Let's Encrypt](/pt-br/documentacao/secure/certificate-manager/guides/como-gerar-um-certificado-lets-encrypt/) no seu domínio via CLI. Para fazer isso, consulte a documentação do comando [digital-certificate-id](/pt-br/documentacao/devtools/cli/create/#digital-certificate-id).
 
 Além disso, agora você pode agendar a exclusão de um bucket do Edge Storage com objetos dentro usando a flag `--force`:
     - Se você tentar excluir um bucket com objetos dentro, a plataforma excluirá tudo e agendará a exclusão do bucket após 24 horas (o tempo necessário para esvaziar um bucket).
@@ -1993,9 +1993,9 @@ Para mais detalhes, consulte a documentação sobre [Como integrar a Azion com o
 - O [Rules Engine](/pt-br/documentacao/build/applications/reference/rules-engine/#description) agora fornece o campo **description** para que você descreva sua regra.
   - Você pode personalizar a descrição via [Real-Time Manager](https://console.azion.com) ou [Azion API](https://api.azion.com/).
 
-- Para Azion [Domains](/pt-br/documentacao/build/applications/reference/domains/), você pode solicitar a emissão de um [certificado Let's Encrypt](/pt-br/documentacao/secure/certificate-manager/#lets-encrypt-certificate) por meio da Azion.
+- Para Azion [Domains](/pt-br/documentacao/secure/workloads/reference/domains/), você pode solicitar a emissão de um [certificado Let's Encrypt](/pt-br/documentacao/secure/certificate-manager/#lets-encrypt-certificate) por meio da Azion.
   - Esse certificado TLS será gerenciado e renovado automaticamente pela Azion antes da data de expiração de 90 dias.
-  - Consulte o guia [Como gerar um certificado Let's Encrypt para seu domínio](/pt-br/documentacao/build/applications/guides/como-gerar-um-certificado-lets-encrypt/) para obter mais informações.
+  - Consulte o guia [Como gerar um certificado Let's Encrypt para seu domínio](/pt-br/documentacao/secure/certificate-manager/guides/como-gerar-um-certificado-lets-encrypt/) para obter mais informações.
   - Disponível no [Real-Time Manager](https://console.azion.com) ou na [Azion API](https://api.azion.com/).
 
 **Edge Functions**

@@ -1,0 +1,70 @@
+{
+ "meta": {
+  "title": {
+   "en": "Custom Pages"
+  },
+  "root": {
+   "en": "/documentation/secure/custom-pages/",
+   "pt-br": "/documentacao/secure/custom-pages/"
+  }
+ },
+ "groups": [
+  {
+   "key": "cp/grp",
+   "items": [
+    {
+     "key": "cp/overview",
+     "label": {
+      "en": "Overview",
+      "pt-br": "Visão geral"
+     },
+     "slug": {
+      "en": "/documentation/secure/custom-pages/",
+      "pt-br": "/documentacao/secure/custom-pages/"
+     }
+    },
+    {
+     "key": "cp/reference/error-responses",
+     "label": {
+      "en": "Error Responses"
+     },
+     "slug": {
+      "en": "/documentation/secure/custom-pages/reference/error-responses/",
+      "pt-br": "/documentacao/secure/custom-pages/reference/error-responses/"
+     }
+    },
+    {
+     "key": "cp/guides",
+     "label": {
+      "en": "Guides",
+      "pt-br": "Guias"
+     },
+     "items": [
+      {
+       "key": "cp/gd/set-error-pages",
+       "label": {
+        "en": "How to set error pages",
+        "pt-br": "Como configurar páginas de erro"
+       },
+       "slug": {
+        "en": "/documentation/secure/custom-pages/guides/set-error-pages/",
+        "pt-br": "/documentacao/secure/custom-pages/guides/configurar-paginas-de-erro/"
+       }
+      },
+      {
+       "key": "cp/gd/customizing-error-response-page",
+       "label": {
+        "en": "How to customize an error response page",
+        "pt-br": "Como personalizar uma página de resposta de erro"
+       },
+       "slug": {
+        "en": "/documentation/secure/custom-pages/guides/customizing-error-response-page/",
+        "pt-br": "/documentacao/secure/custom-pages/guides/personalizar-pagina-resposta-erro/"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

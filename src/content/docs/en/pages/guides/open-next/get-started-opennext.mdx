@@ -3,7 +3,7 @@ title: Get Started With OpenNext
 description: >-
   Get started with OpenNext on Azion: create or adapt a Next.js app, configure caching and storage for ISR/SSG, develop locally with the Azion CLI, and deploy to production.
 permalink: /documentation/build/functions/guides/get-started/
-menu_namespace: applicationsMenu
+menu_namespace: functionsMenu
 meta_tags: >-
   Next.js compatibility, Azion Web Platform, SSR, SSG, Middleware Features,
   Static Generation, Server-side Rendering, Next.js Routing, Next.js
@@ -54,7 +54,7 @@ Create or update `open-next.config.ts` in your project root. Example:
 import { defineAzionConfig } from "@aziontech/opennextjs-azion";
 
 export default defineAzionConfig({
-  // See https://www.azion.com/en/documentation/build/applications/cache/ for advanced options
+  // See https://www.azion.com/en/documentation/build/cache/ for advanced options
 });
 ```
 
@@ -180,4 +180,4 @@ azion deploy --local
 - See [Known Issues](/en/documentation/devtools/azion-edge-runtime/compatibility/nextjs/#known-issues) for important config notes.
 - See [Troubleshooting](/en/documentation/build/functions/guides/troubleshooting/) for local dev, logging, and debugging tips.
 - Explore [Examples](/en/documentation/devtools/azion-edge-runtime/compatibility/nextjs/#examples) for starter projects and templates.
-- For advanced caching, see [Caching](/en/documentation/build/applications/cache/).
+- For advanced caching, see [Caching](/en/documentation/build/cache/).

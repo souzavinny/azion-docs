@@ -23,7 +23,7 @@ Fetch the doc for whichever area the task touches. Every URL below returns agent
 Build — deploy and run code:
 
 - Applications, the unit you deploy; it runs on every point of the network at once: https://www.azion.com/en/documentation/build/applications.md
-- Functions, JavaScript or WebAssembly running inside the request: https://www.azion.com/en/documentation/build/applications/functions.md
+- Functions, JavaScript or WebAssembly running inside the request: https://www.azion.com/en/documentation/build/functions.md
 - AI Inference, hosted models behind an OpenAI-compatible endpoint: https://www.azion.com/en/documentation/build/ai-inference.md
 - SQL Database, relational state next to the code: https://www.azion.com/en/documentation/store/sql-database.md
 - KV Store, key-value state: https://www.azion.com/en/documentation/store/kv-store.md
@@ -47,7 +47,7 @@ Observe and automate:
 - CLI, the platform from the terminal: https://www.azion.com/en/documentation/products/azion-cli/overview.md
 - API: https://www.azion.com/en/documentation/devtools/api.md
 - Terraform provider: https://www.azion.com/en/documentation/products/terraform-provider.md
-- Orchestrator: https://www.azion.com/en/documentation/deploy/orchestrator.md
+- Orchestrator: https://www.azion.com/en/documentation/build/orchestrator.md
 
 ## Hands-on next steps
 

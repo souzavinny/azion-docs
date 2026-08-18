@@ -47,12 +47,12 @@ You can create and manage applications using:
 | Clone an Applications | [How to clone an Application](/en/documentation/build/applications/guides/clone-applications/) |
 | Delete an Application | [How to delete an Application](/en/documentation/build/applications/guides/delete-applications/) |
 | Application Main Settings | [Main Settings](/en/documentation/build/applications/reference/v3/main-settings/) |
-| Application Cache Settings | [Cache Settings](/en/documentation/build/applications/reference/cache-settings/) |
-| Get to know Functions | [Functions Instances](/en/documentation/build/applications/reference/functions-instances/) |
+| Application Cache Settings | [Cache Settings](/en/documentation/build/cache/reference/cache-settings/) |
+| Get to know Functions | [Functions Instances](/en/documentation/build/functions/reference/functions-instances/) |
 | Get to know Device Groups | [Device Groups](/en/documentation/build/applications/reference/device-groups/) |
-| Get to know Error Responses | [Error Responses](/en/documentation/build/applications/reference/error-responses/) |
-| Get to know Origins | [Origins](/en/documentation/build/applications/reference/origins/) |
-| Get to know Real-Time Purge | [Real-Time Purge](/en/documentation/build/applications/reference/real-time-purge/) |
+| Get to know Error Responses | [Error Responses](/en/documentation/secure/custom-pages/reference/error-responses/) |
+| Get to know Origins | [Origins](/en/documentation/secure/connectors/reference/origins/) |
+| Get to know Real-Time Purge | [Real-Time Purge](/en/documentation/build/cache/reference/real-time-purge/) |
 | Rules Engine for Application | [Rules Engine](/en/documentation/build/applications/reference/rules-engine/) |
 
 ---
@@ -65,12 +65,12 @@ See the documentation for each module:
 
 | Module | Description |
 | --- | --- |
-| [Application Accelerator](/en/documentation/build/applications/application-accelerator/) | Optimize API protocols and manage dynamic content delivery to accelerate applications and APIs. |
-| [Cache](/en/documentation/build/applications/cache/) | Configure cache settings to speed up the delivery of static and dynamic content. |
-| [Functions](/en/documentation/build/applications/functions/) | Build ultra-low latency applications and customize content delivery. |
-| [Image Processor](/en/documentation/build/applications/image-processor/) | Optimize image processing for various devices, browsers, and screen resolutions. |
+| [Application Accelerator](/en/documentation/build/application-accelerator/) | Optimize API protocols and manage dynamic content delivery to accelerate applications and APIs. |
+| [Cache](/en/documentation/build/cache/) | Configure cache settings to speed up the delivery of static and dynamic content. |
+| [Functions](/en/documentation/build/functions/) | Build ultra-low latency applications and customize content delivery. |
+| [Image Processor](/en/documentation/build/image-processor/) | Optimize image processing for various devices, browsers, and screen resolutions. |
 | [Load Balancer](/en/documentation/secure/connectors/reference/load-balancer/) | Balance traffic between your origin servers and cloud providers to improve fault tolerance and avoid network congestion. |
-| [Tiered Cache](/en/documentation/build/applications/cache/tiered-cache/) | Add a cache layer between your users and the edge to keep objects in cache for longer periods of time. |
+| [Tiered Cache](/en/documentation/build/cache/tiered-cache/) | Add a cache layer between your users and the edge to keep objects in cache for longer periods of time. |
 | [WebSocket Proxy](/en/documentation/build/applications/reference/websocket/) | Enable the WebSocket protocol to establish full-duplex communication channels over one TCP connection. |
 
 ---
@@ -84,11 +84,11 @@ See the documentation for each available setting:
 | Setting | Description |
 | --- | --- |
 | [Main Settings](/en/documentation/build/applications/reference/main-settings/) | Customize your application delivery with Azion's range of protocol options including HTTP, HTTPS, and HTTP/3 support for a better user experience and secure your connection with TLS ciphers. |
-| [Origins](/en/documentation/build/applications/reference/origins/) | Modify your origin address, `Host` header, path, protocol policies, and HMAC authentication credentials. |
+| [Origins](/en/documentation/secure/connectors/reference/origins/) | Modify your origin address, `Host` header, path, protocol policies, and HMAC authentication credentials. |
 | [Device Groups](/en/documentation/build/applications/reference/device-groups/) | Create groups to change your application's cache and delivery behavior according to end-user devices. |
-| [Error Responses](/en/documentation/build/applications/reference/error-responses/) | Customize error response pages, their cache expiration time, and their origin. |
-| [Cache Settings](/en/documentation/build/applications/reference/cache-settings/) | Configure your application's browser and cache expiration time, large file optimization, and advanced cache behavior based on cookies or query strings. |
-| [Functions](/en/documentation/build/applications/reference/functions-instances/) | Instantiate functions created with **Functions**. |
+| [Error Responses](/en/documentation/secure/custom-pages/reference/error-responses/) | Customize error response pages, their cache expiration time, and their origin. |
+| [Cache Settings](/en/documentation/build/cache/reference/cache-settings/) | Configure your application's browser and cache expiration time, large file optimization, and advanced cache behavior based on cookies or query strings. |
+| [Functions](/en/documentation/build/functions/reference/functions-instances/) | Instantiate functions created with **Functions**. |
 | [Rules Engine](/en/documentation/build/applications/reference/rules-engine/) | Automate the execution of behaviors based on specific parameters for your application. |
 
 ---
@@ -111,9 +111,9 @@ With **Certificate Manager**, you can enhance the security of your HTTPS applica
 
 ## Real-Time Purge
 
-Use **Real-Time Purge** to clear cached content from Azion's edge or from the [tiered cache layer](/en/documentation/build/applications/cache/tiered-cache/) to maintain content accuracy, reduce outdated content delivery, and deliver an optimal user experience on your application. 
+Use **Real-Time Purge** to clear cached content from Azion's edge or from the [tiered cache layer](/en/documentation/build/cache/tiered-cache/) to maintain content accuracy, reduce outdated content delivery, and deliver an optimal user experience on your application. 
 
-<LinkButton severity="secondary" label="Learn more about Real-Time Purge" link="/en/documentation/build/applications/reference/real-time-purge/" />
+<LinkButton severity="secondary" label="Learn more about Real-Time Purge" link="/en/documentation/build/cache/reference/real-time-purge/" />
 
 ---
 
@@ -128,12 +128,12 @@ These are the **default limits**:
 
 | Scope | Limit |
 | ----- | ----- |
-| Minimum CDN cache TTL | 60 seconds<br /><br />For the [Application Accelerator](/en/documentation/build/applications/application-accelerator/) module: 0 seconds |
+| Minimum CDN cache TTL | 60 seconds<br /><br />For the [Application Accelerator](/en/documentation/build/application-accelerator/) module: 0 seconds |
 | Debug Rules log size | 1.5 kB |
 | Edge-client keepalive connection¹ | 10 to 15 minutes |
 | Single object size in cache | 10 GB |
 
-> ¹ Azion enforces a keepalive connection duration limit between users and applications. To avoid the termination of active connections that require more time to complete, consider implementing [file slicing](/en/documentation/build/applications/reference/cache-settings/#large-file-optimization) or [file compression](/en/documentation/build/applications/guides/gzip-compression/) for large files to improve data transfer speeds.
+> ¹ Azion enforces a keepalive connection duration limit between users and applications. To avoid the termination of active connections that require more time to complete, consider implementing [file slicing](/en/documentation/build/cache/reference/cache-settings/#large-file-optimization) or [file compression](/en/documentation/build/applications/guides/gzip-compression/) for large files to improve data transfer speeds.
 
 These are the **default limits** for each Support service:
 

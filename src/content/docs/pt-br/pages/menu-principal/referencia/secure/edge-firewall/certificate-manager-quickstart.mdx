@@ -14,7 +14,7 @@ menu_namespace: certificateManagerMenu
 
 Este quickstart mostra como registrar no **Certificate Manager** um certificado TLS que você já possui, associá-lo a um domínio e confirmar que sua aplicação está servindo tráfego HTTPS com ele. Você pode seguir o **caminho pelo Console** ou o **caminho pela API**.
 
-Se você não possui um certificado, pode [solicitar um certificado Let's Encrypt](/pt-br/documentacao/build/applications/guides/como-gerar-um-certificado-lets-encrypt/) gerenciado automaticamente pela Azion ou [gerar um Certificate Signing Request (CSR)](/pt-br/documentacao/secure/firewall/guides/certificado-digital/) pela Azion e submetê-lo a uma autoridade de certificação.
+Se você não possui um certificado, pode [solicitar um certificado Let's Encrypt](/pt-br/documentacao/secure/certificate-manager/guides/como-gerar-um-certificado-lets-encrypt/) gerenciado automaticamente pela Azion ou [gerar um Certificate Signing Request (CSR)](/pt-br/documentacao/secure/firewall/guides/certificado-digital/) pela Azion e submetê-lo a uma autoridade de certificação.
 
 ---
 
@@ -26,7 +26,7 @@ Se você não possui um certificado, pode [solicitar um certificado Let's Encryp
 - Para o caminho pela API: um [personal token](/pt-br/documentacao/account/guides/personal-tokens/).
 
 :::note
-Este quickstart usa as configurações do [Workloads](/pt-br/documentacao/secure/workloads/) e a Azion API v4. Há instruções separadas para contas que usam as configurações do [Domains](/pt-br/documentacao/build/applications/reference/domains/) legado no guia [Como criar um certificado digital](/pt-br/documentacao/secure/workloads/guides/criar-certificado-digital/). Se você não tem certeza de quais passos se aplicam à sua conta, consulte o guia [Verifique a migração da sua conta](/pt-br/documentacao/account/guides/verificar-migracao-conta/).
+Este quickstart usa as configurações do [Workloads](/pt-br/documentacao/secure/workloads/) e a Azion API v4. Há instruções separadas para contas que usam as configurações do [Domains](/pt-br/documentacao/secure/workloads/reference/domains/) legado no guia [Como criar um certificado digital](/pt-br/documentacao/secure/workloads/guides/criar-certificado-digital/). Se você não tem certeza de quais passos se aplicam à sua conta, consulte o guia [Verifique a migração da sua conta](/pt-br/documentacao/account/guides/verificar-migracao-conta/).
 :::
 
 ---
@@ -146,7 +146,7 @@ openssl s_client -showcerts -connect seudominio.com:443
 
 - [Como criar um certificado digital](/pt-br/documentacao/secure/workloads/guides/criar-certificado-digital/): o guia completo, incluindo o upload de Trusted CA para mTLS e os caminhos legados de Domains e API v3
 - [Conceitos do Certificate Manager](/pt-br/documentacao/secure/certificate-manager/concepts/)
-- [Como gerar um certificado Let's Encrypt](/pt-br/documentacao/build/applications/guides/como-gerar-um-certificado-lets-encrypt/)
+- [Como gerar um certificado Let's Encrypt](/pt-br/documentacao/secure/certificate-manager/guides/como-gerar-um-certificado-lets-encrypt/)
 - [Suporte para mTLS](/pt-br/documentacao/secure/certificate-manager/reference/mtls/)
 
 <br /><br />

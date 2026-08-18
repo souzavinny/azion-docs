@@ -62,6 +62,17 @@
      }
     },
     {
+     "key": "get-started/build-an-application",
+     "label": {
+      "en": "Build an application",
+      "pt-br": "Criar uma aplicação"
+     },
+     "slug": {
+      "en": "/documentation/get-started/journeys/launch/",
+      "pt-br": "/documentacao/build/applications/guides/criar-uma-aplicacao/"
+     }
+    },
+    {
      "key": "get-started/production-checklist",
      "label": {
       "en": "Go live",
@@ -112,6 +123,61 @@
       "pt-br": "/documentacao/build/applications/"
      },
      "menu": "applicationsMenu"
+    },
+    {
+     "key": "build/application-accelerator",
+     "label": {
+      "en": "Application Accelerator"
+     },
+     "slug": {
+      "en": "/documentation/build/application-accelerator/",
+      "pt-br": "/documentacao/build/application-accelerator/"
+     },
+     "menu": "applicationAcceleratorMenu"
+    },
+    {
+     "key": "build/cache",
+     "label": {
+      "en": "Cache"
+     },
+     "slug": {
+      "en": "/documentation/build/cache/",
+      "pt-br": "/documentacao/build/cache/"
+     },
+     "menu": "cacheMenu"
+    },
+    {
+     "key": "build/functions",
+     "label": {
+      "en": "Functions"
+     },
+     "slug": {
+      "en": "/documentation/build/functions/",
+      "pt-br": "/documentacao/build/functions/"
+     },
+     "menu": "functionsMenu"
+    },
+    {
+     "key": "build/image-processor",
+     "label": {
+      "en": "Image Processor"
+     },
+     "slug": {
+      "en": "/documentation/build/image-processor/",
+      "pt-br": "/documentacao/build/image-processor/"
+     },
+     "menu": "imageProcessorMenu"
+    },
+    {
+     "key": "build/orchestrator",
+     "label": {
+      "en": "Orchestrator"
+     },
+     "slug": {
+      "en": "/documentation/build/orchestrator/",
+      "pt-br": "/documentacao/build/orchestrator/"
+     },
+     "menu": "orchestratorMenu"
     }
    ]
   },
@@ -234,7 +300,8 @@
      "slug": {
       "en": "/documentation/secure/custom-pages/",
       "pt-br": "/documentacao/secure/custom-pages/"
-     }
+     },
+     "menu": "customPagesMenu"
     }
    ]
   },
@@ -324,17 +391,6 @@
    "ui": "menu.manage",
    "icon": "pi pi-user",
    "items": [
-    {
-     "key": "deploy/orchestrator",
-     "label": {
-      "en": "Orchestrator"
-     },
-     "slug": {
-      "en": "/documentation/deploy/orchestrator/",
-      "pt-br": "/documentacao/deploy/orchestrator/"
-     },
-     "menu": "orchestratorMenu"
-    },
     {
      "key": "row/services",
      "label": {

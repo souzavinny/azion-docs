@@ -31,7 +31,7 @@ Esta arquitetura descreve um agente de IA no edge que consome Third Party LLM po
 ### Componentes
 
 - **[Applications](https://www.azion.com/pt-br/documentacao/build/applications/)**: uma aplicação na Azion que hospeda o agente de IA.
-- **[Functions](https://www.azion.com/pt-br/documentacao/build/applications/functions/)**: uma função serverless que contém a lógica do agente de IA.
+- **[Functions](https://www.azion.com/pt-br/documentacao/build/functions/)**: uma função serverless que contém a lógica do agente de IA.
 - **[Object Storage](https://www.azion.com/pt-br/documentacao/store/object-storage/)**: serviço de armazenamento de objetos da Azion para armazenar os dados que o agente usa para responder às perguntas.
 - **[SQL Database](https://www.azion.com/pt-br/documentacao/store/sql-database/)**: banco de dados da Azion para armazenar o estado do chat e documentos.
 - **Third Party LLM**: serviço de LLM (ex.: OpenAI ou Anthropic).
@@ -93,7 +93,7 @@ CLERK_SECRET_KEY=
 - Em seguida, execute o comando `yarn upload-docs` para fazer upload dos arquivos para o Object Storage.
 
 :::note
-Este template usa [Application Accelerator](/pt-br/documentacao/build/applications/application-accelerator/), [Functions](/pt-br/documentacao/build/applications/functions/) e [SQL Database](/pt-br/documentacao/store/sql-database/), e pode gerar custos relacionados ao uso. Verifique a [página de preços](https://www.azion.com/pt-br/precos/) para obter mais informações.
+Este template usa [Application Accelerator](/pt-br/documentacao/build/application-accelerator/), [Functions](/pt-br/documentacao/build/functions/) e [SQL Database](/pt-br/documentacao/store/sql-database/), e pode gerar custos relacionados ao uso. Verifique a [página de preços](https://www.azion.com/pt-br/precos/) para obter mais informações.
 :::
 ---
 

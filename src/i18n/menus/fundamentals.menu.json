@@ -525,8 +525,8 @@
         "en": "Domains"
        },
        "slug": {
-        "en": "/documentation/build/applications/reference/domains/",
-        "pt-br": "/documentacao/build/applications/reference/domains/"
+        "en": "/documentation/secure/workloads/reference/domains/",
+        "pt-br": "/documentacao/secure/workloads/reference/domains/"
        },
        "linkOnly": true
       }
@@ -545,8 +545,8 @@
         "en": "Application Accelerator"
        },
        "slug": {
-        "en": "/documentation/build/applications/application-accelerator/",
-        "pt-br": "/documentacao/build/applications/application-accelerator/"
+        "en": "/documentation/build/application-accelerator/",
+        "pt-br": "/documentacao/build/application-accelerator/"
        },
        "linkOnly": true
       },
@@ -556,8 +556,8 @@
         "en": "Tiered Cache"
        },
        "slug": {
-        "en": "/documentation/build/applications/cache/tiered-cache/",
-        "pt-br": "/documentacao/build/applications/cache/tiered-cache/"
+        "en": "/documentation/build/cache/tiered-cache/",
+        "pt-br": "/documentacao/build/cache/tiered-cache/"
        },
        "linkOnly": true
       },
@@ -567,8 +567,8 @@
         "en": "Image Processor"
        },
        "slug": {
-        "en": "/documentation/build/applications/image-processor/",
-        "pt-br": "/documentacao/build/applications/image-processor/"
+        "en": "/documentation/build/image-processor/",
+        "pt-br": "/documentacao/build/image-processor/"
        },
        "linkOnly": true
       },

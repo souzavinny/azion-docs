@@ -23,7 +23,7 @@ Busque o doc da área que a tarefa envolve. Toda URL abaixo retorna markdown leg
 Build — implante e execute código:
 
 - Applications, a unidade de deploy; roda em todos os pontos da rede ao mesmo tempo: https://www.azion.com/pt-br/documentacao/build/applications.md
-- Functions, JavaScript ou WebAssembly executando dentro da requisição: https://www.azion.com/pt-br/documentacao/build/applications/functions.md
+- Functions, JavaScript ou WebAssembly executando dentro da requisição: https://www.azion.com/pt-br/documentacao/build/functions.md
 - AI Inference, modelos hospedados atrás de um endpoint compatível com OpenAI: https://www.azion.com/pt-br/documentacao/build/ai-inference.md
 - SQL Database, estado relacional ao lado do código: https://www.azion.com/pt-br/documentacao/store/sql-database.md
 - KV Store, estado chave-valor: https://www.azion.com/pt-br/documentacao/store/kv-store.md
@@ -47,7 +47,7 @@ Observe e automatize:
 - CLI, a plataforma pelo terminal: https://www.azion.com/pt-br/documentacao/produtos/azion-cli/visao-geral.md
 - API: https://www.azion.com/pt-br/documentacao/devtools/api/quickstart.md
 - Terraform provider: https://www.azion.com/pt-br/documentacao/produtos/terraform-provider.md
-- Orchestrator: https://www.azion.com/pt-br/documentacao/deploy/orchestrator.md
+- Orchestrator: https://www.azion.com/pt-br/documentacao/build/orchestrator.md
 
 ## Próximos passos práticos
 

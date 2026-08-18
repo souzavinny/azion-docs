@@ -5,8 +5,8 @@ description: >-
   e regras de cache para sua aplicação.
 meta_tags: 'cache settings, cache, edge, application'
 namespace: documentation_products_edge_application_cache_settings
-menu_namespace: applicationsMenu
-permalink: /documentacao/build/applications/reference/cache-settings/
+menu_namespace: cacheMenu
+permalink: /documentacao/build/cache/reference/cache-settings/
 ---
 import LinkButton from 'azion-webkit/linkbutton'
 
@@ -17,10 +17,10 @@ Com **Cache Settings** para **Applications**, você pode editar configurações 
 | Escopo | Recursos |
 | --- | --- |
 | Primeiros passos de Applications | [Primeiros passos](/pt-br/documentacao/build/applications/quickstart/) |
-| Módulo Cache | [Cache](/pt-br/documentacao/build/applications/cache/) |
-| Módulo Tiered Cache | [Tiered Cache](/pt-br/documentacao/build/applications/cache/tiered-cache/) |
-| Criar uma configuração de cache | [Como configurar políticas de cache para Applications](/pt-br/documentacao/build/applications/cache/guides/cache-settings/) |
-| Configurar Advanced Cache Key | [Como configurar a Advanced Cache Key para Applications](/pt-br/documentacao/build/applications/cache/guides/advanced-cache-key/) |
+| Módulo Cache | [Cache](/pt-br/documentacao/build/cache/) |
+| Módulo Tiered Cache | [Tiered Cache](/pt-br/documentacao/build/cache/tiered-cache/) |
+| Criar uma configuração de cache | [Como configurar políticas de cache para Applications](/pt-br/documentacao/build/cache/guides/cache-settings/) |
+| Configurar Advanced Cache Key | [Como configurar a Advanced Cache Key para Applications](/pt-br/documentacao/build/application-accelerator/guides/advanced-cache-key/) |
 
 ---
 
@@ -38,7 +38,7 @@ Com **Cache Settings** para **Applications**, você pode editar configurações 
 **CDN Cache Settings** configura como a Azion armazena o cache no edge. Você pode selecionar dentre as seguintes opções:
 
 - **Honor Origin Cache Headers**: mantém as definições de cache enviadas pelos seus servidores de origem através de cabeçalhos HTTP (`*Cache-Control` e `Expire*`), enviando os mesmos cabeçalhos para o navegador.
-- **Override Cache Settings**: substitui a configuração de cache do seu servidor de origem com o TTL desejado. Para definir o TTL de cache CDN para valores inferiores a 60 segundos, você deve habilitar o módulo [Application Accelerator](/pt-br/documentacao/build/applications/application-accelerator/).
+- **Override Cache Settings**: substitui a configuração de cache do seu servidor de origem com o TTL desejado. Para definir o TTL de cache CDN para valores inferiores a 60 segundos, você deve habilitar o módulo [Application Accelerator](/pt-br/documentacao/build/application-accelerator/).
 
 ---
 
@@ -46,7 +46,7 @@ Com **Cache Settings** para **Applications**, você pode editar configurações 
 
 **Large File Optimization** funciona com o tamanho de fragmentação de *1024 kB*. Se você deseja modificar o *fragmentation size*, [contate a equipe de Vendas](https://www.azion.com/pt-br/contato/).
 
-<LinkButton link="/pt-br/documentacao/build/applications/cache/#large-file-optimization" label="Saiba mais sobre Large File Optimization" />
+<LinkButton link="/pt-br/documentacao/build/cache/#large-file-optimization" label="Saiba mais sobre Large File Optimization" />
 
 :::note
 Ao ativar a funcionalidade Large File Optimization, a *cache key* atual será ignorada e uma nova será criada.
@@ -54,7 +54,7 @@ Ao ativar a funcionalidade Large File Optimization, a *cache key* atual será ig
 
 A opção `--slice-l2-caching-enabled` define se Large File Optimization está ativo para o Tiered Cache.
 
-<LinkButton link="/pt-br/documentacao/build/applications/cache/tiered-cache/" label="Saiba mais sobre Tiered Cache" />
+<LinkButton link="/pt-br/documentacao/build/cache/tiered-cache/" label="Saiba mais sobre Tiered Cache" />
 
 ---
 
@@ -113,7 +113,7 @@ Você pode ativar a chave **Enable caching for POST**, permitindo que a Azion fa
 
 Com o módulo **Cache**, você pode habilitar o **Stale Cache** para transmitir conteúdo *stale* (obsoleto) quando houver um problema com seus servidores de origem.
 
-<LinkButton link="/pt-br/documentacao/build/applications/cache/#stale-cache" label="Saiba mais sobre stale cache" />
+<LinkButton link="/pt-br/documentacao/build/cache/#stale-cache" label="Saiba mais sobre stale cache" />
 
 ---
 

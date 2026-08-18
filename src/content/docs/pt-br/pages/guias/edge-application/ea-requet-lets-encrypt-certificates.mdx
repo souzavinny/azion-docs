@@ -6,8 +6,8 @@ description: >-
   sua aplicação.
 meta_tags: 'certificate, ssl, tls, let''s encrypt, ca'
 namespace: documentation_guides_lets_encrypt
-permalink: /documentacao/build/applications/guides/como-gerar-um-certificado-lets-encrypt/
-menu_namespace: applicationsMenu
+permalink: /documentacao/secure/certificate-manager/guides/como-gerar-um-certificado-lets-encrypt/
+menu_namespace: certificateManagerMenu
 ---
 
 import LetsEncryptExpiration from '~/includes/snippets/LetsEncryptExpiration/pt/snippet.mdx'
@@ -101,7 +101,7 @@ Agora que o desafio pode acontecer, o próximo passo é criar um domínio na Azi
 
 ## Configurando um domínio
 
-Abaixo estãos os passos para adicionar um certificado para sua aplicação. Há instruções separadas para as configurações do [Domains legado](/pt-br/documentacao/build/applications/reference/domains/) e para o novo produto [Workloads](/pt-br/documentacao/secure/workloads/).
+Abaixo estãos os passos para adicionar um certificado para sua aplicação. Há instruções separadas para as configurações do [Domains legado](/pt-br/documentacao/secure/workloads/reference/domains/) e para o novo produto [Workloads](/pt-br/documentacao/secure/workloads/).
 
 :::tip[Dica]
 Se você não tem certeza de quais passos se aplicam à sua conta, consulte [o guia Verifique a migração da sua conta para a API v4](/pt-br/documentacao/account/guides/verificar-migracao-conta/) para determinar se sua conta já foi migrada.
@@ -133,7 +133,7 @@ O certificado será emitido utilizando o método de validação **DNS-01**. Para
 
 Para criar um domínio no **Domain** da Azion, você deve primeiro ter uma application. Se você ainda não criou uma application, vá para a [documentação sobre criar uma aplicação](/pt-br/documentacao/build/applications/guides/criar-uma-aplicacao/).
 
-Depois de ter uma application, você precisa [criar um domínio](/pt-br/documentacao/build/applications/reference/domains/) e listar os CNAMEs que deseja proteger com o certificado Let's Encrypt. Para fazer isso, siga os passos:
+Depois de ter uma application, você precisa [criar um domínio](/pt-br/documentacao/secure/workloads/reference/domains/) e listar os CNAMEs que deseja proteger com o certificado Let's Encrypt. Para fazer isso, siga os passos:
 
 1. Acesse o [Azion Console](/pt-br/documentacao/account/guides/como-acessar-o-azion-console/) > **Domains**.
 2. Clique no botão **+ Domain**.
@@ -205,7 +205,7 @@ Para garantir que o certificado seja renovado para domínios hospedados em servi
 
 ## Aponte seu tráfego para a Azion
 
-Abaixo estãos os passos para apontar o seu tráfego para a Azion. Há instruções separadas para as configurações do [Domains legado](/pt-br/documentacao/build/applications/reference/domains/) e para o novo produto [Workloads](/pt-br/documentacao/secure/workloads/).
+Abaixo estãos os passos para apontar o seu tráfego para a Azion. Há instruções separadas para as configurações do [Domains legado](/pt-br/documentacao/secure/workloads/reference/domains/) e para o novo produto [Workloads](/pt-br/documentacao/secure/workloads/).
 
 :::tip[Dica]
 Se você não tem certeza de quais passos se aplicam à sua conta, consulte [o guia Verifique a migração da sua conta para a API v4](/pt-br/documentacao/account/guides/verificar-migracao-conta/) para determinar se sua conta já foi migrada.

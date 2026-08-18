@@ -30,8 +30,8 @@ Azion generates a domain for every application, in this format: `xxxxxxxxxx.map.
 Click **Add Domain** and fill in the fields:
 
 - **Add Configuration Name**: type a name for your domain. You can use the same name as your domain name.
-- [Digital Certificate](/en/documentation/secure/certificate-manager/): select the standard Azion certificate (SAN), a [Let's Encrypt certificate](/en/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate/), or any [third-party digital certificate](/en/documentation/secure/workloads/guides/create-a-digital-certificate/).
-- [Canonical Names (CNAMES)](/en/documentation/build/applications/reference/domains/#cname): write all the CNAMES your domain has, one per line, no punctuation.
+- [Digital Certificate](/en/documentation/secure/certificate-manager/): select the standard Azion certificate (SAN), a [Let's Encrypt certificate](/en/documentation/secure/certificate-manager/guides/lets-encrypt/), or any [third-party digital certificate](/en/documentation/secure/workloads/guides/create-a-digital-certificate/).
+- [Canonical Names (CNAMES)](/en/documentation/secure/workloads/reference/domains/#cname): write all the CNAMES your domain has, one per line, no punctuation.
 - **CNAME Access Only** switch: activate it if you want your users to access your application only by CNAME.
 - **Application**: select the application your domain will be connected to.
 - **Active** switch: it must be on.
@@ -42,7 +42,7 @@ Click **Save**. Your custom domain is now connected to the application.
 Your root domain (example: `myapp.com`) and each of your subdomains (example: `user.myapp.com`) must be configured as a standalone domain. For other ways to configure domains and subdomains, visit the [Domains documentation](/en/documentation/secure/workloads/guides/configure-a-domain/).
 :::
 
-If you selected a Let's Encrypt certificate, you need to complete a specific process to configure the DNS settings. Check [How to generate a Let's Encrypt certificate](/en/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate/) for the details.
+If you selected a Let's Encrypt certificate, you need to complete a specific process to configure the DNS settings. Check [How to generate a Let's Encrypt certificate](/en/documentation/secure/certificate-manager/guides/lets-encrypt/) for the details.
 
 ---
 

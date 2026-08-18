@@ -28,11 +28,11 @@ You're now in the page to configure the general delivery settings of your applic
 
 **Applications** offers the following modules:
 
-- [Application Accelerator](/en/documentation/build/applications/application-accelerator/)
-- [Cache](/en/documentation/build/applications/cache/)
-- [Functions](/en/documentation/build/applications/functions/)
-- [Image Processor](/en/documentation/build/applications/image-processor/)
-- [Tiered Cache](/en/documentation/build/applications/cache/tiered-cache/)
+- [Application Accelerator](/en/documentation/build/application-accelerator/)
+- [Cache](/en/documentation/build/cache/)
+- [Functions](/en/documentation/build/functions/)
+- [Image Processor](/en/documentation/build/image-processor/)
+- [Tiered Cache](/en/documentation/build/cache/tiered-cache/)
 
 Some **Applications modules** are billed products and it may generate usage-related costs. Check the [Applications modules pricing](/en/documentation/platform/pricing/) for more information.
 
@@ -49,8 +49,8 @@ To enable a module in your application:
 Other than the **Main Settings** tab, you'll see several other tabs:
 
 - [Device Groups](/en/documentation/build/applications/reference/device-groups/)
-- [Cache Settings](/en/documentation/build/applications/reference/cache-settings/)
-- [Functions](/en/documentation/build/applications/reference/functions-instances/)
+- [Cache Settings](/en/documentation/build/cache/reference/cache-settings/)
+- [Functions](/en/documentation/build/functions/reference/functions-instances/)
 - [Rules Engine](/en/documentation/build/applications/reference/rules-engine/)
 
 Each tab stores in other configuration options for your application.
@@ -118,7 +118,7 @@ The `${device_group}` variable will also be available in **Rules Engine**:
 
 ### Cache Settings
 
-Edit your cache configuration in [Cache Settings](/en/documentation/build/applications/reference/cache-settings/):
+Edit your cache configuration in [Cache Settings](/en/documentation/build/cache/reference/cache-settings/):
 
 1. Access the **Cache Settings** tab.
 2. Click the **Add Cache Settings** button.
@@ -127,12 +127,12 @@ Edit your cache configuration in [Cache Settings](/en/documentation/build/applic
    - Under **Browser Cache Settings**, select **Override Cache Settings** to define how long your content can be cached in browsers.
    - Under **CDN Cache Settings**, select **Override Cache Settings** to define how long your content can be cached at the edge.
 5. If you've chosen to override cache settings, add the desired **Maximum TTL** in seconds.
-    - At this point, you may also customize other cache settings for dynamic content provided by the [Advanced Cache Key](/en/documentation/build/applications/reference/cache-settings/#advanced-cache-key) feature.
+    - At this point, you may also customize other cache settings for dynamic content provided by the [Advanced Cache Key](/en/documentation/build/cache/reference/cache-settings/#advanced-cache-key) feature.
 6. Click the **Save** button.
 
 #### Tiered Cache
 
-To use the [Tiered Cache](/en/documentation/build/applications/cache/tiered-cache/) module:
+To use the [Tiered Cache](/en/documentation/build/cache/tiered-cache/) module:
 
 1. In the **Main Settings** tab, at the end of the **Applications Modules** section, enable the **Tiered Cache** switch.
 2. Access the **Cache Settings** tab.
@@ -143,7 +143,7 @@ To use the [Tiered Cache](/en/documentation/build/applications/cache/tiered-cach
 
 ### Functions
 
-Instantiate your functions using [Functions](/en/documentation/build/applications/reference/functions-instances/):
+Instantiate your functions using [Functions](/en/documentation/build/functions/reference/functions-instances/):
 
 1. In the **Main Settings** tab, activate the **Functions** module.
 2. In the **Functions** tab, click **Add function** to instantiate the desired function.
@@ -176,7 +176,7 @@ Create conditional business rules for your application using [Rules Engine](/en/
 
 ## Real-Time Purge
 
-To access [Real-Time Purge](/en/documentation/build/applications/reference/real-time-purge/), proceed as follows:
+To access [Real-Time Purge](/en/documentation/build/cache/reference/real-time-purge/), proceed as follows:
 
 1. [Access Console](https://console.azion.com).
 2. On the upper-left corner of the page, select **Products Menu** > **Real-Time Purge**.

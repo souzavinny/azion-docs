@@ -24,6 +24,16 @@
      }
     },
     {
+     "key": "wkl/reference/domains",
+     "label": {
+      "en": "Domains"
+     },
+     "slug": {
+      "en": "/documentation/secure/workloads/reference/domains/",
+      "pt-br": "/documentacao/secure/workloads/reference/domains/"
+     }
+    },
+    {
      "key": "wkl/guides",
      "label": {
       "en": "Guides",

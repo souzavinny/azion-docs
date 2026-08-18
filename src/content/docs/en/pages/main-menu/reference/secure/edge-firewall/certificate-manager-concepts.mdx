@@ -65,7 +65,7 @@ Free certificates, generated internally by Azion (Azion SAN), don't support mTLS
 
 ## Let's Encrypt certificates
 
-[Let's Encrypt](https://letsencrypt.org/)™ is a nonprofit global CA that allows people and organizations to obtain, renew, and manage TLS certificates for free. When [creating a Domain](/en/documentation/build/applications/reference/domains/) with Azion, you may choose to obtain a TLS certificate signed by Let's Encrypt. You can request Let's Encrypt certificates for domains hosted in [Edge DNS](/en/documentation/secure/edge-dns/) or in a third-party DNS provider.
+[Let's Encrypt](https://letsencrypt.org/)™ is a nonprofit global CA that allows people and organizations to obtain, renew, and manage TLS certificates for free. When [creating a Domain](/en/documentation/secure/workloads/reference/domains/) with Azion, you may choose to obtain a TLS certificate signed by Let's Encrypt. You can request Let's Encrypt certificates for domains hosted in [Edge DNS](/en/documentation/secure/edge-dns/) or in a third-party DNS provider.
 
 Once you [create a domain with Azion](/en/documentation/secure/workloads/guides/configure-a-domain/), you can choose the option **Let's Encrypt** to automatically generate a Let's Encrypt certificate. An entry for this certificate will be listed in the **Certificate Manager** page in [Azion Console](https://console.azion.com). After the certificate undergoes DNS validation, issuance, and storage, it'll become active.
 
@@ -76,7 +76,7 @@ Active Let's Encrypt certificates *will be renewed automatically before the expi
 Azion provides support for both DNS-01 and HTTP-01 challenges as alternative methods for Let's Encrypt certificate validation. While DNS-01 involves modifying DNS settings with a TXT record to confirm domain control, HTTP-01 offers a streamlined solution by simply placing a file in the server's document root. This approach is particularly beneficial for environments where direct server access is available, allowing smooth integration across multiple domains and hostnames without DNS configuration changes.
 
 :::tip
-See [how to add a TXT record for a Let's Encrypt certificate](/en/documentation/secure/firewall/guides/lets-encrypt-record/) and [how to generate a Let's Encrypt certificate for your domain](/en/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate/).
+See [how to add a TXT record for a Let's Encrypt certificate](/en/documentation/secure/firewall/guides/lets-encrypt-record/) and [how to generate a Let's Encrypt certificate for your domain](/en/documentation/secure/certificate-manager/guides/lets-encrypt/).
 :::
 
 ### CNAME configuration
@@ -85,7 +85,7 @@ When you create a domain with Azion **Domains** and select the **Let's Encrypt c
 
 When you modify the CNAME list on the domain settings, Azion will create a new certificate based on the modified set of CNAMEs, and the old entry won't be renewed by the certificate manager.
 
-If any of the CNAMEs hosted in external providers fail the [DNS-01 challenge](/en/documentation/build/applications/guides/how-to-generate-a-lets-encrypt-certificate/#option-2-preparing-dns-entry-with-an-external-dns-provider), the certificate won't be generated and will remain with the *Pending* status.
+If any of the CNAMEs hosted in external providers fail the [DNS-01 challenge](/en/documentation/secure/certificate-manager/guides/lets-encrypt/#option-2-preparing-dns-entry-with-an-external-dns-provider), the certificate won't be generated and will remain with the *Pending* status.
 
 ### Wildcard usage
 
@@ -132,7 +132,7 @@ For more information about the API parameters, see the [Certificates API referen
 :::note
 Let's Encrypt certificates cross-signed by IdenTrust expired on September 30th, 2024. Devices and applications using the [Let's Encrypt certificate that used IdenTrust are now invalid](https://letsencrypt.org/2023/07/10/cross-sign-expiration.html). This could impact the functionality of devices and applications utilizing these certificates, mainly users of older Android devices (pre-7.1). It'll be necessary to take the following actions:
 
-- **For users of Let's Encrypt Certificates with IdenTrust**: you must migrate to the new Let's Encrypt signing technology or an [Azion edge certificate](/en/documentation/build/applications/reference/domains/mtls/#edge-certificate).
+- **For users of Let's Encrypt Certificates with IdenTrust**: you must migrate to the new Let's Encrypt signing technology or an [Azion edge certificate](/en/documentation/secure/certificate-manager/reference/mtls-for-build/#edge-certificate).
 - **For users of other types of Let's Encrypt**: no immediate action is necessary, considering other certificates remain unaffected with this update, since the problem is caused by outdated certificate chains on the device.
 - **For user with applications using Let's Encrypt on Azion**: no action needed. Certificates are automatically updated, although an affected device must have its CAs updated as well.
 :::

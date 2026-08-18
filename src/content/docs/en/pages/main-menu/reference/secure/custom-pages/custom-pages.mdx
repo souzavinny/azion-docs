@@ -6,6 +6,7 @@ description: >-
 meta_tags: 'errors, application, http, error pages'
 namespace: documentation_secure_custom_pages
 permalink: /documentation/secure/custom-pages/
+menu_namespace: customPagesMenu
 ---
 import LinkButton from 'azion-webkit/linkbutton';
 import Apiv4Rollout from '~/includes/snippets/apiv4Rollout/en/snippet.mdx'
@@ -14,7 +15,7 @@ import Apiv4Rollout from '~/includes/snippets/apiv4Rollout/en/snippet.mdx'
 <Apiv4Rollout />
 
 :::note
-This page documents the new Custom Pages product. If your account hasn't been migrated yet, refer to the [legacy Error Responses documentation](/en/documentation/build/applications/reference/error-responses/).
+This page documents the new Custom Pages product. If your account hasn't been migrated yet, refer to the [legacy Error Responses documentation](/en/documentation/secure/custom-pages/reference/error-responses/).
 :::
 
 **Custom Pages** is an Azion feature that allows you to customize error pages for users based on the status code received from an [Connector](/en/documentation/secure/connectors/).
@@ -32,7 +33,7 @@ With **Custom Pages**, you can customize how your application will handle *Clien
 | Scope | Resource |
 | --- | --- |
 | Application first steps | [First steps](/en/documentation/build/applications/quickstart/) |
-| Customizing error page | [How to customize an error response page](/en/documentation/build/applications/guides/customizing-error-response-page/) |
+| Customizing error page | [How to customize an error response page](/en/documentation/secure/custom-pages/guides/customizing-error-response-page/) |
 | Connectors | [Connectors reference](/en/documentation/secure/connectors/) |
 | Workloads | [Workloads reference](/en/documentation/secure/workloads/) |
 | Custom Pages API | [API reference](https://api.azion.com/v4#/operations/GetWorkspaceCustomPages) |
@@ -76,7 +77,7 @@ These are the available status codes:
 
 Defines the time in seconds that the error page will remain in cache before it's refreshed.
 
-<LinkButton link="/en/documentation/build/applications/reference/cache-settings/#browser-cache-settings" label="Learn more about cache expiration settings" />
+<LinkButton link="/en/documentation/build/cache/reference/cache-settings/#browser-cache-settings" label="Learn more about cache expiration settings" />
 
 ---
 

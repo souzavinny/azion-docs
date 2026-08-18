@@ -6,17 +6,17 @@ description: >-
   otimização de arquivos grandes.
 meta_tags: 'build, cache, ttl, browser, edge, object'
 namespace: docs_guides_build_tune_cache_settings
-permalink: /documentacao/build/applications/cache/guides/ajustar-cache-settings/
-menu_namespace: applicationsMenu
+permalink: /documentacao/build/cache/guides/ajustar-cache-settings/
+menu_namespace: cacheMenu
 ---
 
 import Tabs from '~/components/tabs/Tabs'
 
 
-Utilize as capacidades do [Cache](/pt-br/documentacao/build/applications/reference/cache-settings/) para configurar as [políticas de cache](/pt-br/documentacao/build/applications/reference/cache-settings/) da sua application, incluindo valores de expiração no edge ou no navegador, otimização de arquivos grandes para dividir conteúdos em partes menores e segmentação de cache key com base em métodos HTTP, query strings, cookies ou grupos de dispositivos.
+Utilize as capacidades do [Cache](/pt-br/documentacao/build/cache/reference/cache-settings/) para configurar as [políticas de cache](/pt-br/documentacao/build/cache/reference/cache-settings/) da sua application, incluindo valores de expiração no edge ou no navegador, otimização de arquivos grandes para dividir conteúdos em partes menores e segmentação de cache key com base em métodos HTTP, query strings, cookies ou grupos de dispositivos.
 
 :::caution[atenção]
-Algumas funcionalidades de cache requerem que o módulo [Application Accelerator](/pt-br/documentacao/build/applications/application-accelerator/) esteja ativo. Se o **Application Accelerator** estiver ativado, a transferência de dados pode gerar custos relacionados ao uso. Consulte a [página de preços](/pt-br/documentacao/platform/pricing/) para mais informações.
+Algumas funcionalidades de cache requerem que o módulo [Application Accelerator](/pt-br/documentacao/build/application-accelerator/) esteja ativo. Se o **Application Accelerator** estiver ativado, a transferência de dados pode gerar custos relacionados ao uso. Consulte a [página de preços](/pt-br/documentacao/platform/pricing/) para mais informações.
 :::
 
 ---
@@ -57,7 +57,7 @@ Se a sua aplicação não estiver enviando cabeçalhos `Cache-Control` e `Expire
 4. Adicione o TTL em segundos no campo **Max Age (seconds)**. Por exemplo: `864000` = 10 dias.
 
 :::note
-Os valores máximo e padrão de TTL para o edge devem estar entre `60` e `31536000` segundos (1 ano). Se você tiver o módulo [Application Accelerator](/pt-br/documentacao/build/applications/application-accelerator/) ativado, você pode definir este valor para um mínimo de `0`. Além disso, se você tiver o módulo [Cache](/pt-br/documentacao/build/applications/cache/tiered-cache/) ativado e desejar manter o cache na camada de Cache, você deve definir o TTL para pelo menos `3` segundos.
+Os valores máximo e padrão de TTL para o edge devem estar entre `60` e `31536000` segundos (1 ano). Se você tiver o módulo [Application Accelerator](/pt-br/documentacao/build/application-accelerator/) ativado, você pode definir este valor para um mínimo de `0`. Além disso, se você tiver o módulo [Cache](/pt-br/documentacao/build/cache/tiered-cache/) ativado e desejar manter o cache na camada de Cache, você deve definir o TTL para pelo menos `3` segundos.
 
 Um TTL zero não é o mesmo que um cache bypass. Para mais detalhes, leia sobre a diferença entre essas configurações na documentação [behavior Bypass Cache](/pt-br/documentacao/build/applications/reference/rules-engine/#bypass-cache).
 :::
@@ -68,7 +68,7 @@ A Azion oferece a capacidade de servir conteúdo obsoleto do cache quando o serv
 
 **Otimização de arquivos grandes**
 
-Em vez de baixar um arquivo de conteúdo grande e correr o risco de timeouts ou terminações de conexão, [os arquivos podem ser divididos](/pt-br/documentacao/build/applications/reference/cache-settings/#large-file-optimization) em partes menores e armazenados em cache sob demanda.
+Em vez de baixar um arquivo de conteúdo grande e correr o risco de timeouts ou terminações de conexão, [os arquivos podem ser divididos](/pt-br/documentacao/build/cache/reference/cache-settings/#large-file-optimization) em partes menores e armazenados em cache sob demanda.
 
 5. Em **Large file optimization**, habilite o switch para ativar.
 6. A camada **Cache** já está selecionada por padrão. Se você tiver o módulo **Cache** ativado, você também pode habilitar este recurso para a camada de Cache.
@@ -79,10 +79,10 @@ O tamanho padrão dos fragmentos é de `1024 kB`.
 
 **Application Accelerator**
 
-Esta seção permite que você personalize como o cache varia com base em métodos HTTP, campos de query string, cookies e grupos de dispositivos por meio de [cache keys](/pt-br/documentacao/build/applications/reference/cache-settings/#advanced-cache-key). Você pode escolher segmentar as cache keys usando esses atributos para controlar como os objetos são armazenados e servidos a partir do cache.
+Esta seção permite que você personalize como o cache varia com base em métodos HTTP, campos de query string, cookies e grupos de dispositivos por meio de [cache keys](/pt-br/documentacao/build/cache/reference/cache-settings/#advanced-cache-key). Você pode escolher segmentar as cache keys usando esses atributos para controlar como os objetos são armazenados e servidos a partir do cache.
 
 :::caution[atenção]
-Para habilitar todas as funcionalidades do **Application Accelerator**, você deve ativar o módulo [Application Accelerator](/pt-br/documentacao/build/applications/application-accelerator/).
+Para habilitar todas as funcionalidades do **Application Accelerator**, você deve ativar o módulo [Application Accelerator](/pt-br/documentacao/build/application-accelerator/).
 :::
 
 Para determinar a variação de conteúdo no cache:
@@ -147,11 +147,11 @@ A variável `${uri}` pode já estar selecionada por padrão se você não ativou
 10. Clique no botão **Save**.
 11. Aguarde alguns minutos para que as alterações se propaguem.
 
-Para analisar como seu conteúdo está sendo armazenado em cache, você pode verificar os indicadores de cache da aplicação usando o [Modheader para Google Chrome](/pt-br/documentacao/build/applications/cache/guides/verificar-tempo-de-cache-da-pagina/).
+Para analisar como seu conteúdo está sendo armazenado em cache, você pode verificar os indicadores de cache da aplicação usando o [Modheader para Google Chrome](/pt-br/documentacao/build/cache/guides/verificar-tempo-de-cache-da-pagina/).
 </Fragment>
 
 <Fragment slot="panel.api">
-1. Execute a seguinte requisição `PATCH` em seu terminal, substituindo `[TOKEN VALUE]` pelo seu [personal token](/pt-br/documentacao/account/guides/personal-tokens/) e a variável `<application_id>` pelo [ID da sua application](/pt-br/documentacao/build/applications/guides/definir-configuracoes-principais/) para ativar o módulo [Application Accelerator](/pt-br/documentacao/build/applications/application-accelerator/):
+1. Execute a seguinte requisição `PATCH` em seu terminal, substituindo `[TOKEN VALUE]` pelo seu [personal token](/pt-br/documentacao/account/guides/personal-tokens/) e a variável `<application_id>` pelo [ID da sua application](/pt-br/documentacao/build/applications/guides/definir-configuracoes-principais/) para ativar o módulo [Application Accelerator](/pt-br/documentacao/build/application-accelerator/):
 
 ```bash
 curl --location --request PATCH 'https://api.azionapi.net/v4/edge_application/applications/<application_id>' \
@@ -234,8 +234,8 @@ curl --location 'https://api.azionapi.net/v4/edge_application/applications/<appl
   | `browser_cache.max_age` | TTL máximo (em segundos) para cache do navegador quando `behavior` está configurado como `"override"`. |
   | `modules.edge_cache.behavior` | Define o comportamento de cache no edge. `"honor"` usa os cabeçalhos de TTL da origem; `"override"` utiliza o campo `max_age` em vez disso. |
   | `modules.edge_cache.max_age` | TTL (em segundos) para o cache do edge ao substituir os cabeçalhos de TTL da origem. |
-  | `modules.edge_cache.stale_cache.enabled` | Habilita o [stale cache](/pt-br/documentacao/build/applications/reference/cache-settings/#stale-cache) para servir conteúdo expirado temporariamente enquanto busca conteúdo atualizado na origem. |
-  | `modules.edge_cache.large_file_cache.enabled` | Habilita a [Otimização de arquivos grandes](/pt-br/documentacao/build/applications/reference/cache-settings/#large-file-optimization) ao armazenar arquivos grandes em fragmentos. |
+  | `modules.edge_cache.stale_cache.enabled` | Habilita o [stale cache](/pt-br/documentacao/build/cache/reference/cache-settings/#stale-cache) para servir conteúdo expirado temporariamente enquanto busca conteúdo atualizado na origem. |
+  | `modules.edge_cache.large_file_cache.enabled` | Habilita a [Otimização de arquivos grandes](/pt-br/documentacao/build/cache/reference/cache-settings/#large-file-optimization) ao armazenar arquivos grandes em fragmentos. |
   | `modules.edge_cache.large_file_cache.offset` | Define o tamanho do fragmento (em kilobytes) para o cache de arquivos grandes. O valor padrão é `1024`. |
   | `modules.tiered_cache.topology` | Define a topologia usada no Cache: `"near-edge"` ou `"near-origin"` (quando disponível). |
   | `modules.application_accelerator.cache_vary_by_method` | Lista de métodos HTTP (por exemplo, `["post", "options"]`) que devem variar a cache key. |
@@ -331,7 +331,7 @@ curl --location 'https://api.azionapi.net/v4/edge_application/applications/<appl
 8. Você receberá uma resposta com os dados atualizados.
 9. Aguarde alguns minutos para que as alterações se propaguem.
 
-Para verificar como seu conteúdo está sendo armazenado em cache, você pode [verificar os indicadores de cache da aplicação usando o Modheader para Google Chrome](/pt-br/documentacao/build/applications/cache/guides/verificar-tempo-de-cache-da-pagina/).
+Para verificar como seu conteúdo está sendo armazenado em cache, você pode [verificar os indicadores de cache da aplicação usando o Modheader para Google Chrome](/pt-br/documentacao/build/cache/guides/verificar-tempo-de-cache-da-pagina/).
 
 :::tip
 Confira a [documentação da API da Azion](https://api.azion.com/) e a [especificação OpenAPI](https://github.com/aziontech/azionapi-openapi/) para saber mais sobre todos os recursos disponíveis via API.

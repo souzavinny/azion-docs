@@ -35,6 +35,17 @@
      }
     },
     {
+     "key": "cert/reference/mtls-for-build",
+     "label": {
+      "en": "Support for mTLS for Build",
+      "pt-br": "Suporte para mTLS para Build"
+     },
+     "slug": {
+      "en": "/documentation/secure/certificate-manager/reference/mtls-for-build/",
+      "pt-br": "/documentacao/secure/certificate-manager/reference/mtls-for-build/"
+     }
+    },
+    {
      "key": "cert/guides",
      "label": {
       "en": "Guides",
@@ -83,6 +94,28 @@
        "slug": {
         "en": "/documentation/secure/certificate-manager/guides/wildcard-lets-encrypt/",
         "pt-br": "/documentacao/secure/firewall/reference/certificados-wildcard-lets-encrypt/"
+       }
+      },
+      {
+       "key": "cert/gd/lets-encrypt",
+       "label": {
+        "en": "Generate a Let's Encrypt Cert for Your Domain",
+        "pt-br": "Gere um certificado Let's Encrypt para o domínio"
+       },
+       "slug": {
+        "en": "/documentation/secure/certificate-manager/guides/lets-encrypt/",
+        "pt-br": "/documentacao/secure/certificate-manager/guides/como-gerar-um-certificado-lets-encrypt/"
+       }
+      },
+      {
+       "key": "cert/gd/lets-encrypt-via-api",
+       "label": {
+        "en": "Generate a Let's Encrypt Cert via API (HTTP-01)",
+        "pt-br": "Gere um certificado Let's Encrypt via API"
+       },
+       "slug": {
+        "en": "/documentation/secure/certificate-manager/guides/lets-encrypt-via-api/",
+        "pt-br": "/documentacao/secure/certificate-manager/guides/como-gerar-um-certificado-lets-encrypt-via-api/"
        }
       }
      ]

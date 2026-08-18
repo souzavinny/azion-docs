@@ -3,7 +3,7 @@ title: How to authorize an edge node
 description: >-
   Learn how to authorize and deploy Edge Nodes using Azion Console and API for
   optimal Edge Services integration and Orchestrator.
-permalink: /documentation/deploy/orchestrator/guides/authorize-an-edge-node/
+permalink: /documentation/build/orchestrator/guides/authorize-an-edge-node/
 menu_namespace: orchestratorMenu
 meta_tags: >-
   Azion, Edge Node, Authorization, Orchestrator, API, Deployment, Edge
@@ -15,12 +15,12 @@ import LinkButton from 'azion-webkit/linkbutton'
 import Tabs from '~/components/tabs/Tabs'
 
 
-If you've already installed [Azion Orchestrator Agent](/en/documentation/deploy/orchestrator/guides/install-orchestrator-agent/) on your device, the next step is to authorize the edge node on the platform. You can do so using:
+If you've already installed [Azion Orchestrator Agent](/en/documentation/build/orchestrator/guides/install-orchestrator-agent/) on your device, the next step is to authorize the edge node on the platform. You can do so using:
 
 - [Azion Console](/en/documentation/account/guides/how-to-access-azion-console/)
 - [Azion API](https://api.azion.com)
 
-<LinkButton link="/en/documentation/deploy/orchestrator/guides/install-orchestrator-agent/" label="Go to install Orchestrator agent" severity="secondary" />
+<LinkButton link="/en/documentation/build/orchestrator/guides/install-orchestrator-agent/" label="Go to install Orchestrator agent" severity="secondary" />
 
 <Tabs client:visible>
     <Fragment slot="tab.console">Console</Fragment>
@@ -58,7 +58,7 @@ curl --location --request PATCH 'https://api.azionapi.net/edge_nodes/authorize' 
 }'
 ```
 
-Now, your edge node is authorized and able to work with [edge services](/en/documentation/deploy/orchestrator/reference/edge-services/). 
+Now, your edge node is authorized and able to work with [edge services](/en/documentation/build/orchestrator/reference/edge-services/). 
 
 :::tip
 Check the [Azion API documentation](https://api.azion.com/) and the [OpenAPI specification](https://github.com/aziontech/azionapi-openapi/) to know more about all features available via API.

@@ -1,0 +1,49 @@
+{
+ "meta": {
+  "title": {
+   "en": "Application Accelerator"
+  },
+  "root": {
+   "en": "/documentation/build/application-accelerator/",
+   "pt-br": "/documentacao/build/application-accelerator/"
+  }
+ },
+ "groups": [
+  {
+   "key": "aa/grp",
+   "items": [
+    {
+     "key": "aa/overview",
+     "label": {
+      "en": "Overview",
+      "pt-br": "Visão geral"
+     },
+     "slug": {
+      "en": "/documentation/build/application-accelerator/",
+      "pt-br": "/documentacao/build/application-accelerator/"
+     }
+    },
+    {
+     "key": "aa/guides",
+     "label": {
+      "en": "Guides",
+      "pt-br": "Guias"
+     },
+     "items": [
+      {
+       "key": "aa/gd/advanced-cache-key",
+       "label": {
+        "en": "How to configure Advanced Cache Key for Applications",
+        "pt-br": "Como configurar a Advanced Cache Key para Applications"
+       },
+       "slug": {
+        "en": "/documentation/build/application-accelerator/guides/advanced-cache-key/",
+        "pt-br": "/documentacao/build/application-accelerator/guides/advanced-cache-key/"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

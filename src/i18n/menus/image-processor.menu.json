@@ -1,0 +1,60 @@
+{
+ "meta": {
+  "title": {
+   "en": "Image Processor"
+  },
+  "root": {
+   "en": "/documentation/build/image-processor/",
+   "pt-br": "/documentacao/build/image-processor/"
+  }
+ },
+ "groups": [
+  {
+   "key": "img/grp",
+   "items": [
+    {
+     "key": "img/overview",
+     "label": {
+      "en": "Overview",
+      "pt-br": "Visão geral"
+     },
+     "slug": {
+      "en": "/documentation/build/image-processor/",
+      "pt-br": "/documentacao/build/image-processor/"
+     }
+    },
+    {
+     "key": "img/first-steps",
+     "label": {
+      "en": "First steps",
+      "pt-br": "Primeiros passos"
+     },
+     "slug": {
+      "en": "/documentation/build/image-processor/first-steps/",
+      "pt-br": "/documentacao/build/image-processor/first-steps/"
+     }
+    },
+    {
+     "key": "img/guides",
+     "label": {
+      "en": "Guides",
+      "pt-br": "Guias"
+     },
+     "items": [
+      {
+       "key": "img/gd/process-images",
+       "label": {
+        "en": "How to optimize image processing at the edge",
+        "pt-br": "Como otimizar o processamento de imagens no edge"
+       },
+       "slug": {
+        "en": "/documentation/build/image-processor/guides/process-images/",
+        "pt-br": "/documentacao/build/image-processor/guides/processar-imagens/"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
