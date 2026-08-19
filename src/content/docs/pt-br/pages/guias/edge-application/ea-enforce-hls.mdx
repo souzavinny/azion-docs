@@ -1,19 +1,22 @@
 ---
-title: "Implemente cache HLS para streaming ao vivo"
+title: Implemente cache HLS para streaming ao vivo
 description: >-
-  Este guia abrange o passo a passo para implementar cache HLS, gerenciando o
-  cache de chunks e playlists e configurando regras no Rules Engine.
+  Configure políticas de cache separadas para chunks e playlists HLS, vincule-as
+  com o Rules Engine e entregue os arquivos de vídeo pelo Object Storage.
 meta_tags: 'architecture, content delivery, hls, edge computing'
 namespace: docs_guides_enforce_hls_cache
 permalink: /documentacao/build/cache/guides/implementar-cache-hls/
 menu_namespace: cacheMenu
+difficulty: Advanced
 ---
 
 import LinkButton from 'azion-webkit/linkbutton';
 import Tabs from '~/components/tabs/Tabs'
 import Code from '~/components/Code/Code.astro'
 
-A Azion Web Platform permite que você [entregue conteúdo de streaming ao vivo no formato HLS](https://www.azion.com/pt-br/solucoes/live-streaming/), capacitando-lhe a autoprovisionar e configurar suas política de cache facilmente. Este guia abrange o passo a passo para implementar o cache HLS, gerenciar o cache de chunks e playlists, configurar regras no Rules Engine e utilizar o Object Storage para uma entrega de vídeo otimizada.
+Você pode implementar políticas de cache para streaming ao vivo no formato HLS pelo Azion Console ou pela Azion CLI. Chunks e playlists precisam de políticas separadas, porque expiram em ritmos diferentes.
+
+Este guia assume que uma application e um domínio vinculado a ela já existem.
 
 ---
 
@@ -26,15 +29,11 @@ A Azion Web Platform permite que você [entregue conteúdo de streaming ao vivo 
 
 ---
 
-## Implemente políticas de cache HLS
+## Crie uma política de cache para os chunks
 
-Para implementar políticas de cache HLS na application, siga os passos explicados embaixo.
+Os chunks guardam os segmentos de vídeo e mudam raramente, então recebem o maior TTL das duas políticas.
 
-Neste exemplo, uma application e um domínio vinculado a ela já foram previamente criados.
-
-### Crie uma política de cache para os chunks
-
-Primeiro, você deve criar uma política de cache para os chunks:
+Para criar a política:
 
 <Tabs client:visible>
     <Fragment slot="tab.cli">CLI </Fragment>
@@ -67,7 +66,15 @@ Primeiro, você deve criar uma política de cache para os chunks:
 
 </Tabs>
 
-### Crie uma política de cache para a playlist
+A application já pode selecionar a política dos chunks.
+
+---
+
+## Crie uma política de cache para a playlist
+
+A playlist muda a cada novo segmento, então recebe um TTL curto de `5` segundos contra os `60` segundos usados nos chunks.
+
+Para criar a política:
 
 <Tabs client:visible>
     <Fragment slot="tab.cli">CLI </Fragment>
@@ -99,7 +106,11 @@ Ainda na aba **Cache Settings**:
 Leia mais sobre a configuração de [cache settings](/pt-br/documentacao/build/cache/reference/cache-settings/) para suas applications.
 :::
 
-### Utilize o Object Storage da Azion para entrega de vídeos HLS
+---
+
+## Entregue os arquivos de vídeo pelo Object Storage
+
+O Object Storage guarda os arquivos de origem que o encoder converte em HLS.
 
 Para entregar vídeos MP4 usando HLS e o Object Storage:
 
@@ -107,7 +118,15 @@ Para entregar vídeos MP4 usando HLS e o Object Storage:
 2. Configure o seu codificador para converter os arquivos MP4 para o formato HLS e defina o Object Storage como origem.
 3. Siga as etapas de configuração da política de cache mencionadas acima para garantir uma entrega eficiente de vídeo.
 
-### Crie regras no Rules Engine
+O encoder passa a gravar a saída HLS em uma origem da Azion.
+
+---
+
+## Crie as regras no Rules Engine
+
+Uma política de cache só se aplica onde uma regra a seleciona. Uma regra corresponde aos chunks `.ts` e a segunda corresponde à playlist `.m3u8`.
+
+Para criar as duas regras:
 
 <Tabs client:visible>
     <Fragment slot="tab.cli">CLI </Fragment>
@@ -198,5 +217,12 @@ Pronto! Agora você pode configurar sua fonte e codificador apontando para a Azi
 :::tip
 Acesse a documentação do [Rules Engine for Applications](/pt-br/documentacao/build/applications/reference/rules-engine/) para mais detalhes.
 :::
+
+---
+
+## Próximos passos
+
+- [Verifique indicadores de cache no navegador](/pt-br/documentacao/build/cache/guides/verificar-tempo-de-cache-da-pagina/) - confirme que os chunks e a playlist retornam o status de cache configurado.
+- [Tiered Cache](/pt-br/documentacao/build/cache/tiered-cache/) - a segunda camada de cache que as duas políticas habilitam.
 
 <LinkButton link="/pt-br/documentacao/architectures/live-streaming-delivery/live-streaming-delivery-com-hls/" label="Consulte a arquitetura de Live Streaming Delivery" severity="secondary" />

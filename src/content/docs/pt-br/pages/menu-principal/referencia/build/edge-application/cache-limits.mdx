@@ -1,0 +1,73 @@
+---
+title: Limites de cache
+description: >-
+  Consulte os limites default de armazenamento em cache, TTL, Tiered Cache e
+  Real-Time Purge, e o limite de purge que varia por plano de suporte.
+meta_tags: 'cache, limits, cache TTL, tiered cache, real-time purge'
+namespace: documentation_build_cache_limits
+menu_namespace: cacheMenu
+permalink: /documentacao/build/cache/limites/
+---
+
+O **Cache** é um módulo de **Applications** que armazena conteúdo em cache no edge. Estes limites cobrem armazenamento em cache e TTL, a camada Tiered Cache e as operações de Real-Time Purge.
+
+## Limites default
+
+:::tip[dica]
+**Aumente limites** <br></br>
+Você pode solicitar o aumento destes limites com base no seu plano. Contate o [time de suporte técnico](/pt-br/documentacao/services/support/).
+:::
+
+Estes são limites default, informados sem detalhamento por plano de suporte. O único limite de cache que varia por plano é o número de operações de Real-Time Purge.
+
+### Armazenamento em cache e TTL
+
+| Escopo | Limite |
+| --- | --- |
+| Tamanho de slice de arquivos | 1.024 kB |
+| Tamanho de objeto único em cache | 10 GB |
+| Tempo mínimo de cache TTL | 60 segundos |
+| Tempo mínimo de cache TTL com [Application Accelerator](/pt-br/documentacao/build/application-accelerator/) | 0 segundos |
+
+### Tiered Cache
+
+| Escopo | Limite |
+| --- | --- |
+| TTL mínimo de cache na camada Tiered Cache | 3 segundos |
+| TTL máximo de cache na camada Tiered Cache | 2.592.000 segundos |
+
+O módulo **Tiered Cache** não suporta bypass cache. Você pode [configurar uma regra de Bypass Cache](/pt-br/documentacao/build/applications/reference/rules-engine/#bypass-cache) para armazenamento em cache no edge, mas uma aplicação com Tiered Cache ativo continua armazenando em cache nessa camada pelo TTL mínimo especificado.
+
+### Real-Time Purge
+
+| Escopo | Limite |
+| --- | --- |
+| Número de requests em histórico | 1.000.000 |
+| Tempo de histórico de purge | 6 meses |
+| Tamanho de URL e Cache Key | 4.096 caracteres |
+| URL e Cache Key - Operações por cliente | 200 requests com 50 objetos por request |
+| URL e Cache Key - Operações por minuto | 10.000 objetos a cada 60 segundos |
+| Wildcard - Operações por dia (intervalo de 24h) | 2.000 requests |
+| Tamanho de Wildcard | 256 caracteres |
+| Wildcard por request | 1 |
+
+---
+
+## Limites por plano de suporte
+
+O limite mensal de operações de purge é o mesmo em todos os planos de suporte. Contas Business, Enterprise e Mission Critical podem negociar operações adicionais.
+
+| Escopo | Plano | Limite |
+| --- | --- | --- |
+| Operações de purge | Developer | 1.000 por mês |
+| Operações de purge | Business, Enterprise e Mission Critical | 1.000 por mês<br></br>Operações adicionais de purge são negociáveis |
+
+---
+
+## Recursos relacionados
+
+- [Cache](/pt-br/documentacao/build/cache/) - como o módulo Cache armazena conteúdo em cache no edge.
+- [Cache Settings](/pt-br/documentacao/build/cache/reference/cache-settings/) - os campos que definem uma política de cache.
+- [Tiered Cache](/pt-br/documentacao/build/cache/tiered-cache/) - a camada extra de cache entre o edge e a origem.
+- [Real-Time Purge](/pt-br/documentacao/build/cache/reference/real-time-purge/) - os métodos de purge e o que cada um remove.
+- [Technical Support](/pt-br/documentacao/services/support/) - abra um ticket para solicitar o aumento de um limite.

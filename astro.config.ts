@@ -22,6 +22,7 @@ import { rehypei18nAutolinkHeadings } from './plugins/rehype-i18n-autolink-headi
 import { rehypeOptimizeStatic } from './plugins/rehype-optimize-static';
 import { rehypeTasklistEnhancer } from './plugins/rehype-tasklist-enhancer';
 import rehypeScrollableTables from './plugins/rehype-scrollable-tables.js'
+import remarkMermaid from './plugins/remark-mermaid.js';
 
 const productionBuild = import.meta.env.PROD;
 
@@ -45,6 +46,9 @@ export default defineConfig({
 		// Override with our own config
 		smartypants: false,
 		remarkPlugins: [
+			// Must precede Expressive Code, which would otherwise render the
+			// ```mermaid fence as a highlighted code block.
+			remarkMermaid,
 			[remarkSmartypants, { dashes: false }],
 			// Add our custom plugin that marks links to fallback language pages
 		],

@@ -23,15 +23,22 @@ Every product section follows this order. The table shows what each slot holds a
 | 2 | Quickstart | Yes | [Quickstart pages](/en/documentation/style-guide/content/quickstart/): from not using the product to the smallest working result |
 | 3 | How it works | When the product needs explaining | [Concept pages](/en/documentation/style-guide/content/concept/): the mechanism, the tradeoff, how to choose between options |
 | 4 | Features and capabilities | When the product has feature surfaces | The product's own sub-surfaces, such as a rules engine, a cache, or a runtime API |
-| 5 | Guides | When the product has tasks | [How-to guides](/en/documentation/style-guide/content/how-to-guides/) for the tasks readers arrive with |
-| 6 | Tutorials | Optional | [Tutorials](/en/documentation/style-guide/content/tutorials/): one goal the author chose, built end to end |
-| 7 | Examples | Optional | Working code the reader copies, grouped by language or by task |
-| 8 | Reference | When the product has settings | [Reference pages](/en/documentation/style-guide/content/reference/): fields, values, defaults |
-| 9 | Limits | When the product has limits | The limits table, dimensioned by plan |
-| 10 | Best practices | Optional | How to run the product well, and the reasoning behind each recommendation |
-| 11 | Troubleshooting | When the product has known symptoms | [Troubleshooting pages](/en/documentation/style-guide/content/troubleshooting/): symptom, cause, fix |
-| 12 | Pricing | Yes | A link to the product's section of the pricing page |
-| 13 | Changelog | Yes | A link to the product's changelog entries |
+| 5 | Guides and tutorials | When the product has tasks | One [navigation hub](/en/documentation/style-guide/content/navigation-hubs/) listing the [how-to guides](/en/documentation/style-guide/content/how-to-guides/) and the [tutorials](/en/documentation/style-guide/content/tutorials/) |
+| 6 | Examples | Optional | Working code the reader copies, grouped by language or by task |
+| 7 | Reference | When the product has settings | [Reference pages](/en/documentation/style-guide/content/reference/): fields, values, defaults |
+| 8 | Limits | When the product has limits | The limits table, dimensioned by plan |
+| 9 | Best practices | Optional | How to run the product well, and the reasoning behind each recommendation |
+| 10 | Troubleshooting | When the product has known symptoms | [Troubleshooting pages](/en/documentation/style-guide/content/troubleshooting/): symptom, cause, fix |
+| 11 | Pricing | Yes | A link to the product's section of the pricing page |
+| 12 | Changelog | Yes | A link to the product's changelog entries |
+
+Two slots have a fixed sidebar shape, and it is not a dropdown.
+
+**Guides and tutorials is one row that opens a page.** The row points at a hub whose body is a single table: name, last updated, and difficulty, one row per guide and per tutorial. The sidebar never expands it, and the reader opens a guide from the table. A section with forty guides stays one sidebar row, so the sidebar keeps showing the whole product.
+
+The table is generated, not written. The date comes from the file's last commit and the difficulty from a `difficulty` frontmatter field, so the hub cannot drift from the pages it lists.
+
+**Reference pages sit directly in the sidebar, one row each.** A reader consulting a field name should reach it in one click, so reference never collapses behind a parent row. When a product has more reference pages than the sidebar can carry flat, that is a signal to merge pages, not to nest them.
 
 A product with modules repeats the pattern one level down. A module with its own surface gets a subsection with the same skeleton, reduced to the parts it needs.
 
@@ -45,17 +52,17 @@ The platform onboarding section at `/documentation/get-started/` is a different 
 - **Pricing and Changelog close the section.** The reader consults them rather than passing through them.
 - **The Required column decides what ships.** Every other slot exists only when real content fills it.
 - **Never add a slot to complete the pattern**, and never keep an empty one as a placeholder.
-- **Grow by splitting a slot the section already has:** Guides into named task areas, Quickstart by interface, Features and capabilities by surface.
-- **The thirteen never grow in number.**
+- **Grow by splitting a slot the section already has:** Guides and tutorials into named task groups on the hub page, Quickstart by interface, Features and capabilities by surface.
+- **The twelve never grow in number.**
 
 ## Pricing and limits
 
-- **Pricing is a link, never a page.** Slot 12 points at `/documentation/platform/pricing/#<product>`. Confirm the anchor resolves before you ship it.
+- **Pricing is a link, never a page.** Slot 11 points at `/documentation/platform/pricing/#<product>`. Confirm the anchor resolves before you ship it.
 - **Never restate a price, a quota, or a billing metric** in a product page. A duplicated price is wrong the day it changes.
 - **Name the plan when availability is part of behavior**, and link pricing for the numbers.
 - **Limits are dimensioned by plan.** A single number hides the difference from every reader on another plan.
 - **The limits table contract lives in [Reference](/en/documentation/style-guide/content/reference/):** units, defaults, and raisable limits.
-- **Limits take slot 9 when the set is worth consulting alone.** A `## Limits` section in the reference page covers a short set.
+- **Limits take slot 8 when the set is worth consulting alone.** A `## Limits` section in the reference page covers a short set.
 
 ## Place a new page
 

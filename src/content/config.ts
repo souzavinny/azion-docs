@@ -15,6 +15,8 @@ export const baseSchema = z.object({
 	i18nReady: z.boolean().default(false),
 	githubURL: z.string().url().optional(),
 	hasREADME: z.boolean().optional(),
+	/** Guides and tutorials hub: relative effort, shown as a column */
+	difficulty: z.enum(['Beginner', 'Intermediate', 'Advanced']).optional(),
 })
 
 export const homeSchema = baseSchema.extend({

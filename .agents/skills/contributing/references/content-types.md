@@ -168,12 +168,25 @@ The record of what changed and when. Full entry rules in `changelog.md`.
 
 ## Navigation hub
 
-Routes readers deeper. Not a content kind — a junction.
+Routes readers deeper. Not a content kind — a junction. It has two shapes; both open with one orientation sentence and neither has a closing section.
 
 - **Tone**: brief, plain, orienting.
 - **Opening move**: one orientation sentence saying what the section holds.
-- **Body**: link groups under noun-phrase `##`s. Every link is shaped `[Title](/path/) - one sentence on what the reader gets there.`
 - **No closing section, no other prose.** Every link earns its place; a hub is judged by what it leaves out.
+- **Pick the shape by what the reader compares.** Destinations that differ need a sentence each, so they take grouped links. One kind of page, compared on effort and freshness, takes the table.
+
+**Grouped links** — the default, for mixed destinations.
+
+- **Body**: link groups under noun-phrase `##`s. Every link is shaped `[Title](/path/) - one sentence on what the reader gets there.`
+- Group when the list passes seven, by what the reader is trying to do.
+
+**A table** — for the Guides and tutorials slot, where every row is a how-to or a tutorial for the same product.
+
+- **Body**: one `<GuidesTable>`, no `##`s and no groups. Columns: name, last updated, difficulty.
+- **Never typed by hand.** The date comes from the file's last commit, the difficulty from each page's `difficulty` frontmatter field, so the hub cannot fall out of step with the pages it lists. This is the one place a date is allowed outside a changelog.
+- **Every listed page sets `difficulty`**: `Beginner`, `Intermediate`, or `Advanced`. A missing value renders a dash.
+- **The menu row that opens the hub carries `covers`**, listing the path prefixes whose pages the hub owns. Without it those pages fail the sidebar ownership check in `lint-navcheck.ts`.
+- Rows sort newest first. Props and mechanics in `.agents/references/components.md`.
 
 ## Use case
 

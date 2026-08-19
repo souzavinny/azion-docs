@@ -24,29 +24,32 @@
      }
     },
     {
-     "key": "cache/reference/cache-settings",
+     "key": "cache/quickstart",
      "label": {
-      "en": "Cache Settings"
+      "en": "Quickstart",
+      "pt-br": "Quickstart"
      },
      "slug": {
-      "en": "/documentation/build/cache/reference/cache-settings/",
-      "pt-br": "/documentacao/build/cache/reference/cache-settings/"
+      "en": "/documentation/build/cache/quickstart/",
+      "pt-br": "/documentacao/build/cache/quickstart/"
      }
     },
     {
-     "key": "cache/reference/real-time-purge",
+     "key": "cache/how-it-works",
      "label": {
-      "en": "Real-Time Purge"
+      "en": "How it works",
+      "pt-br": "Como funciona"
      },
      "slug": {
-      "en": "/documentation/build/cache/reference/real-time-purge/",
-      "pt-br": "/documentacao/build/cache/reference/real-time-purge/"
+      "en": "/documentation/build/cache/how-it-works/",
+      "pt-br": "/documentacao/build/cache/como-funciona/"
      }
     },
     {
      "key": "cache/tiered-cache",
      "label": {
-      "en": "Tiered Cache"
+      "en": "Tiered Cache",
+      "pt-br": "Tiered Cache"
      },
      "slug": {
       "en": "/documentation/build/cache/tiered-cache/",
@@ -54,57 +57,90 @@
      }
     },
     {
-     "key": "cache/guides",
+     "key": "cache/guides-hub",
      "label": {
-      "en": "Guides",
-      "pt-br": "Guias"
+      "en": "Guides and tutorials",
+      "pt-br": "Guias e tutoriais"
      },
-     "items": [
-      {
-       "key": "cache/gd/cache-settings",
-       "label": {
-        "en": "How to configure cache policies for Applications",
-        "pt-br": "Como configurar políticas de cache para Applications"
-       },
-       "slug": {
-        "en": "/documentation/build/cache/guides/cache-settings/",
-        "pt-br": "/documentacao/build/cache/guides/cache-settings/"
-       }
-      },
-      {
-       "key": "cache/gd/check-page-cache-time",
-       "label": {
-        "en": "Verify Cache Indicators with ModHeader",
-        "pt-br": "Verifique indicadores de cache com o ModHeader"
-       },
-       "slug": {
-        "en": "/documentation/build/cache/guides/check-page-cache-time/",
-        "pt-br": "/documentacao/build/cache/guides/verificar-tempo-de-cache-da-pagina/"
-       }
-      },
-      {
-       "key": "cache/gd/enforce-hls-cache",
-       "label": {
-        "en": "How to enforce HLS cache for live streaming delivery",
-        "pt-br": "Implemente cache HLS para streaming ao vivo"
-       },
-       "slug": {
-        "en": "/documentation/build/cache/guides/enforce-hls-cache/",
-        "pt-br": "/documentacao/build/cache/guides/implementar-cache-hls/"
-       }
-      },
-      {
-       "key": "cache/gd/tune-cache-settings",
-       "label": {
-        "en": "How to tune your cache settings",
-        "pt-br": "Como ajustar as configurações de cache"
-       },
-       "slug": {
-        "en": "/documentation/build/cache/guides/tune-cache-settings/",
-        "pt-br": "/documentacao/build/cache/guides/ajustar-cache-settings/"
-       }
-      }
-     ]
+     "slug": {
+      "en": "/documentation/build/cache/guides/",
+      "pt-br": "/documentacao/build/cache/guides/"
+     },
+     "covers": {
+      "en": [
+       "/documentation/build/cache/guides/",
+       "/documentation/build/cache/tutorials/"
+      ],
+      "pt-br": [
+       "/documentacao/build/cache/guides/",
+       "/documentacao/build/cache/tutorials/"
+      ]
+     }
+    },
+    {
+     "key": "cache/reference/cache-settings",
+     "label": {
+      "en": "Cache Settings",
+      "pt-br": "Cache Settings"
+     },
+     "slug": {
+      "en": "/documentation/build/cache/reference/cache-settings/",
+      "pt-br": "/documentacao/build/cache/reference/cache-settings/"
+     }
+    },
+    {
+     "key": "cache/reference/cache-keys",
+     "label": {
+      "en": "Cache keys",
+      "pt-br": "Cache keys"
+     },
+     "slug": {
+      "en": "/documentation/build/cache/reference/cache-keys/",
+      "pt-br": "/documentacao/build/cache/reference/cache-keys/"
+     }
+    },
+    {
+     "key": "cache/reference/real-time-purge",
+     "label": {
+      "en": "Real-Time Purge",
+      "pt-br": "Real-Time Purge"
+     },
+     "slug": {
+      "en": "/documentation/build/cache/reference/real-time-purge/",
+      "pt-br": "/documentacao/build/cache/reference/real-time-purge/"
+     }
+    },
+    {
+     "key": "cache/limits",
+     "label": {
+      "en": "Limits",
+      "pt-br": "Limites"
+     },
+     "slug": {
+      "en": "/documentation/build/cache/limits/",
+      "pt-br": "/documentacao/build/cache/limites/"
+     }
+    },
+    {
+     "key": "cache/pricing",
+     "label": {
+      "en": "Pricing",
+      "pt-br": "Preços"
+     },
+     "slug": {
+      "en": "https://www.azion.com/en/documentation/products/pricing/#cache",
+      "pt-br": "https://www.azion.com/pt-br/documentacao/produtos/precos/#cache"
+     }
+    },
+    {
+     "key": "cache/changelog",
+     "label": {
+      "en": "Changelog"
+     },
+     "slug": {
+      "en": "https://www.azion.com/en/documentation/products/changelog/",
+      "pt-br": "https://www.azion.com/pt-br/documentacao/produtos/changelog/"
+     }
     }
    ]
   }

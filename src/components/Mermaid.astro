@@ -1,0 +1,87 @@
+---
+/**
+ * Renders the `<pre class="mermaid">` blocks that plugins/remark-mermaid.js
+ * emits from ```mermaid fences.
+ *
+ * The mermaid bundle is large, so it is imported dynamically and only on a
+ * page that actually holds a diagram. The original source is kept in
+ * data-mermaid-source so the diagram can be redrawn when the reader switches
+ * between light and dark.
+ *
+ * Blocks are hidden by script, never by stylesheet alone: without JavaScript,
+ * or when mermaid throws, the reader still sees the diagram definition.
+ */
+---
+
+<script>
+	const SELECTOR = 'pre.mermaid';
+	const PENDING = 'data-mermaid-pending';
+
+	const isDark = () => document.documentElement.classList.contains('dark');
+
+	let mermaid: any = null;
+	let rendering = false;
+
+	async function render() {
+		const blocks = Array.from(document.querySelectorAll<HTMLElement>(SELECTOR));
+		if (blocks.length === 0 || rendering) return;
+		rendering = true;
+
+		for (const block of blocks) {
+			const source = block.dataset.mermaidSource;
+			if (!source) continue;
+			block.setAttribute(PENDING, '');
+			// Restore the source so a redraw after a theme change has something
+			// to parse instead of the SVG from the previous pass.
+			block.textContent = source;
+			block.removeAttribute('data-processed');
+		}
+
+		try {
+			if (!mermaid) mermaid = (await import('mermaid')).default;
+			mermaid.initialize({
+				startOnLoad: false,
+				theme: isDark() ? 'dark' : 'default',
+				securityLevel: 'strict',
+				flowchart: { useMaxWidth: true },
+			});
+			await mermaid.run({ nodes: blocks });
+		} catch (error) {
+			console.error('[mermaid] failed to render a diagram', error);
+		} finally {
+			for (const block of blocks) block.removeAttribute(PENDING);
+			rendering = false;
+		}
+	}
+
+	// Redraw on theme change; the toggle sets the class on <html>.
+	let lastDark = isDark();
+	new MutationObserver(() => {
+		if (isDark() === lastDark) return;
+		lastDark = isDark();
+		render();
+	}).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+	render();
+	document.addEventListener('astro:after-swap', render);
+</script>
+
+<style is:global>
+	pre.mermaid {
+		background: transparent;
+		border: 0;
+		padding: 0;
+		margin: 1.5rem 0;
+		text-align: center;
+		overflow-x: auto;
+	}
+
+	pre.mermaid[data-mermaid-pending] {
+		visibility: hidden;
+	}
+
+	pre.mermaid svg {
+		max-width: 100%;
+		height: auto;
+	}
+</style>

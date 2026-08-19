@@ -42,6 +42,8 @@ Procedural kinds — get started, tutorial, how-to, multi-product guide, use cas
 
 Read `bilingual.md`. English is the source of truth, and every page ships as a pair: translated title, description, and permalink; identical namespace.
 
+This step is numbered 8 for a reason: the Portuguese page is written on top of a finished English page. Never start here.
+
 ## 9. Register and validate
 
 Inside the documentation repository, place the files, register the sidebar entries, and run the build — all in `information-architecture.md` and the validation section of `SKILL.md`. Then run the self-check below regardless of where you are working.

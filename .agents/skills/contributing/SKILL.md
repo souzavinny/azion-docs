@@ -16,6 +16,7 @@ Style-guide links use the published path, `/en/documentation/style-guide/...`. T
 - **This is a public repository.** Never put internal URLs, credentials, unreleased product names, or customer information into pages, commits, or pull requests.
 - **Never invent a fact or a product name.** Every limit, default, field name, and name traces to your input or a source you can name. `.agents/references/terminology.md` carries the names; if one is not there or in your input, ask.
 - **Never guess a permalink or namespace.** They are unique per language, and `namespace` pairs the two languages.
+- **English is written first, then translated.** If your task is the Portuguese page alone, open the English page before writing; when it is missing, stop and say so.
 - **Never commit or push automatically.** Make the changes, then ask.
 - **The existing pages are not the model.** Most predate the current structure. Match the references, not the page you happen to be reading.
 

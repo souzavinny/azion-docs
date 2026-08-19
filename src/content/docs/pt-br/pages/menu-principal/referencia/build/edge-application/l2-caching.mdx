@@ -60,19 +60,4 @@ Sempre que necessário, você pode usar o **Real-Time Purge** para expirar seu c
 
 ## Limites
 
-:::tip
-**Aumente limites** <br></br>
-Você pode solicitar o aumento dos limites com base no seu plano. Contate o [time de suporte técnico](/pt-br/documentacao/services/support/) para fazer a solicitação.
-:::
-
-Estes são os **limites default**:
-
-| Escopo | Limite |
-| --- | --- |
-| TTL mínimo de cache na camada Tiered Cache¹ | 3 segundos |
-| TTL máximo de cache na camada Tiered Cache | 2.592.000 segundos |
-
-> ¹ O módulo **Tiered Cache** atualmente não suporta bypass cache. Você pode configurar uma regra de [Bypass Cache](/pt-br/documentacao/build/applications/reference/rules-engine/#bypass-cache) para armazenamento em cache no edge, mas applications com L2 caching ativo continuarão armazenando em cache nessa camada para o TTL mínimo especificado.
-
----
-
+O TTL mínimo e máximo do Tiered Cache, e a ressalva sobre bypass cache, estão listados em [Limites do Cache](/pt-br/documentacao/build/cache/limites/).

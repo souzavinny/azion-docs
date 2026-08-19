@@ -87,7 +87,7 @@ The published components page is a stub, so `.agents/references/components.md` i
 
 ## Bilingual
 
-English is the source of truth and every page pairs with a Brazilian Portuguese version: translated `title`, `description`, and `permalink` (`/documentacao/produtos/...`, ASCII-folded), identical `namespace`, localized aside labels (`:::note[nota]`), and the substitution table in `.agents/references/terminology.md`. Full rules in `.agents/skills/contributing/references/bilingual.md`. Refer to /en/documentation/style-guide/conventions/bilingual/ for the published version.
+English is the source of truth, which also fixes the order of work: write the English page first and translate it, never the reverse. If you are handed the Portuguese page alone, read the English page first and stop if it does not exist. Every page pairs with a Brazilian Portuguese version: translated `title`, `description`, and `permalink` (`/documentacao/produtos/...`, ASCII-folded), identical `namespace`, localized aside labels (`:::note[nota]`), and the substitution table in `.agents/references/terminology.md`. Full rules in `.agents/skills/contributing/references/bilingual.md`. Refer to /en/documentation/style-guide/conventions/bilingual/ for the published version.
 
 ## When reviewing
 

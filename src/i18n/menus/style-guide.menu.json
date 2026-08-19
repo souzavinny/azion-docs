@@ -34,8 +34,8 @@
       {
        "key": "sg/voice",
        "label": {
-        "en": "Voice",
-        "pt-br": "Voz"
+        "en": "Documentation voice",
+        "pt-br": "Voz da documentação"
        },
        "slug": {
         "en": "/documentation/style-guide/writing/voice/",
@@ -78,8 +78,8 @@
       {
        "key": "sg/terminology",
        "label": {
-        "en": "Terminology",
-        "pt-br": "Terminologia"
+        "en": "Documentation terminology",
+        "pt-br": "Terminologia da documentação"
        },
        "slug": {
         "en": "/documentation/style-guide/writing/terminology/",

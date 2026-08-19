@@ -1,23 +1,26 @@
 ---
-title: How to enforce HLS cache for live streaming delivery
+title: Enforce HLS cache for live streaming delivery
 description: >-
-  This guide covers the step-by-step to enforce HLS cache, managing chunks and
-  playlists caching, and setting up Rules Engine rules.
+  Configure separate cache policies for HLS chunks and playlists, bind them
+  with Rules Engine, and deliver the video files from Azion Object Storage.
 meta_tags: 'architecture, content delivery, hls, edge computing'
 namespace: docs_guides_enforce_hls_cache
 permalink: /documentation/build/cache/guides/enforce-hls-cache/
 menu_namespace: cacheMenu
+difficulty: Advanced
 ---
 
 import LinkButton from 'azion-webkit/linkbutton';
 import Tabs from '~/components/tabs/Tabs'
 import Code from '~/components/Code/Code.astro'
 
-Azion Web Platform allows you to [deliver live streaming content in HLS format](https://www.azion.com/en/solutions/live-streaming-delivery/), being able to easily self-provision and configure your cache policies. This guide covers the step-by-step to enforce HLS cache, manage chunks and playlists caching, set up rules engines rules, and utilize Azion Object Storage for optimal video delivery.
+You can enforce cache policies for live streaming in HLS format from Azion Console or the Azion CLI. Chunks and playlists need separate policies, because they expire at different rates.
+
+This guide assumes an application and a domain linked to it already exist.
 
 ---
 
-## Requirements
+## Prerequisites
 
 - An existing Azion application, or [create a new one](/en/documentation/get-started/journeys/launch/).
 - [A domain associated with the application](/en/documentation/secure/workloads/guides/configure-a-domain/).
@@ -26,15 +29,11 @@ Azion Web Platform allows you to [deliver live streaming content in HLS format](
 
 ---
 
-## Enforcing cache policies for HLS
+## Create a cache policy for the chunks
 
-To enforce cache policies for HLS in the application, follow the steps as explained next.
+Chunks hold the video segments and change rarely, so they take the longer TTL of the two policies.
 
-In this example, an application and a domain linked to it has been previously created.
-
-### Creating a cache policy for the chunks
-
-First, you must create a cache policy for the chunks:
+To create the policy:
 
 <Tabs client:visible>
     <Fragment slot="tab.cli">CLI </Fragment>
@@ -65,8 +64,16 @@ First, you must create a cache policy for the chunks:
 5. Click the **Save** button.
 </Fragment>
 </Tabs>
-    
-### Creating cache policies for the playlist
+
+The application can now select the chunks policy.
+
+---
+
+## Create a cache policy for the playlist
+
+The playlist changes on every new segment, so it takes a short TTL of `5` seconds against the `60` seconds used for the chunks.
+
+To create the policy:
 
 <Tabs client:visible>
     <Fragment slot="tab.cli">CLI </Fragment>
@@ -92,11 +99,17 @@ Still on the **Cache Settings** tab:
 
 </Tabs>
 
+Both policies now exist, and no request uses them until a rule selects them.
+
 :::tip
 Read more about setting up [cache settings](/en/documentation/build/cache/reference/cache-settings/) for your applications.
 :::
 
-### Utilizing Azion Object Storage for HLS video delivery
+---
+
+## Deliver the video files from Object Storage
+
+Object Storage holds the source files that the encoder converts into HLS.
 
 To deliver MP4 videos using HLS and Azion Object Storage:
 
@@ -104,7 +117,15 @@ To deliver MP4 videos using HLS and Azion Object Storage:
 2. Configure your encoder to convert MP4 files to HLS format and point to Azion Object Storage as the origin.
 3. Follow the cache policy setup steps outlined above to ensure efficient video delivery.
 
-### Creating Rules Engine rules
+The encoder now writes HLS output against an Azion origin.
+
+---
+
+## Create the Rules Engine rules
+
+A cache policy applies only where a rule selects it. One rule matches the `.ts` chunks, and a second matches the `.m3u8` playlist.
+
+To create both rules:
 
 <Tabs client:visible>
     <Fragment slot="tab.cli">CLI </Fragment>
@@ -190,10 +211,17 @@ Now, create a rule for the playlist:
 
 </Tabs>
 
-Done. Now you can configure your source and encoder pointing to Azion and stream your content, enforcing HLS cache.
+Both rules are active. You can now configure your source and encoder pointing to Azion and stream your content, enforcing HLS cache.
 
 :::tip
 Go to the [Rules Engine for Applications](/en/documentation/build/applications/reference/rules-engine/) documentation for more details.
 :::
+
+---
+
+## Next steps
+
+- [Verify cache indicators in the browser](/en/documentation/build/cache/guides/check-page-cache-time/) - confirm the chunks and the playlist return the cache status you configured.
+- [Tiered Cache](/en/documentation/build/cache/tiered-cache/) - the second cache layer both policies enable.
 
 <LinkButton link="/en/documentation/architectures/live-streaming-delivery/live-streaming-delivery-with-hls/" label="Go to Live Streaming Delivery architecture" severity="secondary" />

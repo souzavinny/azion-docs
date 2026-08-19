@@ -1,0 +1,225 @@
+---
+title: Purge cached content
+description: >-
+  Delete cached objects at the edge by URL, cache key, or wildcard expression,
+  from Azion Console, the Azion CLI, or the API.
+meta_tags: 'purge, real-time purge, cache, cache key, wildcard, tiered cache'
+namespace: documentation_build_cache_purge_content
+permalink: /documentation/build/cache/guides/purge-content/
+menu_namespace: cacheMenu
+difficulty: Beginner
+---
+
+import Tabs from '~/components/tabs/Tabs'
+import Code from '~/components/Code/Code.astro'
+
+You can purge cached content from Azion Console, the Azion CLI, or the API. Real-Time Purge deletes objects from the **Cache** or the **Tiered Cache** layer before they expire.
+
+A purge is queued for execution. It appears in the purge history once completed, because results take time to propagate to all edge nodes.
+
+## Prerequisites
+
+- An application that delivers content through Azion.
+- The Azion CLI, to purge from the command line.
+- A [personal token](/en/documentation/account/guides/personal-tokens/), to purge through the API.
+- The [Tiered Cache](/en/documentation/build/cache/tiered-cache/) module active, to purge that layer.
+
+---
+
+## Purge by URL
+
+A URL purge is non-recursive: Azion purges only the URLs you enter. Azion converts each URL to its cache key, without considering content variations of the same URL.
+
+The URL format is `scheme://host` or only `host`, followed by an optional `/path` and `?query-string`. When you omit the scheme, Azion purges both the HTTP and the HTTPS content.
+
+:::caution
+An asterisk (`*`) in a URL purge is treated as a character in the URL, not as a wildcard.
+:::
+
+:::note
+Content variations based on cookies, device groups, or image format do not expire with a URL purge. Use a cache key purge or a wildcard purge for those objects.
+:::
+
+If you turned on [Query String Sort](/en/documentation/build/cache/reference/cache-settings/#cache-by-query-string), sort the arguments in the request, or use a cache key purge instead.
+
+<Tabs client:visible>
+    <Fragment slot="tab.console">Console</Fragment>
+    <Fragment slot="tab.cli">CLI</Fragment>
+    <Fragment slot="tab.api">API</Fragment>
+
+<Fragment slot="panel.console">
+
+To purge URLs from Azion Console:
+
+1. Access [Azion Console](https://console.azion.com/) > **Products Menu** > **Real-Time Purge**.
+2. Select **New Purge**.
+3. Fill in the required fields with the URLs you want to purge.
+4. Select **Purge**.
+
+</Fragment>
+
+<Fragment slot="panel.cli">
+
+To purge URLs with the Azion CLI:
+
+<Code lang="bash" code={`azion purge --urls "https://www.example.com/index.html,https://static.example.com/include/site.css"`} />
+
+</Fragment>
+
+<Fragment slot="panel.api">
+
+Send a `POST` request to the URL purge endpoint:
+
+<Code lang="bash" code={`curl -X POST 'https://api.azion.com/v4/workspace/purge/url' \\
+  --header 'Authorization: Token [TOKEN VALUE]' \\
+  --header 'Content-Type: application/json' \\
+  --data '{
+    "items": ["https://www.example.com/index.html"],
+    "layer": "cache"
+  }'`} />
+
+</Fragment>
+
+</Tabs>
+
+Azion confirms the purge and lists it in the purge history once completed.
+
+---
+
+## Purge by cache key
+
+A cache key purge takes a list of cache keys as its argument. It reaches the object variations that a URL purge leaves in cache.
+
+A cache key identifies a variation of an object based on:
+
+- Query string or query string sort arguments.
+- Cookies, when you use Advanced Cache Key.
+- Image format according to browser support, when you use Image Processor.
+
+To purge every variation, purge each cache key individually. For more information, refer to [Cache keys](/en/documentation/build/cache/reference/cache-keys/).
+
+<Tabs client:visible>
+    <Fragment slot="tab.console">Console</Fragment>
+    <Fragment slot="tab.cli">CLI</Fragment>
+    <Fragment slot="tab.api">API</Fragment>
+
+<Fragment slot="panel.console">
+
+To purge cache keys from Azion Console:
+
+1. Access [Azion Console](https://console.azion.com/) > **Products Menu** > **Real-Time Purge**.
+2. Select **New Purge**.
+3. Fill in the required fields with the cache keys you want to purge.
+4. Select **Purge**.
+
+</Fragment>
+
+<Fragment slot="panel.cli">
+
+To purge cache keys with the Azion CLI:
+
+<Code lang="bash" code={`azion purge --cachekey "www.example.com/@@cookie_name=cookie_value,www.example.com/test.js"`} />
+
+</Fragment>
+
+<Fragment slot="panel.api">
+
+To purge by cache key, use Azion Console or the Azion CLI.
+
+</Fragment>
+
+</Tabs>
+
+Azion confirms the purge and lists it in the purge history once completed.
+
+---
+
+## Purge by wildcard
+
+A wildcard purge takes one wildcard expression as its argument. Only one wildcard expression is allowed per request.
+
+The expression format is `scheme://host` or only `host`, followed by an optional `/path` and `?query-string`, with an asterisk (`*`) in the path or the query string.
+
+For example:
+
+- `www.example.com/*`
+- `static.example.com/include/*.css`
+- `www.example.com/*a*/charlie`
+
+:::caution
+You cannot purge from the **Tiered Cache** layer using a wildcard expression.
+:::
+
+<Tabs client:visible>
+    <Fragment slot="tab.console">Console</Fragment>
+    <Fragment slot="tab.cli">CLI</Fragment>
+    <Fragment slot="tab.api">API</Fragment>
+
+<Fragment slot="panel.console">
+
+To purge a wildcard expression from Azion Console:
+
+1. Access [Azion Console](https://console.azion.com/) > **Products Menu** > **Real-Time Purge**.
+2. Select **New Purge**.
+3. Fill in the required fields with the wildcard expression you want to purge.
+4. Select **Purge**.
+
+</Fragment>
+
+<Fragment slot="panel.cli">
+
+To purge a wildcard expression with the Azion CLI:
+
+<Code lang="bash" code={`azion purge --wildcard "static.example.com/include/*.css"`} />
+
+</Fragment>
+
+<Fragment slot="panel.api">
+
+Send a `POST` request to the wildcard purge endpoint:
+
+<Code lang="bash" code={`curl -X POST 'https://api.azion.com/v4/workspace/purge/wildcard' \\
+  --header 'Authorization: Token [TOKEN VALUE]' \\
+  --header 'Content-Type: application/json' \\
+  --data '{
+    "items": ["https://static.example.com/include/*.css"],
+    "layer": "cache"
+  }'`} />
+
+</Fragment>
+
+</Tabs>
+
+Azion confirms the purge and lists it in the purge history once completed.
+
+---
+
+## Choose the cache layer
+
+Real-Time Purge runs against one layer per request. **Cache** holds content at the edge, and **Tiered Cache** is the second cache layer at the edge.
+
+| Layer | What it purges | `--layer` value |
+| --- | --- | --- |
+| Cache | Cache kept with Azion at the edge. | `cache` |
+| Tiered Cache | Cache from the second layer at the edge. | `tiered_cache` |
+
+The Azion CLI uses `cache` when you do not pass `--layer`. The API takes the layer in the `layer` field of the request body.
+
+A **Tiered Cache** purge requires the [Tiered Cache](/en/documentation/build/cache/tiered-cache/) module to be active, and it cannot use a wildcard expression.
+
+To purge a URL from the Tiered Cache layer with the Azion CLI:
+
+<Code lang="bash" code={`azion purge --urls "https://www.example.com/index.html" --layer tiered_cache`} />
+
+The purge runs against the Tiered Cache layer.
+
+To expire an object from both layers, purge the Tiered Cache layer first and the **Cache** layer after. This order avoids edge feedback with outdated Tiered Cache content.
+
+The number of purge operations available depends on your support plan. For more information, refer to [Cache limits](/en/documentation/build/cache/limits/).
+
+---
+
+## Next steps
+
+- [Real-Time Purge](/en/documentation/build/cache/reference/real-time-purge/) - the full argument formats, including Image Processor and Large File Optimization objects.
+- [Verify cache indicators in the browser](/en/documentation/build/cache/guides/check-page-cache-time/) - confirm the object left the cache after a purge.

@@ -14,6 +14,7 @@ import { ANALYTICS_PROXY_URL, ANALYTICS_WRITE_KEY } from '~/consts';
 // @ts-nocheck
 import Header from '~/components/Header.vue';
 import ConsoleSessionState from '~/components/ConsoleSessionState.astro';
+import Mermaid from '~/components/Mermaid.astro';
 import Footer from '~/components/Footer.vue';
 import AzionLogo from 'azion-webkit/azionlogo';
 import HeaderMenuNav from '~/components/HeaderMenuNav.vue';
@@ -378,6 +379,7 @@ const translatedPages = await (async (c) => {
 
 		<Trd3 />
 		<Analytics ANALYTICS_PROXY_URL={ANALYTICS_PROXY_URL} ANALYTICS_WRITE_KEY={ANALYTICS_WRITE_KEY} />
+		<Mermaid />
 	</body>
 
 	<style is:global>

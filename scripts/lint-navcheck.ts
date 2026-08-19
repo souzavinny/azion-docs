@@ -103,7 +103,7 @@ function checkKey(key: string, menuName: string) {
 function checkSlug(owner: string, slug: { en: string; 'pt-br'?: string }) {
 	if (!isURL(slug.en) && !permalinks.en.has(norm(slug.en)))
 		errors.push(`${owner}: slug.en not a content permalink: ${slug.en}`);
-	if (slug['pt-br'] && !permalinks['pt-br'].has(norm(slug['pt-br'])))
+	if (slug['pt-br'] && !isURL(slug['pt-br']) && !permalinks['pt-br'].has(norm(slug['pt-br'])))
 		errors.push(`${owner}: slug.pt-br not a content permalink: ${slug['pt-br']}`);
 }
 
@@ -190,12 +190,21 @@ for (const [menuName, { isProductMenu }] of jsonMenus) {
 
 // ---- per-page ownership sweep ------------------------------------------------
 const slugsByMenu = new Map<string, Record<Lang, Set<string>>>();
+// A row with `covers` is a hub: a landing page that lists its own children, so
+// pages under the listed path prefixes belong to the menu without each getting
+// a sidebar row of its own.
+const hubPrefixesByMenu = new Map<string, Record<Lang, string[]>>();
 for (const [menuName, { json }] of jsonMenus) {
 	const slugs: Record<Lang, Set<string>> = { en: new Set(), 'pt-br': new Set() };
+	const hubs: Record<Lang, string[]> = { en: [], 'pt-br': [] };
 	const collect = (e: NavEntry) => {
 		if (e.slug && !isURL(e.slug.en)) {
 			slugs.en.add(norm(e.slug.en));
 			if (e.slug['pt-br']) slugs['pt-br'].add(norm(e.slug['pt-br']));
+			const covers = (e as NavEntry & { covers?: Record<string, string[]> }).covers;
+			if (covers) {
+				for (const lang of LANGS) for (const p of covers[lang] ?? []) hubs[lang].push(norm(p));
+			}
 		}
 		for (const child of e.items ?? []) collect(child);
 	};
@@ -213,6 +222,7 @@ for (const [menuName, { json }] of jsonMenus) {
 		group.items.forEach(collect);
 	}
 	slugsByMenu.set(menuName, slugs);
+	hubPrefixesByMenu.set(menuName, hubs);
 }
 
 const registeredNames = new Set(availableMenus.map((m) => m.name));
@@ -229,8 +239,10 @@ for (const page of pages) {
 	}
 	const menuSlugs = slugsByMenu.get(name);
 	if (!menuSlugs) continue;
+	const hubs = hubPrefixesByMenu.get(name) ?? { en: [], 'pt-br': [] };
 	const inMenu =
 		menuSlugs[page.lang].has(page.permalink) ||
+		hubs[page.lang].some((prefix) => page.permalink.startsWith(prefix)) ||
 		(page.lang === 'pt-br' &&
 			page.namespace !== undefined &&
 			[...nsByEnPermalink].some(([en, ns]) => ns === page.namespace && menuSlugs.en.has(en)));
@@ -256,6 +268,16 @@ for (const { json } of jsonMenus.values()) {
 		}
 		g.items.forEach(collectJson);
 	});
+}
+
+// Pages a hub row covers are reachable through that hub's own page, so they are
+// not orphans even though no sidebar row points at them individually.
+for (const hubs of hubPrefixesByMenu.values()) {
+	for (const lang of LANGS) {
+		for (const prefix of hubs[lang]) {
+			for (const perm of permalinks[lang]) if (perm.startsWith(prefix)) reachable[lang].add(perm);
+		}
+	}
 }
 
 function collectLegacy(entries: any[], lang: Lang) {

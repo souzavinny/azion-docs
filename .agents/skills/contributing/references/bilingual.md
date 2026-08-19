@@ -2,6 +2,10 @@
 
 Every page exists twice: English and Brazilian Portuguese. English is the source of truth, and the pair ships together.
 
+**Write the English page first, always.** The Portuguese page is a translation of a finished English page, never a parallel draft. "Source of truth" is about order of work, not only about which version wins a disagreement.
+
+**If your task is only the Portuguese page, open the English page before you write a line.** When it does not exist, stop and say so rather than drafting Portuguese and back-filling English. A Portuguese page written first has no source, and the English page that follows it becomes a translation of a translation.
+
 ## The pairing
 
 Pages are paired by `namespace`, not by file path. The site finds a page's translation by matching that field, and it is what makes the language switcher work.
@@ -81,7 +85,7 @@ Full rules in `.agents/references/terminology.md`. The ones that come up constan
 
 ## When you cannot write the Portuguese version
 
-Shipping English first is allowed only with an explicit, linked follow-up commitment. Use it honestly: it is a debt, not a way to close the ticket.
+Shipping the English page *alone* is allowed only with an explicit, linked follow-up commitment. Use it honestly: it is a debt, not a way to close the ticket. This is about shipping without the pair, never a reason to write the Portuguese page first.
 
 Do not machine-translate and ship without review. A wrong translation is harder to find and fix than a missing one.
 

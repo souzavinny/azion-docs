@@ -1,0 +1,119 @@
+---
+title: Quickstart do Cache
+description: >-
+  Crie sua primeira cache setting, aplique-a a um caminho de requisição com uma
+  regra e confirme o status de cache de uma requisição no edge.
+meta_tags: 'cache, ttl, cache setting, rules engine, quickstart'
+namespace: documentation_build_cache_quickstart
+permalink: /documentacao/build/cache/quickstart/
+menu_namespace: cacheMenu
+---
+
+import Code from '~/components/Code/Code.astro'
+
+Este guia conduz você por sua primeira cache setting em uma aplicação da Azion.
+
+- Ative o módulo **Application Accelerator**.
+- Crie uma cache setting com um TTL personalizado.
+- Aplique a cache setting a um caminho de requisição com uma regra.
+- Confirme o status de cache de uma requisição no edge.
+
+Para armazenar conteúdo em cache no edge, você cria e conecta estes objetos:
+
+1. Uma **aplicação**, que é dona da cache setting.
+2. Uma **cache setting**, que contém as políticas de expiração de cache.
+3. Uma **regra** no [Rules Engine](/pt-br/documentacao/build/applications/reference/rules-engine/), que aplica a cache setting a um caminho de requisição.
+
+Uma cache setting que nenhuma regra referencia não faz nada. A regra decide a quais requisições a cache setting se aplica.
+
+---
+
+## Pré-requisitos
+
+- Acesso ao [Azion Console](/pt-br/documentacao/account/guides/como-acessar-o-azion-console/).
+- Uma aplicação na Plataforma da Azion, alcançável por um domínio. Para criar uma, consulte [Começar com um template](/pt-br/documentacao/get-started/comecar-com-um-template/).
+
+---
+
+## 1. Ative o Application Accelerator
+
+O módulo [Application Accelerator](/pt-br/documentacao/build/application-accelerator/) libera as configurações avançadas de cache key de uma cache setting e permite definir um TTL no edge abaixo de 60 segundos.
+
+Para ativar o módulo:
+
+1. Acesse o [Azion Console](https://console.azion.com/) > **Applications**.
+2. Selecione a aplicação que você quer configurar.
+3. Na aba **Main Settings**, na seção **Modules**, ative o switch **Application Accelerator**.
+4. Selecione **Save**.
+
+A aplicação está com o módulo **Application Accelerator** ativo.
+
+:::caution[Atenção]
+Com o **Application Accelerator** ativo, a transferência de dados pode gerar custos de uso. Para mais informações, consulte [Preços](/pt-br/documentacao/platform/pricing/).
+:::
+
+## 2. Crie uma cache setting
+
+Uma cache setting contém as políticas de expiração de cache de uma aplicação: por quanto tempo o edge e o navegador mantêm o conteúdo. Uma aplicação pode conter mais de uma cache setting.
+
+Para criar a cache setting:
+
+1. Vá até a aba **Cache Settings** da sua aplicação.
+2. Selecione **+ Cache Setting**.
+3. Insira um nome para a cache setting.
+4. (Opcional) Em **Browser Cache Settings**, selecione **Override Cache Settings** e insira o TTL do navegador em **Maximum TTL**.
+5. Em **Cache Settings**, selecione **Override Cache Settings**.
+6. Em **Maximum TTL**, insira `864000`, que corresponde a 10 dias em segundos.
+7. Selecione **Save**.
+
+A página de cache settings lista a nova cache setting.
+
+:::note[nota]
+O TTL no edge aceita um valor entre `60` e `31536000` segundos, que corresponde a 1 ano. Com o módulo **Application Accelerator** ativo, o mínimo é `0`.
+:::
+
+## 3. Aplique a cache setting com uma regra
+
+Uma cache setting fica inativa até que uma regra a referencie. Uma regra no Rules Engine corresponde a uma requisição e aplica a cache setting pelo behavior **Set Cache Policy**.
+
+A regra a seguir aplica a cache setting a toda requisição ao caminho `/cache` da sua aplicação.
+
+Para criar a regra:
+
+1. Vá até a aba **Rules Engine** da sua aplicação.
+2. Selecione **+ Rule**.
+3. Insira um nome para a regra.
+4. Selecione **Request Phase**.
+5. Na seção **Criteria**, selecione a variável `${uri}`.
+6. Como operador de comparação, selecione **is equal**.
+7. Como argumento, insira `/cache`.
+8. Na seção **Behaviors**, selecione **Set Cache Policy**.
+9. Selecione a cache setting que você criou.
+10. Selecione **Save**.
+
+A regra aplica a cache setting a toda requisição ao caminho `/cache`. As alterações podem levar alguns minutos para propagar. Diante de uma resposta inesperada, aguarde e repita a requisição antes de diagnosticar.
+
+## 4. Verifique o status de cache
+
+O header de resposta `X-Cache` carrega o status de cache de uma requisição. O edge o retorna quando a requisição carrega o header de debug `Pragma: azion-debug-cache`.
+
+Faça a requisição ao caminho em cache com o header de debug:
+
+<Code lang="bash" code={`curl -s -D - -o /dev/null -H "Pragma: azion-debug-cache" "https://<seu-dominio-azion>/cache"`} />
+
+Uma resposta bem-sucedida retorna um header `X-Cache` com o status de cache, o IP do edge node e o protocolo usado na requisição:
+
+```text
+X-Cache: HIT from 200.000.000.00 with HTTP/2.0
+```
+
+Um status `HIT` significa que o edge serviu o conteúdo a partir do cache. Um status `MISS` significa que o conteúdo não estava no cache no edge, então o edge o buscou na origem. Envie a requisição de novo para verificar um `HIT`.
+
+---
+
+## Próximos passos
+
+- [Como o Cache funciona](/pt-br/documentacao/build/cache/como-funciona/) - o que cada status de cache significa e como a expiração e o stale cache se comportam.
+- [Cache Settings](/pt-br/documentacao/build/cache/reference/cache-settings/) - todos os campos de uma cache setting, incluindo stale cache, large file optimization e a advanced cache key.
+- [Configure uma política de cache](/pt-br/documentacao/build/cache/guides/cache-settings/) - faça bypass do cache da origem e encaminhe cookies com outras regras do Rules Engine.
+- [Verifique indicadores de cache no navegador](/pt-br/documentacao/build/cache/guides/verificar-tempo-de-cache-da-pagina/) - leia os headers de cache pelo navegador em vez do terminal.

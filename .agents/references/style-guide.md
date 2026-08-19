@@ -190,7 +190,7 @@ The right tool for anything enumerable: fields, limits, flags, defaults, status 
 
 **Ordinals take no suffix beyond the number.** `first`, `1st`, never `firstly`.
 
-**Dates belong to changelogs and nowhere else.** Where allowed, spell the month: English `July 10, 2026`, Portuguese `10 de julho de 2026`. A numeric date means two different things depending on the reader's locale.
+**Dates belong to changelogs and to build-generated freshness columns, and nowhere else.** Where allowed, spell the month: English `July 10, 2026`, Portuguese `10 de julho de 2026`. A numeric date means two different things depending on the reader's locale.
 
 **Times.** Portuguese uses the 24-hour clock. English uses `AM` and `PM`, capitalized, with a space before. Never `24/7`.
 

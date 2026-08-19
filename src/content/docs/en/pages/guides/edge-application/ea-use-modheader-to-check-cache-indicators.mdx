@@ -1,37 +1,57 @@
 ---
-title: "Verify Cache Indicators with ModHeader"
+title: Verify cache indicators in the browser
 description: >-
-  You can debug requests to applications by creating headers that return
-  cache indicators using the ModHeader extension for Google Chrome.
+  Read the cache status, cache key, and expiration data Azion returns for a
+  request by adding a debug header in Google Chrome and inspecting the response.
 meta_tags: 'edge computing, cache'
 namespace: documentation_how_to_troubleshoot_cache
 permalink: /documentation/build/cache/guides/check-page-cache-time/
 menu_namespace: cacheMenu
+difficulty: Beginner
 ---
 
-You can debug requests to applications by creating headers that return cache indicators using the [ModHeader](https://modheader.com/) extension for Google Chrome. These headers will return different cache indicators such as page or object cache time and time left for the next expiration.
+You can read the cache indicators Azion returns for a request. Add a debug header in Google Chrome, then inspect the response headers in Developer Tools.
 
-To verify indicators, follow the steps:
+## Prerequisites
 
-1. Install the [ModHeader](https://chrome.google.com/webstore/detail/modheader-modify-http-hea/idgpnmonknjnojddfkpgkljpfnnfcklj) extension by clicking the **Add to Chrome** button.
-2. Click the **Extensions button** on your Google Chrome and select the **Modheader** extension; the **Profile** page will appear.
-3. Select the **Request headers** item and fill in the fields according to the following information:
-   - **Name**: Pragma
-   - **Value**: azion-debug-cache
-4. Click the **Pause Modheader** icon.
-5. Restart the extension by clicking the **Resume Modheader** icon.
+- Google Chrome
+- The [ModHeader](https://modheader.com/) extension for Google Chrome
+- An application delivering content through Azion
 
-Next, follow these steps to enable **Developer Tools** on Google Chrome to access the information:
+---
 
-1. Open **Google Chrome**.
-2. Click the **Customize and Control Google Chrome** button, represented by the ︙ icon on the toolbar.
-3. Select **More Tools** > **Developer Tools**.
-4. Select the **Network** tab.
-5. Access the page in which the information is being cached.
-6. Select the **cached content** among the requests.
-7. Select the **Headers** tab.
+## Add the debug header
 
-The cache indicators will appear according to the following headers:
+ModHeader attaches the header to every request the browser sends, so the edge returns its cache data for the page you are already viewing.
+
+To add the header:
+
+1. Install the [ModHeader](https://chrome.google.com/webstore/detail/modheader-modify-http-hea/idgpnmonknjnojddfkpgkljpfnnfcklj) extension and select **Add to Chrome**.
+2. In the Google Chrome toolbar, select **Extensions** and then select **ModHeader**.
+3. In the **Profile** page, select **Request headers**.
+4. In **Name**, enter `Pragma`.
+5. In **Value**, enter `azion-debug-cache`.
+6. Select the **Pause ModHeader** icon.
+7. Select the **Resume ModHeader** icon.
+
+ModHeader now sends the debug header with every request.
+
+---
+
+## Read the cache indicators
+
+Developer Tools reports the response headers for each request the page makes, including the cache headers the edge adds.
+
+To read the indicators:
+
+1. In the Google Chrome toolbar, select the **Customize and Control Google Chrome** button, represented by the ︙ icon.
+2. Go to **More Tools** > **Developer Tools**.
+3. Select the **Network** tab.
+4. Access the page whose content is cached.
+5. In the request list, select the cached content.
+6. Select the **Headers** tab.
+
+The response headers list the cache indicators for that object:
 
 | Field | Description |
 | --- | --- |
@@ -46,6 +66,14 @@ The cache indicators will appear according to the following headers:
 | X-Cache-ID | Unique request ID. |
 
 *\* You can convert Unix Time Stamp into the standard format using the [Unix Time Stamp website](http://www.unixtimestamp.com/).*
+
+---
+
+## Next steps
+
+- [How Cache works](/en/documentation/build/cache/how-it-works/) - what each cache status means and when the edge returns it.
+- [Cache keys](/en/documentation/build/cache/reference/cache-keys/) - how the value in `X-Cache-Key` is composed.
+- [Configure a cache policy](/en/documentation/build/cache/guides/cache-settings/) - change the TTL behind `X-Cache-Expire-In`.
 
 ---
 

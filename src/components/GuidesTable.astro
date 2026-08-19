@@ -1,0 +1,147 @@
+---
+/**
+ * Renders the Guides and tutorials hub as a table: page title, when the file
+ * last changed, and its difficulty.
+ *
+ * The date comes from git at build time, never from frontmatter, because a
+ * hand-maintained "last updated" is wrong the first time someone forgets it.
+ * Difficulty comes from the optional `difficulty` frontmatter field.
+ *
+ * Usage, from a hub page:
+ *   <GuidesTable lang="en" prefixes={['/documentation/build/cache/guides/']} />
+ */
+import { execFileSync } from 'node:child_process';
+import fs from 'node:fs';
+import path from 'node:path';
+import { allPages } from '~/content';
+
+interface Props {
+	/** Permalink prefixes whose pages belong in the table. */
+	prefixes: string[];
+	lang: 'en' | 'pt-br';
+	/** Permalinks to leave out, such as the hub page itself. */
+	exclude?: string[];
+}
+
+const { prefixes, lang, exclude = [] } = Astro.props;
+
+const CONTENT_ROOT = path.resolve('src/content/docs');
+const norm = (s: string) => s.replace(/\/+$/, '') + '/';
+
+function resolveFile(entry: any): string | null {
+	for (const candidate of [entry.filePath, entry.id ? path.join(CONTENT_ROOT, entry.id) : null]) {
+		if (candidate && fs.existsSync(candidate)) return candidate;
+	}
+	return null;
+}
+
+const gitDates = new Map<string, number | null>();
+function lastChanged(file: string): number | null {
+	if (gitDates.has(file)) return gitDates.get(file)!;
+	let stamp: number | null = null;
+	try {
+		const out = execFileSync('git', ['log', '-1', '--format=%cI', '--', file], {
+			encoding: 'utf-8',
+			stdio: ['ignore', 'pipe', 'ignore'],
+		}).trim();
+		if (out) stamp = Date.parse(out);
+	} catch {
+		// Shallow clone, no git, or an untracked file: the column degrades to a dash.
+	}
+	gitDates.set(file, stamp);
+	return stamp;
+}
+
+const UNITS: [Intl.RelativeTimeFormatUnit, number][] = [
+	['year', 365 * 24 * 3600e3],
+	['month', 30 * 24 * 3600e3],
+	['week', 7 * 24 * 3600e3],
+	['day', 24 * 3600e3],
+];
+const rtf = new Intl.RelativeTimeFormat(lang === 'pt-br' ? 'pt-BR' : 'en', { numeric: 'auto' });
+function relative(stamp: number, now: number): string {
+	const delta = stamp - now;
+	for (const [unit, ms] of UNITS) {
+		if (Math.abs(delta) >= ms) return rtf.format(Math.round(delta / ms), unit);
+	}
+	return rtf.format(0, 'day');
+}
+
+const now = Date.now();
+const rows = allPages
+	.filter((page: any) => {
+		const permalink = page.data?.permalink;
+		if (typeof permalink !== 'string') return false;
+		const p = norm(permalink);
+		if (exclude.map(norm).includes(p)) return false;
+		return prefixes.some((prefix) => p.startsWith(norm(prefix)));
+	})
+	.map((page: any) => {
+		const file = resolveFile(page);
+		const stamp = file ? lastChanged(file) : null;
+		return {
+			title: page.data.title as string,
+			href: `/${lang}${page.data.permalink}`,
+			difficulty: (page.data.difficulty as string) ?? null,
+			stamp,
+		};
+	})
+	.sort((a, b) => (b.stamp ?? 0) - (a.stamp ?? 0) || a.title.localeCompare(b.title));
+
+const labels =
+	lang === 'pt-br'
+		? { name: 'Nome', updated: 'Última atualização', difficulty: 'Dificuldade' }
+		: { name: 'Name', updated: 'Last updated', difficulty: 'Difficulty' };
+
+// The frontmatter enum stays English so one value means one thing across the
+// repository; only the rendered label is localized.
+const DIFFICULTY: Record<string, Record<string, string>> = {
+	'pt-br': { Beginner: 'Iniciante', Intermediate: 'Intermediário', Advanced: 'Avançado' },
+};
+const showDifficulty = (value: string | null) =>
+	value ? DIFFICULTY[lang]?.[value] ?? value : '—';
+---
+
+<div class="overflow-x-auto w-full">
+	<table class="guides-table">
+		<thead>
+			<tr>
+				<th>{labels.name}</th>
+				<th class="meta">{labels.updated}</th>
+				<th class="meta">{labels.difficulty}</th>
+			</tr>
+		</thead>
+		<tbody>
+			{rows.map((row) => (
+				<tr>
+					<td><a href={row.href}>{row.title}</a></td>
+					<td class="meta">{row.stamp ? relative(row.stamp, now) : '—'}</td>
+					<td class="meta">{showDifficulty(row.difficulty)}</td>
+				</tr>
+			))}
+		</tbody>
+	</table>
+</div>
+
+<style>
+	/* The site styles tables to shrink to their content, which leaves this one
+	   short of the content column. Tailwind utilities lose to that rule, so the
+	   override is scoped to this component and marked important. */
+	.guides-table {
+		display: table !important;
+		/* The theme forces content-box on tables and box-sizing cannot be
+		   overridden here, so the 1px border on each side is subtracted by
+		   hand. Without this the table is 2px wider than its wrapper and the
+		   wrapper shows a permanent horizontal scrollbar. */
+		--guides-table-border: 1px;
+		width: calc(100% - (var(--guides-table-border) * 2)) !important;
+		table-layout: auto !important;
+	}
+
+	/* Let the name column take the slack; the two metadata columns stay
+	   as narrow as their content allows. */
+	.guides-table .meta {
+		white-space: nowrap !important;
+		width: 1%;
+	}
+</style>

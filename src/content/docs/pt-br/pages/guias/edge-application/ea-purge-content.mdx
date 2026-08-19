@@ -1,0 +1,225 @@
+---
+title: Faça purge de conteúdo em cache
+description: >-
+  Exclua objetos em cache no edge por URL, cache key ou expressão wildcard, a
+  partir do Azion Console, do Azion CLI ou da API.
+meta_tags: 'purge, real-time purge, cache, cache key, wildcard, tiered cache'
+namespace: documentation_build_cache_purge_content
+permalink: /documentacao/build/cache/guides/purgar-conteudo/
+menu_namespace: cacheMenu
+difficulty: Beginner
+---
+
+import Tabs from '~/components/tabs/Tabs'
+import Code from '~/components/Code/Code.astro'
+
+Você pode purgar conteúdo em cache pelo Azion Console, pelo Azion CLI ou pela API. O Real-Time Purge exclui objetos da camada **Cache** ou da camada **Tiered Cache** antes que eles expirem.
+
+A purge é colocada na fila para execução e aparece no histórico assim que concluída, porque os resultados levam tempo para se propagar para todos os edge nodes.
+
+## Pré-requisitos
+
+- Uma aplicação que entrega conteúdo pela Azion.
+- O Azion CLI, para purgar pela linha de comando.
+- Um [personal token](/pt-br/documentacao/account/guides/personal-tokens/), para purgar pela API.
+- O módulo [Tiered Cache](/pt-br/documentacao/build/cache/tiered-cache/) ativo, para purgar essa camada.
+
+---
+
+## Faça purge por URL
+
+A purge por URL é não recursiva: a Azion purga apenas as URLs que você insere. A Azion converte cada URL em sua cache key, sem considerar as variações de conteúdo da mesma URL.
+
+O formato da URL é `scheme://host` ou apenas `host`, seguido de um `/path` e de uma `?query-string` opcionais. Quando você omite o scheme, a Azion purga o conteúdo tanto de HTTP quanto de HTTPS.
+
+:::caution[Atenção]
+Um asterisco (`*`) em uma purge por URL é tratado como um caractere na URL, e não como um wildcard.
+:::
+
+:::note[nota]
+As variações de conteúdo baseadas em cookies, grupos de dispositivos ou formato de imagem não expiram com uma purge por URL. Use uma purge por cache key ou por wildcard para esses objetos.
+:::
+
+Se você ativou o [Query String Sort](/pt-br/documentacao/build/cache/reference/cache-settings/#cache-by-query-string), classifique os argumentos na requisição ou use uma purge por cache key.
+
+<Tabs client:visible>
+    <Fragment slot="tab.console">Console</Fragment>
+    <Fragment slot="tab.cli">CLI</Fragment>
+    <Fragment slot="tab.api">API</Fragment>
+
+<Fragment slot="panel.console">
+
+Para purgar URLs pelo Azion Console:
+
+1. Acesse o [Azion Console](https://console.azion.com/) > **Products Menu** > **Real-Time Purge**.
+2. Selecione **New Purge**.
+3. Preencha os campos obrigatórios com as URLs que você quer purgar.
+4. Selecione **Purge**.
+
+</Fragment>
+
+<Fragment slot="panel.cli">
+
+Para purgar URLs com o Azion CLI:
+
+<Code lang="bash" code={`azion purge --urls "https://www.example.com/index.html,https://static.example.com/include/site.css"`} />
+
+</Fragment>
+
+<Fragment slot="panel.api">
+
+Envie uma requisição `POST` para o endpoint de purge por URL:
+
+<Code lang="bash" code={`curl -X POST 'https://api.azion.com/v4/workspace/purge/url' \\
+  --header 'Authorization: Token [TOKEN VALUE]' \\
+  --header 'Content-Type: application/json' \\
+  --data '{
+    "items": ["https://www.example.com/index.html"],
+    "layer": "cache"
+  }'`} />
+
+</Fragment>
+
+</Tabs>
+
+A Azion confirma a purge e a lista no histórico de purge assim que concluída.
+
+---
+
+## Faça purge por cache key
+
+A purge por cache key recebe uma lista de cache keys como argumento. Ela alcança as variações de objeto que uma purge por URL deixa em cache.
+
+Uma cache key identifica uma variação de um objeto com base em:
+
+- Query string ou argumentos de classificação de query string.
+- Cookies, quando você usa o Advanced Cache Key.
+- Formato de imagem de acordo com o suporte do navegador, quando você usa o Image Processor.
+
+Para purgar todas as variações, purgue cada cache key individualmente. Para mais informações, consulte [Cache keys](/pt-br/documentacao/build/cache/reference/cache-keys/).
+
+<Tabs client:visible>
+    <Fragment slot="tab.console">Console</Fragment>
+    <Fragment slot="tab.cli">CLI</Fragment>
+    <Fragment slot="tab.api">API</Fragment>
+
+<Fragment slot="panel.console">
+
+Para purgar cache keys pelo Azion Console:
+
+1. Acesse o [Azion Console](https://console.azion.com/) > **Products Menu** > **Real-Time Purge**.
+2. Selecione **New Purge**.
+3. Preencha os campos obrigatórios com as cache keys que você quer purgar.
+4. Selecione **Purge**.
+
+</Fragment>
+
+<Fragment slot="panel.cli">
+
+Para purgar cache keys com o Azion CLI:
+
+<Code lang="bash" code={`azion purge --cachekey "www.example.com/@@cookie_name=cookie_value,www.example.com/test.js"`} />
+
+</Fragment>
+
+<Fragment slot="panel.api">
+
+Para purgar por cache key, use o Azion Console ou o Azion CLI.
+
+</Fragment>
+
+</Tabs>
+
+A Azion confirma a purge e a lista no histórico de purge assim que concluída.
+
+---
+
+## Faça purge por wildcard
+
+A purge por wildcard recebe uma expressão wildcard como argumento. Apenas uma expressão wildcard é permitida por requisição.
+
+O formato da expressão é `scheme://host` ou apenas `host`, seguido de um `/path` e de uma `?query-string` opcionais, com um asterisco (`*`) no path ou na query string.
+
+Por exemplo:
+
+- `www.example.com/*`
+- `static.example.com/include/*.css`
+- `www.example.com/*a*/charlie`
+
+:::caution[Atenção]
+Você não pode purgar a camada **Tiered Cache** usando uma expressão wildcard.
+:::
+
+<Tabs client:visible>
+    <Fragment slot="tab.console">Console</Fragment>
+    <Fragment slot="tab.cli">CLI</Fragment>
+    <Fragment slot="tab.api">API</Fragment>
+
+<Fragment slot="panel.console">
+
+Para purgar uma expressão wildcard pelo Azion Console:
+
+1. Acesse o [Azion Console](https://console.azion.com/) > **Products Menu** > **Real-Time Purge**.
+2. Selecione **New Purge**.
+3. Preencha os campos obrigatórios com a expressão wildcard que você quer purgar.
+4. Selecione **Purge**.
+
+</Fragment>
+
+<Fragment slot="panel.cli">
+
+Para purgar uma expressão wildcard com o Azion CLI:
+
+<Code lang="bash" code={`azion purge --wildcard "static.example.com/include/*.css"`} />
+
+</Fragment>
+
+<Fragment slot="panel.api">
+
+Envie uma requisição `POST` para o endpoint de purge por wildcard:
+
+<Code lang="bash" code={`curl -X POST 'https://api.azion.com/v4/workspace/purge/wildcard' \\
+  --header 'Authorization: Token [TOKEN VALUE]' \\
+  --header 'Content-Type: application/json' \\
+  --data '{
+    "items": ["https://static.example.com/include/*.css"],
+    "layer": "cache"
+  }'`} />
+
+</Fragment>
+
+</Tabs>
+
+A Azion confirma a purge e a lista no histórico de purge assim que concluída.
+
+---
+
+## Escolha a camada de cache
+
+O Real-Time Purge é executado em uma camada por requisição. O **Cache** mantém o conteúdo no edge, e o **Tiered Cache** é a segunda camada de cache no edge.
+
+| Camada | O que purga | Valor de `--layer` |
+| --- | --- | --- |
+| Cache | Cache mantido pela Azion no edge. | `cache` |
+| Tiered Cache | Cache da segunda camada no edge. | `tiered_cache` |
+
+O Azion CLI usa `cache` quando você não informa `--layer`. A API recebe a camada no campo `layer` do corpo da requisição.
+
+Uma purge do **Tiered Cache** requer que o módulo [Tiered Cache](/pt-br/documentacao/build/cache/tiered-cache/) esteja ativo e não pode usar uma expressão wildcard.
+
+Para purgar uma URL da camada Tiered Cache com o Azion CLI:
+
+<Code lang="bash" code={`azion purge --urls "https://www.example.com/index.html" --layer tiered_cache`} />
+
+A purge é executada na camada Tiered Cache.
+
+Para expirar um objeto das duas camadas, purgue primeiro a camada Tiered Cache e somente depois a camada **Cache**. Essa ordem evita edge feedback com conteúdo desatualizado no Tiered Cache.
+
+O número de operações de purge disponíveis depende do seu plano de suporte. Para mais informações, consulte [Limites de cache](/pt-br/documentacao/build/cache/limites/).
+
+---
+
+## Próximos passos
+
+- [Real-Time Purge](/pt-br/documentacao/build/cache/reference/real-time-purge/) - todos os formatos de argumento, incluindo objetos do Image Processor e do Large File Optimization.
+- [Verifique indicadores de cache no navegador](/pt-br/documentacao/build/cache/guides/verificar-tempo-de-cache-da-pagina/) - confirme que o objeto saiu do cache depois de uma purge.

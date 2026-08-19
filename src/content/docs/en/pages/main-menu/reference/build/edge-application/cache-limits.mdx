@@ -1,0 +1,73 @@
+---
+title: Cache limits
+description: >-
+  Check the default limits for cache storage, TTL, Tiered Cache, and Real-Time
+  Purge, and the purge limit that varies by support plan.
+meta_tags: 'cache, limits, cache TTL, tiered cache, real-time purge'
+namespace: documentation_build_cache_limits
+menu_namespace: cacheMenu
+permalink: /documentation/build/cache/limits/
+---
+
+**Cache** is a module of **Applications** that stores content at the edge. These limits cover cache storage and TTL, the Tiered Cache layer, and Real-Time Purge operations.
+
+## Default limits
+
+:::tip
+**Increase limits** <br></br>
+You can request an increase to these limits based on your plan. Contact the [technical support team](/en/documentation/services/support/).
+:::
+
+These are default limits, stated without a breakdown by support plan. The one cache limit that varies by plan is the number of Real-Time Purge operations.
+
+### Cache storage and TTL
+
+| Scope | Limit |
+| --- | --- |
+| Slice file size | 1,024 kB |
+| Single object size in cache | 10 GB |
+| Minimum cache TTL | 60 seconds |
+| Minimum cache TTL with [Application Accelerator](/en/documentation/build/application-accelerator/) | 0 seconds |
+
+### Tiered Cache
+
+| Scope | Limit |
+| --- | --- |
+| Minimum TTL in Tiered Cache | 3 seconds |
+| Maximum TTL in Tiered Cache | 2,592,000 seconds |
+
+The Tiered Cache module does not support bypass cache. You can [configure a Bypass Cache rule](/en/documentation/build/applications/reference/rules-engine/#bypass-cache) for caching at the edge, but an application with active Tiered Cache settings continues to cache in that layer for the specified minimum TTL.
+
+### Real-Time Purge
+
+| Scope | Limit |
+| --- | --- |
+| Number of requests in history | 1,000,000 |
+| Purge history time | 6 months |
+| URL and Cache Key size | 4,096 characters |
+| URL and Cache Key operations per client | 200 requests with 50 objects per request |
+| URL and Cache Key operations per minute | 10,000 objects every 60 seconds |
+| Wildcard operations per day (24-hour interval) | 2,000 requests |
+| Wildcard size | 256 characters |
+| Wildcard per request | 1 |
+
+---
+
+## Limits by support plan
+
+The monthly limit for purge operations is the same on every support plan. Business, Enterprise, and Mission-Critical accounts can negotiate additional operations.
+
+| Scope | Plan | Limit |
+| --- | --- | --- |
+| Purge operations | Developer | 1,000 per month |
+| Purge operations | Business, Enterprise, and Mission-Critical | 1,000 per month<br></br>Additional purge operations are negotiable |
+
+---
+
+## Related resources
+
+- [Cache](/en/documentation/build/cache/) - how the Cache module stores content at the edge.
+- [Cache Settings](/en/documentation/build/cache/reference/cache-settings/) - the fields that define a cache policy.
+- [Tiered Cache](/en/documentation/build/cache/tiered-cache/) - the extra cache layer between the edge and the origin.
+- [Real-Time Purge](/en/documentation/build/cache/reference/real-time-purge/) - the purge methods and what each one removes.
+- [Technical Support](/en/documentation/services/support/) - open a ticket to request a limit increase.

@@ -1,0 +1,106 @@
+---
+title: Cache keys
+description: >-
+  Consulte o formato de cache key que a Azion gera para um objeto e as variações
+  por requisições complexas, formatos de imagem, device groups e fragmentos.
+meta_tags: >-
+  cache key, X-Cache-Key, cache variation, cache separator, edge cache, cache
+namespace: documentation_build_cache_keys
+menu_namespace: cacheMenu
+permalink: /documentacao/build/cache/reference/cache-keys/
+---
+
+Uma cache key é uma entrada de índice para um objeto nos edge nodes da Azion. Quando uma requisição é feita para uma application pela primeira vez, o edge encaminha a requisição para o servidor de origem e gera um cache para cada objeto recebido. Quando a próxima requisição do mesmo recurso é feita para a application, se o recurso solicitado corresponder a um já encontrado por meio da cache key, o edge não encaminha a requisição para a origem.
+
+Para obter a cache key de qualquer recurso em uma application, faça uma requisição para a URI do conteúdo e adicione o cabeçalho de debug da Azion `Pragma: azion-debug-cache`. Uma resposta bem-sucedida retorna um cabeçalho `X-Cache-Key` com o valor da cache key:
+
+```bash
+X-Cache-Key: httpsseudominio.com/caminho-do-recurso/imagem.jpeg@@
+```
+
+:::note[nota]
+Para automatizar seu navegador e obter outros dados de cache, consulte [Como verificar indicadores de cache usando Modheader para Google Chrome](/pt-br/documentacao/build/cache/guides/verificar-tempo-de-cache-da-pagina/).
+:::
+
+---
+
+## Formato da cache key
+
+A Azion concatena os seguintes elementos de sintaxe da URI para formar a cache key padrão:
+
+- Schema da requisição
+- Host
+- Path do recurso
+- Query strings
+- Um separador de variação e, quando implementadas, variações
+
+Um objeto com a URI `https://static.seudominio.com/pagina/site.js` gera a cache key `httpsstatic.seudominio.com/pagina/site.js`.
+
+Cache keys são case-sensitive, o que significa que caracteres em maiúsculo e minúsculo são reconhecidos como distintos.
+
+Algumas cache keys mudam dependendo de variações geradas no edge. Se variações forem habilitadas, a cache key pode conter o marcador `@@` no final, resultando em `httpsstatic.seudominio.com/pagina/site.js@@`.
+
+## Requisições complexas
+
+Uma requisição complexa é qualquer método diferente de `GET` ou `HEAD`. Se o recurso é obtido usando uma requisição complexa, o método é adicionado no início da cache key.
+
+Para uma requisição `OPTIONS`, a cache key gerada para um objeto é `optionshttpsstatic.seudominio.com/pagina`.
+
+## Variações do Image Processor
+
+Quando o [Image Processor](/pt-br/documentacao/build/image-processor/) está ativado, a cache key contém a query string `ims`. Variações com formato convertido também contêm o formato do arquivo após o separador.
+
+Para uma imagem redimensionada e convertida no formato `webp`, a cache key gerada é `httpsstatic.seudominio.com/static/imagens/imagem_1.jpg?ims=880x@@webp`.
+
+## Variações de Device Groups
+
+Se houver uma variação de objetos por [device groups](/pt-br/documentacao/build/applications/reference/device-groups/), o separador `@@` e o nome do device group são acrescentados ao final da cache key.
+
+Para uma aplicação que implementa variação pelo grupo `Mobile`, a cache key gerada é `httpwww.seudominio.com/@@Mobile`.
+
+---
+
+## Variações de Advanced Cache Key
+
+Quando a funcionalidade [Advanced Cache Key](/pt-br/documentacao/build/application-accelerator/guides/advanced-cache-key/) está configurada, a formação das cache keys também é afetada.
+
+**Cache by Cookie** gera uma variação de cache key com os nomes e valores do cookie determinados seguidos por `;`. A variação de conteúdo com base no cookie `usuário` pode gerar as seguintes cache keys:
+
+- `httpwww.seudominio.com/@@;`
+- `httpwww.seudominio.com/@@user=usuario;`
+
+**Cache by Query String** gera cache keys com o separador de consulta e os argumentos determinados, com base na ordem das query strings submetidas na requisição. A variação de conteúdo com base em `nome` e `cidade` pode gerar as seguintes cache keys:
+
+- `httpstatic.seudominio.com/pagina?name=nome`
+- `httpstatic.seudominio.com/pagina?city=cidade&name=nome`
+- `httpstatic.seudominio.com/pagina?name=nome&city=cidade`
+
+Para várias query strings, se **Query string sort** estiver ativado, as query strings são agrupadas sob a mesma cache key, ordenadas alfabeticamente.
+
+## Variações de Large File Optimization
+
+Para objetos fragmentados, a cache key acrescenta o separador `@@bytes=` para cada fragmento de conteúdo.
+
+Para um arquivo de `2097151` bytes de tamanho, com Large File Optimization ativado, as cache keys geradas são:
+
+- `httpstatic.seudominio.com/midia/arquivo.mp4@@bytes=0-1048575`
+- `httpstatic.seudominio.com/midia/arquivo.mp4@@bytes=1048576-2097151`
+
+## Métodos HTTP em cache
+
+Para requisições `POST` ou `OPTIONS` em cache com corpo, a cache key acrescenta o separador `@@` seguido pelo hash MD5 do corpo da requisição.
+
+Por exemplo:
+
+- `httpsdynamic.seudominio.com/caminho@@md5_dos_argumentos_post`
+- `httpsdynamic.seudominio.com/caminho@@md5_dos_argumentos_options`
+
+---
+
+## Recursos relacionados
+
+- [Cache](/pt-br/documentacao/build/cache/) - o módulo que controla como uma application faz cache de conteúdo.
+- [Como o Cache funciona](/pt-br/documentacao/build/cache/como-funciona/) - o que cada status de cache significa e quando o edge o retorna.
+- [Cache settings](/pt-br/documentacao/build/cache/reference/cache-settings/) - os campos que definem o comportamento de cache de uma application.
+- [Advanced Cache Key](/pt-br/documentacao/build/application-accelerator/guides/advanced-cache-key/) - como configurar variações de cache key por cookie e query string.
+- [Application Accelerator](/pt-br/documentacao/build/application-accelerator/) - o módulo que fornece o Advanced Cache Key.

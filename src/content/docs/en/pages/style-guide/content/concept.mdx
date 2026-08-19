@@ -96,13 +96,13 @@ behaves, and what it costs.>
 This excerpt of a concept page for Tiered Cache shows the opening move, the roadmap sentence, and the first mechanism section:
 
 ```mdx
-**Tiered Cache** is a Cache module that creates an additional cache layer between the edge and the origin servers. With the module active, content stays cached for longer periods and the origin receives fewer requests. Tiered Cache is designed for objects that can remain in cache for a long period of time. The module is available on request: activation goes through the Sales team.
+**Tiered Cache** is a Cache module that creates an additional cache layer between Azion's distributed network and the origin servers. With the module active, content stays cached for longer periods and the origin receives fewer requests. Tiered Cache is designed for objects that can remain in cache for a long period of time. The module is available on request: activation goes through the Sales team.
 
 Its behavior depends on five mechanisms: the cache layers, the second-layer region, the TTL requirements, the Bypass Cache limitation, and the purge order.
 
 ## Cache layers
 
-End users send requests to the edge network, where content is cached. Without Tiered Cache, a request that misses the edge layer goes to the origin. Tiered Cache adds a second cache layer between that edge layer and the origin servers. The tiered layer can answer a request that misses the edge layer, so the request does not reach the origin. Content stays cached for longer periods, and the origin receives fewer requests.
+End users send requests to Azion's distributed network, where content is cached. Without Tiered Cache, a request that misses the first cache layer goes to the origin. Tiered Cache adds a second cache layer between that first layer and the origin servers. The tiered layer can answer a request that misses the first layer, so the request does not reach the origin. Content stays cached for longer periods, and the origin receives fewer requests.
 ```
 
 ## Related

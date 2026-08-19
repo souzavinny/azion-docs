@@ -161,6 +161,26 @@ Available: `apiv4Rollout`, `JourneyAPI`, `InterfaceNote`, `LetsEncryptExpiration
 
 Hero block, used on template showcase pages. Takes `description` and a `buttons` array, with content in a `<Fragment slot="content">`. Read an existing showcase page before using it.
 
+## GuidesTable
+
+Renders the Guides and tutorials hub as a table of name, last updated, and difficulty. Used on the hub page of a product section, and nowhere else.
+
+```mdx
+import GuidesTable from '~/components/GuidesTable.astro'
+
+<GuidesTable
+  lang="en"
+  prefixes={['/documentation/build/cache/guides/', '/documentation/build/cache/tutorials/']}
+  exclude={['/documentation/build/cache/guides/']}
+/>
+```
+
+- `prefixes` — permalink prefixes whose pages fill the table. `exclude` drops the hub page itself.
+- The date comes from the file's last git commit, read at build time. Never write it by hand. An uncommitted or shallow-cloned file shows a dash.
+- Difficulty comes from the optional `difficulty` frontmatter field: `Beginner`, `Intermediate`, or `Advanced`. The value stays English on both language pages; the component localizes the label.
+- Rows sort newest first, then by title.
+- The same prefixes go in the menu row's `covers` field, so the pages pass the sidebar ownership check.
+
 ## Tables and line breaks
 
 Tables are plain GFM pipe tables. Horizontal scrolling is added automatically; do not wrap them yourself.

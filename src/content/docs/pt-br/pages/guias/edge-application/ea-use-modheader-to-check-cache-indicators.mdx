@@ -1,38 +1,57 @@
 ---
-title: "Verifique indicadores de cache com o ModHeader"
+title: Verifique indicadores de cache no navegador
 description: >-
-  Você pode fazer o debug de requisições para applications criando
-  cabeçalhos que irão retornar indicadores de cache com a extensão ModHeader
-  para Google Chrome.
+  Leia o status de cache, a cache key e os dados de expiração que a Azion
+  retorna em uma requisição adicionando um cabeçalho de debug no Google Chrome.
 meta_tags: 'edge computing, cache'
 namespace: documentation_how_to_troubleshoot_cache
 permalink: /documentacao/build/cache/guides/verificar-tempo-de-cache-da-pagina/
 menu_namespace: cacheMenu
+difficulty: Beginner
 ---
 
-Você pode fazer o debug de requisições para applications criando cabeçalhos que irão retornar indicadores de cache com a extensão [ModHeader](https://modheader.com/) para Google Chrome. Esses cabeçalhos retornarão diferentes indicadores sobre o cache, como o tempo de cache da página ou objeto e quanto tempo falta para a próxima expiração.
+Você pode ler os indicadores de cache que a Azion retorna em uma requisição. Adicione um cabeçalho de debug no Google Chrome e inspecione os cabeçalhos de resposta nas Developer Tools.
 
-Para verificar esses indicadores, siga os passos:
+## Pré-requisitos
 
-1. Instale a extensão [ModHeader](https://chrome.google.com/webstore/detail/modheader-modify-http-hea/idgpnmonknjnojddfkpgkljpfnnfcklj?hl=pt-BR) clicando no botão **Usar no Chrome**.
-2. Clique no **Ícone das Extensões** no seu Google Chrome e selecione a extensão **Modheader**; a página **Profile** será exibida.
-3. Selecione o item **Request headers** e preencha os campos de acordo com as seguintes informações:
-   - **Name**: Pragma
-   - **Value**: azion-debug-cache
-4. Clique no ícone **Pause Modheader**.
-5. Reinicie a extensão clicando no ícone **Resume Modheader**.
+- Google Chrome
+- A extensão [ModHeader](https://modheader.com/) para Google Chrome
+- Uma application entregando conteúdo pela Azion
 
-Siga os passos a seguir para habilitar as **Developer Tools** do Google Chrome para acessar as informações:
+---
 
-1. Abra o **Google Chrome**.
-2. Clique no botão **Personalize e controle o Google Chrome**, representado pelo ícone ︙ na barra de ferramentas.
-3. Selecione a opção **Mais ferramentas** > **Ferramentas do desenvolvedor**.
-4. Selecione a aba **Network**.
-5. Acesse a página na qual a informação está sendo cacheada.
-6. Selecione o **conteúdo cacheado** entre as requisições disponíveis.
-7. Selecione a aba **Headers**.
+## Adicione o cabeçalho de debug
 
-Os indicadores de cache aparecerão de acordo com os seguintes cabeçalhos:
+O ModHeader anexa o cabeçalho a todas as requisições que o navegador envia, então o edge retorna os dados de cache da página que você já está visualizando.
+
+Para adicionar o cabeçalho:
+
+1. Instale a extensão [ModHeader](https://chrome.google.com/webstore/detail/modheader-modify-http-hea/idgpnmonknjnojddfkpgkljpfnnfcklj?hl=pt-BR) e selecione **Usar no Chrome**.
+2. Na barra de ferramentas do Google Chrome, selecione **Extensões** e depois selecione **ModHeader**.
+3. Na página **Profile**, selecione **Request headers**.
+4. Em **Name**, insira `Pragma`.
+5. Em **Value**, insira `azion-debug-cache`.
+6. Selecione o ícone **Pause ModHeader**.
+7. Selecione o ícone **Resume ModHeader**.
+
+O ModHeader passa a enviar o cabeçalho de debug em todas as requisições.
+
+---
+
+## Leia os indicadores de cache
+
+As Developer Tools mostram os cabeçalhos de resposta de cada requisição da página, incluindo os cabeçalhos de cache que o edge adiciona.
+
+Para ler os indicadores:
+
+1. Na barra de ferramentas do Google Chrome, selecione o botão **Personalize e controle o Google Chrome**, representado pelo ícone ︙.
+2. Vá para **Mais ferramentas** > **Ferramentas do desenvolvedor**.
+3. Selecione a aba **Network**.
+4. Acesse a página cujo conteúdo está em cache.
+5. Na lista de requisições, selecione o conteúdo cacheado.
+6. Selecione a aba **Headers**.
+
+Os cabeçalhos de resposta listam os indicadores de cache do objeto:
 
 | Campo | Descrição |
 | --- | --- |
@@ -50,9 +69,14 @@ Os indicadores de cache aparecerão de acordo com os seguintes cabeçalhos:
 
 ---
 
-## Trademarks
+## Próximos passos
 
-[Chrome browser](https://www.google.com/chrome/) é uma marca registrada de Google LLC nos Estados Unidos e/ou outros países.
+- [Como o Cache funciona](/pt-br/documentacao/build/cache/como-funciona/) - o que cada status de cache significa e quando o edge o retorna.
+- [Cache keys](/pt-br/documentacao/build/cache/reference/cache-keys/) - como o valor de `X-Cache-Key` é composto.
+- [Configure uma política de cache](/pt-br/documentacao/build/cache/guides/cache-settings/) - altere o TTL por trás de `X-Cache-Expire-In`.
 
 ---
 
+## Trademarks
+
+[Chrome browser](https://www.google.com/chrome/) é uma marca registrada de Google LLC nos Estados Unidos e/ou outros países.
