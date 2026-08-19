@@ -11,7 +11,7 @@ A use case is a guide with a commercial frame. The reader arrives with a busines
 
 This skill routes. The detail lives in `references/`. Paths are relative to this skill directory unless they start with `.agents/`, which means the folder root.
 
-Style-guide links use the published path, `/en/documentation/style-guide/...`. That section is not live yet, so the paths resolve only once it ships. Until then, read the matching file under `src/content/docs/en/pages/style-guide/` in this repository.
+Style-guide links point at a temporary deployment, `https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/...`, so they resolve today and can be fetched by anyone using these skills. The host is provisional and changes when the style guide reaches its permanent home; the path after the host is the final one. Inside this repository the same content is at `src/content/docs/en/pages/style-guide/`.
 
 ## Input
 
@@ -76,4 +76,4 @@ Stop and write something else when:
 - No sentence on the page makes a claim the page does not check.
 - The conformance checklist for the how-to kind passes: opening scope sentence, section order, `## Next steps`, step grammar, voice sweep.
 
-Refer to /en/documentation/style-guide/content/use-cases/ for the published version of this kind.
+Refer to https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/content/use-cases/ for the published version of this kind.

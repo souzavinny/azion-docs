@@ -53,4 +53,4 @@ For more information, refer to [<the documenting page>](/en/documentation/.../).
 
 Everything else applies: sentence caps (descriptive, 25 words), no marketing, no invented specifics, link phrasing from `.agents/references/style-guide.md`.
 
-Refer to /en/documentation/style-guide/content/changelog/ for the full entry rules with worked examples.
+Refer to https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/content/changelog/ for the full entry rules with worked examples.

@@ -154,4 +154,4 @@ Then check by hand what the build cannot:
 - A translation's `namespace` matches its English page exactly.
 - A changed permalink has its redirect in the same change.
 
-This file covers the repository mechanics. Refer to /en/documentation/style-guide/content/information-architecture/ for the reader-facing structure: the twelve product slots and where a new page goes.
+This file covers the repository mechanics. Refer to https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/content/information-architecture/ for the reader-facing structure: the twelve product slots and where a new page goes.

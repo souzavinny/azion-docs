@@ -86,4 +86,4 @@ When a task has a Console, CLI, and API path, the paths go in a `<Tabs>` block â
 
 A panel whose procedure the source cannot complete keeps the facts it has and a gap marker for the rest. Do not omit a documented interface silently, and do not fill its steps from memory.
 
-Refer to /en/documentation/style-guide/writing/procedures/ for the full step grammar with worked examples.
+Refer to https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/writing/procedures/ for the full step grammar with worked examples.

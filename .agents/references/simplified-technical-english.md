@@ -72,4 +72,4 @@ The principle, not the list: **pick the plainest word available and use it the s
 - [ ] No paragraph over six sentences, and each covers one topic
 - [ ] One verb per action, used consistently across the page
 
-Refer to /en/documentation/style-guide/writing/sentence-structure/ for the full sentence rules and the ASD-STE100 sources.
+Refer to https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/writing/sentence-structure/ for the full sentence rules and the ASD-STE100 sources.

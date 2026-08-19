@@ -53,4 +53,4 @@ These legitimately exceed the caps and should not be split to satisfy them:
 
 Everything else over the cap is over the cap because it is doing too much.
 
-Refer to /en/documentation/style-guide/content/page-size/ for the full rules, including the corpus statistics behind these numbers.
+Refer to https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/content/page-size/ for the full rules, including the corpus statistics behind these numbers.

@@ -9,7 +9,7 @@ Act as an editor: preserve the existing voice and structure of a page, and keep 
 
 This file restates the essentials so you can work from it alone. The full rules live in `.agents/`, one file per concern, and on any conflict the reference file wins. Load `.agents/skills/contributing/SKILL.md` for the workflow.
 
-Style-guide links use the published path, `/en/documentation/style-guide/...`. That section is not live yet, so the paths resolve only once it ships. Until then, read the matching file under `src/content/docs/en/pages/style-guide/` in this repository.
+Style-guide links point at a temporary deployment, `https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/...`, so they resolve today and can be fetched by anyone using these skills. The host is provisional and changes when the style guide reaches its permanent home; the path after the host is the final one. Inside this repository the same content is at `src/content/docs/en/pages/style-guide/`.
 
 ## Voice essentials
 
@@ -21,7 +21,7 @@ Style-guide links use the published path, `/en/documentation/style-guide/...`. T
 - No "please", no "simply" or "just", no "e.g."/"i.e.", no "etc.".
 - Timeless: no "currently", "will soon", "now available", "recently"; no dates outside changelogs.
 
-Refer to /en/documentation/style-guide/writing/voice/ for voice and /en/documentation/style-guide/writing/word-choice/ for the full vocabulary rules.
+Refer to https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/writing/voice/ for voice and https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/writing/word-choice/ for the full vocabulary rules.
 
 ## Structure essentials
 
@@ -31,7 +31,7 @@ Refer to /en/documentation/style-guide/writing/voice/ for voice and /en/document
 - Procedural pages close with `## Next steps`; descriptive pages close with `## Related resources`.
 - Every `##` section must make sense read alone — these pages are chunked for retrieval.
 
-Refer to /en/documentation/style-guide/content/choose-a-content-type/ for the twelve kinds and /en/documentation/style-guide/content/information-architecture/ for where a page sits.
+Refer to https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/content/choose-a-content-type/ for the twelve kinds and https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/content/information-architecture/ for where a page sits.
 
 ## Step essentials
 
@@ -42,7 +42,7 @@ Refer to /en/documentation/style-guide/content/choose-a-content-type/ for the tw
 - Bold UI labels, italicize UI values: `Set **Edge Access** to _Read-only_.`
 - `(Optional)` is the literal first word of an optional step.
 - One outcome sentence after every procedure: what the reader now has or sees.
-- Full spec in `.agents/references/procedures.md`. Refer to /en/documentation/style-guide/writing/procedures/ for the published step grammar.
+- Full spec in `.agents/references/procedures.md`. Refer to https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/writing/procedures/ for the published step grammar.
 
 ## Link essentials
 
@@ -50,7 +50,7 @@ Refer to /en/documentation/style-guide/content/choose-a-content-type/ for the tw
 - Standard phrasing: `For more information, refer to [Page Title](/path/).` or `To <do something>, refer to [Title](/path/).`
 - Never "Learn more about...", "click here", or a bare URL in prose.
 
-Refer to /en/documentation/style-guide/formatting/text/ for link formatting, bold, italics, and monospace.
+Refer to https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/formatting/text/ for link formatting, bold, italics, and monospace.
 
 ## Frontmatter essentials
 
@@ -60,7 +60,7 @@ Five fields on every page: `title`, `description`, `meta_tags`, `namespace`, `pe
 - `permalink`: lowercase ASCII, trailing slash, **no language prefix**.
 - `namespace`: identical across a translation pair — it is the key that pairs the languages, and a mismatch breaks the language switcher silently.
 
-Full contract in `.agents/references/style-guide.md`. Refer to /en/documentation/style-guide/conventions/frontmatter/ for the published version.
+Full contract in `.agents/references/style-guide.md`. Refer to https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/conventions/frontmatter/ for the published version.
 
 ## Components essentials
 
@@ -87,7 +87,7 @@ The published components page is a stub, so `.agents/references/components.md` i
 
 ## Bilingual
 
-English is the source of truth, which also fixes the order of work: write the English page first and translate it, never the reverse. If you are handed the Portuguese page alone, read the English page first and stop if it does not exist. Every page pairs with a Brazilian Portuguese version: translated `title`, `description`, and `permalink` (`/documentacao/produtos/...`, ASCII-folded), identical `namespace`, localized aside labels (`:::note[nota]`), and the substitution table in `.agents/references/terminology.md`. Full rules in `.agents/skills/contributing/references/bilingual.md`. Refer to /en/documentation/style-guide/conventions/bilingual/ for the published version.
+English is the source of truth, which also fixes the order of work: write the English page first and translate it, never the reverse. If you are handed the Portuguese page alone, read the English page first and stop if it does not exist. Every page pairs with a Brazilian Portuguese version: translated `title`, `description`, and `permalink` (`/documentacao/produtos/...`, ASCII-folded), identical `namespace`, localized aside labels (`:::note[nota]`), and the substitution table in `.agents/references/terminology.md`. Full rules in `.agents/skills/contributing/references/bilingual.md`. Refer to https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/conventions/bilingual/ for the published version.
 
 ## When reviewing
 

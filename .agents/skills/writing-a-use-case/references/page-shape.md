@@ -178,4 +178,4 @@ Live components only, listed in `.agents/references/components.md`. A use case t
 
 Valid asides are `note`, `tip`, `caution`, and `danger`. `:::warning` is not one.
 
-Refer to /en/documentation/style-guide/content/use-cases/ for the published skeleton, the section budgets, and the rules in full.
+Refer to https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/content/use-cases/ for the published skeleton, the section budgets, and the rules in full.

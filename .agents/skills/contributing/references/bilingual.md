@@ -101,4 +101,4 @@ Do not machine-translate and ship without review. A wrong translation is harder 
 - [ ] Substitution table applied
 - [ ] Sidebar entries exist in both languages, per `information-architecture.md`
 
-Refer to /en/documentation/style-guide/conventions/bilingual/ for the full pairing rules and the translation checklist.
+Refer to https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/conventions/bilingual/ for the full pairing rules and the translation checklist.

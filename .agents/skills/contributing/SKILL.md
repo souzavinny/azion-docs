@@ -9,7 +9,7 @@ The single skill to load for any documentation change. It holds no detail itself
 
 Paths are relative to this skill directory unless they start with `.agents/`, which means the folder root.
 
-Style-guide links use the published path, `/en/documentation/style-guide/...`. That section is not live yet, so the paths resolve only once it ships. Until then, read the matching file under `src/content/docs/en/pages/style-guide/` in this repository.
+Style-guide links point at a temporary deployment, `https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/...`, so they resolve today and can be fetched by anyone using these skills. The host is provisional and changes when the style guide reaches its permanent home; the path after the host is the final one. Inside this repository the same content is at `src/content/docs/en/pages/style-guide/`.
 
 ## Ground rules
 
@@ -60,4 +60,4 @@ npm run build:local
 
 The build and the frontmatter validator must both pass, and the hand-checks in `references/information-architecture.md` — sidebar entries, namespace pairing, redirects — must hold.
 
-Refer to /en/documentation/style-guide/ for the style guide, which indexes a page for every rule this skill routes to.
+Refer to https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/ for the style guide, which indexes a page for every rule this skill routes to.

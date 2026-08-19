@@ -318,4 +318,4 @@ Files that quote bad examples in order to ban them are not violating their own r
 
 ---
 
-This file is the condensed law. The same rules are written out for people across the style guide, which indexes every page: /en/documentation/style-guide/
+This file is the condensed law. The same rules are written out for people across the style guide, which indexes every page: https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/
