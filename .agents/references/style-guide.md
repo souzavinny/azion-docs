@@ -304,6 +304,12 @@ A mismatched `namespace` breaks the language switcher and no build step warns yo
 
 **Uniform sentence length.** A paragraph where every sentence is the same mid-length reads as generated. Vary it, and prefer short.
 
+**Repeated sentence frames.** Two consecutive sentences that open with the same words, or that share the same grammatical shape, read as generated. "An edge node that holds a valid copy answers from cache. An edge node that holds no valid copy fetches from the origin." is the shape to catch. Three techniques break it, in order of preference:
+
+- **Lead with the condition.** `When a node holds a valid copy, it answers from cache.`
+- **Contrast with a connective instead of a second full subject.** The other branch opens `Otherwise`, not with the subject again.
+- **Let one sentence carry two clauses** when they are one thought. The sentence caps are targets, not gates.
+
 ## Calibration
 
 Documentation legitimately does things a blog post should not. Bullets, tables, dense bold on UI labels, hedging for accuracy, and repeated parallel structure across sibling pages are the medium here, not defects. What documentation never tolerates: promotional language, rhetorical questions, title-case headings, and invented specifics.

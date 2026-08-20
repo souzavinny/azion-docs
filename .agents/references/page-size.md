@@ -27,7 +27,7 @@ An 8,000-character page becomes three or four chunks, each still recognizably ab
 
 **Every `##` section must make sense read alone, by someone who has not seen the rest of the page.**
 
-- **Name the subject in each section.** Not "It caches content at the edge" but "Cache stores content at the edge." A pronoun whose referent is two sections up is broken the moment the section is retrieved on its own.
+- **Name the subject in each section.** Not "It caches content" but "Cache stores content." A pronoun whose referent is two sections up is broken the moment the section is retrieved on its own. **Once the section has named its subject, a definite noun phrase or a pronoun with its referent in the previous sentence is correct and preferred.** This rule guards the chunk boundary, not every sentence inside it: restating the full noun phrase in consecutive sentences produces the repetition that `style-guide.md` bans as a machine-generated pattern.
 - **No back-references.** "As mentioned above", "the previous step", "this feature" all assume context the chunk will not have. If a section genuinely depends on an earlier one, say which: "After creating the bucket described in Create a bucket".
 - **Headings are search queries.** `Configure cache TTL` retrieves. `Configuration` does not, and `Step 2` never will.
 - **Keep a table with its caption.** A table split from the sentence that explains it is noise. If a table is long enough to be its own chunk, give it a heading.

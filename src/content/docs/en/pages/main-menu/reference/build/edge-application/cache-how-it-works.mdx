@@ -1,110 +1,98 @@
 ---
 title: How Cache works
 description: >-
-  Understand how an Azion edge node resolves a cache lookup, reports cache
-  status, protects the origin, and serves stale content.
+  Follow a request through the cache lookup on an Azion edge node, read the
+  status it returns, and see what TTLs and stale cache change.
 meta_tags: >-
-  cache, cache status, hit, miss, stale cache, ttl, expiration, origin,
-  edge
+  cache, cache status, X-Cache, HIT, MISS, stale cache, TTL, origin
 namespace: documentation_build_cache_how_it_works
 menu_namespace: cacheMenu
 permalink: /documentation/build/cache/how-it-works/
 ---
 
-**Cache** stores content on Azion edge nodes, in a layer that sits between your origin servers and the end user. An edge node that holds a valid copy answers from that layer, and the request never reaches the origin. An edge node that holds no valid copy fetches the object from the origin.
+**Cache** stores content on Azion edge nodes, in a layer between your origin servers and the end user. When a node holds a valid copy, it answers from that layer and the request never reaches the origin. Otherwise, the node fetches the object from the origin.
 
-Five mechanisms decide what an edge node does with a request: the cache lookup, the cache status it reports, origin protection, expiration, and stale cache.
+Five mechanisms produce that outcome: the cache lookup, the cache status, origin protection, expiration, and stale cache.
 
 ## Cache lookup
 
-An Azion edge node resolves every request against the cache layer before it contacts the origin. The edge node identifies a stored object by its cache key. The result of the lookup decides the path the request takes.
+Cache lookup runs on the edge node that receives the request, before the node opens any origin connection. A node with a valid copy answers immediately. Where the copy is missing or past its TTL, the node goes to the origin, and the origin's answer decides the rest.
+
+One request follows one of four branches:
 
 ```mermaid
 flowchart TD
-  A["Request from the end user"] --> B["Edge node checks the cache layer"]
-  B -->|"Valid copy stored"| C["HIT: serve the cached object"]
-  B -->|"No copy stored"| D["MISS: request the object from the origin"]
-  B -->|"Copy stored but expired"| E["Revalidate with the origin"]
-  D --> F["Serve the origin response and store it when cacheable"]
-  E -->|"Origin responds"| G["EXPIRED: store and serve the new object"]
-  E -->|"Origin fails to respond"| H["STALE: serve the expired copy"]
+  A["Request from the end user"] --> B["Edge node checks for a copy of the object"]
+  B -->|"Copy stored, inside its TTL"| C["HIT: the node answers from cache"]
+  B -->|"No copy stored"| D["MISS: the node fetches from the origin"]
+  B -->|"Copy stored, past its TTL"| E["The node revalidates with the origin"]
+  E -->|"Origin responds"| F["EXPIRED: the node updates the cache and answers"]
+  E -->|"Origin fails and stale cache is on"| G["STALE: the node answers with the expired copy"]
 ```
 
-The diagram shows the outcomes of one lookup. A valid stored copy is a HIT, and the edge node answers without contacting the origin. No stored copy is a MISS, and the edge node requests the object from the origin, then stores the response when it is cacheable.
-
-A stored copy that has expired sends the edge node to the origin to revalidate. When the origin responds, the edge node stores the new object and reports EXPIRED. When the origin fails and stale cache is turned on, the edge node serves the expired copy and reports STALE.
-
-To read the rules that form the key an edge node looks up, refer to [Cache keys](/en/documentation/build/cache/reference/cache-keys/).
+Two questions set the branch. The first is whether the node stores a copy of the object; the second is whether that copy is still inside its TTL. A stored copy inside its TTL produces a HIT, and no copy at all produces a MISS. The third case, a copy past its TTL, hands the decision to the origin. EXPIRED follows once the origin answers, and a failed origin with stale cache on produces STALE.
 
 ## Cache status
 
-An Azion edge node reports the outcome of every cache lookup as a cache status. You can obtain the cache status of an application's resource by requesting the content URI and adding the Azion debug header `Pragma: azion-debug-cache`. A successful response returns an `X-Cache` header with the cache status, the IP of the edge node, and the protocol used in the request:
+Azion edge nodes report a cache status for every lookup, and the `Pragma: azion-debug-cache` request header makes that status visible. The response then carries `X-Cache`, which names the status, the edge node IP, and the protocol:
 
-```bash
+```
 X-Cache: HIT from 200.000.000.00 with HTTP/2.0
 ```
 
-### Status definitions
+Eight values can appear in that header:
 
-| Status | Definition |
+| Status | Meaning |
 | --- | --- |
-| **HIT** | Valid and up-to-date content is supplied directly from the cache at the edge |
-| **MISS** | If the requested content is not found in the cache at the edge, it is fetched from the origin. Through the response, the content might be cached for future requests |
-| **EXPIRED** | The cached content has expired the TTL set at the edge. When the origin responds, the cached content is updated for future requests |
-| **STALE** | When choosing to serve [stale cache](#stale-cache), if the origin fails to respond and the cache at the edge has expired, a stale version of the content is served |
-| **UPDATING** | The cached content has expired and a stale cache is being served, but the content is being updated in the origin |
-| **REVALIDATED** | The cached content is checked against the origin using conditional headers. If it is still up-to-date, the resource is not retransmitted from the origin |
-| **BYPASS** | The edge requests the content from the origin directly instead of using a cached version due to the active [Bypass Cache](/en/documentation/build/applications/reference/rules-engine/#bypass-cache) behavior |
-| **-** | If no status is received, the content requested is restricted from caching. For instance, if the requested content is a `POST` request and [Caching for POST](/en/documentation/build/cache/reference/cache-settings/#caching-http-methods) is disabled, the status is not logged |
+| `HIT` | Valid and up-to-date content supplied directly from the cache on the edge node. |
+| `MISS` | Content not found in the cache on the edge node, so it is fetched from the origin. The response might be cached for future requests. |
+| `EXPIRED` | Cached content has passed the TTL set on the edge node. When the origin responds, the cached content is updated for future requests. |
+| `STALE` | When serving stale cache is chosen, and the origin fails to respond and the edge node cache has expired, a stale version is served. |
+| `UPDATING` | Cached content expired and a stale cache is being served, but the content is being updated in the origin. |
+| `REVALIDATED` | Cached content is checked against the origin using conditional headers. If it is still up to date, the resource is not retransmitted. |
+| `BYPASS` | The edge node requests from the origin directly instead of using a cached version, because the [Bypass Cache](/en/documentation/build/applications/reference/rules-engine/#bypass-cache) behavior is active. |
+| `-` | No status is received, and the content is restricted from caching. For instance, a `POST` request with [Caching for POST](/en/documentation/build/cache/reference/cache-settings/#caching-http-methods) disabled is not logged. |
 
 ---
 
 ## Origin protection
 
-When the requested content is not available in the cache, Cache applies two mechanisms that limit the load a non-HIT request places on the origin server.
+A MISS sends the request to the origin, so the origin takes load whenever the cache cannot answer. Azion limits that load in two ways.
 
-Azion edge nodes maintain keep-alive connections with the origin server whenever possible, to reduce the overhead associated with frequent TCP/IP handshakes. Keep-alive connections apply during cache updates and in situations of a cache MISS.
+Azion edge nodes hold keep-alive connections with the origin where possible, which cuts the overhead of frequent TCP/IP handshakes. Cache updates and MISS responses both use those connections.
 
-Azion also implements Thundering Herd control. For multiple simultaneous requests for the same non-cached object, only one connection is established with the origin server. Each Azion edge node requests content from the origin server only once per MISS or other non-HIT status.
+Thundering Herd control covers the burst case. When many simultaneous requests ask for the same non-cached object, only one connection to the origin is opened. Each edge node requests the object from the origin once per MISS, or once per any other non-HIT status.
 
 ## Expiration
 
-Two time-to-live (TTL) values control cache expiration: the browser cache TTL and the cache TTL at the edge.
+Two TTLs decide how long a cached copy stays usable. The browser cache TTL governs local browsers, where a longer value cuts fetches and the bandwidth they consume. On Azion edge nodes the edge cache TTL does the same job, and raising it cuts the load that reaches the origin.
 
-The browser cache TTL controls how long the content remains stored on local browsers. A longer browser TTL reduces how often users fetch content from the edge or the origin. Load times improve and bandwidth usage drops.
-
-The cache TTL at the edge controls how long your content remains cached on Azion edge nodes. A longer cache TTL keeps frequently accessed content closer to users and reduces the load on the origin server.
-
-The tradeoff is freshness against origin load. A long TTL cuts requests to the origin and serves content the origin may have already changed. A short TTL keeps content current and sends more requests to the origin. Set both values from the update frequency of your content, your traffic patterns, and your performance objectives.
+Both settings trade freshness for load. A short TTL keeps the cached copy close to what the origin serves, at the cost of more origin requests. Raise either value and the reverse follows: fewer requests reach the origin, and the user can receive a copy that no longer matches the origin.
 
 ---
 
 ## Stale cache
 
-**Stale Cache** lets Azion edge nodes keep serving previously cached objects after those objects expire. The end user receives an expired copy instead of a downtime or error page, while the edge node fetches fresh content from your origin.
+Stale cache lets edge nodes answer with an object after it expires. The user receives an expired copy instead of an error page while a fresh version is fetched. **Enable Stale Cache** in a [cache setting](/en/documentation/build/cache/reference/cache-settings/) turns the behavior on.
 
-An edge node resolves a request under stale cache in three stages:
+An expired object is reused when revalidation fails for one of these reasons:
 
-1. A cache setting has **Enable Stale Cache** turned on. Every response stored in the cache at the edge can then be reused when a revalidation attempt fails because of:
+- The origin returns a 5xx error.
+- The connection times out, or the origin is unreachable.
+- The cache-control headers are invalid or missing.
+- An update to the object is in progress, so revalidation is still running.
 
-   - 5xx errors returned by the origin.
-   - Connection time-outs or origin unreachability.
-   - Invalid or missing cache-control headers.
-   - The object being updated (revalidation in progress).
+The length of the stale window comes from the `stale-while-revalidate=<ttl>` directive. Under **Honor Origin Cache**, the value the origin sends defines the window. Azion applies a default of 300 seconds (5 minutes) instead when the cache setting uses **Override Cache Settings**, or when the origin omits the directive.
 
-2. The edge node first looks for the `stale-while-revalidate=<ttl>` directive. Under **Honor Origin Cache**, if the origin supplies the directive, its value defines how long the object may be served stale. Under **Override Cache Settings**, or when the origin omits the directive, Azion assigns a default stale window of 300 seconds (5 minutes).
-
-3. During the stale window, the edge node serves the expired copy immediately and fetches a fresh version in the background. When the new object is stored, subsequent requests receive the updated content.
-
-The tradeoff is that the end user reads content the origin no longer serves, for as long as the stale window lasts.
+During the window the edge node serves the expired copy at once, then fetches a fresh version in the background. That window has a cost: for as long as it lasts, the user reads content the origin no longer serves.
 
 ---
 
 ## Related resources
 
-- [Cache](/en/documentation/build/cache/) - the module and its limits.
-- [Cache Settings](/en/documentation/build/cache/reference/cache-settings/) - the fields that set TTL, stale cache, and adaptive delivery.
-- [Cache keys](/en/documentation/build/cache/reference/cache-keys/) - the rules that form the key an edge node looks up.
-- [Tiered Cache](/en/documentation/build/cache/tiered-cache/) - an extra cache layer between the edge and your origin servers.
-- [Verify cache indicators in the browser](/en/documentation/build/cache/guides/check-page-cache-time/) - read the `X-Cache` header in Google Chrome.
-- [Cache quickstart](/en/documentation/build/cache/quickstart/) - put a cache policy to work.
+- [Cache](/en/documentation/build/cache/) - what the product caches and which settings control it.
+- [Cache settings](/en/documentation/build/cache/reference/cache-settings/) - the fields that set the two TTLs and stale cache.
+- [Cache keys](/en/documentation/build/cache/reference/cache-keys/) - what makes two requests match the same cached object.
+- [Tiered Cache](/en/documentation/build/cache/tiered-cache/) - a second cache layer between the edge nodes and the origin.
+- [Cache quickstart](/en/documentation/build/cache/quickstart/) - create a first cache setting.
+- [Verify cache indicators](/en/documentation/build/cache/guides/check-page-cache-time/) - read the `X-Cache` header on a live request.
