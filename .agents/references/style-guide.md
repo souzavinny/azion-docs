@@ -284,7 +284,7 @@ A mismatched `namespace` breaks the language switcher and no build step warns yo
 
 **Invented specifics — the one that matters most.** A limit, default, field name, flag, or error string that came from pattern-matching a similar product rather than from this one. It is indistinguishable from correct documentation until a reader tries it. Every number, field name, and command must trace to a source you can name. If you cannot name it, leave a gap and say so; a page with a gap is recoverable, a page with a confident wrong value is not.
 
-**Promotional framing.** Adjectives selling an Azion product. Not "Applications offers powerful, flexible caching capabilities" — "Applications caches content at the edge. The default TTL is 60 seconds."
+**Promotional framing.** Adjectives selling an Azion product. Not "Applications offers powerful, flexible caching capabilities" — "Applications caches content on Azion's distributed network. The default TTL is 60 seconds."
 
 **Significance inflation.** Sentences about how important something is, in place of what it does. "Caching plays a crucial role in web performance" tells the reader nothing they can act on.
 

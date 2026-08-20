@@ -149,7 +149,7 @@ Builds understanding of one mechanism. The reader is deciding or reasoning, not 
 How products combine into a design. A concept at system scale.
 
 - **Tone**: explanatory, plain, systematic.
-- **Title**: the design, as a noun phrase: `Content delivery at the edge`.
+- **Title**: the design, as a noun phrase: `Content delivery across Azion's distributed network`.
 - **Opening move**: what problem this design solves and for whom, in the first paragraph.
 - **Sections, in order**: `## Architecture diagram` — the diagram as a `mermaid` fence, then a paragraph reading it; `### Dataflow` — a numbered walkthrough of what moves where, six items at most; `## Components` — what each part does and why it is there; `## Implementation` — links to the how-tos, and only links.
 - **Closing**: `## Related resources`.

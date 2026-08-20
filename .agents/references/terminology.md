@@ -34,12 +34,23 @@ Use these exactly. Azion renamed its products and platform resources; the old na
 
 **A URL or directory name is not evidence of a name.** Paths still carry legacy terms (`edge-application/`, `edge-firewall/`) that the prose has moved away from.
 
+## Name where the platform runs
+
+Work happens on **Azion's distributed network** — equally, its **distributed infrastructure**. The sites that compose it are **edge locations**.
+
+| Never | Use |
+| --- | --- |
+| at the edge | on Azion's distributed network, across Azion's distributed infrastructure |
+| Points of Presence, PoP, PoPs | edge locations |
+
+`edge` stays in the technical vocabulary — `edge node`, `edge location`, `edge computing` — but "the edge" is never the place where something runs, caches, or executes. Rewrite the sentence around the network: not "Functions runs your functions at the edge" but "Functions runs your functions on Azion's distributed network".
+
 ## Lowercase what the customer builds
 
 The product name is capitalized; the thing a customer creates with it is a common noun and stays lowercase.
 
 - `Use **Applications** to build your own applications.`
-- `**Functions** runs your functions at the edge.`
+- `**Functions** runs your functions on Azion's distributed network.`
 - Not `Deploy your first Application.`
 
 Capitalizing both leaves the reader unable to tell the product from the object.

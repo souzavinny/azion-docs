@@ -22,7 +22,7 @@ Steps take the tighter budget because a reader executes them one at a time, and 
 
 - **One action per step.** The rule that matters most in procedures: a step holding two actions is a step where the second gets skipped. Step grammar owns this rule, including when two small movements may share one step and one sentence. See `procedures.md`.
 - **Sentence length.** 20 words procedural, 25 descriptive. Prose only; table cells, code, and command output are exempt.
-- **Simple tenses only.** Infinitive, imperative, simple present, simple past, simple future, past participle as an adjective. No auxiliary-built compounds: not "the bucket has been created" but "the bucket exists". Prefer simple present for product behavior: "Applications caches content at the edge."
+- **Simple tenses only.** Infinitive, imperative, simple present, simple past, simple future, past participle as an adjective. No auxiliary-built compounds: not "the bucket has been created" but "the bucket exists". Prefer simple present for product behavior: "Applications caches content on Azion's distributed network."
 - **Active voice.** Required in procedures. In description, passive only when the actor is genuinely unknown or is the platform itself.
 - **`-ing` only as a noun.** Not a verb form, not a trailing participle clause. "The connector routes traffic, reducing latency" is both padding and an ambiguity: "the valve controlling the flow" reads as an action or a name, and the reader cannot tell which.
 - **Noun clusters cap at three words.** "Rules Engine request phase behavior configuration" becomes "the behavior configuration for the Rules Engine request phase". A product name counts as one unit: `Azion Web Platform` is a name, not a three-word cluster.
