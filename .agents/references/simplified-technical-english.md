@@ -20,7 +20,7 @@ Steps take the tighter budget because a reader executes them one at a time, and 
 
 ## The rules
 
-- **One instruction per sentence.** A numbered step with two actions is a step where the second gets skipped. The rule that matters most in procedures.
+- **One action per step.** The rule that matters most in procedures: a step holding two actions is a step where the second gets skipped. Step grammar owns this rule, including when two small movements may share one step and one sentence. See `procedures.md`.
 - **Sentence length.** 20 words procedural, 25 descriptive. Prose only; table cells, code, and command output are exempt.
 - **Simple tenses only.** Infinitive, imperative, simple present, simple past, simple future, past participle as an adjective. No auxiliary-built compounds: not "the bucket has been created" but "the bucket exists". Prefer simple present for product behavior: "Applications caches content at the edge."
 - **Active voice.** Required in procedures. In description, passive only when the actor is genuinely unknown or is the platform itself.
@@ -51,7 +51,7 @@ The principle, not the list: **pick the plainest word available and use it the s
 ## Where this documentation deliberately diverges
 
 - **The caps are targets, not build gates.** Nothing in CI counts words. A clear 26-word descriptive sentence is not a finding.
-- **Portuguese pages follow the structural rules, not the vocabulary ones.** Length, one instruction per sentence, tenses, voice, and noun clusters all transfer. `terminology.md` carries the vocabulary side.
+- **Portuguese pages follow the structural rules, not the vocabulary ones.** Length, one action per step, tenses, voice, and noun clusters all transfer. `terminology.md` carries the vocabulary side.
 - **Marketing copy is out of scope.** STE is deliberately flat, which is right for documentation and wrong for a launch post.
 
 ## Why this helps beyond clarity

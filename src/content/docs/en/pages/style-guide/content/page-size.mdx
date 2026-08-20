@@ -28,6 +28,8 @@ English prose runs at roughly 4 characters per token, and Portuguese runs closer
 
 The targets describe what good pages here already do. The median section in the corpus is 751 characters, and the median page is 4,778. The targets sit near the 75th percentile. Over the hard cap, split the page.
 
+A page may pass 8,000 characters when every one of its sections fits 2,000. The page target bounds how many chunks a page becomes, while the section target decides whether each chunk is usable on its own. A long page split into clean sections costs a retriever nothing, so the exemption follows the property that matters. It never applies to the 16,000 hard cap, and it never excuses a section over its own target.
+
 ## Understand what retrieval returns
 
 A retrieval system does not return a page. It returns a chunk, usually one section, with no neighbors attached.
@@ -51,6 +53,21 @@ Every `##` section must make sense to a reader who has not seen the rest of the 
 Verbose prose wastes the reader's time, and it also dilutes the chunk. An embedding of 2,000 characters where 600 carry the information matches worse than an embedding of 600 that are all signal. A preamble that restates the heading is the first thing to cut.
 
 Concision has a hard floor. Never drop a subject, a verb, or an article to save characters. A clipped sentence trades length for ambiguity, which is the opposite of the point. Split the sentence instead.
+
+## Check your draft
+
+Confirm both points before you hand a draft over:
+
+- Every `##` section fits 2,000 characters, and none passes 4,000.
+- The page fits 8,000 characters, or every section fits 2,000.
+
+This command prints the page size and lists any section over target:
+
+```bash
+node -e 'const fs=require("fs");for(const f of process.argv.slice(1)){const b=fs.readFileSync(f,"utf8").replace(/^---[\s\S]*?\n---\n/,"");console.log(b.length+"ch  "+f);b.split(/\n(?=## )/).forEach(s=>{if(s.length>2000)console.log("  section "+s.length+"ch  "+(s.match(/^## (.*)/)||[,"(intro)"])[1])})}' src/content/docs/en/pages/.../page.mdx
+```
+
+A page over 8,000 characters that lists no section has earned the exemption. A page that lists one has not, whatever its total.
 
 ## Apply the exemptions
 

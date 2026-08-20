@@ -31,7 +31,7 @@ A step holding two actions is a step where the second one gets skipped.
 - Not: `Select **Save**, then purge the cache and confirm the TTL changed.`
 - Instead: three numbered steps.
 
-Small movements that form one gesture may share a step: "Enter a name and select **Read-only**."
+Small movements that form one gesture may share a step, and therefore one sentence: "Enter a name and select **Read-only**." This is the one place a single sentence carries two imperatives, and it overrides the sentence rules in `simplified-technical-english.md`.
 
 ## Order within a step
 

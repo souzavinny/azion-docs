@@ -28,12 +28,14 @@ O ASD-STE100 define regras mais rígidas para procedimentos do que para descriç
 
 Um procedimento tem o limite mais rígido porque o leitor executa cada passo sob pressão. Um passo que o leitor lê errado vira uma ação que falha. Os limites contam apenas frases de texto corrido. Células de tabela, código e saída de comando ficam fora da contagem.
 
-## Escreva uma instrução por frase
+## Dê uma ação por passo
 
-Em um procedimento, cada frase dá exatamente uma instrução. Quando um passo contém duas ações, o leitor muitas vezes completa a primeira e pula a segunda.
+Em um procedimento, cada passo carrega exatamente uma ação. Quando um passo contém duas, o leitor muitas vezes completa a primeira e pula a segunda.
 
 - Antes: `Crie o bucket e envie seus arquivos, depois configure as permissões.`
-- Depois: `Crie o bucket. Envie seus arquivos. Configure as permissões.`
+- Depois: três passos numerados, um para cada ação: `Crie o bucket.` `Envie seus arquivos.` `Configure as permissões.`
+
+[Procedimentos](/pt-br/documentacao/guia-de-estilo/escrita/procedimentos/) é o dono desta regra, incluindo o único caso em que dois movimentos pequenos dividem um passo e uma única frase.
 
 ## Use apenas tempos verbais simples
 

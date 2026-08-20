@@ -15,7 +15,7 @@ Style-guide links point at a temporary deployment, `https://5yye2daquza.map.azio
 
 - Second person, present tense, active voice. **No contractions.**
 - Never "we" — the actor is "Azion" or "you".
-- Sentence caps: 20 words in procedures, 25 in description. One instruction per step.
+- Sentence caps: 20 words in procedures, 25 in description. One action per step, except that two small movements forming one gesture may share a step: `Enter a name and select **Read-only**.`
 - Describe behavior and limits; never sell. No adjective makes a quality claim about an Azion product: not "powerful", "seamless", "robust". "Perfect for" becomes "Use for"; "Best for" becomes "Use when"; "enables you to" becomes the action itself.
 - No filler: "it is important to note", "in order to", "leverage" as decoration, "dive into", "straightforward".
 - No "please", no "simply" or "just", no "e.g."/"i.e.", no "etc.".

@@ -28,6 +28,8 @@ A prosa em inglês fica em torno de 4 caracteres por token, e a em português fi
 
 Os alvos descrevem o que as boas páginas daqui já fazem. A seção mediana do corpus tem 751 caracteres, e a página mediana tem 4.778. Os alvos ficam perto do percentil 75. Acima do teto, divida a página.
 
+Uma página pode passar de 8.000 caracteres quando cada uma de suas seções cabe em 2.000. O alvo da página limita em quantos chunks ela se divide, e o alvo da seção decide se cada chunk é utilizável sozinho. Uma página longa dividida em seções limpas não custa nada ao retriever, então a exceção segue a propriedade que importa. Ela nunca vale para o teto de 16.000, e nunca justifica uma seção acima do próprio alvo.
+
 ## Entenda o que o retrieval retorna
 
 Um sistema de retrieval não retorna uma página. Ele retorna um chunk, em geral uma seção, sem os vizinhos.
@@ -51,6 +53,21 @@ Cada seção `##` precisa fazer sentido para um leitor que não viu o resto da p
 A prosa prolixa desperdiça o tempo do leitor e também dilui o chunk. Um embedding de 2.000 caracteres em que só 600 carregam informação corresponde pior à consulta do que um embedding de 600 que são todos sinal. Um preâmbulo que repete o título é a primeira coisa a cortar.
 
 A concisão tem um piso rígido. Nunca corte um sujeito, um verbo ou um artigo para economizar caracteres. Uma frase amputada troca comprimento por ambiguidade, que é o oposto do objetivo. Divida a frase.
+
+## Confira seu rascunho
+
+Confirme os dois pontos antes de entregar um rascunho:
+
+- Cada seção `##` cabe em 2.000 caracteres, e nenhuma passa de 4.000.
+- A página cabe em 8.000 caracteres, ou cada seção cabe em 2.000.
+
+Este comando imprime o tamanho da página e lista qualquer seção acima do alvo:
+
+```bash
+node -e 'const fs=require("fs");for(const f of process.argv.slice(1)){const b=fs.readFileSync(f,"utf8").replace(/^---[\s\S]*?\n---\n/,"");console.log(b.length+"ch  "+f);b.split(/\n(?=## )/).forEach(s=>{if(s.length>2000)console.log("  section "+s.length+"ch  "+(s.match(/^## (.*)/)||[,"(intro)"])[1])})}' src/content/docs/pt-br/pages/.../page.mdx
+```
+
+Uma página acima de 8.000 caracteres que não lista nenhuma seção conquistou a exceção. Uma página que lista alguma não conquistou, qualquer que seja o total.
 
 ## Aplique as isenções
 

@@ -11,7 +11,9 @@ Measured on the body, excluding frontmatter.
 | A `##` section | 2,000 characters | 4,000 |
 | A whole page | 8,000 characters | 16,000 |
 
-Roughly 4 characters per token in English, closer to 3.5 in Portuguese. So a 2,000-character section is about one retrieval chunk, and an 8,000-character page is three or four. Portuguese runs longer than the same page in English, so aim the English at 7,000 and the pair fits.
+Roughly 4 characters per token in English, closer to 3.5 in Portuguese. So a 2,000-character section is about one retrieval chunk, and an 8,000-character page is three or four. Portuguese runs longer than the same page in English, so aim the English at 7,640 and the pair fits. That ratio is measured, not estimated: across the 760 paired pages in this repository the Portuguese body is a median 1.047 times the English, p90 1.096.
+
+**A page may pass 8,000 characters when every one of its sections fits 2,000.** The page target bounds how many chunks a page becomes; the section target decides whether each chunk is usable. A well-sectioned long page costs a retriever nothing, so the exemption is tied to the property that matters. It never applies to the 16,000 hard cap, and it never excuses an oversized section.
 
 Over the hard cap, split. The split procedure is in the contributing skill's `information-architecture.md`.
 
