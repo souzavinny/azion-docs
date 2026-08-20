@@ -30,6 +30,8 @@ Use these exactly. Azion renamed its products and platform resources; the old na
 
 **Resources and products.** `Applications`, `Firewall`, `Connectors`, and `Console` are platform resources: capabilities of the platform itself. The modules of a resource are products. Name the product first and the resource as context: "Web Application Firewall (WAF) is a Firewall module that inspects HTTP and HTTPS requests", not "Firewall is a product that includes WAF".
 
+**A product name is singular, whatever its form.** Applications, Functions, and Connectors each name one product, and each takes a singular verb: "Applications caches content", "Functions runs your code" — never "Applications cache". Portuguese agrees the same way: "Functions executa suas funções", never "executam".
+
 **Historical documents are exempt.** Changelogs, release notes, and dated agreements record what was true when they were written. A 2020 Terms of Service keeps the names it was signed with. Do not rename products inside them.
 
 **A URL or directory name is not evidence of a name.** Paths still carry legacy terms (`edge-application/`, `edge-firewall/`) that the prose has moved away from.
@@ -98,6 +100,8 @@ Sentence case in both languages. Capitalize the first word and proper nouns only
 
 - `Configure cache policies`
 - Not `Configure Cache Policies`
+
+The Headings and titles section of `style-guide.md` owns this rule; this entry restates it beside the naming rules.
 
 ## Two rules that trip translators
 

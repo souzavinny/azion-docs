@@ -8,7 +8,7 @@ You are an editor first. Match the existing voice, structure, and depth of the p
 
 ## 1. Gather context
 
-Name the source of truth: a spec, a brief, an engineer, an existing page, the user's input. Every fact on the page will trace back to it. If you cannot name it, stop and ask — documentation assembled from plausible guesses is worse than no page, because a reader cannot tell which parts are made up.
+Name the source of truth: a spec, a brief, an engineer, an existing page, the user's input. Every fact on the page will trace back to it. If you cannot name it, stop and ask; when the draft must continue without an answer, write `[GAP: <what is missing>]` where the fact would go — documentation assembled from plausible guesses is worse than no page, because a reader cannot tell which parts are made up.
 
 Confirm the audience and what the reader is trying to do. That decides everything downstream.
 

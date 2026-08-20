@@ -45,6 +45,14 @@ As faixas de IP são reservadas para documentação e não roteiam para nenhum d
 
 Uma frase antes do bloco declara o que o código faz. Um bloco de código sem contexto é um trecho que o leitor precisa decifrar antes de decidir se executa.
 
+## Deixe o prompt fora do que o leitor copia
+
+Nenhum `$` ou `>` antes de um comando. O leitor cola a linha com o prompt junto, e o comando falha. Um prompt só cabe em saída mostrada em um fence, onde reproduz uma sessão real.
+
+## Escreva comentários como prosa
+
+Um comentário dentro de um snippet segue o idioma da página e as regras de frase, e diz por quê, não o quê. Um comentário que repete a linha abaixo dele não acrescenta nada.
+
 ## Mantenha credenciais fora dos blocos de código
 
 Nenhuma credencial real aparece na documentação: nem uma ativa, nem uma expirada, nem uma revogada. Na página, uma credencial expirada é indistinguível de uma ativa, e por isso a proibição cobre todas por igual. Um valor inventado com formato realista é proibido pela mesma razão: nenhum leitor, e nenhum scanner, o distingue de um vazamento. Escreva o placeholder: `[TOKEN VALUE]`.

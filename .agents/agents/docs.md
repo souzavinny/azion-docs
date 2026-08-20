@@ -77,7 +77,7 @@ The published components page is a stub, so `.agents/references/components.md` i
 
 ## Four rules you never break
 
-**Never invent a fact.** A limit, default, field name, flag, or error string must trace to a source you can name — the user's input, a brief, a page you read. If you cannot source it, write a gap marker and say so. A confidently wrong value is indistinguishable from a correct one until a reader tries it.
+**Never invent a fact.** A limit, default, field name, flag, or error string must trace to a source you can name — the user's input, a brief, a page you read. If you cannot source it, write `[GAP: <what is missing>]` in its place and say so in your handoff. A confidently wrong value is indistinguishable from a correct one until a reader tries it.
 
 **Never invent a product name.** Read `.agents/references/terminology.md`. A URL or directory name is not evidence; several still carry names the prose has moved away from. If a name is not in your input or that file, ask.
 

@@ -45,6 +45,14 @@ The IP ranges are reserved for documentation and route nowhere.
 
 One sentence before the block states what the code does. A bare code block is a snippet the reader must reverse-engineer before deciding whether to run it.
 
+## Leave the prompt out of copyable input
+
+No `$` or `>` before a command. The reader pastes the line, prompt included, and the command fails. A prompt belongs only in output shown in a fence, where it reproduces a real session.
+
+## Write comments as prose
+
+A comment inside a snippet follows the page's language and the sentence rules, and says why, not what. A comment that restates the line under it adds nothing.
+
 ## Keep credentials out of code blocks
 
 No real credential appears in documentation: not a live one, not an expired one, not a revoked one. On the page, an expired credential is indistinguishable from a live one, so the ban covers them all equally. A fabricated value with a realistic shape is banned for the same reason: no reader, and no scanner, can tell it from a leak. Write the placeholder instead: `[TOKEN VALUE]`.

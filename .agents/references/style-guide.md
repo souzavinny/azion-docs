@@ -20,6 +20,8 @@ Prescriptive rules for writing and reviewing Azion documentation. This file is t
 
 **Documentation reads as timeless.** No "currently", "at the time of writing", "will soon", "now available", "recently", or "new" as a modifier. No month or year outside a changelog. Say what is true and let the changelog carry the timeline.
 
+**Status is a badge, not a tense.** Preview, beta, general availability, and deprecation are marked structurally: the `<Tag>` badge beside the title (mechanics in `components.md`), the Plan column of a limits table, a dated changelog entry. Not "currently in beta" — the badge carries the status and the prose states what the feature does. A plan-gated feature states the plan as a requirement: "Available on the Enterprise plan."
+
 ## Word choice
 
 **Filler that never survives review.** Delete these on sight:
@@ -186,7 +188,11 @@ The right tool for anything enumerable: fields, limits, flags, defaults, status 
 
 **A unit sits beside its number**, with a space: `20 MB`, `60 seconds`. Hyphenate when the measurement modifies a noun: `a 60-second TTL`. Abbreviate only next to a number and never with a trailing period.
 
-**En dash for a negative number:** `–40`, not a hyphen.
+**`MB` and `MiB` are different numbers.** Write the unit the source states and never convert between decimal (`kB`, `MB`, `GB`) and binary (`KiB`, `MiB`, `GiB`) forms. Rates too: `Gbps` counts bits and `MB/s` counts bytes, eight times apart — keep the form the source uses.
+
+**A limit is exact.** Never round one. Round only an illustrative figure, and mark it: `about 200 ms`.
+
+**En dash for a negative number in prose:** `–40`, not a hyphen. Code, commands, and any value the reader copies keep the ASCII hyphen-minus: a pasted `–40` does not parse.
 
 **Ordinals take no suffix beyond the number.** `first`, `1st`, never `firstly`.
 
@@ -218,6 +224,10 @@ Never a plausible-looking fake value a reader might paste as-is. The IP ranges a
 **Never a real credential.** Not an expired one, not a fake one that looks real.
 
 **A fence for output the reader reads; `<Code>` for input the reader copies.** Mechanics in `components.md`.
+
+**No prompt in copyable input.** No `$` or `>` before a command: the reader pastes the line, prompt included, and the command fails. A prompt belongs only in output shown in a fence, reproducing a real session.
+
+**Comments are prose.** A comment inside a snippet follows the page's language and the sentence rules, and says why, not what. A comment that restates the line under it adds nothing.
 
 ## Admonitions
 
