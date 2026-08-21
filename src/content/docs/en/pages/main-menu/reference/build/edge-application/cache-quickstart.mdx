@@ -2,7 +2,7 @@
 title: Cache quickstart
 description: >-
   Create your first cache setting, apply it to a request path with a rule, and
-  confirm the cache status of a request at the edge.
+  confirm the cache status of a request.
 meta_tags: 'cache, ttl, cache setting, rules engine, quickstart'
 namespace: documentation_build_cache_quickstart
 permalink: /documentation/build/cache/quickstart/
@@ -16,9 +16,9 @@ This guide instructs you through your first cache setting on an Azion applicatio
 - Turn on the **Application Accelerator** module.
 - Create a cache setting with a custom TTL.
 - Apply the cache setting to a request path with a rule.
-- Confirm the cache status of a request at the edge.
+- Confirm the cache status of a request.
 
-To cache content at the edge, you create and connect these objects:
+To cache content on Azion's distributed network, you create and connect these objects:
 
 1. An **application**, which owns the cache setting.
 2. A **cache setting**, which holds the cache expiration policies.
@@ -54,7 +54,7 @@ With **Application Accelerator** active, data transfer can generate usage-relate
 
 ## 2. Create a cache setting
 
-A cache setting holds the cache expiration policies of an application: how long the edge and the browser keep the content. An application can hold more than one cache setting.
+A cache setting holds the cache expiration policies of an application: how long edge nodes and the browser keep the content. An application can hold more than one cache setting.
 
 To create the cache setting:
 
@@ -95,7 +95,7 @@ The rule applies the cache setting to every request to the `/cache` path. Change
 
 ## 4. Verify the cache status
 
-The `X-Cache` response header carries the cache status of a request. The edge returns it when the request carries the `Pragma: azion-debug-cache` debug header.
+The `X-Cache` response header carries the cache status of a request. The edge node returns it when the request carries the `Pragma: azion-debug-cache` debug header.
 
 Request the cached path with the debug header:
 
@@ -107,7 +107,7 @@ A successful response returns an `X-Cache` header with the cache status, the IP 
 X-Cache: HIT from 200.000.000.00 with HTTP/2.0
 ```
 
-A `HIT` status means the edge served the content from the cache. A `MISS` status means the content was not in the cache at the edge, so the edge fetched it from the origin. Send the request again to check for a `HIT`.
+A `HIT` status means the edge node served the content from the cache. A `MISS` status means the content was not cached on the edge node, so the node fetched it from the origin. Send the request again to check for a `HIT`.
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Purge cached content
 description: >-
-  Delete cached objects at the edge by URL, cache key, or wildcard expression,
+  Delete cached objects by URL, cache key, or wildcard expression,
   from Azion Console, the Azion CLI, or the API.
 meta_tags: 'purge, real-time purge, cache, cache key, wildcard, tiered cache'
 namespace: documentation_build_cache_purge_content
@@ -196,12 +196,12 @@ Azion confirms the purge and lists it in the purge history once completed.
 
 ## Choose the cache layer
 
-Real-Time Purge runs against one layer per request. **Cache** holds content at the edge, and **Tiered Cache** is the second cache layer at the edge.
+Real-Time Purge runs against one layer per request. **Cache** holds content on the edge nodes, and **Tiered Cache** is the second layer, between the edge nodes and the origin.
 
 | Layer | What it purges | `--layer` value |
 | --- | --- | --- |
-| Cache | Cache kept with Azion at the edge. | `cache` |
-| Tiered Cache | Cache from the second layer at the edge. | `tiered_cache` |
+| Cache | Cache kept on Azion edge nodes. | `cache` |
+| Tiered Cache | Cache from the second layer, between the edge nodes and the origin. | `tiered_cache` |
 
 The Azion CLI uses `cache` when you do not pass `--layer`. The API takes the layer in the `layer` field of the request body.
 

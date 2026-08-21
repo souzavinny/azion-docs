@@ -1,7 +1,7 @@
 ---
 title: Faça purge de conteúdo em cache
 description: >-
-  Exclua objetos em cache no edge por URL, cache key ou expressão wildcard, a
+  Exclua objetos em cache por URL, cache key ou expressão wildcard, a
   partir do Azion Console, do Azion CLI ou da API.
 meta_tags: 'purge, real-time purge, cache, cache key, wildcard, tiered cache'
 namespace: documentation_build_cache_purge_content
@@ -196,12 +196,12 @@ A Azion confirma a purge e a lista no histórico de purge assim que concluída.
 
 ## Escolha a camada de cache
 
-O Real-Time Purge é executado em uma camada por requisição. O **Cache** mantém o conteúdo no edge, e o **Tiered Cache** é a segunda camada de cache no edge.
+O Real-Time Purge é executado em uma camada por requisição. O **Cache** mantém o conteúdo nos edge nodes, e o **Tiered Cache** é a segunda camada, entre os edge nodes e a origem.
 
 | Camada | O que purga | Valor de `--layer` |
 | --- | --- | --- |
-| Cache | Cache mantido pela Azion no edge. | `cache` |
-| Tiered Cache | Cache da segunda camada no edge. | `tiered_cache` |
+| Cache | Cache mantido nos edge nodes da Azion. | `cache` |
+| Tiered Cache | Cache da segunda camada, entre os edge nodes e a origem. | `tiered_cache` |
 
 O Azion CLI usa `cache` quando você não informa `--layer`. A API recebe a camada no campo `layer` do corpo da requisição.
 

@@ -23,11 +23,11 @@ Definitions for the terms the **Cache** documentation uses.
 | cache status | The result an edge node reports for the cache lookup of a request, such as HIT or MISS. The `X-Cache` header carries the [cache status](/en/documentation/build/cache/how-it-works/#cache-status). |
 | edge cache TTL | The amount of time content stays cached on Azion edge nodes. The [CDN Cache Settings](/en/documentation/build/cache/reference/cache-settings/#cdn-cache-settings) field sets it, and raising it cuts origin load. |
 | edge node | A server of Azion's distributed network that answers requests close to the end user. [Cache](/en/documentation/build/cache/how-it-works/) stores content on edge nodes, in a layer between the origin and the user. |
-| origin | The servers that hold the authoritative copy of your content. The edge fetches content from the origin when the cache cannot answer, and on every revalidation. |
+| origin | The servers that hold the authoritative copy of your content. The edge node fetches content from the origin when the cache cannot answer, and on every revalidation. |
 | Real-Time Purge | The Cache feature that deletes cached content instantly, before its TTL expires, from Cache or Tiered Cache. Use [Real-Time Purge](/en/documentation/build/cache/reference/real-time-purge/) to serve the latest version after an origin update. |
 | stale cache | An expired cached object that edge nodes keep serving while revalidation with the origin fails or runs. [Stale cache](/en/documentation/build/cache/how-it-works/#stale-cache) avoids error pages during origin downtime. |
 | Thundering Herd control | The [origin protection](/en/documentation/build/cache/how-it-works/#origin-protection) that opens a single origin connection when simultaneous requests ask for the same non-cached object. Each edge node requests the object once per non-HIT status. |
-| Tiered Cache | A Cache module that creates an additional cache layer between the edge and your origin servers. [Tiered Cache](/en/documentation/build/cache/tiered-cache/) reduces latency and infrastructure costs. |
+| Tiered Cache | A Cache module that creates an additional cache layer between the edge nodes and your origin servers. [Tiered Cache](/en/documentation/build/cache/tiered-cache/) reduces latency and infrastructure costs. |
 | TTL (time to live) | The amount of time a cached copy stays usable before it expires. The browser cache TTL and the edge cache TTL apply it at two layers. |
 
 </GlossaryFilter>

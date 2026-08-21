@@ -10,7 +10,7 @@ menu_namespace: cacheMenu
 permalink: /documentacao/build/cache/reference/cache-keys/
 ---
 
-Uma cache key é uma entrada de índice para um objeto nos edge nodes da Azion. Quando uma requisição é feita para uma application pela primeira vez, o edge encaminha a requisição para o servidor de origem e gera um cache para cada objeto recebido. Quando a próxima requisição do mesmo recurso é feita para a application, se o recurso solicitado corresponder a um já encontrado por meio da cache key, o edge não encaminha a requisição para a origem.
+Uma cache key é uma entrada de índice para um objeto nos edge nodes da Azion. Quando uma requisição é feita para uma application pela primeira vez, o edge node encaminha a requisição para o servidor de origem e gera um cache para cada objeto recebido. Quando a próxima requisição do mesmo recurso é feita para a application, se o recurso solicitado corresponder a um já encontrado por meio da cache key, o edge node não encaminha a requisição para a origem.
 
 Para obter a cache key de qualquer recurso em uma application, faça uma requisição para a URI do conteúdo e adicione o cabeçalho de debug da Azion `Pragma: azion-debug-cache`. Uma resposta bem-sucedida retorna um cabeçalho `X-Cache-Key` com o valor da cache key:
 
@@ -38,7 +38,7 @@ Um objeto com a URI `https://static.seudominio.com/pagina/site.js` gera a cache 
 
 Cache keys são case-sensitive, o que significa que caracteres em maiúsculo e minúsculo são reconhecidos como distintos.
 
-Algumas cache keys mudam dependendo de variações geradas no edge. Se variações forem habilitadas, a cache key pode conter o marcador `@@` no final, resultando em `httpsstatic.seudominio.com/pagina/site.js@@`.
+Algumas cache keys mudam dependendo de variações geradas no edge node. Se variações forem habilitadas, a cache key pode conter o marcador `@@` no final, resultando em `httpsstatic.seudominio.com/pagina/site.js@@`.
 
 ## Requisições complexas
 
@@ -100,7 +100,7 @@ Por exemplo:
 ## Recursos relacionados
 
 - [Cache](/pt-br/documentacao/build/cache/) - o módulo que controla como uma application faz cache de conteúdo.
-- [Como o Cache funciona](/pt-br/documentacao/build/cache/como-funciona/) - o que cada status de cache significa e quando o edge o retorna.
+- [Como o Cache funciona](/pt-br/documentacao/build/cache/como-funciona/) - o que cada status de cache significa e quando o edge node o retorna.
 - [Cache settings](/pt-br/documentacao/build/cache/reference/cache-settings/) - os campos que definem o comportamento de cache de uma application.
 - [Advanced Cache Key](/pt-br/documentacao/build/application-accelerator/guides/advanced-cache-key/) - como configurar variações de cache key por cookie e query string.
 - [Application Accelerator](/pt-br/documentacao/build/application-accelerator/) - o módulo que fornece o Advanced Cache Key.

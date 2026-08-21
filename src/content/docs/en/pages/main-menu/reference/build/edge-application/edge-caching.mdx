@@ -17,8 +17,8 @@ import LinkButton from 'azion-webkit/linkbutton'
 With Cache, your application:
 
 - Answers a request from the edge node nearest the user, so the request never reaches the origin.
-- Keeps serving content from the edge when origin servers experience downtime or become unavailable.
-- Controls how long content stays at the edge and in the browser, through *time-to-live* (TTL) values.
+- Keeps serving content from the edge nodes when origin servers experience downtime or become unavailable.
+- Controls how long content stays on edge nodes and in the browser, through *time-to-live* (TTL) values.
 - Varies what it stores by query string, cookie, device group, or HTTP method.
 
 <LinkButton label="Quickstart" link="/en/documentation/build/cache/quickstart/" />
@@ -40,7 +40,7 @@ Stale Cache lets edge nodes keep serving objects after those objects expire, so 
 
 ## Tiered Cache
 
-Tiered Cache adds a second cache layer between the edge nodes and your origin servers, so a miss at the edge can still be answered without reaching the origin.
+Tiered Cache adds a second cache layer between the edge nodes and your origin servers, so a miss on the edge node can still be answered without reaching the origin.
 
 <LinkButton link="/en/documentation/build/cache/tiered-cache/" label="go to Tiered Cache documentation" />
 
@@ -76,7 +76,7 @@ You can create and manage Cache using:
 
 ## Related resources
 
-- [Cache quickstart](/en/documentation/build/cache/quickstart/) - cache your first content at the edge.
+- [Cache quickstart](/en/documentation/build/cache/quickstart/) - cache your first content on Azion's distributed network.
 - [How Cache works](/en/documentation/build/cache/how-it-works/) - the cache statuses, origin protection, expiration, and stale cache.
 - [Cache limits](/en/documentation/build/cache/limits/) - the default limits for cache storage, TTL, and purge operations.
 - [Configure a cache policy](/en/documentation/build/cache/guides/cache-settings/) - set TTL values and apply them with Rules Engine.

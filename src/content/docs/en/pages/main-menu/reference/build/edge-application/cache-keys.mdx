@@ -10,7 +10,7 @@ menu_namespace: cacheMenu
 permalink: /documentation/build/cache/reference/cache-keys/
 ---
 
-A cache key is an index entry for an object in Azion's edge nodes. When a request is made to an application for the first time, the edge forwards the request to the origin server and generates a cache for each object received at the edge. When the next request for the same resource is made to the application, if the resource requested matches one already found through the cache key, the edge does not forward the request to the origin.
+A cache key is an index entry for an object in Azion's edge nodes. When a request is made to an application for the first time, the edge node forwards the request to the origin server and generates a cache for each object received on the edge node. When the next request for the same resource is made to the application, if the resource requested matches one already found through the cache key, the edge node does not forward the request to the origin.
 
 To obtain the cache key of an application's resource, request the content URI and add the Azion debug header `Pragma: azion-debug-cache`. A successful response returns an `X-Cache-Key` header with the cache key value:
 
@@ -38,7 +38,7 @@ An object with the URI `https://static.yourdomain.com/page/site.js` generates th
 
 Cache keys are case sensitive, meaning upper and lower case characters are considered as distinctive.
 
-Some cache keys change depending on variations generated at the edge. If variations are enabled, the cache key can contain the `@@` separator at the end, resulting in `httpsstatic.yourdomain.com/page/site.js@@`.
+Some cache keys change depending on variations generated on the edge node. If variations are enabled, the cache key can contain the `@@` separator at the end, resulting in `httpsstatic.yourdomain.com/page/site.js@@`.
 
 ## Complex requests
 
@@ -100,7 +100,7 @@ For example:
 ## Related resources
 
 - [Cache](/en/documentation/build/cache/) - the module that controls how an application caches content.
-- [How Cache works](/en/documentation/build/cache/how-it-works/) - what each cache status means and when the edge returns it.
+- [How Cache works](/en/documentation/build/cache/how-it-works/) - what each cache status means and when the edge node returns it.
 - [Cache settings](/en/documentation/build/cache/reference/cache-settings/) - the fields that define cache behavior for an application.
 - [Advanced Cache Key](/en/documentation/build/application-accelerator/guides/advanced-cache-key/) - how to configure cache key variations by cookie and query string.
 - [Application Accelerator](/en/documentation/build/application-accelerator/) - the module that provides Advanced Cache Key.

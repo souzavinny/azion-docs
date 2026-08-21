@@ -2,7 +2,7 @@
 title: Quickstart do Cache
 description: >-
   Crie sua primeira cache setting, aplique-a a um caminho de requisição com uma
-  regra e confirme o status de cache de uma requisição no edge.
+  regra e confirme o status de cache de uma requisição.
 meta_tags: 'cache, ttl, cache setting, rules engine, quickstart'
 namespace: documentation_build_cache_quickstart
 permalink: /documentacao/build/cache/quickstart/
@@ -16,9 +16,9 @@ Este guia conduz você por sua primeira cache setting em uma aplicação da Azio
 - Ative o módulo **Application Accelerator**.
 - Crie uma cache setting com um TTL personalizado.
 - Aplique a cache setting a um caminho de requisição com uma regra.
-- Confirme o status de cache de uma requisição no edge.
+- Confirme o status de cache de uma requisição.
 
-Para armazenar conteúdo em cache no edge, você cria e conecta estes objetos:
+Para armazenar conteúdo em cache na rede distribuída da Azion, você cria e conecta estes objetos:
 
 1. Uma **aplicação**, que é dona da cache setting.
 2. Uma **cache setting**, que contém as políticas de expiração de cache.
@@ -37,7 +37,7 @@ Uma cache setting que nenhuma regra referencia não faz nada. A regra decide a q
 
 ## 1. Ative o Application Accelerator
 
-O módulo [Application Accelerator](/pt-br/documentacao/build/application-accelerator/) libera as configurações avançadas de cache key de uma cache setting e permite definir um TTL no edge abaixo de 60 segundos.
+O módulo [Application Accelerator](/pt-br/documentacao/build/application-accelerator/) libera as configurações avançadas de cache key de uma cache setting e permite definir um TTL de cache abaixo de 60 segundos.
 
 Para ativar o módulo:
 
@@ -54,7 +54,7 @@ Com o **Application Accelerator** ativo, a transferência de dados pode gerar cu
 
 ## 2. Crie uma cache setting
 
-Uma cache setting contém as políticas de expiração de cache de uma aplicação: por quanto tempo o edge e o navegador mantêm o conteúdo. Uma aplicação pode conter mais de uma cache setting.
+Uma cache setting contém as políticas de expiração de cache de uma aplicação: por quanto tempo os edge nodes e o navegador mantêm o conteúdo. Uma aplicação pode conter mais de uma cache setting.
 
 Para criar a cache setting:
 
@@ -69,7 +69,7 @@ Para criar a cache setting:
 A página de cache settings lista a nova cache setting.
 
 :::note[nota]
-O TTL no edge aceita um valor entre `60` e `31536000` segundos, que corresponde a 1 ano. Com o módulo **Application Accelerator** ativo, o mínimo é `0`.
+O TTL de cache aceita um valor entre `60` e `31536000` segundos, que corresponde a 1 ano. Com o módulo **Application Accelerator** ativo, o mínimo é `0`.
 :::
 
 ## 3. Aplique a cache setting com uma regra
@@ -95,7 +95,7 @@ A regra aplica a cache setting a toda requisição ao caminho `/cache`. As alter
 
 ## 4. Verifique o status de cache
 
-O header de resposta `X-Cache` carrega o status de cache de uma requisição. O edge o retorna quando a requisição carrega o header de debug `Pragma: azion-debug-cache`.
+O header de resposta `X-Cache` carrega o status de cache de uma requisição. O edge node o retorna quando a requisição carrega o header de debug `Pragma: azion-debug-cache`.
 
 Faça a requisição ao caminho em cache com o header de debug:
 
@@ -107,7 +107,7 @@ Uma resposta bem-sucedida retorna um header `X-Cache` com o status de cache, o I
 X-Cache: HIT from 200.000.000.00 with HTTP/2.0
 ```
 
-Um status `HIT` significa que o edge serviu o conteúdo a partir do cache. Um status `MISS` significa que o conteúdo não estava no cache no edge, então o edge o buscou na origem. Envie a requisição de novo para verificar um `HIT`.
+Um status `HIT` significa que o edge node serviu o conteúdo a partir do cache. Um status `MISS` significa que o conteúdo não estava em cache no edge node, então o edge node o buscou na origem. Envie a requisição de novo para verificar um `HIT`.
 
 ---
 

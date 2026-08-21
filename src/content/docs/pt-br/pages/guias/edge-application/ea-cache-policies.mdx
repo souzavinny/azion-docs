@@ -13,7 +13,7 @@ og_image: /assets/docs/images/uploads/02-09-edge-caching-1.png
 
 import LinkButton from 'azion-webkit/linkbutton'
 
-Você pode definir o time-to-live (TTL) do conteúdo em cache no edge e no navegador, ignorar as configurações de cache da origem e enviar cookies pelo Azion Console, usando cache settings e o [Rules Engine](/pt-br/documentacao/build/applications/reference/rules-engine/).
+Você pode definir o time-to-live (TTL) do conteúdo em cache nos edge nodes e no navegador, ignorar as configurações de cache da origem e enviar cookies pelo Azion Console, usando cache settings e o [Rules Engine](/pt-br/documentacao/build/applications/reference/rules-engine/).
 
 :::tip
 Para configurar políticas de cache para conteúdo dinâmico, consulte o guia [Como configurar a Advanced Cache Key para Applications](/pt-br/documentacao/build/application-accelerator/guides/advanced-cache-key/).
@@ -54,7 +54,7 @@ Para criar a cache setting:
 3. Dê um nome fácil de lembrar para sua configuração de cache. Por exemplo: `/target-uri - Cache TTL`.
 4. Em **Cache Expiration Policies**, personalize o TTL:
    - Em **Browser Cache Settings**, selecione **Override Cache Settings** para definir por quanto tempo seu conteúdo pode ser armazenado em cache nos navegadores.
-   - Em **Cache Settings**, selecione **Override Cache Settings** para definir por quanto tempo seu conteúdo pode ser armazenado em cache no edge.
+   - Em **Cache Settings**, selecione **Override Cache Settings** para definir por quanto tempo seu conteúdo pode ser armazenado em cache nos edge nodes.
 5. Se você optou por substituir as configurações de cache, adicione o **Maximum TTL** desejado em segundos.
    - Você também pode personalizar configurações de cache para conteúdo dinâmico relacionadas à funcionalidade [Advanced Cache Key](/pt-br/documentacao/build/cache/reference/cache-settings/#advanced-cache-key).
 6. Selecione **Save**.
@@ -85,7 +85,7 @@ A cache setting passa a se aplicar à condição definida nos critérios. Você 
 
 ## Ignore o cache da origem
 
-O Bypass Cache faz o edge requisitar o conteúdo da origem em vez de servir uma versão em cache.
+O Bypass Cache faz o edge node requisitar o conteúdo da origem em vez de servir uma versão em cache.
 
 Para ignorar as políticas de cache da origem:
 

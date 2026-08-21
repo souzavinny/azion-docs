@@ -10,7 +10,7 @@ menu_namespace: cacheMenu
 difficulty: Intermediate
 ---
 
-Você pode configurar as políticas de cache de uma aplicação pela Azion API: valores de expiração no edge e no navegador, otimização de arquivos grandes e segmentação de cache key por método HTTP, query string, cookie ou device group.
+Você pode configurar as políticas de cache de uma aplicação pela Azion API: valores de expiração para o cache do edge e para o navegador, otimização de arquivos grandes e segmentação de cache key por método HTTP, query string, cookie ou device group.
 
 Para fazer o mesmo pelo Azion Console, consulte [Configure uma política de cache](/pt-br/documentacao/build/cache/guides/cache-settings/).
 
@@ -148,7 +148,7 @@ Cada chave abaixo pertence ao corpo da requisição da seção anterior.
 | `name` | Define uma string como o nome da configuração de cache. |
 | `browser_cache.behavior` | Define o comportamento de cache para navegadores. `"honor"` respeita os cabeçalhos de TTL enviados pela origem; `"override"` permite definir um valor de TTL personalizado usando `max_age`. |
 | `browser_cache.max_age` | TTL máximo (em segundos) para cache do navegador quando `behavior` está configurado como `"override"`. |
-| `modules.edge_cache.behavior` | Define o comportamento de cache no edge. `"honor"` usa os cabeçalhos de TTL da origem; `"override"` utiliza o campo `max_age` em vez disso. |
+| `modules.edge_cache.behavior` | Define o comportamento do cache do edge. `"honor"` usa os cabeçalhos de TTL da origem; `"override"` utiliza o campo `max_age` em vez disso. |
 | `modules.edge_cache.max_age` | TTL (em segundos) para o cache do edge ao substituir os cabeçalhos de TTL da origem. |
 | `modules.edge_cache.stale_cache.enabled` | Habilita o [stale cache](/pt-br/documentacao/build/cache/reference/cache-settings/#stale-cache) para servir conteúdo expirado temporariamente enquanto busca conteúdo atualizado na origem. |
 | `modules.edge_cache.large_file_cache.enabled` | Habilita a [Otimização de arquivos grandes](/pt-br/documentacao/build/cache/reference/cache-settings/#large-file-optimization) ao armazenar arquivos grandes em fragmentos. |

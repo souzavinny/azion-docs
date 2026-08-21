@@ -13,7 +13,7 @@ og_image: /assets/docs/images/uploads/02-09-edge-caching-1.png
 
 import LinkButton from 'azion-webkit/linkbutton'
 
-You can define the time-to-live (TTL) for cached content at the edge and at the browser, bypass origin cache settings, and forward cookies from Azion Console, using cache settings and [Rules Engine](/en/documentation/build/applications/reference/rules-engine/).
+You can define the time-to-live (TTL) for cached content on edge nodes and in the browser, bypass origin cache settings, and forward cookies from Azion Console, using cache settings and [Rules Engine](/en/documentation/build/applications/reference/rules-engine/).
 
 :::tip
 To configure cache settings for dynamic content, see the guide on [How to configure Advanced Cache Key for Applications](/en/documentation/build/application-accelerator/guides/advanced-cache-key/).
@@ -54,7 +54,7 @@ To create the cache setting:
 3. Enter an easy to remember name for your cache setting. For example: `/target-uri - Cache TTL`.
 4. In the **Cache Expiration Policies** section, customize the TTL:
    - Under **Browser Cache Settings**, select **Override Cache Settings** to define how long your content can be cached in browsers.
-   - Under **Cache Settings**, select **Override Cache Settings** to define how long your content can be cached at the edge.
+   - Under **Cache Settings**, select **Override Cache Settings** to define how long your content can be cached on edge nodes.
 5. If you chose to override cache settings, add the desired **Maximum TTL** in seconds.
    - You can also customize other cache settings for dynamic content provided by the [Advanced Cache Key](/en/documentation/build/cache/reference/cache-settings/#advanced-cache-key) feature.
 6. Select **Save**.
@@ -85,7 +85,7 @@ The cache setting now applies to the condition defined in the criteria. You can 
 
 ## Bypass origin cache
 
-Bypass Cache makes the edge request content from the origin instead of serving a cached version.
+Bypass Cache makes the edge node request content from the origin instead of serving a cached version.
 
 To bypass origin cache policies:
 

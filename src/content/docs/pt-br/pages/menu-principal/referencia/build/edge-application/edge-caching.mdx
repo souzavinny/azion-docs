@@ -18,8 +18,8 @@ import LinkButton from 'azion-webkit/linkbutton'
 Com o Cache, sua aplicação:
 
 - Responde a requisição a partir do edge node mais próximo do usuário, e a requisição nunca chega à origem.
-- Continua entregando conteúdo do edge quando os servidores de origem ficam inativos ou indisponíveis.
-- Controla por quanto tempo o conteúdo permanece no edge e no navegador, através de valores de *time-to-live* (TTL).
+- Continua entregando conteúdo dos edge nodes quando os servidores de origem ficam inativos ou indisponíveis.
+- Controla por quanto tempo o conteúdo permanece nos edge nodes e no navegador, através de valores de *time-to-live* (TTL).
 - Varia o que armazena por query string, cookie, device group ou método HTTP.
 
 <LinkButton label="Quickstart" link="/pt-br/documentacao/build/cache/quickstart/" />
@@ -41,7 +41,7 @@ O Stale Cache permite que os edge nodes continuem servindo objetos depois que el
 
 ## Tiered Cache
 
-O Tiered Cache adiciona uma segunda camada de cache entre os edge nodes e seus servidores de origem, então um miss no edge ainda pode ser respondido sem chegar à origem.
+O Tiered Cache adiciona uma segunda camada de cache entre os edge nodes e seus servidores de origem, então um miss no edge node ainda pode ser respondido sem chegar à origem.
 
 <LinkButton link="/pt-br/documentacao/build/cache/tiered-cache/" label="Saiba mais sobre Tiered Cache" />
 
@@ -77,7 +77,7 @@ Você pode criar e gerenciar o Cache usando:
 
 ## Recursos relacionados
 
-- [Cache quickstart](/pt-br/documentacao/build/cache/quickstart/) - coloque seu primeiro conteúdo em cache no edge.
+- [Cache quickstart](/pt-br/documentacao/build/cache/quickstart/) - coloque seu primeiro conteúdo em cache na rede distribuída da Azion.
 - [Como o Cache funciona](/pt-br/documentacao/build/cache/como-funciona/) - os status de cache, a proteção da origem, a expiração e o stale cache.
 - [Limites do Cache](/pt-br/documentacao/build/cache/limites/) - os limites default de armazenamento, TTL e operações de purge.
 - [Configure uma política de cache](/pt-br/documentacao/build/cache/guides/cache-settings/) - defina valores de TTL e aplique-os com o Rules Engine.

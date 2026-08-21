@@ -9,7 +9,7 @@ menu_namespace: cacheMenu
 permalink: /documentacao/build/cache/limites/
 ---
 
-O **Cache** é um módulo de **Applications** que armazena conteúdo em cache no edge. Estes limites cobrem armazenamento em cache e TTL, a camada Tiered Cache e as operações de Real-Time Purge.
+O **Cache** é um módulo de **Applications** que armazena conteúdo em cache nos edge nodes da Azion. Estes limites cobrem armazenamento em cache e TTL, a camada Tiered Cache e as operações de Real-Time Purge.
 
 ## Limites default
 
@@ -36,7 +36,7 @@ Estes são limites default, informados sem detalhamento por plano de suporte. O 
 | TTL mínimo de cache na camada Tiered Cache | 3 segundos |
 | TTL máximo de cache na camada Tiered Cache | 2.592.000 segundos |
 
-O módulo **Tiered Cache** não suporta bypass cache. Você pode [configurar uma regra de Bypass Cache](/pt-br/documentacao/build/applications/reference/rules-engine/#bypass-cache) para armazenamento em cache no edge, mas uma aplicação com Tiered Cache ativo continua armazenando em cache nessa camada pelo TTL mínimo especificado.
+O módulo **Tiered Cache** não suporta bypass cache. Você pode [configurar uma regra de Bypass Cache](/pt-br/documentacao/build/applications/reference/rules-engine/#bypass-cache) para o armazenamento em cache nos edge nodes, mas uma aplicação com Tiered Cache ativo continua armazenando em cache nessa camada pelo TTL mínimo especificado.
 
 ### Real-Time Purge
 
@@ -66,8 +66,8 @@ O limite mensal de operações de purge é o mesmo em todos os planos de suporte
 
 ## Recursos relacionados
 
-- [Cache](/pt-br/documentacao/build/cache/) - como o módulo Cache armazena conteúdo em cache no edge.
+- [Cache](/pt-br/documentacao/build/cache/) - como o módulo Cache armazena conteúdo em cache nos edge nodes da Azion.
 - [Cache Settings](/pt-br/documentacao/build/cache/reference/cache-settings/) - os campos que definem uma política de cache.
-- [Tiered Cache](/pt-br/documentacao/build/cache/tiered-cache/) - a camada extra de cache entre o edge e a origem.
+- [Tiered Cache](/pt-br/documentacao/build/cache/tiered-cache/) - a camada extra de cache entre os edge nodes e a origem.
 - [Real-Time Purge](/pt-br/documentacao/build/cache/reference/real-time-purge/) - os métodos de purge e o que cada um remove.
 - [Technical Support](/pt-br/documentacao/services/support/) - abra um ticket para solicitar o aumento de um limite.

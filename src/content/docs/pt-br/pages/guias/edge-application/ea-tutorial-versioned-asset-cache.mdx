@@ -1,7 +1,7 @@
 ---
 title: Construa um cache de assets versionados
 description: >-
-  Armazene em cache um asset estático versionado no edge por um ano, publique a
+  Armazene em cache um asset estático versionado por um ano, publique a
   versão seguinte e faça o purge da versão aposentada.
 meta_tags: 'cache, ttl, versioned assets, real-time purge, rules engine, static assets'
 namespace: documentation_build_cache_tutorial_versioned_assets
@@ -12,9 +12,9 @@ difficulty: Intermediate
 
 import Code from '~/components/Code/Code.astro'
 
-Neste tutorial, você vai armazenar em cache um asset JavaScript versionado no edge por um ano e publicar a versão seguinte. Você vai criar uma cache setting, aplicá-la com uma regra, publicar uma nova versão e fazer o purge da antiga.
+Neste tutorial, você vai armazenar em cache um asset JavaScript versionado por um ano e publicar a versão seguinte. Você vai criar uma cache setting, aplicá-la com uma regra, publicar uma nova versão e fazer o purge da antiga.
 
-O asset se chama `app_1.js` e sua substituição se chama `app_2.js`. Versionar o nome do objeto faz de cada atualização um novo objeto no edge, então um TTL de um ano nunca entrega uma versão aposentada.
+O asset se chama `app_1.js` e sua substituição se chama `app_2.js`. Versionar o nome do objeto faz de cada atualização um novo objeto no cache, então um TTL de um ano nunca entrega uma versão aposentada.
 
 ---
 
@@ -28,7 +28,7 @@ O asset se chama `app_1.js` e sua substituição se chama `app_2.js`. Versionar 
 
 ## 1. Crie uma cache setting com TTL de um ano
 
-Uma cache setting contém as políticas de expiração de cache de uma aplicação. Esta mantém os assets versionados no edge pelo TTL máximo no edge.
+Uma cache setting contém as políticas de expiração de cache de uma aplicação. Esta mantém os assets versionados em cache pelo TTL de cache máximo.
 
 Para criar a cache setting:
 
@@ -44,7 +44,7 @@ Para criar a cache setting:
 A página de cache settings lista `Versioned assets - 1 year`.
 
 :::note[nota]
-O TTL no edge aceita um valor entre `60` e `31536000` segundos, que corresponde a 1 ano. Com o módulo **Application Accelerator** ativo, o mínimo é `0`.
+O TTL de cache aceita um valor entre `60` e `31536000` segundos, que corresponde a 1 ano. Com o módulo **Application Accelerator** ativo, o mínimo é `0`.
 :::
 
 ## 2. Aplique a cache setting ao caminho do asset
@@ -68,7 +68,7 @@ A regra aplica o TTL de um ano a toda requisição sob `/assets/`, incluindo ver
 
 ## 3. Verifique o status de cache do asset
 
-O header de resposta `X-Cache` carrega o status de cache de uma requisição. O edge o retorna quando a requisição carrega o header de debug `Pragma: azion-debug-cache`.
+O header de resposta `X-Cache` carrega o status de cache de uma requisição. O edge node o retorna quando a requisição carrega o header de debug `Pragma: azion-debug-cache`.
 
 Faça a requisição ao asset com o header de debug:
 
@@ -80,7 +80,7 @@ A resposta carrega o status de cache, o IP do edge node e o protocolo usado na r
 X-Cache: HIT from 200.000.000.00 with HTTP/2.0
 ```
 
-Um `HIT` significa que o edge serviu `app_1.js` a partir do cache. Um `MISS` significa que o edge o buscou na origem, então envie a requisição de novo para obter um `HIT`.
+Um `HIT` significa que o edge node serviu `app_1.js` a partir do cache. Um `MISS` significa que o edge node o buscou na origem, então envie a requisição de novo para obter um `HIT`.
 
 ---
 
@@ -97,11 +97,11 @@ Faça a requisição ao novo asset com o header de debug:
 
 <Code lang="bash" code={`curl -s -D - -o /dev/null -H "Pragma: azion-debug-cache" "https://<seu-dominio-azion>/assets/app_2.js"`} />
 
-A primeira requisição retorna um `MISS`, porque o edge não tem cópia de `app_2.js` e o busca na origem. Uma segunda requisição retorna um `HIT`.
+A primeira requisição retorna um `MISS`, porque o edge node não tem cópia de `app_2.js` e o busca na origem. Uma segunda requisição retorna um `HIT`.
 
 ## 5. Faça o purge da versão aposentada
 
-O TTL de um ano mantém `app_1.js` no edge muito depois da publicação. O **Real-Time Purge** remove o objeto aposentado sem esperar que ele expire.
+O TTL de um ano mantém `app_1.js` em cache muito depois da publicação. O **Real-Time Purge** remove o objeto aposentado sem esperar que ele expire.
 
 Para fazer o purge do asset aposentado:
 
@@ -116,7 +116,7 @@ Para aposentar um diretório de assets inteiro em uma operação, consulte [Wild
 
 ## 6. Verifique que a versão aposentada saiu do cache
 
-Um objeto purgado não está mais armazenado no edge, então a próxima requisição a ele chega à origem e reporta um `MISS`.
+Um objeto purgado não está mais armazenado nos edge nodes, então a próxima requisição a ele chega à origem e reporta um `MISS`.
 
 Faça a requisição ao asset aposentado com o header de debug:
 
@@ -130,7 +130,7 @@ X-Cache: MISS from 200.000.000.00 with HTTP/2.0
 
 Os resultados de um purge levam algum tempo para propagar a todos os edge nodes. Diante de um `HIT`, aguarde e repita a requisição antes de diagnosticar.
 
-A aplicação serve `/assets/app_2.js` a partir do edge com um TTL de um ano, e o `app_1.js` aposentado não ocupa mais o cache.
+A aplicação serve `/assets/app_2.js` a partir do cache com um TTL de um ano, e o `app_1.js` aposentado não ocupa mais o cache.
 
 ---
 

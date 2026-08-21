@@ -1,7 +1,7 @@
 ---
 title: Build a versioned asset cache
 description: >-
-  Cache a versioned static asset at the edge for one year, then release its
+  Cache a versioned static asset for one year, then release its
   replacement and purge the retired version from the cache.
 meta_tags: 'cache, ttl, versioned assets, real-time purge, rules engine, static assets'
 namespace: documentation_build_cache_tutorial_versioned_assets
@@ -12,9 +12,9 @@ difficulty: Intermediate
 
 import Code from '~/components/Code/Code.astro'
 
-In this tutorial, you will cache a versioned JavaScript asset at the edge for one year and release its replacement. You will create a cache setting, apply it with a rule, release a new version, and purge the old one.
+In this tutorial, you will cache a versioned JavaScript asset for one year and release its replacement. You will create a cache setting, apply it with a rule, release a new version, and purge the old one.
 
-The asset is named `app_1.js` and its replacement is named `app_2.js`. Versioning the object name makes each update a new object at the edge, so a one-year TTL never serves a retired build.
+The asset is named `app_1.js` and its replacement is named `app_2.js`. Versioning the object name makes each update a new object in the cache, so a one-year TTL never serves a retired build.
 
 ---
 
@@ -28,7 +28,7 @@ The asset is named `app_1.js` and its replacement is named `app_2.js`. Versionin
 
 ## 1. Create a cache setting with a one-year TTL
 
-A cache setting holds the cache expiration policies of an application. This one keeps versioned assets at the edge for the maximum edge TTL.
+A cache setting holds the cache expiration policies of an application. This one keeps versioned assets cached for the maximum edge TTL.
 
 To create the cache setting:
 
@@ -68,7 +68,7 @@ The rule applies the one-year TTL to every request under `/assets/`, including v
 
 ## 3. Verify the cache status of the asset
 
-The `X-Cache` response header carries the cache status of a request. The edge returns it when the request carries the `Pragma: azion-debug-cache` debug header.
+The `X-Cache` response header carries the cache status of a request. The edge node returns it when the request carries the `Pragma: azion-debug-cache` debug header.
 
 Request the asset with the debug header:
 
@@ -80,7 +80,7 @@ The response carries the cache status, the IP of the edge node, and the protocol
 X-Cache: HIT from 200.000.000.00 with HTTP/2.0
 ```
 
-A `HIT` means the edge served `app_1.js` from the cache. A `MISS` means the edge fetched it from the origin, so send the request again to get a `HIT`.
+A `HIT` means the edge node served `app_1.js` from the cache. A `MISS` means the edge node fetched it from the origin, so send the request again to get a `HIT`.
 
 ---
 
@@ -97,11 +97,11 @@ Request the new asset with the debug header:
 
 <Code lang="bash" code={`curl -s -D - -o /dev/null -H "Pragma: azion-debug-cache" "https://<your-azion-domain>/assets/app_2.js"`} />
 
-The first request returns a `MISS`, because the edge holds no copy of `app_2.js` and fetches it from the origin. A second request returns a `HIT`.
+The first request returns a `MISS`, because the edge node holds no copy of `app_2.js` and fetches it from the origin. A second request returns a `HIT`.
 
 ## 5. Purge the retired version
 
-The one-year TTL keeps `app_1.js` at the edge long after the release. **Real-Time Purge** removes the retired object without waiting for it to expire.
+The one-year TTL keeps `app_1.js` cached long after the release. **Real-Time Purge** removes the retired object without waiting for it to expire.
 
 To purge the retired asset:
 
@@ -116,7 +116,7 @@ To retire a whole build directory in one operation, refer to [Wildcard purge](/e
 
 ## 6. Verify that the retired version left the cache
 
-A purged object is no longer stored at the edge, so the next request for it reaches the origin and reports a `MISS`.
+A purged object is no longer stored on the edge nodes, so the next request for it reaches the origin and reports a `MISS`.
 
 Request the retired asset with the debug header:
 
@@ -130,7 +130,7 @@ X-Cache: MISS from 200.000.000.00 with HTTP/2.0
 
 Purge results take time to propagate to all edge nodes. On a `HIT`, wait and retry before diagnosing.
 
-The application serves `/assets/app_2.js` from the edge with a one-year TTL, and the retired `app_1.js` no longer occupies the cache.
+The application serves `/assets/app_2.js` from the cache with a one-year TTL, and the retired `app_1.js` no longer occupies the cache.
 
 ---
 

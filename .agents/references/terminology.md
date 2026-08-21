@@ -42,10 +42,10 @@ Work happens on **Azion's distributed network** — equally, its **distributed i
 
 | Never | Use |
 | --- | --- |
-| at the edge | on Azion's distributed network, across Azion's distributed infrastructure |
+| at the edge, from the edge, on the edge, to the edge | on Azion's distributed network, across Azion's distributed infrastructure |
 | Points of Presence, PoP, PoPs | edge locations |
 
-`edge` stays in the technical vocabulary — `edge node`, `edge location`, `edge computing` — but "the edge" is never the place where something runs, caches, or executes. Rewrite the sentence around the network: not "Functions runs your functions at the edge" but "Functions runs your functions on Azion's distributed network".
+`edge` stays in the technical vocabulary as a modifier — `edge node`, `edge location`, `edge computing`, `edge cache` — but "the edge" standing alone is banned in every role: never the place where something runs, and never the actor that serves or fetches. Rewrite around the named thing: not "the edge serves the content" but "the edge node serves the content"; not "Functions runs your functions at the edge" but "Functions runs your functions on Azion's distributed network".
 
 ## Lowercase what the customer builds
 

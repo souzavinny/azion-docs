@@ -9,7 +9,7 @@ menu_namespace: cacheMenu
 permalink: /documentation/build/cache/limits/
 ---
 
-**Cache** is a module of **Applications** that stores content at the edge. These limits cover cache storage and TTL, the Tiered Cache layer, and Real-Time Purge operations.
+**Cache** is a module of **Applications** that stores content on Azion edge nodes. These limits cover cache storage and TTL, the Tiered Cache layer, and Real-Time Purge operations.
 
 ## Default limits
 
@@ -36,7 +36,7 @@ These are default limits, stated without a breakdown by support plan. The one ca
 | Minimum TTL in Tiered Cache | 3 seconds |
 | Maximum TTL in Tiered Cache | 2,592,000 seconds |
 
-The Tiered Cache module does not support bypass cache. You can [configure a Bypass Cache rule](/en/documentation/build/applications/reference/rules-engine/#bypass-cache) for caching at the edge, but an application with active Tiered Cache settings continues to cache in that layer for the specified minimum TTL.
+The Tiered Cache module does not support bypass cache. You can [configure a Bypass Cache rule](/en/documentation/build/applications/reference/rules-engine/#bypass-cache) for the edge cache, but an application with active Tiered Cache settings continues to cache in that layer for the specified minimum TTL.
 
 ### Real-Time Purge
 
@@ -66,8 +66,8 @@ The monthly limit for purge operations is the same on every support plan. Busine
 
 ## Related resources
 
-- [Cache](/en/documentation/build/cache/) - how the Cache module stores content at the edge.
+- [Cache](/en/documentation/build/cache/) - how the Cache module stores content on Azion edge nodes.
 - [Cache Settings](/en/documentation/build/cache/reference/cache-settings/) - the fields that define a cache policy.
-- [Tiered Cache](/en/documentation/build/cache/tiered-cache/) - the extra cache layer between the edge and the origin.
+- [Tiered Cache](/en/documentation/build/cache/tiered-cache/) - the extra cache layer between the edge nodes and the origin.
 - [Real-Time Purge](/en/documentation/build/cache/reference/real-time-purge/) - the purge methods and what each one removes.
 - [Technical Support](/en/documentation/services/support/) - open a ticket to request a limit increase.
