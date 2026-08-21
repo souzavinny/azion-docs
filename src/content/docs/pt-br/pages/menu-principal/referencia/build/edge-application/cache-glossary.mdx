@@ -1,0 +1,33 @@
+---
+title: Glossário
+description: >-
+  Consulte os termos que a documentação do Cache usa, de cache key a stale
+  cache, em uma tabela filtrável de definições.
+meta_tags: 'cache, glossário, definições, termos'
+namespace: documentation_build_cache_glossary
+menu_namespace: cacheMenu
+permalink: /documentacao/build/cache/glossario/
+---
+
+import GlossaryFilter from '~/components/GlossaryFilter.astro'
+
+Definições dos termos que a documentação do **Cache** usa.
+
+<GlossaryFilter lang="pt-br">
+
+| Termo | Definição |
+| --- | --- |
+| cache key | Uma entrada de índice para um objeto em cache nos edge nodes da Azion. Uma requisição que corresponde a uma [cache key](/pt-br/documentacao/build/cache/reference/cache-keys/) armazenada é respondida sem chegar à origem. |
+| cache setting | Um conjunto de regras de cache que uma aplicação possui: TTLs, stale cache e variações de cache key. Uma [cache setting](/pt-br/documentacao/build/cache/reference/cache-settings/) não faz nada até uma regra do Rules Engine aplicá-la a um caminho de requisição. |
+| controle de Thundering Herd | A [proteção da origem](/pt-br/documentacao/build/cache/como-funciona/#protecao-da-origem) que abre uma única conexão com a origem quando requisições simultâneas pedem o mesmo objeto fora do cache. Cada edge node solicita o objeto uma vez por status não-HIT. |
+| edge node | Um servidor da rede distribuída da Azion que responde requisições perto do usuário final. O [Cache](/pt-br/documentacao/build/cache/como-funciona/) armazena conteúdo nos edge nodes, em uma camada entre a origem e o usuário. |
+| origem | Os servidores que guardam a cópia autoritativa do seu conteúdo. O edge busca conteúdo na origem quando o cache não pode responder, e em toda revalidação. |
+| Real-Time Purge | O recurso do Cache que apaga conteúdo em cache na hora, antes do TTL expirar, do Cache ou do Tiered Cache. Use o [Real-Time Purge](/pt-br/documentacao/build/cache/reference/real-time-purge/) para servir a versão mais recente depois de uma atualização na origem. |
+| stale cache | Um objeto em cache expirado que os edge nodes continuam servindo enquanto a revalidação com a origem falha ou roda. O [stale cache](/pt-br/documentacao/build/cache/como-funciona/#stale-cache) evita páginas de erro durante a indisponibilidade da origem. |
+| status de cache | O resultado que um edge node reporta para a busca no cache de uma requisição, como HIT ou MISS. O header `X-Cache` carrega o [status de cache](/pt-br/documentacao/build/cache/como-funciona/#status-de-cache). |
+| Tiered Cache | Um módulo do Cache que cria uma camada de cache adicional entre o edge e seus servidores de origem. O [Tiered Cache](/pt-br/documentacao/build/cache/tiered-cache/) reduz a latência e os custos de infraestrutura. |
+| TTL (time to live) | A quantidade de tempo que uma cópia em cache continua utilizável antes de expirar. O TTL de cache do navegador e o TTL de cache aplicam o valor em duas camadas. |
+| TTL de cache | A quantidade de tempo que o conteúdo fica em cache nos edge nodes da Azion. O campo [CDN Cache Settings](/pt-br/documentacao/build/cache/reference/cache-settings/#cdn-cache-settings) o define, e aumentá-lo reduz a carga na origem. |
+| TTL de cache do navegador | A quantidade de tempo que o conteúdo fica em cache no navegador do usuário. O campo [Browser Cache Settings](/pt-br/documentacao/build/cache/reference/cache-settings/#browser-cache-settings) o define. |
+
+</GlossaryFilter>

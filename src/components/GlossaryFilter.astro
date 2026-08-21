@@ -1,0 +1,87 @@
+---
+interface Props {
+  lang?: 'en' | 'pt-br';
+}
+const { lang = 'en' } = Astro.props as Props;
+
+const labels =
+  lang === 'pt-br'
+    ? { placeholder: 'Filtrar termos', empty: 'Nenhum termo corresponde ao filtro.' }
+    : { placeholder: 'Filter terms', empty: 'No terms match the filter.' };
+
+// Render the slotted table, then give every body row an anchor id
+// derived from its first cell, ASCII-folded to match heading slugs.
+const slugify = (value: string) =>
+  value
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+
+let html = await Astro.slots.render('default');
+html = html.replace(
+  /<tr>(\s*<td[^>]*>)([\s\S]*?)(<\/td>)/g,
+  (match: string, open: string, cell: string, close: string) => {
+    const text = cell.replace(/<[^>]+>/g, '').trim();
+    const id = slugify(text);
+    return id ? `<tr id="${id}">${open}${cell}${close}` : match;
+  }
+);
+---
+
+<div class="glossary-filter">
+  <input type="search" class="glossary-filter-input" placeholder={labels.placeholder} aria-label={labels.placeholder} />
+  <p class="glossary-filter-empty" hidden>{labels.empty}</p>
+  <div class="glossary-filter-terms" set:html={html} />
+</div>
+
+<script>
+  const fold = (value) =>
+    value
+      .normalize('NFD')
+      .replace(/[̀-ͯ]/g, '')
+      .toLowerCase();
+
+  for (const root of document.querySelectorAll('.glossary-filter')) {
+    const input = root.querySelector('.glossary-filter-input');
+    const empty = root.querySelector('.glossary-filter-empty');
+    const rows = [...root.querySelectorAll('.glossary-filter-terms tbody tr')].map((row) => ({
+      row,
+      text: fold(row.textContent || ''),
+    }));
+    if (!input) continue;
+    input.addEventListener('input', () => {
+      const query = fold(input.value.trim());
+      let visible = 0;
+      for (const { row, text } of rows) {
+        const match = !query || text.includes(query);
+        row.hidden = !match;
+        if (match) visible += 1;
+      }
+      if (empty) empty.hidden = visible > 0;
+    });
+  }
+</script>
+
+<style>
+  .glossary-filter-input {
+    width: 100%;
+    max-width: 24rem;
+    padding: 0.5rem 0.75rem;
+    margin: 0 0 1rem;
+    border: 1px solid rgba(128, 128, 128, 0.4);
+    border-radius: 0.25rem;
+    background: transparent;
+    color: inherit;
+    font-size: 0.9375rem;
+  }
+  .glossary-filter-input:focus {
+    outline: 2px solid rgba(128, 128, 128, 0.6);
+    outline-offset: 1px;
+  }
+  .glossary-filter-empty {
+    font-style: normal;
+    opacity: 0.75;
+  }
+</style>

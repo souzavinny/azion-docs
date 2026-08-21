@@ -142,7 +142,7 @@ The full sequence is in `skills/contributing/references/writing-docs.md`. Its ni
 
 1. **Gather context.** Name the source of truth. Everything traces back to it.
 2. **Check the page does not already exist.** Extending beats duplicating.
-3. **Pick the kind.** Twelve of them, each with a mandated opening, section order, and closing.
+3. **Pick the kind.** Thirteen of them, each with a mandated opening, section order, and closing.
 4. **Frontmatter first.** Five fields. Deciding the permalink forces you to decide what the page is.
 5. **Draft against the kind**, not against a page you happen to have read.
 6. **Choose components** from `references/components.md`. A component that is not in that file fails the build.

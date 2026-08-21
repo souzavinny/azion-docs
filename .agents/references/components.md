@@ -181,6 +181,27 @@ import GuidesTable from '~/components/GuidesTable.astro'
 - Rows sort newest first, then by title.
 - The same prefixes go in the menu row's `covers` field, so the pages pass the sidebar ownership check.
 
+## GlossaryFilter
+
+Client-side filter over a glossary table. Used on a product's Glossary page, and nowhere else.
+
+```mdx
+import GlossaryFilter from '~/components/GlossaryFilter.astro'
+
+<GlossaryFilter lang="en">
+
+| Term | Definition |
+| --- | --- |
+| cache key | The identifier an edge node builds from a request to decide whether two requests match the same cached object. |
+
+</GlossaryFilter>
+```
+
+- The child is one GFM pipe table, `| Term | Definition |`. Blank lines around it are mandatory.
+- `lang` localizes the filter placeholder and the empty-state message: `en` or `pt-br`.
+- Each body row gets an anchor id from its term, ASCII-folded (`ação múltipla` → `#acao-multipla`), so a definition is deep-linkable. Ids are set at render time, so anchors work without JavaScript.
+- Filtering is a progressive enhancement: without JavaScript the full table renders. Matching is case- and accent-insensitive, against the whole row.
+
 ## Tables and line breaks
 
 Tables are plain GFM pipe tables. Horizontal scrolling is added automatically; do not wrap them yourself.

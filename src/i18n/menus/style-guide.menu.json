@@ -336,6 +336,17 @@
        }
       },
       {
+       "key": "sg/glossary",
+       "label": {
+        "en": "Glossary pages",
+        "pt-br": "Páginas de glossário"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/content/glossary/",
+        "pt-br": "/documentacao/guia-de-estilo/conteudo/glossario/"
+       }
+      },
+      {
        "key": "sg/page-size",
        "label": {
         "en": "Page size and retrieval",

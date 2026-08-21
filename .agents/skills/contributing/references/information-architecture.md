@@ -19,7 +19,7 @@ Pages are `.mdx` files under `src/content/docs/{en,pt-br}/`. Portuguese paths ar
 
 ## The product section skeleton
 
-Where a page sits inside a product section. Twelve slots, in this order:
+Where a page sits inside a product section. Thirteen slots, in this order:
 
 | # | Slot | Required | Kind |
 | --- | --- | --- | --- |
@@ -33,15 +33,16 @@ Where a page sits inside a product section. Twelve slots, in this order:
 | 8 | Limits | When the product has limits | Reference, dimensioned by plan |
 | 9 | Best practices | Optional | Concept |
 | 10 | Troubleshooting | When the product has known symptoms | Troubleshooting |
-| 11 | Pricing | Yes | A link, never a page |
-| 12 | Changelog | Yes | A link |
+| 11 | Glossary | Yes | Glossary |
+| 12 | Pricing | Yes | A link, never a page |
+| 13 | Changelog | Yes | A link |
 
 - **Guides and tutorials is one sidebar row pointing at a hub page**, never a dropdown. The hub body is a `<GuidesTable>`: name, last updated, difficulty, generated from the pages themselves. In the menu JSON the row carries `covers`, listing the path prefixes whose pages belong to the menu without a row of their own. Pages listed there set a `difficulty` of `Beginner`, `Intermediate`, or `Advanced`.
 - **Reference pages sit directly in the sidebar, one row each**, never behind a parent row.
 
-- **Slots are not kinds.** Twelve slots, twelve kinds, and they do not map onto each other. Limits, Examples, and Features and capabilities all hold reference pages; Best practices and How it works both hold concept pages. Adding a slot never adds a kind.
+- **Slots are not kinds.** Thirteen slots, thirteen kinds, and they do not map onto each other. Limits, Examples, and Features and capabilities all hold reference pages; Best practices and How it works both hold concept pages. Adding a slot never adds a kind.
 - **The Required column decides what ships.** Every other slot exists only when real content fills it.
-- **Grow by splitting a slot the section already has**: Guides and tutorials into named task groups on the hub page, Quickstart by interface, Features and capabilities by surface. The twelve never grow in number.
+- **Grow by splitting a slot the section already has**: Guides and tutorials into named task groups on the hub page, Quickstart by interface, Features and capabilities by surface. The thirteen never grow in number.
 - **A product with modules repeats the pattern one level down**, reduced to the parts the module needs.
 - **Pricing is a link to `/documentation/platform/pricing/#<product>`.** Never author a per-product pricing page, and never restate a price, a quota, or a billing metric on a product page.
 - Content that no single product owns goes beside the products: Fundamentals, Support, Architectures, or Guides for use cases.
@@ -154,4 +155,4 @@ Then check by hand what the build cannot:
 - A translation's `namespace` matches its English page exactly.
 - A changed permalink has its redirect in the same change.
 
-This file covers the repository mechanics. Refer to https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/content/information-architecture/ for the reader-facing structure: the twelve product slots and where a new page goes.
+This file covers the repository mechanics. Refer to https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/content/information-architecture/ for the reader-facing structure: the thirteen product slots and where a new page goes.

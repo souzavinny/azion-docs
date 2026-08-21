@@ -18,7 +18,7 @@ Search before adding. Extending a page almost always beats creating a neighbor t
 
 ## 3. Pick the kind
 
-Read `content-types.md`. Pick one of the twelve. The kind mandates the opening move, the section order, and the closing, and it sets the sentence budget. A page that is two kinds is the most common structural defect there is.
+Read `content-types.md`. Pick one of the thirteen. The kind mandates the opening move, the section order, and the closing, and it sets the sentence budget. A page that is two kinds is the most common structural defect there is.
 
 ## 4. Write the frontmatter first
 

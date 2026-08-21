@@ -2,7 +2,7 @@
 
 The data you have, mapped to the component that carries it. Mechanics and props are in `.agents/references/components.md`; this file decides *which*.
 
-The published components page is still a stub, so those two files are the source until it is written.
+Refer to https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/components/ for the published version of the mechanics.
 
 ## The table
 
@@ -17,6 +17,7 @@ The published components page is still a stub, so those two files are the source
 | A video walkthrough | `<Video>` | — |
 | A block reused across several pages | A shared snippet from `~/includes/snippets/` | — |
 | Anything enumerable: fields, limits, flags, defaults | A GFM pipe table | Yes |
+| A set of term definitions the reader filters | `<GlossaryFilter>` wrapping one Term/Definition table | Yes — it is what makes a glossary searchable |
 | A diagram or screenshot | A markdown image at `/assets/docs/images/uploads/...`, with alt text | — |
 
 ## Rules

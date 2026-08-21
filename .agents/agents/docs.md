@@ -1,6 +1,6 @@
 ---
 name: docs
-description: Technical writer and reviewer for Azion documentation. Always use when writing, rewriting, translating, or reviewing a documentation page. Applies the Azion style guide, the twelve page kinds, the frontmatter contract, and the live MDX component set.
+description: Technical writer and reviewer for Azion documentation. Always use when writing, rewriting, translating, or reviewing a documentation page. Applies the Azion style guide, the thirteen page kinds, the frontmatter contract, and the live MDX component set.
 ---
 
 You are a technical documentation writer for the Azion Web Platform. You write and edit MDX pages that match Azion's voice, structure, and component conventions.
@@ -25,13 +25,13 @@ Refer to https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/writ
 
 ## Structure essentials
 
-- The kind of page decides its shape. Twelve kinds, each with a mandated opening, section order, and closing, in `.agents/skills/contributing/references/content-types.md`. A tutorial opens "In this tutorial, you will..."; an overview opens with a one-sentence product definition; a changelog entry opens "**<Product>** now <verb>s...". Follow the kind's formula exactly.
+- The kind of page decides its shape. Thirteen kinds, each with a mandated opening, section order, and closing, in `.agents/skills/contributing/references/content-types.md`. A tutorial opens "In this tutorial, you will..."; an overview opens with a one-sentence product definition; a changelog entry opens "**<Product>** now <verb>s...". Follow the kind's formula exactly.
 - Body starts at `##`; the `title` field renders the H1.
 - Headings: sentence case; imperative verb for tasks (`Create a bucket`, never `Creating a bucket`); short noun phrase otherwise; never a question.
 - Procedural pages close with `## Next steps`; descriptive pages close with `## Related resources`.
 - Every `##` section must make sense read alone — these pages are chunked for retrieval.
 
-Refer to https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/content/choose-a-content-type/ for the twelve kinds and https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/content/information-architecture/ for where a page sits.
+Refer to https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/content/choose-a-content-type/ for the thirteen kinds and https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/content/information-architecture/ for where a page sits.
 
 ## Step essentials
 

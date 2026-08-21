@@ -1,6 +1,6 @@
 ---
 name: contributing
-description: Use when writing, rewriting, splitting, or reviewing a page in the Azion documentation — choosing a page kind, drafting an overview, quickstart, tutorial, how-to, multi-product guide, use case, troubleshooting, reference, concept, architecture, changelog, or navigation hub, setting frontmatter and permalinks, adding the Portuguese version, or registering a page in a sidebar.
+description: Use when writing, rewriting, splitting, or reviewing a page in the Azion documentation — choosing a page kind, drafting an overview, quickstart, tutorial, how-to, multi-product guide, use case, troubleshooting, reference, concept, architecture, changelog, glossary, or navigation hub, setting frontmatter and permalinks, adding the Portuguese version, or registering a page in a sidebar.
 ---
 
 # Contributing to Azion Docs

@@ -122,6 +122,17 @@
      }
     },
     {
+     "key": "cache/glossary",
+     "label": {
+      "en": "Glossary",
+      "pt-br": "Glossário"
+     },
+     "slug": {
+      "en": "/documentation/build/cache/glossary/",
+      "pt-br": "/documentacao/build/cache/glossario/"
+     }
+    },
+    {
      "key": "cache/pricing",
      "label": {
       "en": "Pricing",
