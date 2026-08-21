@@ -23,6 +23,7 @@ Use these exactly. Azion renamed its products and platform resources; the old na
 | SQL Database | Edge SQL |
 | Network Shield | Network Layer Protection |
 | Data Stream | Data Streaming |
+| Distributed Web Applications and APIs | Edge-native, Edge-enhanced |
 | Azion Platform | Azion Edge Platform |
 | Azion Marketplace | Marketplace da Azion |
 
