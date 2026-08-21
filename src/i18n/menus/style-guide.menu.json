@@ -408,10 +408,52 @@
       "en": "How we write the docs",
       "pt-br": "Como escrevemos a documentação"
      },
-     "slug": {
-      "en": "/documentation/style-guide/how-we-docs/",
-      "pt-br": "/documentacao/guia-de-estilo/como-documentamos/"
-     }
+     "items": [
+      {
+       "key": "sg/hwd-overview",
+       "label": {
+        "en": "Overview",
+        "pt-br": "Visão geral"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/how-we-docs/",
+        "pt-br": "/documentacao/guia-de-estilo/como-documentamos/"
+       }
+      },
+      {
+       "key": "sg/hwd-docs-as-code",
+       "label": {
+        "en": "Docs as code",
+        "pt-br": "Docs as code"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/how-we-docs/docs-as-code/",
+        "pt-br": "/documentacao/guia-de-estilo/como-documentamos/docs-as-code/"
+       }
+      },
+      {
+       "key": "sg/hwd-two-languages",
+       "label": {
+        "en": "Two languages, one source",
+        "pt-br": "Dois idiomas, uma fonte"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/how-we-docs/two-languages/",
+        "pt-br": "/documentacao/guia-de-estilo/como-documentamos/dois-idiomas/"
+       }
+      },
+      {
+       "key": "sg/hwd-people-agents",
+       "label": {
+        "en": "For people and agents",
+        "pt-br": "Para pessoas e agentes"
+       },
+       "slug": {
+        "en": "/documentation/style-guide/how-we-docs/for-people-and-agents/",
+        "pt-br": "/documentacao/guia-de-estilo/como-documentamos/para-pessoas-e-agentes/"
+       }
+      }
+     ]
     }
    ]
   }
