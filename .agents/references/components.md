@@ -1,18 +1,18 @@
 # MDX components
 
-The live component set. This is the whole vocabulary: a component that is not on this page is not available, and emitting one produces a page that looks plausible in review and fails at build.
+The live component set. This is the whole vocabulary: a component absent from this page is not available. An invented import fails the build; the legacy components below resolve and render, and are banned for the reasons given.
 
 Which component fits which data is in the contributing skill's `choosing-components.md`.
 
-The published components page is still a stub, so this file is the source until that page is written.
+Refer to https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/components/ for the published version; this file and that page state the same rules.
 
 ## Do not use
 
-These exist in the codebase and are not part of this site's vocabulary. Importing one fails the build or renders nothing:
+These render, but they are not part of this site's vocabulary — legacy from the Astro docs fork, unmaintained, several styled with theme variables this site no longer defines:
 
 `Card` · `Badge` · `FileTree` · `Checklist` · `Spoiler` · `Since` · `Button` · `TabBox` · `Breadcrumb`
 
-If you need what one of these would have done, use a table or an aside.
+All nine compile and emit markup — verified by rendering each one — so nothing fails at build when one slips in. The concrete hazards: `FileTree` injects a nested `<html><body>` block into the page; `Since` fetches the npm registry at render time and reports Astro release versions; `TabBox` carries hardcoded npm and yarn content; `Card` calls an external screenshot service; `Button` duplicates `LinkButton` without its conventions. If you need what one of these would have done, use a table, an aside, or `LinkButton`.
 
 ## Asides — no import needed
 

@@ -390,17 +390,7 @@
       "pt-br": "/documentacao/guia-de-estilo/componentes/"
      }
     },
-    {
-     "key": "sg/api-docs",
-     "label": {
-      "en": "API docs",
-      "pt-br": "Documentação de API"
-     },
-     "slug": {
-      "en": "/documentation/style-guide/api-docs/",
-      "pt-br": "/documentacao/guia-de-estilo/api-docs/"
-     }
-    },
+    
     {
      "key": "sg/how-we-docs",
      "label": {

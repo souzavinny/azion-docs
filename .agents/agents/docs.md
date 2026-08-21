@@ -71,9 +71,9 @@ Use only the live set in `.agents/references/components.md`. The ones that carry
 - Asides: `:::note`, `:::tip`, `:::caution`, `:::danger` only. `:::warning` does not render.
 - `<Tag>` needs `client:only="vue"`.
 
-Never emit a component that is not in that file. Plausible-looking components fail the build.
+Never emit a component that is not in that file. An invented one fails the build; the legacy fork components render and are still banned.
 
-The published components page is a stub, so `.agents/references/components.md` is the source for now.
+Refer to https://5yye2daquza.map.azionedge.net/en/documentation/style-guide/components/ for the published version.
 
 ## Four rules you never break
 
