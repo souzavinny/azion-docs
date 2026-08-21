@@ -18,7 +18,7 @@ Style-guide links point at a temporary deployment, `https://5yye2daquza.map.azio
 - **Never guess a permalink or namespace.** They are unique per language, and `namespace` pairs the two languages.
 - **English is written first, then translated.** If your task is the Portuguese page alone, open the English page before writing; when it is missing, stop and say so.
 - **Never commit or push automatically.** Make the changes, then ask.
-- **The existing pages are not the model.** Most predate the current structure. Match the references, not the page you happen to be reading.
+- **Match the references, not the page you happen to be reading.** Conformance is judged against the reference files alone; the published style-guide pages state the same rules and carry the same authority. When an existing page disagrees with them, the reference files win.
 
 ## Before you start
 

@@ -19,7 +19,7 @@ The folder is **self-contained**. It fetches nothing and assumes no repository. 
 | `skills/writing-a-use-case/` | The use-case kind: a how-to with a commercial frame. |
 | `tests/` | Conformance harness. The generated pages double as worked examples of every kind. Test artifacts, not site content. |
 
-**Precedence.** `references/style-guide.md` is the canonical law. Where a rule touches sentence construction, `simplified-technical-english.md` is the narrower rule. Step grammar belongs to `procedures.md`. Product names belong to `terminology.md`. On any conflict between a rule and an existing page, **the rule wins** — most published pages predate the current system.
+**Precedence.** `references/style-guide.md` is the canonical law. Where a rule touches sentence construction, `simplified-technical-english.md` is the narrower rule. Step grammar belongs to `procedures.md`. Product names belong to `terminology.md`. On any conflict between a rule and an existing page, **the rule wins**.
 
 ## Install
 

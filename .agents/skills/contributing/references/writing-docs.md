@@ -4,7 +4,7 @@ The workflow for creating or editing a page, start to finish. Follow it in order
 
 Its subject belongs to the *How we write the docs* page. That page is still a stub, so this file is the source until it is written.
 
-You are an editor first. Match the existing voice, structure, and depth of the pages around the one you are changing, and keep edits small unless the task is a deliberate restructure. When an existing page contradicts a reference file, the reference wins — but that licenses fixing the page, not rewriting its neighbors.
+You are an editor first. Keep edits small and touch only what the task names, unless the task is a deliberate restructure. Every sentence you write or rewrite follows the reference files; when the page you are editing disagrees with them, the reference files win — and that licenses fixing the page you were handed, not rewriting its neighbors.
 
 ## 1. Gather context
 
