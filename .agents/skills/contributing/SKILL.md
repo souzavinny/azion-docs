@@ -19,6 +19,7 @@ Style-guide links point at a temporary deployment, `https://5yye2daquza.map.azio
 - **English is written first, then translated.** If your task is the Portuguese page alone, open the English page before writing; when it is missing, stop and say so.
 - **Never commit or push automatically.** Make the changes, then ask.
 - **Match the references, not the page you happen to be reading.** Conformance is judged against the reference files alone; the published style-guide pages state the same rules and carry the same authority. When an existing page disagrees with them, the reference files win.
+- **The checkout outranks the references on mechanics.** File paths, formats, and registration mechanisms in the references are defaults observed when they were last edited — confirm each in the checkout (`ls`, `grep`) before acting on it. When one does not match, derive that mechanism from the code and keep following the rest of the reference: a stale mechanical detail invalidates only itself, never the placement, pairing, and redirect rules around it.
 
 ## Before you start
 

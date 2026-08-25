@@ -25,8 +25,8 @@ src/
         changelog/            historical
     pt-br/                    Portuguese, mirrored with translated paths
   components/                 mostly dead fork legacy, see .agents/references/components.md
-  i18n/menus/                 sidebar menus, one bilingual JSON per menu (the source)
-  i18n/{en,pt-br}/            generated shims over i18n/menus/, plus a few hand-written TS menus
+  i18n/menus/                 sidebar menus as bilingual JSON, when the checkout has it (redesign lineage)
+  i18n/{en,pt-br}/            menu TS files — generated shims where i18n/menus/ exists, the hand-written source where it does not
   includes/snippets/          shared MDX snippets, en/ and pt/ variants
   pages/[lang]/               routes, including [...slug].md.js for markdown twins
   content/config.ts           the Zod schema
@@ -201,9 +201,9 @@ Pages pair by `namespace`, not by path. `src/util/getPageTranslations.ts` matche
 
 ## Sidebars
 
-Nothing scans the content directory. A new page is reachable from nowhere until it is registered by hand in `src/i18n/menus/<menu>.menu.json`, one bilingual JSON per menu. The `src/i18n/{en,pt-br}/<menu>.ts` files are generated shims: edit the JSON, not the shim.
+Nothing scans the content directory. A new page is reachable from nowhere until it is registered by hand in the menu source — and which file that is depends on the checkout, so detect it before editing. When `src/i18n/menus/` exists, each menu is one bilingual JSON (`<menu>.menu.json`) and the `src/i18n/{en,pt-br}/<menu>.ts` files are generated shims: edit the JSON, not the shim. When it does not exist, the TS files are the hand-written source, one per language, and their header comment states the entry contract.
 
-Entries need `key` and a `label` per language; link entries need a `slug` per language, which equals that language's `permalink` exactly and excludes the language code. Valid `menu_namespace` values are in `src/data/availableMenu.ts`; an unrecognized value silently falls back to `nav`. The full registration procedure is in `.agents/skills/contributing/references/information-architecture.md`.
+In either case the entry's link equals that language's `permalink` exactly and excludes the language code, and both languages must be registered. Valid `menu_namespace` values are in `src/data/availableMenu.ts`; an unrecognized value silently falls back to `nav`. The full registration procedure is in `.agents/skills/contributing/references/information-architecture.md`.
 
 ## Page size and retrieval
 

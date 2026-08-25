@@ -2,6 +2,8 @@
 
 Where pages live in the `aziontech/docs` repository, how they get found, and the mechanics that decide whether a change ships whole: placement, enforcement, sidebars, redirects, and splits. Writing rules live in the voice references; this file is about the repository.
 
+**The checkout outranks this file on mechanics.** File paths, formats, and registration mechanisms named here are defaults observed when this file was last edited — confirm each exists in the checkout (`ls`, `grep`) before acting on it. When one does not match, derive that mechanism from the code and keep following the rest of this file: a stale mechanical detail invalidates that detail, never the placement, pairing, and redirect rules around it.
+
 ## Where pages live
 
 Pages are `.mdx` files under `src/content/docs/{en,pt-br}/`. Portuguese paths are translated, not mirrored:
@@ -91,9 +93,15 @@ Two hits, one per language, is correct. One hit means the language switcher is b
 
 **A new page is reachable from nowhere until it is registered by hand.** Nothing scans the content directory. Two edits:
 
-**1. Point the page at a menu** with `menu_namespace` in its frontmatter. Omit the field and the page falls back to `nav`, the main sidebar. An unregistered value also falls back silently. Registered values live in `src/data/availableMenu.ts`, which on this branch holds one entry per product menu plus `nav`, `fundamentalsMenu`, `supportMenu`, `architecturesMenu`, `agreementsMenu`, and `styleGuideMenu`.
+**1. Point the page at a menu** with `menu_namespace` in its frontmatter. Omit the field and the page falls back to `nav`, the main sidebar. An unregistered value also falls back silently. Registered values live in `src/data/availableMenu.ts` — read that file for the current list rather than trusting an enumeration written here.
 
-**2. Add the entry to the menu JSON.** On this branch the menus are **one bilingual JSON per menu** under `src/i18n/menus/<menu>.menu.json`. The `src/i18n/{en,pt-br}/<menu>.ts` files are generated shims that carry the line "edit the JSON, not this file". Both languages sit in the same node:
+**2. Register the entry in the menu source.** Which file is the source depends on the checkout, so detect it instead of assuming:
+
+```bash
+ls src/i18n/menus/ 2>/dev/null
+```
+
+**The directory exists — bilingual JSON menus** (sidebar-redesign lineage). Each menu is one bilingual JSON at `src/i18n/menus/<menu>.menu.json`, and the `src/i18n/{en,pt-br}/<menu>.ts` files are generated shims whose header says "edit the JSON, not this file". Both languages sit in the same node:
 
 ```json
 {
@@ -109,11 +117,11 @@ Two hits, one per language, is correct. One hit means the language switcher is b
 }
 ```
 
-`slug` equals the page's `permalink` exactly — no language prefix, trailing slash — or the sidebar link 404s. `key` is unique within the menu and shared by both languages. `label` is translated. A node with `items` and no `slug` is a toggle-only parent. `meta.title` and `meta.root` turn a menu into a child sidebar with a back-header.
+`key` is unique within the menu and shared by both languages. `label` is translated. A node with `items` and no `slug` is a toggle-only parent. `meta.title` and `meta.root` turn a menu into a child sidebar with a back-header. Because the two languages live in one node, a missing `pt-br` label or slug is the failure to watch for, not a missing file. Some menus may remain hand-written TS in the older two-array shape; the file header tells you which kind you are holding.
 
-Because the two languages live in one node, a missing `pt-br` label or slug is the failure to watch for, not a missing file.
+**The directory does not exist — hand-written TS menus** (trunk lineage). The `src/i18n/{en,pt-br}/<menu>.ts` files are the source, one per language, and their header comment states the entry contract. Register the entry in both language files.
 
-Hand-written TS menus still exist for `runtimeMenu`, `graphqlMenu`, `cliMenuAlpha`, `libMenu`, `mcpMenu`, and `devtoolsMenu`. Those take the older two-array shape.
+In either world, the entry's link (`slug` in the JSON node, the slug field of the TS entry) equals the page's `permalink` exactly — no language prefix, trailing slash — or the sidebar link 404s, and a page is not registered until both languages carry it.
 
 ## Redirects
 
@@ -137,9 +145,9 @@ Split when one page carries two kinds, or when a reader has to scroll past four 
 - **Every child gets sidebar entries in both languages.** A split that adds six pages and no menu entries has hidden six pages.
 - **Propose before executing.** Pass one: the outline, each child's permalink and namespace, the redirect list, one sentence per child on why it stands alone. Pass two: execute, one child per commit.
 
-## The markdown twin, on this branch
+## The markdown twin
 
-Authored agent twins (see `agent-twin.md`) have no serving mechanism here yet: `src/pages/[lang]/[...slug].md.js` strips the frontmatter and emits the page body, so it cannot serve an authored twin. Confirm how the twin is sourced before authoring a set of them.
+Whether an authored agent twin (see `agent-twin.md`) can be served depends on the checkout. Read `src/pages/[lang]/[...slug].md.js` before authoring one: where it strips the frontmatter and emits the page body, it cannot serve an authored twin. Confirm how the twin is sourced before authoring a set of them.
 
 ## Validate
 

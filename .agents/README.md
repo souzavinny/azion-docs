@@ -138,7 +138,7 @@ Write a page about caching.
 
 ## Create a new page
 
-The full sequence is in `skills/contributing/references/writing-docs.md`. Its nine steps include writing an agent twin, which has no serving mechanism on this branch. The eight that matter when you drive it:
+The full sequence is in `skills/contributing/references/writing-docs.md`. Its nine steps include writing an agent twin — confirm the checkout can serve one before authoring it (the markdown-twin note in `skills/contributing/references/information-architecture.md` says how to check). The eight that matter when you drive it:
 
 1. **Gather context.** Name the source of truth. Everything traces back to it.
 2. **Check the page does not already exist.** Extending beats duplicating.
