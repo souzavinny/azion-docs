@@ -1,8 +1,9 @@
 ---
 title: Casos de uso
 description: >-
-  Como escrever uma página de caso de uso: um cenário de negócio transformado em
-  especificação executável, com produtos exigidos, arquitetura e resultados medidos.
+  Escreva uma página de caso de uso: um cenário de negócio virando
+  especificação executável, com produtos exigidos, arquitetura e resultados
+  medidos.
 meta_tags: 'style guide, use cases, guides, spec driven documentation'
 namespace: documentation_style_guide_use_cases
 permalink: /documentacao/guia-de-estilo/conteudo/casos-de-uso/
@@ -166,6 +167,7 @@ Para <alcançar o resultado desta etapa>:
 ## Regras
 
 - **Escreva uma especificação, não um artigo.** Todo valor é concreto, todo comando roda, e nenhum passo diz "dependendo da sua configuração". O leitor pode ser um agente, e um agente não resolve uma ambiguidade perguntando.
+- **Mostre o output depois de cada comando.** O leitor vê como o sucesso se parece antes que o próximo passo dependa dele. A regra está em [Procedimentos](/pt-br/documentacao/guia-de-estilo/escrita/procedimentos/).
 - **Reduza o cenário a uma configuração construível.** Declare assim: `Um <time> que <tem isto> configura <esta configuração> para que <este resultado verificável>.` Se a frase precisa de um "e também", são dois casos de uso.
 - **Monte a tabela de requisitos antes de escrever qualquer prosa.** Cada linha nomeia sua fonte. Uma linha sem fonte é uma linha que você corta, ou uma lacuna de documentação que você reporta.
 - **Deixe no corpo o que é específico deste caso de uso. Aponte para o que vale para todos.** O caminho genérico é um link; a página carrega o que o cenário muda.
@@ -180,7 +182,7 @@ Para <alcançar o resultado desta etapa>:
 
 ## Exemplos
 
-O exemplo abaixo, em inglês, mostra o cenário, a linha do que não é coberto e a tabela de requisitos de um caso de uso de e-commerce:
+Este exemplo, em inglês, mostra o cenário, a linha do que não é coberto e a tabela de requisitos de um caso de uso de e-commerce:
 
 ```mdx
 A retail team runs a storefront on Azion and expects heavy traffic during a seasonal sale. The catalogue pages are identical for every visitor, the cart is personal, and the checkout accepts a limited number of requests per customer. This page configures caching for the catalogue, a cache bypass for the cart, and a rate limit on checkout.

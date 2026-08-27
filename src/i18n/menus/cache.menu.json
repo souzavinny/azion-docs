@@ -78,48 +78,46 @@
      }
     },
     {
-     "key": "cache/reference/cache-settings",
+     "key": "cache/reference",
      "label": {
-      "en": "Cache Settings",
-      "pt-br": "Cache Settings"
+      "en": "Reference",
+      "pt-br": "Referência"
      },
-     "slug": {
-      "en": "/documentation/build/cache/reference/cache-settings/",
-      "pt-br": "/documentacao/build/cache/reference/cache-settings/"
-     }
-    },
-    {
-     "key": "cache/reference/cache-keys",
-     "label": {
-      "en": "Cache keys",
-      "pt-br": "Cache keys"
-     },
-     "slug": {
-      "en": "/documentation/build/cache/reference/cache-keys/",
-      "pt-br": "/documentacao/build/cache/reference/cache-keys/"
-     }
-    },
-    {
-     "key": "cache/reference/real-time-purge",
-     "label": {
-      "en": "Real-Time Purge",
-      "pt-br": "Real-Time Purge"
-     },
-     "slug": {
-      "en": "/documentation/build/cache/reference/real-time-purge/",
-      "pt-br": "/documentacao/build/cache/reference/real-time-purge/"
-     }
-    },
-    {
-     "key": "cache/limits",
-     "label": {
-      "en": "Limits",
-      "pt-br": "Limites"
-     },
-     "slug": {
-      "en": "/documentation/build/cache/limits/",
-      "pt-br": "/documentacao/build/cache/limites/"
-     }
+     "items": [
+      {
+       "key": "cache/reference/cache-settings",
+       "label": {
+        "en": "Cache Settings",
+        "pt-br": "Cache Settings"
+       },
+       "slug": {
+        "en": "/documentation/build/cache/reference/cache-settings/",
+        "pt-br": "/documentacao/build/cache/reference/cache-settings/"
+       }
+      },
+      {
+       "key": "cache/reference/cache-keys",
+       "label": {
+        "en": "Cache keys",
+        "pt-br": "Cache keys"
+       },
+       "slug": {
+        "en": "/documentation/build/cache/reference/cache-keys/",
+        "pt-br": "/documentacao/build/cache/reference/cache-keys/"
+       }
+      },
+      {
+       "key": "cache/reference/real-time-purge",
+       "label": {
+        "en": "Real-Time Purge",
+        "pt-br": "Real-Time Purge"
+       },
+       "slug": {
+        "en": "/documentation/build/cache/reference/real-time-purge/",
+        "pt-br": "/documentacao/build/cache/reference/real-time-purge/"
+       }
+      }
+     ]
     },
     {
      "key": "cache/glossary",
@@ -133,25 +131,45 @@
      }
     },
     {
-     "key": "cache/pricing",
+     "key": "cache/management",
      "label": {
-      "en": "Pricing",
-      "pt-br": "Preços"
+      "en": "Management",
+      "pt-br": "Gerenciamento"
      },
-     "slug": {
-      "en": "https://www.azion.com/en/documentation/products/pricing/#cache",
-      "pt-br": "https://www.azion.com/pt-br/documentacao/produtos/precos/#cache"
-     }
-    },
-    {
-     "key": "cache/changelog",
-     "label": {
-      "en": "Changelog"
-     },
-     "slug": {
-      "en": "https://www.azion.com/en/documentation/products/changelog/",
-      "pt-br": "https://www.azion.com/pt-br/documentacao/produtos/changelog/"
-     }
+     "items": [
+      {
+       "key": "cache/limits",
+       "label": {
+        "en": "Limits",
+        "pt-br": "Limites"
+       },
+       "slug": {
+        "en": "/documentation/build/cache/limits/",
+        "pt-br": "/documentacao/build/cache/limites/"
+       }
+      },
+      {
+       "key": "cache/pricing",
+       "label": {
+        "en": "Pricing",
+        "pt-br": "Preços"
+       },
+       "slug": {
+        "en": "https://www.azion.com/en/documentation/products/pricing/#cache",
+        "pt-br": "https://www.azion.com/pt-br/documentacao/produtos/precos/#cache"
+       }
+      },
+      {
+       "key": "cache/changelog",
+       "label": {
+        "en": "Changelog"
+       },
+       "slug": {
+        "en": "https://www.azion.com/en/documentation/products/changelog/",
+        "pt-br": "https://www.azion.com/pt-br/documentacao/produtos/changelog/"
+       }
+      }
+     ]
     }
    ]
   }

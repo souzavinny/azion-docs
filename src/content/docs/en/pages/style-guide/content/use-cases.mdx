@@ -1,8 +1,9 @@
 ---
 title: Use cases
 description: >-
-  How to write a use-case page: a business scenario turned into an executable
-  specification, with required products, an architecture, and measurable results.
+  Write a use-case page: a business scenario turned into an executable
+  specification, with required products, an architecture, and measurable
+  results.
 meta_tags: 'style guide, use cases, guides, spec driven documentation'
 namespace: documentation_style_guide_use_cases
 permalink: /documentation/style-guide/content/use-cases/
@@ -166,6 +167,7 @@ To <reach the result of this stage>:
 ## Rules
 
 - **Write a specification, not an article.** Every value is concrete, every command runs, and no step says "depending on your setup". The reader may be an agent, and an agent cannot resolve an ambiguity by asking.
+- **Show the output after every command.** The reader sees what success looks like before the next step depends on it. The rule is in [Procedures](/en/documentation/style-guide/writing/procedures/).
 - **Narrow the scenario to one buildable setup.** State it as `A <team> that <has this> configures <this setup> so that <this checkable outcome>.` If the sentence needs an "and also", it is two use cases.
 - **Build the requirements table before writing any prose.** Every row names its source. A row you cannot source is a row you cut, or a documentation gap you report.
 - **Inline what is specific to this use case. Link what is true for every use case.** The generic path is a link; the page holds what the scenario changes.
@@ -193,7 +195,7 @@ This use case does not cover payment processing or inventory synchronization.
 
 | Requirement | Technical need | Product | Documented at |
 | --- | --- | --- | --- |
-| Catalogue pages served fast under load | Cache identical responses at Azion's distributed network | Applications | [Cache settings](/en/documentation/build/cache/reference/cache-settings/) |
+| Catalogue pages served fast under load | Cache identical responses on Azion's distributed network | Applications | [Cache settings](/en/documentation/build/cache/reference/cache-settings/) |
 | Cart stays personal | Bypass cache for authenticated paths | Applications | [Rules Engine](/en/documentation/build/applications/reference/rules-engine/) |
 | Checkout resists abuse | Rate limit by client identity | Firewall | [Rules Engine for Firewall](/en/documentation/secure/firewall/reference/rules-engine/) |
 ```

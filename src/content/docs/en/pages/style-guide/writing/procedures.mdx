@@ -38,7 +38,7 @@ A step holding two actions is a step where the second one gets skipped.
 - Incorrect: `Select **Save**, then purge the cache and confirm the TTL changed.`
 - Correct: three numbered steps, one for each action.
 
-Small movements that form one gesture may share a step, and therefore one sentence: `Enter a name and select **Read-only**.` This is the one place a single sentence carries two imperatives, and it overrides the sentence rules in [Sentence structure](/en/documentation/style-guide/writing/sentence-structure/).
+Small movements that form one gesture may share a step, and therefore one sentence: `Enter a name and select **Read Only**.` This is the one place a single sentence carries two imperatives, and it overrides the sentence rules in [Sentence structure](/en/documentation/style-guide/writing/sentence-structure/).
 
 ## Order within a step
 
@@ -56,7 +56,7 @@ Condition comes before the action: `If the list is empty, select **Add**.`
 - Write in the imperative, active, present: `Select **Save**.` Never "You should select" or "The Save button should be selected."
 - Start an optional step with the literal word `(Optional)`: `3. (Optional) Enter a description for the rule.`
 - Mark sub-steps with lowercase letters (`a.`, `b.`) and sub-sub-steps with lowercase Roman numerals. If a step needs sub-sub-steps, the procedure wants splitting.
-- Bold the UI label and italicize the UI value: `Set **Edge Access** to _Read-only_.`
+- Bold the UI label and italicize the UI value: `Set **Workloads Access** to _Read Only_.`
 - Use the interface verbs only: select, go to, turn on, turn off, enter. Not click, hit, enable, disable. The table is in [Word choice](/en/documentation/style-guide/writing/word-choice/).
 - Use the interface's own words. If the button says **Save**, the step says select **Save**, not "confirm" or "apply". Do not improve on the interface's vocabulary in prose that describes it.
 - Do not use directional language. Name the element, not where it sits on the screen, per [Accessibility](/en/documentation/style-guide/writing/accessibility/).
@@ -76,7 +76,7 @@ Use a colon when the sentence immediately precedes the steps. Use a period when 
 
 End every procedure with one outcome sentence. State what the reader now has or sees, so they can tell they succeeded without asking.
 
-- `The bucket appears in the list with the _Read-only_ permission.`
+- `The bucket appears in the list with the _Read Only_ permission.`
 - `The response returns 201 Created with the bucket name.`
 
 When the source shows no interface output, state the entailed state change instead: `The bucket has the new access level.` Never invent interface output, response codes, headers, or messages the source does not show. That distinction is what separates an outcome sentence from an invented fact.
@@ -84,6 +84,14 @@ When the source shows no interface output, state the entailed state change inste
 Warn about timing. If a result takes time to propagate, say so and say what to do: "New rules can take a few minutes to propagate. On an unexpected response, wait and retry before diagnosing."
 
 Follow-on tasks go in the page's `## Next steps` section, never in a "post-requisites" section.
+
+## Show the expected output
+
+Every command the reader runs is followed by the output they should see. Show the complete output when it is short, and the relevant excerpt when it is long. The output confirms the step worked before the next step depends on it.
+
+Input and output take different blocks: a `<Code>` block for the command the reader copies, a fence for the output they read. The mechanics are in [Code](/en/documentation/style-guide/formatting/code/).
+
+When the source shows no output for a command, state the entailed state change, or mark the gap with `[GAP: ...]`. Never invent output the source does not show.
 
 ## Multiple interfaces
 

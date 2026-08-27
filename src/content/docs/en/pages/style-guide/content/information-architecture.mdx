@@ -1,15 +1,15 @@
 ---
 title: Information architecture
 description: >-
-  The target structure for Azion documentation: the product section skeleton,
-  the order of the reader's journey, and where a new page goes.
+  Follow the target structure for Azion documentation: the product section
+  skeleton, the order of the reader's journey, and where a new page goes.
 meta_tags: 'style guide, information architecture, navigation, sidebar'
 namespace: documentation_style_guide_information_architecture
 permalink: /documentation/style-guide/content/information-architecture/
 menu_namespace: styleGuideMenu
 ---
 
-This page defines the target structure for the Azion documentation. New sections follow it, and existing sections converge on it as they are revised. Do not copy the structure of an existing section: the pattern below wins.
+This page defines the target structure for the Azion documentation. New sections follow it, and existing sections converge on it as they are revised. Do not copy the structure of an existing section: this pattern wins.
 
 Two principles organize everything. Sections follow the order of the reader's journey with the product. Each section holds one [content type](/en/documentation/style-guide/content/choose-a-content-type/), so the journey decides where a section sits and the type decides what its pages look like.
 
@@ -33,13 +33,20 @@ Every product section follows this order. The table shows what each slot holds a
 | 12 | Pricing | Yes | A link to the product's section of the pricing page |
 | 13 | Changelog | Yes | A link to the product's changelog entries |
 
-Two slots have a fixed sidebar shape, and it is not a dropdown.
+Two slots have a fixed sidebar shape.
 
 **Guides and tutorials is one row that opens a page.** The row points at a hub whose body is a single table: name, last updated, and difficulty, one row per guide and per tutorial. The sidebar never expands it, and the reader opens a guide from the table. A section with forty guides stays one sidebar row, so the sidebar keeps showing the whole product.
 
 The table is generated, not written. The date comes from the file's last commit and the difficulty from a `difficulty` frontmatter field, so the hub cannot drift from the pages it lists.
 
-**Reference pages sit directly in the sidebar, one row each.** A reader consulting a field name should reach it in one click, so reference never collapses behind a parent row. When a product has more reference pages than the sidebar can carry flat, that is a signal to merge pages, not to nest them.
+**Reference is a fixed group.** The sidebar shows a **Reference** parent holding one row per reference page. The group name is the same in every product section, so the reader finds the fields in the same place everywhere.
+
+Other rows may group the same way. A group is a menu parent, not a page, and it stays one level deep. Two modes exist:
+
+- **Fixed groups** hold one slot's pages under the slot's standard name. Reference is the canonical case, and the Quickstart interface variants group the same way.
+- **Same-type groups** hold related closing pages under one thematic parent. **Management** holds Limits, Pricing, and Changelog: the pages the reader consults about running the product.
+
+Do not group rows that read fine flat. A parent costs the reader one click on every visit, so a group must pay for itself.
 
 A product with modules repeats the pattern one level down. A module with its own surface gets a subsection with the same skeleton, reduced to the parts it needs.
 

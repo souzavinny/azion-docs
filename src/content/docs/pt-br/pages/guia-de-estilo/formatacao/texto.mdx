@@ -1,8 +1,8 @@
 ---
 title: Formatação de texto
 description: >-
-  Quando usar negrito e itálico, como formatar links internos e caminhos de
-  assets, quando numerar uma lista e como escrever tabelas de referência.
+  Formate o texto de uma página: quando usar negrito e itálico, como escrever
+  links internos e caminhos de assets, e quando numerar uma lista.
 meta_tags: 'style guide, formatting, links, lists, tables'
 namespace: documentation_style_guide_text_formatting
 permalink: /documentacao/guia-de-estilo/formatacao/texto/
@@ -20,7 +20,7 @@ O negrito cumpre o seu papel quando aponta para a interface: `Selecione **Save**
 
 ## Use itálico para valores da interface e termos definidos
 
-O itálico marca um valor ou opção que o leitor escolhe na interface: `Defina a permissão como _Read-only_.` O label fica em negrito; o valor fica em itálico.
+O itálico marca um valor ou opção que o leitor escolhe na interface: `Defina a permissão como _Read Only_.` O label fica em negrito; o valor fica em itálico.
 
 O itálico também marca um termo no momento em que a página o define: `Uma *cache key* identifica um objeto no cache.` Depois da definição, o termo aparece em texto simples. Itálico em qualquer outro lugar dilui os dois sinais, e por isso a documentação o usa raramente.
 
@@ -71,6 +71,12 @@ Um link em seção de encerramento carrega o seu motivo: `[Título](/caminho/) -
 O texto de link é único na página. Dois links com o mesmo texto precisam ir para o mesmo lugar, porque o leitor que vê as mesmas palavras espera o mesmo destino.
 
 Links dentro de um parágrafo apontam para páginas da documentação. Links externos ficam reunidos no fim da página ou da seção, para o fluxo de leitura nunca sair da documentação no meio de uma tarefa.
+
+## Aponte a primeira menção de outro elemento documentado
+
+Quando a prosa nomeia um produto, um módulo ou uma feature que tem página própria, a primeira menção na página aponta para essa página: `Cache é um módulo do [Applications](/pt-br/documentacao/build/applications/).` As menções seguintes ficam em texto simples, ou em negrito onde a regra de nomes de produto pede.
+
+O link substitui o negrito nessa primeira menção, porque o texto dentro de um link nunca fica em negrito. Um leitor que encontra um nome desconhecido sempre tem a página dele a um clique.
 
 ## Use asides para o que o texto não comporta
 

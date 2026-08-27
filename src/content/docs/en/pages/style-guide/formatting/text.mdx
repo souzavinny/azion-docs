@@ -1,8 +1,8 @@
 ---
 title: Text formatting
 description: >-
-  When bold and italics apply, how internal links and asset paths are formatted,
-  when a list is numbered, and how to write reference tables.
+  Format the text of a page: when bold and italics apply, how internal links
+  and asset paths are written, and when a list is numbered.
 meta_tags: 'style guide, formatting, links, lists, tables'
 namespace: documentation_style_guide_text_formatting
 permalink: /documentation/style-guide/formatting/text/
@@ -20,7 +20,7 @@ Bold does its job when it points at the interface: `Select **Save** to apply the
 
 ## Use italics for UI values and defined terms
 
-Italics mark a value or option the reader picks in the interface: `Set the permission to _Read-only_.` The label is bold; the value is italic.
+Italics mark a value or option the reader picks in the interface: `Set the permission to _Read Only_.` The label is bold; the value is italic.
 
 Italics also mark a term at the moment the page defines it: `A *cache key* identifies one object in the cache.` After the definition, the term appears in plain text. Italics anywhere else dilute both signals, so the documentation uses them rarely.
 
@@ -71,6 +71,12 @@ A closing-section link carries its reason: `[Title](/path/) - one sentence on wh
 Link text is unique on the page. Two links with the same text must go to the same place, because a reader who sees the same words expects the same destination.
 
 Links inside a paragraph point at documentation pages. External links gather at the end of the page or the section, so the reading flow never leaves the docs mid-task.
+
+## Link the first mention of another documented element
+
+When the prose names a product, a module, or a feature that has its own page, the first mention on the page links to that page: `Cache is an [Applications](/en/documentation/build/applications/) module.` Later mentions stay plain, or bold where the product-name rule asks for it.
+
+The link replaces the bold at that first mention, because the text inside a link is never bold. A reader who meets an unfamiliar name always has its page one click away.
 
 ## Use asides for what the text cannot hold
 

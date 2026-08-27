@@ -1,8 +1,8 @@
 ---
 title: Páginas de arquitetura
 description: >-
-  Como escrever uma página de arquitetura: o diagrama, o dataflow, os
-  componentes e os links para os guias que implementam o design.
+  Escreva uma página de arquitetura: o diagrama, o dataflow, os componentes e
+  os links para os guias que implementam o design.
 meta_tags: 'style guide, architecture, explanation'
 namespace: documentation_style_guide_architecture
 permalink: /documentacao/guia-de-estilo/conteudo/arquitetura/
@@ -92,7 +92,7 @@ flowchart LR
 
 - [Implante sites Jamstack em uma rede distribuída](/pt-br/documentacao/architectures/jamstack/implantacao-aplicacoes-jamstack/): um diagrama, um dataflow numerado, os componentes envolvidos e links para a implementação.
 
-O trecho abaixo, de uma página em inglês, mostra a abertura, a seção do diagrama e o dataflow:
+Este trecho, de uma página em inglês, mostra a abertura, a seção do diagrama e o dataflow:
 
 ````mdx
 This design delivers a site's content from locations close to users. It reduces latency and the load on the origin infrastructure. Use it when your team delivers static-heavy sites and applications.
@@ -109,17 +109,17 @@ flowchart LR
   Origin --> Cache
 ```
 
-O diagrama mostra o caminho de uma requisição e de sua resposta em uma aplicação na rede distribuída da Azion. A requisição do cliente chega a um nó da Azion, onde o Rules Engine e a camada de cache a processam. O conteúdo que não está em cache vem do servidor de origem, e a resposta retorna ao cliente pelo mesmo nó.
+O diagrama mostra o caminho de uma requisição e de sua resposta em uma aplicação na rede distribuída da Azion. A requisição do cliente chega a um node na rede distribuída da Azion, onde Rules Engine e a camada de cache a processam. O conteúdo que não está em cache vem do servidor de origem, e a resposta retorna ao cliente pelo mesmo node.
 
 ### Dataflow
 
 A request moves through the design in this order:
 
 1. Um cliente envia uma requisição HTTP ou HTTPS para um domínio associado a uma aplicação.
-2. No nó da Azion, o Rules Engine processa a requisição. Ele aplica políticas de cache e comportamentos de otimização de imagem na fase de request.
-3. A camada de cache avalia a requisição. Em uma correspondência de cache key, o nó entrega o objeto a partir do cache.
-4. Em um cache miss, o nó encaminha a requisição ao servidor de origem. A origem responde, e o nó armazena o conteúdo em cache.
-5. Antes de a resposta retornar ao cliente, o Rules Engine processa as políticas da fase de response. O nó então entrega o conteúdo ao usuário.
+2. No node da Azion, Rules Engine processa a requisição. Ele aplica políticas de cache e comportamentos de otimização de imagem na fase de request.
+3. A camada de cache avalia a requisição. Em uma correspondência de cache key, o node entrega o objeto a partir do cache.
+4. Em um cache miss, o node encaminha a requisição ao servidor de origem. A origem responde, e o node armazena o conteúdo em cache.
+5. Antes de a resposta retornar ao cliente, Rules Engine processa as políticas da fase de response. O node então entrega o conteúdo ao usuário.
 ````
 
 ## Relacionados
