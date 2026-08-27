@@ -1,66 +1,35 @@
 ---
 title: Escolha de palavras
 description: >-
-  O vocabulário a substituir, o teste que separa afirmação de qualidade de
-  comportamento, os padrões de enchimento a cortar e a regra de que todo
-  número e nome deve rastrear até uma fonte.
+  Corte o vocabulário de enchimento, evite adjetivos vazios, mantenha as
+  palavras que descrevem comportamento e rastreie cada número e nome até uma fonte.
 meta_tags: 'style guide, word choice, vocabulary'
 namespace: documentation_style_guide_word_choice
 permalink: /documentacao/guia-de-estilo/escrita/escolha-de-palavras/
 menu_namespace: styleGuideMenu
 ---
 
-## Substitua o vocabulário de enchimento
+## Corte o vocabulário de enchimento
 
-Algumas palavras aparecem em rascunhos como decoração e não carregam significado técnico. Elas também aparecem com muito mais frequência em texto gerado por máquina do que em escrita humana. Substitua quando decoram; mantenha quando carregam significado técnico.
+Algumas palavras aparecem em rascunhos como decoração e não carregam significado técnico. Elas também aparecem com muito mais frequência em texto gerado por máquina do que em escrita humana. Apague o enchimento e mantenha a frase: "é importante notar que" e "note que" não adicionam nada. Prefira a forma curta: "para" em vez de "a fim de", "porque" em vez de "devido ao fato de que" e "pode" em vez de "tem a capacidade de".
 
-A tabela lista os termos em inglês porque o texto em inglês é a fonte canônica da documentação. O mesmo princípio vale em português: prefira a palavra mais simples disponível e use a mesma palavra sempre.
+Prefira o verbo simples: "use" em vez de "utilize", e "cubra" em vez de "explore em profundidade". Troque uma quantidade vaga pela real: nomeie o intervalo em vez de "uma ampla gama de" e conte as opções em vez de "várias".
 
-| Evite | Use |
-| --- | --- |
-| it is important to note that | (apague a expressão, mantenha a frase) |
-| note that | (apague a expressão, mantenha a frase) |
-| in order to | to |
-| due to the fact that | because |
-| has the ability to | can |
-| at this point in time | now |
-| utilize | use |
-| leverage (como decoração) | use |
-| delve into, dive into | cover, explain |
-| facilitate | let, allow |
-| straightforward | (apague, ou diga quais são os passos) |
-| a wide range of | (nomeie o intervalo) |
-| various | (nomeie os itens ou diga quantos são) |
-| seamless, seamlessly | (apague, ou diga o que não quebra) |
-| cutting-edge, state-of-the-art | (apague) |
-| a testament to | (apague) |
-| plays a crucial role in | (diga o que ele faz) |
-| in today's landscape | (apague a frase) |
+- Antes: `A fim de aproveitar as várias opções de cache, note que a configuração é simples.`
+- Depois: `Para armazenar conteúdo em cache, configure os três ajustes abaixo.`
 
-## Substitua a moldura de marketing
+Mantenha uma palavra dessa família quando ela carrega significado técnico. Corte quando ela decora.
 
-A moldura de marketing tem substituição direta. As expressões e as substituições ficam em inglês porque o texto em inglês é a fonte canônica. Estas expressões vendem em vez de descrever:
+## Evite adjetivos vazios
 
-| Evite | Use |
-| --- | --- |
-| Perfect for, Essential for, Critical for | Use for |
-| Best for | Use when |
-| empowers you to, enables you to | (diga a ação diretamente) |
-| powerful, robust, comprehensive (sobre um produto Azion) | (diga o que ele faz, o que ele suporta, o que ele cobre) |
-| modern `<thing>` | `<thing>` |
+Um adjetivo vazio afirma qualidade sem descrever comportamento. Retire o adjetivo e diga o que o produto faz, o que ele suporta ou o que ele cobre. [Voz da documentação](/pt-br/documentacao/guia-de-estilo/escrita/voz/) é a dona da regra de registro. Esta página cobre o vocabulário.
 
-O teste é se a palavra afirma *qualidade* ou descreve *comportamento*. "Robust security" é uma afirmação de qualidade. "A robust retry with exponential backoff" descreve comportamento e permanece.
+O teste é se a palavra afirma *qualidade* ou descreve *comportamento*. "Robust security" pede que o leitor confie em um adjetivo. "A robust retry with exponential backoff" nomeia o mecanismo, e o adjetivo agora descreve algo testável. Mantenha uma palavra que passa nesse teste. Substitua a que não passa.
 
-## Separe qualidade de comportamento
+A mesma falha se esconde em molduras de frase. Escreva "Use para" em vez de "Perfeito para" ou "Essencial para", e "Use quando" em vez de "Melhor para". Diga a ação diretamente em vez de "capacita você a", e retire "moderno", "seamless" e "de ponta" como modificadores.
 
-Uma palavra das tabelas de substituição é legítima quando descreve comportamento. "Robust security" pede que o leitor confie em um adjetivo. "A robust retry with exponential backoff" nomeia o mecanismo, e o adjetivo agora descreve algo testável. Mantenha uma palavra que passa nesse teste; substitua a que não passa.
-
-## Descreva o produto, não o promova
-
-A documentação descreve comportamento e limites. O leitor já escolheu o produto; um adjetivo que vende é desperdiçado e custa confiança.
-
-- Antes: `O Applications oferece capacidades de cache poderosas e flexíveis.`
-- Depois: `O Applications armazena conteúdo em cache na rede distribuída da Azion. O TTL padrão é de 60 segundos.`
+- Antes: `O Applications oferece um cache poderoso e flexível, perfeito para o e-commerce moderno.`
+- Depois: `O Applications armazena conteúdo em cache na rede distribuída da Azion.`
 
 *Inflação de importância* é a mesma falha apontada para um conceito: uma frase sobre a importância de algo no lugar do que ele faz. "O cache desempenha um papel crucial na performance da web moderna" não dá ao leitor nada para fazer. Diga o que a coisa faz e quais são os limites.
 
@@ -98,17 +67,13 @@ Um título nomeia uma coisa ou uma tarefa. Uma pergunta retórica não faz nenhu
 
 ## Evite estas palavras em qualquer página
 
-Um conjunto curto de palavras é proibido em qualquer contexto:
+Não chame uma tarefa de "simples", "fácil" ou "óbvia", e não suavize um passo com "basta", "é só" ou "simplesmente". Se a tarefa fosse fácil, o leitor não estaria aqui, e essas palavras dizem a um leitor travado que ele deveria se envergonhar.
 
-- "Simplesmente", "basta", "é só", "fácil" e "óbvio": se a tarefa fosse fácil, o leitor não estaria aqui. Essas palavras dizem a um leitor travado que ele deveria se envergonhar.
-- "Por favor": a documentação instrui; ela não pede.
-- "Atualmente", "no momento da escrita", "em breve", "agora disponível", "recentemente" e "novo" como modificador: todas envelhecem mal, e ninguém volta para corrigir. Nenhum mês ou ano aparece fora de um changelog. Uma data gerada por um passo de build, como a coluna de última atualização em um hub de Guias e tutoriais, é exceção: nada escrito à mão envelhece ali. Diga o que é verdade e deixe o changelog carregar a linha do tempo.
-- "Note que" e "é importante notar": apague a expressão e mantenha a frase.
-- Abreviações latinas: escreva "por exemplo" e "isto é", não "e.g." nem "i.e."
+Não escreva "por favor". A documentação instrui. Ela não pede.
 
-## Marque status com um selo, não com um tempo verbal
+Não ancore uma página no tempo com "atualmente", "no momento da escrita", "em breve", "agora disponível", "recentemente" ou "novo" como modificador. Todas envelhecem mal, e ninguém volta para corrigir. Nenhum mês ou ano aparece fora de um changelog: diga o que é verdade e deixe o changelog carregar a linha do tempo. Uma data gerada por um passo de build, como a coluna de última atualização em um hub de Guias e tutoriais, é exceção, porque nada escrito à mão envelhece ali.
 
-Preview, beta, disponibilidade geral e descontinuação são marcados de forma estrutural: o selo `Tag` ao lado do título (mecânica em [Componentes](/pt-br/documentacao/guia-de-estilo/componentes/)), a coluna Plano de uma tabela de limites, uma entrada datada de changelog. Não "atualmente em beta" — o selo carrega o status e a prosa diz o que a feature faz. Uma feature restrita a um plano declara o plano como requisito: `Disponível no plano Enterprise`.
+Escreva "por exemplo" e "isto é", nunca "e.g." nem "i.e.".
 
 ## Use os verbos da interface
 
@@ -126,7 +91,7 @@ Em inglês, "enable" e "disable" continuam legítimos para descrever estado em p
 
 Os procedimentos publicados em português usam "acesse", "selecione", "digite" e "defina"; nunca "clique".
 
-Não use linguagem direcional: "à esquerda", "acima", "abaixo". Nomeie o elemento: "Na aba **Rules Engine**, selecione **Add Rule**." Direções quebram no mobile, na tradução e para leitores de tela.
+Não use linguagem direcional. Nomeie o elemento, conforme [Acessibilidade](/pt-br/documentacao/guia-de-estilo/escrita/acessibilidade/).
 
 A gramática de passos que usa esses verbos está em [Procedimentos](/pt-br/documentacao/guia-de-estilo/escrita/procedimentos/).
 
@@ -165,7 +130,7 @@ Nos trechos em inglês, escreva `organize`, `behavior` e `license`. Grafias brit
 
 O primeiro uso em cada página escreve o termo por extenso e coloca a sigla entre parênteses: `time to live (TTL)`. Depois disso, apenas a sigla. O leitor chega a qualquer página diretamente, por um resultado de busca, e uma definição em outra página não existe para ele.
 
-Nomes de produto não são siglas. Escreva o nome exatamente como [Terminologia da documentação](/pt-br/documentacao/guia-de-estilo/escrita/terminologia/) lista e não o expanda.
+Nomes de produto não são siglas. Escreva o nome conforme as regras em [Terminologia da documentação](/pt-br/documentacao/guia-de-estilo/escrita/terminologia/) e não o expanda.
 
 ## Rastreie cada dado até uma fonte
 

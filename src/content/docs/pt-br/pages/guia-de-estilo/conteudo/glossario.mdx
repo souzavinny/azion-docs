@@ -1,8 +1,8 @@
 ---
 title: Páginas de glossário
 description: >-
-  Escreva o glossário de um produto: uma tabela filtrável de termos e
-  definições, em ordem alfabética, com cada definição apontando sua página canônica.
+  Escreva o glossário de um produto com termos específicos da Azion: uma tabela
+  filtrável e alfabética cujas definições apontam as páginas onde cada termo é usado.
 meta_tags: 'guia de estilo, glossário, termos, definições'
 namespace: documentation_style_guide_glossary
 permalink: /documentacao/guia-de-estilo/conteudo/glossario/
@@ -13,13 +13,15 @@ menu_namespace: styleGuideMenu
 
 Um glossário define os termos que a documentação de um produto usa. É material de consulta: o leitor chega com uma palavra, encontra a definição e segue um link quando a definição não basta.
 
-Não é uma página de regras de nomes. Quais nomes são atuais e quais são banidos pertence à [Terminologia da documentação](/pt-br/documentacao/guia-de-estilo/escrita/terminologia/); o glossário define o que os termos significam para o leitor.
+Um glossário guarda o vocabulário específico da Azion: produtos, módulos, objetos da plataforma e os termos que a Azion usa do seu próprio jeito. Um termo genérico da indústria, como CDN, serverless ou virtual machine, pertence ao [Learning Center](https://www.azion.com/pt-br/learning/), não a um glossário da documentação. Um termo que a indústria também usa, mas que a Azion usa de forma diferente, mantém a entrada aqui e aponta o Learning Center para o sentido genérico.
+
+Não é uma página de regras de nomes. Os nomes de produto pertencem à [Terminologia da documentação](/pt-br/documentacao/guia-de-estilo/escrita/terminologia/); o glossário define o que os termos significam para o leitor.
 
 ## Quando usar
 
 Toda seção de produto carrega um glossário, um slot obrigatório do [esqueleto da seção de produto](/pt-br/documentacao/guia-de-estilo/conteudo/arquitetura-de-informacao/). Escreva o glossário quando a seção é construída, e estenda quando uma página introduz um termo que o leitor precisa dominar para acompanhar a prosa.
 
-Não escreva uma entrada para um termo que nenhuma página usa. Não use o glossário para explicar em profundidade. Um termo que precisa de mais de três frases precisa de uma [página de conceito](/pt-br/documentacao/guia-de-estilo/conteudo/conceito/), e a definição aponta para ela.
+Não escreva uma entrada para um termo que nenhuma página usa. Não escreva uma entrada para um termo genérico da indústria: aponte o artigo do [Learning Center](https://www.azion.com/pt-br/learning/) na página que precisa dele. Não use o glossário para explicar em profundidade. Um termo que precisa de mais de três frases precisa de uma [página de conceito](/pt-br/documentacao/guia-de-estilo/conteudo/conceito/), e a definição aponta para ela.
 
 ## Registro
 
@@ -53,6 +55,8 @@ Definições dos termos que a documentação de **<Produto>** usa.
 - **Um termo fica em minúscula**, a menos que seja um nome de produto ou outro nome próprio.
 - **Uma definição tem de uma a três frases**, e a primeira diz o que o termo é. Aponte a página canônica no próprio texto da definição.
 - **Toda definição rastreia até uma página ou uma fonte que você pode nomear.** O glossário registra como a documentação usa um termo; ele nunca introduz um.
+- **O glossário é uma estrutura de crosslinks.** Cada definição aponta sua página canônica no próprio texto e as páginas onde o leitor encontra o termo. Toda entrada mantém um caminho de volta para a documentação.
+- **Mover uma entrada nunca quebra um crosslink.** Quando uma entrada migra para o Learning Center, toda página que apontava a entrada recebe o novo destino na mesma mudança.
 - **Linhas em branco ao redor da tabela dentro do componente são obrigatórias**, ou a tabela renderiza como um único parágrafo literal.
 
 ## Exemplos

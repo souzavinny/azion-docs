@@ -1,64 +1,35 @@
 ---
 title: Word choice
 description: >-
-  The vocabulary to replace, the test that separates quality claims from
-  behavior, the padding patterns to cut, and the rule that every number and
-  name must trace to a source.
+  Cut the filler vocabulary, avoid empty adjectives, keep the words that
+  describe behavior, and trace every number and name to a source.
 meta_tags: 'style guide, word choice, vocabulary'
 namespace: documentation_style_guide_word_choice
 permalink: /documentation/style-guide/writing/word-choice/
 menu_namespace: styleGuideMenu
 ---
 
-## Replace the filler vocabulary
+## Cut the filler vocabulary
 
-Some words appear in drafts as decoration and carry no technical meaning. They also appear far more often in machine-generated text than in human writing, so they make a page read as generated. Replace them when they decorate; keep them when they carry technical meaning.
+Some words appear in drafts as decoration and carry no technical meaning. They also appear far more often in machine-generated text than in human writing, so they make a page read as generated. Delete the padding and keep the sentence: "it is important to note that" and "note that" add nothing. Prefer the short form: "to" instead of "in order to", "because" instead of "due to the fact that", and "can" instead of "has the ability to".
 
-| Avoid | Use |
-| --- | --- |
-| it is important to note that | (delete, keep the sentence) |
-| note that | (delete, keep the sentence) |
-| in order to | to |
-| due to the fact that | because |
-| has the ability to | can |
-| at this point in time | now |
-| utilize | use |
-| leverage (as decoration) | use |
-| delve into, dive into | cover, explain |
-| facilitate | let, allow |
-| straightforward | (delete, or say what the steps are) |
-| a wide range of | (name the range) |
-| various | (name them, or say how many) |
-| seamless, seamlessly | (delete, or say what does not break) |
-| cutting-edge, state-of-the-art | (delete) |
-| a testament to | (delete) |
-| plays a crucial role in | (say what it does) |
-| in today's landscape | (delete the sentence) |
+Prefer the plain verb: "use" instead of "utilize" and "leverage", and "cover" instead of "delve into". Replace a vague quantity with the real one: name the range instead of "a wide range of", and count the options instead of "various".
 
-## Replace marketing framing
+- Before: `In order to leverage the various caching options, note that the setup is straightforward.`
+- After: `To cache content, configure the three settings below.`
 
-Marketing framing has a direct substitution. These phrases sell instead of describing:
+Keep a word from this family when it carries technical meaning. Cut it when it decorates.
 
-| Avoid | Use |
-| --- | --- |
-| Perfect for, Essential for, Critical for | Use for |
-| Best for | Use when |
-| empowers you to, enables you to | (state the action directly) |
-| powerful, robust, comprehensive (about an Azion product) | (say what it does, what it withstands, what it covers) |
-| modern `<thing>` | `<thing>` |
+## Avoid empty adjectives
 
-The test is whether the word claims *quality* or describes *behavior*. "Robust security" is a quality claim. "A robust retry with exponential backoff" describes behavior and stays.
+An empty adjective claims quality without describing behavior. Drop the adjective and state what the product does, what it withstands, or what it covers. [Documentation voice](/en/documentation/style-guide/writing/voice/) owns the register rule. This page covers the vocabulary.
 
-## Distinguish quality claims from behavior
+The test is whether the word claims *quality* or describes *behavior*. "Robust security" asks the reader to trust an adjective. "A robust retry with exponential backoff" names the mechanism, and the adjective now describes something testable. Keep a word that passes this test. Replace one that does not.
 
-A word from the replacement tables is legitimate when it describes behavior. "Robust security" asks the reader to trust an adjective. "A robust retry with exponential backoff" names the mechanism, and the adjective now describes something testable. Keep a word that passes this test; replace one that does not.
+The same failure hides in framing phrases. Write "Use for" instead of "Perfect for" or "Essential for", and "Use when" instead of "Best for". State the action directly instead of "empowers you to", and drop "modern", "seamless", and "cutting-edge" as modifiers.
 
-## Describe the product, do not promote it
-
-Documentation describes behavior and limits. The reader already chose the product, so an adjective that sells is wasted on them and costs trust.
-
-- Before: `Applications offers powerful, flexible caching capabilities.`
-- After: `Applications caches content at Azion's distributed network. The default TTL is 60 seconds.`
+- Before: `Applications offers powerful, seamless caching, perfect for modern e-commerce.`
+- After: `Applications caches content at Azion's distributed network.`
 
 *Significance inflation* is the same failure aimed at a concept: a sentence about how important something is, in place of what it does. "Caching plays a crucial role in modern web performance" gives the reader nothing to act on. State what the thing does and what its limits are.
 
@@ -96,17 +67,13 @@ A heading names a thing or a task. A rhetorical question does neither.
 
 ## Avoid these words on every page
 
-A short set of words is banned outright:
+Do not call a task "simple", "easy", "straightforward", or "obvious", and do not soften a step with "just" or "simply". If the task were easy, the reader would not be here, and these words tell a stuck reader to feel embarrassed.
 
-- "Simply", "just", "easy", and "obvious": if the task were easy, the reader would not be here. These words tell a stuck reader to feel embarrassed.
-- "Please": documentation instructs; it does not ask.
-- "Currently", "at the time of writing", "will soon", "now available", "recently", and "new" as a modifier: all age badly, and nobody returns to fix them. No month or year appears outside a changelog. Say what is true and let the changelog carry the timeline. A date a build step generates, such as the last-updated column on a Guides and tutorials hub, is exempt: nothing written by hand goes stale there.
-- "Note that" and "it is important to note": delete the phrase and keep the sentence.
-- Latin abbreviations: write "for example" and "that is", not "e.g." and "i.e."
+Do not write "please". Documentation instructs. It does not ask.
 
-## Mark status with a badge, not a tense
+Do not anchor a page in time with "currently", "at the time of writing", "will soon", "now available", "recently", or "new" as a modifier. All of them age badly, and nobody returns to fix them. No month or year appears outside a changelog: say what is true and let the changelog carry the timeline. A date a build step generates, such as the last-updated column on a Guides and tutorials hub, is exempt, because nothing written by hand goes stale there.
 
-Preview, beta, general availability, and deprecation are marked structurally: the `Tag` badge beside the title (mechanics in [Components](/en/documentation/style-guide/components/)), the Plan column of a limits table, a dated changelog entry. Not "currently in beta" — the badge carries the status and the prose states what the feature does. A plan-gated feature states the plan as a requirement: `Available on the Enterprise plan`.
+Write "for example" and "that is", never "e.g." and "i.e.".
 
 ## Use the interface verbs
 
@@ -122,7 +89,7 @@ Each interface action takes one verb, the same verb on every page:
 
 "Enable" and "disable" stay legitimate for describing state in prose: "When the module is enabled, requests pass through it."
 
-Do not use directional language: "on the left", "above", "below". Name the element instead: "In the **Rules Engine** tab, select **Add Rule**." Directions break on mobile, in translation, and for screen readers.
+Do not use directional language. Name the element instead, per [Accessibility](/en/documentation/style-guide/writing/accessibility/).
 
 The step grammar that uses these verbs is in [Procedures](/en/documentation/style-guide/writing/procedures/).
 
@@ -161,7 +128,7 @@ Write `organize`, `behavior`, and `license`. British spellings drift into pages 
 
 The first use on every page spells out the term and puts the acronym in parentheses: `time to live (TTL)`. After that, the acronym stands alone. A reader lands on any page directly, from a search result, so a definition on another page does not exist for them.
 
-Product names are not acronyms. Write the name exactly as [Documentation terminology](/en/documentation/style-guide/writing/terminology/) lists it, and do not expand it.
+Product names are not acronyms. Write the name as the rules in [Documentation terminology](/en/documentation/style-guide/writing/terminology/) require, and do not expand it.
 
 ## Trace every specific to a source
 

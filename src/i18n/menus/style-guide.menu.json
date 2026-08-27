@@ -177,8 +177,8 @@
     {
      "key": "sg/content",
      "label": {
-      "en": "Content strategy",
-      "pt-br": "Estratégia de conteúdo"
+      "en": "Content structure",
+      "pt-br": "Estrutura de conteúdo"
      },
      "items": [
       {
@@ -344,17 +344,6 @@
        "slug": {
         "en": "/documentation/style-guide/content/glossary/",
         "pt-br": "/documentacao/guia-de-estilo/conteudo/glossario/"
-       }
-      },
-      {
-       "key": "sg/page-size",
-       "label": {
-        "en": "Page size and retrieval",
-        "pt-br": "Tamanho de página e retrieval"
-       },
-       "slug": {
-        "en": "/documentation/style-guide/content/page-size/",
-        "pt-br": "/documentacao/guia-de-estilo/conteudo/tamanho-de-pagina/"
        }
       }
      ]

@@ -1,42 +1,21 @@
 ---
 title: Terminologia da documentação
 description: >-
-  Nomes atuais dos produtos da Azion, os termos que ficam em inglês, a tabela de
-  substituições do português e as expressões que nunca aparecem na documentação.
+  Aplique as regras de nomes: os nomes de produto da documentação e os termos
+  que ficam em inglês.
 meta_tags: 'style guide, terminology, product names'
 namespace: documentation_style_guide_terminology
 permalink: /documentacao/guia-de-estilo/escrita/terminologia/
 menu_namespace: styleGuideMenu
 ---
 
-## Use os nomes atuais dos produtos
+## Use os nomes de produto da documentação
 
-A Azion renomeou seus produtos e recursos de plataforma. Os nomes atuais abaixo são as únicas formas corretas em texto novo, nos dois idiomas.
+Todo produto tem um nome de documentação, e toda página usa esse nome. A lista canônica de nomes vive na base de conhecimento da empresa, a fonte única para nomes de produto. Este guia não repete a lista, porque uma cópia fica errada no dia em que um nome muda.
 
-| Use | Não use |
-| --- | --- |
-| Applications | Edge Application, Edge Applications |
-| Functions | Edge Functions |
-| Firewall | Edge Firewall |
-| Connectors | Edge Connector |
-| Console | Real-Time Manager |
-| Cache | Edge Cache |
-| Application Accelerator | Application Acceleration |
-| AI Inference | Edge AI |
-| Image Processor | Image Processing |
-| Orchestrator | Edge Orchestrator |
-| KV Store | Edge KV |
-| Object Storage | Edge Storage |
-| SQL Database | Edge SQL |
-| Network Shield | Network Layer Protection |
-| Data Stream | Data Streaming |
-| Distributed Web Applications and APIs | Edge-native, Edge-enhanced |
-| Azion Platform | Azion Edge Platform |
-| Azion Marketplace | Marketplace da Azion |
+Quando um nome de marketing difere do nome da documentação, escreva o nome de marketing uma vez, entre parênteses, na primeira menção. Depois disso, o nome da documentação aparece sozinho.
 
-**Azion Platform** é o nome canônico da plataforma, e **Azion Web Platform** é uma alternativa aceita. Prefira **Azion Platform** em conteúdo de segurança. Nunca escreva **Azion Edge Platform**, em nenhum idioma.
-
-Os nomes antigos são legados porque a renomeação os aposentou. Eles ainda aparecem em páginas antigas, URLs e nomes de diretórios, e por isso parecem atuais. Trate esses nomes como história, não como sinônimos.
+A Azion renomeou seus produtos e recursos de plataforma ao longo do tempo. Os nomes antigos ainda aparecem em páginas antigas, URLs e nomes de diretórios, e por isso parecem atuais. Trate esses nomes como história, não como sinônimos.
 
 ## Nomeie um módulo como produto
 
@@ -72,59 +51,3 @@ Estes termos são vocabulário técnico genérico, não nomes de produto. Eles f
 `data center` · `serverless` · `on-premise` · `template` · `compliance` · `e-commerce` · `e-mail` · `keywords` · `meta description`
 
 Uma tradução cria um segundo nome para um conceito que o leitor já conhece em inglês. A documentação usa um termo para cada conceito, em todas as páginas.
-
-## Aplique as substituições do português
-
-Nas páginas em português, use os termos da coluna da direita:
-
-| Evite | Use |
-| --- | --- |
-| borda | rede distribuída |
-| aplicativo | aplicação |
-| desempenho | performance |
-| cacheado | armazenado em cache |
-| computação na borda | rede distribuída da Azion |
-| Plataforma na Borda da Azion | Plataforma da Azion |
-| Plataforma Edge da Azion | Plataforma da Azion |
-| nodo | node |
-| centro de dados | data center |
-
-Não substitua `módulo`. É a palavra correta para um módulo de um produto ou de um recurso: `WAF é um módulo do Firewall`. Evite `módulo` apenas quando a palavra nomeia vagamente um produto inteiro.
-
-Essas substituições cobrem as escolhas que mais dão errado em tradução. As regras completas de tradução estão em [Páginas bilíngues](/pt-br/documentacao/guia-de-estilo/convencoes/paginas-bilingues/).
-
-## Nomeie onde a plataforma executa
-
-O trabalho acontece na **rede distribuída da Azion** — igualmente, na sua **infraestrutura distribuída**. Os locais que a compõem são **edge locations**.
-
-| Nunca | Use |
-| --- | --- |
-| at the edge, from the edge, na borda, no edge, do edge | na rede distribuída da Azion, na infraestrutura distribuída da Azion |
-| Points of Presence, PoP, PoPs | edge locations |
-
-`edge` permanece no vocabulário técnico como modificador — `edge node`, `edge location`, `edge computing`, `edge cache` — mas "the edge" sozinho é banido em qualquer papel: nunca o lugar onde algo executa, e nunca o agente que serve ou busca. Reescreva em torno da coisa nomeada: não "o edge serve o conteúdo", mas "o edge node serve o conteúdo"; não "Functions executa suas funções at the edge", mas "Functions executa suas funções na rede distribuída da Azion".
-
-## Evite as expressões proibidas
-
-Nunca use estas expressões, em nenhum idioma:
-
-`digital landscape` / `paisagem digital` · `digital transformation` / `transformação digital` · `empower` / `capacitar` · `plethora` / `plétora` · `shed light` / `esclarecer` · `realm` / `reino` · `beacon` / `farol`
-
-Essas expressões promovem; elas não descrevem. A documentação declara comportamento e limites, e o leitor já escolheu o produto. As regras completas de vocabulário estão em [Escolha de palavras](/pt-br/documentacao/guia-de-estilo/escrita/escolha-de-palavras/).
-
-## Use maiúscula só na primeira palavra do título
-
-Em um título, apenas a primeira palavra e os nomes próprios começam com maiúscula. A regra vale para títulos e headings nos dois idiomas.
-
-- Correto: `Configurar políticas de cache`
-- Incorreto: `Configurar Políticas De Cache`
-
-Um nome de produto mantém as maiúsculas em qualquer posição, porque é um nome próprio.
-
-A página [Títulos](/pt-br/documentacao/guia-de-estilo/formatacao/titulos/) é dona desta regra; esta entrada a repete ao lado das regras de nomes.
-
-## Pergunte quando um nome não estiver listado
-
-Quando um nome de produto não está neste guia, pergunte antes de escrever. Não deduza um nome a partir de uma URL, de um nome de diretório ou de uma página antiga.
-
-Os diretórios do repositório ainda carregam nomes legados, como `edge-application/` e `edge-firewall/`, que o texto não usa mais. Um caminho mostra a localização de um arquivo, não o nome atual do produto.

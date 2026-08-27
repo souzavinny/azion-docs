@@ -30,12 +30,7 @@ A procedure gets the tighter cap because the reader executes each step under loa
 
 ## Give one action per step
 
-In a procedure, each step carries exactly one action. When a step contains two, readers often complete the first and skip the second.
-
-- Before: `Create the bucket and upload your files, then set the permissions.`
-- After: three numbered steps, one for each action: `Create the bucket.` `Upload your files.` `Set the permissions.`
-
-[Procedures](/en/documentation/style-guide/writing/procedures/) owns this rule, including the one case where two small movements share a step and a single sentence.
+In a procedure, each step carries exactly one action. When a step contains two, readers often complete the first and skip the second. [Procedures](/en/documentation/style-guide/writing/procedures/) owns this rule, including the one case where two small movements share a step and a single sentence.
 
 ## Use simple tenses only
 
@@ -48,10 +43,7 @@ Write with the imperative, the simple present, the simple past, and the simple f
 
 ## Use the active voice
 
-Write every step in the active voice. In descriptive text, use the passive voice only when the actor is unknown or is the platform itself. When a product acts, prefer naming it as the subject. The active voice also keeps the second-person register described in [Documentation voice](/en/documentation/style-guide/writing/voice/).
-
-- Before: `The request is blocked when a rule matches.`
-- After: `Firewall blocks the request when a rule matches.`
+Write every step in the active voice. In descriptive text, use the passive voice only when the actor is unknown or is the platform itself. When a product acts, prefer naming it as the subject. [Documentation voice](/en/documentation/style-guide/writing/voice/) owns this rule and the reason: the active voice names the actor.
 
 ## Use an -ing word only as a noun
 
@@ -78,10 +70,7 @@ Do not drop words to shorten a sentence. A sentence without its subject, verb, o
 
 ## Do not use contractions
 
-Write the full form of each verb: "do not", not "don't". A contraction reads as casual speech and translates poorly. The pages of this style guide follow this rule.
-
-- Before: `You don't need to purge the cache.`
-- After: `You do not need to purge the cache.`
+Write the full form of each verb: "do not", not "don't". [Documentation voice](/en/documentation/style-guide/writing/voice/) owns this rule.
 
 ## Keep each paragraph on one topic
 
@@ -89,8 +78,6 @@ Write one topic per paragraph, in six sentences at most. Retrieval systems cut p
 
 - Before: one paragraph that defines the cache key and then describes purge behavior.
 - After: one paragraph for the cache key, and a second paragraph for purge behavior.
-
-The page-level chunking rules are in [Page size](/en/documentation/style-guide/content/page-size/).
 
 ## Use a vertical list for a sequence
 
@@ -117,15 +104,10 @@ When a sentence describes a control in the Console, use the label that the Conso
 
 ASD-STE100 pairs its rules with an approved dictionary. Rules 1.5 and 1.12 of the standard let a project approve its own technical names and technical verbs. Azion uses that allowance: the approved vocabulary is in [Word choice](/en/documentation/style-guide/writing/word-choice/) and in [Documentation terminology](/en/documentation/style-guide/writing/terminology/).
 
-## Treat the caps as targets
-
-The caps of 20 words in a procedure and 25 in description are targets. The build does not enforce them, and no check in CI counts words. A clear 26-word descriptive sentence is not a defect. Rewrite a sentence when its length hides the meaning, not to satisfy a number.
-
 ## Check your draft
 
 Confirm each point before you hand over a draft:
 
-- Every sentence in a procedure has at most 20 words, and every descriptive sentence has at most 25.
 - Every step gives exactly one instruction.
 - Every tense is simple, and product behavior uses the simple present.
 - Every step is in the active voice, and descriptions use the passive only when the actor is unknown or is the platform itself.

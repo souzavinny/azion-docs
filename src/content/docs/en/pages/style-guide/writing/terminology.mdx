@@ -1,42 +1,21 @@
 ---
 title: Documentation terminology
 description: >-
-  Current Azion product names, the terms that stay in English, the Portuguese
-  substitution table, and the expressions that never appear in the documentation.
+  Apply the naming rules: the documentation product names and the terms that
+  stay in English.
 meta_tags: 'style guide, terminology, product names'
 namespace: documentation_style_guide_terminology
 permalink: /documentation/style-guide/writing/terminology/
 menu_namespace: styleGuideMenu
 ---
 
-## Use current product names
+## Use the documentation product names
 
-Azion renamed its products and platform resources. The current names below are the only correct forms in new text, in both languages.
+Every product has one documentation name, and every page uses that name. The canonical list of names lives in the company knowledge base, the single source for product naming. This guide does not restate the list, because a copy is wrong the day a name changes.
 
-| Use | Not |
-| --- | --- |
-| Applications | Edge Application, Edge Applications |
-| Functions | Edge Functions |
-| Firewall | Edge Firewall |
-| Connectors | Edge Connector |
-| Console | Real-Time Manager |
-| Cache | Edge Cache |
-| Application Accelerator | Application Acceleration |
-| AI Inference | Edge AI |
-| Image Processor | Image Processing |
-| Orchestrator | Edge Orchestrator |
-| KV Store | Edge KV |
-| Object Storage | Edge Storage |
-| SQL Database | Edge SQL |
-| Network Shield | Network Layer Protection |
-| Data Stream | Data Streaming |
-| Distributed Web Applications and APIs | Edge-native, Edge-enhanced |
-| Azion Platform | Azion Edge Platform |
-| Azion Marketplace | Marketplace da Azion |
+When a marketing name differs from the documentation name, write the marketing name once, in parentheses, at the first mention. After that, the documentation name stands alone.
 
-**Azion Platform** is the canonical platform name, and **Azion Web Platform** is an accepted alternative. Prefer **Azion Platform** in security content. Never write **Azion Edge Platform**, in any language.
-
-The old names are legacy because the rename retired them. They still appear in old pages, URLs, and directory names, so they can look current. Treat these names as history, not as synonyms.
+Azion renamed its products and platform resources over time. The old names still appear in old pages, URLs, and directory names, so they can look current. Treat these names as history, not as synonyms.
 
 ## Name a module as a product
 
@@ -73,60 +52,4 @@ These terms are generic technical vocabulary, not product names. They stay in En
 
 A translation creates a second name for a concept the reader already knows in English. The documentation uses one term for one concept, on every page.
 
-The strings `edge`, `edge computing`, and `edge location` also stay untranslated where they already appear. That is guidance for translation, not permission to use them. New text names Azion's distributed network instead.
-
-## Apply the Portuguese substitutions
-
-On Portuguese pages, use the terms in the right column:
-
-| Avoid | Use |
-| --- | --- |
-| borda | rede distribuída |
-| aplicativo | aplicação |
-| desempenho | performance |
-| cacheado | armazenado em cache |
-| computação na borda | rede distribuída da Azion |
-| Plataforma na Borda da Azion | Plataforma da Azion |
-| Plataforma Edge da Azion | Plataforma da Azion |
-| nodo | node |
-| centro de dados | data center |
-
-Do not replace `módulo`. It is the correct word for a module of a product or a resource: `WAF é um módulo do Firewall`. Avoid `módulo` only when it stands loosely for a whole product.
-
-These substitutions cover the choices that go wrong most often in translation. The full set of translation rules is in [Bilingual pages](/en/documentation/style-guide/conventions/bilingual/).
-
-## Name where the platform runs
-
-Work happens on **Azion's distributed network** — equally, its **distributed infrastructure**. The sites that compose it are **edge locations**.
-
-| Never | Use |
-| --- | --- |
-| at the edge, from the edge, on the edge, to the edge | on Azion's distributed network, across Azion's distributed infrastructure |
-| Points of Presence, PoP, PoPs | edge locations |
-
-`edge` stays in the technical vocabulary as a modifier — `edge node`, `edge location`, `edge computing`, `edge cache` — but "the edge" standing alone is banned in every role: never the place where something runs, and never the actor that serves or fetches. Rewrite around the named thing: not "the edge serves the content" but "the edge node serves the content"; not "Functions runs your functions at the edge" but "Functions runs your functions on Azion's distributed network".
-
-## Avoid the forbidden expressions
-
-Never use these expressions, in any language:
-
-`digital landscape` / `paisagem digital` · `digital transformation` / `transformação digital` · `empower` / `capacitar` · `plethora` / `plétora` · `shed light` / `esclarecer` · `realm` / `reino` · `beacon` / `farol`
-
-These expressions promote; they do not describe. Documentation states behavior and limits, and the reader already chose the product. The full vocabulary rules are in [Word choice](/en/documentation/style-guide/writing/word-choice/).
-
-## Write titles in sentence case
-
-Capitalize the first word and proper nouns only. The rule applies to titles and headings in both languages.
-
-- Correct: `Configure cache policies`
-- Incorrect: `Configure Cache Policies`
-
-A product name keeps its capitals in any position, because it is a proper noun.
-
-The [Headings](/en/documentation/style-guide/formatting/headings/) page owns this rule; this entry restates it beside the naming rules.
-
-## Ask when a name is not listed
-
-When this guide does not list a product name, ask before you write it. Do not infer a name from a URL, a directory name, or an older page.
-
-Repository directories still carry legacy names, such as `edge-application/` and `edge-firewall/`, that the prose no longer uses. A path shows where a file lives, not the current name of the product.
+The strings `edge` and `edge computing` also stay untranslated where they already appear. That is guidance for translation, not permission to use them. New text names Azion's distributed network instead.
