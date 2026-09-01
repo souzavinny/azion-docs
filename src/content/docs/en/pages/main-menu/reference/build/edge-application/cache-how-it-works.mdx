@@ -20,7 +20,6 @@ An edge node identifies an object by its cache key, so two requests match the sa
 An edge node runs the same sequence for every request an application receives:
 
 ```mermaid
-%%{init: {'look':'neo','theme':'base','themeVariables':{'primaryBorderColor':'#F3652B'}}}%%
 flowchart LR
   A[Client request] --> B{Cache key match?}
   B -- Match --> C[Serve from cache]
@@ -98,7 +97,6 @@ An expired object becomes eligible for reuse when a revalidation attempt fails. 
 The stale window then decides whether the expired copy can still answer:
 
 ```mermaid
-%%{init: {'look':'neo','theme':'base','themeVariables':{'primaryBorderColor':'#F3652B'}}}%%
 flowchart LR
   A[Object expires] --> B[Revalidate with origin]
   B -- Succeeds --> C[Serve fresh object]

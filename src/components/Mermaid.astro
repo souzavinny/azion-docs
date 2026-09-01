@@ -39,37 +39,113 @@
 
 		try {
 			if (!mermaid) mermaid = (await import('mermaid')).default;
-			// A diagram may pin its own look and accent colour with an %%{init}%%
-			// directive, but a directive is static and cannot answer the colour
-			// mode. Fills, text and edges are supplied here so the same diagram
-			// pairs with light and dark; a directive still wins for what it sets.
+			// The numeric --surface-*, --text-color and --border-radius are defined
+			// under the dark selector only, so each fallback carries the light value
+			// rather than guarding against a missing token.
+			const dark = isDark();
+
+			const SURFACE = 'var(--surface-100, #fafafa)';
+			const CANVAS = 'var(--surface-0, #f5f5f5)';
+			const TEXT = 'var(--text-color, #0a0a0a)';
+			const TEXT_MUTED = 'var(--text-color-secondary, #404040)';
+			const BORDER = 'var(--surface-border, #d4d4d4)';
+			const RADIUS = 'var(--border-radius, 6px)';
+
+			const ACCENT = '#fe601f'; // orange.500
+			const LAVANDER = '#8a84ec'; // violet.500
+			const LINE = '#7f849c'; // slate.600
+			const decisionBg = dark ? '#401602' : '#fff5ef'; // orange.950 / orange.50
+			const shadow = dark ? 'rgba(0, 0, 0, 0.5)' : 'rgba(10, 10, 10, 0.1)';
+
+			// Literals rather than var(): mermaid derives contrast colours from these.
+			const azion = {
+				background: 'transparent',
+				mainBkg: dark ? '#171717' : '#fafafa',
+				primaryColor: dark ? '#171717' : '#fafafa',
+				primaryBorderColor: ACCENT,
+				primaryTextColor: dark ? '#ededed' : '#0a0a0a',
+				secondaryColor: dark ? '#222' : '#ececff',
+				secondaryBorderColor: LAVANDER,
+				tertiaryColor: dark ? '#111' : '#fff5ef',
+				tertiaryBorderColor: dark ? '#282828' : '#ffcfb3',
+				lineColor: LINE,
+				textColor: dark ? '#b5b5b5' : '#404040',
+				edgeLabelBackground: dark ? '#0a0a0a' : '#f5f5f5',
+				clusterBkg: dark ? '#111' : '#f8f7fc',
+				clusterBorder: dark ? '#282828' : '#e3e1f0',
+				nodeBorder: ACCENT,
+			};
+
+			const azionCSS = `
+				/* Setting stroke here would replace the neo gradient; re-point its stops. */
+				.node linearGradient stop:first-child {
+					stop-color: ${ACCENT};
+				}
+				.node linearGradient stop:last-child {
+					stop-color: ${LAVANDER};
+				}
+				.node rect.label-container {
+					rx: ${RADIUS};
+					ry: ${RADIUS};
+					fill: ${SURFACE};
+					stroke-width: 1.25px;
+					filter: drop-shadow(0 1px 2px ${shadow});
+				}
+				.node polygon.label-container {
+					fill: ${decisionBg};
+					stroke-width: 2.25px;
+					filter: drop-shadow(0 2px 5px ${shadow});
+				}
+				.nodeLabel, .nodeLabel p {
+					font-family: Sora, sans-serif;
+					font-weight: 500;
+					letter-spacing: -0.01em;
+					color: ${TEXT};
+				}
+				.edgeLabel .labelBkg,
+				.edgeLabel foreignObject div {
+					background: ${CANVAS};
+				}
+				span.edgeLabel {
+					background: ${CANVAS};
+					padding: 1px 5px;
+					font-family: Sora, sans-serif;
+					font-size: 10px;
+					font-weight: 600;
+					letter-spacing: 0.12em;
+					text-transform: uppercase;
+					color: ${LAVANDER};
+				}
+				.cluster rect {
+					rx: ${RADIUS};
+					ry: ${RADIUS};
+					stroke: ${BORDER};
+				}
+				.cluster .nodeLabel, .cluster span {
+					color: ${TEXT_MUTED};
+				}
+				.flowchart-link {
+					stroke-width: 1.25px;
+					stroke-linecap: round;
+					stroke-opacity: 0.85;
+				}
+				marker path.arrowMarkerPath {
+					fill: ${LINE};
+					stroke: ${LINE};
+				}
+			`;
+
 			mermaid.initialize({
 				startOnLoad: false,
+				look: 'neo',
 				theme: 'base',
 				securityLevel: 'strict',
-				flowchart: { useMaxWidth: true },
-				themeVariables: isDark()
-					? {
-							background: 'transparent',
-							mainBkg: '#1a1a1a',
-							primaryColor: '#1a1a1a',
-							secondaryColor: '#1a1a1a',
-							tertiaryColor: '#1a1a1a',
-							primaryTextColor: '#f2f2f2',
-							textColor: '#d0d0d0',
-							lineColor: '#8f8f8f',
-						}
-					: {
-							background: 'transparent',
-							mainBkg: '#ffffff',
-							primaryColor: '#ffffff',
-							secondaryColor: '#ffffff',
-							tertiaryColor: '#ffffff',
-							primaryTextColor: '#1a1a1a',
-							textColor: '#333333',
-							lineColor: '#5a5a5a',
-						},
+				fontFamily: 'Sora, sans-serif',
+				flowchart: { useMaxWidth: true, curve: 'basis', padding: 18, nodeSpacing: 42, rankSpacing: 56 },
+				themeVariables: { fontFamily: 'Sora, sans-serif', fontSize: '14px', ...azion },
+				themeCSS: azionCSS,
 			});
+
 			await mermaid.run({ nodes: blocks });
 		} catch (error) {
 			console.error('[mermaid] failed to render a diagram', error);

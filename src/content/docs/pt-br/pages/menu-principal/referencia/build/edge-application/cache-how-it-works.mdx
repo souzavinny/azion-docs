@@ -20,7 +20,6 @@ Um edge node identifica um objeto pela cache key, portanto duas requisições co
 Um edge node executa a mesma sequência para cada requisição que uma aplicação recebe:
 
 ```mermaid
-%%{init: {'look':'neo','theme':'base','themeVariables':{'primaryBorderColor':'#F3652B'}}}%%
 flowchart LR
   A[Requisição do cliente] --> B{Cache key corresponde?}
   B -- Corresponde --> C[Entrega do cache]
@@ -98,7 +97,6 @@ Um objeto expirado se torna elegível para reuso quando uma tentativa de revalid
 A janela de stale então decide se a cópia expirada ainda pode responder:
 
 ```mermaid
-%%{init: {'look':'neo','theme':'base','themeVariables':{'primaryBorderColor':'#F3652B'}}}%%
 flowchart LR
   A[Objeto expira] --> B[Revalida com a origem]
   B -- Sucesso --> C[Entrega objeto novo]
