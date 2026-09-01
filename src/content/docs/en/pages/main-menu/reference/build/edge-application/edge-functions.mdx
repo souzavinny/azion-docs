@@ -12,7 +12,9 @@ menu_namespace: functionsMenu
 import LinkButton from 'azion-webkit/linkbutton'
 import Code from '~/components/Code/Code.astro'
 
-**Functions** is a serverless product that runs your JavaScript code on Azion's distributed network. Use Functions to build APIs, manipulate request and response headers, apply logic from request metadata, or block traffic before it reaches your application.
+A function is code that runs when a request arrives, on infrastructure Azion operates. You write a handler that receives the request and returns a response. The platform starts the handler on demand and stops it when the response is sent, so there is no server to provision or scale. That model is called [serverless](https://www.azion.com/en/learning/serverless/what-is-serverless/).
+
+**Functions** runs that code in JavaScript on Azion's distributed network, inside the request path of an application or a firewall. Use Functions to build APIs, manipulate request and response headers, apply logic from request metadata, or block traffic before it reaches your application.
 
 <LinkButton label="Quickstart" link="/en/documentation/build/functions/quickstart/" />
 <LinkButton severity="secondary" label="How Functions works" link="/en/documentation/build/functions/how-it-works/" />

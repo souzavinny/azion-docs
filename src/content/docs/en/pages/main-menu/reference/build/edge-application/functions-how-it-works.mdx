@@ -11,9 +11,9 @@ menu_namespace: functionsMenu
 
 import Code from '~/components/Code/Code.astro'
 
-A function runs when a rule invokes it. **Functions** stores your code. A function instance binds that code to an application or a firewall and carries its arguments, and [Rules Engine](/en/documentation/build/applications/reference/rules-engine/) decides which requests trigger it. [Azion Runtime](/en/documentation/runtime/overview/) then executes one handler on the Azion edge node that received the request. The execution context has a fixed memory and CPU budget.
+A function is a handler that Azion runs when a request arrives: it receives the request and returns a response, on infrastructure Azion operates. [Azion Runtime](/en/documentation/runtime/overview/) starts the handler on demand on the edge node that received the request, so the code runs close to the user. Three Azion objects decide which requests reach it. **Functions** stores the code. A function instance binds it to an application or a firewall and carries its arguments, and [Rules Engine](/en/documentation/build/applications/reference/rules-engine/) selects the requests that trigger it.
 
-The sections that follow trace that behavior in order: the request path, function instances, handlers and the event model, application functions against firewall functions, framework builds through Azion Bundler, function inputs, and execution limits.
+The sections that follow trace that behavior in order: the request path, function instances, handlers and the event model, and framework builds through Azion Bundler.
 
 ## Request path
 
@@ -43,8 +43,6 @@ Nothing on this path is automatic. Code saved in **Functions** and never instant
 A function instance is the object that binds one function to one application or one firewall. You create the function in **Functions** and save it first; instantiation comes after. The instance does not copy the code and cannot change it. What the instance carries is the arguments, in JSON, that Azion Runtime passes to the function's execution context.
 
 That split is what makes one function reusable. The same code runs in several applications, and each instance varies the behavior through its own **Args** value, up to 100 KB. An **Args** object above that limit causes the function to fail at instantiation.
-
-The code itself is capped where you write it: 6 MB through [Azion Console](https://console.azion.com/) and 20 MB through the [API](https://api.azion.com/).
 
 An instance is still not a trigger. A rule in Rules Engine, carrying the **Run Function** behavior, decides which requests reach the instance and in which execution phase. For the fields an instance holds, refer to [Functions Instances](/en/documentation/build/functions/reference/functions-instances/). For the firewall equivalent, refer to [Functions Instances for Firewall](/en/documentation/secure/firewall/reference/functions-instances/).
 
