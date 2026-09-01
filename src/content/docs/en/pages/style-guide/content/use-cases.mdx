@@ -62,22 +62,13 @@ Procedural: 20 words per sentence, one instruction per step, imperative and acti
 
 - **Demo**: a `## Demo` section linking a running example, a template, or a repository. Omit it when none exists; never describe a demo that does not run.
 
-The sections keep this order. Each one has a budget, because a specification that nobody can hold in view stops being usable:
+The sections keep this order. What governs the page is proportion, not length. A use case runs longer than other kinds by design: it is a specification, and an implementer working from it cannot fill a gap by asking. The page's weight belongs in the sections an implementer executes:
 
-| Section | Budget |
-| --- | --- |
-| Scenario | 500 characters |
-| Prerequisites | 300 |
-| Required products | 900 |
-| Reference architecture | 1,200 |
-| Configure sections, four at most | 4,800 |
-| Verify the setup | 700 |
-| Demo | 300 |
-| Measuring results | 700 |
-| Best practices | 800 |
-| Next steps | 200 |
+- **The configuration sections carry the page.** Four at most, and together they are the largest part of it. If they are not, the page is describing a scenario rather than building one.
+- **Scenario, prerequisites, demo, and next steps stay brief.** Each orients and hands off. A scenario that runs past a couple of paragraphs is selling.
+- **Reference architecture, verification, measurement, and best practices sit between the two.** Each carries real content — a diagram, a check that runs, a signal to watch — and none of them is a place to expand.
 
-That totals about 10,400 characters. Aim the English at 10,000 so the Portuguese pair fits.
+The bound that keeps a use case honest is the four-section cap on `## Configure`, not a length. Compression is never the fix, because what gets compressed is the diagram, the command output, and the concrete value — the parts an implementer cannot proceed without.
 
 ## Template
 
@@ -169,7 +160,7 @@ To <reach the result of this stage>:
 - **Write a specification, not an article.** Every value is concrete, every command runs, and no step says "depending on your setup". The reader may be an agent, and an agent cannot resolve an ambiguity by asking.
 - **Show the output after every command.** The reader sees what success looks like before the next step depends on it. The rule is in [Procedures](/en/documentation/style-guide/writing/procedures/).
 - **Narrow the scenario to one buildable setup.** State it as `A <team> that <has this> configures <this setup> so that <this checkable outcome>.` If the sentence needs an "and also", it is two use cases.
-- **Build the requirements table before writing any prose.** Every row names its source. A row you cannot source is a row you cut, or a documentation gap you report.
+- **Start from the requirements table.** Every row is a requirement you have confirmed against the product. A requirement you cannot confirm does not go in the table.
 - **Inline what is specific to this use case. Link what is true for every use case.** The generic path is a link; the page holds what the scenario changes.
 - **Cap the configuration at four sections.** More than four means the use case is too wide. Split it rather than raise the cap.
 - **Diagram in `mermaid`.** The diagram is text so that an agent reading the markdown twin gets the design, not an image reference. The numbered dataflow still carries the meaning: the diagram never stands alone.
@@ -177,8 +168,7 @@ To <reach the result of this stage>:
 - **Keep best practices as recommendations with reasons.** A recommendation without its reason is an instruction in the wrong section, and it belongs in the procedure.
 - **Never make a commercial claim.** No cost saving, no percentage, no competitor, no customer name, and no assertion that a configuration makes anyone compliant.
 - **Example figures are not limits.** A figure that frames the scenario stays in the scenario paragraph and appears nowhere else.
-- **Never invent a product name, a field, or a value.** A URL or a directory path is not evidence.
-- **Mark gaps, never fill them.** A mandated slot the input does not supply gets a `[GAP: ...]` marker, never silent omission, never invention.
+- **Never invent a product name, a field, or a value.** Take product names from [Documentation terminology](/en/documentation/style-guide/writing/terminology/), and fields and values from the product, not from a URL or a directory path.
 
 ## Examples
 

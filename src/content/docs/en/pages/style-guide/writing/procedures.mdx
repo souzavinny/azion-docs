@@ -79,7 +79,7 @@ End every procedure with one outcome sentence. State what the reader now has or 
 - `The bucket appears in the bucket list.`
 - `The response returns "state": "executed" with the bucket name.`
 
-When the source shows no interface output, state the entailed state change instead: `The bucket has the new access level.` Never invent interface output, response codes, headers, or messages the source does not show. That distinction is what separates an outcome sentence from an invented fact.
+When the interface shows no output, state the resulting state instead: `The bucket has the new access level.` Never write interface output, response codes, headers, or messages you have not seen the product produce. That distinction is what separates an outcome sentence from an invented fact.
 
 Warn about timing. If a result takes time to propagate, say so and say what to do: "New rules can take a few minutes to propagate. On an unexpected response, wait and retry before diagnosing."
 
@@ -91,10 +91,10 @@ Every command the reader runs is followed by the output they should see. Show th
 
 Input and output take different blocks: a `<Code>` block for the command the reader copies, a fence for the output they read. The mechanics are in [Code](/en/documentation/style-guide/formatting/code/).
 
-When the source shows no output for a command, state the entailed state change, or mark the gap with `[GAP: ...]`. Never invent output the source does not show.
+When a command produces no output, state the resulting state instead. When you can state neither, cut the command or restructure the step around a result the reader can check: a command the reader cannot verify is worse than one less command. Never write output you have not seen the command produce.
 
 ## Multiple interfaces
 
 When a task has a Console, CLI, and API path, the paths go in a `<Tabs>` block: one procedure per panel, Console first. Each panel opens with its own lead-in naming the interface: `To create the bucket with the Azion CLI:`. The steps or the command follow directly, and the lead-in is never restated as a step. Never interleave two interfaces in one numbered list. The mechanics of the `<Tabs>` block are in [Components](/en/documentation/style-guide/components/).
 
-A panel whose procedure the source cannot complete keeps the facts it has and a `[GAP: ...]` marker for the rest. Do not omit a documented interface silently, and do not fill its steps from memory.
+Include a panel only when you have run its procedure end to end. Leave out an interface you cannot verify yet, rather than filling its steps from the other panels.

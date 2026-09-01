@@ -96,10 +96,9 @@ Support can raise the limits marked raisable. Contact <support link>.
 - **Dimension every limit by plan.** A limit that differs across plans is not one fact. A number published without the plan it belongs to is wrong for every reader on a different plan.
 - **Distinguish a limit from a default.** A default is a field value and belongs in the field table. A limit is a ceiling and belongs under `## Limits`.
 - **Say whether each limit is hard or raisable.** The reader's next action depends on it: a raisable limit is a support request, a hard limit is a design constraint.
-- **Never invent a limit or a plan name.** Both trace to a named source: the pricing page, the plans agreement, or the product team. An unconfirmed cell gets a `[GAP: ...]` marker and ships as a gap.
+- **Never invent a limit or a plan name.** Take both from the pricing page, the plans agreement, or the product team. A value you cannot confirm is not published: narrow the table to the dimensions you can confirm.
 - **Never restate a price.** Amounts, quotas sold by the unit, and billing metrics live on the pricing page alone. Link it; do not copy it.
 - **No marketing.** Say what it does and where it stops.
-- **Mark gaps, never fill them.** A mandated slot the input does not supply gets a `[GAP: ...]` marker, never silent omission, never invention.
 - **A CLI command page has its own shape.** A one-line summary, then `## Usage` with the command, then `## Optional flags` with one entry per flag.
 
 ## Examples
@@ -128,7 +127,7 @@ You cannot rename a bucket. You can delete a bucket only when it is empty, 24 ho
 - [Use a bucket as origin](/en/documentation/products/store/storage/use-bucket-as-origin/) - serve content from a bucket through Connectors.
 ```
 
-This excerpt shows a limits table dimensioned by plan, and what an unconfirmed value looks like:
+This excerpt shows a limits table where the breakdown by plan was not confirmed. The table carries the columns that were confirmed and no more:
 
 ```mdx
 ## Limits
@@ -137,13 +136,13 @@ This excerpt shows a limits table dimensioned by plan, and what an unconfirmed v
 Support can raise the limits marked raisable. Contact the [technical support team](/en/documentation/services/support/).
 :::
 
-| Scope | Plan | Limit | Raisable |
-| --- | --- | --- | --- |
-| Buckets | [GAP: plan breakdown not confirmed] | 100 per account | Yes |
-| S3 credential access keys | [GAP: plan breakdown not confirmed] | 100,000 per account | Yes |
+| Scope | Limit | Raisable |
+| --- | --- | --- |
+| Buckets | 100 per account | Yes |
+| S3 credential access keys | 100,000 per account | Yes |
 ```
 
-The gap markers are the point. The source for these numbers states a single default, with no breakdown by plan. The plan column therefore ships as a gap, never as an invented value. A reviewer sees exactly what is missing.
+The missing column is the point. The breakdown by plan for these numbers was not confirmed, so the table has no plan column rather than an invented one.
 
 ## Related
 

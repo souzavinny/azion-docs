@@ -62,22 +62,13 @@ Procedural: 20 palavras por frase, uma instrução por passo, imperativo e ativo
 
 - **Demo**: uma seção `## Demo` apontando para um exemplo em execução, um template ou um repositório. Omita quando não existir; nunca descreva uma demo que não roda.
 
-As seções mantêm essa ordem. Cada uma tem um orçamento, porque uma especificação que ninguém consegue abarcar deixa de ser utilizável:
+As seções mantêm essa ordem. O que governa a página é a proporção, não o comprimento. Um caso de uso é mais longo do que os outros tipos por definição: ele é uma especificação, e quem implementa a partir dele não pode preencher uma lacuna perguntando. O peso da página fica nas seções que quem implementa executa:
 
-| Seção | Orçamento |
-| --- | --- |
-| Cenário | 500 caracteres |
-| Pré-requisitos | 300 |
-| Produtos exigidos | 900 |
-| Arquitetura de referência | 1.200 |
-| Seções Configure, no máximo quatro | 4.800 |
-| Verifique a configuração | 700 |
-| Demo | 300 |
-| Medindo resultados | 700 |
-| Best practices | 800 |
-| Próximos passos | 200 |
+- **As seções de configuração sustentam a página.** No máximo quatro, e juntas elas são a maior parte dela. Se não são, a página está descrevendo um cenário em vez de construir um.
+- **Cenário, pré-requisitos, demo e próximos passos ficam curtos.** Cada um orienta e encaminha. Um cenário que passa de dois parágrafos está vendendo.
+- **Arquitetura de referência, verificação, medição e best practices ficam entre os dois.** Cada uma carrega conteúdo real — um diagrama, uma verificação que roda, um sinal a observar — e nenhuma delas é lugar para expandir.
 
-O total fica em torno de 10.400 caracteres. Mire o inglês em 10.000 para que o par em português caiba.
+O limite que mantém um caso de uso honesto é o teto de quatro seções em `## Configure`, não um comprimento. Comprimir nunca é a solução, porque o que se comprime é o diagrama, o output do comando e o valor concreto — as partes sem as quais quem implementa não consegue seguir.
 
 ## Template
 
@@ -169,7 +160,7 @@ Para <alcançar o resultado desta etapa>:
 - **Escreva uma especificação, não um artigo.** Todo valor é concreto, todo comando roda, e nenhum passo diz "dependendo da sua configuração". O leitor pode ser um agente, e um agente não resolve uma ambiguidade perguntando.
 - **Mostre o output depois de cada comando.** O leitor vê como o sucesso se parece antes que o próximo passo dependa dele. A regra está em [Procedimentos](/pt-br/documentacao/guia-de-estilo/escrita/procedimentos/).
 - **Reduza o cenário a uma configuração construível.** Declare assim: `Um <time> que <tem isto> configura <esta configuração> para que <este resultado verificável>.` Se a frase precisa de um "e também", são dois casos de uso.
-- **Monte a tabela de requisitos antes de escrever qualquer prosa.** Cada linha nomeia sua fonte. Uma linha sem fonte é uma linha que você corta, ou uma lacuna de documentação que você reporta.
+- **Comece pela tabela de requisitos.** Cada linha é um requisito que você confirmou no produto. Um requisito que você não consegue confirmar não entra na tabela.
 - **Deixe no corpo o que é específico deste caso de uso. Aponte para o que vale para todos.** O caminho genérico é um link; a página carrega o que o cenário muda.
 - **Limite a configuração a quatro seções.** Mais de quatro significa que o caso de uso é largo demais. Divida em vez de aumentar o limite.
 - **Faça o diagrama em `mermaid`.** O diagrama é texto, então um agente lendo o markdown twin recebe o design, não uma referência de imagem. O fluxo de dados numerado continua carregando o significado: o diagrama nunca fica sozinho.
@@ -177,8 +168,7 @@ Para <alcançar o resultado desta etapa>:
 - **Mantenha as best practices como recomendações com razões.** Uma recomendação sem a razão é uma instrução na seção errada, e o lugar dela é no procedimento.
 - **Nunca faça uma afirmação comercial.** Sem economia de custo, sem porcentagem, sem concorrente, sem nome de cliente e sem afirmar que uma configuração torna alguém compliance.
 - **Números de exemplo não são limites.** Um número que enquadra o cenário fica no parágrafo de cenário e não aparece em nenhum outro lugar.
-- **Nunca invente nome de produto, campo ou valor.** Uma URL ou um caminho de diretório não é evidência.
-- **Marque lacunas, nunca as preencha.** Um componente obrigatório cujo conteúdo a fonte não fornece recebe um marcador `[GAP: ...]`, nunca omissão silenciosa, nunca invenção.
+- **Nunca invente nome de produto, campo ou valor.** Tire os nomes de produto de [Terminologia da documentação](/pt-br/documentacao/guia-de-estilo/escrita/terminologia/), e campos e valores do produto, não de uma URL ou de um caminho de diretório.
 
 ## Exemplos
 

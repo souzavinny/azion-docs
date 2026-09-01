@@ -34,13 +34,15 @@ Descriptive: 25 words per sentence, active voice, passive only when the actor is
 
 **Required components**
 
-- **Definition block**: `**<Product>** is a <capability definition of roughly 10 to 15 words>.` Then the problems it solves, as a short benefit list in behavior terms.
+- **Definition block**, in two layers. First the concept: one or two sentences saying what the class of thing is, for a reader who has never used one, with any industry term defined in place. Then the product: `**<Product>** <verb>s <the concept> <where and how on Azion>.` Then one sentence naming the concrete jobs people use it for, in the reader's vocabulary: `Use <Product> to handle A, run B, or serve C.` A bulleted benefit list is the weaker form of that sentence: it reads as a brochure and costs a screen.
 - **CTAs**: a primary `LinkButton` labeled **Quickstart** and a secondary one labeled `<Product> reference`.
-- **Capability sections**: one `##` per major capability or module. Noun-phrase headings; each section holds a short paragraph or a table.
-- **Interfaces**: the list `You can create and manage <Product> using:`, with Azion Console, API, Azion CLI, and Terraform as links.
-- **Closing**: `## Related resources`, with links shaped `[Title](/path/) - reason`, covering the quickstart and the key concepts.
+- **The specimen**: where the product has a code artifact, a configuration object, or a request, one complete, minimal example of it, in full, within the first screen. Two to four bullets name its parts, and one sentence says what prior knowledge transfers. A product with no such artifact skips this section rather than inventing one.
+- **The mechanism**: where a request, an event, or a job crosses more than two objects before the product runs, that chain as a `mermaid` diagram, then a numbered walk of at most six items. Open with what the reader would otherwise assume wrong.
+- **The boundaries**: one compressed bulleted block with bolded lead-ins — languages, APIs, frameworks, integrations, and the headline limits. One block, not one section per feature.
+- **Capability sections**: only for a capability that changes what the reader would build, three at most. A capability that is one sentence and a link belongs in the boundaries block or the router.
+- **Closing**: `## Next steps`, a two-column table indexed by what the reader wants to do: `| If you want to | Go to |`.
 
-The sections keep this order.
+The sections keep this order. The interfaces list — Azion Console, API, Azion CLI, Terraform — is optional: it is true of nearly every Azion product, so include it only when an interface is distinctive, and let the router carry it otherwise.
 
 ## Template
 
@@ -49,86 +51,100 @@ Copy the template and replace each `<placeholder>`:
 ```mdx
 import LinkButton from 'azion-webkit/linkbutton'
 
-**<Product>** is a <capability definition of roughly 10 to 15 words>.
+<What the class of thing is, for a reader who has never used one. One or two sentences; define any industry term in place.>
 
-Use <Product> to:
-
-- <A problem it solves, in behavior terms>
-- <...>
+**<Product>** <verb>s <the concept> <where and how on Azion>. Use <Product> to <job A>, <job B>, or <job C>.
 
 <LinkButton label="Quickstart" link="<quickstart URL>" />
 <LinkButton severity="secondary" label="<Product> reference" link="<reference URL>" />
 
----
+## <The artifact, as a noun phrase>
 
-## <Capability or module, as a noun phrase>
+<One complete, minimal example of the artifact.>
 
-<A short paragraph or a table.>
+- **<Part>**: <what it is>.
+- **<Part>**: <what it is>.
 
-## <Capability or module, as a noun phrase>
-
-<...>
-
----
-
-## Interfaces
-
-You can create and manage <Product> using:
-
-- [Azion Console](<url>)
-- [API](<url>)
-- [Azion CLI](<url>)
-- [Terraform](<url>)
+<One sentence on what prior knowledge transfers.>
 
 ---
 
-## Related resources
+## <The chain, as a noun phrase>
 
-- [<Product> quickstart](<url>) - <why the reader would follow it>
-- [<Key concept>](<url>) - <why the reader would follow it>
+<What the reader would otherwise assume wrong.>
+
+<A mermaid fence drawing the chain from the request to the response.>
+
+1. <What happens first.>
+2. <...>
+
+## <The boundaries, as a noun phrase>
+
+- **<Dimension>**: <what it supports, and where it stops>.
+- **<Dimension>**: <...>.
+
+---
+
+## Next steps
+
+| If you want to | Go to |
+| --- | --- |
+| <Run your first one now> | [Quickstart](<url>) |
+| <Look up a field, a limit, or a default> | [Reference](<url>) |
 ```
 
 ## Rules
 
-- **Never instruct.** No numbered steps, no procedures, no code walkthroughs. An overview that instructs is a [quickstart page](/en/documentation/style-guide/content/quickstart/) filed wrong.
+- **Never instruct.** No numbered steps, no procedures, no click-throughs. The specimen is not a walkthrough: it is shown once, complete, with nothing for the reader to do. An overview that instructs is a [quickstart page](/en/documentation/style-guide/content/quickstart/) filed wrong.
 - **No quality adjectives.** Say what the product does and where it stops.
 - **The title is the product name, a noun.** Not "documentation", not a gerund.
-- **Name the product in the first sentence.** Not the problem space.
-- **Send the reader to the [Quickstart](/en/documentation/style-guide/content/quickstart/)**, near the top and again at the end.
-- **Mark gaps, never fill them.** A mandated slot the input does not supply — a CTA, the interfaces list — gets a `[GAP: ...]` marker, never silent omission, never invention.
-- **Keep it scannable.** Tables for anything enumerable, one or two sentences between them.
+- **Explain the thing before the product.** The first sentence says what the class of thing is; the product sentence follows it. Cover the product name: what remains must be true of any vendor's version of the thing.
+- **Name the product by the second sentence at the latest, and never open on the problem space.** A concept sentence explains a mechanism. A sentence about how important the problem is explains nothing.
+- **Organize by the reader's questions, not by your feature list.** The sections answer, in order: what is this and what does Azion's version do, what am I writing, how does it get called, what can it do and where does it stop, where do I go now. An outline that reproduces the product's module list is a catalog: it answers "what do we sell" instead of "what am I deciding".
+- **The questions shape the sections; they never become the headings.** A heading is a short noun phrase, never a question: `Function structure`, not `What a function looks like`.
+- **Draw the diagram from the documented sequence.** A diagram of a sequence the documentation already states in prose is a change of notation, not a new fact. Every node and every arrow matches a step the product performs, and the numbered walk carries the meaning if the figure does not render.
+- **Send the reader to the [Quickstart](/en/documentation/style-guide/content/quickstart/)**, in the CTAs and again in the router.
+- **Never thin the specimen or drop the diagram to make the page shorter.** They are the two things the reader came for. A page that runs long has grown capability sections; compress those into the boundaries block.
 
 ## Examples
 
-This excerpt of an Overview page for **Data Stream** shows the definition block with its CTAs, the interfaces list, and the closing. The slots the input did not supply carry `[GAP: ...]` markers:
+This excerpt of the **Functions** overview shows the definition block in two layers, then the specimen. The first paragraph explains what a function is to a reader who has never used one; the second names the product and what it does on Azion; the specimen shows the artifact instead of describing it:
 
 ```mdx
-**Data Stream** is an Observe product that feeds stream processing, SIEM, and big data platforms with your event logs in real time.
+A function is code that runs when a request arrives, on infrastructure Azion operates. You write a handler that receives the request and returns a response. The platform starts the handler on demand and stops it when the response is sent, so there is no server to provision or scale. That model is called [serverless](https://www.azion.com/en/learning/serverless/what-is-serverless/).
 
-Use Data Stream to:
+**Functions** runs that code in JavaScript on Azion's distributed network, inside the request path of an application or a firewall. Use Functions to build APIs, manipulate request and response headers, apply logic from request metadata, or block traffic before it reaches your application.
 
-- Collect, group, and transmit raw logs to a destination that you choose.
-- Choose the Azion products and domains to collect logs from.
-- Choose the variables that the stream uses.
+## Function structure
 
-<LinkButton label="Quickstart" link="/en/documentation/products/observe/data-stream/first-steps/" />
+A function exports one default object whose keys are handlers. The `fetch` handler answers an HTTP request:
 
-[GAP: secondary CTA — permalink for a Data Stream reference page]
+<Code lang="javascript" code={`
+export default {
+  fetch: async (request, env, ctx) => {
+    return new Response('Hello World');
+  }
+};
+`} />
 
----
+- **`export default`** exposes the object Azion Runtime reads. Each key names a handler for one event.
+- **`fetch(request, env, ctx)`** runs on an HTTP request.
+- **The returned `Response`** answers the request.
 
-## Interfaces
+If you know the Web `Request` and `Response` objects, you know the code model.
+```
 
-You can create and manage Data Stream using:
+The same page closes with the router, indexed by what the reader wants to do rather than by page title:
 
-- [GAP: management interfaces and their links — Console, API, CLI, Terraform availability not given]
+```mdx
+## Next steps
 
----
-
-## Related resources
-
-- [Data Stream first steps](/en/documentation/products/observe/data-stream/first-steps/) - Begin to use Data Stream.
-- [Configure Data Stream main settings](/en/documentation/products/guides/use-data-stream/) - Configure the main settings of a stream.
+| If you want to | Go to |
+| --- | --- |
+| Run your first function now | [Quickstart](/en/documentation/build/functions/quickstart/) |
+| Understand what invokes a function | [How Functions works](/en/documentation/build/functions/how-it-works/) |
+| Look up a handler, a parameter, or a limit | [Handlers](/en/documentation/build/functions/reference/handlers/) |
+| Look up a term | [Glossary](/en/documentation/build/functions/glossary/) |
 ```
 
 ## Related
