@@ -1,194 +1,197 @@
 ---
 title: Real-Time Purge
 description: >-
-  Por meio do Real-Time Purge você pode deletar instantaneamente o cache de seu
-  conteúdo na Azion.
-meta_tags: 'Real-Time Purge, Edge Computing'
+  Consulte as camadas do Real-Time Purge, os três tipos de purge, o formato
+  de argumento de cada tipo e quais objetos em cache cada um alcança.
+meta_tags: 'Real-Time Purge, cache purge, URL purge, cache key purge, wildcard purge, Tiered Cache'
 namespace: documentation_products_edge_applications_real_time_purge
-menu_namespace: cacheMenu
 permalink: /documentacao/build/cache/reference/real-time-purge/
+menu_namespace: cacheMenu
 ---
 
-O **Real-Time Purge** permite que você exclua instantaneamente o cache de seu conteúdo na Azion. Ao atualizar o conteúdo em sua origem, você deve escolher a melhor estratégia para atualizá-lo no cache da Azion.
+import Code from '~/components/Code/Code.astro'
 
-Ao configurar suas políticas de cache, você determina o tempo que deseja que seus objetos fiquem em cache na Azion. Quando você atualiza seu conteúdo na origem, a Azion pode continuar fornecendo uma cópia em cache pelo tempo que você definiu para ser armazenado em cache. Com o Real-Time Purge, você pode excluir instantaneamente o cache de seu conteúdo na Azion, tanto do **Cache** quanto do **Tiered Cache**. Dessa forma, a Azion buscará a última versão de seu conteúdo direto na origem.
+**Real-Time Purge** apaga objetos armazenados em cache na Azion antes que o TTL expire. Uma política de [Cache](/pt-br/documentacao/build/cache/) define por quanto tempo um objeto permanece em cache, e um purge encerra esse período antes do prazo. Na requisição seguinte ao objeto, Azion busca a versão atual na origem.
 
-Porém, se objetos específicos armazenados em cache precisarem ser removidos do cache antes de expirarem, você tem a opção de limpar o cache com o Real-Time Purge. A limpeza regular do cache ajuda você a:
-
-- Garantir que os usuários recebam o conteúdo mais atualizado e experimentem as alterações mais recentes na sua aplicação.
-- Evitar que os usuários visualizem conteúdo obsoleto.
-- Fornecer conteúdo compatível com navegadores e dispositivos modernos.
-- Fornecer respostas de API e cache de conteúdo dinâmico sem sacrificar a experiência do usuário.
-- Controlar como seus objetos são servidos pela Azion.
-- Gerenciar objetos obsoletos ou desatualizados, ajudando seus desenvolvedores a criar soluções confiáveis, resilientes e de melhor desempenho.
+Todo purge indica uma camada, um tipo e uma lista de argumentos. O tipo determina quais objetos em cache os argumentos alcançam, porque um purge alcança um objeto apenas quando o argumento corresponde à cache key desse objeto.
 
 ---
 
-## Boas práticas
+## Camadas de purge
 
-Para garantir que os purges de cache sejam seguros e controlados, você deve manter o versionamento nos nomes de objetos. Ao atualizar o objeto em sua origem, você pode adicionar a versão no nome do objeto, forçando cada modificação de seu conteúdo a ser tratada como um novo objeto pela Azion.
+Real-Time Purge atua em uma camada de cache por requisição. **Cache** guarda os objetos armazenados nos edge nodes da Azion. **Tiered Cache** guarda a segunda camada de cache, entre esses edge nodes e a origem.
 
-Para versionar seus objetos, você pode usar um número sequencial, um *timestamp* ou qualquer mecanismo que considere apropriado como marcação de versionamento. Por exemplo, em vez de nomear uma imagem como `image.jpg`, você pode nomeá-la `image_1.jpg` e, quando precisar atualizá-la, alterar a versão para `image_2.jpg`.
+| Camada | O que guarda | Tipos de purge aceitos |
+| --- | --- | --- |
+| Cache | Objetos em cache nos edge nodes da Azion | URL, cache key, wildcard |
+| Tiered Cache | Objetos em cache na segunda camada, entre os edge nodes e a origem | URL, cache key |
 
-Dessa forma, cada atualização de conteúdo será tratada como um novo objeto pela Azion. Isto lhe permite controlar qual objeto uma requisição deve retornar, mesmo que o usuário tenha a versão anterior salva localmente no cache do navegador ou em algum cache intermediário.
-Você também poderá fornecer diferentes versões de seus objetos para diferentes usuários e simplificar o processo de rollback em caso de problemas com sua atualização.
-
-### Método `DEL`
-
-Se você utilizar o método `DEL` para remover o objeto do cache em vez de **Real-Time Purge**, a próxima requisição de conteúdo do usuário será um método `GET` para a origem. No entanto, isso impede que a Azion entregue [objetos stale](/pt-br/documentacao/build/cache/#stale-cache) se a origem estiver inacessível, entregando uma página de erro em seu lugar.
-
-Você pode usar o `DEL` se seu objetivo for:
-
-- Remover o conteúdo do cache da Azion após ele ter sido removido da origem.
-- Forçar a remoção e a atualização de conteúdos para os quais o *timestamp* não seja confiável.
-- Forçar a entrega de uma página de erro em vez de um objeto obsoleto se sua origem estiver inacessível e a Azion não puder obter a versão mais recente de seu conteúdo.
+A camada Tiered Cache aceita um purge apenas enquanto o módulo [Tiered Cache](/pt-br/documentacao/build/cache/tiered-cache/) estiver ativo. Um objeto guardado nas duas camadas precisa de um purge por camada, e a ordem importa: faça purge primeiro no Tiered Cache e depois no Cache. Na ordem inversa, um edge node pode reabastecer seu cache com a cópia desatualizada que ainda está na camada do Tiered Cache.
 
 ---
 
-## Layer
+## Tipos de purge
 
-O **Real-Time Purge** oferece duas opções de camadas para limpar seu cache:
+Real-Time Purge aceita três tipos, e cada tipo recebe um argumento diferente. O tipo também determina se um purge alcança as [variações de conteúdo](#variacoes-de-conteudo) de um objeto, porque cada variação tem sua própria cache key.
 
-- **Cache**: limpa o cache mantido nos edge nodes da Azion.
-- **Tiered Cache**: limpa o cache da segunda camada, entre os edge nodes e a origem. Requer que o módulo [Tiered Cache](/pt-br/documentacao/build/cache/tiered-cache/) esteja ativo.
+| Tipo | Argumento | O que alcança |
+| --- | --- | --- |
+| [Purge por URL](#purge-por-url) | Uma lista de URLs | As URLs listadas, convertidas em suas cache keys, sem as variações |
+| [Purge por cache key](#purge-por-cache-key) | Uma lista de cache keys | O objeto que cada cache key listada indexa, com as variações |
+| [Purge por wildcard](#purge-por-wildcard) | Uma expressão wildcard | Todas as cache keys correspondentes à expressão |
 
----
+## Purge por URL
 
-## URL Purge
+Um purge por URL recebe uma lista de URLs e expira o objeto em cache por trás de cada uma. Azion converte cada URL da lista em sua cache key antes do purge, sem considerar as variações de conteúdo da mesma URL. A operação não é recursiva: faz purge das URLs da lista e de nada mais.
 
-Limpa objetos em cache através de uma lista de URLs como argumento.
-
-A purge por URL é não recursiva, ou seja, somente URLs inseridas serão removidas do cache. As URLs são convertidas automaticamente em suas respectivas *cache keys*, sem considerar qualquer variação de conteúdo na URL. 
-
-:::note
-As variações de conteúdo baseadas em cookies, grupos de dispositivos, imagens processadas ou outros não expiram com essa operação. Considere o uso de purge por [cache key](#cache-key-purge) ou [wildcard](#wildcard-purge) para essas situações.
-:::
-
-A expiração das variações de conteúdo com base na query string pode ser executada usando a purge de URL, já que uma query string é um componente da URL, desde que os argumentos usados para a variação de conteúdo sejam enviados na ordem correta em que foram apresentados. Se você tiver ativado [Query String Sort](/pt-br/documentacao/build/cache/reference/cache-settings/#cache-by-query-string), classifique os argumentos na requisição ou considere o uso da *cache key purge* ou da *wildcard purge* como alternativa.
-
-### Argumentos de purge por URL
-
-O formato da URL deve respeitar o padrão: `scheme://host` ou apenas `host`, seguido ou não de um `/path` e da `?query-string`. Quando o `scheme` não for informado, o conteúdo será eliminado tanto de HTTP quanto de HTTPS.
-
-:::caution
-Se você usar o caractere asterisco (`*`) em uma **URL Purge**, ele será tratado como um caractere na URL e não como um wildcard.
-:::
+Cada URL segue o formato `scheme://host`, ou apenas `host`, seguido opcionalmente por um `/path` e uma `?query-string`. Quando o scheme é omitido, o purge cobre as cópias HTTP e HTTPS do conteúdo.
 
 Por exemplo:
 
-- `http://www.seudominio.com`
-- `http://static.seudominio.com/include/site.css`
-- `https://static.seudominio.com/include/site.js`
-- `dynamic.seudominio.com/app.py?argumento`
+- `http://www.example.com`
+- `http://static.example.com/include/site.css`
+- `https://static.example.com/include/site.js`
+- `dynamic.example.com/app.py?argument`
 
----
+Um purge por URL expira, sim, as variações baseadas em query string, porque a query string faz parte da URL. Envie os argumentos na mesma ordem em que a requisição os apresentou. Quando [Query String Sort](/pt-br/documentacao/build/cache/reference/cache-settings/#cache-by-query-string) está ativado, ordene os argumentos alfabeticamente na requisição, ou use um purge por cache key ou um purge por wildcard.
 
-## Cache Key Purge
+:::note[nota]
+As variações baseadas em cookies, device groups, formato de imagem ou qualquer outro critério não expiram com um purge por URL. Use um [purge por cache key](#purge-por-cache-key) ou um [purge por wildcard](#purge-por-wildcard) para essas variações.
+:::
 
-Limpa objetos em cache através de uma lista de [cache keys](/pt-br/documentacao/build/cache/#cache-keys) como argumento. 
+:::caution[Atenção]
+Um asterisco (`*`) em um argumento de purge por URL vale como caractere literal da URL, não como wildcard.
+:::
 
-Uma cache key é uma entrada de índice para um objeto no cache da Azion. O formato padrão de cache key adotado pela Azion para identificar objetos em cache concatena os seguintes elementos de sintaxe de uma URI: `scheme`, `host` e `path`. Por exemplo, a URI `https://static.yourdomain.com/include/site.js` irá gerar a cache key `httpsstatic.yourdomain.com/include/site.js`.
+## Purge por cache key
 
-Você pode especificar uma cache key para identificar diferentes variações de um objeto, com base em:
+Um purge por cache key recebe uma lista de [cache keys](/pt-br/documentacao/build/cache/reference/cache-keys/) e expira o objeto que cada chave indexa. Uma cache key identifica uma variação de um objeto, então esse tipo alcança variações que um purge por URL não alcança: argumentos de query string e de query string sort, cookies configurados por [Advanced Cache Key](/pt-br/documentacao/build/cache/reference/cache-settings/#advanced-cache-key) e os formatos de imagem que [Image Processor](/pt-br/documentacao/build/image-processor/) produz para os navegadores compatíveis.
 
-- Query string ou argumentos de classificação de query string.
-- Cookies ao usar [Advanced Cache Key](/pt-br/documentacao/build/cache/reference/cache-settings/#advanced-cache-key).
-- Formato de imagem de acordo com o suporte do navegador ao usar [Image Processor](/pt-br/documentacao/build/image-processor/).
+Uma cache key concatena o scheme, o host, o path, as query strings e o separador de variação, sem o `://` entre o scheme e o host. Cache keys diferenciam maiúsculas de minúsculas, então caracteres maiúsculos e minúsculos indexam objetos diferentes. Para alcançar todas as variações de um objeto, liste a cache key de cada variação individualmente, ou use um [purge por wildcard](#purge-por-wildcard).
 
-Para fazer o purge de todas as variações, você precisa executar a limpeza de cada cache key gerada.
+As cache keys do Image Processor mostram a forma completa, com os argumentos de processamento e a variação de formato:
 
----
+- `httpstatic.example.com/static/images/image.jpg@@`
+- `httpstatic.example.com/static/images/image.jpg@@webp`
+- `httpstatic.example.com/static/images/image.jpg?ims=88x@@`
+- `httpstatic.example.com/static/images/image.jpg?ims=88x@@webp`
 
-## Wildcard Purge
+## Purge por wildcard
 
-Limpa o objeto em cache fornecendo uma expressão wildcard como argumento.
-
-### Argumentos de purge por wildcard
-
-O formato da expressão wildcard deve estar de acordo com o padrão: `scheme://host` ou apenas `host`, seguido ou não de `/path` e `?query-string`, com um caractere de asterisco (`*`) no `path` ou na query string. Você pode até usar vários wildcards para corresponder a um padrão complexo de um `path`.
+Um purge por wildcard recebe uma expressão wildcard por requisição e expira todas as cache keys correspondentes à expressão. A expressão segue o formato `scheme://host`, ou apenas `host`, seguido opcionalmente por um `/path` e uma `?query-string`. Um asterisco (`*`) fica no path ou na query string, e vários asteriscos em uma expressão correspondem a um padrão de path mais complexo.
 
 Por exemplo:
 
-- `www.seudominio.com/*`
-- `static.seudominio.com/include/*.css`
-- `static.seudominio.com/*/site.js`
-- `static.seudominio.com/static/images/image_1.jpg?ims=*`
-- `www.seudominio.com/alpha*`
-- `www.seudominio.com/*beta*`
-- `www.seudominio.com/*a*/charlie`
-- `www.seudominio.com/*a*/*a*`
-- `www.seudominio.com/*?b*`
-- `www.seudominio.com/*?*2*c=*`
+- `www.example.com/*`
+- `static.example.com/include/*.css`
+- `static.example.com/*/site.js`
+- `static.example.com/static/images/image_1.jpg?ims=*`
+- `www.example.com/alpha*`
+- `www.example.com/*beta*`
+- `www.example.com/*a*/charlie`
+- `www.example.com/*a*/*a*`
+- `www.example.com/*?b*`
+- `www.example.com/*?*2*c=*`
 
-:::note
-Você não pode fazer a limpeza do **Tiered Cache** usando uma expressão wildcard.
+:::note[nota]
+A camada Tiered Cache não aceita uma expressão wildcard. Faça purge do conteúdo do Tiered Cache com um [purge por URL](#purge-por-url) ou um [purge por cache key](#purge-por-cache-key).
 :::
 
 ---
 
-## Purge de Application Accelerator
+## Variações de conteúdo
 
-Você pode fazer o purge de objetos com variação de conteúdo baseada em cookies ou query strings usando a funcionalidade **Advanced Cache Key** do módulo [Application Accelerator](/pt-br/documentacao/build/application-accelerator/). 
+Um purge alcança uma variação de conteúdo apenas quando seu argumento corresponde à cache key dessa variação. Cada recurso que varia um objeto grava seu próprio separador e valor na cache key, e o argumento do purge carrega a mesma forma. Cache by Cookie e Cache by Query String são opções de [Advanced Cache Key](/pt-br/documentacao/build/cache/reference/cache-settings/#advanced-cache-key), fornecidas pelo módulo [Application Accelerator](/pt-br/documentacao/build/application-accelerator/).
 
-Além de `host` e `path`, a cache key deve incluir o separador `@@` seguido do nome dos cookies usados e seus valores. Ela também termina em `;`.
+| Origem da variação | Forma na cache key | Purge com |
+| --- | --- | --- |
+| Cache by Cookie | `@@` seguido dos nomes e valores dos cookies, cada um fechado por `;` | Um purge por cache key listando cada variação ou um purge por wildcard terminado em `@@*` |
+| Cache by Query String | O separador de query e os argumentos, na ordem em que a requisição os enviou | Um purge por cache key listando cada variação, um purge por wildcard terminado em `?*` ou um purge por URL carregando apenas os argumentos da cache key |
+| [Image Processor](/pt-br/documentacao/build/image-processor/) | O separador `?`, os pares chave-valor do processamento e `@@` seguido do formato de imagem do navegador | Um purge por cache key listando cada variação ou um purge por wildcard terminado em `*` |
+| [Device Groups](/pt-br/documentacao/build/applications/reference/device-groups/) | `@@` seguido do nome do device group | Um purge por cache key listando cada variação ou um purge por wildcard |
+| [Large File Optimization](/pt-br/documentacao/build/cache/reference/cache-settings/#large-file-optimization) | `@@bytes=` seguido do intervalo de bytes de cada fragmento | Um purge por cache key listando cada fragmento ou um purge por wildcard com `*` depois do path do arquivo |
+| Requisições `POST` e `OPTIONS` em cache | `@@` seguido do hash MD5 do corpo da requisição | Um purge por cache key listando cada variação ou um purge por wildcard terminado em `@@*` |
 
-Para remover objetos com [variação baseada em cookies](/pt-br/documentacao/build/cache/#advanced-cache-key), você pode usar a purge por cache key, inserindo todas as variações individualmente, ou uma purge por wildcard, usando `@@*` no final.
+Uma expressão wildcard alcança todos os fragmentos de um arquivo dividido por Large File Optimization, como `static.example.com/media/file.mp4*`.
 
-Para remover objetos com [variação com base na query string](/pt-br/documentacao/build/cache/#advanced-cache-key), você pode usar: 
+Azion armazena em cache as requisições `GET` e `HEAD` por padrão. O cache de `POST` e `OPTIONS` exige o módulo Application Accelerator.
 
-1. Purge por cache key, inserindo todas as variações individualmente.
-2. Purge por wildcard, usando `?*` no final.
-3. Purge por URL, inserindo apenas os argumentos usados na cache key na URL.
-
-Se você usar **Query String Sort**, os argumentos deverão ser enviados na ordem alfabética.
-
----
-
-## Purge do Image Processor
-
-Você pode remover imagens que são tratadas pelo [Image Processor](/pt-br/documentacao/build/image-processor/).
-
-Além de `host` e `path`, a cache key deve incluir o separador `?`, key-value pairs relacionados ao tipo de processamento e o separador `@@` para identificar a variação de formato de imagem compatível com o navegador. Por exemplo:
-
-- `httpstatic.seudominio.com/static/images/image.jpg@@`
-- `httpstatic.seudominio.com/static/images/image.jpg@@webp`
-- `httpstatic.seudominio.com/static/images/image.jpg?ims=88x@@`
-- `httpstatic.seudominio.com/static/images/image.jpg?ims=88x@@webp`
-
-Você pode usar um purge por cache key, inserindo todas as variações individualmente, ou um purge por wildcard, usando `*` no final.
-
----
-
-## Purge de arquivos fragmentados com Large File Optimization
-
-Se você usar o recurso [Large File Optimization](/pt-br/documentacao/build/cache/reference/cache-settings/#large-file-optimization) em sua aplicação, arquivos grandes ainda poderão permanecer no cache. Para realizar o purge nesse caso, você deve listar as cache keys de cada fatia individualmente.
-
-:::caution
-Ao limpar fatias individuais, seu conteúdo pode estar sujeito a problemas caso haja uma alteração de conteúdo na origem e fatias desatualizadas permaneçam no cache.
+:::caution[Atenção]
+Fazer purge dos fragmentos um a um pode deixar fragmentos desatualizados em cache quando o conteúdo muda na origem.
 :::
 
-Para fazer o purge de todas as fatias de arquivos usando essa configuração, você pode fazer um [purge por wildcard](#wildcard-purge):
+## Método DEL
 
-- `static.seudominio.com/midias/arquivo.mp4*`
-
----
-
-## Purge de métodos HTTP
-
-Por padrão, a Azion permite o cache apenas dos métodos `GET` e `HEAD`. Você pode ativar o cache de `POST` ou `OPTIONS` com o módulo [Application Accelerator](/pt-br/documentacao/build/application-accelerator/#support-for-http-methods).
-
-Para limpar esses objetos, você pode usar uma [purge por cache key](#cache-key-purge), inserindo todas as variações individualmente, ou uma [purge por wildcard](#wildcard-purge), usando `@@*` no final.
+O método `DEL` é uma alternativa ao Real-Time Purge para remover um objeto do cache. Depois de um `DEL`, a primeira requisição `GET` para esse objeto vai para a origem, como acontece depois de um purge. Os dois diferem quando a origem está inacessível: Azion não entrega nenhuma [cópia stale](/pt-br/documentacao/build/cache/como-funciona/#stale-cache) de um objeto removido com `DEL` e retorna uma página de erro.
 
 ---
 
-## Confirmação de purge
+## Execução e histórico de purge
 
-Após criar uma nova purge, você receberá uma mensagem de sucesso para confirmar a criação. Em seguida, a purge é colocada na fila para execução e aparecerá no histórico assim que concluída. Isso ocorre porque os resultados podem levar algum tempo para se propagar para todos os edge nodes.
+Azion confirma um purge assim que aceita a requisição e depois coloca o purge na fila de execução. Os resultados levam tempo para propagar a todos os edge nodes, então o purge aparece no histórico de purge quando é concluído. A resposta de um purge traz um campo `state`, com o valor `pending` ou `executed`, e um campo `items` que lista o que o purge cobriu.
 
-Quando necessário, você pode consultar o histórico de purge para filtrar o usuário que fez o purge, a hora, a lista de argumentos, o tipo e o método de purge.
+O histórico de purge registra o usuário que emitiu o purge, o horário, a lista de argumentos, o tipo de purge e o método. Você pode filtrar o histórico por qualquer um desses campos.
 
----
+## Permissões
+
+Emitir um purge exige a team permission **Real-Time Purge**, que concede a criação de um novo purge. Selecionar o tipo **Wildcard** exige também a permissão **Wildcard Purge**, que por sua vez exige **Real-Time Purge**.
+
+## Interfaces
+
+Um purge é emitido por [Azion Console](https://console.azion.com/), pela Azion API, pelo [Azion CLI](/pt-br/documentacao/products/azion-cli/overview/) ou pelas Azion libraries. A purge API é um recurso de nível superior, e não um sub-recurso de uma aplicação, então uma requisição de purge não indica nenhuma aplicação.
+
+| Interface | Como o purge é emitido |
+| --- | --- |
+| Azion Console | **Products menu** > **Tools** > **Real-Time Purge** |
+| API | `POST` para `https://api.azion.com/v4/workspace/purge/url` ou `https://api.azion.com/v4/workspace/purge/wildcard` |
+| Azion CLI | `azion purge` com `--urls`, `--cachekey` ou `--wildcard` |
+| Azion libraries | `purgeURL`, `purgeCacheKey` ou `purgeWildCard` de `azion/purge` |
+| `azion.config.js` | Uma entrada `purge` cujo `type` é `url`, `cachekey` ou `wildcard` |
+
+O corpo da API carrega os argumentos em `items` e a camada em `layer`. O campo `layer` é opcional, e seus valores são `cache`, o padrão, e `tiered_cache`. Faça purge de duas URLs na camada Cache:
+
+<Code lang="bash" code={`curl -X POST 'https://api.azion.com/v4/workspace/purge/url' \\
+  --header 'Authorization: Token [TOKEN VALUE]' \\
+  --header 'Content-Type: application/json' \\
+  --data '{
+    "items": [
+      "https://www.example.com/image.jpg",
+      "https://www.example.com/styles.css"
+    ],
+    "layer": "cache"
+  }'`} />
+
+A resposta traz o `state` do purge e os `items` que ele cobriu.
+
+Azion CLI aceita os mesmos dois valores de camada na flag `--layer` e usa `cache` como padrão. Um argumento de cache key mantém seus separadores, e uma vírgula separa dois argumentos:
+
+<Code lang="bash" code={`azion purge --urls "https://www.example.com/image.jpg" --layer tiered_cache
+
+azion purge --cachekey "www.example.com/@@cookie_name=cookie_value,www.example.com/test.js"`} />
 
 ## Limites
 
-Os limites do Real-Time Purge, incluindo as operações de purge que variam por plano de suporte, estão listados em [Limites do Cache](/pt-br/documentacao/build/cache/limites/).
+Real-Time Purge limita o tamanho e a taxa dos argumentos de purge, e cada plano de suporte inclui um número definido de operações de purge. Os escopos limitados são:
+
+- O tamanho de um argumento de URL ou de cache key e o tamanho de uma expressão wildcard.
+- O número de objetos por requisição, por cliente e por minuto.
+- O número de requisições wildcard por dia e o número de expressões wildcard por requisição.
+- O número de requisições de purge mantidas no histórico e por quanto tempo o histórico é retido.
+
+Para os valores, consulte [Limites do Cache](/pt-br/documentacao/build/cache/limites/#limites-por-plano-de-suporte).
+
+:::tip[dica]
+**Aumente os limites** <br></br>
+Entre em contato com o [suporte técnico](/pt-br/documentacao/services/support/) para solicitar um limite maior para seu plano.
+:::
+
+---
+
+## Recursos relacionados
+
+- [Faça purge de conteúdo em cache](/pt-br/documentacao/build/cache/guides/purgar-conteudo/) - os passos para emitir cada tipo de purge por Azion Console, pela API e pelo CLI.
+- [Cache keys](/pt-br/documentacao/build/cache/reference/cache-keys/) - o formato completo da cache key e todos os separadores que um argumento de purge pode carregar.
+- [Como o Cache funciona](/pt-br/documentacao/build/cache/como-funciona/) - como um edge node escolhe entre uma cópia em cache, uma cópia stale e a origem.
+- [Tiered Cache](/pt-br/documentacao/build/cache/tiered-cache/) - a segunda camada de cache e as condições para fazer purge nela.
+- [Construa um cache de assets versionados](/pt-br/documentacao/build/cache/tutorials/cache-de-assets-versionados/) - marcação de versão nos nomes dos objetos, para que cada atualização de conteúdo se torne um novo objeto.
+- [Limites do Cache](/pt-br/documentacao/build/cache/limites/) - os valores por trás dos limites de argumento, taxa e histórico de purge.

@@ -1,132 +1,162 @@
 ---
 title: Cache Settings
 description: >-
-  Configure o TTL do cache, fragmentação de arquivos grandes, entrega adaptável
-  e regras de cache para sua aplicação.
-meta_tags: 'cache settings, cache, edge, application'
+  Consulte todos os campos de um cache setting da Azion: TTL de browser e CDN,
+  variações da cache key, cache de métodos HTTP e stale cache.
+meta_tags: >-
+  cache settings, cache TTL, cache key, query string, cookies, adaptive
+  delivery, stale cache, large file optimization
 namespace: documentation_products_edge_application_cache_settings
-menu_namespace: cacheMenu
 permalink: /documentacao/build/cache/reference/cache-settings/
+menu_namespace: cacheMenu
 ---
-import LinkButton from 'azion-webkit/linkbutton'
 
-Com **Cache Settings** para **Applications**, você pode editar configurações de cache para conteúdo estático e dinâmico.
+Um cache setting é o objeto de configuração que decide como [Cache](/pt-br/documentacao/build/cache/) armazena e entrega uma resposta nos edge nodes da Azion. Um mesmo setting reúne as políticas de expiração de browser e de CDN, as variações da cache key e os switches de stale cache, large file optimization e [Tiered Cache](/pt-br/documentacao/build/cache/tiered-cache/). Um cache setting não muda nada sozinho: uma regra do [Rules Engine](/pt-br/documentacao/build/applications/reference/rules-engine/) o aplica com o behavior **Set Cache Policy**.
 
-## Implementação
+Vários campos exigem o módulo [Application Accelerator](/pt-br/documentacao/build/application-accelerator/). Sem ele, a Azion armazena em cache apenas requisições `GET` e `HEAD`, o TTL mínimo de CDN permanece em 60 segundos e os campos de Advanced Cache Key ficam indisponíveis.
 
-| Escopo | Recursos |
-| --- | --- |
-| Primeiros passos de Applications | [Primeiros passos](/pt-br/documentacao/build/applications/quickstart/) |
-| Módulo Cache | [Cache](/pt-br/documentacao/build/cache/) |
-| Módulo Tiered Cache | [Tiered Cache](/pt-br/documentacao/build/cache/tiered-cache/) |
-| Criar uma configuração de cache | [Como configurar políticas de cache para Applications](/pt-br/documentacao/build/cache/guides/cache-settings/) |
-| Configurar Advanced Cache Key | [Como configurar a Advanced Cache Key para Applications](/pt-br/documentacao/build/application-accelerator/guides/advanced-cache-key/) |
+## Campos de um cache setting
+
+Estes são os atributos que um cache setting aceita no arquivo JSON passado para `azion create cache-setting` e `azion update cache-setting`. A API Cache Settings agrupa as mesmas configurações em `browser_cache` e `modules`.
+
+| Atributo | Configura | Valores aceitos | Padrão |
+| --- | --- | --- | --- |
+| `name` | O nome do cache setting | String | — |
+| `browser_cache_settings` | Comportamento de expiração no browser | `honor`, `override` | `honor` |
+| `browser_cache_settings_maximum_ttl` | TTL do browser em segundos, quando o comportamento é `override` | Integer, em segundos | — |
+| `cdn_cache_settings` | Comportamento de expiração nos edge nodes da Azion | `honor`, `override` | `honor` |
+| `cdn_cache_settings_maximum_ttl` | TTL em segundos nos edge nodes da Azion, quando o comportamento é `override` | `60` a `31536000` | `60` |
+| `cache_by_query_string` | Variação da cache key por query string | `ignore`, `whitelist`, `blacklist` | `ignore` |
+| `query_string_fields` | Campos de query string listados para `whitelist` ou `blacklist` | Array de strings | — |
+| `enable_query_string_sort` | Ordenação alfabética dos campos de query string antes de a cache key ser montada | `true`, `false` | `false` |
+| `cache_by_cookies` | Variação da cache key por cookie | `ignore`, `whitelist`, `blacklist` | `ignore` |
+| `cookie_names` | Nomes de cookies listados para `whitelist` ou `blacklist` | Array de strings | `null` |
+| `adaptive_delivery_action` | Variação da cache key por device group | `ignore`, `whitelist`, `blacklist` | `ignore` |
+| `device_group` | IDs de device group listados para a ação de adaptive delivery | Array de IDs | `[]` |
+| `enable_caching_for_post` | Cache de requisições `POST` | `true`, `false` | `false` |
+| `enable_caching_for_options` | Cache de requisições `OPTIONS` | `true`, `false` | `false` |
+| `enable_stale_cache` | Entrega de objetos expirados quando a revalidação falha | `true`, `false` | `true` |
+| `is_slice_configuration_enabled` | Large File Optimization | `true`, `false` | `false` |
+| `is_slice_edge_caching_enabled` | Large File Optimization na camada de cache | `true`, `false` | `false` |
+| `is_slice_l2_caching_enabled` | Large File Optimization na camada do Tiered Cache | `true`, `false` | `false` |
+| `slice_configuration_range` | Tamanho do fragmento em kB para Large File Optimization | `1024` | `1024` |
+| `l2_caching_enabled` | Tiered Cache | `true`, `false` | `false` |
+| `l2_region` | Região do Tiered Cache | `na-united-states`, `sa-brazil` | `na-united-states` |
 
 ---
 
 ## Browser Cache Settings
 
-**Browser Cache Settings** determina a quantidade de tempo que o conteúdo é armazenado em cache no navegador do usuário. Você pode selecionar dentre as seguintes opções:
+**Browser Cache Settings** decide por quanto tempo um browser mantém uma resposta antes de requisitar o objeto novamente. A Azion envia essa decisão ao browser pelos cabeçalhos de resposta `Cache-Control` e `Expires`.
 
-- **Honor Origin Cache Headers**: mantém as definições de cache enviadas pelos seus servidores de origem através de cabeçalhos HTTP (`Cache-Control` e `Expires`), enviando os mesmos cabeçalhos para o navegador.
-- **Override Cache Settings**: substitui o cache do seu servidor de origem e permite que você defina o TTL do cache manualmente.
+| Opção | Valor | Comportamento |
+| --- | --- | --- |
+| Honor Origin Cache Headers | `honor` | A Azion envia ao browser os mesmos cabeçalhos `Cache-Control` e `Expires` que os servidores de origem enviaram. |
+| Override Cache Settings | `override` | A Azion substitui as definições da origem pelo TTL definido em `browser_cache_settings_maximum_ttl`. |
 
----
+A diretiva `max-age` em `Cache-Control` determina o TTL. Quando `Cache-Control` está ausente da requisição ou da resposta, o timestamp do cabeçalho `Expires` o determina. No Azion Console, o valor de override vai no campo **Max Age (seconds)**.
 
 ## CDN Cache Settings
 
-**CDN Cache Settings** configura como a Azion armazena o cache na sua rede distribuída. Você pode selecionar dentre as seguintes opções:
+**CDN Cache Settings** decide por quanto tempo os edge nodes da Azion mantêm uma resposta em cache. Ele governa a cópia armazenada na rede distribuída da Azion, não a cópia que um browser guarda.
 
-- **Honor Origin Cache Headers**: mantém as definições de cache enviadas pelos seus servidores de origem através de cabeçalhos HTTP (`*Cache-Control` e `Expire*`), enviando os mesmos cabeçalhos para o navegador.
-- **Override Cache Settings**: substitui a configuração de cache do seu servidor de origem com o TTL desejado. Para definir o TTL de cache CDN para valores inferiores a 60 segundos, você deve habilitar o módulo [Application Accelerator](/pt-br/documentacao/build/application-accelerator/).
+| Opção | Valor | Comportamento |
+| --- | --- | --- |
+| Honor Origin Cache Headers | `honor` | A Azion mantém as definições de cache que os servidores de origem enviaram pelos cabeçalhos `Cache-Control` e `Expires`. |
+| Override Cache Settings | `override` | A Azion substitui a definição da origem pelo TTL definido em `cdn_cache_settings_maximum_ttl`. |
+
+O TTL aceita valores de `60` a `31536000` segundos (um ano) e tem `60` segundos como padrão. Com o módulo [Application Accelerator](/pt-br/documentacao/build/application-accelerator/) ativo, o mínimo cai para `0` segundos. Com [Tiered Cache](/pt-br/documentacao/build/cache/tiered-cache/) ativo, uma política que mantém conteúdo na camada tiered precisa de um TTL de pelo menos `3` segundos.
+
+Um TTL de `0` não é o mesmo que um bypass de cache. Para a diferença, consulte [Bypass Cache](/pt-br/documentacao/build/applications/reference/rules-engine/#bypass-cache).
+
+## Stale Cache
+
+**Stale Cache** permite que os edge nodes da Azion entreguem um objeto expirado em vez de uma página de erro, enquanto uma cópia atualizada é buscada na origem. O switch vem ligado por padrão. Uma resposta entregue assim carrega o status de cache `STALE`.
+
+A Azion reutiliza uma resposta armazenada quando uma tentativa de revalidação falha por causa de:
+
+- Erros 5xx retornados pela origem.
+- Time-outs de conexão ou origem inacessível.
+- Cabeçalhos cache-control inválidos ou ausentes.
+- Objeto em atualização, com revalidação em andamento.
+
+A duração da janela de stale depende da opção de expiração. Com **Honor Origin Cache Headers**, a diretiva `stale-while-revalidate=<ttl>` fornecida pela origem define a janela. Com **Override Cache Settings**, ou quando a origem omite a diretiva, a Azion aplica uma janela padrão de 300 segundos (5 minutos). Durante a janela, o edge node entrega a cópia expirada imediatamente e busca uma versão atualizada em segundo plano.
 
 ---
 
 ## Large File Optimization
 
-**Large File Optimization** funciona com o tamanho de fragmentação de *1.024 kB*. Se você deseja modificar o *fragmentation size*, [contate a equipe de Vendas](https://www.azion.com/pt-br/contato/).
+**Large File Optimization** divide um arquivo grande em fragmentos e armazena cada fragmento em cache sob demanda, no momento em que o usuário o requisita. Os fragmentos são entregues gradualmente conforme o usuário consome os dados, o que evita uma única transferência grande que um timeout ou uma queda de conexão pode interromper. O tamanho padrão do fragmento é `1024` kB. Para alterar o intervalo de fragmentação, [contate a equipe de Vendas](https://www.azion.com/pt-br/contato/).
 
-<LinkButton link="/pt-br/documentacao/build/cache/#large-file-optimization" label="Saiba mais sobre Large File Optimization" />
+Cada fragmento dentro do intervalo definido carrega uma cache key diferente: a chave ganha o separador `@@bytes=` e o intervalo de bytes do fragmento. Para o formato da chave, consulte [Cache keys](/pt-br/documentacao/build/cache/reference/cache-keys/#large-file-optimization).
 
-:::note
-Ao ativar a funcionalidade Large File Optimization, a *cache key* atual será ignorada e uma nova será criada.
-:::
-
-A opção `--slice-l2-caching-enabled` define se Large File Optimization está ativo para o Tiered Cache.
-
-<LinkButton link="/pt-br/documentacao/build/cache/tiered-cache/" label="Saiba mais sobre Tiered Cache" />
+Large File Optimization se aplica à camada de cache nos edge nodes da Azion e à camada tiered quando [Tiered Cache](/pt-br/documentacao/build/cache/tiered-cache/) é um módulo ativo. No Azion Console, a camada de cache é selecionada por padrão quando o switch é ligado.
 
 ---
 
 ## Advanced Cache Key
 
-Você pode usar **Advanced Cache Key** para personalizar as regras de cache com base nos seguintes metadados:
+**Advanced Cache Key** adiciona metadados da requisição à cache key, de modo que uma URL pode conter mais de um objeto em cache. Por padrão, a Azion trata cada URL como um objeto distinto e ignora os metadados. O recurso tem duas famílias de opções, e uma aplicação pode usar as duas ao mesmo tempo:
 
-- Cookies
-- Query strings
+- **Cache by Query String**, sobre os campos da query string.
+- **Cache by Cookie**, sobre o nome e o valor dos cookies.
 
-> Para ambos os casos, este campo diferencia letras maiúsculas de minúsculas, o que significa que ele as trata de forma diferente ao armazenar objetos no cache.
+Os dois campos diferenciam letras maiúsculas de minúsculas, portanto uma diferença de caixa produz objetos em cache distintos. Advanced Cache Key exige o módulo [Application Accelerator](/pt-br/documentacao/build/application-accelerator/). Para o formato da chave resultante, consulte [Cache keys](/pt-br/documentacao/build/cache/reference/cache-keys/#advanced-cache-key).
 
-### Cache by Query String
+## Cache by Query String
 
-Na Azion, você define como deseja que o conteúdo seja armazenado em cache de acordo com as variações de **Query String** em suas URLs:
+**Cache by Query String** decide quais campos de query string de uma URL diferenciam objetos no cache da Azion. Os campos listados vão em `query_string_fields`, e os nomes dos campos diferenciam letras maiúsculas de minúsculas.
 
-- **Content does not vary by Query String (Improves Caching)**: define que a chave de cache deve ignorar a query string. Ou seja, duas URLs que são diferentes apenas pela variação da query string serão consideradas como o mesmo objeto em cache. 
-  - Por exemplo, `http://seudominio.com/path?queryA` e `http://seudominio.com/path?queryB` fornecerão o mesmo conteúdo de cache aos seus usuários.
+| Opção | Valor | Efeito na cache key |
+| --- | --- | --- |
+| Content does not vary by Query String (Improves Caching) | `ignore` | A cache key ignora a query string. Duas URLs que diferem apenas pela query string são o mesmo objeto. |
+| Content varies by some Query String fields (Whitelist) | `whitelist` | Apenas os campos listados diferenciam objetos. Todos os demais campos são ignorados. |
+| Content varies by Query String, except for some fields (Blocklist) | `blacklist` | Os campos listados são ignorados. Todos os demais campos diferenciam objetos. |
+| Content varies by all Query String fields | — | A cache key considera todos os campos. Duas URLs que diferem pela query string são dois objetos. |
 
-- **Content varies by some Query String fields (Whitelist)**: você pode listar quais campos de query string devem ser considerados para diferenciar entre objetos no cache Azion. Todos os outros campos serão ignorados. 
-  - Por exemplo, se você listar o campo `cidade`, as URLs `http://seudominio.com/path?cidade=A&nome=X` e `http://seudominio.com/path?cdidade=A&nome=Y` serão consideradas como um único objeto no cache, enquanto as URLs `http://seudominio.com/path?cidade=A&nome=X` e `http://seudominio.com/path?cidade=B&nome=X` serão consideradas como objetos diferentes.
+Com `ignore`, `http://example.com/path?queryA` e `http://example.com/path?queryB` entregam o mesmo conteúdo em cache. Com **Content varies by all Query String fields**, essas mesmas duas URLs são armazenadas como objetos separados.
 
-- **Content varies by Query String, except for some fields (Blocklist)**: você pode listar quais campos na query string devem ser ignorados ao diferenciar objetos em cache. Todos os outros campos serão considerados. 
-  - Por exemplo, se você listar o campo `random`, as URLs `http://seudominio.com/path?cidade=A&random=123` e `http://seudominio.com/path?cidade=B&random=123` serão considerados objetos diferentes no cache, enquanto `http://seudominio.com/path?cidade=A&random=123` e `http://seudominio.com/path?cidade=A&random=456` serão considerados como o mesmo objeto no cache.
+Com `whitelist` e o campo `city` listado, `http://example.com/path?city=A&name=X` e `http://example.com/path?city=A&name=Y` são um objeto, enquanto `http://example.com/path?city=A&name=X` e `http://example.com/path?city=B&name=X` são dois.
 
-- **Content varies by all Query String fields**: define que a cache key deve considerar todos os campos da Cadeia de caracteres de consulta. Ou seja, duas URLs distintas pela variação da query string serão consideradas como dois objetos distintos no cache. 
-  - Por exemplo, `http://seudominio.com/path?queryA` e `http://seudominio.com/path?queryB` serão armazenados como objetos separados no cache Azion.
+Com `blacklist` e o campo `random` listado, `http://example.com/path?city=A&random=123` e `http://example.com/path?city=A&random=456` são um objeto, enquanto `http://example.com/path?city=A&random=123` e `http://example.com/path?city=B&random=123` são dois.
 
-Para aumentar a eficiência do armazenamento em cache, você pode ativar a opção **Query String Sort**. Se ativado, ele ordena todos os campos da query string, tornando a posição dos campos irrelevante na definição da cache key. Se a posição dos campos for relevante para diferenciar o seu conteúdo, você deve desativar esta opção.
+O switch **Query String Sort**, `enable_query_string_sort`, ordena todos os campos da query string antes de a cache key ser montada. A posição dos campos deixa de afetar a chave. Desligue o switch quando a posição dos campos diferenciar o seu conteúdo.
 
-### Cache por Cookie
+## Cache by Cookie
 
-Você também pode distinguir objetos no cache Azion pelo nome/valor dos cookies.
+**Cache by Cookie** decide quais cookies diferenciam objetos no cache da Azion, por nome e valor. Os cookies listados vão em `cookie_names`, e os nomes dos cookies diferenciam letras maiúsculas de minúsculas.
 
-- **Content does not vary by Cookies (Improves Caching)**: diferencia objetos no cache da Azion por meio de URL; não leva em consideração os cookies.
+| Opção | Valor | Efeito na cache key |
+| --- | --- | --- |
+| Content does not vary by Cookies (Improves Caching) | `ignore` | Os objetos são diferenciados apenas pela URL. Os cookies não são considerados. |
+| Content varies by some Cookies (Allowed Rules) | `whitelist` | Apenas os cookies listados diferenciam objetos. Todos os demais cookies são ignorados. |
+| Content varies by Cookies, with the exception of a few (Blocklist) | `blacklist` | Os cookies listados são ignorados. Todos os demais cookies são considerados. |
+| Content varies by all Cookies | — | Todos os cookies são considerados, além da URL. |
 
-- **Content varies by some Cookies (Allowed Rules)**: pode listar o nome dos cookies que a sua aplicação usa para diferenciar objetos em cache. Todos os outros cookies serão ignorados, permitindo que você segmente o seu conteúdo por perfis de usuário e outras configurações. Esta é a opção mais recomendada se você usar cookies para gerenciar as sessões do usuário.
-
-- **Content varies by Cookies, with the exception of a few (Blocklist)**: você pode listar o nome dos cookies que deseja ignorar na configuração da chave de cache, considerando todos os cookies, exceto os listados.
-
-- **Content varies by all Cookies**: além da URL, considera todos os cookies para diferenciar objetos no cache da Azion.
-
-:::tip
-Use este recurso para segmentar seu conteúdo por perfil de usuário, sessão de navegação, região de acesso ou de acordo com suas necessidades de segmentação de conteúdo.
-:::
-
----
+A Azion recomenda `whitelist` para uma aplicação que usa cookies para gerenciar sessões de usuário. Essa opção segmenta o cache pelos cookies que a aplicação nomeia e ignora todos os outros cookies. Use a variação por cookie para segmentar conteúdo por perfil de usuário, sessão de navegação ou região de acesso.
 
 ## Cache de métodos HTTP
 
-Você pode ativar a chave **Enable caching for POST**, permitindo que a Azion faça o cache de requisições `POST`. A chave **Enable caching for OPTIONS** permite que a Azion faça o cache de requisições `OPTIONS`. Essas duas opções de cache exigem que o corpo da requisição faça parte da chave de cache.
+A Azion armazena em cache requisições `GET` e `HEAD`. O switch **Enable caching for POST**, `enable_caching_for_post`, estende o cache a requisições `POST`, e o switch **Enable caching for OPTIONS**, `enable_caching_for_options`, o estende a requisições `OPTIONS`. Os dois vêm desligados por padrão e os dois exigem o módulo [Application Accelerator](/pt-br/documentacao/build/application-accelerator/), que também adiciona suporte aos métodos `PUT`, `PATCH` e `DELETE`.
 
----
+As duas opções exigem que o corpo da requisição faça parte da cache key. A chave de uma requisição `POST` ou `OPTIONS` em cache ganha o separador `@@` seguido do hash MD5 do corpo. Para o formato da chave, consulte [Cache keys](/pt-br/documentacao/build/cache/reference/cache-keys/#metodos-http-em-cache).
 
-## Stale Cache
-
-Com o módulo **Cache**, você pode habilitar o **Stale Cache** para transmitir conteúdo *stale* (obsoleto) quando houver um problema com seus servidores de origem.
-
-<LinkButton link="/pt-br/documentacao/build/cache/#stale-cache" label="Saiba mais sobre stale cache" />
-
----
+Enquanto o cache para `POST` está desligado, uma requisição `POST` fica impedida de ser armazenada em cache e nenhum status de cache é registrado para ela. Consulte [Como o Cache funciona](/pt-br/documentacao/build/cache/como-funciona/#status-de-cache) para a lista completa de status.
 
 ## Adaptive Delivery
 
-Com o módulo **Cache**, você pode selecionar um grupo de dispositivos para **Adaptive Delivery**.
+**Adaptive Delivery** varia o objeto em cache conforme o device group que corresponde à requisição. Os device groups são criados em [Device Groups](/pt-br/documentacao/build/applications/reference/device-groups/), que compara uma expressão regular com o cabeçalho `User-Agent` da requisição.
 
-Ao escolher a opção **Content varies by some Device Groups (Whitelist)**, você permite que a Azion mantenha variações de seus objetos no cache baseadas em dispositivos.
-
-<LinkButton link="/pt-br/documentacao/build/applications/reference/device-groups/" label="Saiba mais sobre Device Groups" />
-
-
-
+O campo `adaptive_delivery_action` aceita `ignore`, `whitelist` e `blacklist`, com `ignore` como padrão. Com `ignore`, todo dispositivo recebe a mesma versão do conteúdo, qualquer que seja o resultado da detecção. Com `whitelist`, a Azion mantém um objeto em cache por device group listado em `device_group`. O rótulo desse valor no Azion Console é **Content varies by some Device Groups (Whitelist)**. A cache key então ganha o separador `@@` e o nome do device group.
 
 ---
 
+## Recursos relacionados
+
+- [Como o Cache funciona](/pt-br/documentacao/build/cache/como-funciona/) - a busca no cache, os status de cache e como a expiração é avaliada.
+- [Cache keys](/pt-br/documentacao/build/cache/reference/cache-keys/) - como cada variação desta referência muda a chave de um objeto em cache.
+- [Configure uma política de cache](/pt-br/documentacao/build/cache/guides/cache-settings/) - os passos para criar um cache setting e aplicá-lo com uma regra.
+- [Como configurar a Advanced Cache Key para Applications](/pt-br/documentacao/build/application-accelerator/guides/advanced-cache-key/) - configurações de query string e de cookie resolvidas para conteúdo dinâmico.
+- [Tiered Cache](/pt-br/documentacao/build/cache/tiered-cache/) - a segunda camada de cache, suas regiões e sua faixa de TTL.
+- [Limites do Cache](/pt-br/documentacao/build/cache/limites/) - os limites de tamanho de objeto, tamanho de fragmento e TTL, com os valores por plano de suporte.
+- [Rules Engine para Applications](/pt-br/documentacao/build/applications/reference/rules-engine/) - o behavior Set Cache Policy que aplica um cache setting e o behavior Bypass Cache que o ignora.

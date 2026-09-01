@@ -1,63 +1,82 @@
 ---
 title: Tiered Cache
 description: >-
-  O Tiered Cache estabelece uma camada extra de cache entre os edge nodes e seus
-  servidores de origem, reduzindo efetivamente a latência e minimizando as
-  despesas com infraestrutura.
-meta_tags: >-
-  caching, edge, cache, edge computing, l2, layer 2, cache layer, purge
-  cache
+  Adicione uma segunda camada de cache entre os edge nodes da Azion e seus
+  servidores de origem e defina o TTL, a região e a ordem de purge.
+meta_tags: 'tiered cache, cache layer, origin offload, l2 caching, cache TTL, purge layer'
 namespace: documentation_products_edge_application_l2_caching
-menu_namespace: cacheMenu
 permalink: /documentacao/build/cache/tiered-cache/
+menu_namespace: cacheMenu
 ---
-import LinkButton from 'azion-webkit/linkbutton'
 
-**Tiered Cache** é um módulo **Cache** que cria uma camada de cache adicional entre os edge nodes e seus servidores de origem, reduzindo a latência e os custos de infraestrutura.
+**Tiered Cache** é um módulo do [Cache](/pt-br/documentacao/build/cache/) que adiciona uma segunda camada de cache entre os edge nodes da Azion e seus servidores de origem. Quando um edge node não tem uma cópia válida do objeto requisitado, ele consulta a camada do Tiered Cache antes que a requisição chegue à origem. Essa camada responde a partir do próprio cache enquanto a cópia é válida e consulta a origem apenas depois que essa cópia expira.
 
-Ao acessar sua application na Azion, o usuário acessa a rede distribuída da Azion, onde o conteúdo da aplicação é armazenado em cache. Ao ativar o Tiered Cache em Applications, você pode:
+Menos requisições chegam aos seus servidores de origem, então a carga na origem diminui. O conteúdo também permanece em cache por mais tempo, porque a camada do Tiered Cache mantém o próprio TTL. Você também pode escolher a região que hospeda essa camada.
 
-- Manter cache em uma segunda camada, entre os edge nodes e seus servidores de origem.
-- Definir longos períodos de TTL para cache.
-- Selecionar a região para manter o cache mais próximo de seus usuários.
-
-:::note
-Tiered Cache só estará disponível se o serviço for ativado para a sua conta. Para ativar o **Tiered Cache**, [contate a equipe de Vendas](https://www.azion.com/en/contact-sales/).
+:::note[nota]
+Tiered Cache está disponível apenas depois que o serviço é ativado para sua conta. Para ativá-lo, [entre em contato com a equipe de vendas](https://www.azion.com/pt-br/contato/).
 :::
 
-## Implementação
-
-| Escopo | Recursos |
-| --- | --- |
-| Módulo Cache | [Cache](/pt-br/documentacao/build/cache/) |
-| Criar uma configuração de cache | [Como configurar políticas de cache para Applications](/pt-br/documentacao/build/cache/guides/cache-settings/) |
-
 ---
 
-## TTL Recomendado
+## Ativação
 
-**Tiered ⁠Cache** é especialmente projetado para objetos que podem permanecer no cache por um longo período de tempo. Por isso, você só pode ativá-lo em políticas de cache com um TTL igual ou superior a *3 segundos*, sendo o TTL padrão de *60 segundos*.
+Tiered Cache tem dois switches. Você ativa o módulo para a aplicação e depois para cada política de cache que deve usar a camada do Tiered Cache. O conteúdo sob uma política com o switch desativado permanece apenas no cache dos edge nodes da Azion.
 
-<LinkButton link="/pt-br/documentacao/build/cache/reference/cache-settings/#browser-cache-settings" label="Saiba mais sobre expiration settings" />
+| Interface | Aplicação | Política de cache |
+| --- | --- | --- |
+| Azion Console | switch **Tiered Cache** na aba **Main Settings** | switch **Tiered Cache** na aba **Cache Settings** |
+| Azion CLI | `azion update edge-application --l2-caching` | `azion create cache-setting --l2-caching-enabled` ou `azion update cache-setting --l2-caching-enabled` |
+| API | `l2_caching` na aplicação, na API v3 | `l2_caching_enabled` na API v3, `modules.tiered_cache` na API v4 |
 
----
+Em `azion.config.js`, o objeto `tieredCache` de uma entrada de cache contém `enabled` e `topology`.
 
-## Regiões
+Ativar o módulo pode gerar custos de uso. Para mais informações, consulte [Preços](/pt-br/documentacao/platform/pricing/#cache). Para os passos que criam uma política de cache e a aplicam a uma requisição, consulte [Configure uma política de cache](/pt-br/documentacao/build/cache/guides/cache-settings/).
 
-Quando você ativa o **Tiered Cache** como uma camada extra de cache, os servidores edge dessa segunda camada de cache são hospedados nos EUA (`na-united-states`) por padrão. 
+## TTL do cache
 
-A Azion também oferece a opção de hospedar os servidores de Tiered Cache no Brasil (`sa-brazil`). Para alternar entre as regiões em suas applications, entre em contato com a [equipe de Vendas](https://www.azion.com/pt-br/contato/).
+Tiered Cache armazena objetos que permanecem válidos por longos períodos. Uma política de cache aceita o módulo apenas quando o TTL é de 3 segundos ou mais. O TTL padrão de uma política de cache é de 60 segundos, o que já atende a esse mínimo. Uma política de cache com um TTL menor não pode usar a camada do Tiered Cache.
+
+Para os campos de expiração e como eles leem os headers da origem, consulte [Cache Settings](/pt-br/documentacao/build/cache/reference/cache-settings/#cdn-cache-settings). O TTL mínimo e o máximo da camada do Tiered Cache estão em [Limites do Cache](/pt-br/documentacao/build/cache/limites/).
+
+## Regiões e topologia
+
+Azion hospeda os servidores do Tiered Cache nos Estados Unidos (`na-united-states`) por padrão. Azion também oferece o Brasil (`sa-brazil`). Para mudar a região de uma aplicação, entre em contato com a [equipe de vendas](https://www.azion.com/pt-br/contato/). A API v3 carrega o valor no campo `l2_region` da cache setting.
+
+Duas interfaces expressam o posicionamento da camada do Tiered Cache como um campo `topology`. Na API v4, `modules.tiered_cache.topology` aceita `near-edge` ou, onde houver suporte, `near-origin`. Em `azion.config.js`, `tieredCache.topology` aceita `nearest-region`, `br-east-1` ou `us-east-1`.
+
+## Large File Optimization na camada do Tiered Cache
+
+Large File Optimization fragmenta um arquivo grande e armazena os fragmentos em cache sob demanda. Ele se aplica ao cache dos edge nodes da Azion. Enquanto Tiered Cache é um módulo ativo, também se aplica à camada do Tiered Cache. Com Azion CLI, `--slice-l2-caching-enabled` ativa o recurso para essa camada. Na API v3, o mesmo campo se chama `is_slice_l2_caching_enabled`.
+
+Real-Time Purge não aceita uma expressão wildcard para a camada do Tiered Cache, então remover fragmentos dela exige listar a cache key de cada fragmento. Para o formato da cache key de um fragmento, consulte [Cache keys](/pt-br/documentacao/build/cache/reference/cache-keys/#large-file-optimization).
 
 ---
 
 ## Real-Time Purge
 
-Sempre que necessário, você pode usar o **Real-Time Purge** para expirar seu conteúdo do **Tiered Cache** antes do TTL esperado. Lembre de fazer o purge primeiro da camada de tiered cache e somente depois do **Cache**. Isso evita edge feedback com conteúdo desatualizado na camada tiered cache.
+[Real-Time Purge](/pt-br/documentacao/build/cache/reference/real-time-purge/#camadas-de-purge) faz o purge de uma camada por requisição: **Cache**, o cache dos edge nodes da Azion, ou **Tiered Cache**, a segunda camada. A camada do Tiered Cache aceita um purge apenas enquanto o módulo está ativo na aplicação.
 
-<LinkButton link="/pt-br/documentacao/build/cache/reference/real-time-purge/" label="Saiba mais sobre Real-Time Purge" />
+Faça o purge da camada **Tiered Cache** primeiro e o da camada **Cache** depois. Um edge node que não tem mais um objeto pede esse objeto à camada do Tiered Cache. Se essa camada ainda tiver o objeto desatualizado, ela responde à requisição e o edge node pode armazenar o objeto em cache de novo. Fazer o purge da camada do Tiered Cache primeiro deixa a origem como a única fonte para repor o objeto.
 
----
+Com Azion CLI, `azion purge --layer tiered_cache` seleciona a camada do Tiered Cache, e o valor padrão de `--layer` é `cache`. Em `azion.config.js`, uma entrada de purge define `layer` como `l2_caching` para a camada do Tiered Cache e como `edge_caching` para o cache dos edge nodes da Azion.
+
+Uma expressão wildcard não faz o purge da camada do Tiered Cache. Use um purge por URL ou um purge por cache key.
+
+## Bypass Cache
+
+Tiered Cache não é compatível com Bypass Cache. Uma regra de [Bypass Cache](/pt-br/documentacao/build/applications/reference/rules-engine/#bypass-cache) faz o edge node requisitar o conteúdo da origem em vez de usar uma cópia em cache. Uma aplicação com uma política de Tiered Cache ativa continua armazenando o objeto em cache na camada do Tiered Cache pelo TTL mínimo especificado.
 
 ## Limites
 
-O TTL mínimo e máximo do Tiered Cache, e a ressalva sobre bypass cache, estão listados em [Limites do Cache](/pt-br/documentacao/build/cache/limites/).
+Tiered Cache tem um TTL mínimo e um máximo, e as operações de purge são limitadas por plano de suporte. Os valores estão em [Limites do Cache](/pt-br/documentacao/build/cache/limites/), e os que dependem do plano estão em [Limites por plano de suporte](/pt-br/documentacao/build/cache/limites/#limites-por-plano-de-suporte). Para solicitar um limite maior para seu plano, entre em contato com o [suporte técnico](/pt-br/documentacao/services/support/).
+
+---
+
+## Recursos relacionados
+
+- [Como o Cache funciona](/pt-br/documentacao/build/cache/como-funciona/) - a busca no cache, os valores de status de cache e a expiração nos edge nodes da Azion.
+- [Cache Settings](/pt-br/documentacao/build/cache/reference/cache-settings/) - todos os campos de uma política de cache, incluindo expiração e Large File Optimization.
+- [Real-Time Purge](/pt-br/documentacao/build/cache/reference/real-time-purge/) - as camadas de purge, os tipos de purge e os argumentos que cada tipo aceita.
+- [Configure uma política de cache](/pt-br/documentacao/build/cache/guides/cache-settings/) - os passos que criam uma política de cache e a aplicam com uma regra.
+- [Limites do Cache](/pt-br/documentacao/build/cache/limites/) - os limites de TTL, os limites de purge e o que muda com o plano de suporte.

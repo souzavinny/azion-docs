@@ -1,9 +1,9 @@
 ---
 title: Quickstart do Cache
 description: >-
-  Crie sua primeira cache setting, aplique-a a um caminho de requisição com uma
-  regra e confirme o status de cache de uma requisição.
-meta_tags: 'cache, ttl, cache setting, rules engine, quickstart'
+  Crie sua primeira política de cache em Azion Console, aplique-a com uma regra
+  do Rules Engine e confirme o status de cache de uma requisição.
+meta_tags: 'cache, quickstart, cache setting, cache TTL, Rules Engine, cache status'
 namespace: documentation_build_cache_quickstart
 permalink: /documentacao/build/cache/quickstart/
 menu_namespace: cacheMenu
@@ -11,109 +11,93 @@ menu_namespace: cacheMenu
 
 import Code from '~/components/Code/Code.astro'
 
-Este guia conduz você por sua primeira cache setting em uma aplicação da Azion.
+Este guia conduz você pela sua primeira política de cache na Azion. Você vai:
 
-- Ative o módulo **Application Accelerator**.
-- Crie uma cache setting com um TTL personalizado.
-- Aplique a cache setting a um caminho de requisição com uma regra.
-- Confirme o status de cache de uma requisição.
+- Criar uma cache setting que sobrescreve a expiração enviada pela sua origem.
+- Aplicar a cache setting a um path com uma regra do Rules Engine.
+- Ler o status de cache de uma requisição pelo terminal.
 
-Para armazenar conteúdo em cache na rede distribuída da Azion, você cria e conecta estes objetos:
-
-1. Uma **aplicação**, que é dona da cache setting.
-2. Uma **cache setting**, que contém as políticas de expiração de cache.
-3. Uma **regra** no [Rules Engine](/pt-br/documentacao/build/applications/reference/rules-engine/), que aplica a cache setting a um caminho de requisição.
-
-Uma cache setting que nenhuma regra referencia não faz nada. A regra decide a quais requisições a cache setting se aplica.
+Uma política de cache na Azion tem três objetos ligados entre si. A cache setting pertence a uma aplicação em [Applications](/pt-br/documentacao/build/applications/) e carrega os valores de expiração. Uma regra no [Rules Engine](/pt-br/documentacao/build/applications/reference/rules-engine/) aponta para a cache setting e determina a quais requisições ela se aplica. Enquanto uma regra com o behavior **Set Cache Policy** não referenciar a cache setting, ela não muda nada.
 
 ---
 
 ## Pré-requisitos
 
-- Acesso ao [Azion Console](/pt-br/documentacao/account/guides/como-acessar-o-azion-console/).
-- Uma aplicação na Plataforma da Azion, alcançável por um domínio. Para criar uma, consulte [Começar com um template](/pt-br/documentacao/get-started/comecar-com-um-template/).
+- Uma conta Azion com acesso ao [Azion Console](/pt-br/documentacao/account/guides/como-acessar-o-azion-console/).
+- Uma aplicação com uma origem configurada. Para criar uma, consulte [Applications primeiros passos](/pt-br/documentacao/build/applications/quickstart/).
+- Um path nessa aplicação que serve o conteúdo que você quer armazenar em cache, como `/static`.
 
 ---
 
-## 1. Ative o Application Accelerator
+## 1. Crie uma cache setting
 
-O módulo [Application Accelerator](/pt-br/documentacao/build/application-accelerator/) libera as configurações avançadas de cache key de uma cache setting e permite definir um TTL de cache abaixo de 60 segundos.
+Uma cache setting guarda os valores de expiração de um grupo de requisições. A seção **Cache** define por quanto tempo um edge node da Azion mantém um objeto. **Browser Cache** faz o mesmo para o navegador do usuário.
 
-Para ativar o módulo:
+Este quickstart sobrescreve a expiração de cache e mantém **Browser Cache** em **Honor cache policies**, o padrão. Sua origem controla a expiração do navegador pelos headers `Cache-Control` e `Expires`.
 
-1. Acesse o [Azion Console](https://console.azion.com/) > **Applications**.
-2. Selecione a aplicação que você quer configurar.
-3. Na aba **Main Settings**, na seção **Modules**, ative o switch **Application Accelerator**.
-4. Selecione **Save**.
-
-A aplicação está com o módulo **Application Accelerator** ativo.
-
-:::caution[Atenção]
-Com o **Application Accelerator** ativo, a transferência de dados pode gerar custos de uso. Para mais informações, consulte [Preços](/pt-br/documentacao/platform/pricing/).
+:::note[nota]
+A expiração de cache aceita valores de `60` a `31536000` segundos, o equivalente a 1 ano, e o padrão é `60` segundos. Com o módulo [Application Accelerator](/pt-br/documentacao/build/application-accelerator/) ativo, o mínimo cai para `0` segundos. [Tiered Cache](/pt-br/documentacao/build/cache/tiered-cache/) exige um valor de pelo menos `3` segundos para manter o objeto na segunda camada.
 :::
-
-## 2. Crie uma cache setting
-
-Uma cache setting contém as políticas de expiração de cache de uma aplicação: por quanto tempo os edge nodes e o navegador mantêm o conteúdo. Uma aplicação pode conter mais de uma cache setting.
 
 Para criar a cache setting:
 
-1. Vá até a aba **Cache Settings** da sua aplicação.
-2. Selecione **+ Cache Setting**.
-3. Insira um nome para a cache setting.
-4. (Opcional) Em **Browser Cache Settings**, selecione **Override Cache Settings** e insira o TTL do navegador em **Maximum TTL**.
-5. Em **Cache Settings**, selecione **Override Cache Settings**.
-6. Em **Maximum TTL**, insira `864000`, que corresponde a 10 dias em segundos.
+1. Acesse [Azion Console](https://console.azion.com/) > **Applications** > **sua aplicação**.
+2. Vá para a aba **Cache Settings**.
+3. Selecione **+ Cache Setting**.
+4. Insira um nome para a cache setting, por exemplo `/static - Cache TTL`.
+5. Na seção **Cache**, selecione **Override cache settings**.
+6. Em **Max Age (seconds)**, insira `86400`.
 7. Selecione **Save**.
 
-A página de cache settings lista a nova cache setting.
+A cache setting aparece na lista de cache settings.
 
-:::note[nota]
-O TTL de cache aceita um valor entre `60` e `31536000` segundos, que corresponde a 1 ano. Com o módulo **Application Accelerator** ativo, o mínimo é `0`.
-:::
+Uma nova cache setting tem **Stale cache** habilitado por padrão. Os edge nodes da Azion continuam servindo a última cópia em cache quando sua origem está fora do ar ou o cache está sendo renovado. Para conhecer os demais campos de uma cache setting, consulte [Cache Settings](/pt-br/documentacao/build/cache/reference/cache-settings/).
 
-## 3. Aplique a cache setting com uma regra
+## 2. Aplique a cache setting com uma regra
 
-Uma cache setting fica inativa até que uma regra a referencie. Uma regra no Rules Engine corresponde a uma requisição e aplica a cache setting pelo behavior **Set Cache Policy**.
+[Rules Engine](/pt-br/documentacao/build/applications/reference/rules-engine/) determina a quais requisições uma cache setting se aplica, por meio do behavior **Set Cache Policy**. Esse behavior roda na fase de requisição, onde uma aplicação define como armazena conteúdo em cache. Uma cache setting sem nenhuma regra apontando para ela nunca é usada.
 
-A regra a seguir aplica a cache setting a toda requisição ao caminho `/cache` da sua aplicação.
+Para aplicar a cache setting a todas as requisições em `/static`:
 
-Para criar a regra:
-
-1. Vá até a aba **Rules Engine** da sua aplicação.
+1. Vá para a aba **Rules Engine** da sua aplicação.
 2. Selecione **+ Rule**.
-3. Insira um nome para a regra.
+3. Insira um nome para a regra, por exemplo `/static - Set cache policy`.
 4. Selecione **Request Phase**.
 5. Na seção **Criteria**, selecione a variável `${uri}`.
-6. Como operador de comparação, selecione **is equal**.
-7. Como argumento, insira `/cache`.
+6. Como operador de comparação, selecione **starts with**.
+7. Como argumento, insira `/static`.
 8. Na seção **Behaviors**, selecione **Set Cache Policy**.
 9. Selecione a cache setting que você criou.
 10. Selecione **Save**.
 
-A regra aplica a cache setting a toda requisição ao caminho `/cache`. As alterações podem levar alguns minutos para propagar. Diante de uma resposta inesperada, aguarde e repita a requisição antes de diagnosticar.
+A regra aparece na lista de regras e se aplica a todas as requisições cuja URI começa com `/static`.
 
-## 4. Verifique o status de cache
+Novas regras levam alguns minutos para se propagar pela rede distribuída da Azion. Diante de um status de cache inesperado, espere e tente de novo antes de diagnosticar.
 
-O header de resposta `X-Cache` carrega o status de cache de uma requisição. O edge node o retorna quando a requisição carrega o header de debug `Pragma: azion-debug-cache`.
+## 3. Verifique o status de cache
 
-Faça a requisição ao caminho em cache com o header de debug:
+A Azion retorna o status de cache de um recurso quando a requisição carrega o header de debug `Pragma: azion-debug-cache`. A resposta inclui um header `X-Cache` com o status, o endereço IP do edge node e o protocolo.
 
-<Code lang="bash" code={`curl -s -D - -o /dev/null -H "Pragma: azion-debug-cache" "https://<seu-dominio-azion>/cache"`} />
+Para ler o status de cache de um recurso em `/static`:
 
-Uma resposta bem-sucedida retorna um header `X-Cache` com o status de cache, o IP do edge node e o protocolo usado na requisição:
+<Code lang="bash" code={`curl -I -H "Pragma: azion-debug-cache" https://<your-azion-domain>/static/<your-file>`} />
 
-```text
-X-Cache: HIT from 200.000.000.00 with HTTP/2.0
+A resposta carrega o header `X-Cache`:
+
+```bash
+X-Cache: HIT from 192.0.2.10 with HTTP/2.0
 ```
 
-Um status `HIT` significa que o edge node serviu o conteúdo a partir do cache. Um status `MISS` significa que o conteúdo não estava em cache no edge node, então o edge node o buscou na origem. Envie a requisição de novo para verificar um `HIT`.
+`HIT` significa que conteúdo válido e atualizado veio do cache no edge node. A cache setting está em vigor. A primeira requisição depois que a regra se propaga retorna `MISS`. O conteúdo não está no cache, então o edge node o busca na origem. Execute o mesmo comando de novo para ver o status mudar para `HIT`.
+
+A Azion armazena em cache requisições `GET` e `HEAD` por padrão, e `curl -I` envia uma requisição `HEAD`. Para os demais status que uma requisição pode retornar, consulte [Como o Cache funciona](/pt-br/documentacao/build/cache/como-funciona/#status-de-cache).
 
 ---
 
 ## Próximos passos
 
-- [Como o Cache funciona](/pt-br/documentacao/build/cache/como-funciona/) - o que cada status de cache significa e como a expiração e o stale cache se comportam.
-- [Cache Settings](/pt-br/documentacao/build/cache/reference/cache-settings/) - todos os campos de uma cache setting, incluindo stale cache, large file optimization e a advanced cache key.
-- [Configure uma política de cache](/pt-br/documentacao/build/cache/guides/cache-settings/) - faça bypass do cache da origem e encaminhe cookies com outras regras do Rules Engine.
-- [Verifique indicadores de cache no navegador](/pt-br/documentacao/build/cache/guides/verificar-tempo-de-cache-da-pagina/) - leia os headers de cache pelo navegador em vez do terminal.
+- [Como o Cache funciona](/pt-br/documentacao/build/cache/como-funciona/) - entenda a busca no cache, os status e como os objetos expiram nos edge nodes da Azion.
+- [Cache Settings](/pt-br/documentacao/build/cache/reference/cache-settings/) - consulte todos os campos de uma cache setting, incluindo Advanced Cache Key e Large File Optimization.
+- [Verifique indicadores de cache no navegador](/pt-br/documentacao/build/cache/guides/verificar-tempo-de-cache-da-pagina/) - leia os mesmos headers de cache no Google Chrome em vez do terminal.
+- [Real-Time Purge](/pt-br/documentacao/build/cache/reference/real-time-purge/) - remova um objeto do cache antes da expiração.
+- [Guias e tutoriais do Cache](/pt-br/documentacao/build/cache/guides/) - o conjunto completo de guias e tutoriais do Cache.

@@ -1,33 +1,51 @@
 ---
 title: Glossary
 description: >-
-  Look up the terms the Cache documentation uses, from cache key to stale
-  cache, in a filterable table of definitions.
-meta_tags: 'cache, glossary, definitions, terms'
+  Look up the Cache vocabulary: cache settings, cache keys, cache statuses,
+  purge types, and the debug headers an edge node returns.
+meta_tags: 'cache glossary, cache key, cache status, stale cache, tiered cache, real-time purge, cache settings'
 namespace: documentation_build_cache_glossary
-menu_namespace: cacheMenu
 permalink: /documentation/build/cache/glossary/
+menu_namespace: cacheMenu
 ---
 
 import GlossaryFilter from '~/components/GlossaryFilter.astro'
 
-Definitions for the terms the **Cache** documentation uses.
+The [Cache](/en/documentation/build/cache/) documentation uses the terms defined here: cache settings, cache keys, cache statuses, purge types, and the headers an edge node returns.
 
 <GlossaryFilter lang="en">
 
 | Term | Definition |
 | --- | --- |
-| browser cache TTL | The amount of time content stays cached in the user's browser. The [Browser Cache Settings](/en/documentation/build/cache/reference/cache-settings/#browser-cache-settings) field sets it. |
-| cache key | An index entry for an object cached on Azion edge nodes. A request that matches a stored [cache key](/en/documentation/build/cache/reference/cache-keys/) is answered without reaching the origin. |
-| cache setting | A set of caching rules an application owns: TTLs, stale cache, and cache key variations. A [cache setting](/en/documentation/build/cache/reference/cache-settings/) does nothing until a Rules Engine rule applies it to a request path. |
-| cache status | The result an edge node reports for the cache lookup of a request, such as HIT or MISS. The `X-Cache` header carries the [cache status](/en/documentation/build/cache/how-it-works/#cache-status). |
-| edge cache TTL | The amount of time content stays cached on Azion edge nodes. The [CDN Cache Settings](/en/documentation/build/cache/reference/cache-settings/#cdn-cache-settings) field sets it, and raising it cuts origin load. |
-| edge node | A server of Azion's distributed network that answers requests close to the end user. [Cache](/en/documentation/build/cache/how-it-works/) stores content on edge nodes, in a layer between the origin and the user. |
-| origin | The servers that hold the authoritative copy of your content. The edge node fetches content from the origin when the cache cannot answer, and on every revalidation. |
-| Real-Time Purge | The Cache feature that deletes cached content instantly, before its TTL expires, from Cache or Tiered Cache. Use [Real-Time Purge](/en/documentation/build/cache/reference/real-time-purge/) to serve the latest version after an origin update. |
-| stale cache | An expired cached object that edge nodes keep serving while revalidation with the origin fails or runs. [Stale cache](/en/documentation/build/cache/how-it-works/#stale-cache) avoids error pages during origin downtime. |
-| Thundering Herd control | The [origin protection](/en/documentation/build/cache/how-it-works/#origin-protection) that opens a single origin connection when simultaneous requests ask for the same non-cached object. Each edge node requests the object once per non-HIT status. |
-| Tiered Cache | A Cache module that creates an additional cache layer between the edge nodes and your origin servers. [Tiered Cache](/en/documentation/build/cache/tiered-cache/) reduces latency and infrastructure costs. |
-| TTL (time to live) | The amount of time a cached copy stays usable before it expires. The browser cache TTL and the edge cache TTL apply it at two layers. |
+| Adaptive Delivery | A [Cache Settings](/en/documentation/build/cache/reference/cache-settings/#adaptive-delivery) option that decides how an object varies by device. It serves one version to every device, or keeps a variation for each group created in [Device Groups](/en/documentation/build/applications/reference/device-groups/). |
+| Advanced Cache Key | A [Cache Settings](/en/documentation/build/cache/reference/cache-settings/#advanced-cache-key) section that varies the cache key by cookie or by query string. It requires the [Application Accelerator](/en/documentation/build/application-accelerator/) module, and both fields are case-sensitive. |
+| `azion-debug-cache` | The value of the `Pragma` request header that makes an edge node return its cache debug headers, including `X-Cache` and `X-Cache-Key`. To read them in a browser, refer to [Verify cache indicators in the browser](/en/documentation/build/cache/guides/check-page-cache-time/). |
+| Browser Cache Settings | The [Cache Settings](/en/documentation/build/cache/reference/cache-settings/#browser-cache-settings) section that sets how long the user's browser keeps an object. It honors the cache headers your origin sends, or overrides them with a maximum TTL. |
+| Bypass Cache | A [Rules Engine](/en/documentation/build/applications/reference/rules-engine/#bypass-cache) behavior that sends matching requests straight to the origin and caches no response. The browser cache is unaffected, and a matching request returns the `BYPASS` cache status. |
+| Cache | The [Applications](/en/documentation/build/applications/) module that stores your content on Azion edge nodes and controls how long each object stays there. Refer to [Cache](/en/documentation/build/cache/). |
+| Cache by Cookie | The [Advanced Cache Key](/en/documentation/build/cache/reference/cache-settings/#cache-by-cookie) option that varies the cache key by cookie name and value. It considers all cookies, no cookie, a list of cookies to consider, or a list to ignore. |
+| Cache by Query String | The [Advanced Cache Key](/en/documentation/build/cache/reference/cache-settings/#cache-by-query-string) option that decides which query string fields enter the cache key: all fields, no field, a list to consider, or a list to ignore. |
+| cache key | The index entry an edge node uses to store and find an object. The [default format](/en/documentation/build/cache/reference/cache-keys/#cache-key-format) concatenates the request scheme, host, path, query string, and any variation. Cache keys are case-sensitive. |
+| cache key purge | A [Real-Time Purge](/en/documentation/build/cache/reference/real-time-purge/#cache-key-purge) type that expires the cache keys you list. Each variation of an object has its own cache key, so a complete purge lists every one. |
+| cache policy | The expiration and variation rules a cache setting holds. A [Rules Engine](/en/documentation/build/applications/reference/rules-engine/) rule applies one to the requests it matches, through the Set Cache Policy behavior. To create one, refer to [Configure a cache policy](/en/documentation/build/cache/guides/cache-settings/). |
+| cache setting | The object that holds one cache policy. [Cache Settings](/en/documentation/build/cache/reference/cache-settings/) documents its fields: the expiration options, the Advanced Cache Key options, and the switches for Stale Cache, Adaptive Delivery, and Large File Optimization. |
+| cache status | The result of a cache lookup, returned in the `X-Cache` response header. Azion reports `HIT`, `MISS`, `EXPIRED`, `STALE`, `UPDATING`, `REVALIDATED`, and `BYPASS`. Content that is restricted from caching logs no status, and [How Cache works](/en/documentation/build/cache/how-it-works/#cache-status) defines each value. |
+| Caching HTTP Methods | The [Cache Settings](/en/documentation/build/cache/reference/cache-settings/#caching-http-methods) switches that extend caching beyond the `GET` and `HEAD` methods. Caching `POST` or `OPTIONS` adds an MD5 hash of the request body to the [cache key](/en/documentation/build/cache/reference/cache-keys/#cached-http-methods). |
+| CDN Cache Settings | The [Cache Settings](/en/documentation/build/cache/reference/cache-settings/#cdn-cache-settings) section that sets how long an object stays cached on Azion edge nodes. It honors the cache headers your origin sends, or overrides them with a maximum TTL. A TTL under 60 seconds requires the [Application Accelerator](/en/documentation/build/application-accelerator/) module. |
+| content variation | A separate copy of one URL, kept under its own cache key. A cookie, a query string, a device group, or an image format produces a variation, appended to the [cache key](/en/documentation/build/cache/reference/cache-keys/#cache-key-format) after the `@@` separator. |
+| edge node | A server on Azion's distributed network that answers requests and holds cached objects. When a [cache lookup](/en/documentation/build/cache/how-it-works/#cache-lookup) finds no valid copy, the edge node fetches the object from the origin. |
+| Honor Origin Cache Headers | The [Cache Settings](/en/documentation/build/cache/reference/cache-settings/#browser-cache-settings) option that keeps the `Cache-Control` and `Expires` headers your origin sends. It is available for the browser cache and for the CDN cache. |
+| Large File Optimization | The [Cache Settings](/en/documentation/build/cache/reference/cache-settings/#large-file-optimization) feature that splits a large file into fragments and caches each one on demand. The default fragment size is 1,024 kB, and every fragment carries its own cache key with a `@@bytes=` range. |
+| Override Cache Settings | The [Cache Settings](/en/documentation/build/cache/reference/cache-settings/#browser-cache-settings) option that ignores the cache headers your origin sends and applies the maximum TTL you enter. It is available for the browser cache and for the CDN cache. |
+| Query String Sort | The [Cache by Query String](/en/documentation/build/cache/reference/cache-settings/#cache-by-query-string) option that orders the query string fields alphabetically before the cache key is built. Field position then stops producing separate objects in cache. |
+| Real-Time Purge | The feature that expires cached objects before their TTL ends. [Real-Time Purge](/en/documentation/build/cache/reference/real-time-purge/) takes a list of URLs, a list of cache keys, or a wildcard expression. Purge the Tiered Cache layer first, so edge nodes do not refill from outdated content. |
+| Set Cache Policy | The [Rules Engine](/en/documentation/build/applications/reference/rules-engine/) behavior that applies a cache setting to the requests a rule matches. It also carries the browser cache policy, which [Bypass Cache](/en/documentation/build/applications/reference/rules-engine/#bypass-cache) does not affect. |
+| Stale Cache | The [Cache Settings](/en/documentation/build/cache/reference/cache-settings/#stale-cache) switch that serves an expired object when revalidation fails, such as on a 5xx response, a timeout, or an unreachable origin. During the stale window an edge node serves the expired copy and fetches a fresh one in the background. When the origin sends no `stale-while-revalidate` directive, the window is 300 seconds. |
+| Thundering Herd control | The mechanism that opens a single origin connection when many requests arrive for the same uncached object. Each edge node requests the object from the origin once per `MISS` or other non-`HIT` status. Refer to [How Cache works](/en/documentation/build/cache/how-it-works/#origin-protection). |
+| Tiered Cache | A Cache module that adds a second cache layer between the edge nodes and your origin servers. [Tiered Cache](/en/documentation/build/cache/tiered-cache/) needs a cache policy with a TTL of 3 seconds or more, and it is activated for an account on request. |
+| URL purge | A [Real-Time Purge](/en/documentation/build/cache/reference/real-time-purge/#url-purge) type that expires the URLs you list, without recursion. Azion converts each URL to its cache key, so content variations of the same URL stay in cache. |
+| wildcard purge | A [Real-Time Purge](/en/documentation/build/cache/reference/real-time-purge/#wildcard-purge) type that expires every object matching an expression such as `static.example.com/include/*.css`. It does not run on the Tiered Cache layer. |
+| `X-Cache` | The response header that carries the [cache status](/en/documentation/build/cache/how-it-works/#cache-status), the IP of the edge node, and the protocol of the request. An example value is `HIT from 192.0.2.10 with HTTP/2.0`. |
+| `X-Cache-Key` | The response header that carries the [cache key](/en/documentation/build/cache/reference/cache-keys/) of the object served. An example value is `httpsexample.com/resource-path/image.jpeg@@`. |
 
 </GlossaryFilter>

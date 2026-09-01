@@ -1,106 +1,157 @@
 ---
 title: Cache keys
 description: >-
-  Consulte o formato de cache key que a Azion gera para um objeto e as variações
-  por requisições complexas, formatos de imagem, device groups e fragmentos.
-meta_tags: >-
-  cache key, X-Cache-Key, cache variation, cache separator, edge cache, cache
+  Identifique como a Azion monta a cache key que indexa um objeto armazenado
+  e quais módulos acrescentam variações a ela.
+meta_tags: 'cache key, X-Cache-Key, cache key format, cache variation, Advanced Cache Key, cache key purge'
 namespace: documentation_build_cache_keys
-menu_namespace: cacheMenu
 permalink: /documentacao/build/cache/reference/cache-keys/
+menu_namespace: cacheMenu
 ---
 
-Uma cache key é uma entrada de índice para um objeto nos edge nodes da Azion. Quando uma requisição é feita para uma application pela primeira vez, o edge node encaminha a requisição para o servidor de origem e gera um cache para cada objeto recebido. Quando a próxima requisição do mesmo recurso é feita para a application, se o recurso solicitado corresponder a um já encontrado por meio da cache key, o edge node não encaminha a requisição para a origem.
+Uma cache key é a entrada de índice de um objeto armazenado pelo [Cache](/pt-br/documentacao/build/cache/) nos edge nodes da Azion. Quando uma requisição chega a uma aplicação pela primeira vez, o edge node a encaminha para o servidor de origem. Em seguida, ele gera uma entrada de cache para cada objeto recebido. Quando uma requisição posterior produz uma cache key que corresponde a uma entrada armazenada, o edge node responde a partir do cache. A requisição nunca chega ao servidor de origem.
 
-Para obter a cache key de qualquer recurso em uma application, faça uma requisição para a URI do conteúdo e adicione o cabeçalho de debug da Azion `Pragma: azion-debug-cache`. Uma resposta bem-sucedida retorna um cabeçalho `X-Cache-Key` com o valor da cache key:
-
-```bash
-X-Cache-Key: httpsseudominio.com/caminho-do-recurso/imagem.jpeg@@
-```
-
-:::note[nota]
-Para automatizar seu navegador e obter outros dados de cache, consulte [Como verificar indicadores de cache usando Modheader para Google Chrome](/pt-br/documentacao/build/cache/guides/verificar-tempo-de-cache-da-pagina/).
-:::
+Por padrão, a Azion trata cada URL como um objeto distinto em cache. [Application Accelerator](/pt-br/documentacao/build/application-accelerator/), [Image Processor](/pt-br/documentacao/build/image-processor/), [Device Groups](/pt-br/documentacao/build/applications/reference/device-groups/) e Large File Optimization acrescentam variações à cache key. Uma única URL pode então indexar vários objetos armazenados.
 
 ---
 
 ## Formato da cache key
 
-A Azion concatena os seguintes elementos de sintaxe da URI para formar a cache key padrão:
+O formato padrão da cache key concatena os seguintes elementos da URI da requisição, nesta ordem:
 
-- Schema da requisição
+- Scheme da requisição
 - Host
-- Path do recurso
+- Caminho para o recurso
 - Query strings
-- Um separador de variação e, quando implementadas, variações
+- Um separador de variação e, quando implementadas, as variações acrescentadas
 
-Um objeto com a URI `https://static.seudominio.com/pagina/site.js` gera a cache key `httpsstatic.seudominio.com/pagina/site.js`.
+Um objeto com a URI `https://static.example.com/page/site.js` gera a cache key `httpsstatic.example.com/page/site.js`. O scheme e o host são unidos diretamente, sem `://` entre eles.
 
-Cache keys são case-sensitive, o que significa que caracteres em maiúsculo e minúsculo são reconhecidos como distintos.
+As cache keys diferenciam maiúsculas de minúsculas, o que significa que caracteres maiúsculos e minúsculos são considerados distintos.
 
-Algumas cache keys mudam dependendo de variações geradas no edge node. Se variações forem habilitadas, a cache key pode conter o marcador `@@` no final, resultando em `httpsstatic.seudominio.com/pagina/site.js@@`.
+Algumas cache keys mudam conforme as variações geradas nos edge nodes da Azion. Quando as variações estão habilitadas, a cache key pode conter o separador `@@` no final, o que resulta em `httpsstatic.example.com/page/site.js@@`.
 
-## Requisições complexas
+## Variações da cache key
 
-Uma requisição complexa é qualquer método diferente de `GET` ou `HEAD`. Se o recurso é obtido usando uma requisição complexa, o método é adicionado no início da cache key.
+Cada variação acrescenta ao formato padrão da cache key em vez de substituí-lo. Um objeto pode ter várias cache keys ao mesmo tempo.
 
-Para uma requisição `OPTIONS`, a cache key gerada para um objeto é `optionshttpsstatic.seudominio.com/pagina`.
-
-## Variações do Image Processor
-
-Quando o [Image Processor](/pt-br/documentacao/build/image-processor/) está ativado, a cache key contém a query string `ims`. Variações com formato convertido também contêm o formato do arquivo após o separador.
-
-Para uma imagem redimensionada e convertida no formato `webp`, a cache key gerada é `httpsstatic.seudominio.com/static/imagens/imagem_1.jpg?ims=880x@@webp`.
-
-## Variações de Device Groups
-
-Se houver uma variação de objetos por [device groups](/pt-br/documentacao/build/applications/reference/device-groups/), o separador `@@` e o nome do device group são acrescentados ao final da cache key.
-
-Para uma aplicação que implementa variação pelo grupo `Mobile`, a cache key gerada é `httpwww.seudominio.com/@@Mobile`.
+| Variação | O que acrescenta à cache key | Requer |
+| --- | --- | --- |
+| Método da requisição | O método, no início da cache key | Nenhum |
+| Formato e processamento de imagem | O separador `?` com os argumentos de processamento, depois `@@` e o formato | Image Processor |
+| Grupo de dispositivos | `@@` e o nome do grupo de dispositivos | Device Groups, com Adaptive Delivery configurado para variar por grupo de dispositivos |
+| Cookie | `@@`, os nomes e valores dos cookies, depois `;` | Application Accelerator |
+| Query string | O separador de query e os argumentos selecionados | Application Accelerator |
+| Fragmento de arquivo | `@@bytes=` e o intervalo de bytes do fragmento | Large File Optimization |
+| Corpo da requisição | `@@` e o hash MD5 do corpo | Application Accelerator |
 
 ---
 
-## Variações de Advanced Cache Key
+## Requisições complexas
 
-Quando a funcionalidade [Advanced Cache Key](/pt-br/documentacao/build/application-accelerator/guides/advanced-cache-key/) está configurada, a formação das cache keys também é afetada.
+Uma requisição complexa é qualquer requisição cujo método não seja `GET` ou `HEAD`. Quando o recurso é obtido por meio de uma requisição complexa, o método é adicionado ao início da cache key.
 
-**Cache by Cookie** gera uma variação de cache key com os nomes e valores do cookie determinados seguidos por `;`. A variação de conteúdo com base no cookie `usuário` pode gerar as seguintes cache keys:
+Para uma requisição `OPTIONS`, a cache key gerada para um objeto é `optionshttpsstatic.example.com/page`.
 
-- `httpwww.seudominio.com/@@;`
-- `httpwww.seudominio.com/@@user=usuario;`
+## Image Processor
 
-**Cache by Query String** gera cache keys com o separador de consulta e os argumentos determinados, com base na ordem das query strings submetidas na requisição. A variação de conteúdo com base em `nome` e `cidade` pode gerar as seguintes cache keys:
+[Image Processor](/pt-br/documentacao/build/image-processor/) manipula imagens por meio da query string `ims`. Quando o módulo está ativo, a query string `ims` passa a fazer parte da cache key. Uma variação convertida para outro formato também carrega o formato do arquivo após o separador.
 
-- `httpstatic.seudominio.com/pagina?name=nome`
-- `httpstatic.seudominio.com/pagina?city=cidade&name=nome`
-- `httpstatic.seudominio.com/pagina?name=nome&city=cidade`
+A cache key de uma imagem processada contém o host, o caminho e o separador `?`. Em seguida, contém os pares chave-valor do tipo de processamento e o separador `@@` para a variação de formato de imagem que o navegador suporta.
 
-Para várias query strings, se **Query string sort** estiver ativado, as query strings são agrupadas sob a mesma cache key, ordenadas alfabeticamente.
+Uma imagem em `https://static.example.com/static/images/image.jpg` pode ter estas cache keys:
 
-## Variações de Large File Optimization
+- `httpsstatic.example.com/static/images/image.jpg@@`
+- `httpsstatic.example.com/static/images/image.jpg@@webp`
+- `httpsstatic.example.com/static/images/image.jpg?ims=88x@@`
+- `httpsstatic.example.com/static/images/image.jpg?ims=88x@@webp`
 
-Para objetos fragmentados, a cache key acrescenta o separador `@@bytes=` para cada fragmento de conteúdo.
+Image Processor lê o campo `ims`, portanto uma allowlist configurada em [Cache by Query String](/pt-br/documentacao/build/cache/reference/cache-settings/#cache-by-query-string) deve incluir `ims`.
 
-Para um arquivo de `2097151` bytes de tamanho, com Large File Optimization ativado, as cache keys geradas são:
+## Device Groups
 
-- `httpstatic.seudominio.com/midia/arquivo.mp4@@bytes=0-1048575`
-- `httpstatic.seudominio.com/midia/arquivo.mp4@@bytes=1048576-2097151`
+[Device Groups](/pt-br/documentacao/build/applications/reference/device-groups/) classifica requisições em grupos comparando o cabeçalho `User-Agent` com uma expressão regular. Quando um objeto varia por grupo de dispositivos, a cache key recebe o separador `@@` e o nome do grupo de dispositivos.
+
+Para uma aplicação que implementa uma variação para o grupo `Mobile`, a cache key gerada é `httpwww.example.com/@@Mobile`.
+
+As variações por dispositivo permanecem em cache apenas quando [Adaptive Delivery](/pt-br/documentacao/build/cache/reference/cache-settings/#adaptive-delivery) está configurado para variar por grupo de dispositivos.
+
+## Advanced Cache Key
+
+[Advanced Cache Key](/pt-br/documentacao/build/cache/reference/cache-settings/#advanced-cache-key) segmenta a cache key por cookies e por query strings. O módulo [Application Accelerator](/pt-br/documentacao/build/application-accelerator/) o habilita. Ambos os campos diferenciam maiúsculas de minúsculas: eles tratam letras maiúsculas e minúsculas de forma distinta ao armazenar objetos em cache.
+
+**Cache by Cookie** gera uma variação de cache key com os nomes e valores de cookie determinados, seguidos de `;`. A variação de conteúdo baseada no cookie `user` pode gerar estas cache keys:
+
+- `httpwww.example.com/@@;`
+- `httpwww.example.com/@@user=user;`
+
+**Cache by Query String** gera cache keys com o separador de query e os argumentos determinados. A ordem segue as query strings enviadas na requisição. A variação de conteúdo baseada em `name` e `city` pode gerar estas cache keys:
+
+- `httpstatic.example.com/page?name=name`
+- `httpstatic.example.com/page?city=city&name=name`
+- `httpstatic.example.com/page?name=name&city=city`
+
+Quando **Query string sort** está habilitado, várias query strings são agrupadas sob a mesma cache key e ordenadas alfabeticamente. A posição dos campos na requisição deixa então de afetar a cache key.
+
+## Large File Optimization
+
+[Large File Optimization](/pt-br/documentacao/build/cache/reference/cache-settings/#large-file-optimization) divide um arquivo grande em fragmentos e cada fragmento carrega uma cache key diferente. Para um objeto fragmentado, a cache key acrescenta o separador `@@bytes=` para cada parte do conteúdo.
+
+Para um arquivo de `2097151` bytes, as cache keys geradas são:
+
+- `httpstatic.example.com/media/file.mp4@@bytes=0-1048575`
+- `httpstatic.example.com/media/file.mp4@@bytes=1048576-2097151`
+
+O tamanho padrão do fragmento é 1.024 kB, portanto o número de cache keys cresce com o tamanho do arquivo.
 
 ## Métodos HTTP em cache
 
-Para requisições `POST` ou `OPTIONS` em cache com corpo, a cache key acrescenta o separador `@@` seguido pelo hash MD5 do corpo da requisição.
+Por padrão, a Azion armazena em cache apenas requisições `GET` e `HEAD`. O módulo [Application Accelerator](/pt-br/documentacao/build/application-accelerator/) adiciona o cache de requisições `POST` e `OPTIONS`, e ambas as opções exigem que o corpo da requisição faça parte da cache key.
 
-Por exemplo:
+Para uma requisição `POST` ou `OPTIONS` armazenada em cache, a cache key acrescenta o separador `@@` seguido do hash MD5 do corpo da requisição:
 
-- `httpsdynamic.seudominio.com/caminho@@md5_dos_argumentos_post`
-- `httpsdynamic.seudominio.com/caminho@@md5_dos_argumentos_options`
+- `httpsdynamic.example.com/path@@md5_of_post_arguments`
+- `httpsdynamic.example.com/path@@md5_of_options_arguments`
+
+Para ativar o cache desses métodos, consulte [Cache de métodos HTTP](/pt-br/documentacao/build/cache/reference/cache-settings/#cache-de-metodos-http).
+
+---
+
+## Cabeçalhos da cache key
+
+Uma aplicação retorna a cache key do objeto que serviu. Solicite a URI do conteúdo com o cabeçalho de debug da Azion `Pragma: azion-debug-cache` e a resposta traz o cabeçalho `X-Cache-Key` com o valor da cache key:
+
+```bash
+X-Cache-Key: httpsexample.com/resource-path/image.jpeg@@
+```
+
+| Cabeçalho | Valor |
+| --- | --- |
+| `X-Cache-Key` | Cache key do objeto |
+| `X-Cache-File` | Arquivo de cache do objeto, composto pelo MD5 da cache key |
+
+A Azion gera a cache key quando a resposta da origem é armazenada no edge node e a adiciona ao cabeçalho `X-Cache-Key` da resposta. O mesmo valor é registrado como o campo `Cache Key` em Real-Time Events e como `cacheKey` na API GraphQL.
+
+Para ler esses cabeçalhos em um navegador, consulte [Verifique indicadores de cache no navegador](/pt-br/documentacao/build/cache/guides/verificar-tempo-de-cache-da-pagina/).
+
+## Purge por cache key
+
+[Real-Time Purge](/pt-br/documentacao/build/cache/reference/real-time-purge/) aceita uma lista de cache keys como argumento. Cada cache key expira uma variação de um objeto, portanto expirar todas as variações exige listar todas as cache keys. Uma [purge por wildcard](/pt-br/documentacao/build/cache/reference/real-time-purge/#purge-por-wildcard) cobre todas elas em uma única requisição: `@@*` no final corresponde às variações por cookie e `?*` no final corresponde às variações por query string.
+
+Uma [purge por URL](/pt-br/documentacao/build/cache/reference/real-time-purge/#purge-por-url) converte cada URL em sua cache key sem considerar a variação de conteúdo na mesma URL.
+
+:::caution[Atenção]
+Variações de conteúdo baseadas em cookies, grupos de dispositivos ou formato de imagem não expiram com um purge por URL. Use um purge por cache key ou um purge por wildcard para esses objetos.
+:::
+
+Um purge aceita uma URL ou cache key de até 4.096 caracteres. [Azion CLI](/pt-br/documentacao/products/azion-cli/overview/) recebe a lista por meio da flag `--cachekey`.
 
 ---
 
 ## Recursos relacionados
 
-- [Cache](/pt-br/documentacao/build/cache/) - o módulo que controla como uma application faz cache de conteúdo.
-- [Como o Cache funciona](/pt-br/documentacao/build/cache/como-funciona/) - o que cada status de cache significa e quando o edge node o retorna.
-- [Cache settings](/pt-br/documentacao/build/cache/reference/cache-settings/) - os campos que definem o comportamento de cache de uma application.
-- [Advanced Cache Key](/pt-br/documentacao/build/application-accelerator/guides/advanced-cache-key/) - como configurar variações de cache key por cookie e query string.
-- [Application Accelerator](/pt-br/documentacao/build/application-accelerator/) - o módulo que fornece o Advanced Cache Key.
+- [Como o Cache funciona](/pt-br/documentacao/build/cache/como-funciona/) - a busca que compara uma requisição com as cache keys armazenadas.
+- [Cache Settings](/pt-br/documentacao/build/cache/reference/cache-settings/) - os campos que configuram cada variação desta página.
+- [Real-Time Purge](/pt-br/documentacao/build/cache/reference/real-time-purge/) - os argumentos e limites para fazer purge por cache key.
+- [Como configurar a Advanced Cache Key para Applications](/pt-br/documentacao/build/application-accelerator/guides/advanced-cache-key/) - os passos que segmentam a cache key por cookie ou query string.
+- [Verifique indicadores de cache no navegador](/pt-br/documentacao/build/cache/guides/verificar-tempo-de-cache-da-pagina/) - a configuração do navegador que mostra o cabeçalho `X-Cache-Key`.
