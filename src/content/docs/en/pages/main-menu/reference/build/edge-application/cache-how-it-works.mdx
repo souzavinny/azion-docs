@@ -20,15 +20,13 @@ An edge node identifies an object by its cache key, so two requests match the sa
 An edge node runs the same sequence for every request an application receives:
 
 ```mermaid
-flowchart TD
-  A[Client sends a request] --> B[Rules Engine runs the request phase]
-  B --> C{Does a cache key match on the edge node?}
-  C -- Match found --> D[Edge node serves the object from cache]
-  C -- No match --> E[Edge node fetches the object from the origin server]
-  E --> F[Edge node stores the object and generates its cache key]
-  D --> G[Rules Engine runs the response phase]
-  F --> G
-  G --> H[Edge node delivers the response to the client]
+%%{init: {'look':'neo','theme':'base','themeVariables':{'primaryBorderColor':'#F3652B'}}}%%
+flowchart LR
+  A[Client request] --> B{Cache key match?}
+  B -- Match --> C[Serve from cache]
+  B -- No match --> D[Fetch from origin]
+  D --> E[Store object and key]
+  E --> C
 ```
 
 [Rules Engine](/en/documentation/build/applications/reference/rules-engine/) processes the request phase first, where a rule can set the cache policy that applies to the request. The edge node then builds the cache key and looks for a matching object. A match is delivered straight from cache. Without a match, the edge node forwards the request to the origin server and stores the response. It also generates a cache key for the new object and returns it in the `X-Cache-Key` header. Rules Engine processes the response phase before the object reaches the client.
@@ -100,12 +98,13 @@ An expired object becomes eligible for reuse when a revalidation attempt fails. 
 The stale window then decides whether the expired copy can still answer:
 
 ```mermaid
-flowchart TD
-  A[Object on the edge node expires] --> B[Edge node revalidates with the origin server]
-  B -- Revalidation succeeds --> C[Edge node stores and serves the fresh object]
-  B -- Revalidation fails --> D{Is the stale window still open?}
-  D -- Window open --> E[Edge node serves the expired copy and refreshes in the background]
-  D -- Window closed --> F[Edge node cannot answer the request from cache]
+%%{init: {'look':'neo','theme':'base','themeVariables':{'primaryBorderColor':'#F3652B'}}}%%
+flowchart LR
+  A[Object expires] --> B[Revalidate with origin]
+  B -- Succeeds --> C[Serve fresh object]
+  B -- Fails --> D{Stale window open?}
+  D -- Open --> E[Serve stale, refresh later]
+  D -- Closed --> F[No cached answer]
 ```
 
 The length of the stale window comes from the `stale-while-revalidate` directive. Under _Honor Origin Cache Headers_, an origin that supplies `stale-while-revalidate=<ttl>` defines how long the object may be served stale. Under _Override Cache Settings_, or when the origin omits the directive, Azion assigns a default stale window of 300 seconds, or 5 minutes.

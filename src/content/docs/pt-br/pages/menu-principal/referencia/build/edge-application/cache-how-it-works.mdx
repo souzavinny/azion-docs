@@ -20,15 +20,13 @@ Um edge node identifica um objeto pela cache key, portanto duas requisições co
 Um edge node executa a mesma sequência para cada requisição que uma aplicação recebe:
 
 ```mermaid
-flowchart TD
-  A[Cliente envia uma requisição] --> B[Rules Engine executa a fase de request]
-  B --> C{Alguma cache key corresponde no edge node?}
-  C -- Correspondência encontrada --> D[Edge node entrega o objeto a partir do cache]
-  C -- Sem correspondência --> E[Edge node busca o objeto no servidor de origem]
-  E --> F[Edge node armazena o objeto e gera sua cache key]
-  D --> G[Rules Engine executa a fase de response]
-  F --> G
-  G --> H[Edge node entrega a resposta ao cliente]
+%%{init: {'look':'neo','theme':'base','themeVariables':{'primaryBorderColor':'#F3652B'}}}%%
+flowchart LR
+  A[Requisição do cliente] --> B{Cache key corresponde?}
+  B -- Corresponde --> C[Entrega do cache]
+  B -- Sem correspondência --> D[Busca na origem]
+  D --> E[Armazena objeto e key]
+  E --> C
 ```
 
 [Rules Engine](/pt-br/documentacao/build/applications/reference/rules-engine/) processa primeiro a fase de request, na qual uma regra pode definir a política de cache que se aplica à requisição. O edge node então constrói a cache key e procura um objeto correspondente. Quando há correspondência, o objeto é entregue direto do cache. Sem correspondência, o edge node encaminha a requisição ao servidor de origem e armazena a resposta. Ele também gera uma cache key para o novo objeto e a retorna no cabeçalho `X-Cache-Key`. Rules Engine processa a fase de response antes de o objeto chegar ao cliente.
@@ -100,12 +98,13 @@ Um objeto expirado se torna elegível para reuso quando uma tentativa de revalid
 A janela de stale então decide se a cópia expirada ainda pode responder:
 
 ```mermaid
-flowchart TD
-  A[Objeto no edge node expira] --> B[Edge node revalida com o servidor de origem]
-  B -- Revalidação bem-sucedida --> C[Edge node armazena e entrega o objeto novo]
-  B -- Revalidação falha --> D{A janela de stale continua aberta?}
-  D -- Janela aberta --> E[Edge node entrega a cópia expirada e atualiza em segundo plano]
-  D -- Janela fechada --> F[Edge node não consegue responder a requisição a partir do cache]
+%%{init: {'look':'neo','theme':'base','themeVariables':{'primaryBorderColor':'#F3652B'}}}%%
+flowchart LR
+  A[Objeto expira] --> B[Revalida com a origem]
+  B -- Sucesso --> C[Entrega objeto novo]
+  B -- Falha --> D{Janela de stale aberta?}
+  D -- Aberta --> E[Entrega stale, atualiza depois]
+  D -- Fechada --> F[Sem resposta do cache]
 ```
 
 A duração da janela de stale vem da diretiva `stale-while-revalidate`. Com _Honor Origin Cache Headers_, uma origem que fornece `stale-while-revalidate=<ttl>` define por quanto tempo o objeto pode ser entregue stale. Com _Override Cache Settings_, ou quando a origem omite a diretiva, Azion atribui uma janela de stale padrão de 300 segundos, ou 5 minutos.

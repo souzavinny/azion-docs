@@ -39,11 +39,36 @@
 
 		try {
 			if (!mermaid) mermaid = (await import('mermaid')).default;
+			// A diagram may pin its own look and accent colour with an %%{init}%%
+			// directive, but a directive is static and cannot answer the colour
+			// mode. Fills, text and edges are supplied here so the same diagram
+			// pairs with light and dark; a directive still wins for what it sets.
 			mermaid.initialize({
 				startOnLoad: false,
-				theme: isDark() ? 'dark' : 'default',
+				theme: 'base',
 				securityLevel: 'strict',
 				flowchart: { useMaxWidth: true },
+				themeVariables: isDark()
+					? {
+							background: 'transparent',
+							mainBkg: '#1a1a1a',
+							primaryColor: '#1a1a1a',
+							secondaryColor: '#1a1a1a',
+							tertiaryColor: '#1a1a1a',
+							primaryTextColor: '#f2f2f2',
+							textColor: '#d0d0d0',
+							lineColor: '#8f8f8f',
+						}
+					: {
+							background: 'transparent',
+							mainBkg: '#ffffff',
+							primaryColor: '#ffffff',
+							secondaryColor: '#ffffff',
+							tertiaryColor: '#ffffff',
+							primaryTextColor: '#1a1a1a',
+							textColor: '#333333',
+							lineColor: '#5a5a5a',
+						},
 			});
 			await mermaid.run({ nodes: blocks });
 		} catch (error) {
@@ -81,6 +106,8 @@
 	}
 
 	pre.mermaid svg {
+		display: block;
+		margin-inline: auto;
 		max-width: 100%;
 		height: auto;
 	}
