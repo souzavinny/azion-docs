@@ -1,0 +1,85 @@
+---
+title: Functions limits
+description: >-
+  Consult the default Functions limits for CPU time, memory, code size, request
+  data, and configuration, including the body size on each plan.
+meta_tags: 'Functions, limits, default limits, CPU time, execution time, memory, code size, body size, sub-requests, environment variables'
+namespace: documentation_build_functions_limits
+permalink: /documentation/build/functions/limits/
+menu_namespace: functionsMenu
+---
+
+These are the default limits for a function that runs on Azion Runtime. They govern how long a function runs, how much memory and code it holds, and how much request and configuration data it processes.
+
+:::tip[Increase limits]
+You can request an increase to the limits on your plan. Contact the [technical support team](/en/documentation/services/support/) to request a higher limit.
+:::
+
+---
+
+## Execution limits
+
+Execution limits cap the time one function invocation consumes. Azion measures CPU time and wall-clock time separately, so a function that waits on `fetch()` calls spends wall-clock time without spending CPU time. A function that exceeds the CPU time limit is terminated.
+
+| Limit | Default | Description |
+| --- | --- | --- |
+| CPU execution time | 2 seconds | Maximum CPU time one invocation consumes. It measures active computation time, not wall-clock time. |
+| Execution time | 5 minutes | Maximum wall-clock time for one invocation, including I/O wait, `fetch()` calls, and asynchronous operations. |
+| Cold start | 2 seconds | Maximum time a function takes to initialize before it handles its first request. |
+
+---
+
+## Memory and code size limits
+
+Memory and code size limits apply to the function itself rather than to the traffic it handles. Memory covers everything one execution context allocates, so the heap, the stack, and every other runtime allocation count against the same 512 MB. Code size depends on the interface you deploy from: Azion Console accepts a smaller source file than Azion API.
+
+| Limit | Default | Description |
+| --- | --- | --- |
+| Memory per isolate | 512 MB | Maximum memory available to one function execution context (V8 isolate). It covers the heap, the stack, and all runtime allocations. |
+| Code size in Azion Console | 6 MB | Maximum size of the function source code created or edited in Azion Console. |
+| Code size in Azion API | 20 MB | Maximum size of the function source code deployed through Azion API. |
+
+---
+
+## Request and response limits
+
+Request and response limits bound the data one function reads and writes during an invocation. The URL and header limits apply to the request a function processes, and the sub-request limit applies to its outbound `fetch()` calls. The body limit applies to both the request body and the response body, and its value depends on your service plan.
+
+| Limit | Default | Description |
+| --- | --- | --- |
+| URL size | 16 KB | Maximum size of the request URL a function processes, including the path and the query string. |
+| Header size | 64 KB | Maximum total size of all HTTP request headers combined that a function reads or writes. |
+| Sub-requests | 50 sub-requests | Maximum number of outbound `fetch()` calls a function makes during one invocation. |
+
+### Body size by plan
+
+The body size limit is the only Functions limit that changes with the service plan. It sets the maximum size of the HTTP request or response body a function processes.
+
+| Plan | Body size |
+| --- | --- |
+| Developer | 100 MB |
+| Business | 200 MB |
+| Enterprise and Mission Critical | 500 MB |
+
+---
+
+## Configuration limits
+
+Configuration limits cover the data you attach to a function rather than the code it runs. JSON args carry the values a function reads from `event.args`, so a change of behavior does not require a change to the code. An args object above the limit makes the function fail at instantiation. Environment variables hold configuration settings and sensitive values, and a function reads them with `Azion.env.get()`.
+
+| Limit | Default | Description |
+| --- | --- | --- |
+| Arguments | 100 KB | Maximum size of the JSON args object passed to a function instance. |
+| Environment variable size | 32 KB | Maximum total size of all environment variables combined for one function. |
+| Environment variables per account | 100 variables | Maximum number of environment variables defined in one account. |
+
+---
+
+## Related resources
+
+- [How Functions works](/en/documentation/build/functions/how-it-works/) - the execution model these limits apply to.
+- [Functions Instances](/en/documentation/build/functions/reference/functions-instances/) - how you instantiate a function in an application and set its JSON args.
+- [Environment variables](/en/documentation/products/functions/environment-variables/) - how to define and read the variables these limits size.
+- [Azion Runtime](/en/documentation/runtime/overview/) - the runtime that functions execute on.
+- [Pricing](/en/documentation/platform/pricing/#functions) - the compute time and invocation charges that apply to functions.
+- [Support](/en/documentation/services/support/) - contact the technical support team to request a limit increase.

@@ -1,52 +1,146 @@
 ---
 title: Functions Instances
 description: >-
-  Instantiate and execute the functions in your application directly at the
-  edge.
-meta_tags: 'funcions, edge, edge nodes, application'
+  Configure function instances that link a function to an application, set
+  their JSON arguments, and trigger them from Rules Engine.
+meta_tags: 'functions, function instance, args, Rules Engine, Run Function, Applications, Firewall'
 namespace: documentation_products_edge_applications_edge_functions_instances
-menu_namespace: functionsMenu
 permalink: /documentation/build/functions/reference/functions-instances/
+menu_namespace: functionsMenu
 ---
-import LinkButton from 'azion-webkit/linkbutton';
 
-**Functions** for **Applications** enables you to instantiate serverless functions within your Azion application, while also configuring execution conditions. These functions are processed close to your users, responding to events with remarkable speed, thus ensuring superior scalability and availability.
+A function instance is the link between a function and the application or firewall that runs it. The function holds the code. The instance holds the name, the arguments, and the association with one application or one firewall. A rule in [Rules Engine](/en/documentation/build/applications/reference/rules-engine/) selects the instance and decides which requests invoke it.
 
-> Functions are also available for [Firewall](/en/documentation/secure/firewall/reference/functions-instances/).
+## Functions and their instances
 
-## Implementation
+A function created in [Functions](/en/documentation/build/functions/) exists on its own, outside any application. The function is your own code or one that Azion Marketplace provides. Instantiating it creates a second object that names the function, carries its own arguments, and belongs to one application. The code of the function cannot be changed during instantiation, and the arguments are the only values the instance sets. One function can therefore run in several applications, with different arguments in each one.
 
-| Scope | Resource |
+An application runs an instance only after the **Functions** module is turned on for that application.
+
+:::caution
+When the **Functions** module is active, computing time and invocations can generate usage costs. Refer to [Pricing](/en/documentation/platform/pricing/#functions).
+:::
+
+## Instance fields
+
+A function instance carries the fields below. The **API key** column names the field as Azion API sends and receives it.
+
+| Field | API key | Description |
+| --- | --- | --- |
+| Name | `name` | The name of the instance. It identifies the instance in the **Functions Instances** tab and in the **Run Function** behavior. |
+| Function | `edge_function` | The ID of the function the instance runs. It is not the ID of the instance. |
+| Arguments | `args` | The JSON object passed to the execution context of the function. Some functions take no arguments. Maximum 100 KB. |
+| Status | `active` | The status of the instance, `true` or `false`. |
+| ID | `id` | The ID of the instance. It is unique for each function instance of an application. |
+| Last editor | `last_editor` | The email address of the account that last saved the instance. |
+| Last modified | `last_modified` | The timestamp of the last change to the instance. |
+
+## JSON arguments
+
+Arguments are a JSON object that Azion passes to the execution context of the function when the instance runs. In the Service Worker pattern, the function reads one value as a property of `event.args`, such as `event.args.desiredArg`. Arguments change the behavior of a function without a change to its code, so one function can serve several instances with different settings. Some functions take no arguments, and their instances keep an empty object.
+
+The **Args** field of an instance accepts at most 100 KB.
+
+## Argument defaults and overrides
+
+A function defines default arguments, and every instance of that function starts from them. The instance defines its own arguments on top, and the merge happens key by key. A key that the instance sets replaces the default. Otherwise, the default value stays.
+
+Default arguments on the function:
+
+```json
+{
+  "threshold": 100,
+  "action": "deny",
+  "log_level": "info"
+}
+```
+
+Arguments on the instance:
+
+```json
+{
+  "threshold": 50,
+  "action": "block"
+}
+```
+
+Arguments the function receives when the instance runs:
+
+```json
+{
+  "threshold": 50,
+  "action": "block",
+  "log_level": "info"
+}
+```
+
+The instance replaces `threshold` and `action`. The key `log_level` keeps the value from the function definition.
+
+---
+
+## Run Function behavior
+
+A function instance stays idle until a rule invokes it. In [Rules Engine](/en/documentation/build/applications/reference/rules-engine/), a rule pairs criteria with behaviors, and the **Run Function** behavior names one instance. When a request matches the criteria of the rule, the instance runs on Azion edge nodes. The rule also sets the phase in which the function executes. A request-phase rule runs the instance.
+
+In Azion API, the behavior takes the ID of the instance as its value:
+
+```json
+{
+  "type": "run_function",
+  "attributes": { "value": <your-instance-id> }
+}
+```
+
+An instance with no rule that names it never runs, even when its status is `true`.
+
+## Instances on applications and on firewalls
+
+A function instance belongs either to one application in [Applications](/en/documentation/build/applications/) or to one firewall in [Firewall](/en/documentation/secure/firewall/). The two are separate objects, held in separate lists.
+
+| | On an application | On a firewall |
+| --- | --- | --- |
+| Where the module is turned on | The application | The firewall |
+| Where the instance is created | The **Functions Instances** tab of the application | The **Functions Instances** tab of the firewall |
+| Rule that runs the instance | A Rules Engine rule of the application | A request-phase Rules Engine rule of the firewall |
+
+Arguments, the override behavior, and the 100 KB limit work the same in both places. Azion Marketplace security functions such as Bot Manager Lite, Secure Token, and JWT run as firewall instances. For the firewall side, refer to [Functions for Firewall](/en/documentation/secure/firewall/reference/functions/) and [Functions Instances for Firewall](/en/documentation/secure/firewall/reference/functions-instances/).
+
+---
+
+## Interfaces
+
+You create and manage the function instances of an application in [Azion Console](https://console.azion.com/) and with the [Azion API](https://api.azion.com/). In Azion Console, the instances of an application are on its **Functions Instances** tab. The rule that runs them is on the **Rules Engine** tab. To create an instance step by step, refer to [Instantiate functions](/en/documentation/build/functions/guides/instantiate-functions/).
+
+These are the API requests that turn on the module, create an instance, and run it. Every path is relative to `https://api.azion.com`.
+
+| Operation | Request |
 | --- | --- |
-| Applications first steps | [First steps](/en/documentation/build/applications/quickstart/) |
-| Instantiating a function | [How to run serverless functions on Azion Console](/en/documentation/build/functions/guides/serverless-functions/) |
+| Turn on the **Functions** module | `PATCH /v4/edge_application/applications/<your-application-id>` |
+| List the functions available to instantiate | `GET /v4/edge_functions/functions` |
+| Create an instance | `POST /v4/edge_application/applications/<your-application-id>/functions` |
+| Create the rule that runs the instance | `POST /v4/edge_application/applications/<your-application-id>/request_rules` |
 
----
+The API answers a create request with `"state": "pending"`. The instance and its rule reach Azion edge nodes a few minutes later.
 
-## Function instance
-
-To instantiate an function in your application, you must first create one using **Functions**. Once the function is saved, you can proceed with the instantiation for your applications.
-
-During the instantiation process, the function's code can't be modified. Instead, the arguments, or **Args**, that will be passed to the context of the function's execution in JSON format must be informed.
-
-<LinkButton link="/en/documentation/build/functions/" label="Learn more about Functions" />
-
----
-
-## Run Function
-
-You can create a rule using **Rules Engine** and, with the **Run Function** behavior, select the execution phase and the criteria that will trigger the rule. When a request meets the defined criteria in the rule, the function will be invoked and executed directly in Azion's edge nodes.
-
-<LinkButton link="/en/documentation/build/applications/reference/rules-engine/#run-function" label="Learn more about the Run Function behavior" />
-
-For further information on implementing functions, explore the [guides page](/en/documentation/guides/).
-
----
+The [Azion CLI](/en/documentation/products/azion-cli/overview/) and the [Terraform Provider](/en/documentation/products/terraform-provider/) manage functions.
 
 ## Limits
 
-The **Args** field supports a maximum of 100KB of arguments.
+The **Args** field of a function instance accepts at most 100 KB of arguments. An instance with a larger arguments object fails at instantiation.
 
+The remaining limits apply to the function rather than to the instance: memory, code size, execution time, cold start, and sub-requests. Refer to [Functions limits](/en/documentation/build/functions/limits/) for the values.
 
+:::tip
+You can request an increase of the limits based on your plan. Contact the [technical support team](/en/documentation/services/support/) to request it.
+:::
 
+---
 
+## Related resources
+
+- [Functions](/en/documentation/build/functions/) - the product that holds the function code and the module an application turns on.
+- [How Functions works](/en/documentation/build/functions/how-it-works/) - how Functions executes code on Azion edge nodes.
+- [Instantiate functions](/en/documentation/build/functions/guides/instantiate-functions/) - the steps that create an instance and the rule that runs it.
+- [Rules Engine](/en/documentation/build/applications/reference/rules-engine/) - the criteria and behaviors a rule accepts, including **Run Function**.
+- [Functions Instances for Firewall](/en/documentation/secure/firewall/reference/functions-instances/) - the same object on a firewall.
+- [Functions limits](/en/documentation/build/functions/limits/) - the memory, code size, and execution limits of a function.

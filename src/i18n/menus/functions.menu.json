@@ -24,19 +24,91 @@
      }
     },
     {
-     "key": "fn/reference/functions-instances",
+     "key": "fn/quickstart",
      "label": {
-      "en": "Functions Instances"
+      "en": "Quickstart",
+      "pt-br": "Quickstart"
      },
      "slug": {
-      "en": "/documentation/build/functions/reference/functions-instances/",
-      "pt-br": "/documentacao/build/functions/reference/functions-instances/"
+      "en": "/documentation/build/functions/quickstart/"
      }
+    },
+    {
+     "key": "fn/how-it-works",
+     "label": {
+      "en": "How it works",
+      "pt-br": "Como funciona"
+     },
+     "slug": {
+      "en": "/documentation/build/functions/how-it-works/"
+     }
+    },
+    {
+     "key": "fn/code-editor",
+     "label": {
+      "en": "Functions Code Editor",
+      "pt-br": "Functions Code Editor"
+     },
+     "slug": {
+      "en": "/documentation/get-started/frameworks/code-editor/",
+      "pt-br": "/documentacao/build/applications/guides/code-editor/"
+     }
+    },
+    {
+     "key": "fn/guides-hub",
+     "label": {
+      "en": "Guides and tutorials",
+      "pt-br": "Guias e tutoriais"
+     },
+     "slug": {
+      "en": "/documentation/build/functions/guides/"
+     },
+     "covers": {
+      "en": [
+       "/documentation/build/functions/guides/",
+       "/documentation/get-started/frameworks/javascript/"
+      ],
+      "pt-br": [
+       "/documentacao/build/functions/guides/",
+       "/documentacao/build/applications/guides/javascript/"
+      ]
+     }
+    },
+    {
+     "key": "fn/reference",
+     "label": {
+      "en": "Reference",
+      "pt-br": "Referência"
+     },
+     "items": [
+      {
+       "key": "fn/reference/handlers",
+       "label": {
+        "en": "Handlers",
+        "pt-br": "Handlers"
+       },
+       "slug": {
+        "en": "/documentation/build/functions/reference/handlers/"
+       }
+      },
+      {
+       "key": "fn/reference/functions-instances",
+       "label": {
+        "en": "Functions Instances",
+        "pt-br": "Functions Instances"
+       },
+       "slug": {
+        "en": "/documentation/build/functions/reference/functions-instances/",
+        "pt-br": "/documentacao/build/functions/reference/functions-instances/"
+       }
+      }
+     ]
     },
     {
      "key": "fn/azion-runtime",
      "label": {
-      "en": "Azion Runtime"
+      "en": "Azion Runtime",
+      "pt-br": "Azion Runtime"
      },
      "slug": {
       "en": "/documentation/runtime/overview/",
@@ -45,208 +117,51 @@
      "linkOnly": true
     },
     {
-     "key": "fn/code-editor",
+     "key": "fn/glossary",
      "label": {
-      "en": "Functions Code Editor Overview",
-      "pt-br": "Visão geral do Functions Code Editor"
+      "en": "Glossary",
+      "pt-br": "Glossário"
      },
      "slug": {
-      "en": "/documentation/get-started/frameworks/code-editor/",
-      "pt-br": "/documentacao/build/applications/guides/code-editor/"
+      "en": "/documentation/build/functions/glossary/"
      }
     },
     {
-     "key": "fn/guides",
+     "key": "fn/management",
      "label": {
-      "en": "Guides",
-      "pt-br": "Guias"
+      "en": "Management",
+      "pt-br": "Gerenciamento"
      },
      "items": [
       {
-       "key": "fn/gd/javascript",
+       "key": "fn/limits",
        "label": {
-        "en": "How to build functions",
-        "pt-br": "Como escrever functions"
+        "en": "Limits",
+        "pt-br": "Limites"
        },
        "slug": {
-        "en": "/documentation/get-started/frameworks/javascript/",
-        "pt-br": "/documentacao/build/applications/guides/javascript/"
+        "en": "/documentation/build/functions/limits/"
        }
       },
       {
-       "key": "fn/gd/get-started",
+       "key": "fn/pricing",
        "label": {
-        "en": "Get Started With OpenNext",
-        "pt-br": "Comece com o OpenNext"
+        "en": "Pricing",
+        "pt-br": "Preços"
        },
        "slug": {
-        "en": "/documentation/build/functions/guides/get-started/",
-        "pt-br": "/documentacao/build/functions/guides/como-comecar/"
+        "en": "https://www.azion.com/en/documentation/products/pricing/#functions",
+        "pt-br": "https://www.azion.com/pt-br/documentacao/produtos/precos/#functions"
        }
       },
       {
-       "key": "fn/gd/instantiate-functions",
+       "key": "fn/changelog",
        "label": {
-        "en": "How to instantiate functions in your application",
-        "pt-br": "Como instanciar functions em sua aplicação"
+        "en": "Changelog"
        },
        "slug": {
-        "en": "/documentation/build/functions/guides/instantiate-functions/",
-        "pt-br": "/documentacao/build/functions/guides/instanciar-functions/"
-       }
-      },
-      {
-       "key": "fn/gd/serverless-functions",
-       "label": {
-        "en": "How to run serverless functions on Azion",
-        "pt-br": "Como executar funções serverless na Azion"
-       },
-       "slug": {
-        "en": "/documentation/build/functions/guides/serverless-functions/",
-        "pt-br": "/documentacao/build/functions/guides/funcoes-serverless/"
-       }
-      },
-      {
-       "key": "fn/gd/webassembly-on-azion-platform",
-       "label": {
-        "en": "Create a Function with WebAssembly",
-        "pt-br": "Crie uma function com WebAssembly na Azion"
-       },
-       "slug": {
-        "en": "/documentation/build/functions/guides/webassembly-on-azion-platform/",
-        "pt-br": "/documentacao/build/functions/guides/webassembly-na-plataforma-azion/"
-       }
-      },
-      {
-       "key": "fn/gd/api-builder",
-       "label": {
-        "en": "How to build an API with Functions and ChatGPT",
-        "pt-br": "Como criar uma API com Functions e ChatGPT"
-       },
-       "slug": {
-        "en": "/documentation/build/functions/guides/api-builder/",
-        "pt-br": "/documentacao/build/functions/guides/api-builder/"
-       }
-      },
-      {
-       "key": "fn/gd/restful-tasks-api-functions",
-       "label": {
-        "en": "Build a RESTful API with Functions & SQL",
-        "pt-br": "Crie uma API RESTful com Functions e SQL"
-       },
-       "slug": {
-        "en": "/documentation/build/functions/guides/restful-tasks-api-functions/",
-        "pt-br": "/documentacao/build/functions/guides/api-restful-edge-functions-edge-sql/"
-       }
-      },
-      {
-       "key": "fn/gd/browserless-functions",
-       "label": {
-        "en": "How to build a browserless application with Functions",
-        "pt-br": "Como construir uma aplicação browserless com Functions"
-       },
-       "slug": {
-        "en": "/documentation/build/functions/guides/browserless-functions/",
-        "pt-br": "/documentacao/build/functions/guides/aplicacao-browserless-functions/"
-       }
-      },
-      {
-       "key": "fn/gd/file-upload-functions",
-       "label": {
-        "en": "Implement File Upload with Functions",
-        "pt-br": "Implemente upload de arquivos com Functions"
-       },
-       "slug": {
-        "en": "/documentation/build/functions/guides/file-upload-functions/",
-        "pt-br": "/documentacao/build/functions/guides/upload-arquivos-functions/"
-       }
-      },
-      {
-       "key": "fn/gd/altcha",
-       "label": {
-        "en": "How to Use the ALTCHA Function",
-        "pt-br": "Use a Function ALTCHA no Marketplace da Azion"
-       },
-       "slug": {
-        "en": "/documentation/build/functions/guides/altcha/",
-        "pt-br": "/documentacao/build/functions/guides/altcha/"
-       }
-      },
-      {
-       "key": "fn/gd/paywall-function-jwt",
-       "label": {
-        "en": "How to set up a paywall with Azion JWT solution",
-        "pt-br": "Configure um paywall com a integração JWT"
-       },
-       "slug": {
-        "en": "/documentation/build/functions/guides/paywall-function-jwt/",
-        "pt-br": "/documentacao/build/functions/guides/paywall-function-jwt/"
-       }
-      },
-      {
-       "key": "fn/gd/resend-email-functions",
-       "label": {
-        "en": "How to integrate Resend email service with Functions",
-        "pt-br": "Como integrar o serviço de email Resend com Functions"
-       },
-       "slug": {
-        "en": "/documentation/build/functions/guides/resend-email-functions/",
-        "pt-br": "/documentacao/build/functions/guides/integrar-resend-email-functions/"
-       }
-      },
-      {
-       "key": "fn/gd/stripe-webhooks-functions",
-       "label": {
-        "en": "How to handle Stripe webhooks with Functions",
-        "pt-br": "Como lidar com webhooks do Stripe com Functions"
-       },
-       "slug": {
-        "en": "/documentation/build/functions/guides/stripe-webhooks-functions/",
-        "pt-br": "/documentacao/build/functions/guides/webhooks-stripe-functions/"
-       }
-      },
-      {
-       "key": "fn/gd/firewall",
-       "label": {
-        "en": "Create & Configure a Function on Firewall",
-        "pt-br": "Como criar e configurar uma function em seu Firewall"
-       },
-       "slug": {
-        "en": "/documentation/build/functions/guides/firewall/",
-        "pt-br": "/documentacao/build/functions/guides/firewall/"
-       }
-      },
-      {
-       "key": "fn/gd/test-origin-with-functions",
-       "label": {
-        "en": "How to test an origin with Functions",
-        "pt-br": "Como testar uma origem com Functions"
-       },
-       "slug": {
-        "en": "/documentation/build/functions/guides/test-origin-with-functions/",
-        "pt-br": "/documentacao/build/functions/guides/test-origin-with-functions/"
-       }
-      },
-      {
-       "key": "fn/gd/debugging-functions-graphql",
-       "label": {
-        "en": "How to debug functions using GraphQL API",
-        "pt-br": "Como fazer o debug de functions usando a GraphQL⁠ API"
-       },
-       "slug": {
-        "en": "/documentation/build/functions/guides/debugging-functions-graphql/",
-        "pt-br": "/documentacao/build/functions/guides/debugging-functions-graphql/"
-       }
-      },
-      {
-       "key": "fn/gd/troubleshooting",
-       "label": {
-        "en": "Troubleshooting an OpenNext Application",
-        "pt-br": "Solução de problemas de uma aplicação OpenNext"
-       },
-       "slug": {
-        "en": "/documentation/build/functions/guides/troubleshooting/",
-        "pt-br": "/documentacao/build/functions/guides/troubleshooting/"
+        "en": "https://www.azion.com/en/documentation/products/changelog/",
+        "pt-br": "https://www.azion.com/pt-br/documentacao/produtos/changelog/"
        }
       }
      ]

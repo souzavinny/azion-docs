@@ -46,3 +46,7 @@ azion*
 handover.md
 
 .agents/tests/*
+
+# cleanroom source packets and briefs for regenerating doc sections
+/.cleanroom
+

@@ -1,0 +1,43 @@
+---
+title: Glossary
+description: >-
+  Look up the Functions vocabulary: handlers, function instances, JSON args,
+  isolates, and the Azion Runtime terms the documentation uses.
+meta_tags: 'Functions, glossary, terms, handler, function instance, JSON args, Azion Runtime'
+namespace: documentation_build_functions_glossary
+permalink: /documentation/build/functions/glossary/
+menu_namespace: functionsMenu
+---
+
+import GlossaryFilter from '~/components/GlossaryFilter.astro'
+
+This glossary defines the vocabulary of [Functions](/en/documentation/build/functions/), the Azion product that runs your JavaScript code on Azion's distributed network.
+
+<GlossaryFilter lang="en">
+
+| Term | Definition |
+| --- | --- |
+| Azion Bundler | An open-source framework adapter that converts framework code into functions for Azion Runtime. [Azion Bundler](https://github.com/aziontech/bundler) detects your framework when you initialize a project with [Azion CLI](/en/documentation/products/azion-cli/overview/), then applies the matching adapter. |
+| Azion Runtime | The execution environment for functions on Azion's distributed network. [Azion Runtime](/en/documentation/runtime/overview/) runs JavaScript built on Web standards, makes strict mode the default, and exposes a set of [Web APIs](/en/documentation/runtime-apis/javascript/). |
+| cold start | The time a function takes to initialize before it handles its first request. The default maximum is 2 seconds, as listed in [Functions limits](/en/documentation/build/functions/limits/). |
+| environment variable | A key-value pair that holds configuration or sensitive data outside your function code. A function reads an [environment variable](/en/documentation/products/functions/environment-variables/) with the `Azion.env.get()` interface, passing its key. |
+| ES Modules | The recommended [handler pattern](/en/documentation/build/functions/reference/handlers/) for functions. The function exports a default object whose keys are handlers, such as `fetch` and `firewall`. |
+| `event.args` | The accessor a function uses to read one value from the JSON args of its [function instance](/en/documentation/build/functions/reference/functions-instances/). Read one value as a property, such as `event.args.desiredArg`, where the property name is the key set on the instance. |
+| fetch handler | The [handler](/en/documentation/build/functions/reference/handlers/) that receives an HTTP request and returns a `Response`. In the ES Modules pattern, its signature is `fetch(request, env, ctx)`. |
+| firewall handler | The handler that inspects a request before your function responds to it. Call `ctx.deny()` to block the request, or return without calling it to let the request continue to the [fetch handler](/en/documentation/build/functions/reference/handlers/). Functions on [Firewall](/en/documentation/secure/firewall/reference/functions/) run in the request phase. |
+| function | A unit of JavaScript code that runs on [Azion Runtime](/en/documentation/runtime/overview/) in response to a request. You write a function once with [Functions](/en/documentation/build/functions/) and instantiate it in one or more applications or firewalls. |
+| function instance | A function set up to run in one application or firewall, created on the **Functions Instances** tab of an [application or a firewall](/en/documentation/build/functions/reference/functions-instances/). Instantiation sets the JSON args for that use and cannot change the function code. |
+| Functions Code Editor | The web-based editor for functions, built on the Monaco Code Editor used in VS Code. [Functions Code Editor](/en/documentation/products/applications/functions/runtime-api/code-editor/) provides syntax highlighting, IntelliSense, and debugging, and shows the function preview beside the code. |
+| handler | The entry point Azion Runtime calls when an event invokes your function. Functions supports two [handler patterns](/en/documentation/build/functions/reference/handlers/): ES Modules, which is recommended, and Service Worker, which is legacy. |
+| isolate | The execution context of a single function invocation, also called a V8 isolate. The default [memory limit](/en/documentation/build/functions/limits/) of 512 MB applies per isolate and covers heap, stack, and all runtime allocations. |
+| JSON args | The arguments a [function instance](/en/documentation/build/functions/reference/functions-instances/) passes to the function's execution context, set in the **Args** field as JSON. Args change a function's behavior without a code change, and the limit is 100 KB. |
+| metadata | The request attributes available to functions on [Firewall](/en/documentation/secure/firewall/reference/functions/): GeoIP data, remote client details, TLS information, and request identifiers. Read one with `event.request.metadata["remote_addr"]`, and refer to the [Metadata API](/en/documentation/products/applications/functions/runtime/api-reference/metadata/) for the full list. |
+| Preview Deployment | The feature that runs a function against a simulated request before it goes to production. [Preview Deployment](/en/documentation/products/applications/functions/runtime-api/preview-deployment/) renders the returned response beside the code editor, and it needs a `PreviewProvider` function in the source. |
+| `PreviewProvider` | The auxiliary function that [Preview Deployment](/en/documentation/products/applications/functions/runtime-api/preview-deployment/) calls to simulate a request. It builds a `Request` object and returns the result of the function's request handler. Without it, the preview does not render. |
+| Rules Engine | The module that runs behaviors conditionally, through logical operators on request criteria. [Rules Engine](/en/documentation/build/applications/reference/rules-engine/) invokes a function instance with the **Run Function** behavior, and [Firewall](/en/documentation/secure/firewall/) has its own Rules Engine. |
+| Run Function | The [Rules Engine](/en/documentation/build/applications/reference/rules-engine/) behavior that invokes a [function instance](/en/documentation/build/functions/reference/functions-instances/). You select the execution phase and the criteria that trigger the rule. The function runs on Azion edge nodes when a request matches. |
+| Service Worker | The legacy [handler pattern](/en/documentation/build/functions/reference/handlers/), kept for backward compatibility. A function registers handlers by calling `addEventListener` for the `fetch` and `firewall` events. Azion recommends ES Modules instead. |
+| sub-request | An outbound `fetch()` call a function makes during one invocation. The default limit is 50 sub-requests per invocation, as listed in [Functions limits](/en/documentation/build/functions/limits/). |
+| `waitUntil` | The method that extends a function's lifetime so an async task runs without blocking the response. Call `ctx.waitUntil(promise)` in the [ES Modules pattern](/en/documentation/build/functions/reference/handlers/), or `event.waitUntil(promise)` in the Service Worker pattern. |
+
+</GlossaryFilter>
