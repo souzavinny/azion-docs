@@ -55,20 +55,17 @@ Saving a function does not run it. A function runs only after an application ins
 
 ```mermaid
 flowchart LR
-  Client[Client request] --> App[Application]
-  App --> Rule[Rules Engine rule]
-  Rule --> Behavior[Run Function behavior]
-  Behavior --> Instance[Function instance]
-  Instance --> Runtime[Azion Runtime]
-  Runtime --> Response[Response to the client]
+  Req["HTTP<br/>request"] --> App["Application"]
+  App --> Rule["Rules Engine rule<br/>Run Function"]
+  Rule --> Inst["Function instance<br/>on Azion Runtime"]
+  Inst --> Res["Response"]
 ```
 
-1. A client request reaches an application on Azion's distributed network.
-2. The application's Rules Engine evaluates the request against each rule's criteria, such as the request URI.
-3. A matching rule runs its behaviors, and the **Run Function** behavior names a function instance.
-4. The function instance ties one function to this application with its own JSON args, so the same function can serve other applications with other args.
-5. Azion Runtime executes the instance's code on an Azion edge node and passes the request to the `fetch` handler.
-6. The `Response` the handler returns goes back to the client.
+1. An HTTP request reaches an application on Azion's distributed network.
+2. The application's Rules Engine evaluates the request against each rule's criteria, such as the request URI. The **Run Function** behavior of a matching rule names a function instance.
+3. The function instance ties one function to this application with its own JSON args, so the same function can serve other applications with other args.
+4. Azion Runtime executes the instance's code on an Azion edge node and passes the request to the `fetch` handler.
+5. The `Response` the handler returns goes back to the client.
 
 Azion Runtime is the JavaScript runtime, built on Web standards, that executes every function. For its APIs and behavior, refer to [Azion Runtime](/en/documentation/runtime/overview/).
 

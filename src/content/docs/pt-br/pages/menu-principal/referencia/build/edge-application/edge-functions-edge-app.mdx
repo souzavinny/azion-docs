@@ -55,20 +55,17 @@ Salvar uma função não a executa. Uma função executa somente depois que uma 
 
 ```mermaid
 flowchart LR
-  Client[Requisição do cliente] --> App[Aplicação]
-  App --> Rule[Regra do Rules Engine]
-  Rule --> Behavior[Behavior Run Function]
-  Behavior --> Instance[Instância de função]
-  Instance --> Runtime[Azion Runtime]
-  Runtime --> Response[Resposta ao cliente]
+  Req["Requisição<br/>HTTP"] --> App["Aplicação"]
+  App --> Rule["Regra do Rules Engine<br/>Run Function"]
+  Rule --> Inst["Instância de função<br/>no Azion Runtime"]
+  Inst --> Res["Resposta"]
 ```
 
-1. Uma requisição do cliente chega a uma aplicação na rede distribuída da Azion.
-2. O Rules Engine da aplicação avalia a requisição em relação aos critérios de cada regra, como o URI da requisição.
-3. Uma regra correspondente executa seus behaviors e o behavior **Run Function** indica uma instância de função.
-4. A instância de função vincula uma função a esta aplicação com seus próprios argumentos JSON. Assim, a mesma função pode servir outras aplicações com outros argumentos.
-5. Azion Runtime executa o código da instância em um edge node da Azion e passa a requisição ao handler `fetch`.
-6. O `Response` que o handler retorna volta para o cliente.
+1. Uma requisição HTTP chega a uma aplicação na rede distribuída da Azion.
+2. O Rules Engine da aplicação avalia a requisição em relação aos critérios de cada regra, como o URI da requisição. O behavior **Run Function** de uma regra correspondente indica uma instância de função.
+3. A instância de função vincula uma função a esta aplicação com seus próprios argumentos JSON. Assim, a mesma função pode servir outras aplicações com outros argumentos.
+4. Azion Runtime executa o código da instância em um edge node da Azion e passa a requisição ao handler `fetch`.
+5. O `Response` que o handler retorna volta para o cliente.
 
 Azion Runtime é o runtime JavaScript, construído sobre padrões Web, que executa todas as funções. Para as APIs e o comportamento dele, consulte [Azion Runtime](/pt-br/documentacao/runtime/visao-geral/).
 

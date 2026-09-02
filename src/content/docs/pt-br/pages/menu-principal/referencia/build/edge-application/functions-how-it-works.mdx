@@ -20,21 +20,20 @@ Na Azion, três objetos concretizam esse comportamento. [Functions](/pt-br/docum
 Uma requisição chega a uma função somente por meio de uma regra que nomeia sua instância. O diagrama acompanha uma requisição do edge node que a recebeu, pelo firewall e pela aplicação, até a resposta.
 
 ```mermaid
-flowchart TD
-  Client([Cliente]) -->|Requisição HTTP| Node[Edge node recebe a requisição]
-  Node --> FwRule{Regra de firewall com Run Function}
-  FwRule -->|Critérios correspondem| FwHandler[O handler firewall é executado no Azion Runtime]
-  FwHandler -->|"ctx.deny() chamado"| Blocked([Requisição bloqueada])
-  FwHandler -->|Retorna sem deny| AppRule{Regra de aplicação com Run Function}
-  FwRule -->|Sem correspondência| AppRule
-  AppRule -->|Critérios correspondem| Fetch[O handler fetch é executado no Azion Runtime]
-  AppRule -->|Sem correspondência| NoFn([Nenhuma função é executada])
-  Fetch --> Response([Resposta retornada ao cliente])
+flowchart LR
+  Req(["Requisição em<br/>um edge node"]) --> FwRule["Regra de firewall<br/>Run Function"]
+  FwRule -->|corresponde| FwHandler["Handler<br/>firewall"]
+  FwRule -->|não corresponde| AppRule
+  FwHandler -->|"ctx.deny()"| Blocked(["Requisição<br/>bloqueada"])
+  FwHandler -->|retorna| AppRule["Regra de aplicação<br/>Run Function"]
+  AppRule -->|corresponde| Fetch["Handler<br/>fetch"]
+  AppRule -->|não corresponde| NoFn(["Nenhuma função<br/>executa"])
+  Fetch --> Res(["Resposta"])
 ```
 
 A requisição passa primeiro pelo Rules Engine do firewall. Quando uma regra de firewall com o behavior **Run Function** corresponde à requisição, [Azion Runtime](/pt-br/documentacao/runtime/visao-geral/) executa o handler `firewall` da instância vinculada na fase de requisição. Uma chamada a `ctx.deny()` bloqueia a requisição imediatamente, e o handler `fetch` nunca é executado para ela. Quando o handler retorna sem essa chamada, Rules Engine do firewall retoma de onde o behavior foi acionado, e a requisição continua para a aplicação.
 
-Rules Engine da aplicação então aplica suas próprias regras, e uma regra **Run Function** cujos critérios correspondem executa o handler `fetch` da instância selecionada. Esse handler retorna uma `Response` ao cliente.
+Rules Engine da aplicação então aplica suas próprias regras, e uma regra **Run Function** cujos critérios correspondem executa o handler `fetch` da instância selecionada. Esse handler retorna uma `Response` ao cliente. Uma requisição que não corresponde a nenhuma regra de firewall segue direto para as regras da aplicação. Uma que não corresponde a nenhuma regra de aplicação não executa nenhuma função.
 
 Uma regra decide quais requisições um handler vê. Uma regra de aplicação pode selecionar requisições por caminho, como `${uri}` igual a `/hello-world`. No firewall, uma regra pode selecioná-las por uma network list de países. O handler `firewall` também pode ler os metadados da requisição, como o país ou o endereço IP do cliente, antes de decidir. Para os campos de metadados, consulte [Metadata API](/pt-br/documentacao/produtos/applications/functions/runtime/api-reference/metadata/).
 
@@ -95,10 +94,10 @@ Um projeto de framework web não é um módulo de handler. Sua lógica do lado d
 
 ```mermaid
 flowchart LR
-  Project[Projeto de framework] --> Bundler[Azion Bundler]
-  Bundler --> Fn[Funções geradas em JavaScript ou WebAssembly]
-  Fn --> Runtime[Azion Runtime]
-  Runtime --> DC[Data centers da Azion]
+  Project["Projeto de<br/>framework"] --> Bundler["Azion<br/>Bundler"]
+  Bundler --> Fn["Funções geradas<br/>JavaScript ou WebAssembly"]
+  Fn --> Runtime["Azion<br/>Runtime"]
+  Runtime --> DC["Data centers<br/>da Azion"]
 ```
 
 O diagrama mostra o pipeline do projeto até o data center. O bundler trabalha em quatro etapas:

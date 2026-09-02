@@ -20,21 +20,20 @@ On Azion, three objects realize that behavior. [Functions](/en/documentation/bui
 A request reaches a function only through a rule that names its instance. The diagram traces one request from the edge node that received it, through the firewall and the application, to the response.
 
 ```mermaid
-flowchart TD
-  Client([Client]) -->|HTTP request| Node[Edge node receives the request]
-  Node --> FwRule{Firewall rule with Run Function}
-  FwRule -->|Criteria match| FwHandler[The firewall handler runs on Azion Runtime]
-  FwHandler -->|"ctx.deny() called"| Blocked([Request blocked])
-  FwHandler -->|Returns without deny| AppRule{Application rule with Run Function}
-  FwRule -->|No match| AppRule
-  AppRule -->|Criteria match| Fetch[The fetch handler runs on Azion Runtime]
-  AppRule -->|No match| NoFn([No function runs])
-  Fetch --> Response([Response returned to the client])
+flowchart LR
+  Req(["Request at<br/>an edge node"]) --> FwRule["Firewall rule<br/>Run Function"]
+  FwRule -->|match| FwHandler["firewall<br/>handler"]
+  FwRule -->|no match| AppRule
+  FwHandler -->|"ctx.deny()"| Blocked(["Request<br/>blocked"])
+  FwHandler -->|returns| AppRule["Application rule<br/>Run Function"]
+  AppRule -->|match| Fetch["fetch<br/>handler"]
+  AppRule -->|no match| NoFn(["No function<br/>runs"])
+  Fetch --> Res(["Response"])
 ```
 
 The firewall's Rules Engine sees the request first. When a firewall rule with the **Run Function** behavior matches, [Azion Runtime](/en/documentation/runtime/overview/) runs the `firewall` handler of the bound instance in the request phase. A call to `ctx.deny()` blocks the request immediately, and the `fetch` handler never runs for it. When the handler returns without that call, the firewall's Rules Engine resumes where the behavior was triggered, and the request continues to the application.
 
-The application's Rules Engine then applies its own rules, and a **Run Function** rule whose criteria match runs the `fetch` handler of the selected instance. That handler returns a `Response` to the client.
+The application's Rules Engine then applies its own rules, and a **Run Function** rule whose criteria match runs the `fetch` handler of the selected instance. That handler returns a `Response` to the client. A request that matches no firewall rule goes straight to the application's rules, and a request that matches no application rule runs no function.
 
 A rule decides which requests a handler sees. An application rule can select requests by path, such as `${uri}` equal to `/hello-world`. On the firewall, a rule can select them by a network list of countries. The `firewall` handler can also read request metadata, such as the client's country or IP address, before it decides. For the metadata fields, refer to [Metadata API](/en/documentation/products/applications/functions/runtime/api-reference/metadata/).
 
@@ -95,10 +94,10 @@ A web framework project is not a handler module. Its server-side logic, API rout
 
 ```mermaid
 flowchart LR
-  Project[Framework project] --> Bundler[Azion Bundler]
-  Bundler --> Fn[Generated functions in JavaScript or WebAssembly]
-  Fn --> Runtime[Azion Runtime]
-  Runtime --> DC[Azion data centers]
+  Project["Framework<br/>project"] --> Bundler["Azion<br/>Bundler"]
+  Bundler --> Fn["Generated functions<br/>JavaScript or WebAssembly"]
+  Fn --> Runtime["Azion<br/>Runtime"]
+  Runtime --> DC["Azion<br/>data centers"]
 ```
 
 The diagram shows the pipeline from project to data center. The bundler works in four stages:

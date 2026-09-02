@@ -1,137 +1,109 @@
 # Input pages — Functions section rewrite
 
-Provenance for the rewrite of the Functions product section. Every page listed here was read from the `main` branch and used as factual input; nothing on the new pages comes from anywhere else.
+Provenance for the Functions product section. Every page listed here was read from the `main` branch and used as factual input; nothing on the section's pages comes from anywhere else, except the concept layer of a definition, which the skill lets a writer state from the ordinary meaning of a term.
 
 This file is a working record, not site content. No build step reads it.
 
 - **Branch under rewrite:** `revamp/d2-product-sidebars`
 - **Source branch for facts:** `main`
-- **Skill applied:** `azion-docs-writer` (`teams/marketing/skills/azion-docs-writer`)
+- **Skill applied:** `azion-docs-writer` (`teams/marketing/skills/azion-docs-writer` in `azion-ai-toolkit`), at the revision that carries the two-layer definition block, the paragraph contract, and fact routing
+- **Writer model:** Claude Fable 5.1, one writer per page, seven in parallel, then one translator per page
 - **Extraction command:** `git show main:<path>`
-- **Working copies:** `.cleanroom/functions/` in this repository — gitignored, and the reproducible input to any regeneration. It holds the 16 raw sources, the 7 per-page packets assembled from them, and `common-brief.md`, which carries the naming rules, the verified link table, and the settled rulings on every source contradiction below.
+- **Working copies:** `.cleanroom/functions-run2/` in this repository — gitignored, and the reproducible input to any regeneration. It holds the 18 raw sources, the common brief, the translation brief, the mechanical checker, and every draft.
 
 ---
 
 ## How these pages were used
 
-The skill forbids inventing a fact: every limit, default, field name, handler signature and error string on a new page has to trace to a named source, and a slot the sources do not fill gets a `[GAP: ...]` marker instead of a plausible sentence. That rule is what makes this file necessary — it is the list the new pages are checked against.
+The skill forbids inventing a fact: every limit, default, field name, handler signature, and error string on a page traces to a named source. A slot the sources do not fill is omitted from the page and named in the writer's report, never marked on the page and never filled with a plausible sentence.
 
-Each source was extracted from `main` into a **source packet**, and each new page was written from its packet alone. The writer of a page could read the skill's reference files, its own packet, and a shared brief fixing product names, placeholder domains and the set of link targets that exist. It could not read the version of the page already in the repository. That isolation is deliberate: a writer that opens the current page reproduces its structure, which is the thing being replaced.
+Each writer read the skill, the common brief, and its named sources, and nothing else. The writer of a page could not open the version of the page already in the repository, the repository's older copy of the skill, the previous run's drafts, or the web. That isolation is deliberate: a writer that opens the current page reproduces its structure, which is the thing being replaced.
+
+Two rules new in this run shaped every page:
+
+- **Fact routing.** The brief gives every fact type one owner page. Limit values live on Functions limits; the handler contract on Handlers; instance fields on Functions Instances; the invocation chain on How Functions works. Every other page carries one sentence and a link. Writers tagged each fact by type before drafting and reported the facts they carried that another page owns.
+- **Concept before product.** The Overview opens by saying what a function is, for a reader who has never used one, before naming Functions. The concept page opens on the behavior in the reader's terms before naming any Azion object.
 
 Sources fall into four roles.
 
-**Primary** sources carry a target page's factual spine. One page's packet is built around one or two of these, and the new page's section order comes from the content type, not from the source's order.
-
-**Supporting** sources contribute specific facts — a signature, a limit, an interface name — into a page whose spine is elsewhere. They are quarried, not restructured.
-
-**Terminology-only** sources are read for vocabulary and coverage. Their bodies are not rewritten in this pass. They supply the Glossary's term list and populate the Guides hub, and each gains one `difficulty` frontmatter line so the hub table can render.
-
-**Out of scope** sources are recorded so the boundary is legible to the next person. Functions and Azion Runtime overlap heavily, and the decision was to rewrite Functions only.
+**Primary** sources carry a target page's factual spine. **Supporting** sources contribute specific facts into a page whose spine is elsewhere. **Terminology-only** sources are read for vocabulary and coverage; their bodies are not rewritten. **Out of scope** sources are recorded so the boundary is legible.
 
 ---
 
 ## Primary sources
 
-The factual spine of the new section.
+| # | Path on `main` | Title | Feeds |
+|---|---|---|---|
+| 1 | `src/content/docs/en/pages/main-menu/reference/build/edge-application/edge-functions.mdx` | Functions for Applications | Overview, How Functions works, Functions limits |
+| 2 | `src/content/docs/en/pages/guides/edge-functions/migrate-handler-patterns.mdx` | Migrating handler patterns in Functions | Handlers; How Functions works; the Overview's code specimen |
+| 3 | `src/content/docs/en/pages/main-menu/reference/build/edge-application/edge-functions-instances.mdx` | Functions Instances | Functions Instances |
+| 4 | `src/content/docs/en/pages/main-menu/reference/secure/edge-firewall/edge-functions-for-edge-firewall/edge-functions-firewall.mdx` | Functions for Firewall | How Functions works; Handlers; the Overview's Firewall section |
+| 5 | `src/content/docs/en/pages/main-menu/reference/secure/edge-firewall/edge-functions-for-edge-firewall/edge-functions-instances.mdx` | Functions Instances for Firewall | Functions Instances |
 
-| # | Path on `main` | Title | Lines | Feeds |
-|---|---|---|---|---|
-| 1 | `src/content/docs/en/pages/main-menu/reference/build/edge-application/edge-functions.mdx` | Functions for Applications | 282 | Overview, How Functions works, Functions limits |
-| 2 | `src/content/docs/en/pages/guides/edge-functions/migrate-handler-patterns.mdx` | Migrating handler patterns in Functions | 293 | Reference: Handlers; How Functions works; the Overview's code specimen |
-| 3 | `src/content/docs/en/pages/main-menu/reference/build/edge-application/edge-functions-instances.mdx` | Functions Instances | 51 | Reference: Functions Instances |
-| 4 | `src/content/docs/en/pages/main-menu/reference/secure/edge-firewall/edge-functions-for-edge-firewall/edge-functions-firewall.mdx` | Functions for Firewall | 219 | Reference: Functions on Firewall; How Functions works |
-| 5 | `src/content/docs/en/pages/main-menu/reference/secure/edge-firewall/edge-functions-for-edge-firewall/edge-functions-instances.mdx` | Functions Instances for Firewall | 133 | Reference: Functions on Firewall |
-
-**1 — `edge-functions.mdx`** is the page the rewrite exists to fix. It runs 282 lines under twenty headings and is, by content type, four pages sharing a file: an overview, a concept page on how framework code becomes a function, a management guide covering Console, CLI, API and Terraform, and a twelve-row limits table. Its permalink on `main` is `/documentation/products/build/applications/functions/`; on this branch it already serves `/documentation/build/functions/`. Its material splits three ways — the capability sections and the interfaces list to the Overview, the bundler and execution material to How Functions works, the limits table to Functions limits.
-
-**2 — `migrate-handler-patterns.mdx`** is present on `main` and deleted on this branch. It is the only page that documents the handler contract: ES Modules against Service Worker, the `fetch(request, env, ctx)` and `firewall(request, env, ctx)` signatures, `waitUntil` for async work after a response, the patterns the runtime rejects, and the `Unsupported handler pattern detected` error. Recovering it was a deliberate call — without it the execution model is documented nowhere in the section.
-
-**3, 5 — the two Functions Instances pages** cover the same object on either side of the platform. They merge into one reference page rather than staying split by resource, because a reader looking up instance fields does not know in advance which of the two pages holds the field they want.
-
-**4 — `edge-functions-firewall.mdx`** supplies the Firewall half of the execution model: which event a function answers there, and how that differs from a function running in an application.
-
----
+Source 1 is the page the rewrite exists to fix: four kinds sharing one file. Its material splits three ways, the capabilities to the Overview's boundaries block, the bundler and execution material to How Functions works, the limits table to Functions limits. Source 2 is the only page that documents the handler contract, and it wins every disagreement about handlers. Sources 3 and 5 describe one object on either side of the platform and merge into one reference page that states where the two sides differ.
 
 ## Supporting sources
 
-Quarried for specific facts. None of them sets a target page's structure.
+| # | Path on `main` | Title | Contributes |
+|---|---|---|---|
+| 6 | `src/content/docs/en/pages/devtools/azion-edge-runtime/api-reference/handlers.mdx` | Handlers | Handler signatures, cross-checked against source 2 |
+| 7 | `src/content/docs/en/pages/devtools/azion-edge-runtime/environment-variables-reference/environment-variables-reference.mdx` | Environment Variables | Environment variable behavior and its size ceiling |
+| 8 | `src/content/docs/en/pages/devtools/azion-edge-runtime/api-reference/metadata/metadata.mdx` | Metadata API | Request metadata a function reads |
+| 9 | `src/content/docs/en/pages/devtools/azion-edge-runtime/overview/overview.mdx` | Azion Runtime | Where the Functions / Runtime boundary falls |
+| 10 | `src/content/docs/en/pages/build-journey/edit-edge-app/edit-functions-instances/functions-instances.mdx` | How to instantiate functions in your application | Quickstart: the Console path; Functions Instances: field labels and API calls |
+| 11 | `src/content/docs/en/pages/secure-journey/edit-edge-firewall/instantiate-edge-functions.mdx` | How to instantiate functions in your firewall | The Firewall instantiation contrast |
+| 12 | `src/content/docs/en/pages/secure-journey/automate/edge-functions-apis.mdx` | Automate security with Azion Functions | API management facts |
+| 13 | `src/content/docs/en/pages/devtools/azion-edge-runtime/code-editor/code-editor.mdx` | Functions Code Editor | One bullet in the Overview's boundaries block |
+| 14 | `src/content/docs/en/pages/devtools/azion-edge-runtime/preview/preview.mdx` | Azion Preview Deployment | One bullet in the Overview's boundaries block |
+| 15 | `src/content/docs/en/pages/devtools/azion-edge-runtime/debugging/debugging.mdx` | Debugging | One bullet in the Overview's boundaries block |
+| 16 | `src/content/docs/en/pages/devtools/azion-edge-runtime/ai-integration/chatgpt-integration.mdx` | Functions ChatGPT integration | One bullet in the Overview's boundaries block |
+| 17 | `src/content/docs/en/pages/build-journey/develop-with-azion/lang-js/lang-javascript.mdx` | How to build functions | Quickstart: the Console controls that create a function, and the Hello World body |
+| 18 | `src/content/docs/en/pages/guides/edge-functions/functions-first-steps.mdx` | Functions first steps | Quickstart: facts only, never its structure |
 
-| # | Path on `main` | Title | Lines | Contributes |
-|---|---|---|---|---|
-| 6 | `src/content/docs/en/pages/devtools/azion-edge-runtime/api-reference/handlers.mdx` | Handlers | 69 | Handler signatures, cross-checked against source 2 |
-| 7 | `src/content/docs/en/pages/devtools/azion-edge-runtime/environment-variables-reference/environment-variables-reference.mdx` | Environment Variables | 96 | Environment variable behavior and its size ceiling |
-| 8 | `src/content/docs/en/pages/devtools/azion-edge-runtime/api-reference/metadata/metadata.mdx` | Metadata API | 137 | Request metadata a function can read |
-| 9 | `src/content/docs/en/pages/devtools/azion-edge-runtime/overview/overview.mdx` | Azion Runtime | 45 | Where the Functions / Runtime boundary falls |
-| 10 | `src/content/docs/en/pages/build-journey/edit-edge-app/edit-functions-instances/functions-instances.mdx` | How to instantiate functions in your application | 241 | Quickstart: the Console path, step by step |
-| 11 | `src/content/docs/en/pages/secure-journey/edit-edge-firewall/instantiate-edge-functions.mdx` | How to instantiate functions in your firewall | 247 | The Firewall instantiation contrast |
-| 12 | `src/content/docs/en/pages/secure-journey/automate/edge-functions-apis.mdx` | Automate security with Azion Functions | 69 | API management facts for the interfaces list |
-| 13 | `src/content/docs/en/pages/devtools/azion-edge-runtime/code-editor/code-editor.mdx` | Functions Code Editor | 68 | Overview capability section |
-| 14 | `src/content/docs/en/pages/devtools/azion-edge-runtime/preview/preview.mdx` | Azion Preview Deployment | 110 | Overview capability section |
-| 15 | `src/content/docs/en/pages/devtools/azion-edge-runtime/debugging/debugging.mdx` | Debugging | 136 | Overview capability section |
-| 16 | `src/content/docs/en/pages/devtools/azion-edge-runtime/ai-integration/chatgpt-integration.mdx` | Functions ChatGPT integration | 113 | Overview capability section |
-| 17 | `src/content/docs/en/pages/build-journey/develop-with-azion/lang-js/lang-javascript.mdx` | How to build functions | 106 | Quickstart: the Console steps that create a function, and the Hello World response body |
-
-Source 17 was added during review, not during the initial sweep. The Quickstart writer reported two `[GAP: ...]` markers it could not fill from its packet — the Console controls that create a function, and what the finished function returns. Both facts exist on this page, so it was pulled in and the gaps were closed from it rather than left open or invented. The handler form in the Quickstart's code sample comes from source 2, which marks ES Modules as recommended and the `addEventListener` form as legacy; the page therefore teaches the recommended form and links source 2 for the other.
-
-Sources 6 and 2 overlap on the handler signatures, which is why both are in the set: agreement between two independently written pages is the check that the signatures are right. Where they disagree, the disagreement is recorded below rather than averaged away.
-
-Sources 13 to 16 each become one short capability section in the Overview — a definition, its mechanism or its consequence, then a link. They are not re-explained; the canonical page keeps the full explanation.
-
----
+Source 18 was excluded from the first run to keep the Quickstart from copying an older shape. This run includes it as a facts-only source, because the kind skeleton, not the source, decides the shape.
 
 ## Terminology-only sources
 
-Sixteen guide pages. Their bodies are **not** rewritten in this pass. They already serve `/documentation/build/functions/guides/...` permalinks on this branch, so the new Guides hub picks them up by prefix. Each gains one `difficulty` line so the hub table renders a value instead of a dash.
-
-| Guide | Permalink on this branch |
-|---|---|
-| Get started with OpenNext | `/documentation/build/functions/guides/get-started/` |
-| Instantiate functions in your application | `/documentation/build/functions/guides/instantiate-functions/` |
-| Run serverless functions | `/documentation/build/functions/guides/serverless-functions/` |
-| Create a function with WebAssembly | `/documentation/build/functions/guides/webassembly-on-azion-platform/` |
-| Build an API with Functions and ChatGPT | `/documentation/build/functions/guides/api-builder/` |
-| Build a RESTful API with Functions and SQL | `/documentation/build/functions/guides/restful-tasks-api-functions/` |
-| Build a browserless application | `/documentation/build/functions/guides/browserless-functions/` |
-| Implement file upload | `/documentation/build/functions/guides/file-upload-functions/` |
-| Use the ALTCHA function | `/documentation/build/functions/guides/altcha/` |
-| Set up a paywall with JWT | `/documentation/build/functions/guides/paywall-function-jwt/` |
-| Integrate the Resend email service | `/documentation/build/functions/guides/resend-email-functions/` |
-| Handle Stripe webhooks | `/documentation/build/functions/guides/stripe-webhooks-functions/` |
-| Create and configure a function on Firewall | `/documentation/build/functions/guides/firewall/` |
-| Test an origin with Functions | `/documentation/build/functions/guides/test-origin-with-functions/` |
-| Debug functions using the GraphQL API | `/documentation/build/functions/guides/debugging-functions-graphql/` |
-| Troubleshoot an OpenNext application | `/documentation/build/functions/guides/troubleshooting/` |
-
-Read together, these supply the Glossary's term list: function, function instance, handler, event, JSON args, isolate, cold start, Azion Bundler, WebAssembly module, preview deployment.
-
----
+Sixteen guide pages, already serving `/documentation/build/functions/guides/...` permalinks on this branch, each carrying a `difficulty` field so the Guides and tutorials hub renders a value. Their bodies are not rewritten. Read together, they supply the Glossary's term list.
 
 ## Out of scope
 
-Recorded so the boundary is legible. All of the following belong to Azion Runtime (`runtimeMenu`) or devtools, and keep their own sidebar:
+All of the following belong to Azion Runtime or devtools and keep their own sidebar. The Functions sidebar links Azion Runtime and never documents it.
 
-- The JavaScript runtime API reference, roughly 22 pages under `devtools/azion-edge-runtime/runtime-apis/` — `fetch`, `Request`, `Response`, streams, crypto, `Intl`, `URLPattern`, Web Standards, WebAssembly.
-- Node.js compatibility and polyfills, roughly 20 pages under `devtools/azion-edge-runtime/compatibility/node-polyfills/`.
-- Framework compatibility under `devtools/azion-edge-runtime/compatibility/frameworks/`, and the template showcase beneath it.
-- The runtime API reference for other products — KV Store, Object Storage, SQL Database, WebSocket, Cache.
-- `src/content/docs/en/pages/guides/edge-functions/functions-first-steps.mdx`, present on `main` and deleted on this branch. Deliberately not mined: the Quickstart is written fresh against the Quickstart content type rather than adapted from a page that predates it.
+- The JavaScript runtime API reference under `devtools/azion-edge-runtime/runtime-apis/`.
+- Node.js compatibility and polyfills under `devtools/azion-edge-runtime/compatibility/node-polyfills/`.
+- Framework compatibility under `devtools/azion-edge-runtime/compatibility/frameworks/`.
+- The runtime API reference for other products: KV Store, Object Storage, SQL Database, WebSocket, Cache.
 
 ---
 
-## Facts that did not resolve cleanly
+## Settled rulings
 
-Recorded because the skill requires a source for every claim, and these two have either no source or two that disagree.
+The sources contradict each other in five places. Each was resolved in the brief before any writer started, so no page presents the losing side.
 
-**Cold starts.** Source 1 contradicts itself. Its framework section states that functions execute "without cold starts" and its comparison table lists cold starts as "Eliminated through Azion Runtime architecture" — while its own limits table, forty lines further down, lists `Max Cold Start | 2s`. The rewrite keeps the limits value and drops the eliminated claim, on the grounds that a limits table is the harder source. The claim also appears on surfaces this rewrite does not touch, so it is worth confirming with the product team.
+- **Cold starts.** Source 1's prose claims they are eliminated; its limits table says 2 s. The limits table wins. No page claims eliminated cold starts, and the "traditional hosting" comparison table is not reproduced.
+- **Handler form.** ES Modules is current and recommended; Service Worker is legacy, kept for backward compatibility. Where sources 2 and 6 disagree, source 2 wins.
+- **What a `firewall` handler returns.** Source 6 shows a `Response`; source 2 never does. The handler calls `ctx.deny()` to block or returns bare to continue. Source 2 wins.
+- **Code size through the API.** Source 1 says 20 MB; sources 4 and 5 say 50 MB. 20 MB is used; 50 MB is not cited.
+- **Environment variable size, 32 KB.** Source 1 gives it as a combined total; source 7 as one value's maximum. The combined-total form is cited alone.
 
-**Handler signature agreement.** Sources 2 and 6 both document the handler contract. Any disagreement between them is resolved in favor of source 2, which is the more recent and more specific of the two, and the disagreement is noted on the reference page rather than silently smoothed over.
+## Facts the sources do not settle
 
-**Code size through the API: 20 MB or 50 MB.** Source 1's limits table says 20 MB. Sources 4 and 5, the two Firewall pages, both say 50 MB in their own limits tables. The limits page carries 20 MB, from the Applications-side source that governs the product section being written, and the Functions Instances page sidesteps the number entirely by linking the limits page. One of the two is stale and needs a product-team ruling.
+Reported by the writers, omitted or narrowed on the pages, and owed a product-team answer.
 
-**Which handler form is current.** Source 1 documents functions using `addEventListener('fetch', ...)` throughout. Source 2 marks that Service Worker form **legacy** and ES Modules (`export default { fetch }`) **recommended**. Source 2 wins across the section: the Quickstart teaches ES Modules, the Handlers reference documents both and marks the legacy one, and the Overview describes a function as exporting a handler rather than registering one. Source 1 is simply older than the runtime it describes.
+- **How an ES Modules handler reads instance arguments and request metadata.** Every source shows `event.args("<key>")` and `event.request.metadata[...]`, the Service Worker forms. The pages scope both to that pattern. Question for the Runtime team: the ES Modules accessors.
+- **The Run Function attribute key.** Source 10 sets `attributes.value` on an application rule; source 11 sets `attributes.function_instance_id` on a firewall rule. Functions Instances presents both, scoped by side. This may be source drift rather than an API difference.
+- **The arguments key in a firewall instance response.** Source 11 returns `json_args` where every request and the application response use `args`. Presented as a per-side row.
+- **Argument defaults and overrides.** Only source 5, the Firewall side, states the key-by-key merge. Functions Instances applies it to both sides because source 5 says "any instance of that function". If the application side differs, the section narrows to firewalls.
+- **Console labels.** Sources call the arguments field both **Args** and **Arguments**; the pages use **Arguments**. No source names the function-name field, the phase selector, or the instance selector on the rule form, so the Quickstart names no field for those steps. No source names the application tab that holds the Functions module switch.
+- **The scheme of an application's default domain.** Sources show `xxxxxxxxx.map.azionedge.net/hello-world` with no scheme. The Quickstart's `curl` uses `https://` as composition.
+- **What the client receives past each limit.** Sources give it for CPU time (terminated) and JSON args (fails at instantiation) only. Every other limit row states the bound and stops. Whether every limit is raisable, and by plan, is stated only as source 1's generic support tip.
+- **Which limits a function invoked from Firewall shares.** Sources 4 and 5 list seven rows. The Limits page names those seven and no more.
+- **`event.console`, `event.method`, and whether `event.waitUntil` exists on a `fetch` event.** Each appears once in a code sample or an aside with no definition. Omitted.
+- **Whether `ctx.deny()` returns `403 Forbidden`.** Source 4 states the status for `event.deny()` only.
+- **A Service Worker `firewall` handler that returns without a finishing outcome.** Source 2's sample returns bare and continues; source 4 says every function on Firewall must end in `event.continue()`, `event.deny()`, or `event.drop()`. Handlers keeps source 2's semantics and scopes source 4's rule to a function instantiated on a firewall.
+- **CLI and Terraform for instances.** Source 1 names both for functions only. Functions Instances omits them.
 
-**What a `firewall` handler returns.** Source 6 shows a `firewall` handler returning a `Response`. Source 2 never does — its `firewall` handler calls `ctx.deny()` to block or returns bare to continue. The Handlers page follows source 2; source 6's snippet looks like its own `fetch` example with the name changed, and it contradicts the `ctx.deny()` semantics both sources otherwise agree on.
+## Portuguese pairs
 
-**Environment variable size, 32 KB, scope unclear.** Source 1's limits table gives 32 KB as the maximum *combined* size of all environment variables for one function. Source 7 gives 32 kB as the maximum size of *one* value. Same number, different scope, different unit casing. The limits page carries source 1's row only, rather than printing two adjacent rows that assert both. The real scope needs a product-team ruling.
-
-**Anything a content type mandates and no source fills** is emitted as a `[GAP: ...]` marker on the page — never as an omitted section and never as an invented one. Search the new pages for `[GAP:` before review.
+Every page ships with a Portuguese twin: identical `namespace`, translated `title`, `description`, and `permalink`, `meta_tags` left in English. The object a customer writes is `função`, per the knowledge base; the product stays `Functions`. Six Portuguese pages are new in this run (Quickstart, How it works, Guides hub, Handlers, Limits, Glossary), and two are rewrites (Overview, Functions Instances). The sidebar JSON gains the six Portuguese slugs.
