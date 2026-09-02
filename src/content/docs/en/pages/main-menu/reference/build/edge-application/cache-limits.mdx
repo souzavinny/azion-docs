@@ -1,100 +1,87 @@
 ---
 title: Cache limits
 description: >-
-  Check the default TTL ranges, object sizes, and purge operation limits that
-  Cache, Tiered Cache, and Real-Time Purge apply.
-meta_tags: 'cache limits, cache TTL, purge limits, tiered cache TTL, object size, slice file size'
+  Look up the default limits for Cache: TTL floors and ceilings, object and
+  fragment sizes, the Tiered Cache TTL range, and Real-Time Purge quotas.
+meta_tags: 'cache, limits, TTL, tiered cache, real-time purge, object size, large file optimization, application accelerator'
 namespace: documentation_build_cache_limits
 permalink: /documentation/build/cache/limits/
 menu_namespace: cacheMenu
 ---
 
-[Cache](/en/documentation/build/cache/) applies default limits to the TTL values you set, the objects it stores, and the purge operations you run. Only the purge operation limit changes with the support plan on the account. Every other limit on this page is the same on every plan.
-
-:::tip
-**Increase your limits** <br></br>
-Contact [technical support](/en/documentation/services/support/) to request a higher limit for your plan.
-:::
-
----
+The tables on this page list the default limits for [Cache](/en/documentation/build/cache/), [Tiered Cache](/en/documentation/build/cache/tiered-cache/), and [Real-Time Purge](/en/documentation/build/cache/reference/real-time-purge/). Where a limit depends on a module or a plan, the table names that condition in its own column. The technical support team can raise a limit for your plan. To request it, contact [technical support](/en/documentation/services/support/).
 
 ## Cache TTL
 
-The cache TTL sets how long an object stays cached on Azion edge nodes. The minimum value you can set depends on which modules the application has active, so [Application Accelerator](/en/documentation/build/application-accelerator/) and [Tiered Cache](/en/documentation/build/cache/tiered-cache/) each move that floor.
+A cache setting configures the TTL. The floor depends on the module the application has, and the ceiling depends on the layer that holds the object.
 
-| Scope | Limit |
-| --- | --- |
-| Default cache TTL | 60 seconds |
-| Minimum cache TTL | 60 seconds |
-| Minimum cache TTL with Application Accelerator active | 0 seconds |
-| Minimum cache TTL with Tiered Cache active | 3 seconds |
-| Maximum cache TTL | 31,536,000 seconds |
-| Default stale window | 300 seconds |
+| Scope | Module | Minimum TTL | Maximum TTL |
+| --- | --- | --- | --- |
+| Edge cache TTL | None | 60 seconds | 31,536,000 seconds |
+| Edge cache TTL | [Application Accelerator](/en/documentation/build/application-accelerator/) | 0 seconds | 31,536,000 seconds |
+| Tiered Cache layer TTL | [Tiered Cache](/en/documentation/build/cache/tiered-cache/) | 3 seconds | 2,592,000 seconds |
 
-Azion applies the default [stale cache](/en/documentation/build/cache/how-it-works/#stale-cache) window when the cache setting overrides origin headers, or when the origin sends no `stale-while-revalidate` directive. When the origin sends the directive and the cache setting honors origin headers, the origin value decides how long the object is served stale.
+A TTL of 0 seconds is not the same as a Bypass Cache rule. For the difference, refer to [How Cache works](/en/documentation/build/cache/how-it-works/).
 
 ---
 
 ## Object and fragment sizes
 
-Cache stores each object on Azion edge nodes up to a maximum size. [Large File Optimization](/en/documentation/build/cache/reference/cache-settings/#large-file-optimization) splits a larger file into fragments and caches each fragment under its own cache key.
+Cache stores one object up to the size in the table. With Large File Optimization, Cache splits an object into fragments of the size in the table.
 
-| Scope | Limit |
-| --- | --- |
-| Single object size in cache | 10 GB |
-| Slice file size | 1,024 kB |
+| Scope | Limit | Condition |
+| --- | --- | --- |
+| Single object size in cache | 10 GB | None |
+| Large File Optimization fragment size | 1,024 kB | Large File Optimization enabled |
 
-The slice file size is the fragment size Large File Optimization uses. To change the fragmentation range, [contact the Sales team](https://www.azion.com/en/contact-sales/).
+To turn on Large File Optimization in a cache setting, refer to [Cache Settings](/en/documentation/build/cache/reference/cache-settings/).
 
 ---
 
 ## Tiered Cache
 
-Tiered Cache is a Cache module that adds a second cache layer between Azion edge nodes and your origin servers. That layer carries its own TTL bounds, and they are narrower than the bounds of the cache on Azion edge nodes.
+A cache setting with Tiered Cache keeps an object in the Tiered Cache layer for a TTL inside the range in the table.
 
 | Scope | Limit |
 | --- | --- |
 | Minimum TTL in Tiered Cache | 3 seconds |
 | Maximum TTL in Tiered Cache | 2,592,000 seconds |
 
-:::note
-Tiered Cache does not support bypass cache. A [Bypass Cache rule](/en/documentation/build/applications/reference/rules-engine/#bypass-cache) applies to caching on Azion edge nodes. An application with an active Tiered Cache setting still caches in the tiered layer for the minimum TTL.
-:::
+A Bypass Cache rule does not reach the Tiered Cache layer, which keeps the object in cache for the minimum TTL. For more information, refer to [Tiered Cache](/en/documentation/build/cache/tiered-cache/).
 
 ---
 
 ## Real-Time Purge
 
-[Real-Time Purge](/en/documentation/build/cache/reference/real-time-purge/) deletes cached objects before their TTL expires. The limits below bound the size of a purge argument, the rate of purge operations, and the purge history.
+Real-Time Purge removes objects from the cache before their TTL ends. Each purge type, and the purge history, has a limit in the table.
 
 | Scope | Limit |
 | --- | --- |
-| Number of requests in history | 1,000,000 requests |
-| Purge history time | 6 months |
-| URL and cache key size | 4,096 characters |
-| URL and cache key operations per client | 200 requests with 50 objects per request |
-| URL and cache key operations per minute | 10,000 objects every 60 seconds |
-| Wildcard operations per day (24-hour interval) | 2,000 requests |
-| Wildcard size | 256 characters |
-| Wildcards per request | 1 |
+| Requests kept in the purge history | 1,000,000 requests |
+| Purge history retention | 6 months |
+| URL and cache key length | 4,096 characters |
+| URL and cache key purge operations per client | 200 requests with 50 objects per request |
+| URL and cache key purge operations per minute | 10,000 objects every 60 seconds |
+| Wildcard purge operations per day (24-hour interval) | 2,000 requests |
+| Wildcard expression length | 256 characters |
+| Wildcard expressions per request | 1 expression |
 
----
-
-## Limits by support plan
-
-One Cache limit changes with the support plan on the account: the number of purge operations per month.
+The number of purge operations per month depends on the Support service of the account:
 
 | Scope | Developer | Business, Enterprise, and Mission-Critical |
 | --- | --- | --- |
 | Purge operations | 1,000 per month | 1,000 per month<br />Additional purge operations are negotiable |
 
-For the price of purge operations, refer to [Pricing](/en/documentation/platform/pricing/#cache).
+For the purge types, their arguments, and the layers they reach, refer to [Real-Time Purge](/en/documentation/build/cache/reference/real-time-purge/).
 
 ---
 
 ## Related resources
 
-- [Cache Settings](/en/documentation/build/cache/reference/cache-settings/) - the fields the TTL and fragment limits apply to.
-- [Tiered Cache](/en/documentation/build/cache/tiered-cache/) - how the second cache layer works.
-- [Real-Time Purge](/en/documentation/build/cache/reference/real-time-purge/) - the purge types the operation limits apply to.
-- [Pricing](/en/documentation/platform/pricing/#cache) - how Azion charges Cache usage and purge operations.
+- [How Cache works](/en/documentation/build/cache/how-it-works/) - the lookup path, expiration, and the difference between a TTL of 0 seconds and Bypass Cache.
+- [Cache Settings](/en/documentation/build/cache/reference/cache-settings/) - every field of a cache setting, including the TTL modes and Large File Optimization.
+- [Tiered Cache](/en/documentation/build/cache/tiered-cache/) - activation, regions, and the Bypass Cache caveat for the tiered layer.
+- [Real-Time Purge](/en/documentation/build/cache/reference/real-time-purge/) - purge types, argument formats, and the layers each type reaches.
+- [Configure a cache policy](/en/documentation/build/cache/guides/cache-settings/) - create a cache setting with the TTL your application needs.
+- [Purge cached content](/en/documentation/build/cache/guides/purge-content/) - remove an object from the cache before its TTL ends.
+- [Support](/en/documentation/services/support/) - request a higher limit for your plan.

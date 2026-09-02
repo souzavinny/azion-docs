@@ -1,120 +1,108 @@
 ---
 title: Cache
 description: >-
-  Controle por quanto tempo os edge nodes da Azion mantêm seu conteúdo, como as
-  cache keys separam variações e como remover objetos do cache.
-meta_tags: 'cache, cache settings, cache key, TTL, stale cache, tiered cache, purge'
+  Configure como Applications armazena seu conteúdo em cache nos edge nodes da
+  Azion: TTL, variações de cache key, entrega stale, purge e Tiered Cache.
+meta_tags: 'cache, caching, cache settings, TTL, cache key, stale cache, tiered cache, purge, applications'
 namespace: documentation_products_edge_caching
-menu_namespace: cacheMenu
 permalink: /documentacao/build/cache/
+menu_namespace: cacheMenu
 ---
+
 import LinkButton from 'azion-webkit/linkbutton'
+import Code from '~/components/Code/Code.astro'
 
-**Cache** é um módulo de [Applications](/pt-br/documentacao/build/applications/) que controla como os edge nodes da Azion armazenam e entregam seu conteúdo.
+Um cache é uma cópia armazenada de uma resposta, mantida perto das pessoas que a solicitam. A primeira requisição de um objeto viaja até o servidor de origem, e a cópia que retorna é armazenada. As requisições seguintes pelo mesmo objeto são respondidas a partir da cópia. Cada cópia tem um tempo de vida (TTL), o número de segundos em que ela permanece válida. Dentro dessa janela, a origem serve um objeto uma vez, não uma vez por requisição. Para o mecanismo geral, consulte [O que é armazenamento em cache](https://www.azion.com/pt-br/learning/cdn/o-que-e-armazenamento-em-cache/) no Learning Center.
 
-Uma aplicação sem Cache encaminha todas as requisições para seus servidores de origem. Com Cache, um edge node armazena uma cópia da resposta e responde às requisições seguintes do mesmo objeto sem contatar a origem. Você ativa o módulo na aba **Main Settings** de uma aplicação, junto com os outros módulos de Applications.
-
-Com Cache, você pode:
-
-- Definir por quanto tempo um objeto permanece nos edge nodes da Azion e no navegador do usuário.
-- Separar objetos armazenados em cache por query string, cookie, device group ou método HTTP.
-- Entregar conteúdo expirado enquanto seus servidores de origem estiverem indisponíveis.
-- Remover objetos do cache antes que o TTL expire.
-- Adicionar uma segunda camada de cache entre os edge nodes e seus servidores de origem.
+**Cache** armazena essas cópias nos edge nodes da Azion, como um módulo de [Applications](/pt-br/documentacao/build/applications/). Um cache setting contém a política: por quanto tempo um navegador e um edge node mantêm um objeto e o que distingue dois objetos. Uma regra no [Rules Engine](/pt-br/documentacao/build/applications/reference/rules-engine/) aplica o cache setting às requisições que correspondem a ela. O edge node mais próximo do cliente então responde a partir da sua cópia enquanto ela é válida. Sua [origem](/pt-br/documentacao/secure/connectors/reference/origins/) recebe uma busca por objeto em cada edge node, em vez de uma por requisição. Use Cache para servir arquivos estáticos a partir dos edge nodes, manter páginas no ar enquanto sua origem está fora, armazenar respostas de API em cache por cookie ou query string, ou entregar arquivos grandes em fragmentos.
 
 <LinkButton label="Quickstart do Cache" link="/pt-br/documentacao/build/cache/quickstart/" />
 <LinkButton severity="secondary" label="Referência de Cache Settings" link="/pt-br/documentacao/build/cache/reference/cache-settings/" />
 
----
+## Estrutura do cache setting
 
-## Cache Settings
+Um cache setting é o objeto que contém uma política de cache. Uma aplicação contém um ou mais deles, e uma regra escolhe qual deles uma requisição usa. O corpo de requisição a seguir cria um cache setting pela API. Ele sobrescreve os headers de cache da origem com um TTL de 60 segundos no navegador e um TTL de 13.660 segundos no edge node. Stale Cache permanece ativado:
 
-Um cache setting é o objeto que carrega a política de cache de uma aplicação. Cada setting contém dois TTLs: um para o navegador do usuário e outro para os edge nodes da Azion. Cada TTL respeita os cabeçalhos `Cache-Control` e `Expires` enviados pela sua origem ou os sobrescreve com o valor que você informar. Uma nova aplicação começa com um cache setting, criado e ativado para você. Para aplicar uma política diferente a um path, crie um segundo setting e atribua-o com o comportamento **Set Cache Policy** em [Rules Engine](/pt-br/documentacao/build/applications/reference/rules-engine/).
+<Code lang="json" code={`{
+  "name": "<your-cache-setting-name>",
+  "browser_cache": {
+    "behavior": "override",
+    "max_age": 60
+  },
+  "modules": {
+    "edge_cache": {
+      "behavior": "override",
+      "max_age": 13660,
+      "stale_cache": {
+        "enabled": true
+      }
+    }
+  }
+}`} />
 
-Para mais informações, consulte [Cache Settings](/pt-br/documentacao/build/cache/reference/cache-settings/).
+- `browser_cache` define o que o navegador faz com o objeto. `honor` repassa os headers `Cache-Control` e `Expires` da origem, e `override` os substitui por `max_age`, em segundos.
+- `modules.edge_cache` faz a mesma escolha para a cópia no edge node, com os mesmos dois comportamentos e seu próprio `max_age`.
+- `stale_cache` decide se uma cópia expirada é servida enquanto a origem falha ou enquanto a cópia é atualizada.
 
-## Cache keys
-
-Uma cache key é a entrada de índice que um edge node monta para cada objeto que armazena. A key padrão concatena o scheme da requisição, o host, o path, a query string e um separador de variação. Duas requisições que produzem a mesma key retornam o mesmo objeto armazenado em cache, e as keys diferenciam maiúsculas de minúsculas. Vários recursos acrescentam seu próprio marcador à key:
-
-- [Advanced Cache Key](/pt-br/documentacao/build/cache/reference/cache-settings/#advanced-cache-key) acrescenta os nomes de cookies e os argumentos de query string que você selecionar.
-- [Device Groups](/pt-br/documentacao/build/applications/reference/device-groups/) acrescenta o nome do device group correspondente.
-- [Image Processor](/pt-br/documentacao/build/image-processor/) acrescenta o formato de uma imagem convertida.
-- **Large File Optimization** acrescenta o intervalo de bytes de cada fragmento.
-- [Cache de métodos HTTP](/pt-br/documentacao/build/cache/reference/cache-settings/#cache-de-metodos-http) acrescenta o hash MD5 do corpo da requisição para requisições `POST` e `OPTIONS` armazenadas em cache.
-
-Para o formato completo, consulte [Cache keys](/pt-br/documentacao/build/cache/reference/cache-keys/#formato-da-cache-key).
-
-## Status de cache
-
-Toda resposta carrega um status de cache que registra de onde veio o conteúdo. `HIT` indica que um edge node entregou uma cópia válida do cache e `MISS` indica que ele buscou o objeto na origem. Os demais status cobrem expiração, revalidação, entrega de conteúdo stale e requisições que o comportamento [Bypass Cache](/pt-br/documentacao/build/applications/reference/rules-engine/#bypass-cache) envia direto para a origem. Para ler o status, envie a requisição com o cabeçalho `Pragma: azion-debug-cache`. A resposta passa a carregar um cabeçalho `X-Cache` com o status, o endereço IP do edge node e o protocolo usado.
-
-Para a definição de cada status, consulte [Como o Cache funciona](/pt-br/documentacao/build/cache/como-funciona/#status-de-cache).
-
-## Proteção da origem
-
-Cache mantém o tráfego longe dos seus servidores de origem mesmo nas requisições que não consegue responder a partir do cache. Os edge nodes da Azion mantêm conexões keep-alive com a origem sempre que possível, o que remove o handshake TCP/IP de cada busca. O controle de Thundering Herd trata a demanda simultânea. Quando muitas requisições chegam ao mesmo tempo para o mesmo objeto que não está em cache, um edge node abre uma conexão com a origem, e não uma por requisição. Cada edge node solicita o objeto à origem uma vez por `MISS` ou outro status diferente de `HIT`.
-
-Para mais informações, consulte [Como o Cache funciona](/pt-br/documentacao/build/cache/como-funciona/#protecao-da-origem).
-
-## Stale Cache
-
-**Stale Cache** permite que um edge node entregue um objeto expirado enquanto busca uma cópia atualizada. Aplica-se quando a revalidação falha, por exemplo quando a origem retorna um erro 5xx, excede o tempo limite ou não envia cabeçalhos de cache-control válidos. Durante a janela stale, o node responde a partir da cópia expirada e atualiza o objeto em segundo plano. Stale Cache vem ativado por padrão. A Azion aplica uma janela stale padrão de 300 segundos quando o setting sobrescreve o cache da origem ou quando a origem omite a diretiva `stale-while-revalidate`.
-
-Para mais informações, consulte [Cache Settings](/pt-br/documentacao/build/cache/reference/cache-settings/#stale-cache).
-
-## Large File Optimization
-
-**Large File Optimization** divide um arquivo grande em fragmentos e armazena cada fragmento em cache quando um usuário o solicita. Cada fragmento carrega sua própria cache key, e a entrega acompanha o consumo do usuário em vez de transferir o arquivo inteiro de uma vez. O tamanho padrão de fragmento é 1.024 kB. O recurso se aplica ao cache nos edge nodes da Azion e, quando Tiered Cache está ativo, também à camada tiered.
-
-Para mais informações, consulte [Cache Settings](/pt-br/documentacao/build/cache/reference/cache-settings/#large-file-optimization).
-
-## Adaptive Delivery
-
-**Adaptive Delivery** define se os objetos armazenados em cache variam por dispositivo. Ele lê os grupos que você cria com [Device Groups](/pt-br/documentacao/build/applications/reference/device-groups/) e acrescenta o nome do grupo correspondente à cache key. Uma URL pode então manter uma cópia separada por grupo. Selecione a opção que varia o conteúdo por device group quando um cliente mobile e um cliente desktop precisam de respostas diferentes. Caso contrário, todo dispositivo recebe o mesmo objeto armazenado em cache.
-
-Para mais informações, consulte [Cache Settings](/pt-br/documentacao/build/cache/reference/cache-settings/#adaptive-delivery).
+Se você conhece a diretiva `max-age` de `Cache-Control`, você sabe o que `max_age` faz. Cada campo declara esse valor em segundos, uma vez para o navegador e uma vez para o edge node. Todas as chaves, incluindo as variações por query string, cookie, device group e método HTTP, estão em [Cache Settings](/pt-br/documentacao/build/cache/reference/cache-settings/).
 
 ---
 
-## Tiered Cache
+## Caminho da consulta
 
-**Tiered Cache** é um módulo de Cache que adiciona uma segunda camada de cache entre os edge nodes da Azion e seus servidores de origem. Quando um edge node não tem cópia de um objeto solicitado, ele consulta a camada tiered antes de consultar a origem. Um miss no edge node ainda pode ser respondido a partir do cache, então menos requisições chegam aos seus servidores. A camada é indicada para objetos que permanecem em cache por longos períodos. Você só pode ativá-la em políticas de cache com TTL de 3 segundos ou mais. Seus servidores rodam nos Estados Unidos (`na-united-states`) por padrão e o Brasil (`sa-brazil`) está disponível como alternativa.
+Um novo cache setting não se aplica a nenhuma requisição por si só. Uma regra com o comportamento Set Cache Policy o vincula às requisições que correspondem à regra. Cada requisição que um edge node recebe segue então este caminho:
 
-:::note[nota]
-Tiered Cache exige ativação para sua conta. Para ativá-lo ou para trocar de região, [contate o time de Vendas](https://www.azion.com/pt-br/contato/).
-:::
+```mermaid
+flowchart LR
+  A[Requisição do cliente] --> B[Edge node<br/>constrói a cache key]
+  B -->|HIT| C[Cópia em cache<br/>servida]
+  B -->|MISS| D[Camada Tiered Cache<br/>quando ativa]
+  D -->|MISS| E[Busca na origem]
+  E --> F[Resposta armazenada<br/>e servida]
+```
 
-Para mais informações, consulte [Tiered Cache](/pt-br/documentacao/build/cache/tiered-cache/).
+O diagrama mostra uma requisição do cliente até a resposta armazenada. Sem Tiered Cache, o caminho de MISS vai direto do edge node para sua origem.
 
-## Real-Time Purge
+1. A Azion roteia a requisição para o edge node mais próximo do cliente.
+2. O edge node constrói uma cache key a partir do esquema, host, caminho e query string da requisição. Um cache setting que varia o conteúdo por cookie, [device group](/pt-br/documentacao/build/applications/reference/device-groups/) ou método HTTP acrescenta um marcador a essa chave. As chaves diferenciam maiúsculas de minúsculas.
+3. Quando o cache contém um objeto válido sob essa chave, o node o serve e registra o status `HIT`. Sua origem não recebe nada.
+4. Caso contrário, o node busca o objeto na sua origem e registra `MISS`. Quando Tiered Cache está ativo, a busca passa pela camada do Tiered Cache entre os edge nodes e a origem, que mantém sua própria cópia por mais tempo.
+5. Quando muitas requisições chegam ao mesmo tempo para um objeto fora do cache, o node abre uma única conexão com a origem. A origem serve esse objeto uma vez por MISS em cada edge node.
+6. A resposta é armazenada sob a chave e servida. Ela permanece válida pelo seu TTL. Uma requisição posterior então a encontra como `EXPIRED` e a atualiza ou, com Stale Cache ativado, recebe a cópia expirada enquanto a atualização é executada.
 
-**Real-Time Purge** remove objetos armazenados em cache antes que o TTL expire. Você faz purge por URL, por cache key ou por expressão wildcard, e escolhe a camada: o cache nos edge nodes da Azion ou a camada de Tiered Cache quando esse módulo está ativo. Um purge por URL não é recursivo e ignora as variações de conteúdo. Um objeto que varia por cookie, device group ou formato de imagem exige um purge por cache key ou um purge por wildcard. Faça purge da camada de Tiered Cache antes de Cache, para que os edge nodes não se reabasteçam a partir de uma cópia tiered desatualizada.
-
-Para mais informações, consulte [Real-Time Purge](/pt-br/documentacao/build/cache/reference/real-time-purge/).
-
-## Limites
-
-Cache tem limites padrão para tamanho de fragmento, tamanho de objeto e o intervalo de TTL que um cache setting aceita. O TTL para os edge nodes da Azion começa em 60 segundos. O módulo [Application Accelerator](/pt-br/documentacao/build/application-accelerator/) reduz esse piso para 0 segundos e Tiered Cache o eleva para 3 segundos. Esses valores são padrões, não tetos fixos, e o suporte técnico pode aumentá-los para o seu plano.
-
-Para a lista completa de limites e os planos a que se aplicam, consulte [Limites do Cache](/pt-br/documentacao/build/cache/limites/#limites-por-plano-de-suporte).
+Os oito valores de status do cache, as conexões keep-alive, a revalidação e a janela stale estão em [Como Cache funciona](/pt-br/documentacao/build/cache/como-funciona/).
 
 ---
 
-## Interfaces
+## Capacidades e limites
 
-Você pode criar e gerenciar cache settings usando:
+O bloco a seguir declara o que um cache setting pode fazer e onde a plataforma o limita. Cada valor corresponde a [Limites do Cache](/pt-br/documentacao/build/cache/limites/), que traz as tabelas completas por plano.
 
-- [Azion Console](https://console.azion.com/), na aba **Cache Settings** de uma aplicação.
-- [Azion API](https://api.azion.com/), pelo recurso `cache_settings` de uma aplicação.
-- [Azion CLI](/pt-br/documentacao/products/azion-cli/overview/), com `azion create cache-setting` e os comandos correspondentes `list`, `describe`, `update` e `delete`.
-- Azion Terraform Provider, com o recurso `azion_application_cache_setting`.
-- Azion Libraries, com as funções `createCacheSetting`, `getCacheSetting`, `getCacheSettings`, `updateCacheSetting` e `deleteCacheSetting` do módulo `azion/applications`.
+- **TTL.** O TTL no edge node vai de 60 a 31.536.000 segundos, definido em `max_age` ou obtido dos headers da origem. Um valor abaixo de 60 segundos, até 0, requer o módulo [Application Accelerator](/pt-br/documentacao/build/application-accelerator/). Um cache setting com Tiered Cache precisa de um TTL de pelo menos 3 segundos, e a camada do Tiered Cache mantém um objeto por até 2.592.000 segundos.
+- **Variações de cache key.** Por padrão, cada URL é um objeto no cache, e apenas respostas `GET` e `HEAD` são armazenadas em cache. Um cache setting também pode variar a chave por campos da query string, nomes de cookie, device group e corpo de uma requisição `POST` ou `OPTIONS` em cache. As variações por query string, cookie e método requerem Application Accelerator, e [Image Processor](/pt-br/documentacao/build/image-processor/) adiciona uma variação por formato de imagem. O formato de cada marcador está em [Cache keys](/pt-br/documentacao/build/cache/reference/cache-keys/).
+- **Stale Cache.** Ativado por padrão. Quando a origem retorna um erro `5xx`, excede o tempo limite ou ainda está atualizando o objeto, o edge node serve a cópia expirada. A janela stale é de 300 segundos por padrão. Um cache setting que honra os headers da origem usa, em vez disso, o valor `stale-while-revalidate` da origem.
+- **Large File Optimization.** Divide um objeto grande em fragmentos de 1.024 kB por padrão. Cada fragmento é armazenado em cache sob demanda, com sua própria cache key, conforme o cliente o consome. Um único objeto no cache pode ter até 10 GB. Para aumentar qualquer um desses valores no seu plano, entre em contato com a [equipe de suporte técnico](/pt-br/documentacao/services/support/).
+- **Tiered Cache.** Um módulo do Cache que adiciona uma segunda camada de cache entre os edge nodes e sua origem, ativado para sua conta pela [equipe de vendas](https://www.azion.com/pt-br/contato/). Seus servidores operam nos Estados Unidos por padrão ou no Brasil sob solicitação. Uma regra Bypass Cache não alcança essa camada: uma aplicação com Tiered Cache continua armazenando em cache nela pelo TTL mínimo. Ativação, regiões e ordem de purge estão em [Tiered Cache](/pt-br/documentacao/build/cache/tiered-cache/).
+- **Purge.** [Real-Time Purge](/pt-br/documentacao/build/cache/reference/real-time-purge/) remove um objeto do cache nos edge nodes ou da camada do Tiered Cache antes do fim do seu TTL, por URL, cache key ou wildcard. Um purge por wildcard não alcança a camada do Tiered Cache.
+- **Observabilidade.** Cada requisição registra seu status de cache como `Upstream Cache Status` no [Real-Time Events](/pt-br/documentacao/observe/real-time-events/), nas fontes de dados HTTP Requests e Tiered Cache, e como `$upstream_cache_status` no [Data Stream](/pt-br/documentacao/observe/data-stream/). Real-Time Events também expõe seus campos pela [API GraphQL](/pt-br/documentacao/devtools/graphql-api/recursos/campos-gql-real-time-events/). Para uma única resposta, envie o header de requisição `Pragma: azion-debug-cache` e leia os headers de resposta `X-Cache` e `X-Cache-Key`.
+- **Cache API do Runtime.** Uma função lê e grava no Cache pela [Cache API](/pt-br/documentacao/runtime/api-reference/cache/). Ela abre um armazenamento de cache nomeado com `caches.open` e então chama `match`, `put` e `delete` nele.
+- **WebSocket Proxy.** Incompatível com Cache e Tiered Cache. Uma aplicação que usa [WebSocket Proxy](/pt-br/documentacao/build/applications/reference/websocket/) não pode usar nenhum dos dois módulos, porque a conexão é bidirecional e permanece aberta.
+- **Preços.** Cache é cobrado por purges, a cada 1.000 operações, e a franquia de purge de cada plano está na página de limites do Cache. Application Accelerator é cobrado separadamente, por transferência de dados. Para mais informações, consulte [Preços](/pt-br/documentacao/platform/pricing/#cache).
 
-## Recursos relacionados
+---
 
-- [Quickstart do Cache](/pt-br/documentacao/build/cache/quickstart/) - crie um cache setting e confirme que seu conteúdo está armazenado em cache.
-- [Como o Cache funciona](/pt-br/documentacao/build/cache/como-funciona/) - o caminho da busca, os status de cache e como os objetos expiram.
-- [Configure uma política de cache](/pt-br/documentacao/build/cache/guides/cache-settings/) - os passos para definir TTL, variação de conteúdo e stale cache.
-- [Guias e tutoriais do Cache](/pt-br/documentacao/build/cache/guides/) - todos os guias e tutoriais do Cache.
-- [Glossário](/pt-br/documentacao/build/cache/glossario/) - a definição de cada termo usado nesta seção.
+## Próximos passos
+
+| Se você quer | Vá para |
+| --- | --- |
+| Criar um cache setting e aplicá-lo à sua primeira aplicação | [Quickstart do Cache](/pt-br/documentacao/build/cache/quickstart/) |
+| Entender a consulta ao cache, os oito status de cache, a expiração e a entrega stale | [Como Cache funciona](/pt-br/documentacao/build/cache/como-funciona/) |
+| Consultar cada campo, opção e chave de API de um cache setting | [Cache Settings](/pt-br/documentacao/build/cache/reference/cache-settings/) |
+| Ver como uma cache key é construída e quais variações a alteram | [Cache keys](/pt-br/documentacao/build/cache/reference/cache-keys/) |
+| Remover um objeto do cache antes do fim do seu TTL | [Real-Time Purge](/pt-br/documentacao/build/cache/reference/real-time-purge/) |
+| Adicionar uma segunda camada de cache entre os edge nodes e sua origem | [Tiered Cache](/pt-br/documentacao/build/cache/tiered-cache/) |
+| Verificar um limite por plano | [Limites do Cache](/pt-br/documentacao/build/cache/limites/) |
+| Configurar uma política no Console ou pela API, fazer purge de conteúdo, verificar headers de cache ou armazenar HLS em cache | [Guias e tutoriais do Cache](/pt-br/documentacao/build/cache/guides/) |
+| Gerenciar cache settings a partir de código | [`azion create`](/pt-br/documentacao/devtools/cli/create/), [`azion.config.js`](/pt-br/documentacao/devtools/cli/configs/azion-config-js/), [Applications - Terraform Resources](/pt-br/documentacao/produtos/terraform-provider/resources/applications/) ou [Azion Libraries, Application](/en/documentation/products/azion-lib/application/) |
+| Fazer purge a partir de código | [`azion purge`](/pt-br/documentacao/devtools/cli/purge/) ou [Azion Libraries, Purge](/pt-br/documentacao/produtos/azion-lib/purge/) |
+| Consultar um termo | [Glossário](/pt-br/documentacao/build/cache/glossario/) |

@@ -1,82 +1,140 @@
 ---
 title: Tiered Cache
 description: >-
-  Add a second cache layer between Azion edge nodes and your origin servers,
-  and set its TTL, region, and purge order.
-meta_tags: 'tiered cache, cache layer, origin offload, l2 caching, cache TTL, purge layer'
+  Look up the activation path, TTL bounds, regions, purge order, and
+  interfaces of Tiered Cache, the Cache module that adds a second cache layer.
+meta_tags: 'Tiered Cache, cache layer, cache, TTL, purge, regions, Applications'
 namespace: documentation_products_edge_application_l2_caching
 permalink: /documentation/build/cache/tiered-cache/
 menu_namespace: cacheMenu
 ---
 
-**Tiered Cache** is a [Cache](/en/documentation/build/cache/) module that adds a second cache layer between Azion edge nodes and your origin servers. When an edge node holds no valid copy of a requested object, it asks the tiered layer before the request reaches the origin. The tiered layer answers from its own cache while its copy is valid, and queries the origin only after that copy expires.
+**Tiered Cache** is a [Cache](/en/documentation/build/cache/) module that adds a second cache layer between Azion edge nodes and your origin. An edge node that lacks a requested object asks the Tiered Cache layer before the origin, so objects stay in cache for longer. The module requires activation for your account through the Sales team, and then a module switch on each application that uses it. For the generic mechanism, refer to [tiered caching in the Learning Center](https://www.azion.com/en/learning/cdn/what-is-tiered-caching/).
 
-Fewer requests reach your origin servers, so origin load drops. Content also stays in cache for longer periods, because the tiered layer keeps its own TTL. You can also choose the region that hosts the tiered layer.
+With the module active, a request passes through two cache layers before it reaches the origin:
 
-:::note
-Tiered Cache is available only after the service is activated for your account. To activate it, [contact the Sales team](https://www.azion.com/en/contact-sales/).
-:::
+```mermaid
+flowchart LR
+  User[User] --> Edge[Edge node<br/>first cache layer]
+  Edge --> Tiered[Tiered Cache layer<br/>second cache layer]
+  Tiered --> Origin[Origin]
+```
+
+The edge node answers from its own cache when it holds the object. Otherwise it asks the Tiered Cache layer, and the layer queries the origin only when its own copy is missing or expired. The full lookup path, with the cache status values, is in [How Cache works](/en/documentation/build/cache/how-it-works/).
 
 ---
 
 ## Activation
 
-Tiered Cache has two switches. You turn the module on for the application, and then for each cache policy that should use the tiered layer. Content under a policy with the switch off stays only in the cache on Azion edge nodes.
+Tiered Cache is available only after the Sales team activates the service for your account. With the service active, you turn the module on or off per application in the **Main Settings** tab, provided no existing dependency blocks the deactivation. A cache setting then keeps objects in the layer only when its TTL meets the minimum.
 
-| Interface | Application | Cache policy |
+| Scope | Requirement |
+| --- | --- |
+| Account | Service activation by the [Sales team](https://www.azion.com/en/contact-sales/) |
+| Application | The **Tiered Cache** module turned on in the [Main Settings](/en/documentation/build/applications/reference/main-settings/) tab |
+| Cache setting | A TTL of at least 3 seconds |
+
+Turning the module on can generate usage-related costs. For the rates, refer to [Pricing](/en/documentation/platform/pricing/).
+
+[WebSocket Proxy](/en/documentation/build/applications/reference/websocket/) is incompatible with the Cache and Tiered Cache modules, so an application that uses WebSocket Proxy cannot use the layer.
+
+## TTL
+
+A cache setting keeps objects in the Tiered Cache layer only when its TTL is 3 seconds or more. Below that value, the cache setting cannot use the module. The layer holds an object for at most 2,592,000 seconds. The edge cache TTL of a cache setting has its own bounds, with a default of 60 seconds.
+
+| Scope | Value |
+| --- | --- |
+| Minimum TTL of a cache setting with Tiered Cache | 3 seconds |
+| Maximum TTL in the Tiered Cache layer | 2,592,000 seconds |
+| Default TTL of a cache setting | 60 seconds |
+
+For the bounds of the edge cache TTL, refer to [Cache limits](/en/documentation/build/cache/limits/). To set the TTL of a cache setting, refer to [Cache Settings](/en/documentation/build/cache/reference/cache-settings/).
+
+## Regions
+
+The servers of the Tiered Cache layer are hosted in the United States by default. Azion also hosts them in Brazil, so you can keep the layer closer to your users. A region change for an application goes through the Sales team.
+
+| Region | Identifier | Default |
 | --- | --- | --- |
-| Azion Console | **Tiered Cache** switch in the **Main Settings** tab | **Tiered Cache** switch in the **Cache Settings** tab |
-| Azion CLI | `azion update edge-application --l2-caching` | `azion create cache-setting --l2-caching-enabled` or `azion update cache-setting --l2-caching-enabled` |
-| API | `l2_caching` on the application, in API v3 | `l2_caching_enabled` in API v3, `modules.tiered_cache` in API v4 |
+| United States | `na-united-states` | Yes |
+| Brazil | `sa-brazil` | No |
 
-In `azion.config.js`, the `tieredCache` object of a cache entry carries `enabled` and `topology`.
-
-Turning on the module may generate usage-related costs. Refer to [Pricing](/en/documentation/platform/pricing/#cache). For the steps that create a cache policy and apply it to a request, refer to [Configure a cache policy](/en/documentation/build/cache/guides/cache-settings/).
-
-## Cache TTL
-
-Tiered Cache stores objects that stay valid for long periods. A cache policy accepts the module only when its TTL is 3 seconds or more. The default TTL of a cache policy is 60 seconds, which already meets that minimum. A cache policy with a shorter TTL cannot use the tiered layer.
-
-For the expiration fields and how they read the origin headers, refer to [Cache Settings](/en/documentation/build/cache/reference/cache-settings/#cdn-cache-settings). The minimum and maximum TTL of the tiered layer are in [Cache limits](/en/documentation/build/cache/limits/).
-
-## Regions and topology
-
-Azion hosts the Tiered Cache servers in the United States (`na-united-states`) by default. Azion also offers Brazil (`sa-brazil`). To change the region of an application, contact the [Sales team](https://www.azion.com/en/contact-sales/). API v3 carries the value in the cache setting field `l2_region`.
-
-Two interfaces express the placement of the tiered layer as a `topology` field. In API v4, `modules.tiered_cache.topology` accepts `near-edge` or, where supported, `near-origin`. In `azion.config.js`, `tieredCache.topology` accepts `nearest-region`, `br-east-1`, or `us-east-1`.
-
-## Large File Optimization on the tiered layer
-
-Large File Optimization fragments a large file and caches the fragments on demand. It applies to the cache on Azion edge nodes and, while Tiered Cache is an active module, to the tiered layer. With Azion CLI, `--slice-l2-caching-enabled` turns it on for the tiered layer. API v3 names the same field `is_slice_l2_caching_enabled`.
-
-Real-Time Purge does not accept a wildcard expression for the tiered layer, so removing fragments from it means listing the cache key of each fragment. For the fragment cache key format, refer to [Cache keys](/en/documentation/build/cache/reference/cache-keys/#large-file-optimization).
+To switch an application between regions, contact the [Sales team](https://www.azion.com/en/contact-sales/).
 
 ---
+
+## Large File Optimization
+
+[Large File Optimization](/en/documentation/build/cache/reference/cache-settings/) fragments a large file and caches each fragment on demand, as the user consumes it. With the Tiered Cache module active, the feature applies to the Tiered Cache layer as well as the edge cache layer. In the Azion CLI, `--slice-configuration-enabled` turns the feature on and `--slice-l2-caching-enabled` extends it to the Tiered Cache layer.
 
 ## Real-Time Purge
 
-[Real-Time Purge](/en/documentation/build/cache/reference/real-time-purge/#purge-layers) purges one layer per request: **Cache**, the cache on Azion edge nodes, or **Tiered Cache**, the second layer. The tiered layer accepts a purge only while the module is active on the application.
+[Real-Time Purge](/en/documentation/build/cache/reference/real-time-purge/) removes an object from the Tiered Cache layer before its TTL ends. Purge the Tiered Cache layer first and the edge cache layer, **Cache**, second. In the reverse order, an edge node can fetch the outdated copy back from the layer. The Tiered Cache layer is available as a purge layer only while the module is active.
 
-Purge the **Tiered Cache** layer first, and the **Cache** layer after it. An edge node that no longer holds an object asks the tiered layer for it. A tiered layer that still holds the outdated object answers that request, and the edge node can cache it again. Purging the tiered layer first leaves the origin as the only source for the refill.
+| Purge type | Reaches the Tiered Cache layer |
+| --- | --- |
+| URL purge | Yes |
+| Cache key purge | Yes |
+| Wildcard purge | No |
 
-With Azion CLI, `azion purge --layer tiered_cache` addresses the tiered layer, and the default value of `--layer` is `cache`. In `azion.config.js`, a purge entry sets `layer` to `l2_caching` for the tiered layer and to `edge_caching` for the cache on Azion edge nodes.
-
-A wildcard expression does not purge the tiered layer. Use a URL purge or a cache key purge instead.
+Fragments created by Large File Optimization leave the layer through a cache key purge that lists each fragment, since a wildcard purge does not reach it. For the argument formats and the purge limits, refer to [Real-Time Purge](/en/documentation/build/cache/reference/real-time-purge/). To run a purge, refer to [Purge cached content](/en/documentation/build/cache/guides/purge-content/).
 
 ## Bypass Cache
 
-Tiered Cache does not support Bypass Cache. A [Bypass Cache](/en/documentation/build/applications/reference/rules-engine/#bypass-cache) rule makes the edge node request the content from the origin instead of using a cached copy. An application with an active Tiered Cache policy keeps caching the object in the tiered layer for the specified minimum TTL.
-
-## Limits
-
-Tiered Cache has a minimum and a maximum TTL, and purge operations are limited per support plan. The values are in [Cache limits](/en/documentation/build/cache/limits/), and the plan-dependent ones in [Limits by support plan](/en/documentation/build/cache/limits/#limits-by-support-plan). To request a higher limit for your plan, contact [technical support](/en/documentation/services/support/).
+The [Bypass Cache](/en/documentation/build/applications/reference/rules-engine/#bypass-cache) behavior of Rules Engine sends a request to the origin instead of the edge cache. The behavior does not reach the Tiered Cache layer. An application with the module active keeps caching in that layer for the minimum TTL, even when a Bypass Cache rule matches the request.
 
 ---
 
+## Interfaces
+
+The Console switch controls the module for the whole application. The API key, the CLI flags, and the configuration keys apply to one cache setting.
+
+| Interface | Setting |
+| --- | --- |
+| Azion Console | The **Tiered Cache** module in the **Main Settings** tab of the application. |
+| API | `modules.tiered_cache.topology` in the cache setting request body: `"near-edge"` or `"near-origin"` (if supported). |
+| Azion CLI | `--l2-caching-enabled` on `azion create cache-setting` turns the module on for the cache setting; `--slice-l2-caching-enabled` turns on Large File Optimization for the Tiered Cache layer. |
+| `azion.config.js` | `tieredCache: { enabled, topology }` in an `AzionCache` object; `topology` accepts `'nearest-region'`, `'br-east-1'`, or `'us-east-1'`. |
+
+For the flags, refer to [azion create](/en/documentation/devtools/cli/create/). For the configuration file, refer to [azion.config.js](/en/documentation/devtools/cli/configs/azion-config-js/).
+
+## Usage data
+
+The `workloadConsumptionMetrics` dataset of the GraphQL Consumption API reports the requests and the data transferred by Tiered Cache for up to 24 months.
+
+| Field | Value |
+| --- | --- |
+| Dataset | `workloadConsumptionMetrics` |
+| `productId` | `1564082375` |
+| `metricName` | `requests`, `data_transferred_total` |
+| Retention | Up to 24 months |
+
+For the query, refer to [Query Tiered Cache usage data with GraphQL](/en/documentation/products/guides/query-tiered-cache-usage-data-with-graphql/). Real-Time Events records each request to an application that uses Tiered Cache in its Tiered Cache dataset. For the fields, refer to [Real-Time Events](/en/documentation/observe/real-time-events/).
+
+---
+
+## Limits
+
+:::tip
+**Increase limits** <br></br>
+You can request to increase the limits based on your plan. Contact the [technical support team](/en/documentation/services/support/) to request it.
+:::
+
+These are the **default limits**:
+
+| Scope | Limit |
+| --- | --- |
+| Minimum TTL in Tiered Cache | 3 seconds |
+| Maximum TTL in Tiered Cache | 2,592,000 seconds |
+
+For every Cache limit by plan, refer to [Cache limits](/en/documentation/build/cache/limits/).
+
 ## Related resources
 
-- [How Cache works](/en/documentation/build/cache/how-it-works/) - the cache lookup, the cache status values, and expiration on Azion edge nodes.
-- [Cache Settings](/en/documentation/build/cache/reference/cache-settings/) - every field of a cache policy, including expiration and Large File Optimization.
-- [Real-Time Purge](/en/documentation/build/cache/reference/real-time-purge/) - the purge layers, the purge types, and the arguments each type accepts.
-- [Configure a cache policy](/en/documentation/build/cache/guides/cache-settings/) - the steps that create a cache policy and apply it with a rule.
-- [Cache limits](/en/documentation/build/cache/limits/) - the TTL and purge limits, and what changes with the support plan.
+- [How Cache works](/en/documentation/build/cache/how-it-works/) - the lookup path through both cache layers, the cache status values, and expiration.
+- [Cache Settings](/en/documentation/build/cache/reference/cache-settings/) - every field of a cache setting, including the TTL modes and Large File Optimization.
+- [Real-Time Purge](/en/documentation/build/cache/reference/real-time-purge/) - the purge types, their argument formats, and the purge limits.
+- [Cache limits](/en/documentation/build/cache/limits/) - every Cache limit, by plan.
+- [Configure a cache policy](/en/documentation/build/cache/guides/cache-settings/) - create the cache setting that the module applies to.
+- [Purge cached content](/en/documentation/build/cache/guides/purge-content/) - the steps to run a purge.
+- [Main Settings](/en/documentation/build/applications/reference/main-settings/) - the module switches of an application.
