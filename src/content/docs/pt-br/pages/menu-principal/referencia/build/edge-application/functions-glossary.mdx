@@ -1,0 +1,37 @@
+---
+title: Glossário
+description: >-
+  Consulte os termos que a documentação de Functions usa: handlers,
+  instâncias de função, JSON args, o behavior Run Function e Azion Runtime.
+meta_tags: 'Functions, glossary, handler, function instance, JSON args, Run Function, Azion Runtime, ES Modules, Service Worker, Azion Bundler'
+namespace: documentation_build_functions_glossary
+permalink: /documentacao/build/functions/glossario/
+menu_namespace: functionsMenu
+---
+
+import GlossaryFilter from '~/components/GlossaryFilter.astro'
+
+Este glossário define os termos que a documentação de [Functions](/pt-br/documentacao/build/functions/) usa.
+
+<GlossaryFilter lang="pt-br">
+
+| Termo | Definição |
+| --- | --- |
+| Azion Bundler | Um [adaptador de framework de código aberto](https://github.com/aziontech/bundler) que [converte um projeto de framework web em funções](/pt-br/documentacao/build/functions/como-funciona/) para Azion Runtime. Quando você inicializa um projeto pela [Azion CLI](/pt-br/documentacao/produtos/azion-cli/visao-geral/), o bundler identifica o framework e converte sua lógica de servidor, rotas de API e middleware em funções. Cada rota, endpoint de API ou componente de servidor de um [framework compatível](/pt-br/documentacao/produtos/devtools/azion-edge-runtime/compatibilidade-frameworks/) se torna uma função. |
+| Azion Runtime | O [runtime](/pt-br/documentacao/runtime/visao-geral/) que executa funções na rede distribuída da Azion. Ele executa JavaScript baseado em padrões Web e fornece um conjunto de [Web APIs](/pt-br/documentacao/runtime-apis/javascript/). |
+| behavior Run Function | O comportamento do [Rules Engine](/pt-br/documentacao/build/applications/reference/rules-engine/) que invoca uma [instância de função](/pt-br/documentacao/build/functions/reference/functions-instances/). Quando uma requisição atende aos critérios da regra, o edge node executa a função da instância no Azion Runtime. Na API, o tipo do comportamento é `run_function` e ele recebe o ID da instância de função. |
+| contexto de execução (`ctx`) | O objeto `ctx` que um [handler no padrão ES Modules](/pt-br/documentacao/build/functions/reference/handlers/) recebe como terceiro parâmetro. Em um handler `fetch`, `ctx.waitUntil(promise)` estende o tempo de vida da função para uma tarefa assíncrona que não deve bloquear a resposta. Em um handler `firewall`, `ctx.deny()` bloqueia a requisição imediatamente. |
+| função | O código que você escreve e salva em [Functions](/pt-br/documentacao/build/functions/), estruturado como um ou mais [handlers](/pt-br/documentacao/build/functions/reference/handlers/). Ele é executado no Azion Runtime quando uma [regra invoca uma de suas instâncias de função](/pt-br/documentacao/build/functions/como-funciona/) em uma aplicação ou um firewall. Você pode instanciar a mesma função em mais de uma aplicação ou firewall, cada instância com seus próprios args. |
+| Functions | O [produto de Build](/pt-br/documentacao/build/functions/) que executa suas funções no Azion Runtime, no caminho da requisição de uma aplicação ou de um firewall. Você escreve uma função uma vez em Functions e a instancia em cada aplicação ou firewall que a executa. |
+| handler | O [ponto de entrada no código de uma função](/pt-br/documentacao/build/functions/reference/handlers/) que Azion Runtime chama quando uma regra invoca a função. Uma função define handlers no padrão ES Modules ou no padrão legado Service Worker. Os dois tipos de handler são `fetch`, que responde a uma requisição HTTP, e `firewall`, que aplica lógica de segurança. |
+| handler `fetch` | O [handler](/pt-br/documentacao/build/functions/reference/handlers/) que responde a uma requisição HTTP com um `Response`. Ele recebe `request`, `env` e `ctx`. Quando uma função também define um handler `firewall`, a requisição chega a `fetch` somente se esse handler não chamar `ctx.deny()`. |
+| handler `firewall` | O [handler](/pt-br/documentacao/build/functions/reference/handlers/) que aplica lógica de segurança a uma requisição antes da execução do handler `fetch`. Ele chama `ctx.deny()` para bloquear a requisição ou retorna sem chamá-lo para deixar a requisição seguir para `fetch`. Uma função instanciada em um firewall [é executada na fase de requisição](/pt-br/documentacao/secure/firewall/reference/functions/). |
+| instância de função | O objeto que [vincula uma função salva a uma aplicação](/pt-br/documentacao/build/functions/reference/functions-instances/) ou a um [firewall](/pt-br/documentacao/secure/firewall/reference/functions-instances/), com seu próprio ID. Uma instância não pode alterar o código da função, somente os JSON args que ela recebe. Uma regra com o behavior Run Function seleciona uma instância, não a função em si. |
+| JSON args | Um objeto JSON passado à função quando ela é executada, para que uma função se comporte de forma diferente em cada instância sem alterar o código. Uma função tem args padrão e uma [instância de função os sobrescreve](/pt-br/documentacao/build/functions/reference/functions-instances/) chave por chave: uma chave não definida na instância mantém o valor padrão. No padrão Service Worker, o código lê um argumento pelo nome com `event.args()`. |
+| metadados da requisição | Um conjunto de valores sobre a requisição recebida que uma função lê por meio da [Metadata API](/pt-br/documentacao/produtos/applications/functions/runtime/api-reference/metadata/). Ele abrange localização GeoIP do cliente, endereço IP e porta remotos, protocolo do servidor, detalhes de TLS, fingerprints do servidor e identificadores da requisição. Uma função em um firewall usa esses valores para filtrar o acesso a uma aplicação e aplicar lógica por cenário. |
+| módulo Functions | Um módulo que você [ativa em uma aplicação ou em um firewall](/pt-br/documentacao/build/functions/guides/instanciar-functions/) antes que possam instanciar funções. Quando o módulo está ativo, o tempo de computação e as invocações podem gerar [cobranças de uso](/pt-br/documentacao/platform/pricing/#functions). |
+| padrão ES Modules | O [padrão de handler](/pt-br/documentacao/build/functions/reference/handlers/) recomendado para uma função: um objeto `export default` cujas propriedades `fetch` e `firewall` são os handlers. Cada handler recebe `request`, `env` e `ctx`. O padrão Service Worker é a alternativa legada. |
+| padrão Service Worker | O [padrão de handler](/pt-br/documentacao/build/functions/reference/handlers/) legado para uma função, mantido por compatibilidade com versões anteriores. O código registra um handler `fetch` ou `firewall` com `addEventListener()` e lê a requisição de `event.request`. Azion recomenda que você migre as funções escritas neste padrão para o padrão ES Modules. |
+| Preview Deployment | Um recurso do [Functions Code Editor](/pt-br/documentacao/produtos/applications/functions/runtime-api/code-editor/) que [executa uma função com uma requisição simulada](/pt-br/documentacao/produtos/applications/functions/runtime-api/preview-deployment/) e mostra o resultado. Ele depende de uma função `PreviewProvider` no código-fonte, que constrói a requisição simulada e chama o handler. Sem `PreviewProvider`, nenhuma pré-visualização é renderizada. |
+
+</GlossaryFilter>

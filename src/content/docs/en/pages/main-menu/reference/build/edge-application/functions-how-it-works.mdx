@@ -1,9 +1,9 @@
 ---
 title: How Functions works
 description: >-
-  Trace how a request reaches a function, which handler Azion Runtime calls,
-  and which limits end an execution.
-meta_tags: 'functions, handlers, ES Modules, function instance, Rules Engine, Azion Bundler, execution limits, Azion Runtime'
+  Follow a request from the edge node through firewall and application rules
+  to a handler, and see what function instances and framework builds add.
+meta_tags: 'Functions, function instance, handlers, fetch handler, firewall handler, Rules Engine, Azion Runtime, Azion Bundler, serverless'
 namespace: documentation_build_functions_how_it_works
 permalink: /documentation/build/functions/how-it-works/
 menu_namespace: functionsMenu
@@ -11,51 +11,58 @@ menu_namespace: functionsMenu
 
 import Code from '~/components/Code/Code.astro'
 
-A function is a handler that Azion runs when a request arrives: it receives the request and returns a response, on infrastructure Azion operates. [Azion Runtime](/en/documentation/runtime/overview/) starts the handler on demand on the edge node that received the request, so the code runs close to the user. Three Azion objects decide which requests reach it. **Functions** stores the code. A function instance binds it to an application or a firewall and carries its arguments, and [Rules Engine](/en/documentation/build/applications/reference/rules-engine/) selects the requests that trigger it.
+A function is a handler that runs when a request arrives. The handler receives the request and returns a response, or decides whether the request may continue. [Azion Runtime](/en/documentation/runtime/overview/) starts the handler on demand on the edge node that received the request. It stops the handler when the response is sent, so there is no server to provision or scale.
 
-The sections that follow trace that behavior in order: the request path, function instances, handlers and the event model, and framework builds through Azion Bundler.
+On Azion, three objects realize that behavior. [Functions](/en/documentation/build/functions/) stores the code as a function. A function instance binds that function to an [application](/en/documentation/build/applications/) or a [firewall](/en/documentation/secure/firewall/) and carries the arguments the code reads. A rule in [Rules Engine](/en/documentation/build/applications/reference/rules-engine/) selects the requests that reach the instance. The following sections cover the request path, function instances, handlers and the event model, and framework builds through Azion Bundler.
 
 ## Request path
 
-A request that arrives at an Azion edge node runs a function only where a rule selects it. Rules Engine evaluates its criteria against the request, and a matching rule triggers the behavior that invokes the function instance. Azion Runtime processes the function and returns an outcome, and Rules Engine resumes processing from the point the behavior was triggered.
-
-The path has two points where a function can run, and they are not interchangeable. A function on a firewall runs in the request phase, and it either blocks the request or lets it continue to the `fetch` handler. A function on an application runs where its rule says: the **Run Function** behavior carries both the execution phase and the criteria that trigger it.
-
-The diagram below follows one request from the edge node to the response. Each decision is a criteria match in Rules Engine, and each box that names Azion Runtime is one handler invocation:
+A request reaches a function only through a rule that names its instance. The diagram traces one request from the edge node that received it, through the firewall and the application, to the response.
 
 ```mermaid
-flowchart LR
-    R["Request at an<br/>edge node"] --> FWR{"Firewall<br/>rule match"}
-    FWR -->|no| APPR{"Application<br/>rule match"}
-    FWR -->|yes| FWH["firewall<br/>handler"]
-    FWH -->|ctx.deny| BLOCK["Request<br/>blocked"]
-    FWH -->|"returns,<br/>rules resume"| APPR
-    APPR -->|yes| FETCH["fetch<br/>handler"]
-    APPR -->|no| PASS["No function<br/>runs"]
-    FETCH --> RESP["Response"]
-    PASS --> RESP
+flowchart TD
+  Client([Client]) -->|HTTP request| Node[Edge node receives the request]
+  Node --> FwRule{Firewall rule with Run Function}
+  FwRule -->|Criteria match| FwHandler[The firewall handler runs on Azion Runtime]
+  FwHandler -->|"ctx.deny() called"| Blocked([Request blocked])
+  FwHandler -->|Returns without deny| AppRule{Application rule with Run Function}
+  FwRule -->|No match| AppRule
+  AppRule -->|Criteria match| Fetch[The fetch handler runs on Azion Runtime]
+  AppRule -->|No match| NoFn([No function runs])
+  Fetch --> Response([Response returned to the client])
 ```
 
-Nothing on this path is automatic. Code saved in **Functions** and never instantiated, or instantiated and never named by a rule, is code that no request reaches.
+The firewall's Rules Engine sees the request first. When a firewall rule with the **Run Function** behavior matches, [Azion Runtime](/en/documentation/runtime/overview/) runs the `firewall` handler of the bound instance in the request phase. A call to `ctx.deny()` blocks the request immediately, and the `fetch` handler never runs for it. When the handler returns without that call, the firewall's Rules Engine resumes where the behavior was triggered, and the request continues to the application.
+
+The application's Rules Engine then applies its own rules, and a **Run Function** rule whose criteria match runs the `fetch` handler of the selected instance. That handler returns a `Response` to the client.
+
+A rule decides which requests a handler sees. An application rule can select requests by path, such as `${uri}` equal to `/hello-world`. On the firewall, a rule can select them by a network list of countries. The `firewall` handler can also read request metadata, such as the client's country or IP address, before it decides. For the metadata fields, refer to [Metadata API](/en/documentation/products/applications/functions/runtime/api-reference/metadata/).
+
+Nothing on this path is automatic. A saved function runs nothing by itself, and an instance runs nothing until a rule names it in a **Run Function** behavior. The application or firewall must also have its **Functions** module enabled before it can hold an instance. A function that never runs is usually missing one link in that chain: the module, the instance, or a rule whose criteria the request meets.
+
+The price of this design is configuration: three objects, each created separately, before a single request reaches your code. In return, the same function can sit behind several rules. A rule also filters traffic before the handler runs, so the code does not inspect every request itself. A request the firewall denies never reaches the application's rules, so the application does no work for it.
+
+---
 
 ## Function instances
 
-A function instance is the object that binds one function to one application or one firewall. You create the function in **Functions** and save it first; instantiation comes after. The instance does not copy the code and cannot change it. What the instance carries is the arguments, in JSON, that Azion Runtime passes to the function's execution context.
+The same code often has to run in several places with different settings. A function instance binds one saved function to one application or one firewall and carries the arguments that make this binding differ from the next. The code is not editable at instantiation, so an instance changes what the function receives, never what it does.
 
-That split is what makes one function reusable. The same code runs in several applications, and each instance varies the behavior through its own **Args** value, up to 100 KB. An **Args** object above that limit causes the function to fail at instantiation.
+The arguments are a JSON object. The function definition can carry default arguments, and the instance's arguments override them key by key, so the handler receives the merged object. A rule's **Run Function** behavior points at an instance, not at a function. That indirection is what lets one function sit behind several rules, each with its own arguments. You change behavior through the arguments and leave the code alone, and one function serves several applications.
 
-An instance is still not a trigger. A rule in Rules Engine, carrying the **Run Function** behavior, decides which requests reach the instance and in which execution phase. For the fields an instance holds, refer to [Functions Instances](/en/documentation/build/functions/reference/functions-instances/). For the firewall equivalent, refer to [Functions Instances for Firewall](/en/documentation/secure/firewall/reference/functions-instances/).
+The price is indirection. A rule names an instance and the instance names a function, so a reader of the rule follows two links to reach the code. You set an argument that differs per application on each instance. A change in logic is a change to the function, never to an instance.
+
+An args object above 100 KB fails at instantiation, so the ceiling bounds how much configuration one instance carries. For the full set of limits, refer to [Functions limits](/en/documentation/build/functions/limits/). For the instance fields and how defaults and overrides merge, refer to [Functions Instances](/en/documentation/build/functions/reference/functions-instances/).
+
+---
 
 ## Handlers and the event model
 
-A function exports handlers rather than a single entry point. In the ES Modules pattern, which Azion recommends, the module's default export is an object whose named methods are the handlers. `fetch` answers HTTP requests, and `firewall` carries security logic. Azion Runtime calls the handler that matches the event, so one module can hold both and answer at two different points on the request path.
+[Azion Runtime](/en/documentation/runtime/overview/) calls your code through a fixed entry point. A function therefore ships as an ES module whose default export is an object with named handlers: `fetch`, which answers a request, and `firewall`, which decides whether a request may continue. The runtime calls the handler that matches the event and passes it the request.
 
-Both handlers take the same three parameters: the incoming `Request`, an `env` object that holds environment variables and bindings, and a `ctx` execution context. `ctx` is where the event model becomes visible. `ctx.waitUntil(promise)` extends the function's lifetime for async tasks, and `ctx.deny()` blocks a request from inside a firewall handler.
+A module that carries both handlers looks like this:
 
-One module carrying both handlers looks like this:
-
-<Code lang="javascript" code={`
-export default {
+<Code lang="javascript" code={`export default {
   fetch: async (request, env, ctx) => {
     return new Response('Access granted');
   },
@@ -63,110 +70,57 @@ export default {
   firewall: async (request, env, ctx) => {
     const userAgent = request.headers.get('User-Agent');
 
-    // Requests that identify themselves as bots never reach fetch
+    // Block bot requests
     if (userAgent && userAgent.includes('bot')) {
       ctx.deny();
       return;
     }
 
+    // Allow request to continue to fetch handler
     return;
   }
-};
-`} />
+};`} />
 
-The contract is fixed, and the cost of that is portability. A plain default-exported function, a named `export function fetch`, and a module with no export at all are all unsupported. Code shaped that way fails with `Unsupported handler pattern detected`. The body of a function is ordinary JavaScript, but the entry point is not portable: code that exposes its handler in another shape has to be rewritten before it runs.
+Each handler receives the same three parameters. `request` is the Web `Request` object for the incoming HTTP request, and `env` holds environment variables and bindings. `ctx` is the execution context, and it carries the two calls that shape the event model.
 
-The Service Worker pattern, built on `addEventListener('fetch', ...)`, still runs and is kept for backward compatibility. Azion recommends migrating those functions to ES Modules. For the parameter tables of both patterns, refer to [Handlers](/en/documentation/build/functions/reference/handlers/).
+A `fetch` handler returns a `Response`, and the function's lifetime ends with it. Work that must outlive the response, such as a log write, goes into `ctx.waitUntil(promise)`, which extends the function's lifetime so the task completes. A `firewall` handler returns nothing: it calls `ctx.deny()` to block the request immediately, or it returns to let the request continue to the `fetch` handler.
 
----
-
-## Application functions and firewall functions
-
-The two placements differ in what the handler is allowed to decide. An application function answers a request: the `fetch` handler receives the `Request`, and its return value is the `Response` the client gets. A firewall function decides whether the request continues at all, and it runs in the request phase.
-
-Control flow around a firewall function needs care, because the handler does not have to return anything. The `firewall` handler blocks a request by calling `ctx.deny()`. When it returns without calling `ctx.deny()`, the request continues to the `fetch` handler. A handler that reaches its end with neither outcome intended is therefore an allow decision, taken by omission.
-
-Two shapes cause that:
-
-- **A conditional with no `else`.** A branch that calls a finishing outcome and then falls through to the code after the `if` can behave unexpectedly. Pair the branches with `else`, or end each branch with its own `return`.
-- **A promise nobody waits on.** Async work started inside a handler and left unattended may end in unexpected exceptions. Pass it to `waitUntil`, which extends the function's lifetime for async tasks.
-
-Functions on a firewall also read request metadata. The metadata covers GeoIP location, the remote client address and port, the server protocol, TLS ciphers and fingerprints, and per-request identifiers. For the field names, refer to [Metadata API](/en/documentation/products/applications/functions/runtime/api-reference/metadata/). For the firewall side of the product, refer to [Functions for Firewall](/en/documentation/secure/firewall/reference/functions/).
+The entry-point contract is fixed, and that is the tradeoff. A module that exports a bare function, exports named handlers, or exports nothing matches no supported pattern. Such code fails with the error `Unsupported handler pattern detected`. The Service Worker form, which registers handlers with `addEventListener`, remains supported for backward compatibility. Azion recommends the ES Modules form for new code and migration for existing code. For the parameter tables, the migration mapping, and the unsupported shapes, refer to [Handlers](/en/documentation/build/functions/reference/handlers/).
 
 ---
 
 ## Framework builds through Azion Bundler
 
-A web framework project becomes functions before it runs. When you deploy such a project on Azion, [Azion Bundler](https://github.com/aziontech/bundler) transforms the framework code into functions that run on Azion Runtime. Azion Bundler is an open-source framework adapter built for Azion's distributed architecture. It stands between the project you wrote and the code the platform executes.
-
-The pipeline runs in one direction, from your framework project to the nodes that answer requests:
+A web framework project is not a handler module. Its server-side logic, API routes, and middleware follow the framework's own conventions rather than the handler contract. [Azion Bundler](https://github.com/aziontech/bundler), an open-source framework adapter, transforms that code into functions that run on [Azion Runtime](/en/documentation/runtime/overview/).
 
 ```mermaid
 flowchart LR
-    FC["Framework<br/>code"] --> AB["Azion Bundler<br/>adapter"]
-    AB --> FN["One function<br/>per route"]
-    FN --> RT["Azion<br/>Runtime"]
-    RT --> EN["Azion<br/>edge nodes"]
+  Project[Framework project] --> Bundler[Azion Bundler]
+  Bundler --> Fn[Generated functions in JavaScript or WebAssembly]
+  Fn --> Runtime[Azion Runtime]
+  Runtime --> DC[Azion data centers]
 ```
 
-Four stages produce that result:
+The diagram shows the pipeline from project to data center. The bundler works in four stages:
 
 1. **Framework detection.** When you initialize a project with [Azion CLI](/en/documentation/products/azion-cli/overview/), the bundler identifies the framework and applies the matching adapter.
 2. **Code transformation.** The bundler converts the framework's server-side logic, API routes, and middleware into functions compatible with Azion Runtime.
-3. **Function generation.** Each route, API endpoint, and server component becomes a function that executes independently.
-4. **Deployment.** The generated functions are distributed across Azion's global network.
+3. **Function generation.** Each route, API endpoint, or server component becomes a function that runs independently.
+4. **Deployment.** Azion distributes the functions across its network, where they run like any other function.
 
-The tradeoff is that the deployed artifact is no longer the code you wrote. Debugging goes through [Preview Deployment](/en/documentation/products/applications/functions/runtime-api/preview-deployment/), [Data Stream](/en/documentation/observe/data-stream/guides/debugging-functions-data-stream/), or the [GraphQL API](/en/documentation/build/functions/guides/debugging-functions-graphql/). Generated functions are also functions for billing, because they incur compute time and invocation charges. For the charges, refer to [Pricing](/en/documentation/platform/pricing/#functions). For which frameworks the adapters cover, refer to [Frameworks compatibility](/en/documentation/products/devtools/azion-edge-runtime/frameworks-compatibility/).
+The deployed artifact is a set of generated functions, not the files you wrote. You debug those functions, not the source files, with [Preview Deployment](/en/documentation/products/applications/functions/runtime-api/preview-deployment/), [Data Stream](/en/documentation/observe/data-stream/guides/debugging-functions-data-stream/), or the [GraphQL API](/en/documentation/build/functions/guides/debugging-functions-graphql/). Framework code reaches environment variables through the [environment variables API](/en/documentation/products/functions/environment-variables/).
 
----
-
-## Function inputs
-
-A function reads from four inputs: the request, environment variables, the arguments set on its instance, and, on a firewall, request metadata. The first three carry size limits:
-
-| Input | How it reaches the function | Limit |
-| --- | --- | --- |
-| Request | The `request` parameter, a standard `Request` object | URL 16 KB, headers 64 KB combined |
-| Environment variables | The `env` parameter | 32 KB for all variables of a function combined |
-| Args | Set on the function instance, in JSON | 100 KB |
-
-Request bodies are capped separately by service plan: 100 MB on Developer, 200 MB on Business, and 500 MB on Enterprise and Mission Critical.
-
-**Args** exist so that one function behaves differently in each place it is instantiated. You set them as a JSON object on the instance, and the code does not change. In the Service Worker pattern, code reads a single argument as a property of `event.args`, such as `event.args.desiredArg`.
-
-Environment variables hold configuration and sensitive values that do not belong in the source code. For how to set and read them, refer to [Environment variables](/en/documentation/products/functions/environment-variables/). For what the runtime itself exposes to your code, refer to [Supported Web APIs](/en/documentation/runtime-apis/javascript/).
-
-## Execution limits
-
-An invocation runs inside a fixed envelope. These are the default limits that bound a running function:
-
-| Scope | Limit | What it measures |
-| --- | --- | --- |
-| Max CPU Execution Time | 2s | Active computation per invocation, not wall-clock time. A function that exceeds it is terminated |
-| Max Execution Time | 5 min | Total elapsed time for an invocation, including I/O wait, `fetch()` calls, and async operations |
-| Max Cold Start | 2s | Time allowed for a function to initialize before it handles its first request |
-| Sub-Requests | 50 Sub-Req | Outbound `fetch()` calls a function can make during a single invocation |
-| Memory per Isolate | 512 MB | Memory available to a single function execution context, a V8 isolate, including heap, stack, and all runtime allocations |
-
-The two time limits measure different things, and the difference decides what a function can do. A function may wait minutes on a slow origin and stay inside its 5-minute budget, while 2 seconds of computation ends it. The CPU ceiling counts active computation only, so time spent inside `fetch()` calls and other I/O does not consume it.
-
-The other three limits bound shape rather than time. A function can make at most 50 outbound `fetch()` calls in one invocation, which bounds how many upstream services one request can aggregate. The memory ceiling covers heap, stack, and every other allocation in the isolate, so 512 MB bounds the whole execution context and not only your data. Initialization is bounded rather than absent: a function is allowed up to 2 seconds to start before it handles its first request.
-
-:::tip
-You can request an increase to these limits based on your plan. Contact the [technical support team](/en/documentation/services/support/) to request it.
-:::
-
-For the complete set, including the authoring and input limits, refer to [Functions limits](/en/documentation/build/functions/limits/).
+Each generated function is billed as a function: compute time and invocations carry charges, so a framework with many routes deploys many billable functions. For the rates, refer to [Pricing](/en/documentation/platform/pricing/#functions). For the supported frameworks, refer to [Frameworks compatibility](/en/documentation/products/devtools/azion-edge-runtime/frameworks-compatibility/).
 
 ---
 
 ## Related resources
 
-- [Handlers](/en/documentation/build/functions/reference/handlers/) - the parameter tables for the `fetch` and `firewall` handlers in both patterns.
-- [Functions Instances](/en/documentation/build/functions/reference/functions-instances/) - the fields an instance carries and how arguments are set.
-- [Functions limits](/en/documentation/build/functions/limits/) - every default limit in one table, with the plan variations.
-- [Functions quickstart](/en/documentation/build/functions/quickstart/) - create, instantiate, and trigger a first function.
-- [Rules Engine](/en/documentation/build/applications/reference/rules-engine/) - how criteria and the **Run Function** behavior select requests.
-- [Functions for Firewall](/en/documentation/secure/firewall/reference/functions/) - what a function can do in the request phase of a firewall.
-- [Azion Runtime](/en/documentation/runtime/overview/) - the runtime your functions execute on.
-- [Guides and tutorials](/en/documentation/build/functions/guides/) - working examples of the mechanisms on this page.
+- [Handlers](/en/documentation/build/functions/reference/handlers/) - The parameter tables for `fetch` and `firewall`, both handler patterns, and the migration mapping.
+- [Functions Instances](/en/documentation/build/functions/reference/functions-instances/) - The instance fields, the JSON args, and how defaults and overrides merge.
+- [Functions limits](/en/documentation/build/functions/limits/) - Every limit that applies to a function, with its unit.
+- [Functions quickstart](/en/documentation/build/functions/quickstart/) - The function, instance, and rule chain built once, end to end.
+- [Rules Engine](/en/documentation/build/applications/reference/rules-engine/) - The criteria and behaviors a rule uses to select requests, including **Run Function**.
+- [Functions for Firewall](/en/documentation/secure/firewall/reference/functions/) - The request-phase behavior of a function bound to a firewall.
+- [Azion Runtime](/en/documentation/runtime/overview/) - The runtime that executes functions and the Web APIs it exposes.
+- [Functions guides and tutorials](/en/documentation/build/functions/guides/) - The how-tos that apply this model, from a first instance to debugging.

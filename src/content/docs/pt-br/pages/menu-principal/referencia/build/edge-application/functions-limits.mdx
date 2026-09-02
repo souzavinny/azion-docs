@@ -1,0 +1,83 @@
+---
+title: Limites de Functions
+description: >-
+  Consulte os limites padrão de uma função no Azion Runtime: tempo de execução,
+  memória, tamanho de código, de requisição e de resposta, além da configuração.
+meta_tags: 'Functions, limits, CPU time, execution time, cold start, memory, code size, body size, sub-requests, JSON args, environment variables'
+namespace: documentation_build_functions_limits
+permalink: /documentacao/build/functions/limites/
+menu_namespace: functionsMenu
+---
+
+Esta referência lista os limites padrão de uma função executada no [Azion Runtime](/pt-br/documentacao/runtime/visao-geral/). Eles delimitam o tempo de execução, a memória e o tamanho do código. Também delimitam a requisição e a resposta que uma função processa e a configuração que ela recebe. Uma função invocada pelo [Firewall](/pt-br/documentacao/secure/firewall/) tem os mesmos valores padrão para JSON args, memória, tamanho do código, variáveis de ambiente, sub-requisições e tempo de CPU.
+
+:::tip[Aumentar limites]
+Para solicitar um limite maior para seu plano, entre em contato com o [suporte técnico](/pt-br/documentacao/services/support/).
+:::
+
+---
+
+## Limites de tempo de execução
+
+Os limites de tempo de execução delimitam por quanto tempo uma invocação da função é executada. O tempo de CPU conta apenas a computação ativa. Já o tempo de relógio conta o tempo total decorrido, incluindo espera de I/O, chamadas `fetch()` e operações assíncronas.
+
+| Limite | Valor | Descrição |
+| --- | --- | --- |
+| Tempo de CPU | 2 s | Tempo máximo de CPU que uma função consome por invocação. Conta apenas a computação ativa, não o tempo de relógio. Uma função que excede esse limite é encerrada. |
+| Tempo de relógio | 5 min | Tempo total máximo decorrido para uma invocação, incluindo espera de I/O, chamadas `fetch()` e operações assíncronas. |
+| Cold start | 2 s | Tempo máximo para uma função inicializar antes de atender sua primeira requisição. |
+
+---
+
+## Limites de memória e tamanho do código
+
+Os limites de memória delimitam um único contexto de execução de uma função. Os limites de tamanho do código delimitam o código-fonte que você envia, e o teto depende da interface pela qual você faz o deploy.
+
+| Limite | Valor | Descrição |
+| --- | --- | --- |
+| Memória por isolate | 512 MB | Memória máxima disponível para um único contexto de execução de uma função (isolate), incluindo heap, pilha e todas as alocações do runtime. |
+| Tamanho do código (Azion Console) | 6 MB | Tamanho máximo do código-fonte da função quando criada ou editada pelo Azion Console. |
+| Tamanho do código (API) | 20 MB | Tamanho máximo do código-fonte da função quando o deploy é feito pela Azion API. |
+
+---
+
+## Limites de requisição e resposta
+
+Os limites de requisição e resposta delimitam a URL, os cabeçalhos e o corpo que uma função processa. Também delimitam as chamadas `fetch()` de saída que ela faz em uma invocação.
+
+| Limite | Valor | Descrição |
+| --- | --- | --- |
+| Tamanho da URL | 16 KB | Tamanho máximo da URL da requisição que uma função processa, incluindo o caminho e a query string. |
+| Tamanho dos cabeçalhos | 64 KB | Tamanho total máximo de todos os cabeçalhos HTTP da requisição combinados que uma função lê ou escreve. |
+| Sub-requisições de saída | 50 por invocação | Número máximo de chamadas `fetch()` de saída que uma função faz durante uma única invocação. |
+
+O limite de tamanho do corpo varia conforme o plano de serviço. Ele delimita o corpo da requisição ou resposta HTTP que uma função processa.
+
+| Escopo | Plano | Limite | Ampliável |
+| --- | --- | --- | --- |
+| Corpo da requisição ou resposta | Developer | 100 MB | Sim, sob solicitação |
+| Corpo da requisição ou resposta | Business | 200 MB | Sim, sob solicitação |
+| Corpo da requisição ou resposta | Enterprise | 500 MB | Sim, sob solicitação |
+| Corpo da requisição ou resposta | Mission Critical | 500 MB | Sim, sob solicitação |
+
+---
+
+## Limites de configuração
+
+Os limites de configuração delimitam os JSON args passados a uma [instância de função](/pt-br/documentacao/build/functions/reference/functions-instances/) e as [variáveis de ambiente](/pt-br/documentacao/produtos/functions/environment-variables/) que uma função lê.
+
+| Limite | Valor | Descrição |
+| --- | --- | --- |
+| JSON args | 100 KB | Tamanho máximo do objeto JSON args passado a uma instância de função. Um objeto maior faz com que a função falhe na instanciação. |
+| Variáveis de ambiente | 32 KB | Tamanho total máximo de todas as variáveis de ambiente combinadas de uma única função. |
+
+---
+
+## Recursos relacionados
+
+- [Functions](/pt-br/documentacao/build/functions/) - O que Functions faz e onde estes limites se situam entre suas fronteiras.
+- [Como Functions funciona](/pt-br/documentacao/build/functions/como-funciona/) - A cadeia de invocação que estes limites delimitam.
+- [Functions Instances](/pt-br/documentacao/build/functions/reference/functions-instances/) - Os campos da instância, incluindo os JSON args que o limite de argumentos delimita.
+- [Handlers](/pt-br/documentacao/build/functions/reference/handlers/) - As assinaturas de handler, incluindo o parâmetro `env`.
+- [Preços](/pt-br/documentacao/platform/pricing/#functions) - As cobranças de tempo de computação e de invocação que uma função gera.
+- [Suporte](/pt-br/documentacao/services/support/) - Como solicitar um limite maior para seu plano.

@@ -1,9 +1,9 @@
 ---
 title: Handlers
 description: >-
-  Declare fetch and firewall handlers in Functions with the ES Modules or
-  Service Worker pattern, and read their full parameter tables.
-meta_tags: 'functions, handlers, fetch handler, firewall handler, ES Modules, Service Worker, waitUntil'
+  Look up the fetch and firewall handler signatures, the ES Modules and
+  Service Worker patterns, and the handler shapes Functions rejects.
+meta_tags: 'Functions, handlers, fetch handler, firewall handler, ES Modules, Service Worker, waitUntil, ctx.deny, handler patterns, serverless'
 namespace: documentation_build_functions_handlers
 permalink: /documentation/build/functions/reference/handlers/
 menu_namespace: functionsMenu
@@ -11,54 +11,42 @@ menu_namespace: functionsMenu
 
 import Code from '~/components/Code/Code.astro'
 
-A handler is the entry point a function exposes to [Azion Runtime](/en/documentation/runtime/overview/). [Functions](/en/documentation/build/functions/) supports two handlers: `fetch`, which answers an HTTP request with a response, and `firewall`, which decides whether a request continues. You declare both with the ES Modules pattern or with the Service Worker pattern.
+A handler is the entry point a function exposes to [Azion Runtime](/en/documentation/runtime/overview/), which calls it with each incoming request. [Functions](/en/documentation/build/functions/) supports two handlers: `fetch`, which returns the response, and `firewall`, which decides whether the request continues. A function declares them in one of two patterns, ES Modules or Service Worker.
 
 ## Handler patterns
 
-Functions supports two ways to declare a handler. In the ES Modules pattern, the function exports a default object and each handler is a property of that object. In the Service Worker pattern, the function registers each handler on an event with `addEventListener`. Azion recommends the ES Modules pattern, and maintains the Service Worker pattern for backward compatibility.
+The two patterns declare the same handlers with different syntax. ES Modules is the recommended pattern. Service Worker is the legacy pattern, kept for backward compatibility.
 
-| Pattern | Status | Declaration | Blocks a request with |
+| Pattern | Status | Declaration | Blocks a request in `firewall` |
 | --- | --- | --- | --- |
-| ES Modules | Recommended | A property of the object in `export default` | `ctx.deny()` |
-| Service Worker | Legacy | `addEventListener('fetch', handler)` and `addEventListener('firewall', handler)` | `event.deny()` |
-
-Both patterns accept the same two handler names. A function that declares both handlers runs `firewall` first, and reaches `fetch` only for the requests `firewall` does not block.
+| ES Modules | Recommended | A default export object with a `fetch` property and a `firewall` property, each a function of `(request, env, ctx)`. | `ctx.deny()` |
+| Service Worker | Legacy, kept for backward compatibility | One `addEventListener` call per handler, registered for the `'fetch'` or `'firewall'` event and receiving an event object. | `event.deny()` |
 
 ---
 
 ## `fetch` handler
 
-The `fetch` handler answers an HTTP request. It receives the request, the environment, and the execution context, and it returns a `Response`. When the function also declares a `firewall` handler, `fetch` runs only for the requests that `firewall` allows through.
+The `fetch` handler receives the HTTP request and returns a `Response`. In ES Modules, it is the `fetch` property of the default export:
 
-Declare a `fetch` handler in the ES Modules pattern:
-
-<Code lang="javascript" code={`
-export default {
+<Code lang="javascript" code={`export default {
   fetch: async (request, env, ctx) => {
     return new Response('Hello World');
   }
-};
-`} />
-
-The `fetch` handler takes these parameters:
+};`} />
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| `request` | `Request` | The incoming HTTP request object |
-| `env` | `Object` | Environment variables and bindings |
-| `ctx` | `Object` | Execution context |
-| `ctx.waitUntil(promise)` | `Function` | Extends the lifetime of the function so an asynchronous task finishes after the response returns |
+| `request` | `Request` | The incoming HTTP request object. |
+| `env` | Object | Environment variables and bindings. |
+| `ctx` | Object | Execution context. `ctx.waitUntil(promise)` extends the function's lifetime for an asynchronous task. |
 
-For the environment variables a function reads through `env`, refer to [Environment variables](/en/documentation/products/functions/environment-variables/).
+For more information on the variables `env` carries, refer to [Environment variables](/en/documentation/products/functions/environment-variables/).
 
 ## `firewall` handler
 
-The `firewall` handler decides whether a request continues. It receives the same three parameters as the `fetch` handler. Call `ctx.deny()` to block the request immediately. When the handler returns without calling `ctx.deny()`, the request continues to the `fetch` handler.
+The `firewall` handler runs in the request phase, before the `fetch` handler, and decides whether the request continues. It is declared beside `fetch` in the same default export:
 
-Declare a `firewall` handler beside a `fetch` handler in the same default export:
-
-<Code lang="javascript" code={`
-export default {
+<Code lang="javascript" code={`export default {
   fetch: async (request, env, ctx) => {
     return new Response('Access granted');
   },
@@ -71,28 +59,24 @@ export default {
       return;
     }
 
+    // Allow the request to continue to the fetch handler
     return;
   }
-};
-`} />
-
-The `firewall` handler takes these parameters:
+};`} />
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| `request` | `Request` | The incoming HTTP request object |
-| `env` | `Object` | Environment variables and bindings |
-| `ctx` | `Object` | Execution context |
-| `ctx.deny()` | `Function` | Blocks the request immediately. Available in the ES Modules pattern only. When it is not called, the request continues to the `fetch` handler |
+| `request` | `Request` | The incoming HTTP request object. |
+| `env` | Object | Environment variables and bindings. |
+| `ctx` | Object | Execution context. `ctx.deny()` blocks the request immediately. |
+
+A call to `ctx.deny()` blocks the request immediately. When the handler returns without calling `ctx.deny()`, the request continues to the `fetch` handler. The handler returns no value and never returns a `Response`. `ctx.deny()` exists in the ES Modules pattern only. The Service Worker equivalent is `event.deny()`.
 
 ## Service Worker event handlers
 
-The Service Worker pattern registers each handler on an event instead of exporting it. Functions supports the `fetch` and `firewall` events for backward compatibility with existing functions. A `fetch` listener returns its response through `event.respondWith()`, and a `firewall` listener blocks a request through `event.deny()`.
+The Service Worker pattern is legacy, kept for backward compatibility. Each handler is a listener registered with `addEventListener`, and it acts on the request through the event object it receives:
 
-Declare both handlers in the Service Worker pattern:
-
-<Code lang="javascript" code={`
-addEventListener('fetch', (event) => {
+<Code lang="javascript" code={`addEventListener('fetch', (event) => {
   event.respondWith(handleRequest(event.request));
 });
 
@@ -102,30 +86,29 @@ addEventListener('firewall', (event) => {
 
 async function handleRequest(request) {
   return new Response('Hello World');
-}
-`} />
+}`} />
 
-A Service Worker event carries these properties and methods:
-
-| Property | Description |
+| Member | Description |
 | --- | --- |
-| `event.request` | The incoming HTTP request object |
-| `event.respondWith(response)` | Returns the response for a `fetch` event |
-| `event.continue()` | Finishing outcome for a `firewall` event. Lets the request continue |
-| `event.deny()` | Finishing outcome for a `firewall` event. Ends the request with `403 Forbidden` |
-| `event.drop()` | Finishing outcome for a `firewall` event. Ends the request without returning a response to the client |
-| `event.waitUntil(promise)` | Extends the lifetime of the function so an asynchronous task finishes after the response returns |
+| `event.request` | The incoming `Request` object, in both handlers. |
+| `event.respondWith(response)` | Sends the given `Response` to the client. In a `firewall` handler, it intercepts the request with a custom response. |
+| `event.deny()` | Finishing outcome of a `firewall` handler. Blocks the request immediately and returns `403 Forbidden`. When it is not called, the request continues to the `fetch` handler. |
+| `event.drop()` | Finishing outcome of a `firewall` handler. Closes the request without a response to the client. |
+| `event.continue()` | Finishing outcome of a `firewall` handler. Lets the request continue. |
+| `event.addRequestHeader(name, value)` | In a `firewall` handler, adds a header to the request sent to the origin. |
+| `event.addResponseHeader(name, value)` | In a `firewall` handler, adds a header to the response sent to the client. |
+| `event.waitUntil(promise)` | In a `firewall` handler, runs an asynchronous function from the synchronous listener. Without it, the promise can raise an unexpected exception. |
+| `event.args("<argument-name>")` | Reads one JSON argument set on the function instance. |
 
-**A Service Worker `firewall` handler must reach a finishing outcome.** Every function on Firewall written in this pattern ends in `event.continue()`, `event.deny()`, or `event.drop()`. This differs from the ES Modules pattern, where a handler that returns without calling `ctx.deny()` lets the request continue by omission.
+A function instantiated on a firewall must end in a finishing outcome: `event.continue()`, `event.deny()`, or `event.drop()`. A handler that reaches both `event.drop()` and `event.continue()` in one run behaves unpredictably.
+
+---
 
 ## Asynchronous work with `waitUntil`
 
-`ctx.waitUntil(promise)` extends the lifetime of the function so an asynchronous task finishes after the handler returns its response. Pass it a promise. Use it for work the response does not depend on, such as writing a log entry. The task does not block the response.
+`ctx.waitUntil(promise)` extends the function's lifetime for an asynchronous task that must not block the response. The function returns its `Response` while the task completes:
 
-Extend the lifetime of a `fetch` handler with `waitUntil`:
-
-<Code lang="javascript" code={`
-export default {
+<Code lang="javascript" code={`export default {
   fetch: async (request, env, ctx) => {
     ctx.waitUntil(logRequest(request));
 
@@ -135,109 +118,94 @@ export default {
 
 async function logRequest(request) {
   console.log(\`Request to: \${request.url}\`);
-}
-`} />
+}`} />
 
----
+In the Service Worker pattern, a `firewall` listener passes its asynchronous handler to `event.waitUntil(promise)`.
 
 ## Migration from Service Worker to ES Modules
 
-A function written in the Service Worker pattern moves to ES Modules construct by construct. The event listener becomes a property of the default export, and `event.request` becomes the `request` parameter. The handler returns its response, and does not call `event.respondWith()`.
+Each Service Worker construct has one ES Modules equivalent. In both patterns, a `firewall` handler that returns without denying lets the request continue to `fetch`.
 
 | Service Worker | ES Modules |
 | --- | --- |
-| `addEventListener('fetch', handler)` | The `fetch` property of the default export |
-| `addEventListener('firewall', handler)` | The `firewall` property of the default export |
-| `event.request` | The `request` parameter |
+| `addEventListener('fetch', (event) => { ... })` | `fetch: async (request, env, ctx) => { ... }` in the default export |
+| `addEventListener('firewall', (event) => { ... })` | `firewall: async (request, env, ctx) => { ... }` in the same default export |
+| `event.request` | `request` |
 | `event.respondWith(response)` | `return response` |
 | `event.deny()` | `ctx.deny()` |
+| `return` without `event.deny()` | `return` without `ctx.deny()` |
+| A separate `handleRequest(request)` function passed to `event.respondWith()` | The body of the `fetch` handler |
 
-A firewall check that blocks bot traffic, in the Service Worker pattern:
+The same function before, in the Service Worker pattern:
 
-<Code lang="javascript" code={`
-addEventListener('fetch', (event) => {
+<Code lang="javascript" code={`addEventListener('fetch', (event) => {
   event.respondWith(handleRequest(event.request));
 });
 
-addEventListener('firewall', (event) => {
-  const userAgent = event.request.headers.get('User-Agent');
-
-  if (userAgent && userAgent.includes('bot')) {
-    event.deny();
-    return;
-  }
-});
-
 async function handleRequest(request) {
-  return new Response('Hello World');
-}
-`} />
+  const url = new URL(request.url);
 
-The same check in the ES Modules pattern:
+  if (url.pathname === '/api/hello') {
+    return new Response(JSON.stringify({ message: 'Hello World' }), {
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
 
-<Code lang="javascript" code={`
-export default {
+  return new Response('Not Found', { status: 404 });
+}`} />
+
+After, in ES Modules:
+
+<Code lang="javascript" code={`export default {
   fetch: async (request, env, ctx) => {
-    return new Response('Hello World');
-  },
+    const url = new URL(request.url);
 
-  firewall: async (request, env, ctx) => {
-    const userAgent = request.headers.get('User-Agent');
-
-    if (userAgent && userAgent.includes('bot')) {
-      ctx.deny();
-      return;
+    if (url.pathname === '/api/hello') {
+      return new Response(JSON.stringify({ message: 'Hello World' }), {
+        headers: { 'Content-Type': 'application/json' }
+      });
     }
 
-    return;
+    return new Response('Not Found', { status: 404 });
   }
-};
-`} />
+};`} />
 
 ## Unsupported patterns
 
-Functions does not support a module that declares its handler in any other shape. A default export that is a function, a named `fetch` export, and a file with no export are all unsupported.
+Functions accepts only the ES Modules and Service Worker patterns. Code in any of the following shapes raises the error `Unsupported handler pattern detected`:
 
-<Code lang="javascript" code={`
-// Not supported: a function exported directly as the default export.
-export default function(request) {
-  return new Response('Hello');
-}
+| Shape | Example |
+| --- | --- |
+| Direct function export | `export default function(request) { return new Response('Hello'); }` |
+| Named export | `export function fetch(request) { return new Response('Hello'); }` |
+| No export | `function handleRequest(request) { return new Response('Hello'); }` |
 
-// Not supported: a named export.
-export function fetch(request) {
-  return new Response('Hello');
-}
+To clear the error, move the code into an ES Modules default export with a `fetch` property:
 
-// Not supported: no export.
-function handleRequest(request) {
-  return new Response('Hello');
-}
-`} />
+<Code lang="javascript" code={`export default {
+  fetch: async (request, env, ctx) => {
+    return new Response('Hello World');
+  }
+};`} />
 
-A function that matches none of the supported patterns raises the error `Unsupported handler pattern detected`. To resolve it, rewrite the function with the ES Modules pattern, or with the Service Worker pattern as a temporary measure.
-
-
-## Request metadata
-
-A function that runs on [Firewall](/en/documentation/secure/firewall/) reads request metadata from the `metadata` property of the request object. The metadata carries GeoIP values, the remote client address and port, and the server protocol. It also carries TLS ciphers and fingerprints, and identifiers for the account, the function instance, and the request. Use it to filter access to an application, or to apply different logic per request.
-
-Inside a Service Worker firewall handler, read the remote client address:
-
-<Code lang="javascript" code={`
-let ip = event.request.metadata["remote_addr"];
-`} />
-
-
-For the complete list of metadata names, refer to [Metadata API](/en/documentation/products/applications/functions/runtime/api-reference/metadata/).
+The Service Worker pattern also clears the error. Azion treats it as a temporary measure and recommends the ES Modules pattern.
 
 ---
 
+## Request metadata
+
+A `firewall` handler reads request metadata: the client IP address and TCP port, GeoIP location, the request protocol, TLS details, server fingerprints, and request identifiers. In the Service Worker pattern, the handler reads a value by name through `event.request.metadata`:
+
+<Code lang="javascript" code={`let ip = event.request.metadata["remote_addr"];`} />
+
+For the full list of metadata names, refer to [Metadata API](/en/documentation/products/applications/functions/runtime/api-reference/metadata/).
+
 ## Related resources
 
-- [How Functions works](/en/documentation/build/functions/how-it-works/) - how Functions executes a request.
-- [Functions Instances](/en/documentation/build/functions/reference/functions-instances/) - the reference for function instances.
-- [Azion Runtime](/en/documentation/runtime/overview/) - the runtime a handler executes on.
-- [Supported Web APIs](/en/documentation/runtime-apis/javascript/) - the JavaScript APIs a handler can call.
-- [Functions for Firewall](/en/documentation/secure/firewall/reference/functions/) - Functions on Firewall, where a `firewall` handler applies.
-- [Environment variables](/en/documentation/products/functions/environment-variables/) - the variables a function reads through `env`.
+- [How Functions works](/en/documentation/build/functions/how-it-works/) - The path a request takes from a rule to a handler, in an application and in a firewall.
+- [Functions Instances](/en/documentation/build/functions/reference/functions-instances/) - The fields that bind a function to an application or a firewall, including JSON arguments.
+- [Functions limits](/en/documentation/build/functions/limits/) - Every default limit that applies to a function, with its unit.
+- [Functions for Firewall](/en/documentation/secure/firewall/reference/functions/) - How a firewall runs a function in the request phase and what each outcome does.
+- [Metadata API](/en/documentation/products/applications/functions/runtime/api-reference/metadata/) - Every metadata name a firewall handler can read.
+- [Environment variables](/en/documentation/products/functions/environment-variables/) - How to set the variables a function reads.
+- [Azion Runtime](/en/documentation/runtime/overview/) - The runtime that executes handlers and the Web APIs it exposes.

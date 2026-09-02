@@ -30,7 +30,8 @@
       "pt-br": "Quickstart"
      },
      "slug": {
-      "en": "/documentation/build/functions/quickstart/"
+      "en": "/documentation/build/functions/quickstart/",
+      "pt-br": "/documentacao/build/functions/quickstart/"
      }
     },
     {
@@ -40,7 +41,8 @@
       "pt-br": "Como funciona"
      },
      "slug": {
-      "en": "/documentation/build/functions/how-it-works/"
+      "en": "/documentation/build/functions/how-it-works/",
+      "pt-br": "/documentacao/build/functions/como-funciona/"
      }
     },
     {
@@ -61,7 +63,8 @@
       "pt-br": "Guias e tutoriais"
      },
      "slug": {
-      "en": "/documentation/build/functions/guides/"
+      "en": "/documentation/build/functions/guides/",
+      "pt-br": "/documentacao/build/functions/guides/"
      },
      "covers": {
       "en": [
@@ -88,7 +91,8 @@
         "pt-br": "Handlers"
        },
        "slug": {
-        "en": "/documentation/build/functions/reference/handlers/"
+        "en": "/documentation/build/functions/reference/handlers/",
+        "pt-br": "/documentacao/build/functions/reference/handlers/"
        }
       },
       {
@@ -123,7 +127,8 @@
       "pt-br": "Glossário"
      },
      "slug": {
-      "en": "/documentation/build/functions/glossary/"
+      "en": "/documentation/build/functions/glossary/",
+      "pt-br": "/documentacao/build/functions/glossario/"
      }
     },
     {
@@ -140,7 +145,8 @@
         "pt-br": "Limites"
        },
        "slug": {
-        "en": "/documentation/build/functions/limits/"
+        "en": "/documentation/build/functions/limits/",
+        "pt-br": "/documentacao/build/functions/limites/"
        }
       },
       {
