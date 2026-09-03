@@ -13,7 +13,7 @@ import Code from '~/components/Code/Code.astro'
 
 Uma função é um handler executado quando uma requisição chega. O handler recebe a requisição e retorna uma resposta, ou decide se a requisição pode continuar. [Azion Runtime](/pt-br/documentacao/runtime/visao-geral/) inicia o handler sob demanda no edge node que recebeu a requisição. Ele encerra o handler quando a resposta é enviada, por isso não há servidor para provisionar ou escalar.
 
-Na Azion, três objetos concretizam esse comportamento. [Functions](/pt-br/documentacao/build/functions/) armazena o código como uma função. Uma instância de função vincula essa função a uma [aplicação](/pt-br/documentacao/build/applications/) ou a um [firewall](/pt-br/documentacao/secure/firewall/) e carrega os argumentos que o código lê. Uma regra no [Rules Engine](/pt-br/documentacao/build/applications/reference/rules-engine/) seleciona as requisições que chegam à instância. As seções a seguir cobrem o caminho da requisição, as instâncias de função, os handlers e o modelo de eventos e, por fim, os builds de framework via Azion Bundler.
+Na Azion, três objetos concretizam esse comportamento. [Functions](/pt-br/documentacao/build/functions/) armazena o código como uma função. Uma instância de função vincula essa função a uma [aplicação](/pt-br/documentacao/build/applications/) ou a um [firewall](/pt-br/documentacao/secure/firewall/) e carrega os argumentos que o código lê. Uma regra no [Rules Engine](/pt-br/documentacao/build/applications/reference/rules-engine/) seleciona as requisições que chegam à instância. As seções a seguir cobrem o caminho da requisição, as instâncias de função e, em seguida, os handlers e o modelo de eventos. A seção final cobre os builds de framework via Azion Bundler.
 
 ## Caminho da requisição
 
@@ -81,6 +81,8 @@ Um módulo com os dois handlers tem esta forma:
 };`} />
 
 Cada handler recebe os mesmos três parâmetros. `request` é o objeto `Request` da Web para a requisição HTTP recebida, e `env` contém variáveis de ambiente e bindings. `ctx` é o contexto de execução, e ele carrega as duas chamadas que moldam o modelo de eventos.
+
+Uma função executa dentro de um contexto de execução, um isolate, que contém o heap, a stack e cada alocação de runtime que o código faz. Antes de uma função atender sua primeira requisição, ela inicializa, e esse tempo de inicialização é o seu cold start. A memória que um isolate contém e o tempo que um cold start leva têm, cada um, um teto. Para os valores, consulte [Limites de Functions](/pt-br/documentacao/build/functions/limites/).
 
 Um handler `fetch` retorna uma `Response`, e o tempo de vida da função termina com ela. Trabalho que precisa durar mais que a resposta, como a escrita de um log, vai para `ctx.waitUntil(promise)`. Essa chamada estende o tempo de vida da função para que a tarefa seja concluída. Um handler `firewall` não retorna nada: ele chama `ctx.deny()` para bloquear a requisição imediatamente, ou retorna para deixar a requisição continuar até o handler `fetch`.
 

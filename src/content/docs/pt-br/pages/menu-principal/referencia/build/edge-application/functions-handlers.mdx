@@ -122,6 +122,8 @@ async function logRequest(request) {
 
 No padrão Service Worker, um listener `firewall` passa seu handler assíncrono para `event.waitUntil(promise)`.
 
+O limite de tempo de relógio de uma invocação inclui a tarefa assíncrona. Para os valores, consulte [Limites de Functions](/pt-br/documentacao/build/functions/limites/).
+
 ## Migração de Service Worker para ES Modules
 
 Cada construção do Service Worker tem um equivalente em ES Modules. Nos dois padrões, um handler `firewall` que retorna sem negar a requisição deixa que ela continue para `fetch`.
@@ -194,7 +196,7 @@ O padrão Service Worker também elimina o erro. Azion o trata como uma medida t
 
 ## Metadados da requisição
 
-Um handler `firewall` lê metadados da requisição: endereço IP e porta TCP do cliente, localização GeoIP, protocolo da requisição, detalhes de TLS, fingerprints do servidor e identificadores da requisição. No padrão Service Worker, o handler lê um valor pelo nome por meio de `event.request.metadata`:
+Um handler `firewall` lê metadados da requisição. Eles cobrem endereço IP e porta TCP do cliente, localização GeoIP, protocolo da requisição, detalhes de TLS, fingerprints do servidor e identificadores da requisição. No padrão Service Worker, o handler lê um valor pelo nome por meio de `event.request.metadata`:
 
 <Code lang="javascript" code={`let ip = event.request.metadata["remote_addr"];`} />
 
@@ -206,6 +208,8 @@ Para a lista completa de nomes de metadados, consulte [Metadata API](/pt-br/docu
 - [Functions Instances](/pt-br/documentacao/build/functions/reference/functions-instances/) - Os campos que vinculam uma função a uma aplicação ou a um firewall, incluindo os argumentos JSON.
 - [Limites de Functions](/pt-br/documentacao/build/functions/limites/) - Cada limite padrão que se aplica a uma função, com sua unidade.
 - [Functions para Firewall](/pt-br/documentacao/secure/firewall/reference/functions/) - Como um firewall executa uma função na fase de requisição e o que cada desfecho faz.
+- [Criar e configurar uma função no Firewall](/pt-br/documentacao/build/functions/guides/firewall/) - Os passos para criar uma função e adicioná-la a um firewall.
 - [Metadata API](/pt-br/documentacao/produtos/applications/functions/runtime/api-reference/metadata/) - Cada nome de metadado que um handler de firewall pode ler.
 - [Variáveis de ambiente](/pt-br/documentacao/produtos/functions/environment-variables/) - Como definir as variáveis que uma função lê.
 - [Azion Runtime](/pt-br/documentacao/runtime/visao-geral/) - O runtime que executa os handlers e as Web APIs que ele expõe.
+- [Web APIs suportadas](/pt-br/documentacao/runtime-apis/javascript/) - Os objetos `Request` e `Response` e as demais Web APIs que um handler pode chamar.

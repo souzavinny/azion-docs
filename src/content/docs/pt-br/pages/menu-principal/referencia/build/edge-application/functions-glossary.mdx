@@ -3,7 +3,7 @@ title: Glossário
 description: >-
   Consulte os termos que a documentação de Functions usa: handlers,
   instâncias de função, JSON args, o behavior Run Function e Azion Runtime.
-meta_tags: 'Functions, glossary, handler, function instance, JSON args, Run Function, Azion Runtime, ES Modules, Service Worker, Azion Bundler'
+meta_tags: 'Functions, glossary, handler, function instance, JSON args, Run Function, Azion Runtime, ES Modules, Service Worker, Azion Bundler, environment variable'
 namespace: documentation_build_functions_glossary
 permalink: /documentacao/build/functions/glossario/
 menu_namespace: functionsMenu
@@ -33,5 +33,6 @@ Este glossário define os termos que a documentação de [Functions](/pt-br/docu
 | padrão ES Modules | O [padrão de handler](/pt-br/documentacao/build/functions/reference/handlers/) recomendado para uma função: um objeto `export default` cujas propriedades `fetch` e `firewall` são os handlers. Cada handler recebe `request`, `env` e `ctx`. O padrão Service Worker é a alternativa legada. |
 | padrão Service Worker | O [padrão de handler](/pt-br/documentacao/build/functions/reference/handlers/) legado para uma função, mantido por compatibilidade com versões anteriores. O código registra um handler `fetch` ou `firewall` com `addEventListener()` e lê a requisição de `event.request`. Azion recomenda que você migre as funções escritas neste padrão para o padrão ES Modules. |
 | Preview Deployment | Um recurso do [Functions Code Editor](/pt-br/documentacao/produtos/applications/functions/runtime-api/code-editor/) que [executa uma função com uma requisição simulada](/pt-br/documentacao/produtos/applications/functions/runtime-api/preview-deployment/) e mostra o resultado. Ele depende de uma função `PreviewProvider` no código-fonte, que constrói a requisição simulada e chama o handler. Sem `PreviewProvider`, nenhuma pré-visualização é renderizada. |
+| variável de ambiente | Um valor que você configura fora do código de uma função, como uma chave de API, e [gerencia pela Azion API ou pela Azion CLI](/pt-br/documentacao/produtos/functions/environment-variables/). Uma função lê uma variável pela sua chave com `Azion.env.get()`, e o [parâmetro `env`](/pt-br/documentacao/build/functions/reference/handlers/) de um handler no padrão ES Modules carrega as variáveis. O tamanho combinado de todas as variáveis de uma função tem um teto listado em [Limites de Functions](/pt-br/documentacao/build/functions/limites/). |
 
 </GlossaryFilter>

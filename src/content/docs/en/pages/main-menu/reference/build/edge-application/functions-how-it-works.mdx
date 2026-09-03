@@ -57,7 +57,7 @@ An args object above 100 KB fails at instantiation, so the ceiling bounds how mu
 
 ## Handlers and the event model
 
-[Azion Runtime](/en/documentation/runtime/overview/) calls your code through a fixed entry point. A function therefore ships as an ES module whose default export is an object with named handlers: `fetch`, which answers a request, and `firewall`, which decides whether a request may continue. The runtime calls the handler that matches the event and passes it the request.
+[Azion Runtime](/en/documentation/runtime/overview/) calls your code through a fixed entry point. A function therefore ships as an ES module whose default export is an object with named handlers. The `fetch` handler answers a request, and the `firewall` handler decides whether a request may continue. The runtime calls the handler that matches the event and passes it the request.
 
 A module that carries both handlers looks like this:
 
@@ -81,6 +81,8 @@ A module that carries both handlers looks like this:
 };`} />
 
 Each handler receives the same three parameters. `request` is the Web `Request` object for the incoming HTTP request, and `env` holds environment variables and bindings. `ctx` is the execution context, and it carries the two calls that shape the event model.
+
+A function executes inside an execution context, an isolate, which holds the heap, the stack, and every runtime allocation the code makes. Before a function handles its first request, it initializes, and that initialization time is its cold start. The memory an isolate holds and the time a cold start takes each have a ceiling. For the values, refer to [Functions limits](/en/documentation/build/functions/limits/).
 
 A `fetch` handler returns a `Response`, and the function's lifetime ends with it. Work that must outlive the response, such as a log write, goes into `ctx.waitUntil(promise)`, which extends the function's lifetime so the task completes. A `firewall` handler returns nothing: it calls `ctx.deny()` to block the request immediately, or it returns to let the request continue to the `fetch` handler.
 

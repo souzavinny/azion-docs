@@ -3,7 +3,7 @@ title: Glossary
 description: >-
   Look up the terms the Functions documentation uses: handlers, function
   instances, JSON args, the Run Function behavior, and Azion Runtime.
-meta_tags: 'Functions, glossary, handler, function instance, JSON args, Run Function, Azion Runtime, ES Modules, Service Worker, Azion Bundler'
+meta_tags: 'Functions, glossary, handler, function instance, JSON args, Run Function, Azion Runtime, ES Modules, Service Worker, Azion Bundler, environment variable'
 namespace: documentation_build_functions_glossary
 permalink: /documentation/build/functions/glossary/
 menu_namespace: functionsMenu
@@ -19,6 +19,7 @@ This glossary defines the terms the [Functions](/en/documentation/build/function
 | --- | --- |
 | Azion Bundler | An [open-source framework adapter](https://github.com/aziontech/bundler) that [converts a web framework project into functions](/en/documentation/build/functions/how-it-works/) for Azion Runtime. When you initialize a project with the [Azion CLI](/en/documentation/products/azion-cli/overview/), the bundler identifies the framework and converts its server-side logic, API routes, and middleware into functions. Each route, API endpoint, or server component of a [supported framework](/en/documentation/products/devtools/azion-edge-runtime/frameworks-compatibility/) becomes a function. |
 | Azion Runtime | The [runtime](/en/documentation/runtime/overview/) that executes functions on Azion's distributed network. It runs JavaScript built on Web standards and provides a set of [Web APIs](/en/documentation/runtime-apis/javascript/). |
+| environment variable | A value you configure outside a function's code, such as an API key, and [manage through the Azion API or Azion CLI](/en/documentation/products/functions/environment-variables/). A function reads a variable by its key with `Azion.env.get()`, and the [`env` parameter](/en/documentation/build/functions/reference/handlers/) of an ES Modules handler carries the variables. The combined size of all variables for one function has a ceiling listed in [Functions limits](/en/documentation/build/functions/limits/). |
 | ES Modules pattern | The recommended [handler pattern](/en/documentation/build/functions/reference/handlers/) for a function: an `export default` object whose `fetch` and `firewall` properties are the handlers. Each handler receives `request`, `env`, and `ctx`. The Service Worker pattern is the legacy alternative. |
 | execution context (`ctx`) | The `ctx` object an [ES Modules handler](/en/documentation/build/functions/reference/handlers/) receives as its third parameter. In a `fetch` handler, `ctx.waitUntil(promise)` extends the function's lifetime for an async task that should not block the response. In a `firewall` handler, `ctx.deny()` blocks the request immediately. |
 | `fetch` handler | The [handler](/en/documentation/build/functions/reference/handlers/) that answers an HTTP request with a `Response`. It receives `request`, `env`, and `ctx`. When a function also defines a `firewall` handler, the request reaches `fetch` only if that handler does not call `ctx.deny()`. |

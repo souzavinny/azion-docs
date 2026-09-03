@@ -81,11 +81,12 @@ A function has these capabilities and default limits:
 - **Environment variables**: a function reads values you configure outside its code, such as an API token, so secrets do not sit in the source. Refer to [Environment variables](/en/documentation/products/functions/environment-variables/).
 - **Frameworks**: [Azion Bundler](https://github.com/aziontech/bundler) turns a web framework project into functions that run on Azion Runtime, one per route, API endpoint, or server component. [Frameworks compatibility](/en/documentation/products/devtools/azion-edge-runtime/frameworks-compatibility/) lists the supported frameworks.
 - **Data and AI**: a function calls [SQL Database](/en/documentation/store/sql-database/) for storage, which also holds vectors for retrieval-augmented generation (RAG), and runs models through [AI Inference](/en/documentation/build/ai-inference/) on Azion Runtime.
+- **Interfaces**: you create and manage a function through [Azion Console](https://console.azion.com/), the [Azion API](https://api.azion.com/), or [Azion CLI](/en/documentation/products/azion-cli/overview/) from the terminal. The [Terraform Provider](/en/documentation/products/terraform-provider/) manages functions as infrastructure as code.
 - **Code Editor**: the [Functions Code Editor](/en/documentation/products/applications/functions/runtime-api/code-editor/) is a browser-based editor in Azion Console with syntax highlighting, code completion, and debugging.
 - **Preview Deployment**: [Preview Deployment](/en/documentation/products/applications/functions/runtime-api/preview-deployment/) runs your function against a simulated request before it goes to production.
 - **Debugging**: [Debugging](/en/documentation/devtools/debugging/) collects `console.log` output from a running function through Data Stream or the GraphQL API. The setups are in [Debug with Data Stream](/en/documentation/observe/data-stream/guides/debugging-functions-data-stream/) and [Debug with GraphQL](/en/documentation/build/functions/guides/debugging-functions-graphql/).
 - **AI assistant**: the [AI assistant](/en/documentation/products/applications/functions/runtime-api/ai-integration/) in the Code Editor explains, generates, and refactors code from a prompt. It uses an API key you supply.
-- **Default limits**: a function gets 512 MB of memory per isolate and 50 outbound `fetch()` calls (sub-requests) per invocation. It has 2 s of CPU time and 5 min of wall-clock time per invocation, and a function that exceeds its CPU time is terminated. Source code is capped at 6 MB through Azion Console and 20 MB through the API. JSON args are capped at 100 KB per instance. A function has at most 2 s to initialize before its first request. Request and response body size depends on your plan. For the full table, refer to [Functions limits](/en/documentation/build/functions/limits/).
+- **Default limits**: a function gets 512 MB of memory per isolate, its execution context, and 50 outbound `fetch()` calls (sub-requests) per invocation. It has 2 s of CPU time and 5 min of wall-clock time per invocation, and a function that exceeds its CPU time is terminated. Source code is capped at 6 MB through Azion Console and 20 MB through the API. JSON args are capped at 100 KB per instance. A function has at most 2 s of cold start, the time to initialize before its first request. Request and response body size depends on your plan. For the full table, refer to [Functions limits](/en/documentation/build/functions/limits/).
 
 ---
 
@@ -100,9 +101,11 @@ A function has these capabilities and default limits:
 | If you want to | Go to |
 | --- | --- |
 | Run your first function | [Functions quickstart](/en/documentation/build/functions/quickstart/) |
+| Start from example code | [JavaScript examples](/en/documentation/devtools/javascript-examples/) |
 | Understand the event model and why instances exist | [How Functions works](/en/documentation/build/functions/how-it-works/) |
 | Look up handler signatures, parameters, and the legacy pattern | [Handlers](/en/documentation/build/functions/reference/handlers/) |
 | Look up instance fields, JSON args, and the Run Function behavior | [Functions Instances](/en/documentation/build/functions/reference/functions-instances/) |
 | Follow a guide for one task, such as a webhook or a paywall | [Functions guides and tutorials](/en/documentation/build/functions/guides/) |
 | Check a limit before you design | [Functions limits](/en/documentation/build/functions/limits/) |
+| Check what compute time and invocations cost | [Pricing](/en/documentation/platform/pricing/#functions) |
 | Look up a term | [Glossary](/en/documentation/build/functions/glossary/) |

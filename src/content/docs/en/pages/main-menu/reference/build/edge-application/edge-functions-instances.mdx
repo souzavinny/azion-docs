@@ -13,9 +13,9 @@ A function instance is the object that binds one function to one application or 
 
 ## Functions and their instances
 
-A function exists on its own. You create it and save it in Functions, or use one available from **Azion Marketplace**, before any instance refers to it. Instantiation creates a second object, the instance, and leaves the function's code unchanged. Only the instance's name, arguments, and association are set. One function can have instances on several applications, and each instance carries its own arguments.
+A function exists on its own. You create it and save it in Functions, or use one available from **Azion Marketplace**, before any instance refers to it. Instantiation creates a second object, the instance, and leaves the function's code unchanged. Only the instance's name, arguments, and association are set. One function can have instances on several applications, and each instance carries its own arguments. An application or a firewall can also hold several instances, and its **Functions Instances** tab lists them.
 
-An application or a firewall accepts instances only after its **Functions** module is turned on. The module is a setting of the application or the firewall, not of the function. An instance runs only when a rule in [Rules Engine](/en/documentation/build/applications/reference/rules-engine/) names it in the **Run Function** behavior.
+An application or a firewall accepts instances only after its **Functions** module is turned on. The module is a setting of the application or the firewall, not of the function. With the module on, compute time and invocations can generate usage costs. For the rates, refer to [Pricing](/en/documentation/platform/pricing/#functions). An instance runs only when a rule in [Rules Engine](/en/documentation/build/applications/reference/rules-engine/) names it in the **Run Function** behavior.
 
 ## Instance fields
 
@@ -30,6 +30,8 @@ One instance has the fields below. The Azion API accepts `name`, `edge_function`
 | ID | `id` | integer | Azion | The ID of the instance, unique to the instance. The **Run Function** behavior refers to the instance by this value. |
 | Last editor | `last_editor` | string | Azion | The account that last changed the instance. |
 | Last modified | `last_modified` | string | Azion | The date and time of the last change. |
+
+On an application, a create request that omits `args` returns the instance with `args` set to `{}`.
 
 ---
 
@@ -80,7 +82,7 @@ In this example, `threshold` and `action` take the instance's values, and `log_l
 
 ## Run Function behavior
 
-An instance is idle until a rule in [Rules Engine](/en/documentation/build/applications/reference/rules-engine/) names it. The rule pairs criteria with the **Run Function** behavior, and the behavior's value is the instance. When a request matches the criteria, the instance's function runs on Azion edge nodes. On an application, the rule also sets the phase in which the function runs. On a firewall, the function runs in the request phase. A new or changed rule takes a few minutes to propagate across Azion's distributed network.
+An instance is idle until a rule in [Rules Engine](/en/documentation/build/applications/reference/rules-engine/) names it. The rule pairs criteria with the **Run Function** behavior, and the behavior's value is the instance. When a request matches the criteria, the instance's function runs on Azion edge nodes. On an application, the rule also sets the phase in which the function runs. On a firewall, the function runs in the request phase. A new or changed rule takes a few minutes to propagate across Azion's distributed network. For the order in which rules and their behaviors run, refer to [Rules Engine](/en/documentation/build/applications/reference/rules-engine/#behaviors-execution-and-logic).
 
 In the API, the behavior is one item of the rule's `behaviors` array:
 
@@ -110,7 +112,11 @@ For the firewall side of the object, refer to [Functions Instances for Firewall]
 
 ## Interfaces
 
-Instances are managed in [Azion Console](https://console.azion.com/) and through the [Azion API](https://api.azion.com/). The table lists where each object lives in Azion Console.
+Instances are managed in [Azion Console](https://console.azion.com/) and through the [Azion API](https://api.azion.com/).
+
+### Locations in Azion Console
+
+The table lists where each object lives in Azion Console.
 
 | Object | Location in Azion Console |
 | --- | --- |
@@ -119,6 +125,8 @@ Instances are managed in [Azion Console](https://console.azion.com/) and through
 | Instances of an application | **Applications** > the application > **Functions Instances** tab. **+ Function Instance** creates one. |
 | Instances of a firewall | **Firewall** > the firewall > **Functions Instances** tab. **+ Function Instance** creates one. |
 | Rule that runs an instance | **Rules Engine** tab of the application or the firewall, **Run Function** behavior |
+
+### Azion API endpoints
 
 The Azion API serves every call below at `https://api.azion.com`, with the header `Authorization: Token [TOKEN VALUE]`.
 
@@ -143,7 +151,7 @@ A create request carries the four fields you set:
 }
 ```
 
-To instantiate a function from Azion Console or the API, refer to [Instantiate functions](/en/documentation/build/functions/guides/instantiate-functions/).
+To instantiate a function on an application from Azion Console or the API, refer to [Instantiate functions](/en/documentation/build/functions/guides/instantiate-functions/). For a firewall, refer to [How to instantiate functions in your firewall](/en/documentation/secure/firewall/guides/instantiate-functions/).
 
 ## Limits
 
@@ -159,6 +167,7 @@ For every other Functions limit, refer to [Functions limits](/en/documentation/b
 - [Handlers](/en/documentation/build/functions/reference/handlers/) - The `fetch` and `firewall` handler signatures an instance runs.
 - [Functions limits](/en/documentation/build/functions/limits/) - Every Functions limit with its unit and plan.
 - [Functions quickstart](/en/documentation/build/functions/quickstart/) - Create a function, instantiate it, and run it from a rule.
-- [Instantiate functions](/en/documentation/build/functions/guides/instantiate-functions/) - The Azion Console and API steps that create an instance.
+- [Instantiate functions](/en/documentation/build/functions/guides/instantiate-functions/) - The Azion Console and API steps that create an instance on an application.
+- [How to instantiate functions in your firewall](/en/documentation/secure/firewall/guides/instantiate-functions/) - The Azion Console and API steps that create an instance on a firewall.
 - [Rules Engine](/en/documentation/build/applications/reference/rules-engine/) - The rule fields, phases, criteria, and behaviors, Run Function among them.
 - [Functions Instances for Firewall](/en/documentation/secure/firewall/reference/functions-instances/) - The instance as it exists on a firewall.

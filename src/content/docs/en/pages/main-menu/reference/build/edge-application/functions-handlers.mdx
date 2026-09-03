@@ -122,6 +122,8 @@ async function logRequest(request) {
 
 In the Service Worker pattern, a `firewall` listener passes its asynchronous handler to `event.waitUntil(promise)`.
 
+The wall-clock time limit of an invocation includes the asynchronous task. For the values, refer to [Functions limits](/en/documentation/build/functions/limits/).
+
 ## Migration from Service Worker to ES Modules
 
 Each Service Worker construct has one ES Modules equivalent. In both patterns, a `firewall` handler that returns without denying lets the request continue to `fetch`.
@@ -206,6 +208,8 @@ For the full list of metadata names, refer to [Metadata API](/en/documentation/p
 - [Functions Instances](/en/documentation/build/functions/reference/functions-instances/) - The fields that bind a function to an application or a firewall, including JSON arguments.
 - [Functions limits](/en/documentation/build/functions/limits/) - Every default limit that applies to a function, with its unit.
 - [Functions for Firewall](/en/documentation/secure/firewall/reference/functions/) - How a firewall runs a function in the request phase and what each outcome does.
+- [Create and configure a function on Firewall](/en/documentation/build/functions/guides/firewall/) - The steps to create a function and add it to a firewall.
 - [Metadata API](/en/documentation/products/applications/functions/runtime/api-reference/metadata/) - Every metadata name a firewall handler can read.
 - [Environment variables](/en/documentation/products/functions/environment-variables/) - How to set the variables a function reads.
 - [Azion Runtime](/en/documentation/runtime/overview/) - The runtime that executes handlers and the Web APIs it exposes.
+- [Supported Web APIs](/en/documentation/runtime-apis/javascript/) - The `Request` and `Response` objects and the other Web APIs a handler can call.

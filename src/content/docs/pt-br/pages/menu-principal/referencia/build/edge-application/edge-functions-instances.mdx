@@ -13,9 +13,9 @@ Uma instância de função é o objeto que vincula uma função a uma aplicaçã
 
 ## Funções e suas instâncias
 
-Uma função existe por si só. Você a cria e salva no Functions, ou usa uma disponível no **Azion Marketplace**, antes que qualquer instância se refira a ela. A instanciação cria um segundo objeto, a instância, e deixa o código da função inalterado. Apenas o nome, os argumentos e a associação da instância são definidos. Uma função pode ter instâncias em várias aplicações e cada instância carrega seus próprios argumentos.
+Uma função existe por si só. Você a cria e salva no Functions, ou usa uma disponível no **Azion Marketplace**, antes que qualquer instância se refira a ela. A instanciação cria um segundo objeto, a instância, e deixa o código da função inalterado. Apenas o nome, os argumentos e a associação da instância são definidos. Uma função pode ter instâncias em várias aplicações e cada instância carrega seus próprios argumentos. Uma aplicação ou um firewall também pode conter várias instâncias e sua aba **Functions Instances** as lista.
 
-Uma aplicação ou um firewall aceita instâncias somente depois que seu módulo **Functions** é ativado. O módulo é uma configuração da aplicação ou do firewall, não da função. Uma instância só é executada quando uma regra no [Rules Engine](/pt-br/documentacao/build/applications/reference/rules-engine/) a nomeia no behavior **Run Function**.
+Uma aplicação ou um firewall aceita instâncias somente depois que seu módulo **Functions** é ativado. O módulo é uma configuração da aplicação ou do firewall, não da função. Com o módulo ativado, o tempo de computação e as invocações podem gerar custos de uso. Para as tarifas, consulte [Preços](/pt-br/documentacao/platform/pricing/#functions). Uma instância só é executada quando uma regra no [Rules Engine](/pt-br/documentacao/build/applications/reference/rules-engine/) a nomeia no behavior **Run Function**.
 
 ## Campos da instância
 
@@ -30,6 +30,8 @@ Uma instância tem os campos a seguir. Azion API aceita `name`, `edge_function`,
 | ID | `id` | integer | Azion | O ID da instância, único para a instância. O behavior **Run Function** se refere à instância por esse valor. |
 | Último editor | `last_editor` | string | Azion | A conta que alterou a instância pela última vez. |
 | Última modificação | `last_modified` | string | Azion | A data e a hora da última alteração. |
+
+Em uma aplicação, uma requisição de criação que omite `args` retorna a instância com `args` definido como `{}`.
 
 ---
 
@@ -80,7 +82,7 @@ Neste exemplo, `threshold` e `action` recebem os valores da instância e `log_le
 
 ## Behavior Run Function
 
-Uma instância fica ociosa até que uma regra no [Rules Engine](/pt-br/documentacao/build/applications/reference/rules-engine/) a nomeie. A regra combina critérios com o behavior **Run Function** e o valor do behavior é a instância. Quando uma requisição corresponde aos critérios, a função da instância é executada nos edge nodes da Azion. Em uma aplicação, a regra também define a fase em que a função é executada. Em um firewall, a função é executada na fase de requisição. Uma regra nova ou alterada leva alguns minutos para se propagar pela rede distribuída da Azion.
+Uma instância fica ociosa até que uma regra no [Rules Engine](/pt-br/documentacao/build/applications/reference/rules-engine/) a nomeie. A regra combina critérios com o behavior **Run Function** e o valor do behavior é a instância. Quando uma requisição corresponde aos critérios, a função da instância é executada nos edge nodes da Azion. Em uma aplicação, a regra também define a fase em que a função é executada. Em um firewall, a função é executada na fase de requisição. Uma regra nova ou alterada leva alguns minutos para se propagar pela rede distribuída da Azion. Para a ordem em que as regras e seus behaviors são executados, consulte [Rules Engine](/pt-br/documentacao/build/applications/reference/rules-engine/#execucao-e-logica-de-behaviors).
 
 Na API, o behavior é um item do array `behaviors` da regra:
 
@@ -110,7 +112,11 @@ Para o lado do firewall do objeto, consulte [Functions Instances para Firewall](
 
 ## Interfaces
 
-As instâncias são gerenciadas no [Azion Console](https://console.azion.com/) e pela [Azion API](https://api.azion.com/). A tabela lista onde cada objeto fica no Azion Console.
+As instâncias são gerenciadas no [Azion Console](https://console.azion.com/) e pela [Azion API](https://api.azion.com/).
+
+### Localizações no Azion Console
+
+A tabela lista onde cada objeto fica no Azion Console.
 
 | Objeto | Localização no Azion Console |
 | --- | --- |
@@ -119,6 +125,8 @@ As instâncias são gerenciadas no [Azion Console](https://console.azion.com/) e
 | Instâncias de uma aplicação | **Applications** > a aplicação > aba **Functions Instances**. **+ Function Instance** cria uma. |
 | Instâncias de um firewall | **Firewall** > o firewall > aba **Functions Instances**. **+ Function Instance** cria uma. |
 | Regra que executa uma instância | Aba **Rules Engine** da aplicação ou do firewall, behavior **Run Function** |
+
+### Endpoints da Azion API
 
 Azion API atende todas as chamadas a seguir em `https://api.azion.com`, com o cabeçalho `Authorization: Token [TOKEN VALUE]`.
 
@@ -143,7 +151,7 @@ Uma requisição de criação carrega os quatro campos que você define:
 }
 ```
 
-Para instanciar uma função pelo Azion Console ou pela API, consulte [Instanciar funções](/pt-br/documentacao/build/functions/guides/instanciar-functions/).
+Para instanciar uma função em uma aplicação pelo Azion Console ou pela API, consulte [Instanciar funções](/pt-br/documentacao/build/functions/guides/instanciar-functions/). Para um firewall, consulte [Como instanciar funções no seu firewall](/pt-br/documentacao/secure/firewall/guides/instanciar-functions/).
 
 ## Limites
 
@@ -159,6 +167,7 @@ Para todos os outros limites de Functions, consulte [Limites de Functions](/pt-b
 - [Handlers](/pt-br/documentacao/build/functions/reference/handlers/) - As assinaturas dos handlers `fetch` e `firewall` que uma instância executa.
 - [Limites de Functions](/pt-br/documentacao/build/functions/limites/) - Todos os limites de Functions com sua unidade e seu plano.
 - [Quickstart de Functions](/pt-br/documentacao/build/functions/quickstart/) - Crie uma função, instancie-a e execute-a a partir de uma regra.
-- [Instanciar funções](/pt-br/documentacao/build/functions/guides/instanciar-functions/) - Os passos no Azion Console e na API que criam uma instância.
+- [Instanciar funções](/pt-br/documentacao/build/functions/guides/instanciar-functions/) - Os passos no Azion Console e na API que criam uma instância em uma aplicação.
+- [Como instanciar funções no seu firewall](/pt-br/documentacao/secure/firewall/guides/instanciar-functions/) - Os passos no Azion Console e na API que criam uma instância em um firewall.
 - [Rules Engine](/pt-br/documentacao/build/applications/reference/rules-engine/) - Os campos, as fases, os critérios e os behaviors de uma regra, entre eles Run Function.
 - [Functions Instances para Firewall](/pt-br/documentacao/secure/firewall/reference/functions-instances/) - A instância como ela existe em um firewall.
